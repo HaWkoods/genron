@@ -21,7 +21,7 @@
 {\LARGE 定義・命題一覧}\par\vspace{2mm}
 {\small 読者確認用}
 \end{center}
-知識台帳の検証済み項目（全207項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
+知識台帳の検証済み項目（全216項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
 \bigskip
 \textbf{ノート別目次}\par\smallskip
 \hyperlink{note-1}{N-1\quad 数学的言語}\dotfill 17項目\par
@@ -35,6 +35,7 @@
 \hyperlink{note-9}{N-9\quad 二項演算とモノイド}\dotfill 19項目\par
 \hyperlink{note-24}{N-24\quad 集合環とσ-加法族}\dotfill 16項目\par
 \hyperlink{note-53}{N-53\quad 近傍と閉包}\dotfill 14項目\par
+\hyperlink{note-54}{N-54\quad 開基と部分基}\dotfill 9項目\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-1}{}
@@ -600,4 +601,33 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \subsection*{第1章\quad 第4節}
 \entryhead{定理（Kuratowski の閉包公理）}{K-000207}
 集合 \(X\) 上の写像 \(c:P(X)\to P(X)\) が \(c(\varnothing )=\allowbreak \varnothing \)、\(A\subseteq \allowbreak c(A)\)、\(c(c(A))=\allowbreak c(A)\)、\(c(A\cup B)=\allowbreak c(A)\cup c(B)\) を全ての \(A,\allowbreak B\subseteq \allowbreak X\) について満たすことと、\(c\) を閉包の写像とする位相が存在することは同値。その位相は一意。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-54}{}
+\section*{N-54\quad 開基と部分基}
+\pdfbookmark[1]{N-54 開基と部分基}{bookmark-54}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（開基）}{K-000208}
+位相空間 \((X,\allowbreak \mathcal{O})\) の開集合族 \(\mathcal{B}\subseteq \allowbreak \mathcal{O}\) が開基であるとは、任意の開集合 \(U\) が \(\mathcal{B}\) の部分族の合併となることをいう。\par
+\entryhead{命題（開基の局所判定）}{K-000209}
+開集合族 \(\mathcal{B}\subseteq \allowbreak \mathcal{O}\) が開基であることと、任意の \(U\in \mathcal{O}\)、\(x\in U\) に対し \(x\in B\subseteq \allowbreak U\) となる \(B\in \mathcal{B}\) が存在することは同値。\par
+\entryhead{定理（開基による位相の構成）}{K-000210}
+集合 \(X\) の部分集合族 \(\mathcal{B}\) が或る位相の開基となる必要十分条件は、\(\bigcup \mathcal{B}=\allowbreak X\) であり、任意の \(B,\allowbreak C\in \mathcal{B}\) と \(x\in B\cap C\) に対し \(x\in D\subseteq \allowbreak B\cap C\) なる \(D\in \mathcal{B}\) が存在することである。その位相は一意。\par
+\entryhead{命題（開基と位相の粗密）}{K-000211}
+同じ集合 \(X\) 上の位相 \(\mathcal{O}\)₁\(,\allowbreak \mathcal{O}\)₂ の開基 \(\mathcal{B}_{1},\allowbreak \mathcal{B}_{2}\) に対し、\(\mathcal{O}\)₁\(\subseteq \allowbreak \mathcal{O}\)₂ \(\Leftrightarrow \allowbreak \) 任意の \(B\in \mathcal{B}_{1}\) と \(x\in \mathcal{B}\) に対し \(x\in C\subseteq \allowbreak B\) なる \(C\in \mathcal{B}_{2}\) が存在する。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（部分基）}{K-000212}
+位相空間 \((X,\allowbreak \mathcal{O})\) の部分集合族 \(\mathcal{S}\subseteq \allowbreak P(X)\) が部分基であるとは、\(\mathcal{S}\) の有限部分族の共通部分全体が開基であることをいう。空の共通部分は \(X\) とする。\par
+\entryhead{定理（部分基による位相の生成）}{K-000213}
+任意の集合 \(X\) と部分集合族 \(\mathcal{S}\subseteq \allowbreak P(X)\) に対し \(\mathcal{S}\) を部分基とする位相が一意に存在する。それは \(\mathcal{S}\) を含む最も粗い位相であり、\(\mathcal{S}\) の有限共通部分の任意合併全体である。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（近傍基）}{K-000214}
+位相空間 \(X\) の点 \(x\in X\) において、近傍族 \(\mathcal{B}_{x}\subseteq \allowbreak \mathcal{N}(x)\) が近傍基であるとは、任意の \(N\in \mathcal{N}(x)\) がある \(B\in \mathcal{B}_{x}\) を含むことをいう。\par
+\entryhead{命題（開基から得られる近傍基）}{K-000215}
+開基 \(\mathcal{B}\) に対し各点 \(x\) の族 \(\mathcal{B}_{x}=\allowbreak \{B\in \mathcal{B}\) \(\mid \) \(x\in \mathcal{B}\}\) は \(x\) の近傍基である。\par
+\entryhead{定理（近傍基からの位相の構成）}{K-000216}
+集合 \(X\) の各点 \(x\) に非空の部分集合族 \(\mathcal{B}_{x}\) が与えられるとする。各 \(B\in \mathcal{B}_{x}\) は \(x\) を含む。任意の \(B,\allowbreak C\in \mathcal{B}_{x}\) に対して \(D\in \mathcal{B}_{x}\)、\(D\subseteq \allowbreak B\cap C\) が存在する。各 \(B\in \mathcal{B}_{x}\) に対して \(C\in \mathcal{B}_{x}\) が存在し、全ての \(y\in C\) に対して \(D\in \mathcal{B}_{y}\)、\(D\subseteq \allowbreak B\) が存在する。この三条件の下で、各 \(\mathcal{B}_{x}\) を近傍基とする位相が一意に存在する。逆も成立。\par
 \end{document}

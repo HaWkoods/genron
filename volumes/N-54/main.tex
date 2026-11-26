@@ -1,0 +1,283 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-54}
+\fancyhead[R]{\small 開基と部分基\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 開基と部分基}\par\vspace{2mm}
+{\small N-54\quad 第1版}
+\end{center}
+N-53「近傍と閉包」を前提とする。開集合系をすべて指定せず，その一部分から位相を構成する方法を述べる。また，各点の近傍系をより小さな部分族によって指定する方法を与える。以下の論証には選択公理を用いない。
+\Needspace{8\baselineskip}
+\section{開基}
+% genron:begin K-000208
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{defn}[開基]\label{k208}
+位相空間 $(X,\mathcal O)$ の開集合族 $\mathcal B\subseteq\mathcal O$ が，任意の $U\in\mathcal O$ を $\mathcal B$ の部分族の合併として表し得るとき，$\mathcal B$ を $\mathcal O$ の\textbf{開基}という。空の族の合併を許す。
+\end{defn}
+% genron:end K-000208
+% genron:begin K-000209
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000208
+\Needspace{4\baselineskip}
+\begin{prop}[開基の局所判定]\label{k209}
+開集合族 $\mathcal B\subseteq\mathcal O$ が開基であるための必要十分条件は，任意の $U\in\mathcal O$ と $x\in U$ に対し $x\in B\subseteq U$ となる $B\in\mathcal B$ が存在することである。
+\end{prop}
+\begin{proof}
+必要性は合併の定義から従う。逆に条件を仮定し，$U\in\mathcal O$ に対して $\mathcal B_U=\{B\in\mathcal B\mid B\subseteq U\}$ とおく。条件より $U\subseteq\bigcup\mathcal B_U$ であり，逆の包含は $\mathcal B_U$ の定義から従う。よって $U=\bigcup\mathcal B_U$ となる。各点に対し一つずつ開基の元を選ぶ必要はない。
+\end{proof}
+% genron:end K-000209
+% genron:begin K-000210
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000147
+% genron:use K-000208
+% genron:use K-000209
+\Needspace{4\baselineskip}
+\begin{thm}[開基による位相の構成]\label{k210}
+集合 $X$ の部分集合族 $\mathcal B\subseteq\Pow(X)$ がある位相の開基であるためには，次の二条件が必要十分である。
+\begin{enumerate}
+\item $\bigcup\mathcal B=X$.
+\item $B,C\in\mathcal B$，$x\in B\cap C$ ならば $x\in D\subseteq B\cap C$ となる $D\in\mathcal B$ が存在する。
+\end{enumerate}
+この位相は一意であり，$\mathcal B$ の部分族の合併全体からなる。
+\end{thm}
+\begin{proof}
+必要性は $X$ が開集合であることと，$B\cap C$ が開集合であることに命題\ref{k209}を適用すればよい。逆に
+\[
+ \mathcal O=\{U\subseteq X\mid
+ \forall x\in U,\ \exists B\in\mathcal B,\ x\in B\subseteq U\}
+\]
+と定める。この族の元はちょうど $\mathcal B$ の部分族の合併である。実際，条件を満たす $U$ は $U$ に含まれる開基候補の元すべての合併であり，逆も合併の定義から従う。
+
+条件 (1) により $X\in\mathcal O$ である。$U,V\in\mathcal O$ と $x\in U\cap V$ に対して，$x\in B\subseteq U$，$x\in C\subseteq V$ となる $B,C\in\mathcal B$ を取る。条件 (2) により $x\in D\subseteq B\cap C\subseteq U\cap V$ となる $D\in\mathcal B$ が存在する。従って $U\cap V\in\mathcal O$ である。さらに $\mathcal U\subseteq\mathcal O$ とすると，その合併の点 $x$ はある $U\in\mathcal U$ に属し，$x\in B\subseteq U$ となる $B\in\mathcal B$ が存在する。これより $\bigcup\mathcal U\in\mathcal O$ となる。空の合併の場合も条件は空虚に成立する。\GenronRefText{K-000147}{位相の有限交叉条件}により $\mathcal O$ は位相である。各 $B\in\mathcal B$ は明らかに $\mathcal O$ に属し，任意の $U\in\mathcal O$ は $\mathcal B$ の部分族の合併である。一意性は開基の定義から従う。
+\end{proof}
+% genron:end K-000210
+% genron:begin K-000211
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000152
+% genron:use K-000208
+% genron:use K-000209
+\Needspace{4\baselineskip}
+\begin{prop}[開基と位相の粗密]\label{k211}
+同一の集合 $X$ 上の位相 $\mathcal O_1,\mathcal O_2$ の開基をそれぞれ $\mathcal B_1,\mathcal B_2$ とする。$\mathcal O_1\subseteq\mathcal O_2$ であるためには，任意の $B\in\mathcal B_1$ と $x\in B$ に対し $x\in C\subseteq B$ となる $C\in\mathcal B_2$ が存在することが必要十分である。
+\end{prop}
+\begin{proof}
+包含が成立すれば $B$ は $\mathcal O_2$ の元であるから命題\ref{k209}を適用できる。逆に条件が成立すると，$B\in\mathcal B_1$ はそれに含まれる $\mathcal B_2$ の元すべての合併であり，従って $\mathcal O_2$ の元である。$\mathcal O_1$ の任意の元は $\mathcal B_1$ の部分族の合併であるから $\mathcal O_2$ に属する。
+\end{proof}
+% genron:end K-000211
+\Needspace{8\baselineskip}
+\section{部分基}
+% genron:begin K-000212
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000110
+% genron:use K-000146
+% genron:use K-000208
+\Needspace{4\baselineskip}
+\begin{defn}[部分基]\label{k212}
+位相空間 $(X,\mathcal O)$ において，部分集合族 $\mathcal S\subseteq\Pow(X)$ の有限部分族の共通部分全体
+\[
+ \mathcal B_{\mathcal S}=
+ \{\bigcap\mathcal F\mid
+ \mathcal F\subseteq\mathcal S,\ \mathcal F\text{ は有限}\}
+\]
+が $\mathcal O$ の開基であるとき，$\mathcal S$ を $\mathcal O$ の\textbf{部分基}という。空の部分族の共通部分は $X$ とする。各 $S\in\mathcal S$ は一元族の共通部分であるから，部分基の元はすべて開集合である。
+\end{defn}
+% genron:end K-000212
+% genron:begin K-000213
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000110
+% genron:use K-000116
+% genron:use K-000154
+% genron:use K-000210
+% genron:use K-000212
+\Needspace{4\baselineskip}
+\begin{thm}[部分基による位相の生成]\label{k213}
+集合 $X$ の任意の部分集合族 $\mathcal S$ は，一意の位相の部分基となる。この位相は $\mathcal S$ を含む最も粗い位相，すなわち \GenronRefText{K-000154}{生成位相}である。
+\end{thm}
+\begin{proof}
+定義\ref{k212}の族 $\mathcal B_{\mathcal S}$ は冪集合の部分集合として存在する。空の族の共通部分により $X\in\mathcal B_{\mathcal S}$ である。$B,C\in\mathcal B_{\mathcal S}$ なら，有限部分族 $\mathcal F,\mathcal G\subseteq\mathcal S$ によって $B=\bigcap\mathcal F$，$C=\bigcap\mathcal G$ と表せる。有限集合の合併の有限性（\GenronRefText{K-000115}{有限集合の非交和}及び \GenronRefText{K-000116}{有限集合の合併}）により $\mathcal F\cup\mathcal G$ は有限であり，
+\[
+ B\cap C=\bigcap(\mathcal F\cup\mathcal G)
+       \in\mathcal B_{\mathcal S}
+\]
+となる。従って定理\ref{k210}の二条件を満たし，$\mathcal B_{\mathcal S}$ を開基とする位相が一意に存在する。この位相は $\mathcal S$ を含む。一方 $\mathcal S$ を含む任意の位相は有限共通部分をすべて含み，さらにそれらの任意合併を含む。従って構成した位相を含む。
+\end{proof}
+% genron:end K-000213
+\Needspace{8\baselineskip}
+\section{近傍基}
+% genron:begin K-000214
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000194
+\Needspace{4\baselineskip}
+\begin{defn}[近傍基]\label{k214}
+位相空間 $(X,\mathcal O)$ の点 $x$ に対して，$\mathcal B_x\subseteq\mathcal N(x)$ が任意の $N\in\mathcal N(x)$ に対し $B\subseteq N$ となる $B\in\mathcal B_x$ を含むとき，$\mathcal B_x$ を $x$ の\textbf{近傍基}という。近傍基の元が開集合であることは要求しない。
+\end{defn}
+% genron:end K-000214
+% genron:begin K-000215
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000194
+% genron:use K-000208
+% genron:use K-000209
+% genron:use K-000214
+\Needspace{4\baselineskip}
+\begin{prop}[開基から得られる近傍基]\label{k215}
+$\mathcal B$ が位相空間 $(X,\mathcal O)$ の開基なら，各 $x\in X$ に対して $\mathcal B_x=\{B\in\mathcal B\mid x\in B\}$ は $x$ の近傍基である。
+\end{prop}
+\begin{proof}
+$\mathcal B_x$ の元は $x$ を含む開集合であるから $x$ の近傍である。$N\in\mathcal N(x)$ なら $x\in U\subseteq N$ となる開集合 $U$ がある。\ref{k209}により $x\in B\subseteq U$ なる $B\in\mathcal B$ が存在する。従って $B\in\mathcal B_x$ かつ $B\subseteq N$ である。
+\end{proof}
+% genron:end K-000215
+% genron:begin K-000216
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000197
+% genron:use K-000214
+\Needspace{4\baselineskip}
+\begin{thm}[近傍基からの位相の構成]\label{k216}
+集合 $X$ の各点 $x$ に非空の部分集合族 $\mathcal B_x\subseteq\Pow(X)$ が与えられるとする。これらがある位相の近傍基となるための必要十分条件は次の三条件である。
+\begin{enumerate}
+\item $B\in\mathcal B_x$ なら $x\in B$.
+\item $B,C\in\mathcal B_x$ なら $D\in\mathcal B_x$ で $D\subseteq B\cap C$ となるものが存在する。
+\item $B\in\mathcal B_x$ なら $C\in\mathcal B_x$ であって，任意の $y\in C$ に対し $D\in\mathcal B_y$，$D\subseteq B$ となるものが存在するような $C$ が存在する。
+\end{enumerate}
+この位相は一意である。
+\end{thm}
+\begin{proof}
+まず $\mathcal B_x$ が近傍基なら，条件 (1) は近傍の性質，条件 (2) は $B\cap C$ が近傍であることから従う。条件 (3) については $B$ が $x$ の近傍であるから $x\in U\subseteq B$ となる開集合 $U$ を取る。$U$ は $x$ の近傍であるので $C\in\mathcal B_x$ で $C\subseteq U$ となるものが存在する。各 $y\in C$ について $U$ は $y$ の近傍であるから $D\in\mathcal B_y$ で $D\subseteq U\subseteq B$ となるものが存在する。
+
+逆に三条件を仮定して
+\[
+ \mathcal N(x)=\{N\subseteq X\mid
+       \exists B\in\mathcal B_x,\ B\subseteq N\}
+\]
+と定める。$\mathcal B_x$ が非空であるから $X\in\mathcal N(x)$ であり，条件 (1) により各近傍候補は $x$ を含む。上方閉性は定義から従い，二元の共通部分に関する閉性は条件 (2) から従う。最後に $N\in\mathcal N(x)$ なら $B\in\mathcal B_x$ で $B\subseteq N$ となるものを取り，条件 (3) の $C$ を取る。$C\in\mathcal N(x)$ であり，各 $y\in C$ について $D\in\mathcal B_y$，$D\subseteq B\subseteq N$ となるものが存在するから $N\in\mathcal N(y)$ である。
+
+従って \GenronRefText{K-000197}{近傍系による位相の特徴づけ}により，$\mathcal N(x)$ を近傍系とする位相が一意に存在する。構成から $\mathcal B_x$ は近傍基である。逆に $\mathcal B_x$ が近傍基である位相では，近傍系は上方閉性により上の式に等しくなければならない。従ってその位相は一意である。
+\end{proof}
+% genron:end K-000216
+\par\medskip\noindent{\small\textbf{参考文献.} J. M. Lee, \textit{Introduction to Topological Manifolds}, 2nd ed., Springer, 2011, Ch.~2, Proposition 2.44, Problem 2-12（開基・部分基）．G. E. Bredon, \textit{Topology and Geometry}, Springer, 1993, Ch.~I, \S2, Definitions 2.4, 2.8（近傍基・開基・部分基）．}
+\end{document}

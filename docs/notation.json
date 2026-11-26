@@ -325,17 +325,17 @@
       {
         "tex": "\\mathcal B_x",
         "label": "近傍基",
-        "id": null
+        "id": "K-000214"
       },
       {
         "tex": "\\mathcal B",
         "label": "開基",
-        "id": null
+        "id": "K-000208"
       },
       {
         "tex": "\\mathcal S",
-        "label": "準開基",
-        "id": null
+        "label": "部分基",
+        "id": "K-000212"
       },
       {
         "tex": "\\operatorname{Int}(A)",

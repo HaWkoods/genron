@@ -70,9 +70,9 @@
 - $\mathcal O_X$：空間Xの位相 — [K-000146](https://hawkoods.github.io/genron/?id=K-000146)
 - $\mathcal O_1\subseteq\mathcal O_2$：位相の粗密 — [K-000152](https://hawkoods.github.io/genron/?id=K-000152)
 - $\mathcal N(x)$：近傍系 — [K-000194](https://hawkoods.github.io/genron/?id=K-000194)
-- $\mathcal B_x$：近傍基
-- $\mathcal B$：開基
-- $\mathcal S$：準開基
+- $\mathcal B_x$：近傍基 — [K-000214](https://hawkoods.github.io/genron/?id=K-000214)
+- $\mathcal B$：開基 — [K-000208](https://hawkoods.github.io/genron/?id=K-000208)
+- $\mathcal S$：部分基 — [K-000212](https://hawkoods.github.io/genron/?id=K-000212)
 - $\operatorname{Int}(A)$：内部 — [K-000198](https://hawkoods.github.io/genron/?id=K-000198)
 - $\overline A$：閉包 — [K-000198](https://hawkoods.github.io/genron/?id=K-000198)
 - $\partial A$：境界 — [K-000203](https://hawkoods.github.io/genron/?id=K-000203)
