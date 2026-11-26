@@ -1,0 +1,203 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-18}
+\fancyhead[R]{\small 圏と函手\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 圏と函手}\par\vspace{2mm}
+{\small N-18\quad 第1版}
+\end{center}
+N-9「二項演算とモノイド」及び N-2「集合・写像・関係」を前提とする。
+\Needspace{8\baselineskip}
+\section{圏}
+% genron:begin K-000241
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000044
+% genron:use K-000047
+\Needspace{4\baselineskip}
+\begin{defn}[小圏と圏の規模]\label{k241}
+集合 $\operatorname{Ob}(\mathcal C)$ と，対象 $X,Y$ ごとに射集合 $\operatorname{Hom}_{\mathcal C}(X,Y)$ を与える。射は始域と終域を指定して扱う。さらに合成写像
+\[
+ \operatorname{Hom}_{\mathcal C}(Y,Z)\times
+ \operatorname{Hom}_{\mathcal C}(X,Y)
+ \longrightarrow\operatorname{Hom}_{\mathcal C}(X,Z)
+\]
+及び各対象 $X$ の恒等射 $1_X$ を与え，次を要求する。
+\begin{enumerate}
+\item 合成可能な $f,g,h$ に対し $(h\circ g)\circ f=h\circ(g\circ f)$.
+\item $f:X\to Y$ に対して $1_Y\circ f=f=f\circ1_X$.
+\end{enumerate}
+この構造を小圏という。対象全体が集合であることを要求しない圏については，本書では対象を指定する条件と，各対象対の射集合・合成・恒等射を与える規則として扱う。このような大圏について対象全体の集合やその冪集合の存在を主張しない。真の類の形式的理論はここでは導入しない。
+\end{defn}
+% genron:end K-000241
+% genron:begin K-000242
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000047
+% genron:use K-000160
+% genron:use K-000161
+% genron:use K-000163
+% genron:use K-000241
+\Needspace{4\baselineskip}
+\begin{prop}[集合とモノイドから得られる圏]\label{k242}
+集合を対象，写像を射とする大圏を $\mathbf{Set}$ と記す。また任意のモノイド $M$ は一対象の小圏を定める。
+\end{prop}
+\begin{proof}
+二集合間の写像全体は集合であり，写像の合成と恒等写像は圏の二条件を満たす。一対象 $\ast$ の場合には $\operatorname{Hom}(\ast,\ast)=M$ とおき，合成を $g\circ f=gf$，恒等射をモノイドの単位元と定めればよい。モノイドの結合律と単位律が圏の公理に対応する。
+\end{proof}
+% genron:end K-000242
+\Needspace{8\baselineskip}
+\section{射と同型}
+% genron:begin K-000243
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+\Needspace{4\baselineskip}
+\begin{defn}[圏における同型射]\label{k243}
+射 $f:X\to Y$ に対して $g:Y\to X$ が $g\circ f=1_X$，$f\circ g=1_Y$ を満たすとき，$f$ を同型射，$g$ をその逆射という。
+\end{defn}
+% genron:end K-000243
+% genron:begin K-000244
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+% genron:use K-000243
+\Needspace{4\baselineskip}
+\begin{prop}[逆射の一意性]\label{k244}
+同型射の逆射は一意である。恒等射は同型射であり，同型射の合成は同型射である。
+\end{prop}
+\begin{proof}
+$g,h$ が $f:X\to Y$ の逆射ならば $g=g\circ(f\circ h)=(g\circ f)\circ h=h$ である。恒等射は自身を逆射とする。$f:X\to Y$，$g:Y\to Z$ の逆射をそれぞれ $u,v$ とすると，$u\circ v$ は $g\circ f$ の両側逆射であることが結合律と単位律から従う。
+\end{proof}
+% genron:end K-000244
+\Needspace{8\baselineskip}
+\section{函手}
+% genron:begin K-000245
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+\Needspace{4\baselineskip}
+\begin{defn}[函手]\label{k245}
+圏 $\mathcal C,\mathcal D$ に対して，対象 $X$ に対象 $F(X)$ を対応させ，射 $f:X\to Y$ に射 $F(f):F(X)\to F(Y)$ を対応させる規則が
+\[
+ F(1_X)=1_{F(X)},\qquad
+ F(g\circ f)=F(g)\circ F(f)
+\]
+を満たすとき，$F:\mathcal C\to\mathcal D$ を函手という。小圏の間ではこれらの対応は集合上の写像として与えられる。
+\end{defn}
+% genron:end K-000245
+% genron:begin K-000246
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+% genron:use K-000245
+\Needspace{4\baselineskip}
+\begin{prop}[函手の合成と恒等函手]\label{k246}
+恒等対応は函手であり，函手の合成は函手である。合成は結合律と単位律を満たす。
+\end{prop}
+\begin{proof}
+恒等対応は恒等射及び合成をそのまま保存する。函手 $F:\mathcal C\to\mathcal D$ と $G:\mathcal D\to\mathcal E$ の合成は対象と射について順次対応を適用して定める。$(GF)(1_X)=G(1_{F(X)})=1_{GF(X)}$ であり，合成についても $(GF)(g\circ f)=G(F(g)\circ F(f))=GF(g)\circ GF(f)$ となる。結合律と単位律は各対象，各射における対応を比較すれば従う。
+\end{proof}
+% genron:end K-000246
+% genron:begin K-000247
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+% genron:use K-000243
+% genron:use K-000245
+\Needspace{4\baselineskip}
+\begin{prop}[函手による同型射の保存]\label{k247}
+函手 $F:\mathcal C\to\mathcal D$ は同型射を同型射に移す。
+\end{prop}
+\begin{proof}
+$g$ を $f$ の逆射とすれば $F(g)\circ F(f)=F(g\circ f)=F(1_X)=1_{F(X)}$ である。逆順の合成も同様に $1_{F(Y)}$ に等しい。従って $F(f)$ は同型射であり $F(g)$ はその逆射である。
+\end{proof}
+% genron:end K-000247
+% genron:begin K-000248
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000170
+% genron:use K-000242
+% genron:use K-000245
+\Needspace{4\baselineskip}
+\begin{prop}[一対象圏とモノイド準同型]\label{k248}
+モノイド $M,N$ から得られる一対象圏の間の函手は，モノイド準同型 $M\to N$ と一対一に対応する。
+\end{prop}
+\begin{proof}
+対象の対応は一通りに定まる。射の対応は写像 $M\to N$ である。函手の恒等射の保存は単位元の保存に，合成の保存は積の保存にほかならない。従って函手の条件はモノイド準同型の条件と一致する。
+\end{proof}
+% genron:end K-000248
+\par\medskip\noindent{\small\textbf{参考文献・制作方針.} S. Mac Lane, \textit{Categories for the Working Mathematician}, 所蔵本文 Ch.~I, Large Categories を参照。宇宙公理は採用せず，大圏は対象全体を集合と扱わない規約に限定した。}
+\end{document}

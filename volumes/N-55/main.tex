@@ -1,0 +1,197 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-55}
+\fancyhead[R]{\small 連続写像と同相\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 連続写像と同相}\par\vspace{2mm}
+{\small N-55\quad 第1版}
+\end{center}
+N-53「近傍と閉包」を前提とし，以下 $X,Y,Z$ は位相空間とする。
+\Needspace{8\baselineskip}
+\section{連続写像}
+% genron:begin K-000217
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000037
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{defn}[連続写像]\label{k217}
+位相空間 $(X,\mathcal O_X),(Y,\mathcal O_Y)$ の間の写像 $f:X\to Y$ が，任意の $V\in\mathcal O_Y$ について $f^{-1}(V)\in\mathcal O_X$ を満たすとき，$f$ を\textbf{連続}という。
+\end{defn}
+% genron:end K-000217
+% genron:begin K-000218
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000036
+% genron:use K-000037
+% genron:use K-000038
+% genron:use K-000217
+\Needspace{4\baselineskip}
+\begin{prop}[連続写像の合成]\label{k218}
+恒等写像は連続であり，二つの連続写像の合成は連続である。
+\end{prop}
+\begin{proof}
+恒等写像による逆像はもとの集合に等しい。連続写像 $f:X\to Y$，$g:Y\to Z$ と開集合 $W\subseteq Z$ に対し，$g^{-1}(W)$ は $Y$ で開であり，$f^{-1}(g^{-1}(W))$ は $X$ で開である。この集合は $(g\circ f)^{-1}(W)$ に等しいから合成は連続である。
+\end{proof}
+% genron:end K-000218
+% genron:begin K-000219
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000038
+% genron:use K-000148
+% genron:use K-000217
+\Needspace{4\baselineskip}
+\begin{prop}[閉集合による連続性判定]\label{k219}
+写像 $f:X\to Y$ が連続であるためには，$Y$ の任意の閉集合の逆像が $X$ の閉集合であることが必要十分である。
+\end{prop}
+\begin{proof}
+逆像は補集合と可換である。すなわち $f^{-1}(Y\setminus F)=X\setminus f^{-1}(F)$ である。閉集合は開集合の補集合であるから，開集合の逆像に関する条件は閉集合の逆像に関する条件と同値である。
+\end{proof}
+% genron:end K-000219
+\Needspace{8\baselineskip}
+\section{局所的な特徴づけ}
+% genron:begin K-000220
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000194
+\Needspace{4\baselineskip}
+\begin{defn}[点における連続性]\label{k220}
+写像 $f:X\to Y$ と $x\in X$ に対して，任意の $N\in\mathcal N_Y(f(x))$ が $f^{-1}(N)\in\mathcal N_X(x)$ を満たすとき，$f$ は $x$ で連続であるという。
+\end{defn}
+% genron:end K-000220
+% genron:begin K-000221
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000196
+% genron:use K-000217
+% genron:use K-000220
+\Needspace{4\baselineskip}
+\begin{thm}[連続性の局所判定]\label{k221}
+写像 $f:X\to Y$ が連続であることと，$X$ のすべての点で連続であることは同値である。
+\end{thm}
+\begin{proof}
+$f$ が連続であり $N$ が $f(x)$ の近傍なら，$f(x)\in V\subseteq N$ なる開集合 $V$ が存在する。$x\in f^{-1}(V)\subseteq f^{-1}(N)$ であって $f^{-1}(V)$ は開集合であるから $f^{-1}(N)$ は近傍である。逆に各点で連続とし，$V$ を $Y$ の開集合とする。任意の $x\in f^{-1}(V)$ に対して $V$ は $f(x)$ の近傍であるから，$f^{-1}(V)$ は $x$ の近傍である。 \GenronRefText{K-000196}{開集合の近傍による判定}により $f^{-1}(V)$ は開集合である。
+\end{proof}
+% genron:end K-000221
+% genron:begin K-000222
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000219
+\Needspace{4\baselineskip}
+\begin{prop}[閉包による連続性判定]\label{k222}
+写像 $f:X\to Y$ が連続であるためには，任意の $A\subseteq X$ について
+\[
+ f(\overline A)\subseteq\overline{f(A)}
+\]
+が成り立つことが必要十分である。
+\end{prop}
+\begin{proof}
+連続とする。$F=\overline{f(A)}$ は閉集合であり，$f^{-1}(F)$ は $A$ を含む閉集合であるから $\overline A\subseteq f^{-1}(F)$ である。従って所望の包含を得る。逆に包含条件を仮定し，任意の閉集合 $F\subseteq Y$ について $A=f^{-1}(F)$ とおく。$f(A)\subseteq F$ から $\overline{f(A)}\subseteq F$ である。よって $f(\overline A)\subseteq F$，すなわち $\overline A\subseteq A$ となり $A$ は閉集合である。命題\ref{k219}により $f$ は連続である。
+\end{proof}
+% genron:end K-000222
+\Needspace{8\baselineskip}
+\section{同相}
+% genron:begin K-000223
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000039
+% genron:use K-000041
+% genron:use K-000217
+\Needspace{4\baselineskip}
+\begin{defn}[同相写像]\label{k223}
+写像 $f:X\to Y$ が全単射であり，$f$ 及びその逆写像 $f^{-1}:Y\to X$ がともに連続であるとき，$f$ を\textbf{同相写像}という。かかる写像が存在するとき $X,Y$ は同相であるといい，$X\cong Y$ と記す。
+\end{defn}
+% genron:end K-000223
+% genron:begin K-000224
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000041
+% genron:use K-000217
+% genron:use K-000223
+\Needspace{4\baselineskip}
+\begin{prop}[同相写像と開集合]\label{k224}
+全単射 $f:X\to Y$ が同相写像であるためには，任意の $U\subseteq X$ について $U$ が開集合であることと $f(U)$ が開集合であることが同値となることが必要十分である。
+\end{prop}
+\begin{proof}
+同相写像ならば $U$ の $f^{-1}$ による逆像は $f(U)$ であるから，$U$ が開なら $f(U)$ は開である。逆の含意は $f$ の連続性から従う。条件を仮定すると，任意の開集合 $V\subseteq Y$ に対して $f(f^{-1}(V))=V$ であるから $f^{-1}(V)$ は開であり，$f$ は連続である。もう一方の含意から逆写像も連続である。
+\end{proof}
+% genron:end K-000224
+\par\medskip\noindent{\small\textbf{参考文献・制作方針.} G. E. Bredon, \textit{Topology and Geometry}, Ch.~I, \S2, Definitions 2.5, 2.7 and Proposition 2.6（所蔵本文の連続性・局所判定を確認）。}
+\end{document}

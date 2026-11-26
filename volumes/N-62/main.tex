@@ -1,0 +1,203 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-62}
+\fancyhead[R]{\small 群と部分群\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 群と部分群}\par\vspace{2mm}
+{\small N-62\quad 第1版}
+\end{center}
+N-9「二項演算とモノイド」を前提とする。積の記号はモノイドの場合と同じく省略する。
+\Needspace{8\baselineskip}
+\section{群}
+% genron:begin K-000225
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000161
+% genron:use K-000163
+\Needspace{4\baselineskip}
+\begin{defn}[群]\label{k225}
+モノイド $G$ の各元 $x$ に対して $xy=yx=1_G$ となる $y\in G$ が存在するとき，$G$ を\textbf{群}という。積が交換的である群を可換群という。
+\end{defn}
+% genron:end K-000225
+% genron:begin K-000226
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000160
+% genron:use K-000161
+% genron:use K-000163
+% genron:use K-000225
+\Needspace{4\baselineskip}
+\begin{prop}[逆元の一意性]\label{k226}
+各元 $x$ の逆元は一意であり，これを $x^{-1}$ と記す。さらに $(x^{-1})^{-1}=x$，$(xy)^{-1}=y^{-1}x^{-1}$ が成り立つ。
+\end{prop}
+\begin{proof}
+$u,v$ がともに $x$ の逆元ならば $u=u(xv)=(ux)v=v$ である。$x$ は $x^{-1}$ の逆元であるから第一式を得る。また $(xy)(y^{-1}x^{-1})=x(yy^{-1})x^{-1}=1_G$ であり，逆順の積も $1_G$ である。一意性から第二式を得る。
+\end{proof}
+% genron:end K-000226
+% genron:begin K-000227
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000160
+% genron:use K-000225
+% genron:use K-000226
+\Needspace{4\baselineskip}
+\begin{prop}[簡約律]\label{k227}
+群 $G$ において $ax=ay$ なら $x=y$，$xa=ya$ なら $x=y$ である。さらに $ax=b$ 及び $ya=b$ はそれぞれ一意の解 $x=a^{-1}b$，$y=ba^{-1}$ を持つ。
+\end{prop}
+\begin{proof}
+第一の等式の両辺に左から $a^{-1}$ を掛け，第二の等式には右から $a^{-1}$ を掛ければ簡約律を得る。方程式の解は同じ操作により表示された元に限られ，代入により実際に解であることが分かる。
+\end{proof}
+% genron:end K-000227
+\Needspace{8\baselineskip}
+\section{部分群}
+% genron:begin K-000228
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000159
+% genron:use K-000174
+% genron:use K-000225
+% genron:use K-000226
+\Needspace{4\baselineskip}
+\begin{defn}[部分群]\label{k228}
+群 $G$ の部分集合 $H$ が $1_G$ を含み，任意の $x,y\in H$ に対し $xy\in H$，$x^{-1}\in H$ となるとき，$H$ を $G$ の\textbf{部分群}といい $H\leq G$ と記す。誘導された積について $H$ は群である。実際，結合律は $G$ から受け継がれ，単位元と逆元は仮定により $H$ に属する。
+\end{defn}
+% genron:end K-000228
+% genron:begin K-000229
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000226
+% genron:use K-000228
+\Needspace{4\baselineskip}
+\begin{prop}[部分群判定]\label{k229}
+部分集合 $H\subseteq G$ が部分群であるためには，$H\ne\varnothing$ であり，任意の $x,y\in H$ について $xy^{-1}\in H$ となることが必要十分である。
+\end{prop}
+\begin{proof}
+必要性は定義から従う。逆に $h\in H$ を取れば $hh^{-1}=1_G\in H$ である。任意の $y\in H$ について $1_Gy^{-1}\in H$ であるから逆元で閉じる。さらに $x,y\in H$ に対して $y^{-1}\in H$ を用いれば $x(y^{-1})^{-1}=xy\in H$ となる。従って部分群である。
+\end{proof}
+% genron:end K-000229
+% genron:begin K-000230
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000045
+% genron:use K-000228
+\Needspace{4\baselineskip}
+\begin{prop}[部分群の共通部分]\label{k230}
+群 $G$ の部分群からなる任意の族の共通部分は部分群である。空の族の共通部分は $G$ とする。
+\end{prop}
+\begin{proof}
+各部分群は $1_G$ を含むから共通部分もこれを含む。共通部分の元 $x,y$ の積及び $x$ の逆元は各部分群に属し，従って共通部分に属する。空の族についても同じ結論が成立する。
+\end{proof}
+% genron:end K-000230
+\Needspace{8\baselineskip}
+\section{生成部分群}
+% genron:begin K-000231
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000228
+% genron:use K-000230
+\Needspace{4\baselineskip}
+\begin{defn}[生成部分群]\label{k231}
+部分集合 $S\subseteq G$ に対し
+\[
+ \langle S\rangle=\bigcap\{H\subseteq G\mid
+ H\leq G,\ S\subseteq H\}
+\]
+と定め，$S$ の生成する部分群という。右辺の族は $G$ を含み，命題\ref{k230}によりその共通部分は部分群である。これは $S$ を含む部分群の最小元である。
+\end{defn}
+% genron:end K-000231
+% genron:begin K-000232
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000037
+% genron:use K-000044
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000118
+% genron:use K-000165
+% genron:use K-000166
+% genron:use K-000226
+% genron:use K-000228
+% genron:use K-000231
+\Needspace{4\baselineskip}
+\begin{prop}[生成部分群の有限積表示]\label{k232}
+$S^{-1}=\{s^{-1}\mid s\in S\}$ とおく。$\langle S\rangle$ は $S\cup S^{-1}$ の元からなる有限列の積全体に等しい。空積を含める。
+\end{prop}
+\begin{proof}
+この有限積全体を $H$ とする。空積により $1_G\in H$ である。二つの有限列の連接の積はそれぞれの積の積であるから $H$ は積で閉じる。また逆元の積の公式を有限列の長さについて帰納的に適用すると，積の逆元は列を逆順にして各元を逆元に替えた列の積になる。$S\cup S^{-1}$ は逆元で閉じるから $H$ も逆元で閉じる。従って $H$ は部分群であり，長さ一の列を考えると $S\subseteq H$ である。他方 $S$ を含む任意の部分群は逆元と有限積で閉じるから $H$ を含む。従って定義により $H=\langle S\rangle$ である。
+\end{proof}
+% genron:end K-000232
+\par\medskip\noindent{\small\textbf{参考文献・制作方針.} 所蔵 Algebra.pdf の群準同型の核・像及び部分群に関する記述を参照。群をモノイドから構成する論証は原論の既出事項に基づく。}
+\end{document}

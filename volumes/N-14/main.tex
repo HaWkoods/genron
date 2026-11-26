@@ -1,0 +1,218 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-14}
+\fancyhead[R]{\small フィルターと収束\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE フィルターと収束}\par\vspace{2mm}
+{\small N-14\quad 第1版}
+\end{center}
+N-53「近傍と閉包」及び N-4「順序と束」を前提とする。空集合を含まないフィルターのみを扱う。
+\Needspace{8\baselineskip}
+\section{フィルター}
+% genron:begin K-000233
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+\Needspace{4\baselineskip}
+\begin{defn}[フィルター]\label{k233}
+集合 $X$ の部分集合族 $\mathcal F\subseteq\Pow(X)$ が次の条件を満たすとき，$\mathcal F$ を\textbf{フィルター}という。
+\begin{enumerate}
+\item $X\in\mathcal F$，$\varnothing\notin\mathcal F$.
+\item $A,B\in\mathcal F$ ならば $A\cap B\in\mathcal F$.
+\item $A\in\mathcal F$，$A\subseteq B\subseteq X$ ならば $B\in\mathcal F$.
+\end{enumerate}
+従って空集合上にフィルターは存在しない。
+\end{defn}
+% genron:end K-000233
+% genron:begin K-000234
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000233
+\Needspace{4\baselineskip}
+\begin{prop}[主フィルター]\label{k234}
+空でない部分集合 $A\subseteq X$ に対して $\{B\subseteq X\mid A\subseteq B\}$ はフィルターである。これを $A$ の生成する主フィルターという。
+\end{prop}
+\begin{proof}
+$X$ は $A$ を含み，空集合は含まない。$A$ を含む二つの集合の共通部分及びそのような集合を含む集合も $A$ を含む。従って定義の三条件を満たす。
+\end{proof}
+% genron:end K-000234
+\Needspace{8\baselineskip}
+\section{フィルター基}
+% genron:begin K-000235
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+\Needspace{4\baselineskip}
+\begin{defn}[フィルター基]\label{k235}
+空でない部分集合族 $\mathcal B\subseteq\Pow(X)$ が $\varnothing\notin\mathcal B$ を満たし，任意の $A,B\in\mathcal B$ に対して $C\in\mathcal B$，$C\subseteq A\cap B$ となるものが存在するとき，$\mathcal B$ をフィルター基という。
+\end{defn}
+% genron:end K-000235
+% genron:begin K-000236
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000233
+% genron:use K-000235
+\Needspace{4\baselineskip}
+\begin{prop}[フィルター基の生成するフィルター]\label{k236}
+フィルター基 $\mathcal B$ に対して
+\[
+ \mathcal F=\{A\subseteq X\mid
+          \exists B\in\mathcal B,\ B\subseteq A\}
+\]
+は $\mathcal B$ を含む最小のフィルターである。
+\end{prop}
+\begin{proof}
+$\mathcal B$ が空でないので $X\in\mathcal F$ であり，$\mathcal B$ の各元が空でないので $\varnothing\notin\mathcal F$ である。$A,A'\in\mathcal F$ なら $B,B'\in\mathcal B$ で $B\subseteq A$，$B'\subseteq A'$ となるものが存在する。基の条件より $C\subseteq B\cap B'\subseteq A\cap A'$ となる $C\in\mathcal B$ が存在する。従って $A\cap A'\in\mathcal F$ である。上方閉性は定義から従う。$\mathcal B$ を含む任意のフィルターは上方閉性により $\mathcal F$ を含む。
+\end{proof}
+% genron:end K-000236
+\Needspace{8\baselineskip}
+\section{収束と集積}
+% genron:begin K-000237
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000233
+\Needspace{4\baselineskip}
+\begin{prop}[近傍フィルター]\label{k237}
+位相空間 $X$ の各点 $x$ に対し $\mathcal N(x)$ はフィルターである。
+\end{prop}
+\begin{proof}
+近傍系は $X$ を含み，各元が $x$ を含むから空集合を含まない。二元の共通部分及び上方包含に関する閉性は \GenronRefText{K-000195}{近傍系の性質}から従う。
+\end{proof}
+% genron:end K-000237
+% genron:begin K-000238
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000194
+% genron:use K-000198
+% genron:use K-000233
+\Needspace{4\baselineskip}
+\begin{defn}[フィルターの収束と集積点]\label{k238}
+位相空間 $X$ 上のフィルター $\mathcal F$ に対し，$\mathcal N(x)\subseteq\mathcal F$ であるとき，$\mathcal F$ は $x$ に収束するといい $\mathcal F\to x$ と記す。任意の $A\in\mathcal F$ に対して $x\in\overline A$ となるとき，$x$ を $\mathcal F$ の集積点という。
+\end{defn}
+% genron:end K-000238
+% genron:begin K-000239
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000201
+% genron:use K-000233
+% genron:use K-000238
+\Needspace{4\baselineskip}
+\begin{prop}[収束と集積点の関係]\label{k239}
+フィルター $\mathcal F$ が $x$ に収束するならば $x$ は $\mathcal F$ の集積点である。
+\end{prop}
+\begin{proof}
+任意の $A\in\mathcal F$ と $N\in\mathcal N(x)$ に対して $N\in\mathcal F$ であるから $A\cap N\in\mathcal F$ である。フィルターは空集合を含まないので $A\cap N\ne\varnothing$ である。\GenronRefText{K-000201}{閉包の近傍による特徴づけ}により $x\in\overline A$ となる。
+\end{proof}
+% genron:end K-000239
+% genron:begin K-000240
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000201
+% genron:use K-000233
+% genron:use K-000235
+% genron:use K-000236
+% genron:use K-000238
+% genron:use K-000239
+\Needspace{4\baselineskip}
+\begin{thm}[集積点と細かいフィルター]\label{k240}
+点 $x$ がフィルター $\mathcal F$ の集積点であることと，$\mathcal F\subseteq\mathcal G$ かつ $\mathcal G\to x$ となるフィルター $\mathcal G$ が存在することは同値である。
+\end{thm}
+\begin{proof}
+後者を仮定すれば命題\ref{k239}により $x$ は $\mathcal G$ の集積点である。$\mathcal F\subseteq\mathcal G$ であるから $\mathcal F$ の集積点でもある。逆に $x$ が $\mathcal F$ の集積点であるとする。
+\[
+ \mathcal B=\{A\cap N\mid A\in\mathcal F,\ N\in\mathcal N(x)\}
+\]
+とおく。この族は $X$ を含み，閉包の特徴づけにより空集合を含まない。二つの元の共通部分は $\mathcal F$ と $\mathcal N(x)$ の共通部分に関する閉性から再び $\mathcal B$ に属する。従ってフィルター基である。命題\ref{k236}によりその生成するフィルター $\mathcal G$ が存在する。$X\in\mathcal N(x)$ と $X\in\mathcal F$ から $\mathcal F\cup\mathcal N(x)\subseteq\mathcal B\subseteq\mathcal G$ となる。よって所望のフィルターを得る。
+\end{proof}
+% genron:end K-000240
+\par\medskip\noindent{\small\textbf{参考文献・制作方針.} Bredon, \textit{Topology and Geometry}, Ch.~I, \S2 の近傍・閉包の記述を参照。フィルターそのものの文献本文は今回未確認であり，定義及び証明は既出集合演算から独立に構成した。}
+\end{document}

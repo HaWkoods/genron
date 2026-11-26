@@ -84,10 +84,10 @@
 - $\overline B_d(x,r)$：閉球
 - $\operatorname{diam}A$：直径
 - $d(x,A)$：点と集合の距離
-- $\mathcal F$：フィルター
+- $\mathcal F$：フィルター — [K-000233](https://hawkoods.github.io/genron/?id=K-000233)
 - $x_i\to x$：収束
 - $\widehat X$：完備化
-- $X\cong Y$：同相
+- $X\cong Y$：同相 — [K-000223](https://hawkoods.github.io/genron/?id=K-000223)
 - $X/{\sim}$：商位相空間
 - $\pi_0(X)$：経路連結成分の集合
 - $\pi_1(X,x)$：基本群
@@ -105,12 +105,12 @@
 - $1_M$：モノイドの単位元 — [K-000163](https://hawkoods.github.io/genron/?id=K-000163)
 - $xy$：二項演算の値 — [K-000159](https://hawkoods.github.io/genron/?id=K-000159)
 - $x^n$：自然数冪 — [K-000168](https://hawkoods.github.io/genron/?id=K-000168)
-- $G$：群
-- $H\leq G$：部分群
+- $G$：群 — [K-000225](https://hawkoods.github.io/genron/?id=K-000225)
+- $H\leq G$：部分群 — [K-000228](https://hawkoods.github.io/genron/?id=K-000228)
 - $N\trianglelefteq G$：正規部分群
-- $1_G$：群の単位元
-- $x^{-1}$：群の逆元
-- $\langle S\rangle$：生成部分群
+- $1_G$：群の単位元 — [K-000225](https://hawkoods.github.io/genron/?id=K-000225)
+- $x^{-1}$：群の逆元 — [K-000226](https://hawkoods.github.io/genron/?id=K-000226)
+- $\langle S\rangle$：生成部分群 — [K-000231](https://hawkoods.github.io/genron/?id=K-000231)
 - $G/N$：商群
 - $G/H$：左剰余類集合
 - $[G:H]$：部分群の指数
@@ -294,10 +294,10 @@
 
 ## 圏・幾何・ホモロジー
 
-- $\mathcal C,\mathcal D$：圏（変数）
-- $\operatorname{Ob}(\mathcal C)$：対象全体
-- $\operatorname{Hom}_{\mathcal C}(X,Y)$：射集合
-- $F:\mathcal C\to\mathcal D$：函手
+- $\mathcal C,\mathcal D$：圏（変数） — [K-000241](https://hawkoods.github.io/genron/?id=K-000241)
+- $\operatorname{Ob}(\mathcal C)$：対象全体 — [K-000241](https://hawkoods.github.io/genron/?id=K-000241)
+- $\operatorname{Hom}_{\mathcal C}(X,Y)$：射集合 — [K-000241](https://hawkoods.github.io/genron/?id=K-000241)
+- $F:\mathcal C\to\mathcal D$：函手 — [K-000245](https://hawkoods.github.io/genron/?id=K-000245)
 - $\mathcal C^{\mathrm{op}}$：反対圏
 - $\eta:F\Rightarrow G$：自然変換
 - $\varprojlim$：射影極限

@@ -21,7 +21,7 @@
 {\LARGE 定義・命題一覧}\par\vspace{2mm}
 {\small 読者確認用}
 \end{center}
-知識台帳の検証済み項目（全216項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
+知識台帳の検証済み項目（全248項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
 \bigskip
 \textbf{ノート別目次}\par\smallskip
 \hyperlink{note-1}{N-1\quad 数学的言語}\dotfill 17項目\par
@@ -33,9 +33,13 @@
 \hyperlink{note-7}{N-7\quad 濃度と可算性}\dotfill 13項目\par
 \hyperlink{note-8}{N-8\quad 位相と開集合}\dotfill 13項目\par
 \hyperlink{note-9}{N-9\quad 二項演算とモノイド}\dotfill 19項目\par
+\hyperlink{note-14}{N-14\quad フィルターと収束}\dotfill 8項目\par
+\hyperlink{note-18}{N-18\quad 圏と函手}\dotfill 8項目\par
 \hyperlink{note-24}{N-24\quad 集合環とσ-加法族}\dotfill 16項目\par
 \hyperlink{note-53}{N-53\quad 近傍と閉包}\dotfill 14項目\par
 \hyperlink{note-54}{N-54\quad 開基と部分基}\dotfill 9項目\par
+\hyperlink{note-55}{N-55\quad 連続写像と同相}\dotfill 8項目\par
+\hyperlink{note-62}{N-62\quad 群と部分群}\dotfill 8項目\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-1}{}
@@ -517,6 +521,60 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 準同型 \(f:M\to N\) と \(S\subseteq \allowbreak M\) に対して \(f(\langle S\rangle _{M})=\allowbreak \langle f(S)\rangle _{N}\)。\par
 \par\bigskip
 \Needspace{12\baselineskip}
+\hypertarget{note-14}{}
+\section*{N-14\quad フィルターと収束}
+\pdfbookmark[1]{N-14 フィルターと収束}{bookmark-14}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（フィルター）}{K-000233}
+集合 \(X\) の部分集合族 \(F\) が \(X\in F\)、\(\varnothing \notin F\)、有限交叉と上方包含で閉じるときフィルターという。\par
+\entryhead{命題（主フィルター）}{K-000234}
+非空部分集合 \(A\subseteq \allowbreak X\) に対し \(\{B\subseteq \allowbreak X\mid A\subseteq \allowbreak B\}\) はフィルターである。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（フィルター基）}{K-000235}
+非空の部分集合族 \(B\subseteq \allowbreak P(X)\) が \(\varnothing \notin B\) かつ任意の \(A,\allowbreak B\in B\) に対し \(C\in B\)、\(C\subseteq \allowbreak A\cap B\) が存在するときフィルター基という。\par
+\entryhead{命題（フィルター基の生成するフィルター）}{K-000236}
+フィルター基 \(B\) に対し \(\{A\subseteq \allowbreak X\mid \)ある \(B\in B\) について \(B\subseteq \allowbreak A\}\) は \(B\) を含む最小のフィルター。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{命題（近傍フィルター）}{K-000237}
+位相空間 \(X\) の各点 \(x\) の近傍系 \(\mathcal{N}(x)\) は \(X\) 上のフィルターである。\par
+\entryhead{定義（フィルターの収束と集積点）}{K-000238}
+位相空間 \(X\) のフィルター \(F\) が \(x\in X\) に収束するとは \(\mathcal{N}(x)\subseteq \allowbreak F\) をいう。\(x\) が \(F\) の集積点であるとは全ての \(A\in F\) に対し \(x\in \overline{A}\) となることをいう。\par
+\entryhead{命題（収束と集積点の関係）}{K-000239}
+フィルター \(F\) が \(x\) に収束するなら \(x\) は \(F\) の集積点である。\par
+\entryhead{定理（集積点と細かいフィルター）}{K-000240}
+フィルター \(F\) の集積点 \(x\) が存在する条件は、\(F\subseteq \allowbreak G\) かつ \(G\to x\) となるフィルター \(G\) が存在することと同値。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-18}{}
+\section*{N-18\quad 圏と函手}
+\pdfbookmark[1]{N-18 圏と函手}{bookmark-18}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（小圏と圏の規模）}{K-000241}
+小圏 \(C\) は対象集合 \(Ob(C)\)、各対象 \(X,\allowbreak Y\) に対する射集合 \(Hom_{C}(X,\allowbreak Y)\)、合成写像と恒等射を持ち、結合律と単位律を満たす。大圏は対象全体を集合と仮定しない記述上の規約とする。\par
+\entryhead{命題（集合とモノイドから得られる圏）}{K-000242}
+集合と写像は大圏 \(Set\) をなし、任意のモノイド \(M\) は一対象の小圏を定める。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（圏における同型射）}{K-000243}
+射 \(f:X\to Y\) に対し \(g:Y\to X\) が \(g\circ f=\allowbreak 1_{X}\)、\(f\circ g=\allowbreak 1_{Y}\) を満たすとき \(f\) を同型射という。\par
+\entryhead{命題（逆射の一意性）}{K-000244}
+同型射の逆射は一意。恒等射は同型射であり同型射の合成は同型射。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（函手）}{K-000245}
+函手 \(F:C\to D\) は対象 \(X\) に \(F(X)\)、射 \(f:X\to Y\) に \(F(f):F(X)\to F(Y)\) を対応させ、恒等射と合成を保存する。\par
+\entryhead{命題（函手の合成と恒等函手）}{K-000246}
+恒等対応は函手であり、函手の合成は函手である。合成は結合律と単位律を満たす。\par
+\entryhead{命題（函手による同型射の保存）}{K-000247}
+函手 \(F\) は同型射を同型射に移し、逆射を逆射に移す。\par
+\entryhead{命題（一対象圏とモノイド準同型）}{K-000248}
+一対象圏の間の函手は対応するモノイド準同型と一対一に対応する。\par
+\par\bigskip
+\Needspace{12\baselineskip}
 \hypertarget{note-24}{}
 \section*{N-24\quad 集合環とσ-加法族}
 \pdfbookmark[1]{N-24 集合環とσ-加法族}{bookmark-24}
@@ -630,4 +688,58 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 開基 \(\mathcal{B}\) に対し各点 \(x\) の族 \(\mathcal{B}_{x}=\allowbreak \{B\in \mathcal{B}\) \(\mid \) \(x\in B\}\) は \(x\) の近傍基である。\par
 \entryhead{定理（近傍基からの位相の構成）}{K-000216}
 集合 \(X\) の各点 \(x\) に非空の部分集合族 \(\mathcal{B}_{x}\) が与えられるとする。各 \(B\in \mathcal{B}_{x}\) は \(x\) を含む。任意の \(B,\allowbreak C\in \mathcal{B}_{x}\) に対して \(D\in \mathcal{B}_{x}\)、\(D\subseteq \allowbreak B\cap C\) が存在する。各 \(B\in \mathcal{B}_{x}\) に対して \(C\in \mathcal{B}_{x}\) が存在し、全ての \(y\in C\) に対して \(D\in \mathcal{B}_{y}\)、\(D\subseteq \allowbreak B\) が存在する。この三条件の下で、各 \(\mathcal{B}_{x}\) を近傍基とする位相が一意に存在する。逆も成立。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-55}{}
+\section*{N-55\quad 連続写像と同相}
+\pdfbookmark[1]{N-55 連続写像と同相}{bookmark-55}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（連続写像）}{K-000217}
+位相空間 \(X,\allowbreak Y\) の写像 \(f:X\to Y\) が連続であるとは、\(Y\) の任意の開集合 \(V\) に対し \(f^{-1}(V)\) が \(X\) で開であることをいう。\par
+\entryhead{命題（連続写像の合成）}{K-000218}
+恒等写像は連続であり、連続写像の合成は連続である。\par
+\entryhead{命題（閉集合による連続性判定）}{K-000219}
+写像 \(f:X\to Y\) が連続 \(\Leftrightarrow \allowbreak \) 任意の閉集合 \(F\subseteq \allowbreak Y\) の逆像 \(f^{-1}(F)\) が閉集合。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（点における連続性）}{K-000220}
+写像 \(f:X\to Y\) が点 \(x\in X\) で連続であるとは、\(f(x)\) の任意の近傍 \(N\) に対し \(f^{-1}(N)\) が \(x\) の近傍であることをいう。\par
+\entryhead{定理（連続性の局所判定）}{K-000221}
+写像 \(f:X\to Y\) が連続 \(\Leftrightarrow \allowbreak \) \(X\) のすべての点で連続。\par
+\entryhead{命題（閉包による連続性判定）}{K-000222}
+写像 \(f:X\to Y\) が連続 \(\Leftrightarrow \allowbreak \) 任意の \(A\subseteq \allowbreak X\) について \(f(\overline{A})\subseteq \allowbreak \overline{f(A)}\)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（同相写像）}{K-000223}
+連続な全単射 \(f:X\to Y\) で逆写像も連続なものを同相写像という。同相写像が存在するとき \(X,\allowbreak Y\) は同相という。\par
+\entryhead{命題（同相写像と開集合）}{K-000224}
+全単射 \(f:X\to Y\) が同相写像 \(\Leftrightarrow \allowbreak \) 任意の \(U\subseteq \allowbreak X\) について \(U\) が開であることと \(f(U)\) が開であることが同値。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-62}{}
+\section*{N-62\quad 群と部分群}
+\pdfbookmark[1]{N-62 群と部分群}{bookmark-62}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（群）}{K-000225}
+モノイド \(G\) の各元 \(x\) に対して \(xy=\allowbreak yx=\allowbreak 1_{G}\) となる \(y\in G\) が存在するとき \(G\) を群という。積が交換的なら可換群という。\par
+\entryhead{命題（逆元の一意性）}{K-000226}
+群 \(G\) の各元 \(x\) の逆元は一意であり \(x^{-1}\) と記す。\((x^{-1})^{-1}=\allowbreak x\)、\((xy)^{-1}=\allowbreak y^{-1}x^{-1}\)。\par
+\entryhead{命題（簡約律）}{K-000227}
+群 \(G\) で \(ax=\allowbreak ay\) なら \(x=\allowbreak y\)、\(xa=\allowbreak ya\) なら \(x=\allowbreak y\)。方程式 \(ax=\allowbreak b\)、\(ya=\allowbreak b\) の解はそれぞれ \(a^{-1}b\)、\(ba^{-1}\) に限る。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（部分群）}{K-000228}
+群 \(G\) の部分集合 \(H\) が \(1_{G}\) を含み、積と逆元で閉じているとき部分群といい \(H\leq \allowbreak G\) と記す。\par
+\entryhead{命題（部分群判定）}{K-000229}
+部分集合 \(H\subseteq \allowbreak G\) が部分群 \(\Leftrightarrow \allowbreak \) \(H\ne \varnothing \) かつ任意の \(x,\allowbreak y\in H\) に対して \(xy^{-1}\in H\)。\par
+\entryhead{命題（部分群の共通部分）}{K-000230}
+群 \(G\) の部分群からなる任意の族の共通部分は部分群。空の族の場合は \(G\) とする。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（生成部分群）}{K-000231}
+部分集合 \(S\subseteq \allowbreak G\) を含む部分群全体の共通部分を生成部分群 \(\langle S\rangle \) という。これは \(S\) を含む最小の部分群。\par
+\entryhead{命題（生成部分群の有限積表示）}{K-000232}
+生成部分群 \(\langle S\rangle \) は \(S\cup \{s^{-1}\mid s\in S\}\) の元の有限積全体に等しい。空積は \(1_{G}\)。\par
 \end{document}

@@ -395,7 +395,7 @@
       {
         "tex": "\\mathcal F",
         "label": "フィルター",
-        "id": null
+        "id": "K-000233"
       },
       {
         "tex": "x_i\\to x",
@@ -410,7 +410,7 @@
       {
         "tex": "X\\cong Y",
         "label": "同相",
-        "id": null
+        "id": "K-000223"
       },
       {
         "tex": "X/{\\sim}",
@@ -490,12 +490,12 @@
       {
         "tex": "G",
         "label": "群",
-        "id": null
+        "id": "K-000225"
       },
       {
         "tex": "H\\leq G",
         "label": "部分群",
-        "id": null
+        "id": "K-000228"
       },
       {
         "tex": "N\\trianglelefteq G",
@@ -505,17 +505,17 @@
       {
         "tex": "1_G",
         "label": "群の単位元",
-        "id": null
+        "id": "K-000225"
       },
       {
         "tex": "x^{-1}",
         "label": "群の逆元",
-        "id": null
+        "id": "K-000226"
       },
       {
         "tex": "\\langle S\\rangle",
         "label": "生成部分群",
-        "id": null
+        "id": "K-000231"
       },
       {
         "tex": "G/N",
@@ -1395,22 +1395,22 @@
       {
         "tex": "\\mathcal C,\\mathcal D",
         "label": "圏（変数）",
-        "id": null
+        "id": "K-000241"
       },
       {
         "tex": "\\operatorname{Ob}(\\mathcal C)",
         "label": "対象全体",
-        "id": null
+        "id": "K-000241"
       },
       {
         "tex": "\\operatorname{Hom}_{\\mathcal C}(X,Y)",
         "label": "射集合",
-        "id": null
+        "id": "K-000241"
       },
       {
         "tex": "F:\\mathcal C\\to\\mathcal D",
         "label": "函手",
-        "id": null
+        "id": "K-000245"
       },
       {
         "tex": "\\mathcal C^{\\mathrm{op}}",
