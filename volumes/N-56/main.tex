@@ -5,7 +5,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small 数学原論\quad N-56}
-\fancyhead[R]{\small 部分空間と積位相\quad\thepage}
+\fancyhead[R]{\small 初期位相と終位相\quad\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
 \theoremstyle{definition}
@@ -30,10 +30,10 @@
 \begin{document}
 \begin{center}
 {\small 数学原論}\par\vspace{4mm}
-{\LARGE 部分空間と積位相}\par\vspace{2mm}
-{\small N-56\quad 第1版}
+{\LARGE 初期位相と終位相}\par\vspace{2mm}
+{\small N-56\quad 第2版}
 \end{center}
-\section{部分空間と積位相}
+\section{初期位相と終位相}
 % genron:begin K-000253
 % genron:use K-000001
 % genron:use K-000002
@@ -126,4 +126,113 @@ $\{f_i^{-1}(U)\mid i\in I,\ U\in\mathcal O_i\}$ を部分基として位相を�
 射影による開集合の逆像は部分基であり，その有限交叉全体が開基となる。同じ座標が複数回現れるときはその座標の開集合を交叉させればよい。有限積では制限しない座標に $X_i$ を取る。空の交叉は $X$ とする。集合の直積の普遍性から $g$ が一意に存在し，初期位相の普遍性から連続である。
 \end{proof}
 % genron:end K-000257
+
+\Needspace{8\baselineskip}
+\section{商位相と終位相}
+% genron:begin K-000258
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000038
+% genron:use K-000046
+% genron:use K-000146
+% genron:use K-000152
+% genron:use K-000217
+% genron:use K-000218
+\Needspace{4\baselineskip}
+\begin{thm}[終位相]\label{k258}
+位相空間族 $(X_i,\mathcal O_i)$ から集合 $Y$ への写像族 $f_i$ に対して
+\[
+ \mathcal O=\{U\subseteq Y\mid \forall i,\ f_i^{-1}(U)\in\mathcal O_i\}
+\]
+は全 $f_i$ を連続にする最細位相である。これを終位相という。位相空間 $Z$ への写像 $g\colon Y\to Z$ が連続であることは全 $g\circ f_i$ が連続であることと同値である。
+\end{thm}
+\begin{proof}
+逆像が空集合，全体集合，任意合併及び有限交叉を保存するから $\mathcal O$ は位相である。定義から各 $f_i$ は連続であり，他の候補の開集合は $\mathcal O$ に属する。任意の $Z$ の開集合 $V$ に対して $g^{-1}(V)\in\mathcal O$ であることは各 $f_i^{-1}(g^{-1}(V))$ が開であることに等しい。
+\end{proof}
+% genron:end K-000258
+% genron:begin K-000259
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000039
+% genron:use K-000053
+% genron:use K-000258
+\Needspace{4\baselineskip}
+\begin{defn}[商位相と商写像]\label{k259}
+位相空間 $X$ から集合 $Y$ への全射 $q\colon X\to Y$ による終位相を商位相という。終域の位相がこの位相と一致する全射を商写像という。同値関係による商集合には標準全射による商位相を入れる。
+\end{defn}
+% genron:end K-000259
+% genron:begin K-000260
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000055
+% genron:use K-000258
+% genron:use K-000259
+\Needspace{4\baselineskip}
+\begin{thm}[商空間の普遍性]\label{k260}
+同値関係による商空間 $X/{\sim}$ と標準全射 $q$ に対して，同値類上一定な連続写像 $f\colon X\to Z$ は $f=\bar f\circ q$ を満たす一意の連続写像 $\bar f$ を定める。
+\end{thm}
+\begin{proof}
+商集合の普遍性によって集合の写像 $\bar f$ が一意に存在する。$\bar f\circ q=f$ が連続であるから終位相の普遍性によって $\bar f$ は連続である。
+\end{proof}
+% genron:end K-000260
+% genron:begin K-000261
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000148
+% genron:use K-000217
+% genron:use K-000258
+% genron:use K-000259
+\Needspace{4\baselineskip}
+\begin{prop}[開全射と閉全射]\label{k261}
+連続な全射 $q\colon X\to Y$ が開集合を開集合に移すか，又は閉集合を閉集合に移すならば商写像である。
+\end{prop}
+\begin{proof}
+開写像の場合 $q^{-1}(U)$ が開なら $U=q(q^{-1}(U))$ は開である。閉写像の場合 $q^{-1}(U)$ が開なら $q^{-1}(Y\setminus U)$ は閉であり，その像 $Y\setminus U$ は閉である。逆はいずれも連続性による。
+\end{proof}
+% genron:end K-000261
+% genron:begin K-000262
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000049
+% genron:use K-000052
+% genron:use K-000258
+% genron:use K-000260
+\Needspace{4\baselineskip}
+\begin{prop}[非交和と貼り合わせ]\label{k262}
+位相空間族の非交和に標準包含による終位相を入れる。$A\subseteq X$ と写像 $h\colon A\to Y$ に対し，$X\amalg Y$ 上で $j_X(a)$ と $j_Y(h(a))$ を同一視する最小の同値関係による商を貼り合わせという。連続写像 $u\colon X\to Z,v\colon Y\to Z$ が $u(a)=v(h(a))$（$a\in A$）を満たすなら貼り合わせからの一意の連続写像を定める。
+\end{prop}
+\begin{proof}
+指定された対を含む同値関係全体は全関係を含む空でない族であり，その共通部分は同値関係である。$u,v$ の定める非交和上の写像は終位相の普遍性により連続である。この写像の値が等しいという同値関係は指定対を含むので最小の同値関係を含む。商空間の普遍性を適用すればよい。
+\end{proof}
+% genron:end K-000262
 \end{document}
