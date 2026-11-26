@@ -50,3 +50,18 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .web-toc a.web-toc-entry{padding-left:12px;font-size:12px}
 .web-article .math{display:inline-block;white-space:nowrap}
 @media(max-width:760px){.web-reader{display:block}.web-article{padding:22px 18px;font-size:16px}.web-part-title{font-size:27px}.web-treatise{font-size:22px}.web-toc{max-height:230px}}
+
+/* Native source text, not the condensed knowledge catalogue. */
+.web-reader{grid-template-columns:minmax(180px,225px) minmax(0,1fr);gap:24px}
+.web-article{padding:clamp(20px,3.8vw,52px);font-size:16px;line-height:1.85;overflow-wrap:normal;word-break:normal}
+.web-entry{margin:1.3em 0 1.7em}
+.web-paragraph{margin:.35em 0 .65em;line-height:1.85;text-align:start;overflow-wrap:anywhere}
+.web-section-title{font-size:1.15em;margin:2em 0 1em;border-bottom:1px solid var(--line);padding-bottom:.25em}
+.web-centered{text-align:center;margin:1em 0}
+.web-math-table{margin:1em auto;border-collapse:collapse;max-width:100%;text-align:left}
+.web-math-table td{border:0;padding:.2em .7em;vertical-align:top}
+.web-math-list{padding-left:2em;margin:.65em 0}
+.web-math-list li{padding-left:.25em}
+.web-article .proof-display{max-width:100%;overflow-x:auto;overflow-y:hidden}
+.web-article .katex-display{margin:.65em 0}
+@media(max-width:900px){.web-reader{display:block}.web-toc{position:static;max-height:200px;margin-bottom:16px}.web-article{padding:22px 18px}}
