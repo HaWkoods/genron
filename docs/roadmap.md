@@ -2,7 +2,7 @@
 
 このファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。完成済みのノート名のリンクをクリックすると、GitHub上でPDFを閲覧できる。未掲載のPDFにはリンクを付けない。
 
-[定義・命題一覧（復習・確認用）](statements.md)
+[定義・命題一覧（PDF）](statements.pdf) · [テキスト版](statements.md)
 
 ```mermaid
 flowchart TD

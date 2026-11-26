@@ -96,3 +96,7 @@ check はエラーで終了コード1、通常の警告だけなら0。strict �
 ## 読者向け定義・命題一覧
 
 [statements.md](statements.md) は復習・確認用の生成物である。`entries` のうち `verified` の公理・規約・定義・補題・命題・定理・系・構成・背景原理を、position の順にノート・章節ごとに列挙する。種類・名称・恒久ID・仮定・statement を掲載し、証明・解説、査読記録、演習、未検証・廃止項目は掲載しない。本文からの逐語抽出ではなく台帳の記述である。`node scripts/knowledge.mjs statements > docs/statements.md` で生成し、台帳変更時に同期する。CIで再生成結果との一致を検査する。生成物の直接編集は禁止する。
+
+### PDF版
+
+正規の閲覧先は [定義・命題一覧（PDF）](statements.pdf)。`node scripts/statements-tex.mjs > docs/statements.tex` で台帳の同じ項目をA5判のpLaTeX原稿に変換する。原稿には仮定とstatementを残し、証明・解説を新たに追加しない。ノート別目次・PDFしおり・知識IDを付す。`node scripts/publish-pdf.mjs` にPDF生成を統合する。Unicode数学記号・ASCIIの上下添字等の変換は限定的な組版処理であり、一般の数式構文解析ではない。新しい記法を追加する際は変換規則と全頁の組版を確認する。CIはTeX生成結果の一致とPDFヘッダを検査するが、PDFの完全な内容・表示の正しさを保証するものではない。

@@ -28,6 +28,12 @@ jobs:
         run: |
           node scripts/knowledge.mjs statements > /tmp/genron-statements.md
           diff -u docs/statements.md /tmp/genron-statements.md
+      - name: Verify statement catalogue TeX
+        run: |
+          node scripts/test-statements-tex.mjs
+          node scripts/statements-tex.mjs > /tmp/genron-statements.tex
+          diff -u docs/statements.tex /tmp/genron-statements.tex
+          test "$(head -c 5 docs/statements.pdf)" = '%PDF-'
       - name: Report affected knowledge
         if: github.event_name != 'workflow_dispatch'
         env:

@@ -1,0 +1,289 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr,needspace}
+\usepackage[dvipdfmx,bookmarks=true,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論}
+\fancyhead[R]{\small 定義・命題一覧\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\newcommand{\entryhead}[2]{\par\addvspace{.55\baselineskip}\Needspace{4\baselineskip}\noindent\textbf{#1}\hfill{\small\ttfamily #2}\par\nobreak\smallskip}
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{3mm}
+{\LARGE 定義・命題一覧}\par\vspace{2mm}
+{\small 読者確認用}
+\end{center}
+知識台帳の検証済み項目（全96項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
+\bigskip
+\textbf{ノート別目次}\par\smallskip
+\hyperlink{note-1}{N-1\quad 数学的言語}\dotfill 17項目\par
+\hyperlink{note-2}{N-2\quad 集合・写像・関係}\dotfill 39項目\par
+\hyperlink{note-3}{N-3\quad 選択公理}\dotfill 11項目\par
+\hyperlink{note-4}{N-4\quad 順序と束}\dotfill 29項目\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-1}{}
+\section*{N-1\quad 数学的言語}
+\pdfbookmark[1]{N-1 数学的言語}{bookmark-1}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{規約（言明と論理結合子）}{K-000001}
+\(P,\allowbreak Q\) を意味の定まった数学的言明とし、\(\neg P\)、\(P\land Q\)、\(P\lor Q\)（包含的）、\(P\Rightarrow \allowbreak Q\)、\(P\Leftrightarrow \allowbreak Q\) を各自然言語の略記とする。同値は双方の含意を意味する。\par
+\entryhead{規約（量化）}{K-000002}
+仮定： \(P(x)\) は対象範囲の各対象について意味を持つ。\par
+対象範囲を指定し、\(\forall x\) \(P(x)\) は任意の \(x\) について、\(\exists x\) \(P(x)\) は \(P\) を満たす \(x\) の存在、\(\exists !x\) \(P(x)\) はただ一つの存在を表す。\par
+\entryhead{規約（対象の範囲と括弧）}{K-000003}
+\(x=\allowbreak y\) は同一対象、\(x\in A\) は \(A\) の元であることを表す。括弧等で作用範囲を明示し、束縛変数を他変数と衝突しないよう改名する。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{規約（制限付き量化）}{K-000004}
+仮定： 展開形では \(A\) の全元を含む量化範囲上で \(P(x)\) が意味を持つ。\par
+\(\forall x\in A,\allowbreak P(x)\) は \(\forall x(x\in A\Rightarrow \allowbreak P(x))\)、\(\exists x\in A,\allowbreak P(x)\) は \(\exists x(x\in A\land P(x))\) の略記。\(P\) が \(A\) 上だけで意味を持つ場合は制限付き量化を自然言語として直接解釈する。\(A\) に元がないとき全称は成立、存在は不成立。\par
+\entryhead{規約（その他の略記）}{K-000005}
+\(x\notin A\) は \(\neg (x\in A)\)、\(x\ne y\) は \(\neg (x=\allowbreak y)\)。同種量化の連記 \(\forall x,\allowbreak y\in A\) は \(\forall x\in A,\allowbreak \forall y\in A\) の略記とし、存在量化も同様。\par
+\entryhead{命題（一意存在）}{K-000006}
+仮定： \(x,\allowbreak y\) の対象範囲は同一、\(y\) は衝突しない新しい変数。\par
+\(\exists !x\) \(P(x)\) \(\Leftrightarrow \allowbreak \) \(\exists x(P(x)\land \forall y(P(y)\Rightarrow \allowbreak y=\allowbreak x))\)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{背景原理（古典的推論）}{K-000007}
+排中律 \(P\lor \neg P\)、矛盾律 \(\neg (P\land \neg P)\)、矛盾を導く仮定の否定、矛盾する仮定からの任意の結論を背景の推論原理として採用する。\par
+\entryhead{命題（否定と含意）}{K-000008}
+\(\neg \neg P\Leftrightarrow \allowbreak P\)；\((P\Rightarrow \allowbreak Q)\Leftrightarrow \allowbreak (\neg Q\Rightarrow \allowbreak \neg P)\)；\(\neg (P\Rightarrow \allowbreak Q)\Leftrightarrow \allowbreak (P\land \neg Q)\)。\par
+\entryhead{命題（交換律・結合律・冪等律）}{K-000009}
+連言・選言の交換律、結合律および冪等律 \(P\land P\Leftrightarrow \allowbreak P\)、\(P\lor P\Leftrightarrow \allowbreak P\)。\par
+\entryhead{命題（分配律と吸収律）}{K-000010}
+\(P\land (Q\lor R)\Leftrightarrow \allowbreak (P\land Q)\lor (P\land R)\)；\(P\lor (Q\land R)\Leftrightarrow \allowbreak (P\lor Q)\land (P\lor R)\)；\(P\land (P\lor Q)\Leftrightarrow \allowbreak P\)；\(P\lor (P\land Q)\Leftrightarrow \allowbreak P\)。\par
+\entryhead{命題（De Morgan の法則）}{K-000011}
+\(\neg (P\lor Q)\Leftrightarrow \allowbreak \neg P\land \neg Q\)；\(\neg (P\land Q)\Leftrightarrow \allowbreak \neg P\lor \neg Q\)。\par
+\entryhead{命題（含意の合成）}{K-000012}
+\(P\Rightarrow \allowbreak Q\) と \(Q\Rightarrow \allowbreak R\) から \(P\Rightarrow \allowbreak R\) が従う。同値についても推移性が成立する。\par
+\entryhead{命題（量化の否定）}{K-000013}
+仮定： 各式の量化範囲は同一。\par
+\(\neg \exists x\) \(P(x)\Leftrightarrow \allowbreak \forall x\) \(\neg P(x)\)；\(\neg \forall x\) \(P(x)\Leftrightarrow \allowbreak \exists x\) \(\neg P(x)\)。\par
+\entryhead{命題（量化の交換）}{K-000014}
+仮定： \(x,\allowbreak y\) の対象範囲は互いに依存しない。\par
+\(\forall x\forall y\) \(P(x,\allowbreak y)\Leftrightarrow \allowbreak \forall y\forall x\) \(P(x,\allowbreak y)\)；\(\exists x\exists y\) \(P(x,\allowbreak y)\Leftrightarrow \allowbreak \exists y\exists x\) \(P(x,\allowbreak y)\)。\par
+\entryhead{命題（量化と論理結合子）}{K-000015}
+仮定： \(P,\allowbreak Q\) の量化対象範囲は同一。\par
+\(\forall x(P(x)\land Q(x))\Leftrightarrow \allowbreak (\forall x\) \(P(x))\land (\forall x\) \(Q(x))\)；\(\exists x(P(x)\lor Q(x))\Leftrightarrow \allowbreak (\exists x\) \(P(x))\lor (\exists x\) \(Q(x))\)。\par
+\entryhead{命題（量化の順序に関する注意）}{K-000016}
+仮定： \(x,\allowbreak y\) の対象範囲は互いに依存しない。\par
+\(\exists y\forall x\) \(P(x,\allowbreak y)\Rightarrow \allowbreak \forall x\exists y\) \(P(x,\allowbreak y)\)。逆は一般に不成立。全称量化の選言への分配および存在量化の連言への分配は同値として一般に不成立（二対象の反例）。\par
+\entryhead{規約（論証の方法）}{K-000017}
+直接証明、対偶、背理法、場合分け、全称言明、存在言明、一意存在言明の論証における運用上の約束。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-2}{}
+\section*{N-2\quad 集合・写像・関係}
+\pdfbookmark[1]{N-2 集合・写像・関係}{bookmark-2}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{公理（外延性）}{K-000018}
+集合 \(A,\allowbreak B\) は任意の対象 \(x\) について \(x\in A\Leftrightarrow \allowbreak x\in B\) が成り立つとき等しい。逆は等号の意味から従う。\par
+\entryhead{定義（部分集合）}{K-000019}
+\(A\subseteq \allowbreak B\) \(\Leftrightarrow \allowbreak \) \(\forall x\in A,\allowbreak \) \(x\in B\)。\(A\subsetneq B\) \(\Leftrightarrow \allowbreak \) \(A\subseteq \allowbreak B\) かつ \(A\ne B\)。\par
+\entryhead{命題（包含の性質）}{K-000020}
+\(A\subseteq \allowbreak A\)；\(A\subseteq \allowbreak B\) かつ \(B\subseteq \allowbreak C\) なら \(A\subseteq \allowbreak C\)；\(A=\allowbreak B\) \(\Leftrightarrow \allowbreak \) \(A\subseteq \allowbreak B\) かつ \(B\subseteq \allowbreak A\)。\par
+\entryhead{公理（空集合の存在）}{K-000021}
+元を一つも持たない集合が存在する。外延性により一意であり \(\varnothing \) と記す。\par
+\entryhead{命題（空集合の特徴）}{K-000022}
+任意の集合 \(A\) について \(\varnothing \subseteq \allowbreak A\)。\(A\ne \varnothing \) \(\Leftrightarrow \allowbreak \) \(\exists x\in A\)。\par
+\entryhead{公理（対集合の存在）}{K-000023}
+任意の集合 \(a,\allowbreak b\) に対し \(x\in C\) \(\Leftrightarrow \allowbreak \) \((x=\allowbreak a\) または \(x=\allowbreak b)\) を満たす集合 \(C\) が存在し一意。\(\{a,\allowbreak b\}\) と記す。\(\{a\}=\allowbreak \{a,\allowbreak a\}\)。\par
+\entryhead{公理（部分集合の指定）}{K-000024}
+集合 \(A\) の各元について意味を持つ数学的条件 \(P(x)\) に対し \(x\in B\) \(\Leftrightarrow \allowbreak \) \(x\in A\) かつ \(P(x)\) を満たす集合 \(B\) が存在し一意。\(\{x\in A\) \(\mid \) \(P(x)\}\) と記す。\par
+\entryhead{命題（全ての集合からなる集合は存在しない）}{K-000025}
+すべての集合を元とする集合は存在しない。\par
+\entryhead{公理（合併集合の存在）}{K-000026}
+集合 \(C\) に対して \(x\in U\) \(\Leftrightarrow \allowbreak \) \(\exists A\in C,\allowbreak \) \(x\in A\) を満たす集合 \(U\) が存在し一意。\(\bigcup C\) と記す。\par
+\entryhead{公理（冪集合の存在）}{K-000027}
+集合 \(A\) に対し \(B\in P(A)\) \(\Leftrightarrow \allowbreak \) \(B\subseteq \allowbreak A\) を満たす集合 \(P(A)\) が存在し一意。\par
+\entryhead{公理（一意に指定された元の集合）}{K-000028}
+集合 \(A\) と各 \(x\in A\) に対してただ一つの集合 \(y\) を指定する条件 \(P(x,\allowbreak y)\) が与えられたとき、それらの \(y\) 全体からなる集合が存在する。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（二集合の演算）}{K-000029}
+\(A\cup B=\allowbreak \bigcup \{A,\allowbreak B\}\)、\(A\cap B=\allowbreak \{x\in A\) \(\mid \) \(x\in B\}\)、\(A\setminus B=\allowbreak \{x\in A\) \(\mid \) \(x\notin B\}\)。\(B\subseteq \allowbreak A\) のとき \(A\setminus B\) は \(A\) における \(B\) の補集合。\par
+\entryhead{命題（集合演算の法則）}{K-000030}
+合併・共通部分は交換・結合・冪等・分配・吸収律を満たす。\(A\cup \varnothing =\allowbreak A\)、\(A\cap \varnothing =\allowbreak \varnothing \)、\(A\setminus A=\allowbreak \varnothing \)。\(A\subseteq \allowbreak B\) \(\Leftrightarrow \allowbreak \) \(A\cap B=\allowbreak A\) \(\Leftrightarrow \allowbreak \) \(A\cup B=\allowbreak B\)。\par
+\entryhead{命題（補集合の法則）}{K-000031}
+\(A,\allowbreak B\subseteq \allowbreak E\) のとき \(A\cup (E\setminus A)=\allowbreak E\)、\(A\cap (E\setminus A)=\allowbreak \varnothing \)、\(E\setminus (E\setminus A)=\allowbreak A\)、\(E\setminus (A\cup B)=\allowbreak (E\setminus A)\cap (E\setminus B)\)、\(E\setminus (A\cap B)=\allowbreak (E\setminus A)\cup (E\setminus B)\)。\par
+\entryhead{構成（順序対）}{K-000032}
+\((a,\allowbreak b)=\allowbreak \{\{a\},\allowbreak \{a,\allowbreak b\}\}\) と構成する。\((a,\allowbreak b)=\allowbreak (c,\allowbreak d)\) \(\Leftrightarrow \allowbreak \) \(a=\allowbreak c\) かつ \(b=\allowbreak d\)。\par
+\entryhead{構成（直積）}{K-000033}
+\(A\times B=\allowbreak \{(a,\allowbreak b)\) \(\mid \) \(a\in A,\allowbreak b\in B\}\) は \(P(P(A\cup B))\) の部分集合として存在する。\(A\times B=\allowbreak \varnothing \) \(\Leftrightarrow \allowbreak \) \(A=\allowbreak \varnothing \) または \(B=\allowbreak \varnothing \)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（写像）}{K-000034}
+写像 \(f:A\to B\) は始域 \(A\)、終域 \(B\)、グラフ \(G\subseteq \allowbreak A\times B\) を持ち、任意の \(a\in A\) にただ一つの \(b\in B\) が対応するもの。\(f(a)=\allowbreak b\) \(\Leftrightarrow \allowbreak \) \((a,\allowbreak b)\in G\)。相等は始域・終域・グラフの一致。\par
+\entryhead{命題（写像の指定）}{K-000035}
+\(A\) の各 \(a\) に一意に \(b\in B\) を指定する条件 \(P(a,\allowbreak b)\) は一意の写像 \(f:A\to B\) を定める。空集合から任意の \(B\) への写像は一意。\(A\ne \varnothing \) なら \(A\to \varnothing \) は存在しない。\par
+\entryhead{構成（合成と恒等写像）}{K-000036}
+\(f:A\to B\)、\(g:B\to C\) の合成 \(g\circ f:A\to C\) は \((g\circ f)(a)=\allowbreak g(f(a))\) で定まる。\(\mathrm{id}_{A}(a)=\allowbreak a\)。合成は結合的、恒等写像は単位。\par
+\entryhead{定義（像と逆像）}{K-000037}
+\(f:A\to B\)、\(S\subseteq \allowbreak A\)、\(T\subseteq \allowbreak B\) に対し \(f(S)=\allowbreak \{b\in B\) \(\mid \) \(\exists a\in S,\allowbreak f(a)=\allowbreak b\}\)、\(f^{-1}(T)=\allowbreak \{a\in A\) \(\mid \) \(f(a)\in T\}\)。\par
+\entryhead{命題（像・逆像と集合演算）}{K-000038}
+\(S,\allowbreak S'\subseteq \allowbreak A\)、\(T,\allowbreak T'\subseteq \allowbreak B\) に対し \(f(S\cup S')=\allowbreak f(S)\cup f(S')\)、\(f(S\cap S')\subseteq \allowbreak f(S)\cap f(S')\)、\(f^{-1}(T\cup T')=\allowbreak f^{-1}(T)\cup f^{-1}(T')\)、\(f^{-1}(T\cap T')=\allowbreak f^{-1}(T)\cap f^{-1}(T')\)、\(f^{-1}(B\setminus T)=\allowbreak A\setminus f^{-1}(T)\)。\(S\subseteq \allowbreak f^{-1}(f(S))\)、\(f(f^{-1}(T))=\allowbreak T\cap f(A)\)。\par
+\entryhead{定義（単射・全射・全単射）}{K-000039}
+\(f:A\to B\) が単射 \(\Leftrightarrow \allowbreak \) \(\forall a,\allowbreak a'\in A,\allowbreak \) \(f(a)=\allowbreak f(a')\Rightarrow \allowbreak a=\allowbreak a'\)。全射 \(\Leftrightarrow \allowbreak \) \(\forall b\in B,\allowbreak \exists a\in A,\allowbreak f(a)=\allowbreak b\) \(\Leftrightarrow \allowbreak \) \(f(A)=\allowbreak B\)。双方を全単射という。\par
+\entryhead{命題（合成と単射・全射）}{K-000040}
+\(f:A\to B\)、\(g:B\to C\) がともに単射なら \(g\circ f\) は単射、ともに全射なら全射。\(g\circ f\) が単射なら \(f\) は単射、全射なら \(g\) は全射。\par
+\entryhead{命題（逆写像）}{K-000041}
+\(f:A\to B\) が全単射 \(\Leftrightarrow \allowbreak \) \(g:B\to A\) で \(g\circ f=\allowbreak \mathrm{id}_{A}\)、\(f\circ g=\allowbreak \mathrm{id}_{B}\) を満たすものが存在する。その \(g\) は一意。\par
+\entryhead{構成（制限・包含・終域の縮小）}{K-000042}
+\(S\subseteq \allowbreak A\) なら包含 \(i:S\to A,\allowbreak \) \(i(s)=\allowbreak s\) と制限 \(f\mid _{S}:S\to B\) が存在。\(f(A)\subseteq \allowbreak T\subseteq \allowbreak B\) なら \(f\) を \(A\to T\) に終域縮小できる。\par
+\entryhead{命題（直積の普遍性）}{K-000043}
+射影 \(p:A\times B\to A\)、\(q:A\times B\to B\) に対し任意の \(u:X\to A,\allowbreak v:X\to B\) を満たす \(w:X\to A\times B\) で \(p\circ w=\allowbreak u,\allowbreak q\circ w=\allowbreak v\) が一意に存在する。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{定義（集合族）}{K-000044}
+添字集合 \(I\) の各 \(i\) に集合 \(A_{i}\) が一意に与えられる対応を集合族 \((A_{i})_{i\in I}\) という。一意に指定された元の集合の原理により値の集合 \(C=\allowbreak \{A_{i}\) \(\mid \) \(i\in I\}\) が存在し、\(I\to C\) として表せる。\par
+\entryhead{構成（集合族の合併と共通部分）}{K-000045}
+集合族の合併 \(\bigcup _{i\in I}A_{i}=\allowbreak \bigcup \{A_{i}\mid i\in I\}\)。すべて \(A_{i}\subseteq \allowbreak E\) のとき \(E\) における共通部分は \(\{x\in E\mid \forall i\in I,\allowbreak x\in A_{i}\}\)。\(I\ne \varnothing \) なら共通部分は \(E\) に依存せず存在、\(I=\allowbreak \varnothing \) なら \(E\) に等しい。\par
+\entryhead{命題（集合族と逆像・補集合）}{K-000046}
+\(T_{i}\subseteq \allowbreak B\) と \(f:A\to B\) に対し \(f^{-1}(\bigcup T_{i})=\allowbreak \bigcup f^{-1}(T_{i})\)、\(f^{-1}(\bigcap _{B}\) \(T_{i})=\allowbreak \bigcap _{A}\) \(f^{-1}(T_{i})\)。\(B\setminus \bigcup T_{i}=\allowbreak \bigcap _{B}(B\setminus T_{i})\)、\(B\setminus \bigcap _{B}\) \(T_{i}=\allowbreak \bigcup (B\setminus T_{i})\)。空添字を含み、共通部分は指定母集合内。\par
+\entryhead{構成（写像の集合と直積族）}{K-000047}
+\(B^{A}\) は \(A\to B\) の写像全体。グラフを \(P(A\times B)\) 内で分離してから写像に対応させて存在を得る。集合族の積 \(\prod A_{i}=\allowbreak \{f\in U^{I}\) \(\mid \) \(\forall i,\allowbreak f(i)\in A_{i}\},\allowbreak \) \(U=\allowbreak \bigcup A_{i}\)。\(I=\allowbreak \varnothing \) なら積は一元集合、空の因子があれば空。\par
+\entryhead{命題（集合族の直積の普遍性）}{K-000048}
+\(P=\allowbreak \prod A_{i}\)、\(p_{i}:P\to A_{i},\allowbreak f\mapsto f(i)\)。集合 \(X\) と各 \(i\) に写像 \(g_{i}:X\to A_{i}\) が一意に指定される族に対し \(p_{i}\circ g=\allowbreak g_{i}\) を満たす \(g:X\to P\) が一意に存在。空添字を含む。\par
+\entryhead{構成（非交和とその普遍性）}{K-000049}
+\(D=\allowbreak \coprod A_{i}=\allowbreak \{(i,\allowbreak a)\in I\times U\mid a\in A_{i}\}\)、\(\iota _{i}:A_{i}\to D\)、\(a\mapsto (i,\allowbreak a)\)。任意の \(g_{i}:A_{i}\to X\) の族に対し \(g:D\to X\) で \(g\circ \iota _{i}=\allowbreak g_{i}\) が一意に存在。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第5節}
+\entryhead{定義（関係）}{K-000050}
+\(A\) から \(B\) への関係は \(A\times B\) の部分集合 \(R\)。\(a\) \(R\) \(b\) \(\Leftrightarrow \allowbreak \) \((a,\allowbreak b)\in R\)。\(A=\allowbreak B\) なら \(A\) 上の関係。\par
+\entryhead{構成（逆関係と関係の合成）}{K-000051}
+\(R\subseteq \allowbreak A\times B\) の逆関係 \(R^{-1}\subseteq \allowbreak B\times A\)、\(b\) \(R^{-1}\) \(a\) \(\Leftrightarrow \allowbreak \) \(a\) \(R\) \(b\)。\(S\subseteq \allowbreak B\times C\) の合成 \(S\circ R\subseteq \allowbreak A\times C\)、\(a(S\circ R)c\) \(\Leftrightarrow \allowbreak \) \(\exists b\in B,\allowbreak a\) \(R\) \(b\) \(\land \) \(b\) \(S\) \(c\)。合成は結合的。\par
+\entryhead{定義（同値関係）}{K-000052}
+\(A\) 上の関係 \(\sim \) が反射的 \(x\sim x\)、対称的 \(x\sim y\Rightarrow \allowbreak y\sim x\)、推移的 \(x\sim y\land y\sim z\Rightarrow \allowbreak x\sim z\) なら同値関係。\par
+\entryhead{構成（同値類と商集合）}{K-000053}
+\([x]=\allowbreak \{y\in A\mid x\sim y\}\)。\(x\sim y\) \(\Leftrightarrow \allowbreak \) \([x]=\allowbreak [y]\) \(\Leftrightarrow \allowbreak \) \([x]\cap [y]\ne \varnothing \)。\(A/\sim =\allowbreak \{[x]\mid x\in A\}\subseteq \allowbreak P(A)\)。標準全射 \(\pi :A\to A/\sim \)。\par
+\entryhead{命題（同値関係と分割）}{K-000054}
+分割 \(C\subseteq \allowbreak P(A)\) は各元が非空、相異なる元は交わらず、\(\bigcup C=\allowbreak A\)。\(A/\sim \) は分割。逆に \(x\sim y\) \(\Leftrightarrow \allowbreak \) \(\exists C\in \)分割\(,\allowbreak x,\allowbreak y\in C\) は同値関係で同値類の集合は元の分割。\par
+\entryhead{命題（商集合の普遍性）}{K-000055}
+\(\sim \) が \(A\) 上の同値関係、\(\pi :A\to A/\sim \)、\(f:A\to B\) とする。\(\exists !g:A/\sim \to B,\allowbreak \) \(g\circ \pi =\allowbreak f\) \(\Leftrightarrow \allowbreak \) \(\forall x,\allowbreak y\in A,\allowbreak x\sim y\Rightarrow \allowbreak f(x)=\allowbreak f(y)\)。\par
+\entryhead{命題（写像の標準分解）}{K-000056}
+\(f:A\to B\) による \(x\sim _{f}\) \(y\) \(\Leftrightarrow \allowbreak \) \(f(x)=\allowbreak f(y)\) は同値関係。標準全射 \(A\to A/\sim _{f}\)、全単射 \(A/\sim _{f}\to f(A)\)、包含 \(f(A)\to B\) の合成が \(f\)。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-3}{}
+\section*{N-3\quad 選択公理}
+\pdfbookmark[1]{N-3 選択公理}{bookmark-3}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（選択函数）}{K-000057}
+集合族 \((A_{i})_{i\in I}\)、\(U=\allowbreak \bigcup A_{i}\) に対し、\(f:I\to U\) で全 \(i\) について \(f(i)\in A_{i}\) を満たすものを選択函数という。選択函数の集合は N-2 の直積 \(\prod A_{i}\) に等しい。\par
+\entryhead{命題（一意選択）}{K-000058}
+仮定： \(P(i,\allowbreak a)\) は各 \(i\) と \(a\in A_{i}\) について意味を持つ。\par
+各 \(i\in I\) に対して \(A_{i}\) 内で条件 \(P(i,\allowbreak a)\) を満たす \(a\) が一意に存在するとき、全 \(i\) で \(P(i,\allowbreak f(i))\) を満たす選択函数 \(f\) が一意に存在する。選択公理は不要。\par
+\entryhead{命題（二つの集合からの選択）}{K-000059}
+\(I=\allowbreak \{i,\allowbreak j\}\)、各 \(A_{k}\) が非空なら選択函数が存在する。\(i=\allowbreak j\) の場合も含む。選択公理は不要。\par
+\entryhead{公理（選択公理）}{K-000060}
+任意の集合 \(I\) および各 \(A_{i}\ne \varnothing \) を満たす集合族 \((A_{i})_{i\in I}\) に対し、選択函数 \(f:I\to \bigcup A_{i}\) が存在する。\par
+\entryhead{命題（直積の非空性）}{K-000061}
+任意の集合族について \(\prod A_{i}\ne \varnothing \) \(\Leftrightarrow \allowbreak \) \(\forall i\in I,\allowbreak A_{i}\ne \varnothing \)。十分性は選択公理と同値な一般命題であり、必要性は選択公理不要。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（右逆写像と左逆写像）}{K-000062}
+\(f:A\to B\)、\(g:B\to A\) に対し \(f\circ g=\allowbreak \mathrm{id}_{B}\) なら \(g\) は右逆、\(g\circ f=\allowbreak \mathrm{id}_{A}\) なら左逆。右逆を持つ写像は全射、左逆を持つ写像は単射。\par
+\entryhead{命題（全射の右逆）}{K-000063}
+仮定： 右逆の存在の十分性には選択公理を使用。逆方向は仮定としての全射の右逆存在のみを使用。\par
+選択公理の下で任意の全射 \(f:A\to B\) は右逆写像を持つ。逆に全ての全射が右逆を持つと仮定すれば選択公理が従う。\par
+\entryhead{命題（単射の左逆）}{K-000064}
+単射 \(f:A\to B\) に対し \(A\ne \varnothing \) なら左逆が存在する。\(A=\allowbreak \varnothing \) のとき左逆が存在する必要十分条件は \(B=\allowbreak \varnothing \)。選択公理は不要。\par
+\entryhead{命題（関係の写像による実現）}{K-000065}
+仮定： \(R\) の全域性。逆向きの証明では関係についての一般命題を仮定する。\par
+任意の関係 \(R\subseteq \allowbreak A\times B\) が \(\forall a\in A,\allowbreak \exists b\in B,\allowbreak aRb\) を満たすなら、\(\forall a\in A,\allowbreak aRf(a)\) となる写像 \(f:A\to B\) が存在する。この一般命題は選択公理と同値。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{命題（商写像の切断と代表元）}{K-000066}
+同値関係 \(\sim \) on \(A\) に対し \(\pi :A\to A/\sim \) の右逆 \(s\) が存在する。その像 \(T\) は各同値類とただ一つの元で交わる。逆にそのような \(T\) から \(s\) が一意に定まる。任意の分割の横断集合存在は選択公理と同値。\par
+\entryhead{命題（全射の積）}{K-000067}
+集合族 \((A_{i}),\allowbreak (B_{i})\)、全射 \(f_{i}:A_{i}\to B_{i}\) の族について \(F:\prod A_{i}\to \prod B_{i}\)、\(F(a)(i)=\allowbreak f_{i}(a(i))\) は全射。写像 \(F\) 自体の構成は選択公理不要、全射性に用いる。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-4}{}
+\section*{N-4\quad 順序と束}
+\pdfbookmark[1]{N-4 順序と束}{bookmark-4}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（前順序と半順序）}{K-000068}
+集合 \(P\) 上の反射的・推移的関係を前順序といい、更に反対称的なら半順序という。任意の二元が比較可能な半順序を全順序という。順序集合は \(P\) と半順序の組。空集合も許す。\par
+\entryhead{命題（狭義順序）}{K-000069}
+半順序から \(x<y\) \(\Leftrightarrow \allowbreak \) \(x\leq \allowbreak y\land x\ne y\) と定めると非反射的かつ推移的。逆に非反射的推移的関係 \(<\) から \(x\leq \allowbreak y\) \(\Leftrightarrow \allowbreak \) \(x<y\lor x=\allowbreak y\) と定めると半順序となる。両構成は互いに逆。\par
+\entryhead{命題（部分順序集合と双対）}{K-000070}
+部分集合 \(S\subseteq \allowbreak P\) には制限した順序が入り、双対 \(P^{\mathrm{op}}\) は \(x\leq \allowbreak _{\mathrm{op}}\) \(y\) \(\Leftrightarrow \allowbreak \) \(y\leq \allowbreak x\) による順序集合。\(P,\allowbreak Q\) の直積には成分ごとの順序が入る。冪集合 \(P(E)\) は包含により順序集合。\par
+\entryhead{命題（前順序の商）}{K-000071}
+前順序 \(P\) に \(x\sim y\) \(\Leftrightarrow \allowbreak \) \(x\leq \allowbreak y\) かつ \(y\leq \allowbreak x\) と定めると同値関係。\(P/\sim \) 上の \([x]\leq \allowbreak [y]\) \(\Leftrightarrow \allowbreak \) \(x\leq \allowbreak y\) は代表元に依存せず半順序となる。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（上界・下界と最大元・極大元）}{K-000072}
+\(S\subseteq \allowbreak P\) の上界は \(\forall s\in S,\allowbreak s\leq \allowbreak u\) となる \(u\in P\)、下界は双対。\(S\) 内の上界は最大元、\(S\) 内の下界は最小元。\(m\in S\) が極大 \(\Leftrightarrow \allowbreak \) \(\forall s\in S,\allowbreak m\leq \allowbreak s\Rightarrow \allowbreak m=\allowbreak s\)、極小は双対。最大・最小元は存在すれば一意かつ極大・極小。\par
+\entryhead{定義（上限と下限）}{K-000073}
+\(S\subseteq \allowbreak P\) の上限 \(\sup _{P}\) \(S\) は \(S\) の上界全体の最小元、下限 \(\inf _{P}\) \(S\) は下界全体の最大元。存在すれば一意。空集合の上限は \(P\) の最小元、下限は最大元（存在する場合）。\par
+\entryhead{命題（上限と下限の比較）}{K-000074}
+\(S\subseteq \allowbreak T\subseteq \allowbreak P\) なら、両上限が存在する場合 \(\sup \) \(S\leq \allowbreak \sup \) \(T\)、両下限が存在する場合 \(\inf \) \(T\leq \allowbreak \inf \) \(S\)。\(U(T)\subseteq \allowbreak U(S)\)、\(L(T)\subseteq \allowbreak L(S)\)。\par
+\entryhead{定義（鎖と有向集合）}{K-000075}
+鎖は全順序となる部分集合（空を許す）。非空部分集合 \(D\) が任意の \(x,\allowbreak y\in D\) に共通上界 \(z\in D\) を持つとき上向き有向という。下向き有向は双対。非空鎖は上向き・下向き有向。全順序集合では極大元は最大元、極小元は最小元。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（順序保存・順序埋込み・順序同型）}{K-000076}
+\(f:P\to Q\) が順序保存 \(\Leftrightarrow \allowbreak \) \(x\leq \allowbreak y\Rightarrow \allowbreak f(x)\leq \allowbreak f(y)\)、順序埋込み \(\Leftrightarrow \allowbreak \) \(x\leq \allowbreak y\Leftrightarrow \allowbreak f(x)\leq \allowbreak f(y)\)、順序同型 \(\Leftrightarrow \allowbreak \) 全射な順序埋込み。順序埋込みは単射、順序同型の逆写像は順序保存。合成は各性質を保つ。\par
+\entryhead{命題（全単射な順序保存写像）}{K-000077}
+全単射な順序保存写像は一般に順序同型ではない。ただし始域が全順序なら順序同型である。\par
+\entryhead{命題（順序同型と上限・下限）}{K-000078}
+順序同型 \(f:P\to Q\) と \(S\subseteq \allowbreak P\) に対し、\(\sup _{P}\) \(S\) が存在する iff \(\sup _{Q}\) \(f(S)\) が存在し、後者は \(f(\sup _{P}\) \(S)\)。下限も同様。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{定義（束）}{K-000079}
+空でない順序集合 \(L\) が任意の二元 \(x,\allowbreak y\) の上限・下限を持つとき束。\(x\lor y=\allowbreak \sup \{x,\allowbreak y\},\allowbreak \) \(x\land y=\allowbreak \inf \{x,\allowbreak y\}\)。全順序集合が非空なら束。冪集合は \(\lor =\allowbreak \cup \)、\(\land =\allowbreak \cap \) の束。\par
+\entryhead{命題（束演算の諸法則）}{K-000080}
+束の \(\lor ,\allowbreak \land \) は交換律・結合律・冪等律・吸収律を満たす。\(x\leq \allowbreak y\) \(\Leftrightarrow \allowbreak \) \(x\lor y=\allowbreak y\) \(\Leftrightarrow \allowbreak \) \(x\land y=\allowbreak x\)。\par
+\entryhead{命題（演算による束の特徴づけ）}{K-000081}
+非空集合 \(L\) に交換・結合・冪等・吸収律を満たす二つの二項演算 \(\lor ,\allowbreak \land \) があるなら、\(x\leq \allowbreak y\) \(\Leftrightarrow \allowbreak \) \(x\lor y=\allowbreak y\) と定めると半順序となり、元の演算は二元の上限・下限となる。\par
+\entryhead{命題（束演算の単調性）}{K-000082}
+\(x\leq \allowbreak x'\)、\(y\leq \allowbreak y'\) なら \(x\lor y\leq \allowbreak x'\lor y'\) および \(x\land y\leq \allowbreak x'\land y'\)。\par
+\entryhead{定義（部分束と積束）}{K-000083}
+非空部分集合 \(M\subseteq \allowbreak L\) が \(L\) の結び・交わりで閉じるとき部分束。制限順序の二項上限・下限は \(L\) の演算に一致。二つの束の直積は成分ごとの演算で束。制限順序で束であっても部分束とは限らない。\par
+\entryhead{定義（束準同型と束同型）}{K-000084}
+束間の写像が \(\lor \) と \(\land \) を保存するとき束準同型。束同型は逆写像を持ち双方が束準同型であるもの。束準同型は順序保存。全単射な束準同型は束同型、束同型と順序同型は同値。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第5節}
+\entryhead{定義（有界束と完備束）}{K-000085}
+最小元 0 と最大元 1 を持つ束を有界束という（\(0,\allowbreak 1\) は記号）。任意の部分集合 \(S\subseteq \allowbreak L\)（空含む）が上限・下限を持つ順序集合を完備束という。完備束は非空な有界束。\par
+\entryhead{命題（完備性の片側判定）}{K-000086}
+順序集合 \(L\) で任意の部分集合が上限を持つなら完備束。双対に任意の部分集合が下限を持つだけでもよい。\(\inf \) \(S=\allowbreak \sup \) \(L(S)\)、\(\sup \) \(S=\allowbreak \inf \) \(U(S)\)。\par
+\entryhead{命題（冪集合と完備束の積）}{K-000087}
+\(P(E)\) は完備束、\(\sup \) \(S=\allowbreak \bigcup S\)、\(\inf \) \(S=\allowbreak \{x\in E\mid \forall A\in S,\allowbreak x\in A\}\)。任意の完備束族 \((L_{i})\) の直積は成分ごとの順序で完備束。上限・下限も成分ごと。選択公理不要。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第6節}
+\entryhead{定義（分配束）}{K-000088}
+束 \(L\) で \(x\land (y\lor z)=\allowbreak (x\land y)\lor (x\land z)\) および \(x\lor (y\land z)=\allowbreak (x\lor y)\land (x\lor z)\) が成り立つとき分配束。二つの分配律のいずれかから他方が従う。 冪集合は分配束。5元の束 \(M=\allowbreak \{\varnothing ,\allowbreak \{a\},\allowbreak \{b\},\allowbreak \{c\},\allowbreak E\}\)（\(E=\allowbreak \{a,\allowbreak b,\allowbreak c\}\)、包含順序、\(a,\allowbreak b,\allowbreak c\) 相異なる）は分配束ではない。\par
+\entryhead{定義（補元と Boolean 束）}{K-000089}
+有界束 \(L\) の \(x\) の補元とは \(x\land y=\allowbreak 0_{L}\)、\(x\lor y=\allowbreak 1_{L}\) を満たす \(y\)。任意の元が補元を持つ有界分配束を Boolean 束と呼ぶ。冪集合は補集合を補元とする Boolean 束。退化一元束を許す。 上記 \(M\) は各元に補元が存在するが分配束ではなく補元は一意でない。\par
+\entryhead{命題（補元の一意性と De Morgan の法則）}{K-000090}
+Boolean 束で補元は一意（\(x^{c}\) と書く）。\((x^{c})^{c}=\allowbreak x\)、\(0^{c}=\allowbreak 1\)、\(1^{c}=\allowbreak 0\)、\((x\lor y)^{c}=\allowbreak x^{c}\land y^{c}\)、\((x\land y)^{c}=\allowbreak x^{c}\lor y^{c}\)。\(x\leq \allowbreak y\) iff \(y^{c}\leq \allowbreak x^{c}\)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第7節}
+\entryhead{定義（閉包作用素）}{K-000091}
+順序集合 \(P\) 上の写像 \(c:P\to P\) が順序保存、\(x\leq \allowbreak c(x)\)、\(c(c(x))=\allowbreak c(x)\) を満たすとき閉包作用素。\(\operatorname{Fix}(c)=\allowbreak \{x\in P\mid c(x)=\allowbreak x\}\)。\(c(x)\) は \(x\) 以上の固定元の最小元。\par
+\entryhead{命題（閉包作用素と完備束）}{K-000092}
+完備束 \(L\) 上の閉包作用素 \(c\) の固定元集合 \(C\) は制限順序で完備束。\(S\subseteq \allowbreak C\) について \(\inf _{C}\) \(S=\allowbreak \inf _{L}\) \(S\)、\(\sup _{C}\) \(S=\allowbreak c(\sup _{L}\) \(S)\)。空の場合も成立。\par
+\entryhead{定義（Galois 接続）}{K-000093}
+順序保存写像 \(f:P\to Q\)、\(g:Q\to P\) が \(f(x)\leq \allowbreak y\) \(\Leftrightarrow \allowbreak \) \(x\leq \allowbreak g(y)\) を満たすとき Galois 接続（順序保存型）。\(f\) を左随伴、\(g\) を右随伴という。\(\mathrm{id}_{P}\leq \allowbreak g\circ f\)、\(f\circ g\leq \allowbreak \mathrm{id}_{Q}\)。互いに一意。\(g\circ f\) は閉包作用素。\par
+\entryhead{命題（Galois 接続と上限・下限）}{K-000094}
+Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) の上限が存在すれば \(f(\sup _{P}\) \(S)=\allowbreak \sup _{Q}\) \(f(S)\)（右辺も存在）。\(T\subseteq \allowbreak Q\) の下限について \(g(\inf _{Q}\) \(T)=\allowbreak \inf _{P}\) \(g(T)\)。\par
+\entryhead{命題（像と逆像の Galois 接続）}{K-000095}
+写像 \(h:A\to B\) に対する像写像 \(h_{\ast }:P(A)\to P(B)\) と逆像写像 \(h^{\ast }:P(B)\to P(A)\) は順序保存で \(h(S)\subseteq \allowbreak T\) iff \(S\subseteq \allowbreak h^{-1}(T)\)。合併と共通部分の保存が随伴から従う。\par
+\entryhead{定理（完備束の不動点定理）}{K-000096}
+完備束 \(L\) 上の順序保存写像 \(f:L\to L\) の固定元集合は制限順序で完備束。特に固定元が存在する。\(S\subseteq \allowbreak \operatorname{Fix}(f)\) の上限は \(\inf _{L}\{u\in L\) \(\mid \) \(\forall s\in S,\allowbreak s\leq \allowbreak u\) かつ \(f(u)\leq \allowbreak u\}\)、下限は双対。選択公理不要。\par
+\end{document}

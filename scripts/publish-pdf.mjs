@@ -13,6 +13,7 @@ const verified=ledger.notes.filter(n=>n.status==="verified"&&Number.isSafeIntege
 const notes=requested.length?verified.filter(n=>requested.includes("N-"+n.number)):verified;
 if(requested.some(id=>!notes.some(n=>"N-"+n.number===id)))throw Error("Only verified notes can be published");
 run(process.execPath,["scripts/test-knowledge.mjs"]);
+run(process.execPath,["scripts/test-statements-tex.mjs"]);
 run(process.execPath,["scripts/knowledge.mjs","check","--strict"]);
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),"genron-pdf-"));
 try{
@@ -28,7 +29,19 @@ try{
   if(fs.readFileSync(pdf).subarray(0,5).toString()!=="%PDF-")throw Error("Not a PDF: "+id);
   run("pdfinfo",[pdf],dir);
  }
+ // Build the reader-facing statement catalogue from the same ledger snapshot.
+ const catalogue=path.join(tmp,"statements");
+ fs.mkdirSync(catalogue);
+ const catalogueTex=execFileSync(process.execPath,["scripts/statements-tex.mjs"],{cwd:root,encoding:"utf8",maxBuffer:64*1024*1024});
+ fs.writeFileSync(path.join(catalogue,"statements.tex"),catalogueTex);
+ for(let i=0;i<2;i++)run("platex",["-interaction=nonstopmode","-halt-on-error","-no-shell-escape","statements.tex"],catalogue);
+ const catalogueLog=fs.readFileSync(path.join(catalogue,"statements.log"),"utf8");
+ if(/(?:^|\n)! |Missing character:|Overfull \\[hv]box|There were undefined references|Package rerunfilecheck Warning/i.test(catalogueLog))throw Error("Unresolved typesetting problem in statements catalogue");
+ run("dvipdfmx",["-o","statements.pdf","statements.dvi"],catalogue);
+ run("pdfinfo",[path.join(catalogue,"statements.pdf")],catalogue);
  // Do not update the index or copy any output until all selected compilations succeed.
+ fs.copyFileSync(path.join(catalogue,"statements.tex"),path.join(root,"docs","statements.tex"));
+ fs.copyFileSync(path.join(catalogue,"statements.pdf"),path.join(root,"docs","statements.pdf"));
  for(const n of notes)fs.copyFileSync(path.join(tmp,"N-"+n.number,"main.pdf"),path.join(root,"volumes","N-"+n.number,"main.pdf"));
  const index=execFileSync(process.execPath,["scripts/knowledge.mjs","graph","plan","--markdown"],{cwd:root,encoding:"utf8"});
  const statements=execFileSync(process.execPath,["scripts/knowledge.mjs","statements"],{cwd:root,encoding:"utf8"});
