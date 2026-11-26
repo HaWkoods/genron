@@ -52,12 +52,16 @@ try{
  // Native Web reader prototype: direct HTML, stable IDs and legacy escape hatch.
  await page.goto(origin+"?note=1&view=web");
  await page.locator(".web-article").waitFor();
- assert.equal(await page.locator(".web-entry").count(),planData.entries.filter(e=>e.position[0]===1).length);
+ const firstNote=planData.plan.find(n=>n.number===1);
+ const firstPart=planData.treatises.find(t=>t.id===firstNote.treatise).part;
+ const partNotes=planData.plan.filter(n=>planData.treatises.some(t=>t.id===n.treatise&&t.part===firstPart));
+ assert.equal(await page.locator(".web-chapter").count(),partNotes.length);
+ assert.equal(await page.locator(".web-entry").count(),planData.entries.filter(e=>partNotes.some(n=>n.number===e.position[0])).length);
  assert.equal(await page.locator(".pdf-shell").count(),0);
  await page.goto(origin+"?id=K-000002&view=web");
  await page.locator(".web-entry[id='K-000002']").waitFor();
  assert.ok(await page.locator(".web-article .katex").count()>0,"Web math must be rendered");
- await page.getByRole("link",{name:"旧版PDFを閲覧"}).click();
+ await page.locator("#N-1 .web-legacy").click();
  await page.locator(".pdf-shell").waitFor();
  assert.deepEqual(errors,[],"Web reader JavaScript errors");
 
@@ -65,6 +69,10 @@ try{
  await page.goto(origin+"?id=K-000020&view=web");
  const proof=page.locator(".web-entry[id='K-000020'] .web-proof");
  await proof.waitFor();
+ assert.equal(await proof.getAttribute("open"),null);
+ assert.equal(await proof.locator(".proof-body").isVisible(),false);
+ await proof.locator("summary").click();
+ assert.equal(await proof.locator(".proof-body").isVisible(),true);
  assert.match(await proof.innerText(),/第1式は定義による/);
  assert.ok(await proof.locator(".katex").count()>0);
  assert.deepEqual(errors,[],"Proof rendering JavaScript errors");
