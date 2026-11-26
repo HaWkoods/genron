@@ -54,13 +54,13 @@
 % genron:use K-000118
 \Needspace{4\baselineskip}
 \begin{defn}[位相空間]\label{k146}
-集合 $X$ とその冪集合の部分集合 $\tau\subseteq\Pow(X)$ を考える。次の三条件を満たす $\tau$ を $X$ 上の\textbf{位相}という。
+集合 $X$ とその冪集合の部分集合 $\mathcal{O}\subseteq\Pow(X)$ を考える。次の三条件を満たす $\mathcal{O}$ を $X$ 上の\textbf{位相}という。
 \begin{enumerate}
-\item $\varnothing,X\in\tau$.
-\item $\mathcal U\subseteq\tau$ が有限集合なら $\bigcap\mathcal U\in\tau$.
-\item 任意の $\mathcal U\subseteq\tau$ に対して $\bigcup\mathcal U\in\tau$.
+\item $\varnothing,X\in\mathcal{O}$.
+\item $\mathcal U\subseteq\mathcal{O}$ が有限集合なら $\bigcap\mathcal U\in\mathcal{O}$.
+\item 任意の $\mathcal U\subseteq\mathcal{O}$ に対して $\bigcup\mathcal U\in\mathcal{O}$.
 \end{enumerate}
-組 $(X,\tau)$ を位相空間，$\tau$ の元を開集合という。空の族の共通部分は母集合 $X$，空の族の合併は $\varnothing$ とする（\GenronRefText{K-000045}{集合族の演算の規約}）。$X=\varnothing$ も許す。
+組 $(X,\mathcal{O})$ を位相空間，$\mathcal{O}$ の元を開集合という。空の族の共通部分は母集合 $X$，空の族の合併は $\varnothing$ とする（\GenronRefText{K-000045}{集合族の演算の規約}）。$X=\varnothing$ も許す。
 \end{defn}
 % genron:end K-000146
 % genron:begin K-000147
@@ -79,10 +79,10 @@
 % genron:use K-000146
 \Needspace{4\baselineskip}
 \begin{prop}[位相の有限交叉条件]\label{k147}
-$\tau\subseteq\Pow(X)$ が位相であるためには，$X\in\tau$ であり，二つの元の共通部分及び任意の部分族の合併で閉じていることが必要十分である。
+$\mathcal{O}\subseteq\Pow(X)$ が位相であるためには，$X\in\mathcal{O}$ であり，二つの元の共通部分及び任意の部分族の合併で閉じていることが必要十分である。
 \end{prop}
 \begin{proof}
-必要性は定義から明らかである。逆に，空の族の合併を取れば $\varnothing\in\tau$ である。有限部分族 $\mathcal U$ を取り，自然数 $n$ との全単射により $(U_i)_{i\in n}$ と列挙する。$n=0$ なら共通部分は $X$ である。$n$ 個の共通部分が $\tau$ に属すれば，$n+1$ 個の共通部分はその集合と $U_n$ との共通部分である。\GenronRefText{K-000100}{数学的帰納法}により任意の有限部分族の共通部分が $\tau$ に属する。
+必要性は定義から明らかである。逆に，空の族の合併を取れば $\varnothing\in\mathcal{O}$ である。有限部分族 $\mathcal U$ を取り，自然数 $n$ との全単射により $(U_i)_{i\in n}$ と列挙する。$n=0$ なら共通部分は $X$ である。$n$ 個の共通部分が $\mathcal{O}$ に属すれば，$n+1$ 個の共通部分はその集合と $U_n$ との共通部分である。\GenronRefText{K-000100}{数学的帰納法}により任意の有限部分族の共通部分が $\mathcal{O}$ に属する。
 \end{proof}
 % genron:end K-000147
 % genron:begin K-000148
@@ -97,7 +97,7 @@ $\tau\subseteq\Pow(X)$ が位相であるためには，$X\in\tau$ であり，�
 % genron:use K-000146
 \Needspace{4\baselineskip}
 \begin{defn}[閉集合]\label{k148}
-位相空間 $(X,\tau)$ の部分集合 $F$ が $X\setminus F\in\tau$ を満たすとき，$F$ を閉集合という。
+位相空間 $(X,\mathcal{O})$ の部分集合 $F$ が $X\setminus F\in\mathcal{O}$ を満たすとき，$F$ を閉集合という。
 \end{defn}
 % genron:end K-000148
 % genron:begin K-000149
@@ -188,7 +188,7 @@ $X$ の部分集合は $\varnothing,\{a\},\{b\},X$ に限る。位相は $\varno
 % genron:use K-000146
 \Needspace{4\baselineskip}
 \begin{defn}[位相の粗密]\label{k152}
-同じ集合 $X$ 上の二つの位相 $\tau,\upsilon$ に対して $\tau\subseteq\upsilon$ のとき，$\tau$ は $\upsilon$ より粗く，$\upsilon$ は $\tau$ より細かいという。等しい場合を含む。この関係は包含関係による半順序である。
+同じ集合 $X$ 上の二つの位相 $\mathcal{O},\mathcal{O}'$ に対して $\mathcal{O}\subseteq\mathcal{O}'$ のとき，$\mathcal{O}$ は $\mathcal{O}'$ より粗く，$\mathcal{O}'$ は $\mathcal{O}$ より細かいという。等しい場合を含む。この関係は包含関係による半順序である。
 \end{defn}
 % genron:end K-000152
 % genron:begin K-000153
@@ -205,12 +205,12 @@ $X$ の部分集合は $\varnothing,\{a\},\{b\},X$ に限る。位相は $\varno
 % genron:use K-000147
 \Needspace{4\baselineskip}
 \begin{prop}[位相系の共通部分]\label{k153}
-$X$ 上の位相からなる集合族 $(\tau_i)_{i\in I}$ に対し
-\[\tau=\bigcap_{i\in I}\tau_i\]
+$X$ 上の位相からなる集合族 $(\mathcal{O}_i)_{i\in I}$ に対し
+\[\mathcal{O}=\bigcap_{i\in I}\mathcal{O}_i\]
 は $X$ 上の位相である。$I=\varnothing$ の場合は冪集合 $\Pow(X)$ を母集合とする。
 \end{prop}
 \begin{proof}
-任意の $i\in I$ に対して $X\in\tau_i$ だから $X\in\tau$ である。$U,V\in\tau$ なら各 $i$ に対して $U,V\in\tau_i$，従って $U\cap V\in\tau_i$ である。ゆえに $U\cap V\in\tau$ である。また $\mathcal U\subseteq\tau$ なら各 $i$ に対して $\mathcal U\subseteq\tau_i$ だから $\bigcup\mathcal U\in\tau_i$，従って $\bigcup\mathcal U\in\tau$ である。命題\ref{k147}を適用すればよい。
+任意の $i\in I$ に対して $X\in\mathcal{O}_i$ だから $X\in\mathcal{O}$ である。$U,V\in\mathcal{O}$ なら各 $i$ に対して $U,V\in\mathcal{O}_i$，従って $U\cap V\in\mathcal{O}_i$ である。ゆえに $U\cap V\in\mathcal{O}$ である。また $\mathcal U\subseteq\mathcal{O}$ なら各 $i$ に対して $\mathcal U\subseteq\mathcal{O}_i$ だから $\bigcup\mathcal U\in\mathcal{O}_i$，従って $\bigcup\mathcal U\in\mathcal{O}$ である。命題\ref{k147}を適用すればよい。
 \end{proof}
 % genron:end K-000153
 % genron:begin K-000154
@@ -230,13 +230,13 @@ $X$ 上の位相からなる集合族 $(\tau_i)_{i\in I}$ に対し
 % genron:use K-000153
 \Needspace{4\baselineskip}
 \begin{thm}[生成位相]\label{k154}
-任意の $\mathcal S\subseteq\Pow(X)$ に対し，$\mathcal S$ を含む位相のうち最も粗いものが一意に存在する。これを $\tau(\mathcal S)$ と記し，$\mathcal S$ の生成する位相という。また $\mathcal S\subseteq\mathcal T$ なら $\tau(\mathcal S)\subseteq\tau(\mathcal T)$ である。
+任意の $\mathcal S\subseteq\Pow(X)$ に対し，$\mathcal S$ を含む位相のうち最も粗いものが一意に存在する。これを $\mathcal{O}(\mathcal S)$ と記し，$\mathcal S$ の生成する位相という。また $\mathcal S\subseteq\mathcal T$ なら $\mathcal{O}(\mathcal S)\subseteq\mathcal{O}(\mathcal T)$ である。
 \end{thm}
 \begin{proof}
 集合 $\Pow(\Pow(X))$ の部分集合
-\[\mathfrak F=\{\upsilon\subseteq\Pow(X)\mid
- \upsilon\text{ は位相},\ \mathcal S\subseteq\upsilon\}\]
-を作る。$\Pow(X)\in\mathfrak F$ なので空ではない。命題\ref{k153}により $\tau=\bigcap\mathfrak F$ は位相である。各 $\upsilon\in\mathfrak F$ は $\mathcal S$ を含むから $\tau$ も含む。しかも任意の $\upsilon\in\mathfrak F$ に対して $\tau\subseteq\upsilon$ である。最小元の一意性は包含関係の反対称律による。$\mathcal S\subseteq\mathcal T$ なら $\tau(\mathcal T)$ は $\mathcal S$ を含む位相だから，最小性によって $\tau(\mathcal S)\subseteq\tau(\mathcal T)$ を得る。
+\[\mathfrak F=\{\mathcal{O}'\subseteq\Pow(X)\mid
+ \mathcal{O}'\text{ は位相},\ \mathcal S\subseteq\mathcal{O}'\}\]
+を作る。$\Pow(X)\in\mathfrak F$ なので空ではない。命題\ref{k153}により $\mathcal{O}=\bigcap\mathfrak F$ は位相である。各 $\mathcal{O}'\in\mathfrak F$ は $\mathcal S$ を含むから $\mathcal{O}$ も含む。しかも任意の $\mathcal{O}'\in\mathfrak F$ に対して $\mathcal{O}\subseteq\mathcal{O}'$ である。最小元の一意性は包含関係の反対称律による。$\mathcal S\subseteq\mathcal T$ なら $\mathcal{O}(\mathcal T)$ は $\mathcal S$ を含む位相だから，最小性によって $\mathcal{O}(\mathcal S)\subseteq\mathcal{O}(\mathcal T)$ を得る。
 \end{proof}
 % genron:end K-000154
 % genron:begin K-000155
@@ -257,10 +257,10 @@ $X$ 上の位相からなる集合族 $(\tau_i)_{i\in I}$ に対し
 % genron:use K-000154
 \Needspace{4\baselineskip}
 \begin{prop}[位相全体の完備束]\label{k155}
-集合 $X$ 上の位相全体を包含関係で順序づけると完備束となる。任意の位相族 $(\tau_i)_{i\in I}$ の下限は共通部分，上限は $\tau(\bigcup_{i\in I}\tau_i)$ である。
+集合 $X$ 上の位相全体を包含関係で順序づけると完備束となる。任意の位相族 $(\mathcal{O}_i)_{i\in I}$ の下限は共通部分，上限は $\mathcal{O}(\bigcup_{i\in I}\mathcal{O}_i)$ である。
 \end{prop}
 \begin{proof}
-位相全体は冪集合の冪集合の部分集合である。命題\ref{k153}によれば共通部分は位相であり，集合の包含に関する下限の定義を満たす。上界である位相は各 $\tau_i$ を含むこととその合併を含むことが同値である。定理\ref{k154}から上界の最小元が存在し，所定の式で与えられる。従って \GenronRefText{K-000085}{完備束の定義}を満たす。空の族の場合，下限は離散位相，上限は密着位相である。
+位相全体は冪集合の冪集合の部分集合である。命題\ref{k153}によれば共通部分は位相であり，集合の包含に関する下限の定義を満たす。上界である位相は各 $\mathcal{O}_i$ を含むこととその合併を含むことが同値である。定理\ref{k154}から上界の最小元が存在し，所定の式で与えられる。従って \GenronRefText{K-000085}{完備束の定義}を満たす。空の族の場合，下限は離散位相，上限は密着位相である。
 \end{proof}
 % genron:end K-000155
 % genron:begin K-000156
@@ -279,10 +279,10 @@ $X$ 上の位相からなる集合族 $(\tau_i)_{i\in I}$ に対し
 % genron:use K-000147
 \Needspace{4\baselineskip}
 \begin{prop}[位相の合併は一般に位相でない]\label{k156}
-三つの相異なる元 $a,b,c$ からなる集合 $X$ を取る。二つの位相 $\tau_1=\{\varnothing,\{a\},X\}$ と $\tau_2=\{\varnothing,\{b\},X\}$ の合併は位相ではない。
+三つの相異なる元 $a,b,c$ からなる集合 $X$ を取る。二つの位相 $\mathcal{O}_1=\{\varnothing,\{a\},X\}$ と $\mathcal{O}_2=\{\varnothing,\{b\},X\}$ の合併は位相ではない。
 \end{prop}
 \begin{proof}
-各 $\tau_i$ は，その三元が包含順序について鎖をなし，空の合併・共通部分も含むので位相である。他方 $\{a\},\{b\}\in\tau_1\cup\tau_2$ であるにもかかわらず $\{a,b\}\notin\tau_1\cup\tau_2$ である。従って合併は位相の公理を満たさない。
+各 $\mathcal{O}_i$ は，その三元が包含順序について鎖をなし，空の合併・共通部分も含むので位相である。他方 $\{a\},\{b\}\in\mathcal{O}_1\cup\mathcal{O}_2$ であるにもかかわらず $\{a,b\}\notin\mathcal{O}_1\cup\mathcal{O}_2$ である。従って合併は位相の公理を満たさない。
 \end{proof}
 % genron:end K-000156
 \Needspace{8\baselineskip}
@@ -303,7 +303,7 @@ $X$ 上の位相からなる集合族 $(\tau_i)_{i\in I}$ に対し
 % genron:use K-000146
 \Needspace{4\baselineskip}
 \begin{prop}[上集合の位相]\label{k157}
-順序集合 $(X,\leq)$ において，$x\in U$，$x\leq y$ ならば $y\in U$ となる部分集合 $U\subseteq X$ を上集合という。上集合全体 $\tau_{\leq}$ は $X$ 上の位相であり，任意の部分族の共通部分で閉じている。
+順序集合 $(X,\leq)$ において，$x\in U$，$x\leq y$ ならば $y\in U$ となる部分集合 $U\subseteq X$ を上集合という。上集合全体 $\mathcal{O}_{\leq}$ は $X$ 上の位相であり，任意の部分族の共通部分で閉じている。
 \end{prop}
 \begin{proof}
 $\varnothing$ と $X$ は上集合である。上集合族の合併の元 $x$ は，ある上集合 $U$ に属する。$x\leq y$ なら $y\in U$ であり，従って合併に属する。共通部分の元 $x$ はすべての $U$ に属するから，$x\leq y$ なら $y$ もすべての $U$ に属する。空の族の場合も規約どおり成立する。
