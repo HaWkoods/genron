@@ -60,6 +60,15 @@ try{
  assert.equal(await page.locator(".pdf-shell").count(),0);
  const logic=page.locator("#K-000001");
  assert.equal(await logic.locator(".web-math-table tr").count(),5);
+ // Check TeX source as well as rendered layout: a KaTeX node alone does not prove that symbols survived.
+ const firstInline=logic.locator(".math").first();
+ assert.equal(await firstInline.locator('annotation[encoding="application/x-tex"]').textContent(),"P,Q");
+ assert.equal(await firstInline.evaluate(el=>getComputedStyle(el).display),"inline-block");
+ assert.equal(await logic.locator(".katex-display").count(),0);
+ assert.equal(await logic.locator(".web-math-table tr").first().locator('td').first().locator('annotation[encoding="application/x-tex"]').textContent(),"\\neg P");
+ assert.equal(await logic.locator(".web-math-table tr").nth(1).locator('td').first().locator('annotation[encoding="application/x-tex"]').textContent(),"P\\land Q");
+ assert.ok(await logic.locator(".math .katex").count()>10);
+
  assert.match(await logic.innerText(),/最後の記号は/);
  assert.doesNotMatch(await logic.innerText(),/[、。]/);
  assert.ok(await page.locator("#K-000004 .katex-display").count()>0);
