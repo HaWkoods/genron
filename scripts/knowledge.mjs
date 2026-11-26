@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {execFileSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
-import {validate, affected, changedEntries, available, graph, prerequisites} from "./knowledge-core.mjs";
+import {validate, affected, changedEntries, available, graph, prerequisites, planGraph, planPrerequisites, planMermaid, planMarkdown} from "./knowledge-core.mjs";
 
 const root=fileURLToPath(new URL("../",import.meta.url));
 const ledgerPath="docs/knowledge.json";
@@ -48,13 +48,14 @@ function main(){
  }
  if(cmd==="prerequisites"){
   if(!valid){process.exitCode=1;return}
-  if(args.length!==1)throw Error("Usage: prerequisites K-000001");
-  console.log(JSON.stringify(prerequisites(ledger,args[0]),null,2));return;
+  if(args.length!==1)throw Error("Usage: prerequisites K-000001 | N-1");
+  console.log(JSON.stringify(args[0].startsWith("N-")?planPrerequisites(ledger,args[0]):prerequisites(ledger,args[0]),null,2));return;
  }
  if(cmd==="graph"){
   if(!valid){process.exitCode=1;return}
-  if(args.length>1||args.length===1&&!["knowledge","notes"].includes(args[0]))throw Error("Usage: graph [knowledge|notes]");
-  console.log(JSON.stringify(graph(ledger,args[0]??"knowledge"),null,2));return;
+  if(args.length>2||args.length&& !["knowledge","notes","plan"].includes(args[0])||args.length===2&&!(args[0]==="plan"&&["--mermaid","--markdown"].includes(args[1])))throw Error("Usage: graph [knowledge|notes|plan] [--mermaid|--markdown (plan only)]");
+  if(args[0]==="plan"){if(args[1]==="--mermaid")process.stdout.write(planMermaid(ledger));else if(args[1]==="--markdown")process.stdout.write(planMarkdown(ledger));else console.log(JSON.stringify(planGraph(ledger),null,2));}
+  else console.log(JSON.stringify(graph(ledger,args[0]??"knowledge"),null,2));return;
  }
  if(cmd==="impact"){
   if(!Array.isArray(ledger.entries))throw Error("Invalid ledger entries");
@@ -67,6 +68,6 @@ function main(){
   const current=new Map(ledger.entries.map(e=>[e.id,e]));
   console.log(JSON.stringify({...r,review_required:[...new Set([...r.changed,...r.affected])].filter(id=>current.get(id)?.status==="verified"),locations:[...new Set([...r.changed,...r.affected])].map(id=>({id,source:current.get(id)?.source??null,status:current.get(id)?.status??"removed"}))},null,2));if(!valid)process.exitCode=1;return;
  }
- throw Error("Usage: knowledge.mjs check [--strict] | available [ID...] | prerequisites ID | graph [knowledge|notes] | impact ID... | impact --base COMMIT");
+ throw Error("Usage: knowledge.mjs check [--strict] | available [ID...] | prerequisites ID | graph [knowledge|notes|plan] | impact ID... | impact --base COMMIT");
 }
 try{main()}catch(e){console.error(e.message);process.exitCode=1}
