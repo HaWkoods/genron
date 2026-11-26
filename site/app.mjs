@@ -90,7 +90,7 @@ function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get(
 function showHome(){
  const plan=data.plan??data.notes.map(n=>({...n,status:"verified"})),byNumber=new Map(plan.map(n=>[n.number,n]));
  const parts=data.parts??[],treatises=data.treatises??[],byTreatise=new Map(treatises.map(t=>[t.id,t])),byPart=new Map(parts.map(p=>[p.id,p]));
- const h=node("h1","","数学原論");const intro=node("p","muted",parts.length+"部・"+treatises.length+"篇・"+plan.length+"ノート（公開 "+notes.size+"篇）／ "+entries.size+"知識項目");
+ const h=node("h1","","数学原論");const intro=node("p","muted",parts.length+"部・"+treatises.length+"篇・"+"数学の諸構造");
  const search=node("input","search");search.type="search";search.placeholder="部・篇・ノート名・定義・命題・IDを検索";search.setAttribute("aria-label","検索");search.value=new URL(location.href).searchParams.get("q")??"";
  const filters=node("div","filters"),count=node("span","meta result-count"),list=node("div","results");
  const allowed=["all","note","verified","planned","entry"];let mode=new URL(location.href).searchParams.get("filter")??"all";if(!allowed.includes(mode))mode="all";
@@ -131,10 +131,10 @@ function showHome(){
   if(!q&&mode!=="entry"&&parts.length){
    for(const p of parts){
     const ts=treatises.filter(t=>t.part===p.id),ns=found.filter(n=>ts.some(t=>t.id===n.treatise));if(!ns.length)continue;
-    const pd=node("details","part-group"),ps=node("summary","part-summary");ps.append(node("span","group-id",p.id),node("strong","",p.title),node("span","group-count",ns.filter(n=>notes.has(n.number)).length+" / "+ns.length+" ノート"));pd.append(ps);pd.open=ns.some(n=>notes.has(n.number));
+    const pd=node("details","part-group"),ps=node("summary","part-summary");ps.append(node("span","group-id",p.id),node("strong","",p.title));pd.append(ps);pd.open=ns.some(n=>notes.has(n.number));
     for(const t of ts){
      const items=ns.filter(n=>n.treatise===t.id);if(!items.length)continue;
-     const td=node("details","treatise-group"),tsum=node("summary","treatise-summary");tsum.append(node("span","group-id",t.id),node("strong","",t.title),node("span","group-count",items.filter(n=>notes.has(n.number)).length+" / "+items.length));td.append(tsum);
+     const td=node("details","treatise-group"),tsum=node("summary","treatise-summary");tsum.append(node("span","group-id",t.id),node("strong","",t.title));td.append(tsum);
      td.open=items.some(n=>notes.has(n.number));td.append(node("p","treatise-goals",t.goals.join("；")));
      for(const n of items)td.append(noteCard(n,false));pd.append(td)
     }list.append(pd)
