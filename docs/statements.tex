@@ -34,19 +34,15 @@
 \hyperlink{note-8}{N-8\quad 位相と開集合}\dotfill 13項目\par
 \hyperlink{note-9}{N-9\quad 二項演算とモノイド}\dotfill 19項目\par
 \hyperlink{note-10}{N-10\quad 環と環準同型}\dotfill 4項目\par
-\hyperlink{note-14}{N-14\quad フィルターと収束}\dotfill 8項目\par
-\hyperlink{note-18}{N-18\quad 圏と函手}\dotfill 8項目\par
+\hyperlink{note-14}{N-14\quad フィルターとネット}\dotfill 12項目\par
+\hyperlink{note-18}{N-18\quad 圏・函手・自然変換}\dotfill 13項目\par
 \hyperlink{note-24}{N-24\quad 集合環とσ-加法族}\dotfill 16項目\par
 \hyperlink{note-53}{N-53\quad 近傍と閉包}\dotfill 14項目\par
 \hyperlink{note-54}{N-54\quad 開基と部分基}\dotfill 9項目\par
 \hyperlink{note-55}{N-55\quad 連続写像と同相}\dotfill 8項目\par
-\hyperlink{note-56}{N-56\quad 部分空間と積位相}\dotfill 5項目\par
-\hyperlink{note-57}{N-57\quad 商位相と終位相}\dotfill 5項目\par
-\hyperlink{note-62}{N-62\quad 群と部分群}\dotfill 8項目\par
-\hyperlink{note-63}{N-63\quad 剰余類と正規部分群}\dotfill 6項目\par
+\hyperlink{note-56}{N-56\quad 初期位相と終位相}\dotfill 10項目\par
+\hyperlink{note-62}{N-62\quad 群・部分群・商群}\dotfill 14項目\par
 \hyperlink{note-90}{N-90\quad 超フィルター}\dotfill 4項目\par
-\hyperlink{note-95}{N-95\quad ネットとフィルター}\dotfill 4項目\par
-\hyperlink{note-116}{N-116\quad 自然変換}\dotfill 5項目\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-1}{}
@@ -544,8 +540,8 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-14}{}
-\section*{N-14\quad フィルターと収束}
-\pdfbookmark[1]{N-14 フィルターと収束}{bookmark-14}
+\section*{N-14\quad フィルターとネット}
+\pdfbookmark[1]{N-14 フィルターとネット}{bookmark-14}
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第1節}
 \entryhead{定義（フィルター）}{K-000233}
@@ -568,11 +564,21 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 フィルター \(F\) が \(x\) に収束するなら \(x\) は \(F\) の集積点である。\par
 \entryhead{定理（集積点と細かいフィルター）}{K-000240}
 フィルター \(F\) の集積点 \(x\) が存在する条件は、\(F\subseteq \allowbreak G\) かつ \(G\to x\) となるフィルター \(G\) が存在することと同値。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{定義（ネットと終局性）}{K-000273}
+空でない有向前順序集合 \(D\) から \(X\) への写像をネットという。ある添字以上の全添字で成立する性質を終局的という。\par
+\entryhead{定義（ネットの収束と集積）}{K-000274}
+各近傍に終局的に入るとき収束するという。各近傍に任意の添字以後で入るとき集積点という。\par
+\entryhead{定理（終局フィルター）}{K-000275}
+ネットが終局的に属する集合全体はフィルターであり、ネットとこのフィルターの収束先・集積点は一致する。\par
+\entryhead{定理（フィルターからのネット）}{K-000276}
+任意のフィルターはあるネットの終局フィルターである。この構成は選択公理を必要としない。\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-18}{}
-\section*{N-18\quad 圏と函手}
-\pdfbookmark[1]{N-18 圏と函手}{bookmark-18}
+\section*{N-18\quad 圏・函手・自然変換}
+\pdfbookmark[1]{N-18 圏・函手・自然変換}{bookmark-18}
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第1節}
 \entryhead{定義（小圏と圏の規模）}{K-000241}
@@ -595,6 +601,18 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 函手 \(F\) は同型射を同型射に移し、逆射を逆射に移す。\par
 \entryhead{命題（一対象圏とモノイド準同型）}{K-000248}
 一対象圏の間の函手は対応するモノイド準同型と一対一に対応する。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{定義（自然変換）}{K-000277}
+小圏 \(C,\allowbreak D\) の函手 \(F,\allowbreak G:C\to D\) の間の自然変換は射の族 \(\eta _{X}:F(X)\to G(X)\) で \(G(f)\circ \eta _{X}=\allowbreak \eta _{Y}\circ F(f)\) を満たすもの。\par
+\entryhead{命題（自然変換の合成）}{K-000278}
+成分ごとの合成は自然変換であり、恒等射の族は恒等自然変換となる。\par
+\entryhead{定義（自然同型）}{K-000279}
+両合成が恒等自然変換となる逆自然変換を持つ自然変換を自然同型という。\par
+\entryhead{定理（自然同型の成分判定）}{K-000280}
+自然変換が自然同型であることは全成分が同型射であることと同値。\par
+\entryhead{定理（小圏間の函手圏）}{K-000281}
+小圏 \(C,\allowbreak D\) に対し函手を対象、自然変換を射とする小圏が存在する。\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-24}{}
@@ -740,8 +758,8 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-56}{}
-\section*{N-56\quad 部分空間と積位相}
-\pdfbookmark[1]{N-56 部分空間と積位相}{bookmark-56}
+\section*{N-56\quad 初期位相と終位相}
+\pdfbookmark[1]{N-56 初期位相と終位相}{bookmark-56}
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第1節}
 \entryhead{定理（初期位相）}{K-000253}
@@ -754,13 +772,8 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 位相空間族の直積集合に射影族による初期位相を入れたものを積空間という。\par
 \entryhead{定理（積位相の開基と普遍性）}{K-000257}
 積位相は有限個の座標を開集合に制限する集合を開基に持つ。連続な座標写像族は一意の連続な積への写像を定める。\par
-\par\bigskip
-\Needspace{12\baselineskip}
-\hypertarget{note-57}{}
-\section*{N-57\quad 商位相と終位相}
-\pdfbookmark[1]{N-57 商位相と終位相}{bookmark-57}
 \Needspace{9\baselineskip}
-\subsection*{第1章\quad 第1節}
+\subsection*{第1章\quad 第2節}
 \entryhead{定理（終位相）}{K-000258}
 写像族 \(f_{i}:X_{i}\to Y\) を連続にする最細位相が存在し、そこからの写像 \(g\) の連続性は全 \(g\circ f_{i}\) の連続性と同値。\par
 \entryhead{定義（商位相と商写像）}{K-000259}
@@ -774,8 +787,8 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-62}{}
-\section*{N-62\quad 群と部分群}
-\pdfbookmark[1]{N-62 群と部分群}{bookmark-62}
+\section*{N-62\quad 群・部分群・商群}
+\pdfbookmark[1]{N-62 群・部分群・商群}{bookmark-62}
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第1節}
 \entryhead{定義（群）}{K-000225}
@@ -798,13 +811,8 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 部分集合 \(S\subseteq \allowbreak G\) を含む部分群全体の共通部分を生成部分群 \(\langle S\rangle \) という。これは \(S\) を含む最小の部分群。\par
 \entryhead{命題（生成部分群の有限積表示）}{K-000232}
 生成部分群 \(\langle S\rangle \) は \(S\cup \{s^{-1}\mid s\in S\}\) の元の有限積全体に等しい。空積は \(1_{G}\)。\par
-\par\bigskip
-\Needspace{12\baselineskip}
-\hypertarget{note-63}{}
-\section*{N-63\quad 剰余類と正規部分群}
-\pdfbookmark[1]{N-63 剰余類と正規部分群}{bookmark-63}
 \Needspace{9\baselineskip}
-\subsection*{第1章\quad 第1節}
+\subsection*{第1章\quad 第4節}
 \entryhead{定義（左右剰余類）}{K-000263}
 部分群 \(H\) と \(a\in G\) に対し \(aH=\allowbreak \{ah\mid h\in H\}\)、\(Ha=\allowbreak \{ha\mid h\in H\}\) を左右剰余類という。\par
 \entryhead{命題（剰余類の分割）}{K-000264}
@@ -832,36 +840,4 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 超フィルターであることは任意の \(A\subseteq \allowbreak X\) について \(A\) と \(X\setminus A\) のちょうど一方がフィルターに属することと同値。\par
 \entryhead{命題（超フィルターの集積と収束）}{K-000272}
 超フィルターの集積点と収束先は一致する。\par
-\par\bigskip
-\Needspace{12\baselineskip}
-\hypertarget{note-95}{}
-\section*{N-95\quad ネットとフィルター}
-\pdfbookmark[1]{N-95 ネットとフィルター}{bookmark-95}
-\Needspace{9\baselineskip}
-\subsection*{第1章\quad 第1節}
-\entryhead{定義（ネットと終局性）}{K-000273}
-空でない有向前順序集合 \(D\) から \(X\) への写像をネットという。ある添字以上の全添字で成立する性質を終局的という。\par
-\entryhead{定義（ネットの収束と集積）}{K-000274}
-各近傍に終局的に入るとき収束するという。各近傍に任意の添字以後で入るとき集積点という。\par
-\entryhead{定理（終局フィルター）}{K-000275}
-ネットが終局的に属する集合全体はフィルターであり、ネットとこのフィルターの収束先・集積点は一致する。\par
-\entryhead{定理（フィルターからのネット）}{K-000276}
-任意のフィルターはあるネットの終局フィルターである。この構成は選択公理を必要としない。\par
-\par\bigskip
-\Needspace{12\baselineskip}
-\hypertarget{note-116}{}
-\section*{N-116\quad 自然変換}
-\pdfbookmark[1]{N-116 自然変換}{bookmark-116}
-\Needspace{9\baselineskip}
-\subsection*{第1章\quad 第1節}
-\entryhead{定義（自然変換）}{K-000277}
-小圏 \(C,\allowbreak D\) の函手 \(F,\allowbreak G:C\to D\) の間の自然変換は射の族 \(\eta _{X}:F(X)\to G(X)\) で \(G(f)\circ \eta _{X}=\allowbreak \eta _{Y}\circ F(f)\) を満たすもの。\par
-\entryhead{命題（自然変換の合成）}{K-000278}
-成分ごとの合成は自然変換であり、恒等射の族は恒等自然変換となる。\par
-\entryhead{定義（自然同型）}{K-000279}
-両合成が恒等自然変換となる逆自然変換を持つ自然変換を自然同型という。\par
-\entryhead{定理（自然同型の成分判定）}{K-000280}
-自然変換が自然同型であることは全成分が同型射であることと同値。\par
-\entryhead{定理（小圏間の函手圏）}{K-000281}
-小圏 \(C,\allowbreak D\) に対し函手を対象、自然変換を射とする小圏が存在する。\par
 \end{document}
