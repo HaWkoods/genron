@@ -27,39 +27,18 @@
 \newcommand{\GenronRefText}[2]{#2}
 \clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
 
+% Historical source. Canonical knowledge now belongs to N-18.
 \begin{document}
 \begin{center}
 {\small 数学原論}\par\vspace{4mm}
 {\LARGE 自然変換}\par\vspace{2mm}
-{\small N-116\quad 第1版}
+{\small N-116\quad 旧版（統合前）}
 \end{center}
 \section{自然変換}
-% genron:begin K-000277
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000044
-% genron:use K-000241
-% genron:use K-000245
 \Needspace{4\baselineskip}
 \begin{defn}[自然変換]\label{k277}
 小圏 $\mathcal C,\mathcal D$ の間の函手 $F,G$ に対し，各対象 $X$ に射 $\eta_X\colon F(X)\to G(X)$ を対応させる族であって，任意の射 $f\colon X\to Y$ について $G(f)\circ\eta_X=\eta_Y\circ F(f)$ を満たすものを自然変換 $\eta\colon F\Rightarrow G$ という。
 \end{defn}
-% genron:end K-000277
-% genron:begin K-000278
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000241
-% genron:use K-000277
 \Needspace{4\baselineskip}
 \begin{prop}[自然変換の合成]\label{k278}
 自然変換 $\eta\colon F\Rightarrow G,\theta\colon G\Rightarrow H$ に対し $(\theta\circ\eta)_X=\theta_X\circ\eta_X$ は自然変換を定める。各成分が恒等射である族は恒等自然変換となる。
@@ -73,35 +52,10 @@
 \]
 となる。恒等射の場合は単位律から従う。
 \end{proof}
-% genron:end K-000278
-% genron:begin K-000279
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000278
 \Needspace{4\baselineskip}
 \begin{defn}[自然同型]\label{k279}
 自然変換 $\eta\colon F\Rightarrow G$ が自然変換 $\theta\colon G\Rightarrow F$ であって両合成が恒等自然変換となるものを持つとき自然同型という。
 \end{defn}
-% genron:end K-000279
-% genron:begin K-000280
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000028
-% genron:use K-000243
-% genron:use K-000244
-% genron:use K-000277
-% genron:use K-000279
-% genron:use K-000278
 \Needspace{4\baselineskip}
 \begin{thm}[自然同型の成分判定]\label{k280}
 自然変換 $\eta$ が自然同型であるためには全成分 $\eta_X$ が同型射であることが必要十分である。
@@ -109,22 +63,6 @@
 \begin{proof}
 必要性は成分ごとの合成による。逆に $\theta_X=\eta_X^{-1}$ とする。逆射の一意性により族は一意に指定される。自然性の等式の左に $\eta_Y^{-1}$，右に $\eta_X^{-1}$ を合成すれば $F(f)\circ\theta_X=\theta_Y\circ G(f)$ を得る。よって $\theta$ は自然変換であり，両合成は恒等自然変換となる。
 \end{proof}
-% genron:end K-000280
-% genron:begin K-000281
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000024
-% genron:use K-000033
-% genron:use K-000047
-% genron:use K-000241
-% genron:use K-000245
-% genron:use K-000277
-% genron:use K-000278
 \Needspace{4\baselineskip}
 \begin{thm}[小圏間の函手圏]\label{k281}
 小圏 $\mathcal C,\mathcal D$ に対し函手を対象，自然変換を射，成分ごとの合成と恒等自然変換を演算とする小圏 $[\mathcal C,\mathcal D]$ が存在する。
@@ -132,5 +70,4 @@
 \begin{proof}
 対象集合を $C_0,D_0$ とし，始域・終域を付した射の非交和をそれぞれ $C_1,D_1$ とする。函手全体は写像集合 $D_0^{C_0}\times D_1^{C_1}$ の部分集合 $P$ である。自然変換は始域と終域を明示した三つ組 $(F,G,\eta)$ として $P\times P\times D_1^{C_0}$ の部分集合をなす。従って対象と射は集合である。始域・終域は第一・第二成分で定まり，合成と恒等射は既出の構成による。結合律と単位律は $\mathcal D$ のそれらを各成分に適用すれば従う。大きな圏にはこの集合存在の議論をそのまま適用しない。
 \end{proof}
-% genron:end K-000281
 \end{document}
