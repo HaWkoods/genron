@@ -11,3 +11,6 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 
 /* Continuous reading: document scrolls naturally; page boxes reserve their full height. */
 .reader>section{min-width:0}.pdf-shell.continuous{display:flex;flex-direction:column;align-items:flex-start;gap:16px;overflow-x:auto;overflow-y:hidden;overflow-anchor:none}.continuous .page{display:block;flex:none;align-self:center;max-width:none;margin:0;scroll-margin-top:100px}.continuous .page:has(canvas){background:#fff}.continuous .page:not([data-rendered]){min-height:1px}.continuous .page .error{margin:20px}.continuous .page{align-self:flex-start;margin-inline:auto}.toolbar{z-index:20}.note-nav{margin-top:16px}
+
+/* Single-page view uses the same renderer and annotations; other page boxes are hidden. */
+.pdf-shell.single{display:flex;flex-direction:column;align-items:flex-start;overflow-x:auto;overflow-y:hidden;overflow-anchor:none}.single .page{display:block;flex:none;margin-inline:auto;max-width:none}.toolbar select{max-width:100%}.toolbar select[aria-label="表示方式"]{font-weight:600}

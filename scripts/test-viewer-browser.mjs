@@ -37,6 +37,19 @@ try{
  assert.ok(await page.getByRole("button",{name:"次頁 →",exact:true}).isDisabled());
  await page.getByRole("link",{name:"次のノート：N-4 →",exact:true}).click();await rendered(1).waitFor();assert.match(page.url(),/note=4/);
  await page.goto(origin+"?note=3&page=3");await waitPage(3);
+ // Both modes use identical PDF destinations and preserve the current page.
+ const mode=page.getByRole("combobox",{name:"表示方式"});
+ await mode.selectOption("single");await waitPage(3);
+ assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
+ assert.ok(await sheet(3).isVisible());
+ await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(4);
+ await page.getByRole("button",{name:"← 前のページ",exact:true}).click();await waitPage(3);
+ await page.getByRole("button",{name:"次のページ →",exact:true}).click();await waitPage(4);
+ await page.reload();await waitPage(4);assert.equal(await mode.inputValue(),"single");assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
+ await page.goto(origin+"?id=K-000060");await page.locator(".page:has(.target) .annotations").waitFor();assert.equal(await mode.inputValue(),"single");assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
+ await page.goto(origin+"?note=statements");await waitPage(1);assert.equal(await mode.inputValue(),"single");await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(2);
+ await mode.selectOption("continuous");await waitPage(2);assert.ok(await page.locator(".pdf-shell .page:visible").count()>1);
+ await page.reload();await waitPage(2);assert.equal(await mode.inputValue(),"continuous");
  await page.goto(origin+"?id=K-000001");await page.locator(".target").waitFor();await page.getByRole("link",{name:"次の知識項目 →",exact:true}).click();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000002/);
  await page.goto(origin);await page.getByRole("searchbox").fill("選択公理");
  const searchResult=page.locator(".result a[href*='id=K-000060']");await searchResult.waitFor();
@@ -68,5 +81,5 @@ try{
  await page.setViewportSize({width:390,height:844});await page.goto(origin+"?note=3");await rendered(1).waitFor();await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-150));await rendered(2).waitFor();assert.equal(await page.locator(".pdf-shell .page").count(),6);
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
  assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");
- console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, continuous scrolling, direct page links, next note, next knowledge item.");
+ console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, continuous scrolling, single-page mode, mode persistence, direct page links, next note, next knowledge item.");
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}

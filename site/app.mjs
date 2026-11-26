@@ -11,6 +11,7 @@ const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
 let data, entries, notes, state=null, ticket=0, job=null, disposeReader=null, closeTimer=0, active=null, pinned=false;
 const isTouch=()=>matchMedia("(hover: none)").matches;
 const defaults={width:580,padding:28};
+let readingMode="continuous";try{if(localStorage.getItem("genron-reading-mode")==="single")readingMode="single"}catch{}
 let prefs={...defaults};
 try{const saved=JSON.parse(localStorage.getItem("genron-preview-v1")||"{}");for(const k of ["width","padding"]){if(Number.isFinite(saved[k]))prefs[k]=clamp(saved[k],k==="width"?300:12,k==="width"?760:40)}}catch{}
 function applySettings(){
@@ -107,24 +108,26 @@ async function loadReader(info,token,scroll){
   if(info.id){const idx=items.findIndex(e=>e.id===info.id),nav=node("div","item-nav");if(idx>0)nav.append(anchor("← 前の知識項目",url("id",items[idx-1].id)));if(idx>=0&&idx+1<items.length)nav.append(anchor("次の知識項目 →",url("id",items[idx+1].id)));side.append(nav)}
   for(const e of items){const a=anchor(e.id+"　"+e.title,url("id",e.id),e.id===info.id?"active":"");bindPreview(a,e);side.append(a)}
  }
- const controls=node("div","toolbar"),shell=node("div","pdf-shell continuous"),status=node("p","loading","PDFを読み込んでいます。");
+ const controls=node("div","toolbar"),shell=node("div","pdf-shell "+readingMode),status=node("p","loading","PDFを読み込んでいます。");
  controls.setAttribute("aria-label","ページ操作");shell.append(status);shell.setAttribute("aria-busy","true");
  let jump=()=>{};
  const previous=button("← 前頁",()=>jump(-1,true)),next=button("次頁 →",()=>jump(1,true)),pnum=node("input");pnum.type="number";pnum.min=1;pnum.setAttribute("aria-label","ページ番号");
  const pageCount=node("span","meta","/ …"),z=node("select");z.setAttribute("aria-label","表示倍率");
  for(const [v,t] of [["fit","幅に合わせる"],["0.9","90%"],["1.1","110%"],["1.4","140%"],["1.8","180%"]]){const o=node("option","",t);o.value=v;z.append(o)}
+ const mode=node("select");mode.setAttribute("aria-label","表示方式");for(const [v,t] of [["continuous","連続スクロール"],["single","1ページずつ"]]){const o=node("option","",t);o.value=v;mode.append(o)}mode.value=readingMode;
  const download=anchor("PDFを開く ↗",new URL(file,root).href);download.target="_blank";download.rel="noopener";
+ const footer=node("div","page-footer"),prevBottom=button("← 前のページ",()=>jump(-1,true)),nextBottom=button("次のページ →",()=>jump(1,true)),footerCount=node("span","meta");footer.append(prevBottom,footerCount,nextBottom);footer.hidden=readingMode!=="single";
  const noteNav=node("div","note-nav"),published=[...notes.keys()].sort((a,b)=>a-b);
  if(info.n!=="statements"){const idx=published.indexOf(info.n);if(idx>0)noteNav.append(anchor("← 前のノート：N-"+published[idx-1],url("note",published[idx-1])));if(idx+1<published.length)noteNav.append(anchor("次のノート：N-"+published[idx+1]+" →",url("note",published[idx+1])))}
- for(const b of [previous,next,pnum,z])b.disabled=true;
+ for(const b of [previous,next,pnum,z,mode,prevBottom,nextBottom])b.disabled=true;
  controls.addEventListener("pointerenter",hidePreview);
- controls.append(previous,pnum,pageCount,next,z,download);content.append(heading,controls,shell,noteNav);layout.append(side,content);main.replaceChildren(layout);
+ controls.append(previous,pnum,pageCount,next,mode,z,download);content.append(heading,controls,shell,footer,noteNav);layout.append(side,content);main.replaceChildren(layout);
  const loading=pdfjs.getDocument({url:new URL(file,root).href,isEvalSupported:false,cMapUrl:new URL("./vendor/pdfjs/cmaps/",root).href,cMapPacked:true,standardFontDataUrl:new URL("./vendor/pdfjs/standard_fonts/",root).href});job=loading;
  try{
   const doc=await loading.promise;if(token!==ticket)return;
   const dest=info.id?await destination(doc,info.id):null;if(token!==ticket)return;if(info.id&&!dest)throw Error("PDF内の参照先が見つかりません："+info.id);
   const first=clamp(dest?.page??info.page??1,1,doc.numPages);
-  const s={doc,n:info.n,page:first,zoom:"fit",id:info.id};state=s;
+  const s={doc,n:info.n,page:first,zoom:"fit",id:info.id,mode:readingMode};state=s;
   const pages=[];let generation=0,frame=0,rendering=false,disposed=false,ready=false,resizeTimer=0,lastWidth=0;
   const current=()=>!disposed&&token===ticket&&state===s;
   const topOffset=()=>Math.max(0,controls.getBoundingClientRect().height)+16;
@@ -132,11 +135,16 @@ async function loadReader(info,token,scroll){
   function sync(p,updateUrl=true){
    if(!current())return;const old=s.page;s.page=p;
    if(document.activeElement!==pnum)pnum.value=String(p);
-   previous.disabled=p<=1;next.disabled=p>=doc.numPages;
+   previous.disabled=prevBottom.disabled=p<=1;next.disabled=nextBottom.disabled=p>=doc.numPages;footerCount.textContent=p+" / "+doc.numPages+" 頁";
    if(updateUrl&&old!==p)setPageUrl()
+  }
+  function showPages(){
+   shell.classList.toggle("continuous",s.mode==="continuous");shell.classList.toggle("single",s.mode==="single");footer.hidden=s.mode!=="single";
+   for(const item of pages)item.wrap.hidden=s.mode==="single"&&item.number!==s.page;
   }
   function scrollToPage(n,y=null){
    if(!current())return;const item=pages[n-1];if(!item)return;
+   showPages();
    let top=item.wrap.getBoundingClientRect().top+scrollY-topOffset();
    if(Number.isFinite(y)){
     const offset=clamp(item.view.convertToViewportPoint(0,y)[1],0,item.view.height);
@@ -160,6 +168,7 @@ async function loadReader(info,token,scroll){
    }
   }
   function visiblePage(){
+   if(s.mode==="single")return s.page;
    const line=topOffset()+24;
    if(scrollY>0&&innerHeight+scrollY>=document.documentElement.scrollHeight-3)return pages.length;
    let p=1;
@@ -198,7 +207,7 @@ async function loadReader(info,token,scroll){
    if(rendering||!current())return;rendering=true;
    try{
     while(current()){
-     const items=pages.map(item=>{const r=item.wrap.getBoundingClientRect();return {item,distance:r.bottom<0?-r.bottom:r.top>innerHeight?r.top-innerHeight:0}});
+     const items=pages.map(item=>{if(item.wrap.hidden)return {item,distance:Infinity};const r=item.wrap.getBoundingClientRect();return {item,distance:r.bottom<0?-r.bottom:r.top>innerHeight?r.top-innerHeight:0}});
      for(const {item,distance} of items)if(distance>innerHeight*3&&item.rendered)clear(item);
      const next=items.filter(x=>x.distance<=innerHeight*1.25&&!x.item.rendered&&!x.item.failed).sort((a,b)=>a.distance-b.distance||Math.abs(a.item.number-s.page)-Math.abs(b.item.number-s.page))[0];
      if(!next)break;
@@ -218,12 +227,18 @@ async function loadReader(info,token,scroll){
    const page=await doc.getPage(n);if(!current())return;
    const wrap=node("div","page");wrap.dataset.page=String(n);wrap.setAttribute("aria-label",n+" ページ");pages.push({number:n,page,wrap,view:null,task:null,rendered:false,failed:false});
   }
-  shell.replaceChildren(...pages.map(p=>p.wrap));sizePages();
-  pageCount.textContent="/ "+doc.numPages;pnum.max=doc.numPages;pnum.disabled=false;z.disabled=false;shell.setAttribute("aria-busy","false");
+  shell.replaceChildren(...pages.map(p=>p.wrap));showPages();sizePages();
+  pageCount.textContent="/ "+doc.numPages;pnum.max=doc.numPages;pnum.disabled=false;z.disabled=false;mode.disabled=false;shell.setAttribute("aria-busy","false");
   sync(first,false);pnum.value=String(first);
   jump=(value,relative=false)=>{if(!current())return;hidePreview();const n=clamp(relative?s.page+value:value,1,doc.numPages);sync(n);pnum.value=String(n);scrollToPage(n)};
   pnum.onchange=()=>jump(parseInt(pnum.value,10)||1);pnum.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();jump(parseInt(pnum.value,10)||1);pnum.blur()}};
   z.onchange=()=>{s.zoom=z.value;reflow()};
+  mode.onchange=()=>{
+   if(!current()||!ready)return;hidePreview();
+   const item=pages[s.page-1],offset=clamp((topOffset()-item.wrap.getBoundingClientRect().top)/item.view.height,0,1);
+   s.mode=readingMode=mode.value==="single"?"single":"continuous";try{localStorage.setItem("genron-reading-mode",readingMode)}catch{}
+   showPages();const top=item.wrap.getBoundingClientRect().top+scrollY+offset*item.view.height-topOffset();window.scrollTo({top:Math.max(0,top),behavior:"instant"});schedule();
+  };
   ready=true;addEventListener("scroll",schedule,{passive:true});addEventListener("resize",resize);
   if(scroll!==null)window.scrollTo(0,scroll);else if(dest||first!==1)scrollToPage(first,dest?.y);else window.scrollTo(0,0);
   schedule();
