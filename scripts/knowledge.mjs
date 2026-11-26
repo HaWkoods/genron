@@ -19,6 +19,14 @@ function readSources(){
  }
  walk(path.join(root,"volumes"));return sources;
 }
+function publishedPDFs(ledger){
+ return (ledger.notes??[]).filter(n=>{
+  if(n.status!=="verified")return false;
+  const p=path.join(root,"volumes","N-"+n.number,"main.pdf");
+  if(!fs.existsSync(p)||!fs.statSync(p).isFile())return false;
+  const fd=fs.openSync(p,"r");try{const header=Buffer.alloc(5);return fs.readSync(fd,header,0,5,0)===5&&header.toString()==="%PDF-";}finally{fs.closeSync(fd)}
+ }).map(n=>n.number);
+}
 function historical(ref){
  const sha=git("rev-parse","--verify","--end-of-options",ref+"^{commit}").trim();
  const names=git("ls-tree","-r","--name-only","-z",sha).split("\0");
@@ -54,7 +62,7 @@ function main(){
  if(cmd==="graph"){
   if(!valid){process.exitCode=1;return}
   if(args.length>2||args.length&& !["knowledge","notes","plan"].includes(args[0])||args.length===2&&!(args[0]==="plan"&&["--mermaid","--markdown"].includes(args[1])))throw Error("Usage: graph [knowledge|notes|plan] [--mermaid|--markdown (plan only)]");
-  if(args[0]==="plan"){if(args[1]==="--mermaid")process.stdout.write(planMermaid(ledger));else if(args[1]==="--markdown")process.stdout.write(planMarkdown(ledger));else console.log(JSON.stringify(planGraph(ledger),null,2));}
+  if(args[0]==="plan"){if(args[1]==="--mermaid")process.stdout.write(planMermaid(ledger));else if(args[1]==="--markdown")process.stdout.write(planMarkdown(ledger,publishedPDFs(ledger)));else console.log(JSON.stringify(planGraph(ledger),null,2));}
   else console.log(JSON.stringify(graph(ledger,args[0]??"knowledge"),null,2));return;
  }
  if(cmd==="impact"){
