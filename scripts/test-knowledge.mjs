@@ -20,7 +20,7 @@ function runTests(){
  check("cycle",has(validate(ledger(cyclic,b),src(cyclic,b)),"CYCLE"));
  check("self cycle",has(validate(ledger({...a,depends_on:[a.id]}),src({...a,depends_on:[a.id]})),"CYCLE"));
  check("unknown manuscript reference",has(validate(ledger(a),{"volumes/test.tex":block(a).replace("% genron:end","\\GenronRef{K-999999}\n% genron:end")}),"UNKNOWN_SOURCE_REFERENCE"));
- check("undeclared manuscript dependency",has(validate(ledger(a,b),src(a,{...b,depends_on:[]}).constructor===Object?{"volumes/test.tex":block(a)+block(b).replace("% genron:use K-000001","% genron:use K-999999")}:{}),"UNDECLARED_SOURCE_DEPENDENCY"));
+ check("undeclared manuscript dependency",has(validate(ledger(a,b),{"volumes/test.tex":block(a)+block(b).replace("% genron:use K-000001","% genron:use K-999999")}),"UNDECLARED_SOURCE_DEPENDENCY"));
  check("missing manuscript annotation",has(validate(ledger(a,b),src(a,{...b,depends_on:[]})),"UNMARKED_DEPENDENCY"));
  check("unregistered block",has(validate(ledger(a),src(a,b)),"UNREGISTERED_BLOCK"));
  check("source order",has(validate(ledger(a,b),src(b,a)),"SOURCE_ORDER"));
