@@ -5,7 +5,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small 数学原論\quad N-14}
-\fancyhead[R]{\small フィルターと収束\quad\thepage}
+\fancyhead[R]{\small フィルターとネット\quad\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{14pt}
 \theoremstyle{definition}
@@ -30,8 +30,8 @@
 \begin{document}
 \begin{center}
 {\small 数学原論}\par\vspace{4mm}
-{\LARGE フィルターと収束}\par\vspace{2mm}
-{\small N-14\quad 第1版}
+{\LARGE フィルターとネット}\par\vspace{2mm}
+{\small N-14\quad 第2版}
 \end{center}
 N-53「近傍と閉包」及び N-4「順序と束」を前提とする。空集合を含まないフィルターのみを扱う。
 \Needspace{8\baselineskip}
@@ -214,5 +214,84 @@ $\mathcal B$ が空でないので $X\in\mathcal F$ であり，$\mathcal B$ の
 とおく。この族は $X$ を含み，閉包の特徴づけにより空集合を含まない。二つの元の共通部分は $\mathcal F$ と $\mathcal N(x)$ の共通部分に関する閉性から再び $\mathcal B$ に属する。従ってフィルター基である。命題\ref{k236}によりその生成するフィルター $\mathcal G$ が存在する。$X\in\mathcal N(x)$ と $X\in\mathcal F$ から $\mathcal F\cup\mathcal N(x)\subseteq\mathcal B\subseteq\mathcal G$ となる。よって所望のフィルターを得る。
 \end{proof}
 % genron:end K-000240
+
+\Needspace{8\baselineskip}
+\section{ネットとフィルター}
+% genron:begin K-000273
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000068
+% genron:use K-000075
+\Needspace{4\baselineskip}
+\begin{defn}[ネットと終局性]\label{k273}
+空でない前順序集合 $(D,\leq)$ で任意の二元が共通上界を持つもの（有向前順序集合）から集合 $X$ への写像 $d\mapsto x_d$ をネットという。性質 $P(d)$ がある $d_0\in D$ に対してすべての $d\geq d_0$ で成立するとき終局的に成立するという。
+\end{defn}
+% genron:end K-000273
+% genron:begin K-000274
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000194
+% genron:use K-000273
+\Needspace{4\baselineskip}
+\begin{defn}[ネットの収束と集積]\label{k274}
+位相空間のネット $(x_d)$ が点 $x$ に収束するとは任意の近傍 $V$ に対して $x_d\in V$ が終局的に成立することをいう。また任意の近傍 $V$ と任意の $d_0$ に対し $d\geq d_0$ かつ $x_d\in V$ となる $d$ が存在するとき $x$ を集積点という。
+\end{defn}
+% genron:end K-000274
+% genron:begin K-000275
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000075
+% genron:use K-000233
+% genron:use K-000238
+% genron:use K-000273
+% genron:use K-000274
+\Needspace{4\baselineskip}
+\begin{thm}[終局フィルター]\label{k275}
+ネット $(x_d)$ に対し $\mathcal F=\{A\subseteq X\mid x_d\in A\text{ が終局的に成立}\}$ はフィルターである。ネットの収束先及び集積点はそれぞれ $\mathcal F$ の収束先及び集積点と一致する。
+\end{thm}
+\begin{proof}
+$X$ は属し，各終区間は空でないから空集合は属さない。上方閉性は明らかである。二集合の終局性を与える添字の共通上界を取れば交叉への終局性が成立する。収束の一致は定義による。終区間の像 $T_{d_0}=\{x_d\mid d\geq d_0\}$ は $\mathcal F$ に属し，$\mathcal F$ の各元はある $T_{d_0}$ を含む。従って近傍がすべての $T_{d_0}$ と交わることは $\mathcal F$ のすべての元と交わることに等しい。
+\end{proof}
+% genron:end K-000275
+% genron:begin K-000276
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000068
+% genron:use K-000075
+% genron:use K-000233
+% genron:use K-000273
+% genron:use K-000275
+\Needspace{4\baselineskip}
+\begin{thm}[フィルターからのネット]\label{k276}
+任意のフィルター $\mathcal F$ はあるネットの終局フィルターである。この構成には選択公理を用いない。
+\end{thm}
+\begin{proof}
+$D=\{(A,a)\in\mathcal F\times X\mid a\in A\}$ とし，$(A,a)\leq(B,b)$ を $B\subseteq A$ によって定める。$D$ は空でない。二添字に対して $A\cap B\in\mathcal F$ であり，そこから一元 $c$ を取れば $(A\cap B,c)$ が共通上界となる。ネットを $x_{(A,a)}=a$ と定める。$C\in\mathcal F$ なら $c\in C$ を一つ取り $(C,c)$ 以後の値はすべて $C$ に属する。逆に $(A,a)$ 以後の値がすべて $C$ に属するなら任意の $b\in A$ に対して $(A,b)\geq(A,a)$ であるから $b\in C$ である。従って $A\subseteq C$ なので $C\in\mathcal F$ となる。
+\end{proof}
+% genron:end K-000276
 \par\medskip\noindent{\small\textbf{参考文献・制作方針.} Bredon, \textit{Topology and Geometry}, Ch.~I, \S2 の近傍・閉包の記述を参照。フィルターそのものの文献本文は今回未確認であり，定義及び証明は既出集合演算から独立に構成した。}
 \end{document}
