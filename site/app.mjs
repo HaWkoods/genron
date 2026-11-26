@@ -60,7 +60,7 @@ function fillPreview(box,e,withClose=true){
  box.append(node("h3","",(types[e.kind]??e.kind)+"（"+e.title+"）"));
  if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
  const p=node("p");renderParts(p,e.preview?.statement,e.statement);box.append(p);
- const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",url("id",e.id)));box.append(foot)
+ const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",new URL(location.href).searchParams.get("view")==="web"?webUrl("id",e.id):url("id",e.id)));box.append(foot)
 }
 function positionPreview(el){
  if(!el?.isConnected)return hidePreview();
@@ -380,11 +380,28 @@ async function loadReader(info,token,scroll){
 
 function webUrl(key,val){const u=new URL(url(key,val));u.searchParams.set("view","web");return u.href}
 
+
+// Link explicit prose citations, never guess a target from a mathematical term.
+// A single-ID citation with a note/name prefix is linked as a whole;
+// other explicit IDs (including lists of IDs) remain independently clickable.
+function appendWebCitationText(target,text){
+ const re=/N-\d+\s*の\s*[^（）\n，、。．；;]{1,80}（(K-\d{6})(?:[，、,]\s*[^（）\n]*)?）|(?<![A-Za-z0-9-])(K-\d{6})(?![A-Za-z0-9-])/g;
+ let last=0;
+ for(const m of text.matchAll(re)){
+  target.append(document.createTextNode(text.slice(last,m.index)));
+  const id=m[1]??m[2],e=entries.get(id);
+  if(e){const a=anchor(m[0],webUrl("id",id),"web-citation");bindPreview(a,e);target.append(a)}
+  else target.append(document.createTextNode(m[0]));
+  last=m.index+m[0].length;
+ }
+ target.append(document.createTextNode(text.slice(last)));
+}
+
 function renderProof(target,proof,metadata){
  const tex=proof.tex;
  const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\})/g;
  const macros=Object.fromEntries(Object.entries(metadata.macros??{}).map(([k,v])=>["\\"+k,v]));
- const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));target.append(p);if(s.includes("\n\n"))target.append(node("br"))}};
+ const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));appendWebCitationText(target,p.textContent);if(s.includes("\n\n"))target.append(node("br"))}};
  let last=0;
  for(const m of tex.matchAll(pattern)){
   plain(tex.slice(last,m.index));last=m.index+m[0].length;
