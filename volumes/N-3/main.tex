@@ -1,0 +1,368 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-3}
+\fancyhead[R]{\small 選択公理\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{ax}[ruledef]{公理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 選択公理}\par\vspace{2mm}
+{\small N-3\quad 第1版}
+\end{center}
+\noindent 本篇は N-1「数学的言語」及び N-2「集合・写像・関係」を前提とする。集合族の直積は既に構成されているが，その元の存在は必ずしも定義から従わない。本篇ではこの存在を保証する原理を明示的に採用し，その同値な定式化を与える。順序に関する知識及び自然数の理論は前提としない。本文中の K-番号は原論の知識台帳における識別子である。
+\Needspace{8\baselineskip}
+\section{選択函数と選択公理}
+% genron:begin K-000057
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+\Needspace{4\baselineskip}
+\begin{defn}[選択函数]\label{k57}
+$(A_i)_{i\in I}$ を集合族とし，$U=\bigcup_{i\in I}A_i$ とおく。写像 $f:I\to U$ であって
+\[
+ \forall i\in I,\quad f(i)\in A_i
+\]
+を満たすものをこの集合族の選択函数という。
+\end{defn}
+N-2 の定義 4.4（K-000047，写像の集合と直積族）により，この集合族の選択函数全体からなる集合は $\prod_{i\in I}A_i$ にほかならない。従って選択函数が存在することと直積が空でないこととは同じことである。$I=\varnothing$ の場合には空の写像が唯一の選択函数である。ある $i\in I$ に対し $A_i=\varnothing$ ならば選択函数は存在しない。
+% genron:end K-000057
+% genron:begin K-000058
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000006
+% genron:use K-000017
+% genron:use K-000035
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000057
+\Needspace{4\baselineskip}
+\begin{prop}[一意選択]\label{k58}
+集合族 $(A_i)_{i\in I}$ に対して，各 $i\in I$ につき条件 $P(i,a)$ を満たす $a\in A_i$ がただ一つ存在するならば，
+\[
+ \forall i\in I,\quad P(i,f(i))
+\]
+を満たす選択函数 $f$ がただ一つ存在する。
+\end{prop}
+\begin{proof}
+$U=\bigcup_{i\in I}A_i$ とする。各 $i\in I$ について，$a\in U$ が $a\in A_i$ を満たし，その範囲において $P(i,a)$ が成り立つという条件を考える。この条件を満たす $a$ がただ一つ存在する。従って N-2 の写像の指定（K-000035）を適用すればよい。
+\end{proof}
+ここで用いたのは，既に一意に定まっている値を集めて写像にする原理である。任意の空でない集合族についてこのような一意の指定が与えられているわけではない。
+% genron:end K-000058
+% genron:begin K-000059
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000023
+% genron:use K-000035
+% genron:use K-000057
+\Needspace{4\baselineskip}
+\begin{prop}[二つの集合からの選択]\label{k59}
+添字集合 $I=\{i,j\}$ による集合族 $(A_k)_{k\in I}$ において各 $A_k$ が空でなければ，選択函数が存在する。
+\end{prop}
+\begin{proof}
+$i=j$ の場合は $A_i$ の元 $a$ をとり，$f(i)=a$ とする。$i\ne j$ の場合は $a\in A_i$ をとり，次いで $b\in A_j$ をとる。$f(i)=a,\ f(j)=b$ によって各 $k\in I$ の値は一意に定まるから，選択函数が得られる。
+\end{proof}
+上の論証には選択公理を要しない。有限個の集合族について同様の結果を一般に示すには，有限集合の理論を整備した後に帰納法を用いる。任意の添字集合の場合に，この二つの元の選択と同じ論法を無条件に適用してはならない。
+% genron:end K-000059
+% genron:begin K-000060
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000057
+\Needspace{4\baselineskip}
+\begin{ax}[選択公理]\label{k60}
+$I$ を任意の集合とし，$(A_i)_{i\in I}$ を空でない集合からなる集合族とする。このとき，この集合族の選択函数が存在する。すなわち
+\[
+ \exists f\in U^I,
+ \qquad \forall i\in I,\ f(i)\in A_i.
+\]
+ただし $U=\bigcup_{i\in I}A_i$ とおいた。
+\end{ax}
+これは先行する諸定理から導いた命題ではなく，本篇で新たに認める公理である。$I=\varnothing$ の場合は定義\ref{k57}に続く注意から既に成り立っている。一般の場合に各集合が元を持つという言明と，これらの元を一つの写像として同時に指定できるという言明との相違に注意する。公理の形式的な独立性に関する議論は本篇では行わない。
+% genron:end K-000060
+% genron:begin K-000061
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000022
+% genron:use K-000044
+% genron:use K-000047
+% genron:use K-000057
+% genron:use K-000060
+\Needspace{4\baselineskip}
+\begin{prop}[直積の非空性]\label{k61}
+任意の集合族 $(A_i)_{i\in I}$ について
+\[
+ \prod_{i\in I}A_i\ne\varnothing
+ \iffc \forall i\in I,\ A_i\ne\varnothing.
+\]
+\end{prop}
+\begin{proof}
+左辺が成り立てば直積の元 $f$ が存在し，各 $i\in I$ に対して $f(i)\in A_i$ である。逆に右辺が成り立てば選択公理により選択函数 $f$ が存在する。定義\ref{k57}から $f$ は直積の元である。
+\end{proof}
+この必要性の証明に選択公理は用いられていない。逆に，任意の集合族について右辺から左辺が従うと仮定すれば，定義\ref{k57}から選択公理が従う。従って直積の非空性を保証する一般命題は選択公理の同値な定式化である。
+% genron:end K-000061
+\Needspace{8\baselineskip}
+\section{写像及び関係による定式化}
+% genron:begin K-000062
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000039
+% genron:use K-000040
+% genron:use K-000041
+\Needspace{4\baselineskip}
+\begin{defn}[右逆写像と左逆写像]\label{k62}
+$f:A\to B$，$g:B\to A$ とする。$f\circ g=\id_B$ が成り立つとき $g$ を $f$ の右逆写像といい，$g\circ f=\id_A$ が成り立つとき $g$ を $f$ の左逆写像という。
+\end{defn}
+右逆写像を持つ写像は全射である。実際，$b\in B$ に対して $a=g(b)$ とすれば $f(a)=b$ である。また左逆写像を持つ写像は単射である。実際，$f(a)=f(a')$ ならば両辺に $g$ を施して $a=a'$ を得る。逆写像（N-2, K-000041）は左逆でも右逆でもあるが，片方だけの条件は逆写像の条件より弱い。
+% genron:end K-000062
+% genron:begin K-000063
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000028
+% genron:use K-000032
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000042
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000049
+% genron:use K-000057
+% genron:use K-000060
+% genron:use K-000062
+\Needspace{4\baselineskip}
+\begin{prop}[全射の右逆]\label{k63}
+任意の全射は右逆写像を持つ。この一般命題は選択公理と同値である。
+\end{prop}
+\begin{proof}
+$f:A\to B$ を全射とする。各 $b\in B$ に対し
+\[
+ A_b=f^{-1}(\{b\})
+\]
+は空でない。これらは $B$ を添字集合とする集合族である。選択公理により選択函数 $g_0:B\to\bigcup_{b\in B}A_b$ が存在する。この合併集合は $A$ に等しい。実際，各 $A_b$ は $A$ の部分集合であり，任意の $a\in A$ は $A_{f(a)}$ に属する。従って $g=g_0:B\to A$ として
+\[
+ f(g(b))=b\quad(b\in B)
+\]
+を得る。これは右逆である。
+
+逆に，全射が常に右逆写像を持つものと仮定する。空でない集合からなる任意の集合族 $(A_i)_{i\in I}$ をとり，$U=\bigcup_{i\in I}A_i$，$D=\coprod_{i\in I}A_i$ とする。N-2 の非交和の定義（K-000049）に従い
+\[
+ D=\{(i,a)\in I\times U\mid a\in A_i\}
+\]
+である。$p:D\to I$ を $p(i,a)=i$ により定める。各 $i$ について $A_i\ne\varnothing$ であるから $p$ は全射である。仮定による右逆写像 $s:I\to D$ をとる。$q:D\to U$ を $q(i,a)=a$ により定め，$h=q\circ s:I\to U$ とおく。$p(s(i))=i$ により $s(i)=(i,h(i))\in D$ であるから $h(i)\in A_i$ を得る。従って $h$ は選択函数である。$I=\varnothing$ の場合にも同じ定義と論証が通用する。
+\end{proof}
+% genron:end K-000063
+% genron:begin K-000064
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000062
+\Needspace{4\baselineskip}
+\begin{prop}[単射の左逆]\label{k64}
+$f:A\to B$ を単射とする。$A\ne\varnothing$ ならば $f$ は左逆写像を持つ。$A=\varnothing$ の場合は，$B=\varnothing$ のとき，かつそのときに限り左逆写像を持つ。
+\end{prop}
+\begin{proof}
+$A\ne\varnothing$ とし，一つの元 $a_0\in A$ をとる。$b\in f(A)$ ならば $f(a)=b$ を満たす $a\in A$ がただ一つ存在する。この $a$ を $g(b)$ とし，$b\notin f(A)$ ならば $g(b)=a_0$ と定める。値の一意性により写像 $g:B\to A$ が存在し，任意の $a\in A$ に対し $g(f(a))=a$ である。
+
+$A=\varnothing$ ならば左逆写像 $B\to A$ が存在するためには $B=\varnothing$ が必要であり，この場合には空の写像が左逆である。
+\end{proof}
+この証明には選択公理を用いていない。$a_0$ は一つの空でない集合からとった一つの元である。
+% genron:end K-000064
+% genron:begin K-000065
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000016
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000028
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000042
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000050
+% genron:use K-000057
+% genron:use K-000060
+\Needspace{4\baselineskip}
+\begin{prop}[関係の写像による実現]\label{k65}
+集合 $A,B$ と $A$ から $B$ への関係 $R$ が与えられ，
+\[
+ \forall a\in A,\ \exists b\in B,\ aRb
+\]
+が成り立つとする。このとき任意の $a\in A$ に対して $aRf(a)$ となる写像 $f:A\to B$ が存在する。この一般命題は選択公理と同値である。
+\end{prop}
+\begin{proof}
+各 $a\in A$ に対して $B_a=\{b\in B\mid aRb\}$ とおく。仮定から $B_a\ne\varnothing$ であり，$\bigcup_{a\in A}B_a\subseteq B$ である。選択公理による選択函数の終域を $B$ に拡大すれば所要の写像を得る（同じグラフは依然として $A\times B$ の部分集合である）。
+
+逆にこの命題を仮定し，空でない集合からなる集合族 $(A_i)_{i\in I}$ をとる。$U=\bigcup A_i$ とし，$I$ から $U$ への関係を $iRa\iffc a\in A_i$ により定める。各 $i$ に対し $A_i$ は空でないから，仮定を適用した写像 $I\to U$ は選択函数となる。
+\end{proof}
+N-1 の量化の順序に関する注意（K-000016）を参照されたい。ここで存在を主張した対象は個々の $b$ ではなく，それらを値とする写像である。
+% genron:end K-000065
+\Needspace{8\baselineskip}
+\section{選択公理の帰結}
+% genron:begin K-000066
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000006
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000022
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000028
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000053
+% genron:use K-000054
+% genron:use K-000055
+% genron:use K-000057
+% genron:use K-000060
+% genron:use K-000062
+% genron:use K-000063
+\Needspace{4\baselineskip}
+\begin{prop}[商写像の切断と代表元]\label{k66}
+$A$ 上の同値関係 $\sim$ に対して，$A$ の部分集合 $T$ であって各同値類とただ一つの元で交わるものが存在する。このような部分集合を代表元の集合という。任意の分割について代表元の集合が存在するという命題は選択公理と同値である。
+\end{prop}
+\begin{proof}
+標準全射 $\pi:A\to A/{\sim}$ は命題\ref{k63}により右逆 $s:A/{\sim}\to A$ を持つ。$T=s(A/{\sim})$ とおく。任意の同値類 $C$ について $\pi(s(C))=C$ であるから $s(C)\in C\cap T$ である。また $t\in C\cap T$ ならば，ある同値類 $D$ について $t=s(D)$，従って $C=\pi(t)=D$ となり $t=s(C)$ である。逆にこの性質を持つ $T$ が与えられれば，各 $C$ に $C\cap T$ の唯一の元を対応させることで右逆 $s$ が一意に定まる。
+
+最後に，任意の分割についてそのような $T$ が存在するものと仮定し，全射 $f:A\to B$ をとる。空でない逆像 $f^{-1}(\{b\})$ ($b\in B$) 全体は $A$ の分割である。実際，異なる $b$ に対応する逆像は交わらず，任意の $a\in A$ は $f^{-1}(\{f(a)\})$ に属する。各 $b\in B$ に $T\cap f^{-1}(\{b\})$ の唯一の元を対応させる写像は $f$ の右逆である。命題\ref{k63}によって選択公理が従う。
+\end{proof}
+商集合自体の構成とその普遍性（N-2, K-000053, K-000055）には選択公理を用いなかった。この命題はそれらとは区別される。
+% genron:end K-000066
+% genron:begin K-000067
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000028
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000048
+% genron:use K-000057
+% genron:use K-000060
+\Needspace{4\baselineskip}
+\begin{prop}[全射の積]\label{k67}
+集合族 $(A_i)_{i\in I},(B_i)_{i\in I}$ と全射 $f_i:A_i\to B_i$ の族が与えられたとする。このとき写像
+\[
+ F:\prod_{i\in I}A_i\longrightarrow\prod_{i\in I}B_i,
+ \qquad F(a)(i)=f_i(a(i))
+\]
+は全射である。
+\end{prop}
+\begin{proof}
+$a\in\prod A_i$ が与えられれば，各 $i\in I$ に対し $f_i(a(i))\in B_i$ が一意に定まるから，これらを値とする選択函数 $F(a)$ が一意に定まる。従って $F$ は選択公理によらず構成される。
+
+$b\in\prod B_i$ を任意にとる。各 $i\in I$ に対し $C_i=\{x\in A_i\mid f_i(x)=b(i)\}$ は空でない。選択公理により選択函数 $c:I\to\bigcup C_i$ が存在する。$c$ の終域を $\bigcup A_i$ に拡大して得られる写像 $a$ は $\prod A_i$ の元であり，$F(a)=b$ を満たす。よって $F$ は全射である。終域の直積が空である場合は全射性の条件は自動的に満たされ，添字集合が空である場合も同じ論証が適用できる。
+\end{proof}
+% genron:end K-000067
+\Needspace{5\baselineskip}
+\section*{参考文献}
+\noindent T. Jech, \textit{Set Theory}, Third Millennium Edition, Springer, 2003, Ch. 1, Ch. 5（選択公理の位置づけ）.\par
+\noindent J. M. Lee, \textit{Introduction to Topological Manifolds}, 2nd ed., Springer, 2011, Appendix A, pp. 389, 393（右逆写像と選択函数）.
+
+\end{document}

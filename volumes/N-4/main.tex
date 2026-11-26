@@ -1,0 +1,883 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-4}
+\fancyhead[R]{\small 順序と束\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 順序と束}\par\vspace{2mm}
+{\small N-4\quad 第1版}
+\end{center}
+\noindent 本篇は N-1「数学的言語」及び N-2「集合・写像・関係」を前提とする。集合に与えられた順序関係を出発点として，上限と下限，束，完備束及び分配束を展開する。順序に由来する二項演算と，演算に由来する順序との対応を重視する。選択公理及び数体系は前提としない。本文中の K-番号は知識台帳における識別子である。
+\Needspace{8\baselineskip}
+\section{順序集合}
+% genron:begin K-000068
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000050
+% genron:use K-000052
+\Needspace{4\baselineskip}
+\begin{defn}[前順序と半順序]\label{k68}
+集合 $P$ 上の関係 $\leq$ が次の条件を満たすとき，前順序という。
+\begin{align*}
+ &\forall x\in P,\quad x\leq x,\\
+ &\forall x,y,z\in P,\quad (x\leq y\land y\leq z)\impc x\leq z.
+\end{align*}
+更に反対称性
+\[
+ \forall x,y\in P,\quad (x\leq y\land y\leq x)\impc x=y
+\]
+を満たすとき，これを半順序（又は単に順序）という。半順序を与えた集合 $(P,\leq)$ を順序集合という。更に
+\[
+ \forall x,y\in P,\quad x\leq y\lor y\leq x
+\]
+が成り立つとき全順序という。
+\end{defn}
+$P=\varnothing$ の場合も許す。順序が明らかな場合には順序集合を単に $P$ と書く。二元 $x,y$ が $x\leq y$ 又は $y\leq x$ を満たすとき，比較可能であるという。$x\geq y$ は $y\leq x$ の別記法である。
+% genron:end K-000068
+% genron:begin K-000069
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000050
+% genron:use K-000068
+\Needspace{4\baselineskip}
+\begin{prop}[狭義順序]\label{k69}
+半順序 $\leq$ に対して $x<y$ を $x\leq y$ かつ $x\ne y$ により定めると，$<$ は非反射的かつ推移的な関係となる。逆にこの二条件を満たす関係 $<$ に対して，$x\leq y$ を $x<y$ 又は $x=y$ と定めると半順序となる。これらの対応は互いに逆である。
+\end{prop}
+\begin{proof}
+前者の非反射性は定義から明らかである。$x<y<z$，すなわち $x<y$ かつ $y<z$ とする。$x\leq z$ であり，もし $x=z$ なら $x\leq y\leq x$ から $x=y$ となり矛盾する。従って $x<z$ である。
+
+逆に $<$ を非反射的推移的とする。$x<y$ と $y<x$ が共に成り立てば $x<x$ となるので両立しない。よって $x\leq y$ かつ $y\leq x$ なら $x=y$ である。反射性は明らかであり，推移性は等号の場合と狭義関係の場合に分ければ従う。二つの構成を続けて施せば元の関係に戻ることは定義と非反射性から直ちに従う。
+\end{proof}
+以後 $<$ を $\leq$ に付随する狭義順序とする。
+% genron:end K-000069
+% genron:begin K-000070
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000020
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000050
+% genron:use K-000051
+% genron:use K-000068
+\Needspace{4\baselineskip}
+\begin{prop}[部分順序集合と双対]\label{k70}
+順序集合 $P$ の部分集合 $S$ に順序を制限したものは順序集合となる。また次のものは順序集合である。
+\begin{enumerate}
+\item $P$ に $x\leq_{\mathrm{op}}y\iffc y\leq x$ という順序を与えたもの（双対順序集合 $P^{\mathrm{op}}$）。
+\item 順序集合 $P,Q$ の直積に
+\[
+ (x,y)\leq (x',y')\iffc x\leq x'\land y\leq y'
+\]
+という順序を与えたもの。
+\item 任意の集合 $E$ の冪集合 $\Pow(E)$ に包含関係 $\subseteq$ を与えたもの。
+\end{enumerate}
+\end{prop}
+\begin{proof}
+制限した関係は $S\times S$ における部分集合の指定によって存在し，順序の三条件を受け継ぐ。双対では反射性と反対称性は明らかであり，$z\leq y\leq x$ から $z\leq x$ を得るので推移性も成り立つ。直積順序では各条件を成分ごとに確認すればよい。反対称性には順序対の相等を用いる。最後の例は N-2 の包含の性質（K-000020）そのものである。
+\end{proof}
+以下，順序に関する命題に双対順序を適用して得られる命題をその双対という。双対による証明は，同じ命題を $P^{\mathrm{op}}$ に適用することであり，独立した原理を必要としない。
+% genron:end K-000070
+% genron:begin K-000071
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000068
+\Needspace{4\baselineskip}
+\begin{prop}[前順序の商]\label{k71}
+前順序集合 $P$ において $x\sim y$ を $x\leq y$ かつ $y\leq x$ により定めると，同値関係を得る。商集合 $P/{\sim}$ は
+\[
+ [x]\leq[y]\iffc x\leq y
+\]
+により順序集合となる。
+\end{prop}
+\begin{proof}
+反射性，対称性及び推移性は前順序の二条件から従う。$x\sim x'$，$y\sim y'$ とする。$x\leq y$ なら $x'\leq x\leq y\leq y'$，逆に $x'\leq y'$ なら $x\leq x'\leq y'\leq y$ である。従って商集合上の条件は代表元の取り方に依存せず，関係を定める。反射性と推移性は元の関係から従う。$[x]\leq[y]$ かつ $[y]\leq[x]$ なら $x\sim y$，よって $[x]=[y]$ となる。
+\end{proof}
+% genron:end K-000071
+\Needspace{8\baselineskip}
+\section{上界・下界と極大元}
+% genron:begin K-000072
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000020
+% genron:use K-000021
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000050
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000070
+\Needspace{4\baselineskip}
+\begin{defn}[上界・下界と最大元・極大元]\label{k72}
+$P$ を順序集合，$S\subseteq P$ とする。
+\begin{enumerate}
+\item $u\in P$ が $\forall s\in S,\ s\leq u$ を満たすとき，$S$ の上界という。下界は $\forall s\in S,\ u\leq s$ により定める。
+\item $S$ の上界であって $S$ に属するものを $S$ の最大元といい，下界であって $S$ に属するものを最小元という。
+\item $m\in S$ が
+\[
+ \forall s\in S,\quad m\leq s\impc m=s
+\]
+を満たすとき，$S$ の極大元という。極小元は順序を逆にして定める。
+\end{enumerate}
+\end{defn}
+最大元は存在すればただ一つである。実際，最大元 $m,n$ に対しては $m\leq n$ かつ $n\leq m$ となり，反対称性から $m=n$ となる。また最大元 $m$ は極大元である。$m\leq s$ となる $s\in S$ に対しても $s\leq m$ だからである。双対により最小元にも同様のことが成り立つ。極大元は最大元と異なり，一般に一意とは限らない。
+
+例えば相異なる二つの対象 $a,b$ に対し，$P=\{a,b\}$ に等号だけを順序として与えると，$a,b$ はいずれも極大元かつ極小元であるが，最大元も最小元も存在しない。この例は N-2 の空集合 $\varnothing$ と一元集合 $\{\varnothing\}$ を用いれば構成できる。
+% genron:end K-000072
+% genron:begin K-000073
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000024
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000072
+\Needspace{4\baselineskip}
+\begin{defn}[上限と下限]\label{k73}
+$S\subseteq P$ の上界全体からなる集合を $U(S)$，下界全体からなる集合を $L(S)$ とする。これらは部分集合の指定によって存在する。$U(S)$ の最小元を $S$ の上限といい $\sup_P S$ と書く。$L(S)$ の最大元を $S$ の下限といい $\inf_P S$ と書く。
+\end{defn}
+これらは存在すれば一意である。$P$ が明らかなときは添字 $P$ を省略する。特に
+\[
+ u=\sup S\iffc
+ \bigl(u\in U(S)\land\forall v\in U(S),\ u\leq v\bigr).
+\]
+下限については双対な特徴づけが成り立つ。$S$ が最大元を持てばそれが上限である。逆に上限が $S$ に属すれば最大元である。$S=\varnothing$ のとき $U(S)=L(S)=P$ であるから，$\sup\varnothing$ は $P$ の最小元，$\inf\varnothing$ は最大元にほかならない（これらが存在する場合）。
+% genron:end K-000073
+% genron:begin K-000074
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000072
+% genron:use K-000073
+\Needspace{4\baselineskip}
+\begin{prop}[上限と下限の比較]\label{k74}
+$S\subseteq T\subseteq P$ とする。このとき $U(T)\subseteq U(S)$，$L(T)\subseteq L(S)$ である。従って両方の上限が存在すれば $\sup S\leq\sup T$ であり，両方の下限が存在すれば $\inf T\leq\inf S$ である。
+\end{prop}
+\begin{proof}
+$u$ が $T$ の上界ならば $S$ の上界でもある。特に $\sup T$ が存在すれば $\sup T\in U(S)$ である。$\sup S$ が存在すればその最小性から $\sup S\leq\sup T$ となる。下界及び下限については双対をとる。
+\end{proof}
+% genron:end K-000074
+% genron:begin K-000075
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000022
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000072
+\Needspace{4\baselineskip}
+\begin{defn}[鎖と有向集合]\label{k75}
+$P$ の部分集合 $C$ に制限した順序が全順序であるとき $C$ を鎖という。鎖には空集合も含める。空でない部分集合 $D$ が
+\[
+ \forall x,y\in D,\ \exists z\in D,\ x\leq z\land y\leq z
+\]
+を満たすとき，上向き有向であるという。下向き有向は双対により定める。
+\end{defn}
+空でない鎖は上向き及び下向き有向である。実際，比較可能な二元のうち大きい方又は小さい方をとればよい。ここで上向き有向の条件は $D$ 内に共通上界が存在することを要求している。全順序集合において極大元 $m$ があれば，任意の元 $x$ は $x\leq m$ 又は $m\leq x$ を満たす。後者では極大性から $x=m$ である。従って $m$ は最大元である。極小元に関しても同様である。
+% genron:end K-000075
+\Needspace{8\baselineskip}
+\section{順序を保つ写像}
+% genron:begin K-000076
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000039
+% genron:use K-000040
+% genron:use K-000041
+% genron:use K-000068
+\Needspace{4\baselineskip}
+\begin{defn}[順序保存・順序埋込み・順序同型]\label{k76}
+順序集合 $P,Q$ の間の写像 $f:P\to Q$ に対し，次のように定める。
+\begin{enumerate}
+\item $x\leq y\impc f(x)\leq f(y)$ が任意の $x,y\in P$ について成り立つとき順序保存写像という。
+\item $x\leq y\iffc f(x)\leq f(y)$ が成り立つとき順序埋込みという。
+\item 全射である順序埋込みを順序同型という。
+\end{enumerate}
+\end{defn}
+順序埋込みは単射である。実際，$f(x)=f(y)$ なら両向きの不等式から $x\leq y$ かつ $y\leq x$ となり，$x=y$ を得る。従って順序同型は全単射であり，逆写像が順序保存である。逆に全単射 $f$ とその逆写像が共に順序保存なら $f$ は順序同型である。恒等写像は順序同型であり，合成はそれぞれの性質を保つ。これは不等式の条件を順に適用すれば従う。
+% genron:end K-000076
+% genron:begin K-000077
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000039
+% genron:use K-000050
+% genron:use K-000068
+% genron:use K-000076
+\Needspace{4\baselineskip}
+\begin{prop}[全単射な順序保存写像]\label{k77}
+全単射な順序保存写像は一般に順序同型とは限らない。ただし始域が全順序集合であるならば順序同型である。
+\end{prop}
+\begin{proof}
+相異なる二元 $a,b$ の集合 $E=\{a,b\}$ をとる。$P=E$ には等号だけの順序，$Q=E$ には $a\leq b$ を追加した全順序を与える。恒等写像 $P\to Q$ は全単射かつ順序保存であるが，$a\leq b$ は $P$ では成立しないので順序を反映しない。
+
+次に $P$ を全順序とし，$f:P\to Q$ を全単射な順序保存写像とする。$f(x)\leq f(y)$ を仮定する。もし $x\leq y$ でなければ全順序性から $y\leq x$ かつ $x\ne y$ である。順序保存性により $f(y)\leq f(x)$ となり，反対称性と単射性から $x=y$ を得て矛盾する。従って $x\leq y$ である。
+\end{proof}
+% genron:end K-000077
+% genron:begin K-000078
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000041
+% genron:use K-000072
+% genron:use K-000073
+% genron:use K-000076
+\Needspace{4\baselineskip}
+\begin{prop}[順序同型と上限・下限]\label{k78}
+$f:P\to Q$ を順序同型とし $S\subseteq P$ とする。$\sup_P S$ が存在するための必要十分条件は $\sup_Q f(S)$ が存在することであり，そのとき
+\[
+ f(\sup_P S)=\sup_Q f(S)
+\]
+である。下限についても同様である。
+\end{prop}
+\begin{proof}
+$s=\sup_P S$ とする。任意の $x\in S$ に対して $f(x)\leq f(s)$ である。$v$ が $f(S)$ の上界なら，$v=f(u)$ となる $u\in P$ が存在し，順序の反映性から $u$ は $S$ の上界である。よって $s\leq u$ となり $f(s)\leq v$ を得る。従って $f(s)$ は所要の上限である。逆向きは順序同型 $f^{-1}$ に同じ論証を適用する。下限は双対である。
+\end{proof}
+% genron:end K-000078
+\Needspace{8\baselineskip}
+\section{束}
+% genron:begin K-000079
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000023
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000030
+% genron:use K-000035
+% genron:use K-000070
+% genron:use K-000072
+% genron:use K-000073
+\Needspace{4\baselineskip}
+\begin{defn}[束]\label{k79}
+空でない順序集合 $L$ において任意の二元 $x,y$ に対して $\sup\{x,y\}$ 及び $\inf\{x,y\}$ が存在するとき，$L$ を束という。これらをそれぞれ $x\vee y$（結び），$x\wedge y$（交わり）と書く。
+\end{defn}
+ここでの $\vee,\wedge$ は元の二項演算であって，N-1 の論理結合子とは区別する。空でない全順序集合は束である。比較可能な二元のうち大きい方が上限，小さい方が下限である。また $\Pow(E)$ は包含に関して束であり，結びは合併，交わりは共通部分である。実際，$A\cup B$ は $A,B$ を含む最小の集合であり，$A\cap B$ は双方に含まれる最大の集合である。
+% genron:end K-000079
+% genron:begin K-000080
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000072
+% genron:use K-000073
+% genron:use K-000079
+\Needspace{4\baselineskip}
+\begin{prop}[束演算の諸法則]\label{k80}
+束 $L$ において次が成り立つ。
+\begin{align*}
+ x\vee y&=y\vee x,& x\wedge y&=y\wedge x,\\
+ (x\vee y)\vee z&=x\vee(y\vee z),\\
+ (x\wedge y)\wedge z&=x\wedge(y\wedge z),\\
+ x\vee x&=x,& x\wedge x&=x,\\
+ x\vee(x\wedge y)&=x,& x\wedge(x\vee y)&=x.
+\end{align*}
+また
+\[
+ x\leq y\iffc x\vee y=y\iffc x\wedge y=x.
+\]
+\end{prop}
+\begin{proof}
+交換律は $\{x,y\}=\{y,x\}$ による。$x\vee x=x$ は一元集合の最大元が上限であることから従う。結合律については，任意の $u\in L$ に対して
+\[
+ (x\vee y)\vee z\leq u\iffc x\leq u\land y\leq u\land z\leq u
+\]
+であり，$x\vee(y\vee z)$ についても右辺が同じである。よって両辺は同じ最小上界である。$x\leq y$ のとき $y$ は $\{x,y\}$ の最大元であるから $x\vee y=y$，逆にこの等式から $x\leq y$ を得る。双対により交わりの諸法則及び順序との対応を得る。$x\wedge y\leq x\leq x\vee y$ であるから，最後の二つの吸収律も順序との対応により成り立つ。
+\end{proof}
+% genron:end K-000080
+% genron:begin K-000081
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000079
+% genron:use K-000080
+\Needspace{4\baselineskip}
+\begin{prop}[演算による束の特徴づけ]\label{k81}
+空でない集合 $L$ に二つの二項演算 $\vee,\wedge$（$L\times L$ から $L$ への写像）が与えられ，命題\ref{k80}の交換律，結合律，冪等律及び吸収律を満たすとする。このとき
+\[
+ x\leq y\iffc x\vee y=y
+\]
+により定めた順序のもとで $L$ は束となり，与えられた二つの演算はそれぞれ束の結びと交わりに一致する。
+\end{prop}
+\begin{proof}
+冪等律から反射性を得る。$x\vee y=y$ かつ $y\vee x=x$ なら交換律から $x=y$ である。$x\vee y=y$，$y\vee z=z$ なら
+\[
+ x\vee z=x\vee(y\vee z)=(x\vee y)\vee z=z
+\]
+となり，推移性が成り立つ。従って $\leq$ は半順序である。
+
+また $x\vee y=y$ なら吸収律から $x\wedge y=x\wedge(x\vee y)=x$ である。逆に $x\wedge y=x$ なら $x\vee y=y\vee(y\wedge x)=y$ となる。従って $x\leq y$ と $x\wedge y=x$ は同値である。
+
+結合律と冪等律から $x,y\leq x\vee y$ を得る。$x,y\leq u$ なら
+\[
+ (x\vee y)\vee u=x\vee(y\vee u)=x\vee u=u
+\]
+となるので $x\vee y\leq u$ である。よって $x\vee y$ は上限である。順序の同値条件 $x\wedge y=x$ を用いて双対な論証を行えば，$x\wedge y$ は下限である。
+\end{proof}
+この命題により，束を順序構造として与えることと，上記の法則を満たす二項演算を与えることは同じである。
+% genron:end K-000081
+% genron:begin K-000082
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000079
+\Needspace{4\baselineskip}
+\begin{prop}[束演算の単調性]\label{k82}
+束 $L$ において $x\leq x'$，$y\leq y'$ ならば
+\[
+ x\vee y\leq x'\vee y',\qquad x\wedge y\leq x'\wedge y'.
+\]
+\end{prop}
+\begin{proof}
+$x'\vee y'$ は $x',y'$ の上界であり，従って $x,y$ の上界でもある。その上限の最小性により第1の不等式を得る。第2の不等式は双対をとることで得られる。
+\end{proof}
+% genron:end K-000082
+% genron:begin K-000083
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000020
+% genron:use K-000021
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000079
+\Needspace{4\baselineskip}
+\begin{defn}[部分束と積束]\label{k83}
+束 $L$ の空でない部分集合 $M$ が，任意の $x,y\in M$ に対して $x\vee y\in M$ かつ $x\wedge y\in M$ を満たすとき，$M$ を $L$ の部分束という。
+\end{defn}
+部分束は制限順序に関して束である。実際，$x\vee y$ は $M$ に属し，$M$ 内の任意の上界に先行するので $M$ 内での上限でもある。下限も同様である。また束 $L,M$ の台集合の直積は成分ごとの順序に関して束となり，演算は成分ごとの結び及び交わりで与えられる。これは上界・下界の条件を各成分で調べれば従う。
+
+制限順序で束になる部分集合が部分束とは限らない。相異なる三元 $a,b,c$ からなる集合 $E=\{a,b\}\cup\{c\}$ とする。以下，複数の対象を波括弧の中に列記した集合は，各対象の一元集合の合併を表す（対集合と二集合の合併の反復によって存在する）。このとき，
+\[
+ M=\{\varnothing,\{a\},\{b\},E\}\subseteq\Pow(E)
+\]
+とする。ここで相異なる三元は $\varnothing,\{\varnothing\},\{\{\varnothing\}\}$ などによって得られる。$M$ 内では比較不能な二元は $\{a\},\{b\}$ だけで，その上限は $E$，下限は $\varnothing$ である。比較可能な二元も上限と下限を持つ。よって $M$ 自身は束であるが，$\{a\}\cup\{b\}=\{a,b\}\notin M$ であるから部分束ではない。
+% genron:end K-000083
+% genron:begin K-000084
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000039
+% genron:use K-000041
+% genron:use K-000076
+% genron:use K-000078
+% genron:use K-000079
+% genron:use K-000080
+\Needspace{4\baselineskip}
+\begin{defn}[束準同型と束同型]\label{k84}
+束 $L,M$ の間の写像 $f:L\to M$ が任意の $x,y\in L$ に対し
+\[
+ f(x\vee y)=f(x)\vee f(y),\quad
+ f(x\wedge y)=f(x)\wedge f(y)
+\]
+を満たすとき束準同型という。全単射であってその逆写像も束準同型であるものを束同型という。
+\end{defn}
+\begin{proof}[性質]
+$x\leq y$ なら $x\vee y=y$，従って $f(x)\vee f(y)=f(y)$ であるから，束準同型は順序保存である。$f$ が単射でもあるとする。$f(x)\leq f(y)$ なら $f(x\vee y)=f(y)$ であり，単射性により $x\vee y=y$，すなわち $x\leq y$ となる。よって単射な束準同型は順序埋込みであり，全単射な束準同型は順序同型である。逆に順序同型は上限・下限の保存（命題\ref{k78}）によって結びと交わりを保存し，その逆写像も同じ性質を持つ。
+\end{proof}
+従って束同型，全単射な束準同型，順序同型は束の間では同値な概念である。
+% genron:end K-000084
+\Needspace{8\baselineskip}
+\section{完備束}
+% genron:begin K-000085
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000023
+% genron:use K-000028
+% genron:use K-000044
+% genron:use K-000072
+% genron:use K-000073
+% genron:use K-000079
+\Needspace{4\baselineskip}
+\begin{defn}[有界束と完備束]\label{k85}
+最小元と最大元を持つ束を有界束という。最小元を $0_L$，最大元を $1_L$ と書く。順序集合 $L$ の任意の部分集合 $S$（空集合を含む）が上限と下限を持つとき，$L$ を完備束という。
+\end{defn}
+ここで $0_L,1_L$ は元の名称であり，数の概念は用いていない。完備束は空集合の上限・下限を持つので空でなく，$0_L=\sup\varnothing$，$1_L=\inf\varnothing$ となる。また二元の上限・下限を持つから有界束である。一元集合も完備束であり，この場合 $0_L=1_L$ である。
+
+一般に上限・下限をそれぞれ $\bigvee S$，$\bigwedge S$ とも書く。集合族 $(x_i)_{i\in I}$ による $\bigvee_{i\in I}x_i$ は値の集合 $\{x_i\mid i\in I\}$ の上限を表す。下限も同様である。
+% genron:end K-000085
+% genron:begin K-000086
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000072
+% genron:use K-000073
+% genron:use K-000085
+\Needspace{4\baselineskip}
+\begin{prop}[完備性の片側判定]\label{k86}
+順序集合 $P$ の任意の部分集合が上限を持つならば $P$ は完備束である。また任意の部分集合が下限を持つ場合も同じである。
+\end{prop}
+\begin{proof}
+任意の部分集合が上限を持つとし，$S\subseteq P$ をとる。$L(S)$ は $P$ の部分集合であるから $m=\sup L(S)$ が存在する。各 $s\in S$ は $L(S)$ の上界であるので $m\leq s$ である。従って $m\in L(S)$ である。任意の $x\in L(S)$ に対して $x\leq m$ であるから $m$ は $L(S)$ の最大元，すなわち $S$ の下限である。下限のみの仮定からも双対により同じ結果を得る。
+\end{proof}
+特に完備束では $\inf S=\sup L(S)$，$\sup S=\inf U(S)$ である。$S=\varnothing$ の場合にも証明はそのまま成立する。
+% genron:end K-000086
+% genron:begin K-000087
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000026
+% genron:use K-000027
+% genron:use K-000028
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000037
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000050
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000085
+\Needspace{4\baselineskip}
+\begin{prop}[冪集合と完備束の積]\label{k87}
+任意の集合 $E$ に対し $\Pow(E)$ は完備束である。また完備束の族 $(L_i,\leq_i)_{i\in I}$ の台集合の直積 $\prod_{i\in I} L_i$ は成分ごとの順序に関して完備束である。ここで台集合とは順序を与える前の集合 $L_i$ をいう。
+\end{prop}
+\begin{proof}
+$\mathcal S\subseteq\Pow(E)$ に対して $\bigcup\mathcal S$ は上限，
+\[
+ \{x\in E\mid\forall A\in\mathcal S,\ x\in A\}
+\]
+は下限である。実際，前者は全ての $A\in\mathcal S$ を含む最小の集合であり，後者は全ての $A$ に含まれる $E$ の最大の部分集合である。$\mathcal S=\varnothing$ の場合にはそれぞれ $\varnothing,E$ となる。
+
+次に $P=\prod_{i\in I}L_i$ とし，$x\leq y$ を任意の $i\in I$ について $x(i)\leq_i y(i)$ であることにより定める。反射性・推移性・反対称性は成分ごとの順序の性質及び写像の相等による。各 $L_i$ の最小元は一意に定まるので，それらを成分とする元が $P$ に存在する。
+
+$S\subseteq P$ に対して，各 $i$ について $S_i=\{x(i)\mid x\in S\}$ をとる。$u_i=\sup_{L_i} S_i$ は一意に存在する。従ってこれらを成分とする $u\in P$ が存在する。任意の $x\in S$ に対し各成分で $x(i)\leq_i u_i$ であるから $x\leq u$ である。$v\in P$ が $S$ の上界なら各 $v(i)$ が $S_i$ の上界であり $u_i\leq_i v(i)$，従って $u\leq v$ である。よって $u=\sup_P S$ となる。下限も同様に構成される。
+\end{proof}
+この証明で各成分の上限や下限は一意に指定されるから，選択公理は用いない。添字集合が空の場合も積は一元集合であり，この論証に含まれる。
+% genron:end K-000087
+\Needspace{8\baselineskip}
+\section{分配束と Boolean 束}
+% genron:begin K-000088
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000023
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000030
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000079
+% genron:use K-000080
+% genron:use K-000083
+\Needspace{4\baselineskip}
+\begin{defn}[分配束]\label{k88}
+束 $L$ が任意の $x,y,z\in L$ に対して
+\begin{align*}
+ x\wedge(y\vee z)&=(x\wedge y)\vee(x\wedge z),\\
+ x\vee(y\wedge z)&=(x\vee y)\wedge(x\vee z)
+\end{align*}
+を満たすとき分配束という。
+\end{defn}
+実は二つの分配律のうちいずれかを仮定すれば他方が従う。第1の式を仮定すると，交換律・吸収律を用いて
+\begin{align*}
+ (x\vee y)\wedge(x\vee z)
+ &=((x\vee y)\wedge x)\vee((x\vee y)\wedge z)\\
+ &=x\vee((x\wedge z)\vee(y\wedge z))\\
+ &=x\vee(y\wedge z)
+\end{align*}
+となる。逆向きは双対により得られる。冪集合が分配束であることは N-2 の集合演算の分配律（K-000030）による。一般の束では分配律を仮定してはならない。
+
+例えば相異なる三元 $a,b,c$ からなる集合 $E$ に対して，次の集合を包含で順序づける。
+\[
+ M=\{\varnothing,\{a\},\{b\},\{c\},E\}.
+\]
+相異なる二つの一元集合の上限は $E$，下限は $\varnothing$ であり，他の二元は比較可能であるから，$M$ は束である。しかし $x=\{a\}$，$y=\{b\}$，$z=\{c\}$ とおくと
+\[
+ x\wedge(y\vee z)=x,\quad (x\wedge y)\vee(x\wedge z)=\varnothing
+\]
+となるので分配束ではない。
+% genron:end K-000088
+% genron:begin K-000089
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000031
+% genron:use K-000079
+% genron:use K-000085
+% genron:use K-000087
+% genron:use K-000088
+\Needspace{4\baselineskip}
+\begin{defn}[補元と Boolean 束]\label{k89}
+有界束 $L$ において $x\wedge y=0_L$，$x\vee y=1_L$ を満たす $y$ を $x$ の補元という。任意の元が補元を持つ有界分配束を Boolean 束という。
+\end{defn}
+本篇では $0_L=1_L$ の一元束も Boolean 束に含める。前の例の束 $M$ は全ての元が補元を持つが，分配束ではない。特に $\{a\}$ は $\{b\}$ と $\{c\}$ の両方を補元として持つ。$\Pow(E)$ は包含により有界分配束となり，$A\subseteq E$ に対して $E\setminus A$ は $A$ の補元である。これは N-2 の補集合の法則（K-000031）から従う。従って冪集合は Boolean 束であり，しかも完備である。
+% genron:end K-000089
+% genron:begin K-000090
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000079
+% genron:use K-000080
+% genron:use K-000082
+% genron:use K-000085
+% genron:use K-000088
+% genron:use K-000089
+\Needspace{4\baselineskip}
+\begin{prop}[補元の一意性と De Morgan の法則]\label{k90}
+Boolean 束 $L$ において各元の補元はただ一つ存在する。これを $x^c$ と書く。このとき
+\begin{gather*}
+ (x^c)^c=x,\qquad 0_L^c=1_L,\qquad 1_L^c=0_L,\\
+ (x\vee y)^c=x^c\wedge y^c,\qquad
+ (x\wedge y)^c=x^c\vee y^c,\\
+ x\leq y\iffc y^c\leq x^c
+\end{gather*}
+が成り立つ。
+\end{prop}
+\begin{proof}
+$b,c$ を $x$ の補元とする。以下，$0_L,1_L$ を $0,1$ と略す。分配律により
+\[
+ b=b\wedge1=b\wedge(x\vee c)=(b\wedge x)\vee(b\wedge c)=b\wedge c
+\]
+となる。同様に $c=b\wedge c$ であり $b=c$ である。補元の条件は対称的なので $(x^c)^c=x$ であり，$0,1$ は互いに補元である。
+
+$z=x^c\wedge y^c$ とおく。$x\wedge z=0$ 及び $y\wedge z=0$ であるから，分配律により $(x\vee y)\wedge z=0$ である。また
+\begin{align*}
+ (x\vee y)\vee z
+ &=((x\vee y)\vee x^c)\wedge((x\vee y)\vee y^c)\\
+ &=1\wedge1=1.
+\end{align*}
+従って $z=(x\vee y)^c$ である。第2の De Morgan の法則は双対により得られる。$x\leq y$ なら $x\vee y=y$ より $y^c=x^c\wedge y^c\leq x^c$ となる。逆向きは補元を再びとって得られる。
+\end{proof}
+% genron:end K-000090
+\Needspace{8\baselineskip}
+\section{順序構造の間の対応}
+% genron:begin K-000091
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000068
+% genron:use K-000072
+% genron:use K-000076
+\Needspace{4\baselineskip}
+\begin{defn}[閉包作用素]\label{k91}
+順序集合 $P$ の上の写像 $c:P\to P$ が順序保存であり，任意の $x\in P$ に対して
+\[
+ x\leq c(x),\qquad c(c(x))=c(x)
+\]
+を満たすとき，$c$ を閉包作用素という。$c(x)=x$ となる $x$ を固定元といい，固定元全体を $\operatorname{Fix}(c)$ と書く。
+\end{defn}
+固定元全体は $P$ の部分集合として存在する。$c(x)$ 自身は固定元であり，$x\leq c(x)$ である。任意の固定元 $y$ が $x\leq y$ を満たせば単調性により $c(x)\leq c(y)=y$ である。従って $c(x)$ は $x$ 以上の固定元のうち最小のものである。
+% genron:end K-000091
+% genron:begin K-000092
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000030
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000076
+% genron:use K-000085
+% genron:use K-000087
+% genron:use K-000091
+\Needspace{4\baselineskip}
+\begin{prop}[閉包作用素と完備束]\label{k92}
+完備束 $L$ 上の閉包作用素 $c$ に対して $C=\operatorname{Fix}(c)$ とおくと，$C$ は制限順序に関して完備束である。任意の $S\subseteq C$ について
+\[
+ \inf_C S=\inf_L S,\qquad \sup_C S=c(\sup_L S)
+\]
+が成り立つ。
+\end{prop}
+\begin{proof}
+$m=\inf_L S$ とおく。各 $s\in S$ について $m\leq s$ より $c(m)\leq c(s)=s$ である。よって $c(m)$ は $S$ の下界であり $c(m)\leq m$ である。$m\leq c(m)$ と合わせ $c(m)=m$ となる。従って $m\in C$ であり，$L$ 内の最大下界であることから $C$ 内でも下限である。
+
+$u=\sup_L S$ とおく。$c(u)$ は固定元であり，$u\leq c(u)$ であるから $S$ の上界である。$v\in C$ が $S$ の上界なら $u\leq v$ より $c(u)\leq c(v)=v$ である。従って $c(u)=\sup_C S$ である。これらの論証は $S=\varnothing$ の場合にも成立する。よって $C$ は完備束である。
+\end{proof}
+例えば $A\subseteq E$ に対し $c(A)=A\cup B$（$B\subseteq E$ は固定）と定めれば $\Pow(E)$ 上の閉包作用素である。固定元全体は $B$ を含む部分集合であり，その最小元は一般には $\varnothing$ ではなく $B$ である。
+% genron:end K-000092
+% genron:begin K-000093
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000068
+% genron:use K-000072
+% genron:use K-000073
+% genron:use K-000076
+% genron:use K-000091
+\Needspace{4\baselineskip}
+\begin{defn}[Galois 接続]\label{k93}
+順序集合 $P,Q$ の間の順序保存写像 $f:P\to Q$，$g:Q\to P$ が
+\[
+ \forall x\in P,\ \forall y\in Q,\quad
+ f(x)\leq y\iffc x\leq g(y)
+\]
+を満たすとき，$(f,g)$ を Galois 接続という。$f$ を $g$ の左随伴，$g$ を $f$ の右随伴という。
+\end{defn}
+ここでは順序保存型の約束を用いる。$y=f(x)$ とおけば $x\leq g(f(x))$，$x=g(y)$ とおけば $f(g(y))\leq y$ となる。逆に二つの単調写像がこの二つの不等式を満たすとき，$f(x)\leq y$ から $x\leq g(f(x))\leq g(y)$ が従い，$x\leq g(y)$ から $f(x)\leq f(g(y))\leq y$ が従う。
+
+また $f$ を固定すれば $g(y)$ は $\{x\in P\mid f(x)\leq y\}$ の最大元であるから一意であり，$g$ を固定すれば $f(x)$ は $\{y\in Q\mid x\leq g(y)\}$ の最小元であるから一意である。
+
+$c=g\circ f$ は単調で $x\leq c(x)$ を満たす。$f(g(f(x)))\leq f(x)$ に $g$ を施せば $c(c(x))\leq c(x)$，逆向きは $x$ を $c(x)$ に置き換えた不等式による。よって $c$ は閉包作用素である。
+% genron:end K-000093
+% genron:begin K-000094
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000073
+% genron:use K-000076
+% genron:use K-000093
+\Needspace{4\baselineskip}
+\begin{prop}[Galois 接続と上限・下限]\label{k94}
+$(f,g)$ を Galois 接続とする。$S\subseteq P$ の上限が存在するならば $f(S)$ の上限も存在し，
+\[
+ f(\sup_P S)=\sup_Q f(S)
+\]
+である。また $T\subseteq Q$ の下限が存在するならば $g(T)$ の下限も存在し，$g(\inf_Q T)=\inf_P g(T)$ である。
+\end{prop}
+\begin{proof}
+$s=\sup_P S$ とおく。任意の $x\in S$ に対して $f(x)\leq f(s)$ である。$y\in Q$ が $f(S)$ の上界なら任意の $x\in S$ について $x\leq g(y)$ であるから $s\leq g(y)$ を得る。随伴の条件より $f(s)\leq y$ となり，$f(s)$ は上限である。下限については双対により従う。実際，$g:Q^{\mathrm{op}}\to P^{\mathrm{op}}$ は $f:P^{\mathrm{op}}\to Q^{\mathrm{op}}$ の左随伴となる。
+\end{proof}
+% genron:end K-000094
+% genron:begin K-000095
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000027
+% genron:use K-000035
+% genron:use K-000037
+% genron:use K-000038
+% genron:use K-000046
+% genron:use K-000076
+% genron:use K-000087
+% genron:use K-000093
+% genron:use K-000094
+\Needspace{4\baselineskip}
+\begin{prop}[像と逆像の Galois 接続]\label{k95}
+写像 $h:A\to B$ に対して
+\[
+ h_*:\Pow(A)\to\Pow(B),\quad S\mapsto h(S),\qquad
+ h^*:\Pow(B)\to\Pow(A),\quad T\mapsto h^{-1}(T)
+\]
+と定めると，$(h_*,h^*)$ は包含順序に関して Galois 接続をなす。
+\end{prop}
+\begin{proof}
+像と逆像の定義から，各写像は順序保存である。$h(S)\subseteq T$ は任意の $s\in S$ に対して $h(s)\in T$ が成り立つことと同値であり，これは $S\subseteq h^{-1}(T)$ と同値である。よって随伴の条件が満たされる。
+\end{proof}
+この事実と命題\ref{k94}から，$h_*$ は任意の合併を，$h^*$ は任意の共通部分を保存することが従う。これは N-2 の集合演算に関する結果の一部を順序論の立場から導き直したものである。
+% genron:end K-000095
+% genron:begin K-000096
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000068
+% genron:use K-000070
+% genron:use K-000072
+% genron:use K-000073
+% genron:use K-000076
+% genron:use K-000085
+\Needspace{4\baselineskip}
+\begin{thm}[完備束の不動点定理]\label{k96}
+完備束 $L$ 上の順序保存写像 $f:L\to L$ に対し，$F=\{x\in L\mid f(x)=x\}$ は制限順序に関して完備束である。特に $f$ は固定元を持つ（Knaster--Tarski の不動点定理）。
+\end{thm}
+\begin{proof}
+$S\subseteq F$ を任意にとる。$L$ の部分集合
+\[
+ U=\{u\in L\mid f(u)\leq u,\ \forall s\in S,\ s\leq u\}
+\]
+を考える。最大元 $1_L$ は $U$ に属する。$m=\inf_L U$ とおくと，各 $s\in S$ は $U$ の下界であるから $s\leq m$ である。また任意の $u\in U$ について $m\leq u$ より $f(m)\leq f(u)\leq u$ となる。従って $f(m)$ は $U$ の下界であり $f(m)\leq m$ である。更に $f(f(m))\leq f(m)$ であり，各 $s\in S$ について $s=f(s)\leq f(m)$ となるので $f(m)\in U$ である。よって $m\leq f(m)$ を得る。以上から $m=f(m)$，すなわち $m\in F$ である。
+
+$F$ 内で $S$ の上界である元 $v$ は $f(v)=v$ により $U$ に属するから $m\leq v$ である。従って $m=\sup_F S$ となる。双対順序集合にも $f$ は順序保存であるから，同じ論証によって $F$ における任意の部分集合の下限も存在する。$S=\varnothing$ に対してもこの構成が成立するので，$F$ は空でなく完備束である。
+\end{proof}
+この定理には選択公理を用いない。上限と下限を用いる不動点の存在証明であり，後続の位相的・距離的な不動点定理とは異なる仮定に基づく。
+% genron:end K-000096
+\Needspace{9\baselineskip}
+\section*{参考文献}
+\small
+\noindent T. Jech, \textit{Set Theory}, Third Millennium Edition, Springer, 2003, Ch. 2（順序）.\par
+\noindent J. M. Lee, \textit{Introduction to Topological Manifolds}, 2nd ed., Springer, 2011, Appendix A, pp. 385--386（順序と極大元）.\par
+\noindent S. Mac Lane, \textit{Categories for the Working Mathematician}, 2nd ed., Springer, 1998, IV.5（Galois 接続）.
+
+\end{document}
