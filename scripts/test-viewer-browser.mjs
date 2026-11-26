@@ -19,7 +19,7 @@ try{
  if(!executablePath)throw Error("Chrome not available");
  browser=await chromium.launch({executablePath,headless:true,args:["--no-sandbox"]});
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
- page.on("pageerror",e=>console.error(e));
+ const errors=[];page.on("pageerror",e=>{errors.push(e.message);console.error(e)});
  // Check actual page changes on desktop and at the end of a page, not just button clicks.
  await page.goto(origin+"?note=1");await page.locator('.page[data-page="1"] .annotations').waitFor();
  await page.getByRole("button",{name:"次頁 →",exact:true}).click();await page.locator('.page[data-page="2"] .annotations').waitFor();assert.equal(await page.getByRole("spinbutton",{name:"ページ番号"}).inputValue(),"2");assert.match(page.url(),/page=2/);
@@ -50,5 +50,6 @@ try{
  assert.ok(found,"Cross-note PDF link must work");
  await page.goto(origin+"?note=statements");await page.locator('.page[data-page="1"] .annotations').waitFor();await page.getByRole("button",{name:"次頁 →",exact:true}).click();await page.locator('.page[data-page="2"] .annotations').waitFor();
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
+ assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");
  console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, page navigation (top and bottom), next note, next knowledge item.");
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}

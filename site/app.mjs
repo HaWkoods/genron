@@ -105,6 +105,8 @@ async function loadReader(info,token,scroll){
  if(info.n==="statements"){for(const n of notes.values())side.append(anchor("N-"+n.number+"　"+n.title,url("note",n.number)))}else for(const e of entries.values())if(e.position[0]===info.n){const a=anchor(e.id+"　"+e.title,url("id",e.id),e.id===info.id?"active":"");bindPreview(a,e);side.append(a)}
  const controls=node("div","toolbar"),shell=node("div","pdf-shell"),status=node("p","loading","PDFを読み込んでいます。");
  controls.setAttribute("aria-label","ページ操作");
+ // Buttons are created outside the try block; keep the handler in their lexical scope.
+ let turn=()=>{};
  shell.append(status);const previous=button("← 前頁",()=>turn(-1)),next=button("次頁 →",()=>turn(1));const pnum=node("input");pnum.type="number";pnum.min=1;pnum.setAttribute("aria-label","ページ番号");const pageCount=node("span","meta","/ …");
  const z=node("select");z.setAttribute("aria-label","表示倍率");for(const [v,t] of [["fit","幅に合わせる"],["0.9","90%"],["1.1","110%"],["1.4","140%"],["1.8","180%"]]){const o=node("option","",t);o.value=v;z.append(o)}
  const download=anchor("PDFを開く ↗",new URL(file,root).href);download.target="_blank";download.rel="noopener";
@@ -180,7 +182,7 @@ async function loadReader(info,token,scroll){
   const p=clamp(page,1,doc.numPages);if(p===state.page){syncControls();return}
   state.page=p;setPageUrl();display(null,null,true).catch(showError);
  }
- function turn(delta){if(state&&token===ticket)go(state.page+delta)}
+ turn=delta=>{if(state&&token===ticket)go(state.page+delta)};
  pnum.onchange=()=>go(parseInt(pnum.value,10)||1);
  pnum.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();go(parseInt(pnum.value,10)||1)}};
  z.onchange=()=>{state.zoom=z.value;display(state.target).catch(showError)};
