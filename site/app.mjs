@@ -390,9 +390,9 @@ function renderProof(target,proof,metadata){
   plain(tex.slice(last,m.index));last=m.index+m[0].length;
   const token=m[0];const ref=token.match(/^\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
   if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(ref[2]??e.title,webUrl("id",id));bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
-  const display=token.startsWith("\\[")||token.startsWith("$")||token.startsWith("\\begin");
+  const display=token.startsWith("\\[")||token.startsWith("$$")||token.startsWith("\\begin");
   let formula=token;
-  if(token.startsWith("\\[" )||token.startsWith("$"))formula=token.slice(2,-2);
+  if(token.startsWith("\\[" )||token.startsWith("$$"))formula=token.slice(2,-2);
   else if(token.startsWith("$"))formula=token.slice(1,-1);
   else if(m[2]){const env=m[2].replace("*","");const inner=token.slice(token.indexOf("}")+1,token.lastIndexOf("\\end"));formula=env==="align"?"\\begin{aligned}"+inner+"\\end{aligned}":env==="gather"||env==="multline"?"\\begin{gathered}"+inner+"\\end{gathered}":inner}
   const span=node(display?"div":"span",display?"proof-display":"math");
