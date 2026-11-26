@@ -4,13 +4,372 @@
     "status": "adopted",
     "description": "運用上の基礎方針：通常の古典的数学推論、等号、論理結合子・量化、集合・所属の素朴な言語を背景として使用する。冒頭で論理記号を自然言語による数学的文章の省略記号として定め、続いて論理記号の組合せの略記（制限付き量化等）、通常の古典的推論に基づく論理法則を確認し、素朴集合論に進む。形式的構文・意味論は導入しない。数理論理学・現代的集合論は後続の発展的・応用的な枝とする。特定の形式的公理系は未選定。無制限内包は認めず、実質的な集合存在原理・追加前提は個別に明示・登録する。選択公理は素朴集合論において公理として明示的に採用し、正式原稿に恒久IDを付し依存関係を追跡する。具体的な背景知識の範囲は順次確定する。詳細は docs/foundations.md。"
   },
-  "entries": [],
+  "entries": [
+    {
+      "id": "K-000001",
+      "kind": "convention",
+      "title": "言明と論理結合子",
+      "statement": "P,Q を意味の定まった数学的言明とし、¬P、P∧Q、P∨Q（包含的）、P⇒Q、P⇔Q を各自然言語の略記とする。同値は双方の含意を意味する。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000002",
+      "kind": "convention",
+      "title": "量化",
+      "statement": "対象範囲を指定し、∀x P(x) は任意の x について、∃x P(x) は P を満たす x の存在、∃!x P(x) はただ一つの存在を表す。",
+      "assumptions": [
+        "P(x) は対象範囲の各対象について意味を持つ。"
+      ],
+      "position": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000003",
+      "kind": "convention",
+      "title": "対象の範囲と括弧",
+      "statement": "x=y は同一対象、x∈A は A の元であることを表す。括弧等で作用範囲を明示し、束縛変数を他変数と衝突しないよう改名する。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000004",
+      "kind": "convention",
+      "title": "制限付き量化",
+      "statement": "∀x∈A,P(x) は ∀x(x∈A⇒P(x))、∃x∈A,P(x) は ∃x(x∈A∧P(x)) の略記。P が A 上だけで意味を持つ場合は制限付き量化を自然言語として直接解釈する。A に元がないとき全称は成立、存在は不成立。",
+      "assumptions": [
+        "展開形では A の全元を含む量化範囲上で P(x) が意味を持つ。"
+      ],
+      "position": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000005",
+      "kind": "convention",
+      "title": "その他の略記",
+      "statement": "x∉A は ¬(x∈A)、x≠y は ¬(x=y)。同種量化の連記 ∀x,y∈A は ∀x∈A,∀y∈A の略記とし、存在量化も同様。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000006",
+      "kind": "proposition",
+      "title": "一意存在",
+      "statement": "∃!x P(x) ⇔ ∃x(P(x)∧∀y(P(y)⇒y=x))。",
+      "assumptions": [
+        "x,y の対象範囲は同一、y は衝突しない新しい変数。"
+      ],
+      "position": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000007",
+      "kind": "background",
+      "title": "古典的推論",
+      "statement": "排中律 P∨¬P、矛盾律 ¬(P∧¬P)、矛盾を導く仮定の否定、矛盾する仮定からの任意の結論を背景の推論原理として採用する。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000008",
+      "kind": "proposition",
+      "title": "否定と含意",
+      "statement": "¬¬P⇔P；(P⇒Q)⇔(¬Q⇒¬P)；¬(P⇒Q)⇔(P∧¬Q)。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000007"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000009",
+      "kind": "proposition",
+      "title": "交換律・結合律・冪等律",
+      "statement": "連言・選言の交換律、結合律および冪等律 P∧P⇔P、P∨P⇔P。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000010",
+      "kind": "proposition",
+      "title": "分配律と吸収律",
+      "statement": "P∧(Q∨R)⇔(P∧Q)∨(P∧R)；P∨(Q∧R)⇔(P∨Q)∧(P∨R)；P∧(P∨Q)⇔P；P∨(P∧Q)⇔P。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000007"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000011",
+      "kind": "proposition",
+      "title": "De Morgan の法則",
+      "statement": "¬(P∨Q)⇔¬P∧¬Q；¬(P∧Q)⇔¬P∨¬Q。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000007"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000012",
+      "kind": "proposition",
+      "title": "含意の合成",
+      "statement": "P⇒Q と Q⇒R から P⇒R が従う。同値についても推移性が成立する。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        6
+      ],
+      "depends_on": [
+        "K-000001"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000013",
+      "kind": "proposition",
+      "title": "量化の否定",
+      "statement": "¬∃x P(x)⇔∀x ¬P(x)；¬∀x P(x)⇔∃x ¬P(x)。",
+      "assumptions": [
+        "各式の量化範囲は同一。"
+      ],
+      "position": [
+        1,
+        1,
+        3,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000007",
+        "K-000008"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000014",
+      "kind": "proposition",
+      "title": "量化の交換",
+      "statement": "∀x∀y P(x,y)⇔∀y∀x P(x,y)；∃x∃y P(x,y)⇔∃y∃x P(x,y)。",
+      "assumptions": [
+        "x,y の対象範囲は互いに依存しない。"
+      ],
+      "position": [
+        1,
+        1,
+        3,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000015",
+      "kind": "proposition",
+      "title": "量化と論理結合子",
+      "statement": "∀x(P(x)∧Q(x))⇔(∀x P(x))∧(∀x Q(x))；∃x(P(x)∨Q(x))⇔(∃x P(x))∨(∃x Q(x))。",
+      "assumptions": [
+        "P,Q の量化対象範囲は同一。"
+      ],
+      "position": [
+        1,
+        1,
+        3,
+        9
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000016",
+      "kind": "proposition",
+      "title": "量化の順序に関する注意",
+      "statement": "∃y∀x P(x,y)⇒∀x∃y P(x,y)。逆は一般に不成立。全称量化の選言への分配および存在量化の連言への分配は同値として一般に不成立（二対象の反例）。",
+      "assumptions": [
+        "x,y の対象範囲は互いに依存しない。"
+      ],
+      "position": [
+        1,
+        1,
+        3,
+        10
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000015"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000017",
+      "kind": "convention",
+      "title": "論証の方法",
+      "statement": "直接証明、対偶、背理法、場合分け、全称言明、存在言明、一意存在言明の論証における運用上の約束。",
+      "assumptions": [],
+      "position": [
+        1,
+        1,
+        3,
+        11
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000006",
+        "K-000007",
+        "K-000008"
+      ],
+      "status": "verified",
+      "source": "volumes/N-1/main.tex",
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    }
+  ],
   "notes": [
     {
       "number": 1,
       "title": "数学的言語",
       "area": "基礎",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [],
       "goals": [
         "自然言語の略記としての論理記号",
