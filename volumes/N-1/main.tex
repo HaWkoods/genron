@@ -1,0 +1,243 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-1}
+\fancyhead[R]{\small 数学的言語\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 数学的言語}\par\vspace{2mm}
+{\small N-1\quad 第1版}
+\end{center}
+\noindent 本篇は以後の記述に用いる論理記号と推論の約束を定めるものである。論理を形式的な数学的対象として構成することは目的としない。通常の自然言語による古典的な数学的推論を背景とする。集合の存在については次篇で扱う。
+\section{論理記号}
+% genron:begin K-000001
+\begin{ruledef}[言明と論理結合子]
+$P,Q$ は意味の定まった数学的言明を表す仮の文字とする。次の記号をそれぞれ右の文章の略記とする。
+\begin{center}
+\begin{tabular}{ll}
+$\neg P$ & $P$ でない。\\
+$P\land Q$ & $P$ かつ $Q$。\\
+$P\lor Q$ & $P$ または $Q$（両方でもよい）。\\
+$P\Rightarrow Q$ & $P$ ならば $Q$。\\
+$P\Leftrightarrow Q$ & $P$ であることと $Q$ であることが同値。
+\end{tabular}
+\end{center}
+最後の記号は「$P$ ならば $Q$ であり，$Q$ ならば $P$ である」の意味に用いる。$P\Rightarrow Q$ は $P$ の成立自体を主張するものではない。
+\end{ruledef}
+% genron:end K-000001
+% genron:begin K-000002
+\begin{ruledef}[量化]
+$x$ のとり得る対象の範囲を予め指定し，その各対象について意味の定まる言明を $P(x)$ と書く。$\forall x\,P(x)$ は「任意の $x$ について $P(x)$ が成り立つ」，$\exists x\,P(x)$ は「$P(x)$ を満たす $x$ が存在する」を表す。$\exists!x\,P(x)$ はそのような $x$ がただ一つ存在することを表す。
+\end{ruledef}
+% genron:end K-000002
+% genron:begin K-000003
+\begin{ruledef}[対象の範囲と括弧]
+等号 $x=y$ は $x$ と $y$ が同じ対象であることを表す。集合 $A$ に対して $x\in A$ は $x$ が $A$ の元であることを表す。この段階では集合の言葉を素朴な意味で用いる。括弧により記号の作用する範囲を示す。量化記号の及ぶ範囲をその直後の括弧又は明示された言明とし，その範囲内で量化される変数を束縛変数とよぶ。量化されない変数は予め指定した対象を表すか，別途量化されるものとする。束縛変数の名称の変更に際しては，他の変数との衝突を避ける。
+\end{ruledef}
+% genron:end K-000003
+\section{略記法}
+% genron:begin K-000004
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+\begin{ruledef}[制限付き量化]
+$A$ の元を含む対象の範囲を考える。以下を略記として定める。
+\begin{align*}
+\forall x\in A,\ P(x)&\quad:\quad \forall x\,(x\in A\Rightarrow P(x)),\\
+\exists x\in A,\ P(x)&\quad:\quad \exists x\,(x\in A\land P(x)).
+\end{align*}
+右辺において $P(x)$ は量化の対象範囲全体で意味を持つとする。$P$ が $A$ の元に対してのみ意味を持つときは，左辺を $A$ の元についての自然言語の略記として直接理解する。$A$ に元がないとき，前者は成り立ち，後者は成り立たない。
+\end{ruledef}
+% genron:end K-000004
+% genron:begin K-000005
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+\begin{ruledef}[その他の略記]
+$x\notin A$，$x\ne y$ はそれぞれ $\neg(x\in A)$，$\neg(x=y)$ を表す。同じ種類の量化を続けるときは，例えば
+\[
+\forall x,y\in A,\ P(x,y)
+\]
+を $\forall x\in A,\ (\forall y\in A,\ P(x,y))$ の略記とする。存在量化についても同様である。異なる種類の量化の順序は一般には交換できない。
+\end{ruledef}
+% genron:end K-000005
+% genron:begin K-000006
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+\begin{prop}[一意存在]
+$x,y$ の対象範囲を同一とし，$y$ を新しい変数とする。このとき $\exists!x\,P(x)$ は
+\[
+\exists x\bigl(P(x)\land\forall y(P(y)\Rightarrow y=x)\bigr)
+\]
+と同じ意味である。
+\end{prop}
+\begin{proof}
+ただ一つ存在するならその対象を $x$ とすれば右の言明が成り立つ。逆に右の言明が成り立つなら，その $x$ は $P$ を満たし，$P$ を満たす任意の $y$ は $x$ に等しい。従って存在と一意性がともに成り立つ。
+\end{proof}
+% genron:end K-000006
+\section{論理法則}
+以下の法則は自然言語による推論に基づいて確認する。形式的な証明体系の定理として導くのではない。
+% genron:begin K-000007
+% genron:use K-000001
+\begin{principle}[古典的推論]
+任意の言明 $P$ について $P\lor\neg P$ を認め，$P\land\neg P$ は成り立たないものとする。また仮定から矛盾が導かれればその仮定を否定してよい。矛盾する仮定のもとでは任意の言明が従うものとする。これらを背景の推論原理として採用する。
+\end{principle}
+% genron:end K-000007
+% genron:begin K-000008
+% genron:use K-000001
+% genron:use K-000007
+\begin{prop}[否定と含意]
+\begin{align*}
+\neg\neg P&\iffc P,\\
+(P\Rightarrow Q)&\iffc(\neg Q\Rightarrow\neg P),\\
+\neg(P\Rightarrow Q)&\iffc(P\land\neg Q).
+\end{align*}
+\end{prop}
+\begin{proof}
+$P$ ならば $\neg P$ は成り立たない。逆に $\neg\neg P$ のもとでは排中律により $P$ が成り立つ。第2式について，$P$ ならば $Q$ であるとし，$\neg Q$ を仮定する。$P$ と仮定すれば矛盾するので $\neg P$ が従う。逆に $\neg Q$ ならば $\neg P$ とし，$P$ を仮定する。$\neg Q$ は矛盾を生ずるから二重否定を除いて $Q$ を得る。第3式について，$P\land\neg Q$ のもとでは $P\Rightarrow Q$ は矛盾を生ずる。逆に $P\Rightarrow Q$ が成り立たないとき，$\neg P$ ならば $P$ を仮定すると矛盾し，含意は成り立つ。また $Q$ ならばその含意は成り立つ。従って $P$ かつ $\neg Q$ である。
+\end{proof}
+% genron:end K-000008
+% genron:begin K-000009
+% genron:use K-000001
+\begin{prop}[交換律・結合律・冪等律]
+\begin{align*}
+P\land Q&\iffc Q\land P,& P\lor Q&\iffc Q\lor P,\\
+(P\land Q)\land R&\iffc P\land(Q\land R),\\
+(P\lor Q)\lor R&\iffc P\lor(Q\lor R),\\
+P\land P&\iffc P,&P\lor P&\iffc P.
+\end{align*}
+\end{prop}
+\begin{proof}
+連言の交換律・結合律はそれぞれ二つ，三つの言明がすべて成り立つことを述べる。選言については二つ，三つの言明の少なくとも一つが成り立つことを述べる。最後の二式は同じ言明の反復を除けばよい。
+\end{proof}
+% genron:end K-000009
+% genron:begin K-000010
+% genron:use K-000001
+% genron:use K-000007
+\begin{prop}[分配律と吸収律]
+\begin{align*}
+P\land(Q\lor R)&\iffc(P\land Q)\lor(P\land R),\\
+P\lor(Q\land R)&\iffc(P\lor Q)\land(P\lor R),\\
+P\land(P\lor Q)&\iffc P,\\
+P\lor(P\land Q)&\iffc P.
+\end{align*}
+\end{prop}
+\begin{proof}
+第1式の左辺を仮定すれば $Q$ 又は $R$ の場合に分けて右辺を得る。逆に右辺のいずれの場合にも $P$ と $Q\lor R$ が成り立つ。第2式の左辺から右辺は直ちに従う。逆に $P\lor Q$ と $P\lor R$ が成り立つとする。排中律により $P$ と $\neg P$ の場合に分ける。前者はよく，後者には二つの選言から $Q$ と $R$ を得る。第3式は左から右へは連言を分離し，逆へは $P$ から $P\lor Q$ を得る。第4式は左のいずれの場合にも $P$ が成り立ち，逆向きは選言を導入すればよい。
+\end{proof}
+% genron:end K-000010
+% genron:begin K-000011
+% genron:use K-000001
+% genron:use K-000007
+\begin{prop}[De Morgan の法則]
+\begin{align*}
+\neg(P\lor Q)&\iffc\neg P\land\neg Q,\\
+\neg(P\land Q)&\iffc\neg P\lor\neg Q.
+\end{align*}
+\end{prop}
+\begin{proof}
+$P\lor Q$ が成り立たないなら $P,Q$ のいずれも成り立たない。逆に両者とも成り立たなければ $P\lor Q$ は成り立たない。第2式の右辺から左辺は明らかである。左辺を仮定して排中律により $P$ と $\neg P$ の場合に分ける。前者なら $Q$ を仮定すると矛盾するので $\neg Q$ が従い，後者なら $\neg P$ が既に成り立つ。
+\end{proof}
+% genron:end K-000011
+% genron:begin K-000012
+% genron:use K-000001
+\begin{prop}[含意の合成]
+$P\Rightarrow Q$ および $Q\Rightarrow R$ が成り立てば $P\Rightarrow R$ が成り立つ。特に $P\Leftrightarrow Q$ および $Q\Leftrightarrow R$ が成り立てば $P\Leftrightarrow R$ が成り立つ。
+\end{prop}
+\begin{proof}
+$P$ を仮定すると第1の含意から $Q$，第2の含意から $R$ を得る。同値の場合にはこの論証を両方向に適用する。
+\end{proof}
+% genron:end K-000012
+% genron:begin K-000013
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000007
+% genron:use K-000008
+\begin{prop}[量化の否定]
+\begin{align*}
+\neg\exists x\,P(x)&\iffc\forall x\,\neg P(x),\\
+\neg\forall x\,P(x)&\iffc\exists x\,\neg P(x).
+\end{align*}
+\end{prop}
+\begin{proof}
+$P$ を満たす対象が存在しないなら任意の $x$ は $P$ を満たさない。逆に任意の $x$ が $P$ を満たさないなら $P$ を満たす対象は存在しない。第2式の右辺から左辺は，反例を用いれば従う。左辺を仮定する。もし $\neg P(x)$ を満たす $x$ が存在しなければ，第1式を $\neg P(x)$ に適用して任意の $x$ について $\neg\neg P(x)$ が成り立つ。古典的推論により $P(x)$ が従い，仮定に反する。従って古典的推論により $\neg P(x)$ を満たす $x$ が存在する。
+\end{proof}
+% genron:end K-000013
+% genron:begin K-000014
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+\begin{prop}[量化の交換]
+$x,y$ の対象範囲は互いに依存しないものとする。このとき
+\begin{align*}
+\forall x\,\forall y\,P(x,y)&\iffc\forall y\,\forall x\,P(x,y),\\
+\exists x\,\exists y\,P(x,y)&\iffc\exists y\,\exists x\,P(x,y).
+\end{align*}
+\end{prop}
+\begin{proof}
+第1式の左辺のもとで任意の $y$ をとり，任意の $x$ に対して左辺を適用する。逆向きは $x,y$ の役割を交換すればよい。第2式では左辺を満たす対象 $x,y$ を順にとれば，同じ二つの対象を逆順にとって右辺を得る。逆も同様である。
+\end{proof}
+% genron:end K-000014
+% genron:begin K-000015
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+\begin{prop}[量化と論理結合子]
+$P(x),Q(x)$ の対象範囲を同一とする。このとき
+\begin{align*}
+\forall x(P(x)\land Q(x))&\iffc(\forall x\,P(x))\land(\forall x\,Q(x)),\\
+\exists x(P(x)\lor Q(x))&\iffc(\exists x\,P(x))\lor(\exists x\,Q(x)).
+\end{align*}
+\end{prop}
+\begin{proof}
+第1式の左辺からは各言明を分離すれば右辺を得る。逆に右辺のもとで任意の $x$ をとれば両者が成り立つ。第2式は左辺の存在を保証する対象について $P,Q$ の場合に分ければ右辺を得る。逆に右辺のいずれの場合もそこで存在する対象が左辺を満たす。
+\end{proof}
+% genron:end K-000015
+% genron:begin K-000016
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000015
+\begin{prop}[量化の順序に関する注意]
+対象範囲は互いに依存しないとする。$\exists y\,\forall x\,P(x,y)$ から $\forall x\,\exists y\,P(x,y)$ が従う。ただし逆は一般に成り立たない。また全称量化と選言，存在量化と連言について命題3.9と同型の分配律は一般に成り立たない。
+\end{prop}
+\begin{proof}
+前者で存在が保証された $y$ を固定すれば任意の $x$ に対する存在が従う。逆の反例として相異なる二つの対象 $a,b$ のみを範囲とし，$P(x,y)$ を $x=y$ とする。各 $x$ に対して $y=x$ が存在するが，すべての $x$ に等しい $y$ は存在しない。次に同じ範囲で $P(x)$ を $x=a$，$Q(x)$ を $x=b$ とする。各 $x$ はどちらかを満たすが，一方だけをすべての $x$ が満たすことはない。また両者を満たす対象はないが，それぞれを満たす対象は存在する。
+\end{proof}
+% genron:end K-000016
+% genron:begin K-000017
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000006
+% genron:use K-000007
+% genron:use K-000008
+\begin{ruledef}[論証の方法]
+含意の証明では仮定を明示し，そこから結論を導く。対偶による証明では結論の否定から仮定の否定を導く。背理法では証明すべき言明の否定を仮定して矛盾を導く。場合分けでは挙げた場合が可能性を尽くすことを確認する。全称言明の証明では特別な条件を課さず任意の対象をとる。存在の証明では条件を満たす対象の存在を論証し，一意存在の証明では存在と一意性の両方を論証する。
+\end{ruledef}
+% genron:end K-000017
+\subsection*{次篇への準備}
+次篇では集合の相等や集合演算を言明の同値によって記述する。例えば，二つの集合の元であるという条件を連言で表し，少なくとも一方の元であるという条件を選言で表す。本篇の論理法則はその際に利用する。ただし，条件を記述できることと，その条件を満たす対象の集合が存在することとは別の問題である。
+\enlargethispage{3\baselineskip}
+\subsection*{参考文献}
+S. G. Krantz, \textit{A Primer of Mathematical Writing}, 2nd ed.\par
+\noindent arXiv:1612.04888 (2016), 第1--2章（数学的文章の記述に関する参考）。本篇の記法及び論証は原論の制作方針に従って構成した。
+\end{document}
