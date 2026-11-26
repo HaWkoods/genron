@@ -1,0 +1,212 @@
+% Web専用原稿（PDF組版対象外）
+\section{作用と軌道}
+% genron:begin K-000304
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000033
+% genron:use K-000034
+\begin{defn}[群の左作用]
+群 $G$ と集合 $X$ に対し，写像 $G\times X\to X$，$(g,x)\mapsto gx$ が任意の $g,h\in G$，$x\in X$ について
+\[
+1_Gx=x,\qquad (gh)x=g(hx)
+\]
+を満たすとき，これを $G$ の $X$ への左作用という．作用を指定した集合を $G$ 集合という．
+\end{defn}
+% genron:end K-000304
+% genron:begin K-000305
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000226
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000041
+\begin{prop}[作用による全単射]
+各 $g\in G$ に対し $T_g:X\to X$，$T_g(x)=gx$ とおくと
+\[
+T_{gh}=T_g\circ T_h,\qquad T_{1_G}=\mathrm{id}_X,\qquad T_g^{-1}=T_{g^{-1}}
+\]
+が成り立つ．
+\end{prop}
+\begin{proof}
+作用の条件から最初の二式が従う．$T_g\circ T_{g^{-1}}=T_{g^{-1}}\circ T_g=T_{1_G}$ であるから，逆写像による全単射の判定（K-000041）を適用できる．
+\end{proof}
+% genron:end K-000305
+% genron:begin K-000306
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000225
+% genron:use K-000226
+% genron:use K-000263
+% genron:use K-000264
+% genron:use K-000035
+% genron:use K-000028
+\begin{prop}[群自身と剰余類集合への作用]
+群 $G$ の自身への作用として左乗法 $(g,x)\mapsto gx$ 及び共役 $(g,x)\mapsto gxg^{-1}$ がある．また部分群 $H$ の左剰余類集合 $G/H$ には
+\[
+g\cdot(aH)=(ga)H
+\]
+で左作用が定まる．ここでは $H$ の正規性を仮定しない．
+\end{prop}
+\begin{proof}
+左乗法は結合律と単位元の性質により作用となる．共役については $(gh)x(gh)^{-1}=g(hxh^{-1})g^{-1}$ であり，単位元の作用は恒等写像である．剰余類について，$aH=bH$ なら剰余類の分割（K-000264）より $a^{-1}b\in H$ であり，$(ga)^{-1}(gb)=a^{-1}b$ なので $(ga)H=(gb)H$ となる．よって値が一意に定まり，作用の二条件は群の結合律と単位元の性質から従う．
+\end{proof}
+% genron:end K-000306
+% genron:begin K-000307
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000028
+% genron:use K-000037
+\begin{defn}[軌道と推移的作用]
+$G$ 集合 $X$ の元 $x$ に対し
+\[
+Gx=\{gx\mid g\in G\}
+\]
+を $x$ の軌道という．$X$ が空でなく，任意の $x,y\in X$ に対し $y=gx$ となる $g\in G$ が存在するとき，作用は推移的であるという．
+\end{defn}
+% genron:end K-000307
+% genron:begin K-000308
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000307
+% genron:use K-000226
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000054
+\begin{prop}[軌道による分割]
+$G$ 集合 $X$ において，ある $g\in G$ に対して $y=gx$ となることを $x\sim y$ と書く．これは同値関係であり，その同値類は軌道である．従って軌道全体は $X$ の分割をなす．
+\end{prop}
+\begin{proof}
+$x=1_Gx$ により反射性が従う．$y=gx$ なら $x=g^{-1}y$ であり対称的である．さらに $z=hy$ なら $z=(hg)x$ であり推移的である．同値類（K-000053）の定義から $[x]=Gx$ であり，同値関係と分割の対応（K-000054）を適用する．
+\end{proof}
+% genron:end K-000308
+\section{安定化部分群と固定点}
+% genron:begin K-000309
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000225
+% genron:use K-000226
+% genron:use K-000229
+% genron:use K-000024
+\begin{defn}[安定化部分群と固定点]
+$G$ 集合 $X$ の元 $x$ に対し
+\[
+G_x=\{g\in G\mid gx=x\}
+\]
+を $x$ の安定化部分群という．これは実際に $G$ の部分群である．$G_x=G$ となる $x$ を固定点という．
+\end{defn}
+\begin{proof}
+$1_G\in G_x$ である．$g,h\in G_x$ なら $h^{-1}x=h^{-1}(hx)=x$ であり，$(gh^{-1})x=x$ となる．部分群判定（K-000229）を適用する．
+\end{proof}
+% genron:end K-000309
+% genron:begin K-000310
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000309
+% genron:use K-000304
+% genron:use K-000226
+% genron:use K-000028
+\begin{prop}[同一軌道の安定化部分群]
+任意の $g\in G$，$x\in X$ に対し
+\[
+G_{gx}=gG_xg^{-1}
+\]
+が成り立つ．
+\end{prop}
+\begin{proof}
+$h\in G$ に対して $h(gx)=gx$ であることと $(g^{-1}hg)x=x$ であることは同値である．後者は $g^{-1}hg\in G_x$，すなわち $h\in gG_xg^{-1}$ を意味する．
+\end{proof}
+% genron:end K-000310
+% genron:begin K-000311
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000307
+% genron:use K-000309
+% genron:use K-000306
+% genron:use K-000264
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000055
+\begin{thm}[軌道・安定化部分群定理]
+$G$ 集合 $X$ の元 $x$ に対し，
+\[
+G/G_x\longrightarrow Gx,\qquad gG_x\longmapsto gx
+\]
+は全単射を定める．またこの全単射は $G$ の左作用を保存する．
+\end{thm}
+\begin{proof}
+任意の $g,h\in G$ について
+\[
+gx=hx\ \Longleftrightarrow\ (h^{-1}g)x=x
+\ \Longleftrightarrow\ h^{-1}g\in G_x
+\ \Longleftrightarrow\ gG_x=hG_x
+\]
+である．従って商集合の普遍性（K-000055）により表示した写像が定まり，この同値性から単射である．軌道の定義から全射である．任意の $a\in G$ について $(ag)G_x$ の像は $(ag)x=a(gx)$ であり，作用を保存する．
+\end{proof}
+% genron:end K-000311
+% genron:begin K-000312
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000304
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000041
+\begin{defn}[作用を保存する写像]
+$G$ 集合 $X,Y$ の間の写像 $f:X\to Y$ が任意の $g\in G$，$x\in X$ について $f(gx)=gf(x)$ を満たすとき，$G$ 写像という．全単射な $G$ 写像の逆写像も $G$ 写像である．
+\end{defn}
+\begin{proof}
+$y\in Y$ に対して $x=f^{-1}(y)$ とおけば $f(gx)=gy$ であるから $f^{-1}(gy)=gx=gf^{-1}(y)$ となる．
+\end{proof}
+% genron:end K-000312
+% 参考文献：S. Lang, Algebra, revised third edition, Springer, Ch. I, §5, pp. 25–29（作用・軌道・安定化群・剰余類対応）．既出の集合論と群論から論証を再構成した．

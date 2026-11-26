@@ -1,0 +1,197 @@
+% Web専用原稿（PDF組版対象外）
+\section{有限群と指数}
+% genron:begin K-000313
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000228
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000263
+% genron:use K-000264
+\begin{defn}[有限群と部分群の指数]
+台集合が有限集合である群 $G$ を有限群といい，その元の個数 $|G|$ を位数という．一般に部分群 $H\leq G$ の左剰余類全体を $G/H$ と書く．この集合が有限であるとき
+\[
+[G:H]=|G/H|
+\]
+を $H$ の $G$ における指数という．$H$ が正規である必要はない．
+\end{defn}
+% genron:end K-000313
+% genron:begin K-000314
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000313
+% genron:use K-000225
+% genron:use K-000226
+% genron:use K-000227
+% genron:use K-000263
+% genron:use K-000035
+% genron:use K-000039
+\begin{prop}[剰余類の濃度]
+群 $G$ と部分群 $H$ に対し，任意の $a\in G$ について写像 $H\to aH$，$h\mapsto ah$ は全単射である．右剰余類についても $h\mapsto ha$ は全単射を与える．
+\end{prop}
+\begin{proof}
+左剰余類の定義（K-000263）から全射性が従い，簡約律（K-000227）から単射性が従う．右剰余類についても右簡約律を用いればよい．
+\end{proof}
+% genron:end K-000314
+% genron:begin K-000315
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000313
+% genron:use K-000314
+% genron:use K-000264
+% genron:use K-000113
+% genron:use K-000116
+% genron:use K-000119
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000227
+\begin{thm}[Lagrangeの定理]
+有限群 $G$ と部分群 $H\leq G$ に対し，$H$ と $G/H$ は有限であって
+\[
+|G|=[G:H]\,|H|
+\]
+が成り立つ．特に $|H|$ は $|G|$ を割り切る．
+\end{thm}
+\begin{proof}
+$H$ は有限集合の部分集合であり，$G/H$ は写像 $a\mapsto aH$ の像であるからともに有限である（K-000113）．各左剰余類は空でないので，有限選択（K-000119）により剰余類 $C\in G/H$ ごとに代表元 $a_C\in C$ を選べる．
+\[
+(G/H)\times H\longrightarrow G,\qquad (C,h)\longmapsto a_Ch
+\]
+を考える．各 $a_CH=C$ であり，剰余類は分割をなす（K-000264）ので全射である．$a_Ch=a_Dk$ ならこの元は $C\cap D$ に属するので $C=D$ であり，簡約律から $h=k$ を得る．従って全単射である．有限集合の直積の濃度（K-000116）を適用して結論を得る．
+\end{proof}
+ここでいう割り切るとは，ある自然数 $m$ に対して $|G|=m|H|$ と書けることである．選択公理は使用していない．
+% genron:end K-000315
+\section{元の位数と巡回群}
+% genron:begin K-000316
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000231
+% genron:use K-000232
+% genron:use K-000226
+\begin{defn}[巡回部分群と巡回群]
+群 $G$ の元 $a$ に対し，$\{a\}$ の生成部分群を $\langle a\rangle$ と書き，$a$ の生成する巡回部分群という．ある $a$ に対して $G=\langle a\rangle$ となる群を巡回群といい，そのような $a$ を生成元という．生成部分群の有限積表示（K-000232）により $\langle a\rangle$ の元は $a$ と $a^{-1}$ の有限積である．
+\end{defn}
+% genron:end K-000316
+% genron:begin K-000317
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000316
+% genron:use K-000313
+% genron:use K-000110
+\begin{defn}[元の位数]
+群 $G$ の元 $a$ に対し，$\langle a\rangle$ が有限群であるとき，その位数を $a$ の位数といい，
+\[
+\operatorname{ord}(a)=|\langle a\rangle|
+\]
+と書く．$\langle a\rangle$ が無限集合であるとき，$a$ は無限位数をもつという．
+\end{defn}
+% genron:end K-000317
+% genron:begin K-000318
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000317
+% genron:use K-000316
+% genron:use K-000168
+% genron:use K-000169
+% genron:use K-000227
+% genron:use K-000226
+% genron:use K-000104
+% genron:use K-000108
+% genron:use K-000100
+% genron:use K-000111
+% genron:use K-000114
+% genron:use K-000228
+% genron:use K-000231
+% genron:use K-000232
+\begin{thm}[有限位数と最小正指数]
+群 $G$ の元 $a$ が有限位数をもつための必要十分条件は，$a^n=1_G$ となる正の自然数 $n$ が存在することである．そのような $n$ の最小値を $d$ とすると
+\[
+\operatorname{ord}(a)=d,\qquad \langle a\rangle=\{a^i\mid i<d\}
+\]
+であり，右辺における $d$ 個の元は互いに相異なる．
+\end{thm}
+\begin{proof}
+$\langle a\rangle$ が有限で $|\langle a\rangle|=m$ なら，$m+1$ 個の自然数冪 $a^0,\ldots,a^m$ はすべて $\langle a\rangle$ に属する．有限集合の単射比較（K-000111）により $i<j\leq m$ で $a^i=a^j$ となるものがある．$j=i+k$ となる正の自然数 $k$ をとると自然数冪の法則と簡約律により $a^k=1_G$ である．
+
+逆に正の指数で $a^n=1_G$ となるものがあれば，最小元の原理（K-000104）によってその最小値 $d$ をとれる．$a^0,\ldots,a^{d-1}$ が相異なることは同じ簡約の議論と $d$ の最小性による．$C=\{a^i\mid i<d\}$ とおく．任意の自然数 $r$ に対し $a^r\in C$ であることは帰納法による．実際 $a^0\in C$ であり，$a^r=a^i$，$i<d$ なら $a^{r+1}=a^{i+1}$ は $i+1<d$ の場合も $i+1=d$ の場合も $C$ に属する．従って $C$ は積で閉じる．また $i<d$ なら $i+j=d$ となる自然数 $j$ が存在するので $(a^i)^{-1}=a^j\in C$ である．単位元を含むから $C$ は部分群であり，$a=a^1\in C$ である．よって生成部分群の最小性から $C=\langle a\rangle$ である．指数集合 $d$ から $C$ への写像 $i\mapsto a^i$ が全単射なので $|C|=d$ となる．
+\end{proof}
+% genron:end K-000318
+% genron:begin K-000319
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000315
+% genron:use K-000317
+% genron:use K-000318
+% genron:use K-000169
+% genron:use K-000113
+\begin{prop}[有限群における元の位数]
+有限群 $G$ の任意の元 $a$ に対し $\operatorname{ord}(a)$ は $|G|$ を割り切り，
+\[
+a^{|G|}=1_G
+\]
+が成り立つ．
+\end{prop}
+\begin{proof}
+$\langle a\rangle$ は有限集合 $G$ の部分集合である．Lagrangeの定理を $\langle a\rangle$ に適用すると $|G|=m\operatorname{ord}(a)$ となる自然数 $m$ が存在する．前定理と自然数冪の法則（K-000169）により $a^{|G|}=(a^{\operatorname{ord}(a)})^m=1_G$ である．
+\end{proof}
+% genron:end K-000319
+% genron:begin K-000320
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000316
+% genron:use K-000232
+% genron:use K-000226
+% genron:use K-000160
+% genron:use K-000165
+% genron:use K-000166
+% genron:use K-000225
+% genron:use K-000100
+\begin{prop}[巡回群の可換性]
+巡回群は可換群である．
+\end{prop}
+\begin{proof}
+$G=\langle a\rangle$ とする．$a$ と $a^{-1}$ は互いに可換であり，自分自身とも可換である．任意の $u\in G$ はこれらの元の有限積であるから，結合律と積の長さに関する帰納法によって $ua=au$ 及び $ua^{-1}=a^{-1}u$ を得る．任意の $v\in G$ も同じ元の有限積である．再び積の長さに関する帰納法で $uv=vu$ が従う．
+\end{proof}
+% genron:end K-000320
+% 参考文献：S. Lang, Algebra, revised third edition, Springer, Ch. I, §2（指数公式，Prop. 2.2），§4, pp. 23–25（巡回群）．整数を未構成のため自然数冪と有限集合による証明に変更した．

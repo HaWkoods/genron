@@ -525,12 +525,12 @@
       {
         "tex": "G/H",
         "label": "左剰余類集合",
-        "id": null
+        "id": "K-000313"
       },
       {
         "tex": "[G:H]",
         "label": "部分群の指数",
-        "id": null
+        "id": "K-000313"
       },
       {
         "tex": "Z(G)",
@@ -560,7 +560,7 @@
       {
         "tex": "\\operatorname{ord}(x)",
         "label": "元の位数",
-        "id": null
+        "id": "K-000317"
       },
       {
         "tex": "\\operatorname{Aut}(G)",
