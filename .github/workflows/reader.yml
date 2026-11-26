@@ -6,6 +6,7 @@ on:
       - 'site/**'
       - 'volumes/**'
       - 'docs/knowledge.json'
+      - 'docs/notation.tex'
       - 'scripts/viewer-tex.mjs'
       - 'scripts/build-site.mjs'
       - 'scripts/test-viewer*.mjs'

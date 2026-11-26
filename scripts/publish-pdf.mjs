@@ -39,6 +39,13 @@ try{
  if(/(?:^|\n)! |Missing character:|Overfull \\[hv]box|There were undefined references|Package rerunfilecheck Warning/i.test(catalogueLog))throw Error("Unresolved typesetting problem in statements catalogue");
  run("dvipdfmx",["-o","statements.pdf","statements.dvi"],catalogue);
  run("pdfinfo",[path.join(catalogue,"statements.pdf")],catalogue);
+ const notation=path.join(tmp,"notation");
+ fs.mkdirSync(notation);
+ fs.copyFileSync(path.join(root,"docs/notation.tex"),path.join(notation,"notation.tex"));
+ for(let i=0;i<2;i++)run("platex",["-interaction=nonstopmode","-halt-on-error","-no-shell-escape","notation.tex"],notation);
+ run("dvipdfmx",["-o","notation.pdf","notation.dvi"],notation);
+ run("pdfinfo",[path.join(notation,"notation.pdf")],notation);
+ fs.copyFileSync(path.join(notation,"notation.pdf"),path.join(root,"docs/notation.pdf"));
  // Do not update the index or copy any output until all selected compilations succeed.
  fs.copyFileSync(path.join(catalogue,"statements.tex"),path.join(root,"docs","statements.tex"));
  fs.copyFileSync(path.join(catalogue,"statements.pdf"),path.join(root,"docs","statements.pdf"));

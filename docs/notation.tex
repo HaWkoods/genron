@@ -1,0 +1,102 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr,needspace}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論}
+\fancyhead[R]{\small 記号・記法一覧\quad\thepage}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\medskip
+{\LARGE 記号・記法一覧}\par\smallskip
+{\small 第1版}
+\end{center}
+既出の記法を優先する。未登場の対象については先行規約（採用候補を含む）であり、数学的定義・命題の確立や利用許可を意味しない。同一文脈の衝突は添字・文字の変更で解消する。意味・仮定・正規化は正式原稿で定める。
+\section{数学的言語・集合}
+既出。\par\smallskip
+\Needspace{3\baselineskip}\noindent $\forall,\exists,\exists!,\neg,\land,\lor,\Rightarrow,\Leftrightarrow$\par\hspace*{1em}量化・論理結合\par\smallskip
+\Needspace{3\baselineskip}\noindent $\varnothing,\in,\notin,\subseteq,\subsetneq$\par\hspace*{1em}空集合・所属・包含・真包含\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal P(X),\{x\in X\mid P(x)\}$\par\hspace*{1em}冪集合・部分集合の指定\par\smallskip
+\Needspace{3\baselineskip}\noindent $A\cup B,\ A\cap B,\ A\setminus B$\par\hspace*{1em}合併・共通部分・差\par\smallskip
+\Needspace{3\baselineskip}\noindent $(A_i)_{i\in I},\ \bigcup_{i\in I}A_i$\par\hspace*{1em}集合族・合併\par\smallskip
+\Needspace{3\baselineskip}\noindent $\bigcap_{i\in I}A_i,\ \prod_{i\in I}A_i,\ \coprod_{i\in I}A_i$\par\hspace*{1em}共通部分・直積・非交和\par\smallskip
+\Needspace{3\baselineskip}\noindent $f:X\to Y,\quad x\mapsto f(x)$\par\hspace*{1em}写像\par\smallskip
+\Needspace{3\baselineskip}\noindent $f(A),\ f^{-1}(B),\ f\vert_A$\par\hspace*{1em}像・逆像・制限\par\smallskip
+\Needspace{3\baselineskip}\noindent $g\circ f,\ \mathrm{id}_X,\ Y^X$\par\hspace*{1em}合成・恒等写像・写像全体\par\smallskip
+\Needspace{3\baselineskip}\noindent $[x],\ X/{\sim},\ \pi$\par\hspace*{1em}同値類・商集合・標準全射\par\smallskip
+\Needspace{3\baselineskip}\noindent $\lvert X\rvert,\ \mathbb N$\par\hspace*{1em}有限集合の元の個数・自然数（0を含む）\par\smallskip
+\Needspace{3\baselineskip}\noindent $\leq,\ <,\ \sup,\ \inf,\ \vee,\ \wedge$\par\hspace*{1em}順序・上限・下限・束演算\par\smallskip
+\Needspace{3\baselineskip}\noindent $P^{\mathrm{op}},\ \operatorname{Fix}(c)$\par\hspace*{1em}双対順序・固定元集合\par\smallskip
+\section{位相・収束}
+既出及び先行。\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal O,\ (X,\mathcal O),\ U\in\mathcal O$\par\hspace*{1em}開集合系・位相空間・開集合（指定済）\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal C,\ \mathcal O(\mathcal S)$\par\hspace*{1em}閉集合系・生成位相（既出の記法を整理）\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal O_X,\ \mathcal O_Y,\ \mathcal O_1,\ \mathcal O_2$\par\hspace*{1em}空間・添字で位相を区別\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal N(x),\ \mathcal B_x,\ \mathcal B$\par\hspace*{1em}近傍系・近傍基・開基\par\smallskip
+\Needspace{3\baselineskip}\noindent $\operatorname{Int}(A),\ \overline A,\ \partial A,\ A'$\par\hspace*{1em}内部・閉包・境界・集積点集合\par\smallskip
+\Needspace{3\baselineskip}\noindent $d(x,y),\ B_d(x,r),\ \overline B_d(x,r)$\par\hspace*{1em}距離・開球・閉球（閉球は開球の閉包とは限らない）\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal F,\ x_i\to x,\ \widehat X$\par\hspace*{1em}フィルター・収束・完備化\par\smallskip
+\Needspace{3\baselineskip}\noindent $\pi_0(X),\ \pi_1(X,x),\ \pi_n(X,x)$\par\hspace*{1em}連結成分（経路成分として定義）・ホモトピー群\par\smallskip
+\Needspace{3\baselineskip}\noindent $f\simeq g,\ X\cong Y$\par\hspace*{1em}ホモトピー・同相（文脈明示）\par\smallskip
+\section{代数・数体系}
+先行（一部既出）。\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathbb Z,\mathbb Q,\mathbb R,\mathbb C$\par\hspace*{1em}整数・有理数・実数・複素数\par\smallskip
+\Needspace{3\baselineskip}\noindent $M,\ G,\ H,\ N$\par\hspace*{1em}モノイド・群・部分群・正規部分群\par\smallskip
+\Needspace{3\baselineskip}\noindent $1_G,\ x^{-1},\ xy,\ \langle S\rangle$\par\hspace*{1em}単位元・逆元・積・生成部分群\par\smallskip
+\Needspace{3\baselineskip}\noindent $H\leq G,\ N\trianglelefteq G,\ G/N,\ [G:H]$\par\hspace*{1em}部分群・正規部分群・商群・指数\par\smallskip
+\Needspace{3\baselineskip}\noindent $\ker f,\ \operatorname{Im}f,\ \operatorname{Aut}(G)$\par\hspace*{1em}核・像・自己同型群\par\smallskip
+\Needspace{3\baselineskip}\noindent $A,\ R,\ K,\ L,\ k$\par\hspace*{1em}環・環・体・拡大体・基礎体\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathfrak a,\ \mathfrak p,\ \mathfrak m$\par\hspace*{1em}イデアル・素イデアル・極大イデアル\par\smallskip
+\Needspace{3\baselineskip}\noindent $A^\times,\ A/\mathfrak a,\ (a_1,\ldots,a_n)$\par\hspace*{1em}単元群・商環・生成イデアル\par\smallskip
+\Needspace{3\baselineskip}\noindent $\sqrt{\mathfrak a},\ \operatorname{Spec}A,\ \operatorname{MaxSpec}A$\par\hspace*{1em}根基・素スペクトル・極大スペクトル\par\smallskip
+\Needspace{3\baselineskip}\noindent $S^{-1}A,\ A_{\mathfrak p},\ \operatorname{Frac}(A)$\par\hspace*{1em}局所化・素イデアルでの局所化・分数体\par\smallskip
+\Needspace{3\baselineskip}\noindent $A[X_1,\ldots,X_n],\ A[[X]]$\par\hspace*{1em}多項式環・形式冪級数環\par\smallskip
+\Needspace{3\baselineskip}\noindent $L/K,\ [L:K],\ \operatorname{Gal}(L/K)$\par\hspace*{1em}体拡大・拡大次数・Galois群\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal O_K,\ \operatorname{Tr}_{L/K},\ N_{L/K}$\par\hspace*{1em}整数環・トレース・ノルム\par\smallskip
+\Needspace{3\baselineskip}\noindent $v,\ \lvert\cdot\rvert_v,\ K_v,\ \mathbb Z_p,\ \mathbb Q_p$\par\hspace*{1em}付値・絶対値・完備化・p進整数・p進数\par\smallskip
+\Needspace{3\baselineskip}\noindent $M,\ N,\ \operatorname{Hom}_A(M,N)$\par\hspace*{1em}加群・加群準同型全体\par\smallskip
+\Needspace{3\baselineskip}\noindent $M\oplus N,\ M\otimes_A N,\ M^*$\par\hspace*{1em}直和・テンソル積・双対\par\smallskip
+\Needspace{3\baselineskip}\noindent $\dim_K V,\ \operatorname{rank}T,\ \det A,\ \operatorname{tr}A$\par\hspace*{1em}次元・階数・行列式・跡\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathrm{GL}_n(K),\ \mathrm{SL}_n(K)$\par\hspace*{1em}一般線形群・特殊線形群\par\smallskip
+\section{解析・測度・確率}
+先行（一部既出）。\par\smallskip
+\Needspace{3\baselineskip}\noindent $(X,\mathcal A),\ \sigma(\mathcal S),\ \mathcal B(X)$\par\hspace*{1em}可測空間・生成σ加法族・Borel加法族\par\smallskip
+\Needspace{3\baselineskip}\noindent $(X,\mathcal A,\mu),\ \mu^*,\ \mu\otimes\nu$\par\hspace*{1em}測度空間・外測度・積測度\par\smallskip
+\Needspace{3\baselineskip}\noindent $\int_A f\,d\mu,\ \frac{d\nu}{d\mu}$\par\hspace*{1em}積分・Radon--Nikodym微分\par\smallskip
+\Needspace{3\baselineskip}\noindent $f_*\mu,\ \mu\ll\nu,\ \mu\perp\nu$\par\hspace*{1em}像測度・絶対連続・相互特異\par\smallskip
+\Needspace{3\baselineskip}\noindent $L^p(X,\mu),\ \|f\|_p,\ \ell^p$\par\hspace*{1em}Lebesgue空間・ノルム・数列空間\par\smallskip
+\Needspace{3\baselineskip}\noindent $C(X),\ C_c(X),\ C_0(X)$\par\hspace*{1em}連続函数・コンパクト台・無限遠で消える函数\par\smallskip
+\Needspace{3\baselineskip}\noindent $\|x\|,\ \langle x,y\rangle,\ X^*$\par\hspace*{1em}ノルム・内積（線形側は別途規定）・連続双対\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal L(X,Y),\ T^*,\ \|T\|,\ \sigma(T)$\par\hspace*{1em}有界線形作用素・随伴・作用素ノルム・スペクトル\par\smallskip
+\Needspace{3\baselineskip}\noindent $D f(x),\ \partial_i f,\ \nabla f,\ D^2f$\par\hspace*{1em}微分・偏微分・勾配・二階微分\par\smallskip
+\Needspace{3\baselineskip}\noindent $\limsup,\ \liminf,\ \sum,\ \int$\par\hspace*{1em}上極限・下極限・級数・積分\par\smallskip
+\Needspace{3\baselineskip}\noindent $\widehat f,\ \mathcal F f,\ f*g$\par\hspace*{1em}Fourier変換・変換作用素・畳込み（正規化は導入時）\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal D'(U),\ W^{k,p}(U),\ H^k(U)$\par\hspace*{1em}超函数・Sobolev空間・L2型Sobolev空間\par\smallskip
+\Needspace{3\baselineskip}\noindent $\operatorname{Re}z,\ \operatorname{Im}z,\ \overline z,\ \operatorname{Res}_{z=a}f$\par\hspace*{1em}実部・虚部・共役・留数\par\smallskip
+\Needspace{3\baselineskip}\noindent $(\Omega,\mathcal F,\mathbb P),\ \mathbb E[X]$\par\hspace*{1em}確率空間・期待値\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathbb E[X\mid\mathcal G],\ \operatorname{Var}(X),\ \operatorname{Cov}(X,Y)$\par\hspace*{1em}条件付き期待値・分散・共分散\par\smallskip
+\Needspace{3\baselineskip}\noindent $(\mathcal F_t)_{t\geq0},\ (X_t)_{t\geq0},\ B_t$\par\hspace*{1em}フィルトレーション・確率過程・Brown運動\par\smallskip
+\section{圏・幾何・ホモロジー}
+先行。\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal C,\ \mathcal D,\ \operatorname{Ob}(\mathcal C)$\par\hspace*{1em}圏・対象\par\smallskip
+\Needspace{3\baselineskip}\noindent $\operatorname{Hom}_{\mathcal C}(X,Y),\ F:\mathcal C\to\mathcal D$\par\hspace*{1em}射集合・函手\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathcal C^{\mathrm{op}},\ \eta:F\Rightarrow G$\par\hspace*{1em}反対圏・自然変換\par\smallskip
+\Needspace{3\baselineskip}\noindent $\varprojlim,\ \varinjlim,\ F\dashv G$\par\hspace*{1em}射影極限・帰納極限・随伴\par\smallskip
+\Needspace{3\baselineskip}\noindent $(M,\mathcal A),\ (U,\varphi),\ T_pM,\ TM$\par\hspace*{1em}多様体・座標近傍・接空間・接束\par\smallskip
+\Needspace{3\baselineskip}\noindent $T_p^*M,\ T^*M,\ df_p,\ f^*\omega$\par\hspace*{1em}余接空間・余接束・接写像・引戻し\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathfrak X(M),\ \Omega^k(M),\ d,\ \wedge$\par\hspace*{1em}ベクトル場・微分形式・外微分・外積\par\smallskip
+\Needspace{3\baselineskip}\noindent $g,\ \nabla,\ R,\ \operatorname{grad}f$\par\hspace*{1em}計量・接続・曲率・勾配\par\smallskip
+\Needspace{3\baselineskip}\noindent $\mathfrak g,\ [X,Y],\ \exp$\par\hspace*{1em}Lie代数・括弧・指数写像\par\smallskip
+\Needspace{3\baselineskip}\noindent $C_n(X),\ \partial_n,\ H_n(X;A),\ H^n(X;A)$\par\hspace*{1em}鎖群・境界写像・ホモロジー・コホモロジー\par\smallskip
+\Needspace{3\baselineskip}\noindent $\operatorname{Ext}_A^n(M,N),\ \operatorname{Tor}_n^A(M,N)$\par\hspace*{1em}導来函手\par\smallskip
+\Needspace{3\baselineskip}\noindent $(X,\mathcal O_X),\ \mathcal F(U),\ \mathcal F_x$\par\hspace*{1em}環付き空間・層の切断・茎\par\smallskip
+\Needspace{3\baselineskip}\noindent $V(I),\ D(f),\ \operatorname{Proj}S$\par\hspace*{1em}零点集合・基本開集合・射影スペクトル\par\smallskip
+\Needspace{3\baselineskip}\noindent $G=(V,E),\ \deg(v),\ A_G$\par\hspace*{1em}グラフ・次数・隣接行列\par\smallskip
+\Needspace{3\baselineskip}\noindent $\operatorname*{argmin}_{x\in X}f(x),\ \operatorname*{argmax}_{x\in X}f(x)$\par\hspace*{1em}最小化点集合・最大化点集合\par\smallskip
+\section{調査記録}
+調査記録：Bredon, Topology and Geometry, 近傍の定義2.3--2.5；Atiyah--Macdonald, Introduction to Commutative Algebra (1969), Notation and Terminology, Ch.1；Neukirch, Algebraic Number Theory (1999), Ch. I 第3；Mac Lane, Categories for the Working Mathematician, Ch. I 第1；Lee, Introduction to Smooth Manifolds, 2nd ed. (2013), Ch.1 の座標変換；Conway, A Course in Functional Analysis, Ch. I 第3・Ch. II 第2。Google Driveの抽出本文を確認。その他の先行記法は標準的慣習からの独自提案であり、文献の逐語転記・全分野の文献照合ではない。
+\end{document}

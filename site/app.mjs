@@ -68,7 +68,7 @@ addEventListener("resize",()=>{if(active)positionPreview(active)});
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
-function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements")return {n,page:parseInt(p.get("page"),10)||1};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
+function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation")return {n,page:parseInt(p.get("page"),10)||1};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 function showHome(){
  const plan=data.plan??data.notes.map(n=>({...n,status:"verified"})),byNumber=new Map(plan.map(n=>[n.number,n]));
  const parts=data.parts??[],treatises=data.treatises??[],byTreatise=new Map(treatises.map(t=>[t.id,t])),byPart=new Map(parts.map(p=>[p.id,p]));
@@ -150,11 +150,11 @@ function readRef(a){
  return null
 }
 async function loadReader(info,token,scroll){
- const docName=info.n==="statements"?"定義・命題一覧":"N-"+info.n+"　"+notes.get(info.n).title;
- const file=info.n==="statements"?"pdf/statements.pdf":"pdf/N-"+info.n+".pdf";
+ const docName=info.n==="notation"?"記号・記法一覧":info.n==="statements"?"定義・命題一覧":"N-"+info.n+"　"+notes.get(info.n).title;
+ const file=info.n==="notation"?"pdf/notation.pdf":info.n==="statements"?"pdf/statements.pdf":"pdf/N-"+info.n+".pdf";
  const heading=node("h1","reader-title",docName),side=node("aside","sidebar"),content=node("section"),layout=node("div","reader");
  side.append(node("h2","","ノート・知識索引"),anchor("← 検索・総目次",root.href));
- if(info.n==="statements"){for(const n of notes.values())side.append(anchor("N-"+n.number+"　"+n.title,url("note",n.number)))}else{
+ if(info.n==="notation"){side.append(anchor("定義・命題一覧",url("note","statements")))}else if(info.n==="statements"){for(const n of notes.values())side.append(anchor("N-"+n.number+"　"+n.title,url("note",n.number)))}else{
   const items=[...entries.values()].filter(e=>e.position[0]===info.n).sort((a,b)=>{for(let i=0;i<4;i++){if(a.position[i]!==b.position[i])return a.position[i]-b.position[i]}return 0});
   if(info.id){const idx=items.findIndex(e=>e.id===info.id),nav=node("div","item-nav");if(idx>0)nav.append(anchor("← 前の知識項目",url("id",items[idx-1].id)));if(idx>=0&&idx+1<items.length)nav.append(anchor("次の知識項目 →",url("id",items[idx+1].id)));side.append(nav)}
   for(const e of items){const a=anchor(e.id+"　"+e.title,url("id",e.id),e.id===info.id?"active":"");bindPreview(a,e);side.append(a)}
@@ -169,7 +169,7 @@ async function loadReader(info,token,scroll){
  const download=anchor("PDFを開く ↗",new URL(file,root).href);download.target="_blank";download.rel="noopener";
  const footer=node("div","page-footer"),prevBottom=button("← 前のページ",()=>jump(-1,true)),nextBottom=button("次のページ →",()=>jump(1,true)),footerCount=node("span","meta");footer.append(prevBottom,footerCount,nextBottom);footer.hidden=readingMode!=="single";
  const noteNav=node("div","note-nav"),published=[...notes.keys()].sort((a,b)=>a-b);
- if(info.n!=="statements"){const idx=published.indexOf(info.n);if(idx>0)noteNav.append(anchor("← 前のノート：N-"+published[idx-1],url("note",published[idx-1])));if(idx+1<published.length)noteNav.append(anchor("次のノート：N-"+published[idx+1]+" →",url("note",published[idx+1])))}
+ if(typeof info.n==="number"){const idx=published.indexOf(info.n);if(idx>0)noteNav.append(anchor("← 前のノート：N-"+published[idx-1],url("note",published[idx-1])));if(idx+1<published.length)noteNav.append(anchor("次のノート：N-"+published[idx+1]+" →",url("note",published[idx+1])))}
  for(const b of [previous,next,pnum,z,mode,prevBottom,nextBottom])b.disabled=true;
  controls.addEventListener("pointerenter",hidePreview);
  controls.append(previous,pnum,pageCount,next,mode,z,download);content.append(heading,controls,shell,footer,noteNav);layout.append(side,content);main.replaceChildren(layout);

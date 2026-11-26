@@ -3,6 +3,7 @@
 ブルバキ『数学原論』の構造的・公理的な思想を参照し、独立した論考の集積ではなく、全巻を通じて論理的に整合する数学書の叢書を制作する。擬コンラットとは別の企画である。
 
 ## 制作管理
+- [記号・記法一覧（原稿・規約）](docs/notation.md) ／ [電子閲覧室PDF](https://hawkoods.github.io/genron/?note=notation)（自動公開後）
 - [AGENTS.md](AGENTS.md)：AIを含む執筆者の共通指示
 - [制作方法論](docs/methodology.md)：執筆・検証・改訂の手順
 - [知識・依存関係台帳（JSON）](docs/knowledge.json)：各段階で導入済みの知識、前提、公理、定義、結果、依存関係の唯一の正本
