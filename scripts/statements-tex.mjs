@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
 
 const kinds={axiom:'公理',convention:'規約',definition:'定義',lemma:'補題',proposition:'命題',theorem:'定理',corollary:'系',construction:'構成',background:'背景原理'};
-const symbols={'ℬ':'\\mathcal{B}','𝒮':'\\mathcal{S}','𝒩':'\\mathcal{N}','∂':'\\partial ','𝒪':'\\mathcal{O}','⟨':'\\langle ','⟩':'\\rangle ','·':'\\cdot ','ℕ':'\\mathbb{N}','¬':'\\neg ','×':'\\times ','ι':'\\iota ','π':'\\pi ','′':'\\prime ','→':'\\to ','↦':'\\mapsto ','⇒':'\\Rightarrow ','⇔':'\\Leftrightarrow ','∀':'\\forall ','∃':'\\exists ','∅':'\\varnothing ','∈':'\\in ','∉':'\\notin ','∏':'\\prod ','∖':'\\setminus ','∘':'\\circ ','∧':'\\land ','∨':'\\lor ','∩':'\\cap ','∪':'\\cup ','≠':'\\ne ','≤':'\\leq ','⊆':'\\subseteq ','⊊':'\\subsetneq ','⋂':'\\bigcap ','⋃':'\\bigcup ','⨿':'\\coprod ','≥':'\\geq ','⊂':'\\subset ','⊇':'\\supseteq ','∞':'\\infty ','∑':'\\sum ','≈':'\\approx ','≡':'\\equiv ','∣':'\\mid ','∥':'\\parallel ','α':'\\alpha ','β':'\\beta ','γ':'\\gamma ','δ':'\\delta ','ε':'\\varepsilon ','λ':'\\lambda ','μ':'\\mu ','ν':'\\nu ','ρ':'\\rho ','σ':'\\sigma ','τ':'\\tau ','φ':'\\varphi ','ψ':'\\psi ','ω':'\\omega '};
+const symbols={'−':'\\mathord{-}','η':'\\eta ','θ':'\\theta ','𝓕':'\\mathcal{F}','𝓤':'\\mathcal{U}','ℬ':'\\mathcal{B}','𝒮':'\\mathcal{S}','𝒩':'\\mathcal{N}','∂':'\\partial ','𝒪':'\\mathcal{O}','⟨':'\\langle ','⟩':'\\rangle ','·':'\\cdot ','ℕ':'\\mathbb{N}','¬':'\\neg ','×':'\\times ','ι':'\\iota ','π':'\\pi ','′':'\\prime ','→':'\\to ','↦':'\\mapsto ','⇒':'\\Rightarrow ','⇔':'\\Leftrightarrow ','∀':'\\forall ','∃':'\\exists ','∅':'\\varnothing ','∈':'\\in ','∉':'\\notin ','∏':'\\prod ','∖':'\\setminus ','∘':'\\circ ','∧':'\\land ','∨':'\\lor ','∩':'\\cap ','∪':'\\cup ','≠':'\\ne ','≤':'\\leq ','⊆':'\\subseteq ','⊊':'\\subsetneq ','⋂':'\\bigcap ','⋃':'\\bigcup ','⨿':'\\coprod ','≥':'\\geq ','⊂':'\\subset ','⊇':'\\supseteq ','∞':'\\infty ','∑':'\\sum ','≈':'\\approx ','≡':'\\equiv ','∣':'\\mid ','∥':'\\parallel ','α':'\\alpha ','β':'\\beta ','γ':'\\gamma ','δ':'\\delta ','ε':'\\varepsilon ','λ':'\\lambda ','μ':'\\mu ','ν':'\\nu ','ρ':'\\rho ','σ':'\\sigma ','τ':'\\tau ','φ':'\\varphi ','ψ':'\\psi ','ω':'\\omega '};
 const roman=new Set(['De','Morgan','Boolean','Galois','iff','on','Knaster','Tarski']);
 const op={sup:'\\sup ',inf:'\\inf ',id:'\\mathrm{id}',Fix:'\\operatorname{Fix}',op:'\\mathrm{op}',Int:'\\operatorname{Int}',Ext:'\\operatorname{Ext}'};
 const txt=s=>String(s).replace(/[\\{}$%&#_^~]/g,c=>({'\\':'\\textbackslash{}','{':'\\{','}':'\\}','$':'\\$','%':'\\%','&':'\\&','#':'\\#','_':'\\_','^':'\\textasciicircum{}','~':'\\textasciitilde{}'}[c]));
@@ -42,10 +42,17 @@ function math(s,breaks=true){
  }
  return result;
 }
+// Convert Unicode scripts before tokenization, preserving the base and grouping the script.
+const scriptChars={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁺':'+','⁻':'-','⁼':'=','⁽':'(','⁾':')','₀':'0','₁':'1','₂':'2','₃':'3','₄':'4','₅':'5','₆':'6','₇':'7','₈':'8','₉':'9','₊':'+','₋':'-','₌':'=','₍':'(','₎':')','ᵢ':'i','ⱼ':'j','ₖ':'k','ₙ':'n','ₓ':'x'};
+function normalizeMath(s){
+ return String(s).replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾]+/gu,t=>'^{' + [...t].map(c=>scriptChars[c]).join('') + '}')
+ .replace(/[₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ᵢⱼₖₙₓ]+/gu,t=>'_{' + [...t].map(c=>scriptChars[c]).join('') + '}');
+}
 function formatted(s){
  const re=new RegExp('[!-~'+Object.keys(symbols).join('')+']+','gu');
  let out='',last=0;
- for(const m of String(s).matchAll(re)){
+ s=normalizeMath(s);
+ for(const m of s.matchAll(re)){
   out+=txt(s.slice(last,m.index));const token=m[0];
   if(roman.has(token)||/^N-\d+$/.test(token)||/^K-\d+$/.test(token)||/^\d+$/.test(token)||/^[,.;:!?]+$/.test(token))out+=txt(token);
   else out+='\\('+math(token)+'\\)';
@@ -58,7 +65,8 @@ function formatted(s){
 export function previewParts(s){
  const re=new RegExp('[!-~'+Object.keys(symbols).join('')+']+','gu');
  const out=[];let last=0;
- for(const m of String(s).matchAll(re)){
+ s=normalizeMath(s);
+ for(const m of s.matchAll(re)){
   if(m.index>last)out.push({text:s.slice(last,m.index)});
   const t=m[0];if(roman.has(t)||/^N-\d+$/.test(t)||/^K-\d+$/.test(t)||/^\d+$/.test(t)||/^[,.;:!?]+$/.test(t))out.push({text:t});
   else {try{out.push({tex:math(t,false),raw:t})}catch{out.push({text:t})}}
