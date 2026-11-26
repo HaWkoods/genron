@@ -20,3 +20,33 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 
 /* Dependency map */
 .map-tools{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0;align-items:center}.map-tools input,.map-tools select{min-width:0;max-width:100%;padding:.5rem}.map-tools select[aria-label="検索結果"]{max-width:22rem}.map-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,300px);gap:12px}.map-stage{position:relative;min-width:0;height:70vh;border:1px solid #8fa1b5;border-radius:6px;overflow:hidden;background:rgba(130,150,175,.06)}.map-stage>canvas:first-child{display:block;width:100%;height:100%;touch-action:none;cursor:grab}.map-stage>canvas:first-child:active{cursor:grabbing}.map-mini{position:absolute;right:10px;bottom:10px;width:180px;height:110px;border:1px solid #8fa1b5;cursor:crosshair}.map-panel{max-height:70vh;overflow:auto;overflow-x:hidden;padding:12px;border:1px solid #8fa1b5;border-radius:6px;overflow-wrap:anywhere}.map-panel a,.map-panel button{display:block;margin:.4rem 0;text-align:left}.map-panel h2{font-size:1.1rem}@media(max-width:760px){.map-wrap{grid-template-columns:1fr}.map-stage{height:60vh}.map-mini{width:120px;height:80px}.map-panel{max-height:45vh}}
+
+
+/* Continuous book typography: native HTML, no fixed page breaks. */
+.web-reader{grid-template-columns:245px minmax(0,1fr);gap:32px}
+.web-article{min-width:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:clamp(24px,5vw,64px);font:17px/1.95 "Yu Mincho","游明朝","Hiragino Mincho ProN","Noto Serif CJK JP","Noto Serif JP",serif;overflow-wrap:anywhere}
+.web-running{font-size:12px;letter-spacing:.08em;border-bottom:1px solid var(--line);padding-bottom:8px}
+.web-part-title{font-size:32px;line-height:1.45;margin:1.2em 0 .4em}
+.web-treatise{font-size:24px;line-height:1.5;margin:2.4em 0 1em;border-bottom:1px solid var(--line);padding-bottom:.5em}
+.web-chapter{scroll-margin-top:24px;margin:2em 0 3.5em}
+.web-note-title{font-size:21px;line-height:1.5;margin:0 0 .3em}
+.web-legacy{font:12px/1.6 system-ui,sans-serif;color:var(--muted)}
+.web-entry{scroll-margin-top:24px;margin:1.6em 0 2em}
+.web-entry p{margin:.5em 0;text-align:justify}
+.web-statement-title{font-size:1em;font-weight:bold;margin:0 0 .45em;line-height:1.65}
+.web-proof{margin:.75em 0 1em}
+.web-proof>summary{cursor:pointer;font-weight:bold;width:fit-content;list-style:none}
+.web-proof>summary::-webkit-details-marker{display:none}
+.web-proof>summary::before{content:"▸";display:inline-block;width:1.1em;color:var(--muted)}
+.web-proof[open]>summary::before{content:"▾"}
+.web-proof>summary::after{content:"（表示）";font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin-left:.5em}
+.web-proof[open]>summary::after{content:"（閉じる）"}
+.proof-body{margin-top:.5em;text-align:justify}
+.web-qed{text-align:right;margin-top:.15em}
+.web-dependencies{font:12px/1.8 system-ui,sans-serif;margin:.8em 0;color:var(--muted)}
+.web-dependencies summary{cursor:pointer}
+.web-toc-group{font-size:13px;margin:1.25em 0 .25em;color:var(--muted)}
+.web-toc a.web-toc-note{font-weight:600}
+.web-toc a.web-toc-entry{padding-left:12px;font-size:12px}
+.web-article .math{display:inline-block;white-space:nowrap}
+@media(max-width:760px){.web-reader{display:block}.web-article{padding:22px 18px;font-size:16px}.web-part-title{font-size:27px}.web-treatise{font-size:22px}.web-toc{max-height:230px}}
