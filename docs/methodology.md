@@ -34,3 +34,7 @@
 台帳の正本は docs/knowledge.json とする。docs/knowledge.md は形式と運用規則のみを記述し、知識の二重管理をしない。
 
 文献調査では Google Drive の資料を優先的に活用する。文献の記述順や前提を無条件には採用せず、知識台帳と整合する論証に再構成する。参照文献と確認範囲を記録する。
+
+## PDF掲載
+
+検証済みノートのPDFは `volumes/N-番号/main.pdf` としてGitHubに掲載する。`node scripts/publish-pdf.mjs N-番号` は厳格な台帳検証・pLaTeX二回・dvipdfmx・pdfinfoを実行し、成功後にPDFと総目次を生成する。main の関連変更では GitHub Actions の Publish verified note PDFs が同じ処理を行い、PDFと目次をコミットする。原稿が verified でPDFが存在するノートのみ、総目次の題名に相対リンクを生成する。掲載の成功とPDFの内容・目視確認は別に検証する。
