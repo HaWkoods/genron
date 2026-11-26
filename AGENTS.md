@@ -12,3 +12,4 @@
 - 原稿・台帳の変更時に `node scripts/test-knowledge.mjs` と `node scripts/knowledge.mjs check` を実行する。正式版では `check --strict` を実行する。変更前後には `impact` を実行し、影響候補の再検証を行う。
 - 非循環性検査だけで数学的無矛盾性が保証されるとは主張しない。暗黙の依存や証明内容は別途査読する。
 - 知識とノートの両階層で非巡回性を維持する。別の枝を無意味に前提とせず、`prerequisites ID`、`available [ID...]`、`graph notes`、`graph knowledge` を利用する。各ノート内の記述順は線形とする。
+- 各ノートの構成・執筆に先立ち、Google Drive のユーザー所蔵数学文献を積極的に検索・参照する。docs/references.md の調査・引用規約を守り、未閲覧資料を参照済みとしない。外部文献の引用だけで原論内の論証を代替しない。
