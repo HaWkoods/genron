@@ -1,7 +1,7 @@
 \documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
 \usepackage{amsmath,amssymb}
 \usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
-\usepackage{fancyhdr,needspace}
+\usepackage{fancyhdr,needspace,array,graphicx}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small 数学原論}
@@ -12,6 +12,21 @@
 \usepackage[dvipdfmx,hidelinks]{hyperref}
 \usepackage{pxjahyper}
 \newcommand{\NotationRef}[2]{\href{https://hawkoods.github.io/genron/?id=#1}{#2}}
+\newsavebox{\NotationSymbol}
+\newcommand{\NotationFit}[1]{\sbox{\NotationSymbol}{#1}%
+  \ifdim\wd\NotationSymbol>\linewidth
+    \resizebox{\linewidth}{!}{\usebox{\NotationSymbol}}%
+  \else\usebox{\NotationSymbol}\fi}
+\newcommand{\NotationRow}[2]{%
+  \Needspace{3\baselineskip}\par\noindent
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{.43\linewidth}@{\hspace{.04\linewidth}}>{\raggedright\arraybackslash}p{.53\linewidth}@{}}
+    \NotationFit{#1} & #2
+  \end{tabular}\par\smallskip}
+\newcommand{\NotationHeading}{%
+  \Needspace{5\baselineskip}\par\noindent
+  \begin{tabular}{@{}p{.43\linewidth}@{\hspace{.04\linewidth}}p{.53\linewidth}@{}}
+    \textbf{記号} & \textbf{対象・意味}\\[2pt]\hline
+  \end{tabular}\par\smallskip}
 \begin{document}
 \begin{center}
 {\small 数学原論}\par\medskip
@@ -20,337 +35,344 @@
 \end{center}
 記号とその指示対象を一行ずつ掲げる。参照付き項目は既刊ノートの知識台帳に対応する。参照のない項目は先行記法であり、定義の確立を意味しない。同一文脈で衝突する記号は添字又は説明で区別する。
 \section{数学的言語・集合}
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000002}{$\forall$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000002}{全称量化}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000002}{$\exists$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000002}{存在量化}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000006}{$\exists!$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000006}{一意存在}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000001}{$\neg$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000001}{否定}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000001}{$\land$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000001}{連言}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000001}{$\lor$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000001}{選言}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000001}{$\Rightarrow$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000001}{含意}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000001}{$\Leftrightarrow$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000001}{同値}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000021}{$\varnothing$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000021}{空集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000018}{$x\in A$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000018}{所属}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000018}{$x\notin A$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000018}{非所属}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000019}{$A\subseteq B$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000019}{部分集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000019}{$A\subsetneq B$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000019}{真部分集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000027}{$\mathcal P(X)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000027}{冪集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000024}{$\{x\in X\mid P(x)\}$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000024}{部分集合の指定}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000029}{$A\cup B$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000029}{合併}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000029}{$A\cap B$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000029}{共通部分}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000029}{$A\setminus B$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000029}{差集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000044}{$(A_i)_{i\in I}$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000044}{集合族}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000045}{$\bigcup_{i\in I}A_i$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000045}{集合族の合併}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000045}{$\bigcap_{i\in I}A_i$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000045}{集合族の共通部分}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000033}{$A\times B$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000033}{直積}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000047}{$\prod_{i\in I}A_i$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000047}{直積族}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000049}{$\coprod_{i\in I}A_i$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000049}{非交和}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000032}{$(a,b)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000032}{順序対}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000034}{$f:X\to Y$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000034}{写像}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000035}{$x\mapsto f(x)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000035}{写像の指定}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000037}{$f(A)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000037}{像}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000037}{$f^{-1}(B)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000037}{逆像}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000041}{$f^{-1}$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000041}{逆写像}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000042}{$f\vert_A$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000042}{制限}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000036}{$g\circ f$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000036}{合成}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000036}{$\mathrm{id}_X$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000036}{恒等写像}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000047}{$Y^X$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000047}{写像全体}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000052}{$x\sim y$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000052}{同値関係}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000053}{$[x]$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000053}{同値類}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000053}{$X/{\sim}$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000053}{商集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000053}{$\pi$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000053}{標準全射}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000111}{$\lvert X\rvert$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000111}{有限集合の元の個数}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000099}{$\mathbb N$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000099}{自然数集合（0を含む）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000068}{$\leq$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000068}{半順序}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000069}{$<$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000069}{狭義順序}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000073}{$\sup$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000073}{上限}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000073}{$\inf$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000073}{下限}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000079}{$\vee$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000079}{結び}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000079}{$\wedge$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000079}{交わり}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000070}{$P^{\mathrm{op}}$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000070}{双対順序}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000091}{$\operatorname{Fix}(c)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000091}{閉包作用素の固定元集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000091}{$c$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000091}{順序集合の閉包作用素}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000093}{$f\dashv g$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000093}{随伴（順序保存型）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000090}{$x^c$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000090}{Boolean束の補元}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\aleph_0$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 可算無限濃度\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{card}X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 一般の濃度\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\omega$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 最小無限順序数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{\NotationRef{K-000002}{$\forall$}}{\NotationRef{K-000002}{全称量化}}
+\NotationRow{\NotationRef{K-000002}{$\exists$}}{\NotationRef{K-000002}{存在量化}}
+\NotationRow{\NotationRef{K-000006}{$\exists!$}}{\NotationRef{K-000006}{一意存在}}
+\NotationRow{\NotationRef{K-000001}{$\neg$}}{\NotationRef{K-000001}{否定}}
+\NotationRow{\NotationRef{K-000001}{$\land$}}{\NotationRef{K-000001}{連言}}
+\NotationRow{\NotationRef{K-000001}{$\lor$}}{\NotationRef{K-000001}{選言}}
+\NotationRow{\NotationRef{K-000001}{$\Rightarrow$}}{\NotationRef{K-000001}{含意}}
+\NotationRow{\NotationRef{K-000001}{$\Leftrightarrow$}}{\NotationRef{K-000001}{同値}}
+\NotationRow{\NotationRef{K-000021}{$\varnothing$}}{\NotationRef{K-000021}{空集合}}
+\NotationRow{\NotationRef{K-000018}{$x\in A$}}{\NotationRef{K-000018}{所属}}
+\NotationRow{\NotationRef{K-000018}{$x\notin A$}}{\NotationRef{K-000018}{非所属}}
+\NotationRow{\NotationRef{K-000019}{$A\subseteq B$}}{\NotationRef{K-000019}{部分集合}}
+\NotationRow{\NotationRef{K-000019}{$A\subsetneq B$}}{\NotationRef{K-000019}{真部分集合}}
+\NotationRow{\NotationRef{K-000027}{$\mathcal P(X)$}}{\NotationRef{K-000027}{冪集合}}
+\NotationRow{\NotationRef{K-000024}{$\{x\in X\mid P(x)\}$}}{\NotationRef{K-000024}{部分集合の指定}}
+\NotationRow{\NotationRef{K-000029}{$A\cup B$}}{\NotationRef{K-000029}{合併}}
+\NotationRow{\NotationRef{K-000029}{$A\cap B$}}{\NotationRef{K-000029}{共通部分}}
+\NotationRow{\NotationRef{K-000029}{$A\setminus B$}}{\NotationRef{K-000029}{差集合}}
+\NotationRow{\NotationRef{K-000044}{$(A_i)_{i\in I}$}}{\NotationRef{K-000044}{集合族}}
+\NotationRow{\NotationRef{K-000045}{$\bigcup_{i\in I}A_i$}}{\NotationRef{K-000045}{集合族の合併}}
+\NotationRow{\NotationRef{K-000045}{$\bigcap_{i\in I}A_i$}}{\NotationRef{K-000045}{集合族の共通部分}}
+\NotationRow{\NotationRef{K-000033}{$A\times B$}}{\NotationRef{K-000033}{直積}}
+\NotationRow{\NotationRef{K-000047}{$\prod_{i\in I}A_i$}}{\NotationRef{K-000047}{直積族}}
+\NotationRow{\NotationRef{K-000049}{$\coprod_{i\in I}A_i$}}{\NotationRef{K-000049}{非交和}}
+\NotationRow{\NotationRef{K-000032}{$(a,b)$}}{\NotationRef{K-000032}{順序対}}
+\NotationRow{\NotationRef{K-000034}{$f:X\to Y$}}{\NotationRef{K-000034}{写像}}
+\NotationRow{\NotationRef{K-000035}{$x\mapsto f(x)$}}{\NotationRef{K-000035}{写像の指定}}
+\NotationRow{\NotationRef{K-000037}{$f(A)$}}{\NotationRef{K-000037}{像}}
+\NotationRow{\NotationRef{K-000037}{$f^{-1}(B)$}}{\NotationRef{K-000037}{逆像}}
+\NotationRow{\NotationRef{K-000041}{$f^{-1}$}}{\NotationRef{K-000041}{逆写像}}
+\NotationRow{\NotationRef{K-000042}{$f\vert_A$}}{\NotationRef{K-000042}{制限}}
+\NotationRow{\NotationRef{K-000036}{$g\circ f$}}{\NotationRef{K-000036}{合成}}
+\NotationRow{\NotationRef{K-000036}{$\mathrm{id}_X$}}{\NotationRef{K-000036}{恒等写像}}
+\NotationRow{\NotationRef{K-000047}{$Y^X$}}{\NotationRef{K-000047}{写像全体}}
+\NotationRow{\NotationRef{K-000052}{$x\sim y$}}{\NotationRef{K-000052}{同値関係}}
+\NotationRow{\NotationRef{K-000053}{$[x]$}}{\NotationRef{K-000053}{同値類}}
+\NotationRow{\NotationRef{K-000053}{$X/{\sim}$}}{\NotationRef{K-000053}{商集合}}
+\NotationRow{\NotationRef{K-000053}{$\pi$}}{\NotationRef{K-000053}{標準全射}}
+\NotationRow{\NotationRef{K-000111}{$\lvert X\rvert$}}{\NotationRef{K-000111}{有限集合の元の個数}}
+\NotationRow{\NotationRef{K-000099}{$\mathbb N$}}{\NotationRef{K-000099}{自然数集合（0を含む）}}
+\NotationRow{\NotationRef{K-000068}{$\leq$}}{\NotationRef{K-000068}{半順序}}
+\NotationRow{\NotationRef{K-000069}{$<$}}{\NotationRef{K-000069}{狭義順序}}
+\NotationRow{\NotationRef{K-000073}{$\sup$}}{\NotationRef{K-000073}{上限}}
+\NotationRow{\NotationRef{K-000073}{$\inf$}}{\NotationRef{K-000073}{下限}}
+\NotationRow{\NotationRef{K-000079}{$\vee$}}{\NotationRef{K-000079}{結び}}
+\NotationRow{\NotationRef{K-000079}{$\wedge$}}{\NotationRef{K-000079}{交わり}}
+\NotationRow{\NotationRef{K-000070}{$P^{\mathrm{op}}$}}{\NotationRef{K-000070}{双対順序}}
+\NotationRow{\NotationRef{K-000091}{$\operatorname{Fix}(c)$}}{\NotationRef{K-000091}{閉包作用素の固定元集合}}
+\NotationRow{\NotationRef{K-000091}{$c$}}{\NotationRef{K-000091}{順序集合の閉包作用素}}
+\NotationRow{\NotationRef{K-000093}{$f\dashv g$}}{\NotationRef{K-000093}{随伴（順序保存型）}}
+\NotationRow{\NotationRef{K-000090}{$x^c$}}{\NotationRef{K-000090}{Boolean束の補元}}
+\NotationRow{$\aleph_0$}{可算無限濃度\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{card}X$}{一般の濃度\, {\scriptsize（先行）}}
+\NotationRow{$\omega$}{最小無限順序数\, {\scriptsize（先行）}}
 \section{位相・収束}
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000146}{$\mathcal O$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000146}{開集合系}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000146}{$(X,\mathcal O)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000146}{位相空間}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000146}{$U\in\mathcal O$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000146}{開集合}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000148}{$X\setminus U$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000148}{開集合の補集合（閉集合）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000149}{$\mathcal C$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000149}{閉集合系}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000154}{$\mathcal O(\mathcal S)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000154}{生成位相}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000146}{$\mathcal O_X$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000146}{空間Xの位相}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000152}{$\mathcal O_1\subseteq\mathcal O_2$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000152}{位相の粗密}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal N(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 近傍系\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal B_x$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 近傍基\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal B$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 開基\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal S$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 準開基\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Int}(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 内部\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\overline A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 閉包\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\partial A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 境界\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A'$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 集積点集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Ext}(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 外部\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal O\vert_A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 部分空間の位相\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $d(x,y)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 距離\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $B_d(x,r)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 開球\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\overline B_d(x,r)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 閉球\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{diam}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 直径\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $d(x,A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 点と集合の距離\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal F$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright フィルター\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $x_i\to x$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 収束\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\widehat X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 完備化\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $X\cong Y$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 同相\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $X/{\sim}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 商位相空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\pi_0(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 経路連結成分の集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\pi_1(X,x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 基本群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\pi_n(X,x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 高次ホモトピー群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $f\simeq g$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright ホモトピー\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{supp}f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 函数の台\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{\NotationRef{K-000146}{$\mathcal O$}}{\NotationRef{K-000146}{開集合系}}
+\NotationRow{\NotationRef{K-000146}{$(X,\mathcal O)$}}{\NotationRef{K-000146}{位相空間}}
+\NotationRow{\NotationRef{K-000146}{$U\in\mathcal O$}}{\NotationRef{K-000146}{開集合}}
+\NotationRow{\NotationRef{K-000148}{$X\setminus U$}}{\NotationRef{K-000148}{開集合の補集合（閉集合）}}
+\NotationRow{\NotationRef{K-000149}{$\mathcal C$}}{\NotationRef{K-000149}{閉集合系}}
+\NotationRow{\NotationRef{K-000154}{$\mathcal O(\mathcal S)$}}{\NotationRef{K-000154}{生成位相}}
+\NotationRow{\NotationRef{K-000146}{$\mathcal O_X$}}{\NotationRef{K-000146}{空間Xの位相}}
+\NotationRow{\NotationRef{K-000152}{$\mathcal O_1\subseteq\mathcal O_2$}}{\NotationRef{K-000152}{位相の粗密}}
+\NotationRow{$\mathcal N(x)$}{近傍系\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal B_x$}{近傍基\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal B$}{開基\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal S$}{準開基\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Int}(A)$}{内部\, {\scriptsize（先行）}}
+\NotationRow{$\overline A$}{閉包\, {\scriptsize（先行）}}
+\NotationRow{$\partial A$}{境界\, {\scriptsize（先行）}}
+\NotationRow{$A'$}{集積点集合\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Ext}(A)$}{外部\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal O\vert_A$}{部分空間の位相\, {\scriptsize（先行）}}
+\NotationRow{$d(x,y)$}{距離\, {\scriptsize（先行）}}
+\NotationRow{$B_d(x,r)$}{開球\, {\scriptsize（先行）}}
+\NotationRow{$\overline B_d(x,r)$}{閉球\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{diam}A$}{直径\, {\scriptsize（先行）}}
+\NotationRow{$d(x,A)$}{点と集合の距離\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal F$}{フィルター\, {\scriptsize（先行）}}
+\NotationRow{$x_i\to x$}{収束\, {\scriptsize（先行）}}
+\NotationRow{$\widehat X$}{完備化\, {\scriptsize（先行）}}
+\NotationRow{$X\cong Y$}{同相\, {\scriptsize（先行）}}
+\NotationRow{$X/{\sim}$}{商位相空間\, {\scriptsize（先行）}}
+\NotationRow{$\pi_0(X)$}{経路連結成分の集合\, {\scriptsize（先行）}}
+\NotationRow{$\pi_1(X,x)$}{基本群\, {\scriptsize（先行）}}
+\NotationRow{$\pi_n(X,x)$}{高次ホモトピー群\, {\scriptsize（先行）}}
+\NotationRow{$f\simeq g$}{ホモトピー\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{supp}f$}{函数の台\, {\scriptsize（先行）}}
 \section{代数・数体系}
-\Needspace{3\baselineskip}\noindent $\mathbb Z$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 整数環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb Q$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 有理数体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb R$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 実数体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb C$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 複素数体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000163}{$M$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000163}{モノイド}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000163}{$1_M$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000163}{モノイドの単位元}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000159}{$xy$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000159}{二項演算の値}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000168}{$x^n$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000168}{自然数冪}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $H\leq G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 部分群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $N\trianglelefteq G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 正規部分群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $1_G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 群の単位元\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $x^{-1}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 群の逆元\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\langle S\rangle$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 生成部分群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $G/N$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 商群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $G/H$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 左剰余類集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[G:H]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 部分群の指数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $Z(G)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 群の中心\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C_G(S)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 中心化群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $N_G(H)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 正規化群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[G,G]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 導来部分群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[x,y]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 交換子\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{ord}(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 元の位数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Aut}(G)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 自己同型群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Inn}(G)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 内部自己同型群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\ker f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 準同型の核\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Im}f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 準同型の像\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A,\ R$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 環（変数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $K,\ k$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 体（変数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $L/K$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 体の拡大\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[L:K]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 拡大次数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathfrak a$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright イデアル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathfrak p$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 素イデアル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathfrak m$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 極大イデアル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(0)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 零イデアル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(a_1,\ldots,a_n)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 生成イデアル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A^\times$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 単元群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A/\mathfrak a$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 商環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\sqrt{\mathfrak a}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright イデアルの根基\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Nil}(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 冪零根基\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Jac}(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Jacobson根基\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Spec}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 素スペクトル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{MaxSpec}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 極大スペクトル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $S^{-1}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 局所化\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A_{\mathfrak p}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 素イデアルでの局所化\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Frac}(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 分数体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A[X_1,\ldots,X_n]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 多項式環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A[[X]]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 形式冪級数環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\deg f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 多項式の次数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{char}K$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 体の標数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Gal}(L/K)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Galois群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\overline K$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 代数閉包\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal O_K$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 代数体の整数環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Tr}_{L/K}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 体のトレース\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $N_{L/K}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 体のノルム\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $v$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 付値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\lvert\cdot\rvert_v$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 付値に対応する絶対値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $K_v$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 付値による完備化\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb Z_p$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright p進整数環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb Q_p$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright p進数体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Hom}_A(M,N)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 加群準同型全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{End}_A(M)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 加群自己準同型環\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $M\oplus N$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 直和\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $M\otimes_A N$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright テンソル積\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $M/\mathfrak a M$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 商加群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $M^*$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 代数的双対\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{$\mathbb Z$}{整数環\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb Q$}{有理数体\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb R$}{実数体\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb C$}{複素数体\, {\scriptsize（先行）}}
+\NotationRow{\NotationRef{K-000163}{$M$}}{\NotationRef{K-000163}{モノイド}}
+\NotationRow{\NotationRef{K-000163}{$1_M$}}{\NotationRef{K-000163}{モノイドの単位元}}
+\NotationRow{\NotationRef{K-000159}{$xy$}}{\NotationRef{K-000159}{二項演算の値}}
+\NotationRow{\NotationRef{K-000168}{$x^n$}}{\NotationRef{K-000168}{自然数冪}}
+\NotationRow{$G$}{群\, {\scriptsize（先行）}}
+\NotationRow{$H\leq G$}{部分群\, {\scriptsize（先行）}}
+\NotationRow{$N\trianglelefteq G$}{正規部分群\, {\scriptsize（先行）}}
+\NotationRow{$1_G$}{群の単位元\, {\scriptsize（先行）}}
+\NotationRow{$x^{-1}$}{群の逆元\, {\scriptsize（先行）}}
+\NotationRow{$\langle S\rangle$}{生成部分群\, {\scriptsize（先行）}}
+\NotationRow{$G/N$}{商群\, {\scriptsize（先行）}}
+\NotationRow{$G/H$}{左剰余類集合\, {\scriptsize（先行）}}
+\NotationRow{$[G:H]$}{部分群の指数\, {\scriptsize（先行）}}
+\NotationRow{$Z(G)$}{群の中心\, {\scriptsize（先行）}}
+\NotationRow{$C_G(S)$}{中心化群\, {\scriptsize（先行）}}
+\NotationRow{$N_G(H)$}{正規化群\, {\scriptsize（先行）}}
+\NotationRow{$[G,G]$}{導来部分群\, {\scriptsize（先行）}}
+\NotationRow{$[x,y]$}{交換子\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{ord}(x)$}{元の位数\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Aut}(G)$}{自己同型群\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Inn}(G)$}{内部自己同型群\, {\scriptsize（先行）}}
+\NotationRow{$\ker f$}{準同型の核\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Im}f$}{準同型の像\, {\scriptsize（先行）}}
+\NotationRow{$A,\ R$}{環（変数）\, {\scriptsize（先行）}}
+\NotationRow{$K,\ k$}{体（変数）\, {\scriptsize（先行）}}
+\NotationRow{$L/K$}{体の拡大\, {\scriptsize（先行）}}
+\NotationRow{$[L:K]$}{拡大次数\, {\scriptsize（先行）}}
+\NotationRow{$\mathfrak a$}{イデアル\, {\scriptsize（先行）}}
+\NotationRow{$\mathfrak p$}{素イデアル\, {\scriptsize（先行）}}
+\NotationRow{$\mathfrak m$}{極大イデアル\, {\scriptsize（先行）}}
+\NotationRow{$(0)$}{零イデアル\, {\scriptsize（先行）}}
+\NotationRow{$(a_1,\ldots,a_n)$}{生成イデアル\, {\scriptsize（先行）}}
+\NotationRow{$A^\times$}{単元群\, {\scriptsize（先行）}}
+\NotationRow{$A/\mathfrak a$}{商環\, {\scriptsize（先行）}}
+\NotationRow{$\sqrt{\mathfrak a}$}{イデアルの根基\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Nil}(A)$}{冪零根基\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Jac}(A)$}{Jacobson根基\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Spec}A$}{素スペクトル\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{MaxSpec}A$}{極大スペクトル\, {\scriptsize（先行）}}
+\NotationRow{$S^{-1}A$}{局所化\, {\scriptsize（先行）}}
+\NotationRow{$A_{\mathfrak p}$}{素イデアルでの局所化\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Frac}(A)$}{分数体\, {\scriptsize（先行）}}
+\NotationRow{$A[X_1,\ldots,X_n]$}{多項式環\, {\scriptsize（先行）}}
+\NotationRow{$A[[X]]$}{形式冪級数環\, {\scriptsize（先行）}}
+\NotationRow{$\deg f$}{多項式の次数\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{char}K$}{体の標数\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Gal}(L/K)$}{Galois群\, {\scriptsize（先行）}}
+\NotationRow{$\overline K$}{代数閉包\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal O_K$}{代数体の整数環\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Tr}_{L/K}$}{体のトレース\, {\scriptsize（先行）}}
+\NotationRow{$N_{L/K}$}{体のノルム\, {\scriptsize（先行）}}
+\NotationRow{$v$}{付値\, {\scriptsize（先行）}}
+\NotationRow{$\lvert\cdot\rvert_v$}{付値に対応する絶対値\, {\scriptsize（先行）}}
+\NotationRow{$K_v$}{付値による完備化\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb Z_p$}{p進整数環\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb Q_p$}{p進数体\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Hom}_A(M,N)$}{加群準同型全体\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{End}_A(M)$}{加群自己準同型環\, {\scriptsize（先行）}}
+\NotationRow{$M\oplus N$}{直和\, {\scriptsize（先行）}}
+\NotationRow{$M\otimes_A N$}{テンソル積\, {\scriptsize（先行）}}
+\NotationRow{$M/\mathfrak a M$}{商加群\, {\scriptsize（先行）}}
+\NotationRow{$M^*$}{代数的双対\, {\scriptsize（先行）}}
 \section{線形代数・行列}
-\Needspace{3\baselineskip}\noindent $V,\ W$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 線形空間（変数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\dim_K V$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 次元\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{span}_K S$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 線形包\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal L_K(V,W)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 線形写像全体（純代数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $V^*$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 双対空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $V^{**}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 二重双対空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $T^\vee$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 双対写像\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A=(a_{ij})$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $M_{m,n}(K)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright m行n列行列全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $M_n(K)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright n次正方行列全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $I_n$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 単位行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $0_{m,n}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 零行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $E_{ij}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 行列単位\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A^{\mathsf T}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 転置行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\overline A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 成分ごとの複素共役行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A^*$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 共役転置行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A^{-1}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 逆行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\det A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 行列式\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{tr}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 跡\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{rank}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 階数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{adj}A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 余因子転置行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{diag}(a_1,\ldots,a_n)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 対角行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[T]_{\mathcal B,\mathcal C}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 線形写像の行列（始域基底B、終域基底C）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[v]_{\mathcal B}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 基底Bに関する座標列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\chi_A(t)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 特性多項式（det(tI-A)）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $m_A(t)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 最小多項式\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\sigma(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright スペクトル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\lambda$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 固有値（変数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\ker(A-\lambda I)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 固有空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\ker((A-\lambda I)^k)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 一般化固有空間（十分大きいk）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $s_j(A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 特異値（降順）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathrm{GL}_n(K)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 一般線形群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathrm{SL}_n(K)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 特殊線形群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathrm O(n)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 直交群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathrm U(n)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright ユニタリ群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\bigwedge^k V$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 外冪\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Sym}^k V$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 対称冪\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $T(V)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright テンソル代数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{$V,\ W$}{線形空間（変数）\, {\scriptsize（先行）}}
+\NotationRow{$\dim_K V$}{次元\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{span}_K S$}{線形包\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal L_K(V,W)$}{線形写像全体（純代数）\, {\scriptsize（先行）}}
+\NotationRow{$V^*$}{双対空間\, {\scriptsize（先行）}}
+\NotationRow{$V^{**}$}{二重双対空間\, {\scriptsize（先行）}}
+\NotationRow{$T^\vee$}{双対写像\, {\scriptsize（先行）}}
+\NotationRow{$A=(a_{ij})$}{行列\, {\scriptsize（先行）}}
+\NotationRow{$M_{m,n}(K)$}{m行n列行列全体\, {\scriptsize（先行）}}
+\NotationRow{$M_n(K)$}{n次正方行列全体\, {\scriptsize（先行）}}
+\NotationRow{$I_n$}{単位行列\, {\scriptsize（先行）}}
+\NotationRow{$0_{m,n}$}{零行列\, {\scriptsize（先行）}}
+\NotationRow{$E_{ij}$}{行列単位\, {\scriptsize（先行）}}
+\NotationRow{$A^{\mathsf T}$}{転置行列\, {\scriptsize（先行）}}
+\NotationRow{$\overline A$}{成分ごとの複素共役行列\, {\scriptsize（先行）}}
+\NotationRow{$A^*$}{共役転置行列\, {\scriptsize（先行）}}
+\NotationRow{$A^{-1}$}{逆行列\, {\scriptsize（先行）}}
+\NotationRow{$\det A$}{行列式\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{tr}A$}{跡\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{rank}A$}{階数\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{adj}A$}{余因子転置行列\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{diag}(a_1,\ldots,a_n)$}{対角行列\, {\scriptsize（先行）}}
+\NotationRow{$[T]_{\mathcal B,\mathcal C}$}{線形写像の行列（始域基底B、終域基底C）\, {\scriptsize（先行）}}
+\NotationRow{$[v]_{\mathcal B}$}{基底Bに関する座標列\, {\scriptsize（先行）}}
+\NotationRow{$\chi_A(t)$}{特性多項式（det(tI-A)）\, {\scriptsize（先行）}}
+\NotationRow{$m_A(t)$}{最小多項式\, {\scriptsize（先行）}}
+\NotationRow{$\sigma(A)$}{スペクトル\, {\scriptsize（先行）}}
+\NotationRow{$\lambda$}{固有値（変数）\, {\scriptsize（先行）}}
+\NotationRow{$\ker(A-\lambda I)$}{固有空間\, {\scriptsize（先行）}}
+\NotationRow{$\ker((A-\lambda I)^k)$}{一般化固有空間（十分大きいk）\, {\scriptsize（先行）}}
+\NotationRow{$s_j(A)$}{特異値（降順）\, {\scriptsize（先行）}}
+\NotationRow{$\mathrm{GL}_n(K)$}{一般線形群\, {\scriptsize（先行）}}
+\NotationRow{$\mathrm{SL}_n(K)$}{特殊線形群\, {\scriptsize（先行）}}
+\NotationRow{$\mathrm O(n)$}{直交群\, {\scriptsize（先行）}}
+\NotationRow{$\mathrm U(n)$}{ユニタリ群\, {\scriptsize（先行）}}
+\NotationRow{$\bigwedge^k V$}{外冪\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Sym}^k V$}{対称冪\, {\scriptsize（先行）}}
+\NotationRow{$T(V)$}{テンソル代数\, {\scriptsize（先行）}}
 \section{微分積分・解析}
-\Needspace{3\baselineskip}\noindent $f'(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 一変数の導函数の値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $f^{(k)}(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright k階導函数の値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $Df(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 全微分（線形写像）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $D^kf(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright k階全微分（多重線形写像）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\partial_i f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 第i偏導函数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\partial^\alpha f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 多重指数による偏導函数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $J_f(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Jacobi行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\det J_f(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Jacobi行列式（正方の場合）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $H_f(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Hesse行列（スカラー値函数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\nabla f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 勾配\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{div}X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 発散\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{rot}X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 回転（3次元）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\Delta f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Laplace作用素の適用\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\alpha!$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 多重指数階乗\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $x^\alpha$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 多重指数冪\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $o(h)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Landauの小さいo\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $O(h)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Landauの大きいO\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\limsup$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 上極限\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\liminf$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 下極限\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\sum_{n=0}^\infty a_n$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 級数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\int_a^b f(x)\,dx$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 区間上の積分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Re}z$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 実部\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Im}z$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 虚部\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\overline z$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 複素共役\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\lvert z\rvert$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 絶対値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\arg z$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 偏角（枝を明示）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Res}_{z=a}f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 留数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\oint_\gamma f(z)\,dz$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 閉曲線上の複素積分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal H(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 正則函数全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\widehat f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Fourier変換\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal F f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Fourier変換作用素の値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $f*g$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 畳込み\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal D(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 試験函数空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal D'(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 超函数空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal S(\mathbb R^n)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Schwartz空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal S'(\mathbb R^n)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 緩増加超函数空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $W^{k,p}(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Sobolev空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $H^k(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright L2型Sobolev空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\lVert x\rVert$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright ノルム\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\langle x,y\rangle$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 内積\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $X^*$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 連続双対空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal L(X,Y)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 有界線形作用素全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $T^*$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Hilbert空間の随伴作用素\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\lVert T\rVert_{\mathrm{op}}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 作用素ノルム\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\sigma(T)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 作用素のスペクトル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\rho(T)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright レゾルベント集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $R(\lambda,T)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright レゾルベント\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 連続函数全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C_c(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright コンパクト台連続函数全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C_0(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 無限遠で消える連続函数全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C^k(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright k回連続微分可能函数全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C^\infty(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 滑らかな函数全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{$f'(x)$}{一変数の導函数の値\, {\scriptsize（先行）}}
+\NotationRow{$f^{(k)}(x)$}{k階導函数の値\, {\scriptsize（先行）}}
+\NotationRow{$Df(x)$}{全微分（線形写像）\, {\scriptsize（先行）}}
+\NotationRow{$D^kf(x)$}{k階全微分（多重線形写像）\, {\scriptsize（先行）}}
+\NotationRow{$\partial_i f$}{第i偏導函数\, {\scriptsize（先行）}}
+\NotationRow{$\partial^\alpha f$}{多重指数による偏導函数\, {\scriptsize（先行）}}
+\NotationRow{$J_f(x)$}{Jacobi行列\, {\scriptsize（先行）}}
+\NotationRow{$\det J_f(x)$}{Jacobi行列式（正方の場合）\, {\scriptsize（先行）}}
+\NotationRow{$H_f(x)$}{Hesse行列（スカラー値函数）\, {\scriptsize（先行）}}
+\NotationRow{$\nabla f$}{勾配\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{div}X$}{発散\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{rot}X$}{回転（3次元）\, {\scriptsize（先行）}}
+\NotationRow{$\Delta f$}{Laplace作用素の適用\, {\scriptsize（先行）}}
+\NotationRow{$\alpha!$}{多重指数階乗\, {\scriptsize（先行）}}
+\NotationRow{$x^\alpha$}{多重指数冪\, {\scriptsize（先行）}}
+\NotationRow{$o(h)$}{Landauの小さいo\, {\scriptsize（先行）}}
+\NotationRow{$O(h)$}{Landauの大きいO\, {\scriptsize（先行）}}
+\NotationRow{$\limsup$}{上極限\, {\scriptsize（先行）}}
+\NotationRow{$\liminf$}{下極限\, {\scriptsize（先行）}}
+\NotationRow{$\sum_{n=0}^\infty a_n$}{級数\, {\scriptsize（先行）}}
+\NotationRow{$\int_a^b f(x)\,dx$}{区間上の積分\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Re}z$}{実部\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Im}z$}{虚部\, {\scriptsize（先行）}}
+\NotationRow{$\overline z$}{複素共役\, {\scriptsize（先行）}}
+\NotationRow{$\lvert z\rvert$}{絶対値\, {\scriptsize（先行）}}
+\NotationRow{$\arg z$}{偏角（枝を明示）\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Res}_{z=a}f$}{留数\, {\scriptsize（先行）}}
+\NotationRow{$\oint_\gamma f(z)\,dz$}{閉曲線上の複素積分\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal H(U)$}{正則函数全体\, {\scriptsize（先行）}}
+\NotationRow{$\widehat f$}{Fourier変換\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal F f$}{Fourier変換作用素の値\, {\scriptsize（先行）}}
+\NotationRow{$f*g$}{畳込み\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal D(U)$}{試験函数空間\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal D'(U)$}{超函数空間\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal S(\mathbb R^n)$}{Schwartz空間\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal S'(\mathbb R^n)$}{緩増加超函数空間\, {\scriptsize（先行）}}
+\NotationRow{$W^{k,p}(U)$}{Sobolev空間\, {\scriptsize（先行）}}
+\NotationRow{$H^k(U)$}{L2型Sobolev空間\, {\scriptsize（先行）}}
+\NotationRow{$\lVert x\rVert$}{ノルム\, {\scriptsize（先行）}}
+\NotationRow{$\langle x,y\rangle$}{内積\, {\scriptsize（先行）}}
+\NotationRow{$X^*$}{連続双対空間\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal L(X,Y)$}{有界線形作用素全体\, {\scriptsize（先行）}}
+\NotationRow{$T^*$}{Hilbert空間の随伴作用素\, {\scriptsize（先行）}}
+\NotationRow{$\lVert T\rVert_{\mathrm{op}}$}{作用素ノルム\, {\scriptsize（先行）}}
+\NotationRow{$\sigma(T)$}{作用素のスペクトル\, {\scriptsize（先行）}}
+\NotationRow{$\rho(T)$}{レゾルベント集合\, {\scriptsize（先行）}}
+\NotationRow{$R(\lambda,T)$}{レゾルベント\, {\scriptsize（先行）}}
+\NotationRow{$C(X)$}{連続函数全体\, {\scriptsize（先行）}}
+\NotationRow{$C_c(X)$}{コンパクト台連続函数全体\, {\scriptsize（先行）}}
+\NotationRow{$C_0(X)$}{無限遠で消える連続函数全体\, {\scriptsize（先行）}}
+\NotationRow{$C^k(U)$}{k回連続微分可能函数全体\, {\scriptsize（先行）}}
+\NotationRow{$C^\infty(U)$}{滑らかな函数全体\, {\scriptsize（先行）}}
 \section{測度・確率}
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000182}{$\mathcal A$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000182}{σ-加法族}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(X,\mathcal A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 可測空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent \NotationRef{K-000187}{$\sigma(\mathcal S)$}\hfill\begin{minipage}[t]{.52\linewidth}\raggedright \NotationRef{K-000187}{生成σ-加法族}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal B(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Borel加法族\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mu$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 測度\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(X,\mathcal A,\mu)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 測度空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mu^*$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 外測度\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mu\otimes\nu$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 積測度\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbf 1_A$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 指示函数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\int_A f\,d\mu$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 測度に関する積分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\frac{d\nu}{d\mu}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Radon--Nikodym微分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $f_*\mu$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 像測度\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mu\ll\nu$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 絶対連続\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mu\perp\nu$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 相互特異\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $L^p(X,\mu)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Lebesgue空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\lVert f\rVert_p$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Lpノルム\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\ell^p$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 数列空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(\Omega,\mathcal F,\mathbb P)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 確率空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb E[X]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 期待値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathbb E[X\mid\mathcal G]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 条件付き期待値\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Var}(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 分散\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Cov}(X,Y)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 共分散\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal L(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 確率変数の法則\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(\mathcal F_t)_{t\geq0}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright フィルトレーション\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(X_t)_{t\geq0}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 確率過程\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $B_t$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Brown運動\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $X_n\xrightarrow{\mathrm{a.s.}}X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 概収束\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $X_n\xrightarrow{\mathbb P}X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 確率収束\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $X_n\xrightarrow{\mathrm d}X$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 分布収束\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{\NotationRef{K-000182}{$\mathcal A$}}{\NotationRef{K-000182}{σ-加法族}}
+\NotationRow{$(X,\mathcal A)$}{可測空間\, {\scriptsize（先行）}}
+\NotationRow{\NotationRef{K-000187}{$\sigma(\mathcal S)$}}{\NotationRef{K-000187}{生成σ-加法族}}
+\NotationRow{$\mathcal B(X)$}{Borel加法族\, {\scriptsize（先行）}}
+\NotationRow{$\mu$}{測度\, {\scriptsize（先行）}}
+\NotationRow{$(X,\mathcal A,\mu)$}{測度空間\, {\scriptsize（先行）}}
+\NotationRow{$\mu^*$}{外測度\, {\scriptsize（先行）}}
+\NotationRow{$\mu\otimes\nu$}{積測度\, {\scriptsize（先行）}}
+\NotationRow{$\mathbf 1_A$}{指示函数\, {\scriptsize（先行）}}
+\NotationRow{$\int_A f\,d\mu$}{測度に関する積分\, {\scriptsize（先行）}}
+\NotationRow{$\frac{d\nu}{d\mu}$}{Radon--Nikodym微分\, {\scriptsize（先行）}}
+\NotationRow{$f_*\mu$}{像測度\, {\scriptsize（先行）}}
+\NotationRow{$\mu\ll\nu$}{絶対連続\, {\scriptsize（先行）}}
+\NotationRow{$\mu\perp\nu$}{相互特異\, {\scriptsize（先行）}}
+\NotationRow{$L^p(X,\mu)$}{Lebesgue空間\, {\scriptsize（先行）}}
+\NotationRow{$\lVert f\rVert_p$}{Lpノルム\, {\scriptsize（先行）}}
+\NotationRow{$\ell^p$}{数列空間\, {\scriptsize（先行）}}
+\NotationRow{$(\Omega,\mathcal F,\mathbb P)$}{確率空間\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb E[X]$}{期待値\, {\scriptsize（先行）}}
+\NotationRow{$\mathbb E[X\mid\mathcal G]$}{条件付き期待値\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Var}(X)$}{分散\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Cov}(X,Y)$}{共分散\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal L(X)$}{確率変数の法則\, {\scriptsize（先行）}}
+\NotationRow{$(\mathcal F_t)_{t\geq0}$}{フィルトレーション\, {\scriptsize（先行）}}
+\NotationRow{$(X_t)_{t\geq0}$}{確率過程\, {\scriptsize（先行）}}
+\NotationRow{$B_t$}{Brown運動\, {\scriptsize（先行）}}
+\NotationRow{$X_n\xrightarrow{\mathrm{a.s.}}X$}{概収束\, {\scriptsize（先行）}}
+\NotationRow{$X_n\xrightarrow{\mathbb P}X$}{確率収束\, {\scriptsize（先行）}}
+\NotationRow{$X_n\xrightarrow{\mathrm d}X$}{分布収束\, {\scriptsize（先行）}}
 \section{圏・幾何・ホモロジー}
-\Needspace{3\baselineskip}\noindent $\mathcal C,\mathcal D$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 圏（変数）\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Ob}(\mathcal C)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 対象全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Hom}_{\mathcal C}(X,Y)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 射集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $F:\mathcal C\to\mathcal D$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 函手\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal C^{\mathrm{op}}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 反対圏\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\eta:F\Rightarrow G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 自然変換\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\varprojlim$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 射影極限\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\varinjlim$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 帰納極限\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $F\dashv G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 随伴函手\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(M,\mathcal A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 微分多様体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(U,\varphi)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 座標近傍\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\psi\circ\varphi^{-1}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 座標変換\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $T_pM$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 接空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $TM$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 接束\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $T_p^*M$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 余接空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $T^*M$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 余接束\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $df_p$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 接写像\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $f^*\omega$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 微分形式の引戻し\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathfrak X(M)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright ベクトル場全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\Omega^k(M)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 微分k形式全体\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $d\omega$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 外微分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\omega\wedge\eta$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 外積\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\iota_X\omega$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 内部積\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal L_X\omega$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Lie微分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $g$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Riemann計量\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\nabla$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 接続\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\nabla_XY$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 共変微分\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $R$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 曲率テンソル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Ric}$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Ricci曲率\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{grad}f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Riemann勾配\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Hess}f$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Riemann Hessian\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathfrak g$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Lie代数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $[X,Y]$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Lie括弧\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\exp$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 指数写像\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $C_n(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 鎖群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\partial_n$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 境界写像\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $Z_n(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright サイクル群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $B_n(X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 境界群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $H_n(X;A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright ホモロジー群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $H^n(X;A)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright コホモロジー群\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Ext}_A^n(M,N)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Ext函手\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Tor}_n^A(M,N)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright Tor函手\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $(X,\mathcal O_X)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 環付き空間\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal F(U)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 層の切断集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\mathcal F_x$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 層の茎\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $V(I)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright イデアルの零点集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $D(f)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 基本開集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname{Proj}S$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 射影スペクトル\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $G=(V,E)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright グラフ\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\deg(v)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 頂点の次数\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $A_G$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 隣接行列\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname*{argmin}_{x\in X}f(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 最小化点集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
-\Needspace{3\baselineskip}\noindent $\operatorname*{argmax}_{x\in X}f(x)$\hfill\begin{minipage}[t]{.52\linewidth}\raggedright 最大化点集合\, {\scriptsize（先行）}\end{minipage}\par\smallskip
+\NotationHeading
+\NotationRow{$\mathcal C,\mathcal D$}{圏（変数）\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Ob}(\mathcal C)$}{対象全体\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Hom}_{\mathcal C}(X,Y)$}{射集合\, {\scriptsize（先行）}}
+\NotationRow{$F:\mathcal C\to\mathcal D$}{函手\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal C^{\mathrm{op}}$}{反対圏\, {\scriptsize（先行）}}
+\NotationRow{$\eta:F\Rightarrow G$}{自然変換\, {\scriptsize（先行）}}
+\NotationRow{$\varprojlim$}{射影極限\, {\scriptsize（先行）}}
+\NotationRow{$\varinjlim$}{帰納極限\, {\scriptsize（先行）}}
+\NotationRow{$F\dashv G$}{随伴函手\, {\scriptsize（先行）}}
+\NotationRow{$(M,\mathcal A)$}{微分多様体\, {\scriptsize（先行）}}
+\NotationRow{$(U,\varphi)$}{座標近傍\, {\scriptsize（先行）}}
+\NotationRow{$\psi\circ\varphi^{-1}$}{座標変換\, {\scriptsize（先行）}}
+\NotationRow{$T_pM$}{接空間\, {\scriptsize（先行）}}
+\NotationRow{$TM$}{接束\, {\scriptsize（先行）}}
+\NotationRow{$T_p^*M$}{余接空間\, {\scriptsize（先行）}}
+\NotationRow{$T^*M$}{余接束\, {\scriptsize（先行）}}
+\NotationRow{$df_p$}{接写像\, {\scriptsize（先行）}}
+\NotationRow{$f^*\omega$}{微分形式の引戻し\, {\scriptsize（先行）}}
+\NotationRow{$\mathfrak X(M)$}{ベクトル場全体\, {\scriptsize（先行）}}
+\NotationRow{$\Omega^k(M)$}{微分k形式全体\, {\scriptsize（先行）}}
+\NotationRow{$d\omega$}{外微分\, {\scriptsize（先行）}}
+\NotationRow{$\omega\wedge\eta$}{外積\, {\scriptsize（先行）}}
+\NotationRow{$\iota_X\omega$}{内部積\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal L_X\omega$}{Lie微分\, {\scriptsize（先行）}}
+\NotationRow{$g$}{Riemann計量\, {\scriptsize（先行）}}
+\NotationRow{$\nabla$}{接続\, {\scriptsize（先行）}}
+\NotationRow{$\nabla_XY$}{共変微分\, {\scriptsize（先行）}}
+\NotationRow{$R$}{曲率テンソル\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Ric}$}{Ricci曲率\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{grad}f$}{Riemann勾配\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Hess}f$}{Riemann Hessian\, {\scriptsize（先行）}}
+\NotationRow{$\mathfrak g$}{Lie代数\, {\scriptsize（先行）}}
+\NotationRow{$[X,Y]$}{Lie括弧\, {\scriptsize（先行）}}
+\NotationRow{$\exp$}{指数写像\, {\scriptsize（先行）}}
+\NotationRow{$C_n(X)$}{鎖群\, {\scriptsize（先行）}}
+\NotationRow{$\partial_n$}{境界写像\, {\scriptsize（先行）}}
+\NotationRow{$Z_n(X)$}{サイクル群\, {\scriptsize（先行）}}
+\NotationRow{$B_n(X)$}{境界群\, {\scriptsize（先行）}}
+\NotationRow{$H_n(X;A)$}{ホモロジー群\, {\scriptsize（先行）}}
+\NotationRow{$H^n(X;A)$}{コホモロジー群\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Ext}_A^n(M,N)$}{Ext函手\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Tor}_n^A(M,N)$}{Tor函手\, {\scriptsize（先行）}}
+\NotationRow{$(X,\mathcal O_X)$}{環付き空間\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal F(U)$}{層の切断集合\, {\scriptsize（先行）}}
+\NotationRow{$\mathcal F_x$}{層の茎\, {\scriptsize（先行）}}
+\NotationRow{$V(I)$}{イデアルの零点集合\, {\scriptsize（先行）}}
+\NotationRow{$D(f)$}{基本開集合\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname{Proj}S$}{射影スペクトル\, {\scriptsize（先行）}}
+\NotationRow{$G=(V,E)$}{グラフ\, {\scriptsize（先行）}}
+\NotationRow{$\deg(v)$}{頂点の次数\, {\scriptsize（先行）}}
+\NotationRow{$A_G$}{隣接行列\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname*{argmin}_{x\in X}f(x)$}{最小化点集合\, {\scriptsize（先行）}}
+\NotationRow{$\operatorname*{argmax}_{x\in X}f(x)$}{最大化点集合\, {\scriptsize（先行）}}
 \section{調査記録}
 調査記録：Bredon, Topology and Geometry, 近傍の定義2.3--2.5；Atiyah--Macdonald, Introduction to Commutative Algebra (1969), Notation and Terminology, Ch.1；Neukirch, Algebraic Number Theory (1999), Ch. I 第3；Mac Lane, Categories for the Working Mathematician, Ch. I 第1；Lee, Introduction to Smooth Manifolds, 2nd ed. (2013), Ch.1 の座標変換；Conway, A Course in Functional Analysis, Ch. I 第3・Ch. II 第2。Google Driveの抽出本文を確認。その他の先行記法は標準的慣習からの独自提案であり、文献の逐語転記・全分野の文献照合ではない。
 
