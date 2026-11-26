@@ -30,7 +30,7 @@ knowledge.json の notes はノート計画の唯一の正本であり、entries
 - 初版50ノートは全て planned。計画の辺は対象範囲を考慮した暫定的・保守的な前提であり、個別定理にとって必要十分な依存ではない。依存が多すぎる場合はノートの分割や辺の削除を検討する。
 - notes の依存先の実在、重複、循環、廃止ノートへの参照、entries の所属ノートの実在、実際のノート間依存が計画上の祖先に含まれることを検査する。予定外の依存が必要になった場合は隠さず計画を改訂する。
 - verified ノートには検証済み項目が存在し、登録済みの全項目と直接前提ノートが verified である必要がある。ただし到達目標が実際に満たされたかは人手で確認する。
-- docs/roadmap.md は機械生成された閲覧用の Mermaid 図と目次であり、手で独立管理しない。notes を変更したら `node scripts/knowledge.mjs graph plan --markdown > docs/roadmap.md` で再生成する。
+- docs/roadmap.md は機械生成された閲覧用の Mermaid 図と目次であり、手で独立管理しない。verified のノートに対応する `volumes/N-番号/main.pdf` が存在するとき、題名をPDFへの相対リンクとする。未掲載の場合は明示し、壊れたリンクを作らない。PDFの追加・変更または notes の変更後は `node scripts/knowledge.mjs graph plan --markdown > docs/roadmap.md` で再生成する。PDFの組版と目次更新には `node scripts/publish-pdf.mjs N-番号` も使用できる。
 - `graph plan` は予定ノートのグラフ、`graph notes` は entries から導出した実際のノート間グラフ、`graph knowledge` は個別知識のグラフを出力する。前提の抽出は `prerequisites N-番号`（計画）と `prerequisites K-番号`（個別知識）を区別する。
 
 ## 論理構造：分岐・合流する有向非巡回グラフ
