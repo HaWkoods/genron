@@ -1,0 +1,114 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-90}
+\fancyhead[R]{\small 超フィルター\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 超フィルター}\par\vspace{2mm}
+{\small N-90\quad 草稿 第1版}
+\end{center}
+\section{超フィルター}
+% genron:begin K-000269
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000072
+% genron:use K-000233
+\Needspace{4\baselineskip}
+\begin{defn}[超フィルター]\label{k269}
+集合 $X$ 上のフィルター（空集合を含まないもの）のうち包含について極大なものを超フィルターという。
+\end{defn}
+% genron:end K-000269
+% genron:begin K-000270
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000075
+% genron:use K-000131
+% genron:use K-000233
+% genron:use K-000269
+\Needspace{4\baselineskip}
+\begin{thm}[超フィルター補題]\label{k270}
+集合 $X$ 上の任意のフィルター $\mathcal F$ は超フィルターに含まれる。
+\end{thm}
+\begin{proof}
+$\mathcal F$ を含むフィルター全体を包含で順序づける。空でない鎖の合併は $X$ を含み空集合を含まず上方閉である。合併に属する二集合は鎖のある共通の元に属するからその交叉も合併に属する。従って合併は上界となるフィルターである。空の鎖の上界として $\mathcal F$ を取れる。Zorn の補題 K-000131 により極大元が存在する。それを含むフィルターはすべて $\mathcal F$ を含むから，これは超フィルターである。
+\end{proof}
+% genron:end K-000270
+% genron:begin K-000271
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000233
+% genron:use K-000235
+% genron:use K-000236
+% genron:use K-000269
+\Needspace{4\baselineskip}
+\begin{thm}[二者択一性]\label{k271}
+フィルター $\mathcal F$ が超フィルターであることは任意の $A\subseteq X$ に対して $A$ と $X\setminus A$ のちょうど一方が $\mathcal F$ に属することと同値である。
+\end{thm}
+\begin{proof}
+両方が属することは空集合を含まないことに反する。$\mathcal F$ が極大で $X\setminus A\notin\mathcal F$ とする。任意の $F\in\mathcal F$ に対して $F\cap A\ne\varnothing$ である。族 $\{F\cap A\mid F\in\mathcal F\}$ はフィルター基であり，生成フィルターは $\mathcal F$ と $A$ を含む。極大性から $A\in\mathcal F$ である。逆に二者択一性を持つ $\mathcal F$ を真に含むフィルターに $A\notin\mathcal F$ が属せば，その補集合も属し矛盾する。
+\end{proof}
+% genron:end K-000271
+% genron:begin K-000272
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000237
+% genron:use K-000238
+% genron:use K-000239
+% genron:use K-000271
+\Needspace{4\baselineskip}
+\begin{prop}[超フィルターの集積と収束]\label{k272}
+位相空間上の超フィルター $\mathcal U$ の集積点はその収束先に一致する。
+\end{prop}
+\begin{proof}
+収束先は集積点である。逆に集積点 $x$ の近傍 $V$ は $\mathcal U$ のすべての元と交わる。$V\notin\mathcal U$ なら二者択一性から $X\setminus V\in\mathcal U$ となり矛盾する。従って近傍フィルターが $\mathcal U$ に含まれる。
+\end{proof}
+% genron:end K-000272
+\end{document}
