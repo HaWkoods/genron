@@ -1,0 +1,32 @@
+name: Knowledge consistency
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit tests
+        run: node scripts/test-knowledge.mjs
+      - name: Validate ledger and manuscripts
+        run: node scripts/knowledge.mjs check
+      - name: Report affected knowledge
+        if: github.event_name != 'workflow_dispatch'
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -n "$BASE" ] && git cat-file -e "$BASE:docs/knowledge.json" 2>/dev/null; then
+            node scripts/knowledge.mjs impact --base "$BASE"
+          else
+            echo "No previous ledger available; impact comparison skipped."
+          fi
