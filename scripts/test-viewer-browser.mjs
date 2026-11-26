@@ -93,7 +93,10 @@ try{
  assert.ok(found,"Cross-note PDF link must work");
  await page.goto(origin+"?note=statements");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-30));await waitPage(2);
  await page.goto(origin+"?note=notation");await rendered(1).waitFor();
- const notationLink=sheet(1).locator(".annotation[href*='id=K-000002']").first();
+ const notationLinks=sheet(1).locator(".annotation[href*='id=K-000002']");
+ const notationLink=notationLinks.first();
+ await notationLink.waitFor();
+ for(const link of await notationLinks.all()){const box=await link.boundingBox(), paper=await sheet(1).boundingBox();assert.ok(box.x>paper.x+paper.width*.40,"Notation links belong to the right column");}
  await notationLink.waitFor();await notationLink.hover();await page.locator("#preview:not([hidden])").waitFor();
  assert.match(await page.locator("#preview").innerText(),/量化/);
  await notationLink.click();await page.waitForURL(/id=K-000002/);await page.locator(".target").waitFor();

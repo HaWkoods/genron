@@ -1,6 +1,6 @@
 # 記号・記法一覧（第2版）
 
-記号とその指示対象を一行ずつ掲げる。参照付き項目は既刊ノートの知識台帳に対応する。参照のない項目は先行記法であり、定義の確立を意味しない。同一文脈で衝突する記号は添字又は説明で区別する。
+記号とその指示対象を一行ずつ掲げる。参照のある対象名からは、対応する定義等を閲覧できる。同一文脈で衝突する記号は添字又は説明で区別する。
 
 ## 数学的言語・集合
 
@@ -55,9 +55,9 @@
 - $c$：順序集合の閉包作用素 — [K-000091](https://hawkoods.github.io/genron/?id=K-000091)
 - $f\dashv g$：随伴（順序保存型） — [K-000093](https://hawkoods.github.io/genron/?id=K-000093)
 - $x^c$：Boolean束の補元 — [K-000090](https://hawkoods.github.io/genron/?id=K-000090)
-- $\aleph_0$：可算無限濃度（先行）
-- $\operatorname{card}X$：一般の濃度（先行）
-- $\omega$：最小無限順序数（先行）
+- $\aleph_0$：可算無限濃度
+- $\operatorname{card}X$：一般の濃度
+- $\omega$：最小無限順序数
 
 ## 位相・収束
 
@@ -69,287 +69,287 @@
 - $\mathcal O(\mathcal S)$：生成位相 — [K-000154](https://hawkoods.github.io/genron/?id=K-000154)
 - $\mathcal O_X$：空間Xの位相 — [K-000146](https://hawkoods.github.io/genron/?id=K-000146)
 - $\mathcal O_1\subseteq\mathcal O_2$：位相の粗密 — [K-000152](https://hawkoods.github.io/genron/?id=K-000152)
-- $\mathcal N(x)$：近傍系（先行）
-- $\mathcal B_x$：近傍基（先行）
-- $\mathcal B$：開基（先行）
-- $\mathcal S$：準開基（先行）
-- $\operatorname{Int}(A)$：内部（先行）
-- $\overline A$：閉包（先行）
-- $\partial A$：境界（先行）
-- $A'$：集積点集合（先行）
-- $\operatorname{Ext}(A)$：外部（先行）
-- $\mathcal O\vert_A$：部分空間の位相（先行）
-- $d(x,y)$：距離（先行）
-- $B_d(x,r)$：開球（先行）
-- $\overline B_d(x,r)$：閉球（先行）
-- $\operatorname{diam}A$：直径（先行）
-- $d(x,A)$：点と集合の距離（先行）
-- $\mathcal F$：フィルター（先行）
-- $x_i\to x$：収束（先行）
-- $\widehat X$：完備化（先行）
-- $X\cong Y$：同相（先行）
-- $X/{\sim}$：商位相空間（先行）
-- $\pi_0(X)$：経路連結成分の集合（先行）
-- $\pi_1(X,x)$：基本群（先行）
-- $\pi_n(X,x)$：高次ホモトピー群（先行）
-- $f\simeq g$：ホモトピー（先行）
-- $\operatorname{supp}f$：函数の台（先行）
+- $\mathcal N(x)$：近傍系
+- $\mathcal B_x$：近傍基
+- $\mathcal B$：開基
+- $\mathcal S$：準開基
+- $\operatorname{Int}(A)$：内部
+- $\overline A$：閉包
+- $\partial A$：境界
+- $A'$：集積点集合
+- $\operatorname{Ext}(A)$：外部
+- $\mathcal O\vert_A$：部分空間の位相
+- $d(x,y)$：距離
+- $B_d(x,r)$：開球
+- $\overline B_d(x,r)$：閉球
+- $\operatorname{diam}A$：直径
+- $d(x,A)$：点と集合の距離
+- $\mathcal F$：フィルター
+- $x_i\to x$：収束
+- $\widehat X$：完備化
+- $X\cong Y$：同相
+- $X/{\sim}$：商位相空間
+- $\pi_0(X)$：経路連結成分の集合
+- $\pi_1(X,x)$：基本群
+- $\pi_n(X,x)$：高次ホモトピー群
+- $f\simeq g$：ホモトピー
+- $\operatorname{supp}f$：函数の台
 
 ## 代数・数体系
 
-- $\mathbb Z$：整数環（先行）
-- $\mathbb Q$：有理数体（先行）
-- $\mathbb R$：実数体（先行）
-- $\mathbb C$：複素数体（先行）
+- $\mathbb Z$：整数環
+- $\mathbb Q$：有理数体
+- $\mathbb R$：実数体
+- $\mathbb C$：複素数体
 - $M$：モノイド — [K-000163](https://hawkoods.github.io/genron/?id=K-000163)
 - $1_M$：モノイドの単位元 — [K-000163](https://hawkoods.github.io/genron/?id=K-000163)
 - $xy$：二項演算の値 — [K-000159](https://hawkoods.github.io/genron/?id=K-000159)
 - $x^n$：自然数冪 — [K-000168](https://hawkoods.github.io/genron/?id=K-000168)
-- $G$：群（先行）
-- $H\leq G$：部分群（先行）
-- $N\trianglelefteq G$：正規部分群（先行）
-- $1_G$：群の単位元（先行）
-- $x^{-1}$：群の逆元（先行）
-- $\langle S\rangle$：生成部分群（先行）
-- $G/N$：商群（先行）
-- $G/H$：左剰余類集合（先行）
-- $[G:H]$：部分群の指数（先行）
-- $Z(G)$：群の中心（先行）
-- $C_G(S)$：中心化群（先行）
-- $N_G(H)$：正規化群（先行）
-- $[G,G]$：導来部分群（先行）
-- $[x,y]$：交換子（先行）
-- $\operatorname{ord}(x)$：元の位数（先行）
-- $\operatorname{Aut}(G)$：自己同型群（先行）
-- $\operatorname{Inn}(G)$：内部自己同型群（先行）
-- $\ker f$：準同型の核（先行）
-- $\operatorname{Im}f$：準同型の像（先行）
-- $A,\ R$：環（変数）（先行）
-- $K,\ k$：体（変数）（先行）
-- $L/K$：体の拡大（先行）
-- $[L:K]$：拡大次数（先行）
-- $\mathfrak a$：イデアル（先行）
-- $\mathfrak p$：素イデアル（先行）
-- $\mathfrak m$：極大イデアル（先行）
-- $(0)$：零イデアル（先行）
-- $(a_1,\ldots,a_n)$：生成イデアル（先行）
-- $A^\times$：単元群（先行）
-- $A/\mathfrak a$：商環（先行）
-- $\sqrt{\mathfrak a}$：イデアルの根基（先行）
-- $\operatorname{Nil}(A)$：冪零根基（先行）
-- $\operatorname{Jac}(A)$：Jacobson根基（先行）
-- $\operatorname{Spec}A$：素スペクトル（先行）
-- $\operatorname{MaxSpec}A$：極大スペクトル（先行）
-- $S^{-1}A$：局所化（先行）
-- $A_{\mathfrak p}$：素イデアルでの局所化（先行）
-- $\operatorname{Frac}(A)$：分数体（先行）
-- $A[X_1,\ldots,X_n]$：多項式環（先行）
-- $A[[X]]$：形式冪級数環（先行）
-- $\deg f$：多項式の次数（先行）
-- $\operatorname{char}K$：体の標数（先行）
-- $\operatorname{Gal}(L/K)$：Galois群（先行）
-- $\overline K$：代数閉包（先行）
-- $\mathcal O_K$：代数体の整数環（先行）
-- $\operatorname{Tr}_{L/K}$：体のトレース（先行）
-- $N_{L/K}$：体のノルム（先行）
-- $v$：付値（先行）
-- $\lvert\cdot\rvert_v$：付値に対応する絶対値（先行）
-- $K_v$：付値による完備化（先行）
-- $\mathbb Z_p$：p進整数環（先行）
-- $\mathbb Q_p$：p進数体（先行）
-- $\operatorname{Hom}_A(M,N)$：加群準同型全体（先行）
-- $\operatorname{End}_A(M)$：加群自己準同型環（先行）
-- $M\oplus N$：直和（先行）
-- $M\otimes_A N$：テンソル積（先行）
-- $M/\mathfrak a M$：商加群（先行）
-- $M^*$：代数的双対（先行）
+- $G$：群
+- $H\leq G$：部分群
+- $N\trianglelefteq G$：正規部分群
+- $1_G$：群の単位元
+- $x^{-1}$：群の逆元
+- $\langle S\rangle$：生成部分群
+- $G/N$：商群
+- $G/H$：左剰余類集合
+- $[G:H]$：部分群の指数
+- $Z(G)$：群の中心
+- $C_G(S)$：中心化群
+- $N_G(H)$：正規化群
+- $[G,G]$：導来部分群
+- $[x,y]$：交換子
+- $\operatorname{ord}(x)$：元の位数
+- $\operatorname{Aut}(G)$：自己同型群
+- $\operatorname{Inn}(G)$：内部自己同型群
+- $\ker f$：準同型の核
+- $\operatorname{Im}f$：準同型の像
+- $A,\ R$：環（変数）
+- $K,\ k$：体（変数）
+- $L/K$：体の拡大
+- $[L:K]$：拡大次数
+- $\mathfrak a$：イデアル
+- $\mathfrak p$：素イデアル
+- $\mathfrak m$：極大イデアル
+- $(0)$：零イデアル
+- $(a_1,\ldots,a_n)$：生成イデアル
+- $A^\times$：単元群
+- $A/\mathfrak a$：商環
+- $\sqrt{\mathfrak a}$：イデアルの根基
+- $\operatorname{Nil}(A)$：冪零根基
+- $\operatorname{Jac}(A)$：Jacobson根基
+- $\operatorname{Spec}A$：素スペクトル
+- $\operatorname{MaxSpec}A$：極大スペクトル
+- $S^{-1}A$：局所化
+- $A_{\mathfrak p}$：素イデアルでの局所化
+- $\operatorname{Frac}(A)$：分数体
+- $A[X_1,\ldots,X_n]$：多項式環
+- $A[[X]]$：形式冪級数環
+- $\deg f$：多項式の次数
+- $\operatorname{char}K$：体の標数
+- $\operatorname{Gal}(L/K)$：Galois群
+- $\overline K$：代数閉包
+- $\mathcal O_K$：代数体の整数環
+- $\operatorname{Tr}_{L/K}$：体のトレース
+- $N_{L/K}$：体のノルム
+- $v$：付値
+- $\lvert\cdot\rvert_v$：付値に対応する絶対値
+- $K_v$：付値による完備化
+- $\mathbb Z_p$：p進整数環
+- $\mathbb Q_p$：p進数体
+- $\operatorname{Hom}_A(M,N)$：加群準同型全体
+- $\operatorname{End}_A(M)$：加群自己準同型環
+- $M\oplus N$：直和
+- $M\otimes_A N$：テンソル積
+- $M/\mathfrak a M$：商加群
+- $M^*$：代数的双対
 
 ## 線形代数・行列
 
-- $V,\ W$：線形空間（変数）（先行）
-- $\dim_K V$：次元（先行）
-- $\operatorname{span}_K S$：線形包（先行）
-- $\mathcal L_K(V,W)$：線形写像全体（純代数）（先行）
-- $V^*$：双対空間（先行）
-- $V^{**}$：二重双対空間（先行）
-- $T^\vee$：双対写像（先行）
-- $A=(a_{ij})$：行列（先行）
-- $M_{m,n}(K)$：m行n列行列全体（先行）
-- $M_n(K)$：n次正方行列全体（先行）
-- $I_n$：単位行列（先行）
-- $0_{m,n}$：零行列（先行）
-- $E_{ij}$：行列単位（先行）
-- $A^{\mathsf T}$：転置行列（先行）
-- $\overline A$：成分ごとの複素共役行列（先行）
-- $A^*$：共役転置行列（先行）
-- $A^{-1}$：逆行列（先行）
-- $\det A$：行列式（先行）
-- $\operatorname{tr}A$：跡（先行）
-- $\operatorname{rank}A$：階数（先行）
-- $\operatorname{adj}A$：余因子転置行列（先行）
-- $\operatorname{diag}(a_1,\ldots,a_n)$：対角行列（先行）
-- $[T]_{\mathcal B,\mathcal C}$：線形写像の行列（始域基底B、終域基底C）（先行）
-- $[v]_{\mathcal B}$：基底Bに関する座標列（先行）
-- $\chi_A(t)$：特性多項式（det(tI-A)）（先行）
-- $m_A(t)$：最小多項式（先行）
-- $\sigma(A)$：スペクトル（先行）
-- $\lambda$：固有値（変数）（先行）
-- $\ker(A-\lambda I)$：固有空間（先行）
-- $\ker((A-\lambda I)^k)$：一般化固有空間（十分大きいk）（先行）
-- $s_j(A)$：特異値（降順）（先行）
-- $\mathrm{GL}_n(K)$：一般線形群（先行）
-- $\mathrm{SL}_n(K)$：特殊線形群（先行）
-- $\mathrm O(n)$：直交群（先行）
-- $\mathrm U(n)$：ユニタリ群（先行）
-- $\bigwedge^k V$：外冪（先行）
-- $\operatorname{Sym}^k V$：対称冪（先行）
-- $T(V)$：テンソル代数（先行）
+- $V,\ W$：線形空間（変数）
+- $\dim_K V$：次元
+- $\operatorname{span}_K S$：線形包
+- $\mathcal L_K(V,W)$：線形写像全体（純代数）
+- $V^*$：双対空間
+- $V^{**}$：二重双対空間
+- $T^\vee$：双対写像
+- $A=(a_{ij})$：行列
+- $M_{m,n}(K)$：m行n列行列全体
+- $M_n(K)$：n次正方行列全体
+- $I_n$：単位行列
+- $0_{m,n}$：零行列
+- $E_{ij}$：行列単位
+- $A^{\mathsf T}$：転置行列
+- $\overline A$：成分ごとの複素共役行列
+- $A^*$：共役転置行列
+- $A^{-1}$：逆行列
+- $\det A$：行列式
+- $\operatorname{tr}A$：跡
+- $\operatorname{rank}A$：階数
+- $\operatorname{adj}A$：余因子転置行列
+- $\operatorname{diag}(a_1,\ldots,a_n)$：対角行列
+- $[T]_{\mathcal B,\mathcal C}$：線形写像の行列（始域基底B、終域基底C）
+- $[v]_{\mathcal B}$：基底Bに関する座標列
+- $\chi_A(t)$：特性多項式（det(tI-A)）
+- $m_A(t)$：最小多項式
+- $\sigma(A)$：スペクトル
+- $\lambda$：固有値（変数）
+- $\ker(A-\lambda I)$：固有空間
+- $\ker((A-\lambda I)^k)$：一般化固有空間（十分大きいk）
+- $s_j(A)$：特異値（降順）
+- $\mathrm{GL}_n(K)$：一般線形群
+- $\mathrm{SL}_n(K)$：特殊線形群
+- $\mathrm O(n)$：直交群
+- $\mathrm U(n)$：ユニタリ群
+- $\bigwedge^k V$：外冪
+- $\operatorname{Sym}^k V$：対称冪
+- $T(V)$：テンソル代数
 
 ## 微分積分・解析
 
-- $f'(x)$：一変数の導函数の値（先行）
-- $f^{(k)}(x)$：k階導函数の値（先行）
-- $Df(x)$：全微分（線形写像）（先行）
-- $D^kf(x)$：k階全微分（多重線形写像）（先行）
-- $\partial_i f$：第i偏導函数（先行）
-- $\partial^\alpha f$：多重指数による偏導函数（先行）
-- $J_f(x)$：Jacobi行列（先行）
-- $\det J_f(x)$：Jacobi行列式（正方の場合）（先行）
-- $H_f(x)$：Hesse行列（スカラー値函数）（先行）
-- $\nabla f$：勾配（先行）
-- $\operatorname{div}X$：発散（先行）
-- $\operatorname{rot}X$：回転（3次元）（先行）
-- $\Delta f$：Laplace作用素の適用（先行）
-- $\alpha!$：多重指数階乗（先行）
-- $x^\alpha$：多重指数冪（先行）
-- $o(h)$：Landauの小さいo（先行）
-- $O(h)$：Landauの大きいO（先行）
-- $\limsup$：上極限（先行）
-- $\liminf$：下極限（先行）
-- $\sum_{n=0}^\infty a_n$：級数（先行）
-- $\int_a^b f(x)\,dx$：区間上の積分（先行）
-- $\operatorname{Re}z$：実部（先行）
-- $\operatorname{Im}z$：虚部（先行）
-- $\overline z$：複素共役（先行）
-- $\lvert z\rvert$：絶対値（先行）
-- $\arg z$：偏角（枝を明示）（先行）
-- $\operatorname{Res}_{z=a}f$：留数（先行）
-- $\oint_\gamma f(z)\,dz$：閉曲線上の複素積分（先行）
-- $\mathcal H(U)$：正則函数全体（先行）
-- $\widehat f$：Fourier変換（先行）
-- $\mathcal F f$：Fourier変換作用素の値（先行）
-- $f*g$：畳込み（先行）
-- $\mathcal D(U)$：試験函数空間（先行）
-- $\mathcal D'(U)$：超函数空間（先行）
-- $\mathcal S(\mathbb R^n)$：Schwartz空間（先行）
-- $\mathcal S'(\mathbb R^n)$：緩増加超函数空間（先行）
-- $W^{k,p}(U)$：Sobolev空間（先行）
-- $H^k(U)$：L2型Sobolev空間（先行）
-- $\lVert x\rVert$：ノルム（先行）
-- $\langle x,y\rangle$：内積（先行）
-- $X^*$：連続双対空間（先行）
-- $\mathcal L(X,Y)$：有界線形作用素全体（先行）
-- $T^*$：Hilbert空間の随伴作用素（先行）
-- $\lVert T\rVert_{\mathrm{op}}$：作用素ノルム（先行）
-- $\sigma(T)$：作用素のスペクトル（先行）
-- $\rho(T)$：レゾルベント集合（先行）
-- $R(\lambda,T)$：レゾルベント（先行）
-- $C(X)$：連続函数全体（先行）
-- $C_c(X)$：コンパクト台連続函数全体（先行）
-- $C_0(X)$：無限遠で消える連続函数全体（先行）
-- $C^k(U)$：k回連続微分可能函数全体（先行）
-- $C^\infty(U)$：滑らかな函数全体（先行）
+- $f'(x)$：一変数の導函数の値
+- $f^{(k)}(x)$：k階導函数の値
+- $Df(x)$：全微分（線形写像）
+- $D^kf(x)$：k階全微分（多重線形写像）
+- $\partial_i f$：第i偏導函数
+- $\partial^\alpha f$：多重指数による偏導函数
+- $J_f(x)$：Jacobi行列
+- $\det J_f(x)$：Jacobi行列式（正方の場合）
+- $H_f(x)$：Hesse行列（スカラー値函数）
+- $\nabla f$：勾配
+- $\operatorname{div}X$：発散
+- $\operatorname{rot}X$：回転（3次元）
+- $\Delta f$：Laplace作用素の適用
+- $\alpha!$：多重指数階乗
+- $x^\alpha$：多重指数冪
+- $o(h)$：Landauの小さいo
+- $O(h)$：Landauの大きいO
+- $\limsup$：上極限
+- $\liminf$：下極限
+- $\sum_{n=0}^\infty a_n$：級数
+- $\int_a^b f(x)\,dx$：区間上の積分
+- $\operatorname{Re}z$：実部
+- $\operatorname{Im}z$：虚部
+- $\overline z$：複素共役
+- $\lvert z\rvert$：絶対値
+- $\arg z$：偏角（枝を明示）
+- $\operatorname{Res}_{z=a}f$：留数
+- $\oint_\gamma f(z)\,dz$：閉曲線上の複素積分
+- $\mathcal H(U)$：正則函数全体
+- $\widehat f$：Fourier変換
+- $\mathcal F f$：Fourier変換作用素の値
+- $f*g$：畳込み
+- $\mathcal D(U)$：試験函数空間
+- $\mathcal D'(U)$：超函数空間
+- $\mathcal S(\mathbb R^n)$：Schwartz空間
+- $\mathcal S'(\mathbb R^n)$：緩増加超函数空間
+- $W^{k,p}(U)$：Sobolev空間
+- $H^k(U)$：L2型Sobolev空間
+- $\lVert x\rVert$：ノルム
+- $\langle x,y\rangle$：内積
+- $X^*$：連続双対空間
+- $\mathcal L(X,Y)$：有界線形作用素全体
+- $T^*$：Hilbert空間の随伴作用素
+- $\lVert T\rVert_{\mathrm{op}}$：作用素ノルム
+- $\sigma(T)$：作用素のスペクトル
+- $\rho(T)$：レゾルベント集合
+- $R(\lambda,T)$：レゾルベント
+- $C(X)$：連続函数全体
+- $C_c(X)$：コンパクト台連続函数全体
+- $C_0(X)$：無限遠で消える連続函数全体
+- $C^k(U)$：k回連続微分可能函数全体
+- $C^\infty(U)$：滑らかな函数全体
 
 ## 測度・確率
 
 - $\mathcal A$：σ-加法族 — [K-000182](https://hawkoods.github.io/genron/?id=K-000182)
-- $(X,\mathcal A)$：可測空間（先行）
+- $(X,\mathcal A)$：可測空間
 - $\sigma(\mathcal S)$：生成σ-加法族 — [K-000187](https://hawkoods.github.io/genron/?id=K-000187)
-- $\mathcal B(X)$：Borel加法族（先行）
-- $\mu$：測度（先行）
-- $(X,\mathcal A,\mu)$：測度空間（先行）
-- $\mu^*$：外測度（先行）
-- $\mu\otimes\nu$：積測度（先行）
-- $\mathbf 1_A$：指示函数（先行）
-- $\int_A f\,d\mu$：測度に関する積分（先行）
-- $\frac{d\nu}{d\mu}$：Radon--Nikodym微分（先行）
-- $f_*\mu$：像測度（先行）
-- $\mu\ll\nu$：絶対連続（先行）
-- $\mu\perp\nu$：相互特異（先行）
-- $L^p(X,\mu)$：Lebesgue空間（先行）
-- $\lVert f\rVert_p$：Lpノルム（先行）
-- $\ell^p$：数列空間（先行）
-- $(\Omega,\mathcal F,\mathbb P)$：確率空間（先行）
-- $\mathbb E[X]$：期待値（先行）
-- $\mathbb E[X\mid\mathcal G]$：条件付き期待値（先行）
-- $\operatorname{Var}(X)$：分散（先行）
-- $\operatorname{Cov}(X,Y)$：共分散（先行）
-- $\mathcal L(X)$：確率変数の法則（先行）
-- $(\mathcal F_t)_{t\geq0}$：フィルトレーション（先行）
-- $(X_t)_{t\geq0}$：確率過程（先行）
-- $B_t$：Brown運動（先行）
-- $X_n\xrightarrow{\mathrm{a.s.}}X$：概収束（先行）
-- $X_n\xrightarrow{\mathbb P}X$：確率収束（先行）
-- $X_n\xrightarrow{\mathrm d}X$：分布収束（先行）
+- $\mathcal B(X)$：Borel加法族
+- $\mu$：測度
+- $(X,\mathcal A,\mu)$：測度空間
+- $\mu^*$：外測度
+- $\mu\otimes\nu$：積測度
+- $\mathbf 1_A$：指示函数
+- $\int_A f\,d\mu$：測度に関する積分
+- $\frac{d\nu}{d\mu}$：Radon--Nikodym微分
+- $f_*\mu$：像測度
+- $\mu\ll\nu$：絶対連続
+- $\mu\perp\nu$：相互特異
+- $L^p(X,\mu)$：Lebesgue空間
+- $\lVert f\rVert_p$：Lpノルム
+- $\ell^p$：数列空間
+- $(\Omega,\mathcal F,\mathbb P)$：確率空間
+- $\mathbb E[X]$：期待値
+- $\mathbb E[X\mid\mathcal G]$：条件付き期待値
+- $\operatorname{Var}(X)$：分散
+- $\operatorname{Cov}(X,Y)$：共分散
+- $\mathcal L(X)$：確率変数の法則
+- $(\mathcal F_t)_{t\geq0}$：フィルトレーション
+- $(X_t)_{t\geq0}$：確率過程
+- $B_t$：Brown運動
+- $X_n\xrightarrow{\mathrm{a.s.}}X$：概収束
+- $X_n\xrightarrow{\mathbb P}X$：確率収束
+- $X_n\xrightarrow{\mathrm d}X$：分布収束
 
 ## 圏・幾何・ホモロジー
 
-- $\mathcal C,\mathcal D$：圏（変数）（先行）
-- $\operatorname{Ob}(\mathcal C)$：対象全体（先行）
-- $\operatorname{Hom}_{\mathcal C}(X,Y)$：射集合（先行）
-- $F:\mathcal C\to\mathcal D$：函手（先行）
-- $\mathcal C^{\mathrm{op}}$：反対圏（先行）
-- $\eta:F\Rightarrow G$：自然変換（先行）
-- $\varprojlim$：射影極限（先行）
-- $\varinjlim$：帰納極限（先行）
-- $F\dashv G$：随伴函手（先行）
-- $(M,\mathcal A)$：微分多様体（先行）
-- $(U,\varphi)$：座標近傍（先行）
-- $\psi\circ\varphi^{-1}$：座標変換（先行）
-- $T_pM$：接空間（先行）
-- $TM$：接束（先行）
-- $T_p^*M$：余接空間（先行）
-- $T^*M$：余接束（先行）
-- $df_p$：接写像（先行）
-- $f^*\omega$：微分形式の引戻し（先行）
-- $\mathfrak X(M)$：ベクトル場全体（先行）
-- $\Omega^k(M)$：微分k形式全体（先行）
-- $d\omega$：外微分（先行）
-- $\omega\wedge\eta$：外積（先行）
-- $\iota_X\omega$：内部積（先行）
-- $\mathcal L_X\omega$：Lie微分（先行）
-- $g$：Riemann計量（先行）
-- $\nabla$：接続（先行）
-- $\nabla_XY$：共変微分（先行）
-- $R$：曲率テンソル（先行）
-- $\operatorname{Ric}$：Ricci曲率（先行）
-- $\operatorname{grad}f$：Riemann勾配（先行）
-- $\operatorname{Hess}f$：Riemann Hessian（先行）
-- $\mathfrak g$：Lie代数（先行）
-- $[X,Y]$：Lie括弧（先行）
-- $\exp$：指数写像（先行）
-- $C_n(X)$：鎖群（先行）
-- $\partial_n$：境界写像（先行）
-- $Z_n(X)$：サイクル群（先行）
-- $B_n(X)$：境界群（先行）
-- $H_n(X;A)$：ホモロジー群（先行）
-- $H^n(X;A)$：コホモロジー群（先行）
-- $\operatorname{Ext}_A^n(M,N)$：Ext函手（先行）
-- $\operatorname{Tor}_n^A(M,N)$：Tor函手（先行）
-- $(X,\mathcal O_X)$：環付き空間（先行）
-- $\mathcal F(U)$：層の切断集合（先行）
-- $\mathcal F_x$：層の茎（先行）
-- $V(I)$：イデアルの零点集合（先行）
-- $D(f)$：基本開集合（先行）
-- $\operatorname{Proj}S$：射影スペクトル（先行）
-- $G=(V,E)$：グラフ（先行）
-- $\deg(v)$：頂点の次数（先行）
-- $A_G$：隣接行列（先行）
-- $\operatorname*{argmin}_{x\in X}f(x)$：最小化点集合（先行）
-- $\operatorname*{argmax}_{x\in X}f(x)$：最大化点集合（先行）
+- $\mathcal C,\mathcal D$：圏（変数）
+- $\operatorname{Ob}(\mathcal C)$：対象全体
+- $\operatorname{Hom}_{\mathcal C}(X,Y)$：射集合
+- $F:\mathcal C\to\mathcal D$：函手
+- $\mathcal C^{\mathrm{op}}$：反対圏
+- $\eta:F\Rightarrow G$：自然変換
+- $\varprojlim$：射影極限
+- $\varinjlim$：帰納極限
+- $F\dashv G$：随伴函手
+- $(M,\mathcal A)$：微分多様体
+- $(U,\varphi)$：座標近傍
+- $\psi\circ\varphi^{-1}$：座標変換
+- $T_pM$：接空間
+- $TM$：接束
+- $T_p^*M$：余接空間
+- $T^*M$：余接束
+- $df_p$：接写像
+- $f^*\omega$：微分形式の引戻し
+- $\mathfrak X(M)$：ベクトル場全体
+- $\Omega^k(M)$：微分k形式全体
+- $d\omega$：外微分
+- $\omega\wedge\eta$：外積
+- $\iota_X\omega$：内部積
+- $\mathcal L_X\omega$：Lie微分
+- $g$：Riemann計量
+- $\nabla$：接続
+- $\nabla_XY$：共変微分
+- $R$：曲率テンソル
+- $\operatorname{Ric}$：Ricci曲率
+- $\operatorname{grad}f$：Riemann勾配
+- $\operatorname{Hess}f$：Riemann Hessian
+- $\mathfrak g$：Lie代数
+- $[X,Y]$：Lie括弧
+- $\exp$：指数写像
+- $C_n(X)$：鎖群
+- $\partial_n$：境界写像
+- $Z_n(X)$：サイクル群
+- $B_n(X)$：境界群
+- $H_n(X;A)$：ホモロジー群
+- $H^n(X;A)$：コホモロジー群
+- $\operatorname{Ext}_A^n(M,N)$：Ext函手
+- $\operatorname{Tor}_n^A(M,N)$：Tor函手
+- $(X,\mathcal O_X)$：環付き空間
+- $\mathcal F(U)$：層の切断集合
+- $\mathcal F_x$：層の茎
+- $V(I)$：イデアルの零点集合
+- $D(f)$：基本開集合
+- $\operatorname{Proj}S$：射影スペクトル
+- $G=(V,E)$：グラフ
+- $\deg(v)$：頂点の次数
+- $A_G$：隣接行列
+- $\operatorname*{argmin}_{x\in X}f(x)$：最小化点集合
+- $\operatorname*{argmax}_{x\in X}f(x)$：最大化点集合
 
 ## 調査記録
 
-調査記録：Bredon, Topology and Geometry, 近傍の定義2.3–2.5；Atiyah–Macdonald, Introduction to Commutative Algebra (1969), Notation and Terminology, Ch.1；Neukirch, Algebraic Number Theory (1999), Ch. I §3；Mac Lane, Categories for the Working Mathematician, Ch. I §1；Lee, Introduction to Smooth Manifolds, 2nd ed. (2013), Ch.1 の座標変換；Conway, A Course in Functional Analysis, Ch. I §3・Ch. II §2。Google Driveの抽出本文を確認。その他の先行記法は標準的慣習からの独自提案であり、文献の逐語転記・全分野の文献照合ではない。
+調査記録：Bredon, Topology and Geometry, 近傍の定義2.3–2.5；Atiyah–Macdonald, Introduction to Commutative Algebra (1969), Notation and Terminology, Ch.1；Neukirch, Algebraic Number Theory (1999), Ch. I §3；Mac Lane, Categories for the Working Mathematician, Ch. I §1；Lee, Introduction to Smooth Manifolds, 2nd ed. (2013), Ch.1 の座標変換；Conway, A Course in Functional Analysis, Ch. I §3・Ch. II §2。Google Driveの抽出本文を確認。その他の記法は標準的慣習に基づく編者の選択を含み、文献の逐語転記・全分野の文献照合ではない。
 
-第2版の追加記法は編者の先行提案である。転置は右上の立体T、共役転置は星印とする。Jacobi行列は全微分の標準基底に関する行列で、Hesse行列は二階全微分の行列表示である。複素内積の線形側、交換子の順序、Fourier変換の正規化、曲率・レゾルベントの符号は正式導入時に規定する。
+第2版の追加記法には編者の選択を含む。転置は右上の立体T、共役転置は星印とする。Jacobi行列は全微分の標準基底に関する行列で、Hesse行列は二階全微分の行列表示である。複素内積の線形側、交換子の順序、Fourier変換の正規化、曲率・レゾルベントの符号は正式導入時に規定する。
