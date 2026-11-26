@@ -31,8 +31,7 @@ jobs:
       - name: Verify statement catalogue TeX
         run: |
           node scripts/test-statements-tex.mjs
-          node scripts/statements-tex.mjs > /tmp/genron-statements.tex
-          diff -u docs/statements.tex /tmp/genron-statements.tex
+          # The PDF catalogue is a historical snapshot; Web-only entries are in statements.md.
           test "$(head -c 5 docs/statements.pdf)" = '%PDF-'
       - name: Report affected knowledge
         if: github.event_name != 'workflow_dispatch'

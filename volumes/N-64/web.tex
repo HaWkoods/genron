@@ -1,0 +1,237 @@
+% Web専用原稿（PDF組版対象外）
+\section{群準同型と核・像}
+% genron:begin K-000282
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000034
+% genron:use K-000170
+\begin{defn}[群準同型]
+群 $G,H$ の間の写像 $f:G\to H$ が
+\[
+ f(xy)=f(x)f(y)\qquad(x,y\in G)
+\]
+を満たすとき，$f$ を群準同型という．群準同型であって逆写像も群準同型となるものを群同型という．
+\end{defn}
+% genron:end K-000282
+% genron:begin K-000283
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000282
+% genron:use K-000226
+% genron:use K-000227
+% genron:use K-000170
+\begin{prop}[単位元及び逆元の保存]
+群準同型 $f:G\to H$ に対して
+\[
+ f(1_G)=1_H,\qquad f(x^{-1})=f(x)^{-1}\quad(x\in G)
+\]
+が成り立つ．特に群準同型はモノイド準同型である．
+\end{prop}
+\begin{proof}
+$f(1_G)=f(1_G)^2$ であるから，$H$ における簡約律によって $f(1_G)=1_H$ を得る．従って $f(x)f(x^{-1})=f(1_G)=1_H$ であり，逆元の一意性によって後半の等式が従う．
+\end{proof}
+% genron:end K-000283
+% genron:begin K-000284
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000282
+% genron:use K-000041
+\begin{prop}[群同型の判定]
+全単射な群準同型 $f:G\to H$ は群同型である．
+\end{prop}
+\begin{proof}
+$u,v\in H$ に対し $x=f^{-1}(u)$，$y=f^{-1}(v)$ とおくと $uv=f(xy)$ である．従って $f^{-1}(uv)=f^{-1}(u)f^{-1}(v)$ である．
+\end{proof}
+% genron:end K-000284
+% genron:begin K-000285
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000282
+% genron:use K-000037
+% genron:use K-000023
+% genron:use K-000024
+\begin{defn}[核と像]
+群準同型 $f:G\to H$ に対して
+\[
+ \ker f=\{x\in G\mid f(x)=1_H\},\qquad
+ \operatorname{im} f=f(G)
+\]
+をそれぞれ $f$ の核及び像という．
+\end{defn}
+% genron:end K-000285
+% genron:begin K-000286
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000283
+% genron:use K-000229
+% genron:use K-000266
+% genron:use K-000037
+\begin{prop}[部分群の像と逆像]
+群準同型 $f:G\to H$ と部分群 $A\leq G$，$B\leq H$ に対し $f(A)\leq H$，$f^{-1}(B)\leq G$ である．$B$ が正規なら $f^{-1}(B)$ も正規である．
+\end{prop}
+\begin{proof}
+両集合は単位元を含む．$u=f(a),v=f(b)\in f(A)$ なら $uv^{-1}=f(ab^{-1})\in f(A)$ である．また $x,y\in f^{-1}(B)$ なら $f(xy^{-1})=f(x)f(y)^{-1}\in B$ である．部分群判定により前半を得る．$B$ が正規なら $g\in G$，$x\in f^{-1}(B)$ に対し $f(gxg^{-1})=f(g)f(x)f(g)^{-1}\in B$ であり，正規性の判定を適用できる．
+\end{proof}
+% genron:end K-000286
+% genron:begin K-000287
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000285
+% genron:use K-000286
+% genron:use K-000283
+% genron:use K-000227
+% genron:use K-000039
+\begin{prop}[核の正規性と単射性]
+群準同型 $f:G\to H$ の核は $G$ の正規部分群であり，像は $H$ の部分群である．また
+\[
+ f(x)=f(y)\ \Longleftrightarrow\ x^{-1}y\in\ker f .
+\]
+特に $f$ が単射であることと $\ker f=\{1_G\}$ は同値である．
+\end{prop}
+\begin{proof}
+$\{1_H\}$ は正規部分群であり，$G$ はそれ自身の部分群であるから，像・逆像の性質によって最初の主張が従う．等式 $f(x^{-1}y)=f(x)^{-1}f(y)$ と簡約律により表示した同値性を得る．$f$ が単射なら $f(x)=f(1_G)$ から $x=1_G$ が従う．逆に核が自明なら $f(x)=f(y)$ から $x^{-1}y=1_G$，従って $x=y$ となる．
+\end{proof}
+% genron:end K-000287
+\section{商群と同型定理}
+% genron:begin K-000288
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000287
+% genron:use K-000264
+% genron:use K-000267
+% genron:use K-000268
+% genron:use K-000055
+\begin{thm}[商群の普遍性]
+$N$ を $G$ の正規部分群，$q:G\to G/N$ を標準全射とする．群準同型 $f:G\to H$ に対し $f=\bar f\circ q$ となる群準同型 $\bar f:G/N\to H$ が存在するための必要十分条件は $N\subseteq\ker f$ である．その場合 $\bar f$ は一意である．
+\end{thm}
+\begin{proof}
+分解が存在すれば $n\in N$ に対し $f(n)=\bar f(N)=1_H$ となる．逆に $N\subseteq\ker f$ とする．$xN=yN$ なら $x^{-1}y\in N\subseteq\ker f$ であるから $f(x)=f(y)$ である．従って $\bar f(xN)=f(x)$ によって写像が定まる．
+\[
+ \bar f((xN)(yN))=f(xy)=f(x)f(y)=\bar f(xN)\bar f(yN).
+\]
+よって群準同型である．$q$ の全射性から一意性が従う．
+\end{proof}
+% genron:end K-000288
+% genron:begin K-000289
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000288
+% genron:use K-000287
+% genron:use K-000284
+% genron:use K-000042
+% genron:use K-000264
+\begin{thm}[第一同型定理]
+群準同型 $f:G\to H$ に対して
+\[
+ G/\ker f \longrightarrow \operatorname{im}f,\qquad
+ x\ker f\longmapsto f(x)
+\]
+は群同型である．
+\end{thm}
+\begin{proof}
+核は正規であり，像への終域の縮小は群準同型である．商群の普遍性によって表示された群準同型が存在する．像の定義から全射である．また $f(x)=f(y)$ なら $x^{-1}y\in\ker f$ であるから $x\ker f=y\ker f$ であり，単射である．群同型の判定を適用する．
+\end{proof}
+% genron:end K-000289
+% genron:begin K-000290
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000289
+% genron:use K-000287
+% genron:use K-000282
+% genron:use K-000225
+% genron:use K-000228
+% genron:use K-000265
+% genron:use K-000267
+\begin{thm}[第二同型定理]
+$A$ を群 $G$ の部分群，$N$ を $G$ の正規部分群とする．$AN=\{an\mid a\in A,\ n\in N\}$ は $G$ の部分群であり，$A\cap N$ は $A$ の正規部分群である．さらに
+\[
+ A/(A\cap N)\simeq AN/N .
+\]
+\end{thm}
+\begin{proof}
+正規性から $NA=AN$ である．従って $a,b\in A$，$n,m\in N$ に対し $(an)(bm)=ab(b^{-1}nb)m\in AN$，$(an)^{-1}=a^{-1}(an^{-1}a^{-1})\in AN$ となる．単位元も含むので $AN$ は部分群である．$N$ は $AN$ の正規部分群でもある．写像 $a\mapsto aN$ は $A\to AN/N$ の群準同型である．任意の $(an)N=aN$ がその像に属するから全射であり，核は $A\cap N$ である．核の正規性及び第一同型定理を適用する．
+\end{proof}
+% genron:end K-000290
+% genron:begin K-000291
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000288
+% genron:use K-000289
+% genron:use K-000287
+% genron:use K-000267
+% genron:use K-000268
+\begin{thm}[第三同型定理]
+$N,M$ を群 $G$ の正規部分群とし，$N\subseteq M$ とする．このとき $M/N$ を $G/N$ の部分集合とみなすと正規部分群であり，
+\[
+ (G/N)/(M/N)\simeq G/M
+\]
+が成り立つ．
+\end{thm}
+\begin{proof}
+標準全射 $G\to G/M$ の核は $M$ である．$N\subseteq M$ より商群の普遍性によって $G/N\to G/M$，$xN\mapsto xM$ が定まる．これは全射であり，その核は $x\in M$ である剰余類 $xN$ の全体，すなわち $M/N$ である．核の正規性及び第一同型定理によって結論を得る．
+\end{proof}
+% genron:end K-000291
+% genron:begin K-000292
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000286
+% genron:use K-000287
+% genron:use K-000268
+% genron:use K-000076
+% genron:use K-000038
+\begin{thm}[部分群対応定理]
+$N$ を $G$ の正規部分群，$q:G\to G/N$ を標準全射とする．$N$ を含む $G$ の部分群 $A$ と $G/N$ の部分群 $B$ の間の対応
+\[
+ A\longmapsto q(A),\qquad B\longmapsto q^{-1}(B)
+\]
+は互いに逆の順序同型である．この対応は正規部分群を正規部分群に移す．
+\end{thm}
+\begin{proof}
+像・逆像は部分群であり，$q^{-1}(B)$ は $N$ を含む．$q$ は全射なので $q(q^{-1}(B))=B$ である．$x\in q^{-1}(q(A))$ なら $q(x)=q(a)$ となる $a\in A$ が存在し，$a^{-1}x\in N\subseteq A$ であるから $x\in A$ である．逆の包含は明らかである．両対応は包含を保存する．$A$ が正規なら任意の $q(g)\in G/N$ と $q(a)\in q(A)$ に対し $q(g)q(a)q(g)^{-1}=q(gag^{-1})\in q(A)$ となる．逆向きは正規部分群の逆像の性質による．
+\end{proof}
+% genron:end K-000292

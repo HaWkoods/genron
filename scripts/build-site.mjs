@@ -14,7 +14,10 @@ const base=new URL(baseUrl);
 if(base.protocol!=="https:"||!base.pathname.endsWith("/")||base.search||base.hash)throw Error("Invalid public base URL");
 const verified=ledger.notes.filter(n=>n.status==="verified");
 const noteNumbers=new Set(verified.map(n=>n.number));
+const legacyNotes=verified.filter(n=>!n.web_only);
+const legacyNumbers=new Set(legacyNotes.map(n=>n.number));
 const entries=ledger.entries.filter(e=>e.status==="verified"&&noteNumbers.has(e.position[0]));
+const legacyEntries=entries.filter(e=>legacyNumbers.has(e.position[0]));
 const run=(cmd,args,cwd=root)=>execFileSync(cmd,args,{cwd,stdio:"inherit"});
 run(process.execPath,["scripts/knowledge.mjs","check","--strict"]);
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
@@ -64,9 +67,10 @@ function compile(tex,file,ids,refs=[]){
 try{
  for(const n of verified){
   const dir=path.join(root,"volumes","N-"+n.number);
-  const source=fs.readFileSync(path.join(dir,"main.tex"),"utf8");
+  const source=fs.readFileSync(path.join(dir,n.web_only?"web.tex":"main.tex"),"utf8");
   collectProofs(source);
-  const p=prepareTex(source,entries,n.number,baseUrl);
+  if(n.web_only)continue;
+  const p=prepareTex(source,legacyEntries,n.number,baseUrl);
   compile(p.tex,"N-"+n.number+".pdf",p.anchors,p.references);
  }
  // Keep historical direct PDF and page URLs for merged-away notes.
@@ -76,15 +80,15 @@ try{
   const p=prepareTex(original,historicalEntries,Number(old),baseUrl);
   compile(p.tex,"N-"+old+".pdf",p.anchors,p.references);
  }
- const catalogue=statementsTex(ledger).replace(/(\\entryhead\{[^\n]*\})\{(K-\d{6})\}/g,(all,head,id)=>head+"{\\href{"+baseUrl+"?id="+id+"}{"+id+"}}");
- compile(catalogue,"statements.pdf",[],entries.filter(e=>e.kind!=="exercise").map(e=>e.id));
+ const catalogue=statementsTex({...ledger,entries:legacyEntries}).replace(/(\\entryhead\{[^\n]*\})\{(K-\d{6})\}/g,(all,head,id)=>head+"{\\href{"+baseUrl+"?id="+id+"}{"+id+"}}");
+ compile(catalogue,"statements.pdf",[],legacyEntries.filter(e=>e.kind!=="exercise").map(e=>e.id));
  const notation=fs.readFileSync(path.join(root,"docs/notation.tex"),"utf8").replaceAll("https://hawkoods.github.io/genron/",baseUrl);
  const notationIds=[...new Set([...notation.matchAll(/\\NotationRef\{(K-\d{6})\}/g)].map(m=>m[1]))];
  for(const id of notationIds)if(!entries.some(e=>e.id===id))throw Error("Unpublished notation reference "+id);
  compile(notation,"notation.pdf",[],notationIds);
- const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise})=>({number,title,area,goals,depends_on,treatise}));
+ const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise,web_only})=>({number,title,area,goals,depends_on,treatise,web_only:!!web_only}));
  const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
- const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status})=>({number,title,area,goals,depends_on,treatise,status,depth:depth.get(number)}));
+ const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status,web_only})=>({number,title,area,goals,depends_on,treatise,status,web_only:!!web_only,depth:depth.get(number)}));
  const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,kind,title,statement,assumptions,position,depends_on,webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
  fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,aliases:ledger.note_aliases??{},entries:publicEntries,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");

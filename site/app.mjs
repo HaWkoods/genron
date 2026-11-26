@@ -170,7 +170,7 @@ function showHome(){
   const meta=node("div","result-head"),label=node("span","meta","N-"+n.number+(context&&t?"　"+t.id+" "+t.title:""));
   meta.append(label,node("span","status"+(notes.has(n.number)?" published":ready(n)?" ready":""),status(n)));
   d.append(meta);
-  if(notes.has(n.number)){d.append(anchor(n.title,url("note",n.number)));const web=anchor("Web本文",webUrl("note",n.number));web.style.marginLeft="1em";d.append(web)}else d.append(node("strong","planned-title",n.title));
+  if(notes.has(n.number)){d.append(anchor(n.title,url("note",n.number)));if(!notes.get(n.number)?.web_only){const web=anchor("Web本文",webUrl("note",n.number));web.style.marginLeft="1em";d.append(web)}}else d.append(node("strong","planned-title",n.title));
   d.append(node("span","summary",n.goals.join("；")));
   const pre=node("div","preconditions");if(Number.isInteger(n.depth))pre.append("依存層 "+n.depth+"　");
   pre.append("直接前提：");if(!n.depends_on.length)pre.append("なし");else n.depends_on.forEach((id,i)=>{if(i)pre.append("・");const target=byNumber.get(id);pre.append(anchor("N-"+id,notes.has(id)?url("note",id):qurl("N-"+id),"dep-link"));if(target)pre.lastChild.title=target.title});
@@ -459,7 +459,7 @@ function showWeb(info,restore){
   side.append(anchor(n.title,"#"+chapter.id,"web-toc-note"));
   chapter.append(node("h3","web-note-title",n.title),node("p","meta","N-"+n.number));
   if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
-  const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");chapter.append(anchor("旧版PDFを閲覧",legacy.href,"web-legacy"));
+  const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");if(!notes.get(n.number)?.web_only)chapter.append(anchor("旧版PDFを閲覧",legacy.href,"web-legacy"));
   const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);
   let lastSection="";
   for(const e of items){
@@ -489,7 +489,7 @@ function showError(e){main.replaceChildren(node("p","error",String(e.message??e)
 async function render(restore=null){
  const t=++ticket;hidePreview();disposeReader?.();disposeReader=null;
  const oldJob=job;job=null;state=null;if(oldJob){try{await oldJob.destroy()}catch{}}if(t!==ticket)return;
- try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info){const p=new URL(location.href).searchParams;if(typeof info.n==='number'&&!info.archive&&!p.has('page')&&p.get('view')==='web')showWeb(info,restore);else await loadReader(info,t,restore)}else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
+ try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info){const p=new URL(location.href).searchParams;if(typeof info.n==='number'&&!info.archive&&(notes.get(info.n)?.web_only||!p.has('page')&&p.get('view')==='web'))showWeb(info,restore);else await loadReader(info,t,restore)}else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
 }
 document.addEventListener("click",ev=>{
  if(ev.defaultPrevented||ev.button!==0||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;

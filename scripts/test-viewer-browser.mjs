@@ -93,6 +93,15 @@ try{
  assert.ok(await proof.locator(".katex").count()>0);
  assert.deepEqual(errors,[],"Proof rendering JavaScript errors");
 
+ // Web-only publications never require a PDF.
+ for(const n of planData.notes.filter(n=>n.web_only)){
+  await page.goto(origin+"?note="+n.number);
+  const chapter=page.locator("#N-"+n.number);
+  await chapter.waitFor();
+  assert.ok(await chapter.locator(".web-entry").count()>0);
+  assert.equal(await chapter.locator(".web-legacy").count(),0);
+  assert.equal(await page.locator(".pdf-shell").count(),0);
+ }
  // Merged-away note numbers retain their section and archived page URLs.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   await page.goto(origin+"?note="+old);

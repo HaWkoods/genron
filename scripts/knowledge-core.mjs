@@ -260,7 +260,7 @@ function planMermaid(ledger){
 }
 function planMarkdown(ledger,published=[]){
  const pdfs=new Set(published);
- const noteTitle=n=>n.status==="verified"?(pdfs.has(n.number)?`[${n.title}](../volumes/N-${n.number}/main.pdf)`:`${n.title}（PDF未掲載）`):n.title;
+ const noteTitle=n=>n.status==="verified"?(n.web_only?`[${n.title}](https://hawkoods.github.io/genron/?note=${n.number}&view=web)`:pdfs.has(n.number)?`[${n.title}](../volumes/N-${n.number}/main.pdf)`:`${n.title}（PDF未掲載）`):n.title;
  const g=planGraph(ledger), depth=new Map(g.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
  if(Array.isArray(ledger.parts)&&Array.isArray(ledger.treatises)){
   const esc=s=>String(s).replace(/\|/g,"\\|").replace(/\r?\n/g," ");

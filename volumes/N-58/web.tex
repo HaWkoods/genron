@@ -1,0 +1,215 @@
+% Web専用原稿（PDF組版対象外）
+\section{点の分離}
+% genron:begin K-000293
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000146
+% genron:use K-000029
+\begin{defn}[T0・T1・Hausdorff空間]
+位相空間 $(X,\mathcal O)$ に対し次の条件を考える．
+\begin{enumerate}
+\item 相異なる任意の二点のうち一方を含み他方を含まない開集合が存在する（$T_0$）．
+\item 相異なる任意の二点 $x,y$ に対し，$x$ を含み $y$ を含まない開集合が存在する（$T_1$）．
+\item 相異なる任意の二点 $x,y$ に対し，$x\in U$，$y\in V$，$U\cap V=\varnothing$ となる開集合 $U,V$ が存在する（Hausdorff）．
+\end{enumerate}
+これらの条件を満たす空間をそれぞれ $T_0$ 空間，$T_1$ 空間，Hausdorff 空間という．
+\end{defn}
+% genron:end K-000293
+% genron:begin K-000294
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000293
+\begin{prop}[分離公理の含意]
+任意の Hausdorff 空間は $T_1$ 空間であり，任意の $T_1$ 空間は $T_0$ 空間である．
+\end{prop}
+\begin{proof}
+$x,y$ を相異なる二点とする．Hausdorff 空間では互いに交わらない開近傍 $U,V$ を取ることができるから，$U$ は $x$ を含み $y$ を含まない．$T_1$ 条件から $T_0$ 条件は直ちに従う．
+\end{proof}
+% genron:end K-000294
+% genron:begin K-000295
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000293
+% genron:use K-000148
+% genron:use K-000146
+% genron:use K-000026
+% genron:use K-000029
+\begin{prop}[T1空間の特徴づけ]
+位相空間 $X$ が $T_1$ 空間であるための必要十分条件は，任意の $x\in X$ に対して $\{x\}$ が閉集合であることである．
+\end{prop}
+\begin{proof}
+$T_1$ 条件を仮定する．各 $y\in X\setminus\{x\}$ に対し $y$ を含み $x$ を含まない開集合が存在する．従って $X\setminus\{x\}$ はそれに含まれる開集合全体の合併であり，開集合である．逆に単集合が閉じていれば，相異なる $x,y$ に対し $X\setminus\{y\}$ は $x$ を含み $y$ を含まない開集合となる．
+\end{proof}
+% genron:end K-000295
+% genron:begin K-000296
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000293
+% genron:use K-000201
+% genron:use K-000198
+\begin{prop}[T0空間の特徴づけ]
+位相空間 $X$ が $T_0$ 空間であるための必要十分条件は，
+\[
+ \overline{\{x\}}=\overline{\{y\}}\ \Longrightarrow\ x=y
+\]
+が成り立つことである．
+\end{prop}
+\begin{proof}
+相異なる $x,y$ の一方，例えば $x$ を含み $y$ を含まない開集合が存在すれば，閉包の近傍による判定から $x\notin\overline{\{y\}}$ である．従って二つの閉包は異なる．逆にいずれの開集合も $x,y$ の双方を含むか双方を含まないとする．任意の点 $z$ の各開近傍が $\{x\}$ と交わる条件と $\{y\}$ と交わる条件が同じになるので，二つの閉包は等しい．
+\end{proof}
+% genron:end K-000296
+% genron:begin K-000297
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000293
+% genron:use K-000257
+% genron:use K-000148
+% genron:use K-000033
+% genron:use K-000024
+\begin{thm}[Hausdorff空間と対角集合]
+位相空間 $X$ に対して $\Delta_X=\{(x,x)\mid x\in X\}$ とおく．$X$ が Hausdorff 空間であるための必要十分条件は $\Delta_X$ が積空間 $X\times X$ の閉集合であることである．
+\end{thm}
+\begin{proof}
+$X$ が Hausdorff なら $(x,y)\notin\Delta_X$ に対して互いに交わらない開近傍 $U,V$ が存在する．$U\times V$ は $(x,y)$ の開近傍で $\Delta_X$ と交わらない．従って対角集合の補集合は開集合である．逆に $\Delta_X$ が閉じていれば $(x,y)\notin\Delta_X$ の開近傍として $\Delta_X$ と交わらない開矩形 $U\times V$ を取ることができる．$z\in U\cap V$ なら $(z,z)\in\Delta_X\cap(U\times V)$ となるから $U\cap V=\varnothing$ である．
+\end{proof}
+% genron:end K-000297
+\section{点と閉集合・二閉集合の分離}
+% genron:begin K-000298
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000148
+% genron:use K-000029
+% genron:use K-000293
+\begin{defn}[正則空間と正規空間]
+位相空間 $X$ が次の性質を持つとき，正則であるという．任意の閉集合 $F$ と $x\in X\setminus F$ に対し，$x\in U$，$F\subseteq V$，$U\cap V=\varnothing$ となる開集合 $U,V$ が存在する．また，任意の互いに交わらない閉集合 $A,B$ に対し $A\subseteq U$，$B\subseteq V$，$U\cap V=\varnothing$ となる開集合 $U,V$ が存在するとき，正規であるという．
+本篇では正則性・正規性の定義に $T_1$ 条件を含めない．正則かつ $T_1$ を $T_3$，正規かつ $T_1$ を $T_4$ と呼ぶ．
+\end{defn}
+% genron:end K-000298
+% genron:begin K-000299
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000298
+% genron:use K-000199
+% genron:use K-000148
+\begin{prop}[正則性の閉包による判定]
+位相空間 $X$ が正則であるための必要十分条件は，任意の開集合 $U$ と $x\in U$ に対して
+\[
+ x\in V\subseteq\overline V\subseteq U
+\]
+を満たす開集合 $V$ が存在することである．
+\end{prop}
+\begin{proof}
+正則性を仮定する．閉集合 $F=X\setminus U$ と $x$ を分離する開集合 $V,W$ を取る．$V\subseteq X\setminus W$ であり，右辺は閉集合なので $\overline V\subseteq X\setminus W\subseteq U$ となる．逆に $x\notin F$ に対して $U=X\setminus F$ とおき，条件を満たす $V$ を取る．$W=X\setminus\overline V$ は $F$ を含む開集合であり $V\cap W=\varnothing$ である．
+\end{proof}
+% genron:end K-000299
+% genron:begin K-000300
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000298
+% genron:use K-000199
+% genron:use K-000148
+\begin{prop}[正規性の閉包による判定]
+位相空間 $X$ が正規であるための必要十分条件は，任意の閉集合 $A$ とそれを含む開集合 $U$ に対し
+\[
+ A\subseteq V\subseteq\overline V\subseteq U
+\]
+となる開集合 $V$ が存在することである．
+\end{prop}
+\begin{proof}
+正規なら $A$ と $X\setminus U$ を分離する開集合 $V,W$ を取ることができる．閉集合 $X\setminus W$ は $V$ を含み $U$ に含まれるから結論を得る．逆に互いに交わらない閉集合 $A,B$ に対して $U=X\setminus B$ とすれば，$V$ と $X\setminus\overline V$ によって $A,B$ を分離できる．
+\end{proof}
+% genron:end K-000300
+% genron:begin K-000301
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000298
+% genron:use K-000295
+% genron:use K-000293
+\begin{prop}[T3・T4とHausdorff性]
+任意の $T_4$ 空間は $T_3$ 空間であり，任意の $T_3$ 空間は Hausdorff 空間である．
+\end{prop}
+\begin{proof}
+$T_1$ 条件により単集合は閉集合である．従って正規性から点とそれを含まない閉集合の分離が従う．同様に正則性を相異なる点 $x,y$ と閉集合 $\{y\}$ に適用すれば Hausdorff 条件が従う．
+\end{proof}
+% genron:end K-000301
+\section{分離性の保存と反例}
+% genron:begin K-000302
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000293
+% genron:use K-000298
+% genron:use K-000255
+% genron:use K-000148
+\begin{prop}[部分空間の分離性]
+$T_0$，$T_1$，Hausdorff の各性質及び正則性は任意の部分空間に遺伝する．正規性は閉部分空間に遺伝する．
+\end{prop}
+\begin{proof}
+点の分離に関する三条件については，分離する開集合と部分空間との共通部分を取ればよい．$Y\subseteq X$ とし，$Y$ の閉集合 $F$ と $x\in Y\setminus F$ を取る．部分空間の位相により $F=Y\cap C$ となる $X$ の閉集合 $C$ が存在し，$x\notin C$ である．$X$ が正則なら $x$ と $C$ を分離し，それぞれと $Y$ との共通部分を取ればよい．$Y$ が $X$ の閉集合であるとき，$Y$ の閉集合は $X$ の閉集合でもある．従って $X$ が正規なら $Y$ における互いに交わらない閉集合を $X$ で分離し，$Y$ に制限できる．
+\end{proof}
+% genron:end K-000302
+% genron:begin K-000303
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000293
+% genron:use K-000295
+% genron:use K-000151
+% genron:use K-000146
+% genron:use K-000113
+% genron:use K-000116
+% genron:use K-000031
+\begin{prop}[分離公理の逆が成り立たない例]
+相異なる $a,b$ について $\{\varnothing,\{a\},\{a,b\}\}$ を位相とする二元集合は $T_0$ 空間であるが $T_1$ 空間でない．
+また無限集合 $X$ に対して
+\[
+ \mathcal O=\{\varnothing\}\cup\{U\subseteq X\mid X\setminus U\text{ は有限}\}
+\]
+を位相とすると，これは $T_1$ 空間であるが Hausdorff 空間ではない．
+\end{prop}
+\begin{proof}
+第一の空間では $\{a\}$ が二点を区別するが，$b$ を含む開集合は全体集合しかない．第二の族は全体集合と空集合を含む．二つの空でない開集合の共通部分の補集合は二つの有限集合の合併である．空でない開集合を少なくとも一つ含む開集合族の合併の補集合は，その空でない開集合の補集合の部分集合であり有限である．従って位相である．各単集合は閉集合なので $T_1$ である．二つの空でない開集合が互いに交わらなければ，それらの補集合の合併が $X$ となり $X$ が有限となる矛盾を生ずる．従って Hausdorff でない．
+\end{proof}
+% genron:end K-000303
