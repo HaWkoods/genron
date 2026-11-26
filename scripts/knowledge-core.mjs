@@ -64,7 +64,7 @@ function validate(ledger,sources={}){
    if(e.status==="retired")continue;
    if(d.status==="retired")report("RETIRED_DEPENDENCY",`${e.id} -> ${id}`);
    if(d.status!=="verified")report("UNVERIFIED_DEPENDENCY",`${e.id} -> ${id} (${d.status})`,e.status!=="verified"&&d.status!=="retired");
-   if(validPosition(e.position)&&validPosition(d.position)&&comparePosition(d.position,e.position)>=0)report("FORWARD_DEPENDENCY",`${e.id} -> ${id}`,e.status!=="verified");
+   if(validPosition(e.position)&&validPosition(d.position)&&e.position[0]===d.position[0]&&comparePosition(d.position,e.position)>=0)report("FORWARD_DEPENDENCY",`${e.id} -> ${id}`,e.status!=="verified");
   }
  }
  // Iterative DFS: no recursion limit on large ledgers.
@@ -81,6 +81,8 @@ function validate(ledger,sources={}){
    else if(!colors.has(next)){colors.set(next,1);stack.push({id:next,index:0,ds:deps(entries.get(next))})}
   }
  }
+ const notes=graph(ledger,"notes");
+ if(notes.unordered.length)report("NOTE_CYCLE","Notes blocked by a cycle: "+notes.unordered.join(", "));
  const parsed=parseSources(sources);errors.push(...parsed.errors);
  for(const [id,b] of parsed.blocks){
   const e=entries.get(id);
@@ -123,6 +125,55 @@ function changedEntries(oldLedger,newLedger,oldSources={},newSources={}){
  return keys.filter(id=>{const x=a.get(id),y=b.get(id);return foundationChanged||norm(x)!==norm(y)||(x?.source&&oldSources[x.source]!==newSources[x.source])||(y?.source&&oldSources[y.source]!==newSources[y.source])});
 }
 
-function available(ledger,position){return ledger.entries.filter(e=>e.status==="verified"&&comparePosition(e.position,position)<0).sort((a,b)=>comparePosition(a.position,b.position))}
+// Logical DAG: arrows point from prerequisites to dependent nodes.
+function graph(ledger,mode="knowledge"){
+ const active=ledger.entries.filter(e=>e&&e.status!=="retired"&&typeof e.id==="string"&&validPosition(e.position));
+ const byId=new Map(active.map(e=>[e.id,e]));
+ const nodeId=e=>mode==="notes"?"N-"+e.position[0]:e.id;
+ const nodes=new Map(),edges=new Map();
+ for(const e of active){
+  const id=nodeId(e);
+  if(!nodes.has(id))nodes.set(id,{id,title:mode==="notes"?"Note "+e.position[0]:e.title,members:[],status:mode==="notes"?"verified":e.status});
+  const n=nodes.get(id);n.members.push(e.id);if(mode==="notes"&&e.status!=="verified")n.status="incomplete";
+ }
+ for(const e of active)for(const d of Array.isArray(e.depends_on)?e.depends_on:[]){
+  if(!byId.has(d))continue;
+  const from=nodeId(byId.get(d)),to=nodeId(e);
+  if(mode==="notes"&&from===to)continue;
+  if(!edges.has(from))edges.set(from,new Set());edges.get(from).add(to);
+ }
+ const indegree=new Map([...nodes.keys()].map(id=>[id,0]));
+ for(const targets of edges.values())for(const to of targets)indegree.set(to,indegree.get(to)+1);
+ let queue=[...nodes.keys()].filter(id=>indegree.get(id)===0).sort();
+ const layers=[],visited=new Set();
+ while(queue.length){
+  layers.push(queue);const next=[];
+  for(const from of queue){visited.add(from);for(const to of edges.get(from)??[]){const n=indegree.get(to)-1;indegree.set(to,n);if(n===0)next.push(to)}}
+  queue=next.sort();
+ }
+ return {nodes:[...nodes.values()],edges:[...edges].flatMap(([from,targets])=>[...targets].map(to=>({from,to}))),layers,unordered:[...nodes.keys()].filter(id=>!visited.has(id)).sort()};
+}
+function prerequisites(ledger,id){
+ const byId=new Map(ledger.entries.map(e=>[e.id,e]));
+ if(!byId.has(id)||byId.get(id).status==="retired")throw Error("Unknown or retired target: "+id);
+ const seen=new Set([id]),queue=[id];
+ for(let i=0;i<queue.length;i++)for(const d of byId.get(queue[i]).depends_on){
+  if(!byId.has(d)||byId.get(d).status==="retired")throw Error("Unavailable dependency: "+d);
+  if(!seen.has(d)){seen.add(d);queue.push(d)}
+ }
+ const order=graph(ledger).layers.flat();
+ if(seen.size!==order.filter(x=>seen.has(x)).length)throw Error("Cyclic or invalid prerequisite graph");
+ return order.filter(x=>x!==id&&seen.has(x)).map(x=>byId.get(x));
+}
+function available(ledger,completed=[]){
+ const byId=new Map(ledger.entries.map(e=>[e.id,e])),known=new Set(completed);
+ for(const id of known){
+  const e=byId.get(id);
+  if(!e||e.status!=="verified")throw Error("Unknown or unverified completed ID: "+id);
+  for(const d of e.depends_on)if(!known.has(d))throw Error("Completed set not closed under prerequisites: "+id+" requires "+d);
+ }
+ const order=graph(ledger).layers.flat();
+ return order.map(id=>byId.get(id)).filter(e=>e.status==="verified"&&!known.has(e.id)&&e.depends_on.every(d=>known.has(d)));
+}
 
-export {validate, affected, changedEntries, available, validPosition};
+export {validate, affected, changedEntries, available, validPosition, graph, prerequisites};
