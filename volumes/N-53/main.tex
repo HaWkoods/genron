@@ -31,7 +31,7 @@
 \begin{center}
 {\small 数学原論}\par\vspace{4mm}
 {\LARGE 近傍と閉包}\par\vspace{2mm}
-{\small N-53\quad 草稿}
+{\small N-53\quad 第1版}
 \end{center}
 以下，特に断らない限り $(X,\mathcal O)$ を位相空間とする。N-8「位相と開集合」を前提とし，開集合系による位相の記述を各点の近傍系及び部分集合の閉包による記述に移す。選択公理は用いない。
 \Needspace{8\baselineskip}
@@ -93,6 +93,8 @@ $X$ 自身が開集合であるから $X\in\mathcal N(x)$ である。$N$ が近
 % genron:use K-000005
 % genron:use K-000007
 % genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
 % genron:use K-000045
 % genron:use K-000146
 % genron:use K-000194
@@ -171,6 +173,7 @@ $\mathcal O=\{U\in\Pow(X)\mid \forall x\in U,\ U\in\mathcal N(x)\}$ と定める
 % genron:use K-000017
 % genron:use K-000019
 % genron:use K-000045
+% genron:use K-000072
 % genron:use K-000146
 % genron:use K-000148
 % genron:use K-000149
@@ -198,11 +201,10 @@ $\operatorname{Int}(A)$ は $A$ に含まれる開集合の最大元，$\overlin
 \Needspace{4\baselineskip}
 \begin{prop}[内部と閉包の補集合による双対性]\label{k200}
 任意の $A\subseteq X$ について
-\[
- \operatorname{Int}(A)=X\setminus\overline{X\setminus A},
- \qquad
- \overline A=X\setminus\operatorname{Int}(X\setminus A)
-\]
+\begin{align*}
+ \operatorname{Int}(A)&=X\setminus\overline{X\setminus A},\\
+ \overline A&=X\setminus\operatorname{Int}(X\setminus A)
+\end{align*}
 が成り立つ。
 \end{prop}
 \begin{proof}
@@ -249,7 +251,10 @@ $x\in X$ に対し
 % genron:use K-000017
 % genron:use K-000019
 % genron:use K-000029
+% genron:use K-000031
+% genron:use K-000046
 % genron:use K-000146
+% genron:use K-000147
 % genron:use K-000149
 % genron:use K-000198
 % genron:use K-000199
@@ -288,10 +293,10 @@ $A\subseteq B$ なら $A$ に含まれる開集合 $\operatorname{Int}(A)$ は $
 \Needspace{4\baselineskip}
 \begin{defn}[外部と境界]\label{k203}
 部分集合 $A$ に対して
-\[
- \operatorname{Ext}(A)=\operatorname{Int}(X\setminus A),
- \qquad \partial A=\overline A\setminus\operatorname{Int}(A)
-\]
+\begin{align*}
+ \operatorname{Ext}(A)&=\operatorname{Int}(X\setminus A),\\
+ \partial A&=\overline A\setminus\operatorname{Int}(A)
+\end{align*}
 と定め，前者を $A$ の\textbf{外部}，後者を $A$ の\textbf{境界}という。
 \end{defn}
 % genron:end K-000203
@@ -303,10 +308,12 @@ $A\subseteq B$ なら $A$ に含まれる開集合 $\operatorname{Int}(A)$ は $
 % genron:use K-000005
 % genron:use K-000007
 % genron:use K-000017
+% genron:use K-000019
 % genron:use K-000029
 % genron:use K-000031
 % genron:use K-000148
 % genron:use K-000149
+% genron:use K-000195
 % genron:use K-000198
 % genron:use K-000199
 % genron:use K-000200
@@ -333,8 +340,10 @@ $A\subseteq B$ なら $A$ に含まれる開集合 $\operatorname{Int}(A)$ は $
 % genron:use K-000005
 % genron:use K-000007
 % genron:use K-000017
+% genron:use K-000019
 % genron:use K-000023
 % genron:use K-000024
+% genron:use K-000027
 % genron:use K-000029
 % genron:use K-000194
 \Needspace{4\baselineskip}
@@ -389,6 +398,8 @@ $x\in A$ ならすべての近傍は $x$ を含むから $x\in\overline A$ で�
 % genron:use K-000034
 % genron:use K-000045
 % genron:use K-000100
+% genron:use K-000110
+% genron:use K-000118
 % genron:use K-000146
 % genron:use K-000148
 % genron:use K-000149

@@ -320,7 +320,7 @@
       {
         "tex": "\\mathcal N(x)",
         "label": "近傍系",
-        "id": null
+        "id": "K-000194"
       },
       {
         "tex": "\\mathcal B_x",
@@ -340,27 +340,27 @@
       {
         "tex": "\\operatorname{Int}(A)",
         "label": "内部",
-        "id": null
+        "id": "K-000198"
       },
       {
         "tex": "\\overline A",
         "label": "閉包",
-        "id": null
+        "id": "K-000198"
       },
       {
         "tex": "\\partial A",
         "label": "境界",
-        "id": null
+        "id": "K-000203"
       },
       {
         "tex": "A'",
         "label": "集積点集合",
-        "id": null
+        "id": "K-000205"
       },
       {
         "tex": "\\operatorname{Ext}(A)",
         "label": "外部",
-        "id": null
+        "id": "K-000203"
       },
       {
         "tex": "\\mathcal O\\vert_A",

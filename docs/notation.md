@@ -69,15 +69,15 @@
 - $\mathcal O(\mathcal S)$：生成位相 — [K-000154](https://hawkoods.github.io/genron/?id=K-000154)
 - $\mathcal O_X$：空間Xの位相 — [K-000146](https://hawkoods.github.io/genron/?id=K-000146)
 - $\mathcal O_1\subseteq\mathcal O_2$：位相の粗密 — [K-000152](https://hawkoods.github.io/genron/?id=K-000152)
-- $\mathcal N(x)$：近傍系
+- $\mathcal N(x)$：近傍系 — [K-000194](https://hawkoods.github.io/genron/?id=K-000194)
 - $\mathcal B_x$：近傍基
 - $\mathcal B$：開基
 - $\mathcal S$：準開基
-- $\operatorname{Int}(A)$：内部
-- $\overline A$：閉包
-- $\partial A$：境界
-- $A'$：集積点集合
-- $\operatorname{Ext}(A)$：外部
+- $\operatorname{Int}(A)$：内部 — [K-000198](https://hawkoods.github.io/genron/?id=K-000198)
+- $\overline A$：閉包 — [K-000198](https://hawkoods.github.io/genron/?id=K-000198)
+- $\partial A$：境界 — [K-000203](https://hawkoods.github.io/genron/?id=K-000203)
+- $A'$：集積点集合 — [K-000205](https://hawkoods.github.io/genron/?id=K-000205)
+- $\operatorname{Ext}(A)$：外部 — [K-000203](https://hawkoods.github.io/genron/?id=K-000203)
 - $\mathcal O\vert_A$：部分空間の位相
 - $d(x,y)$：距離
 - $B_d(x,r)$：開球

@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
 
 const kinds={axiom:'公理',convention:'規約',definition:'定義',lemma:'補題',proposition:'命題',theorem:'定理',corollary:'系',construction:'構成',background:'背景原理'};
-const symbols={'𝒪':'\\mathcal{O}','⟨':'\\langle ','⟩':'\\rangle ','·':'\\cdot ','ℕ':'\\mathbb{N}','¬':'\\neg ','×':'\\times ','ι':'\\iota ','π':'\\pi ','′':'\\prime ','→':'\\to ','↦':'\\mapsto ','⇒':'\\Rightarrow ','⇔':'\\Leftrightarrow ','∀':'\\forall ','∃':'\\exists ','∅':'\\varnothing ','∈':'\\in ','∉':'\\notin ','∏':'\\prod ','∖':'\\setminus ','∘':'\\circ ','∧':'\\land ','∨':'\\lor ','∩':'\\cap ','∪':'\\cup ','≠':'\\ne ','≤':'\\leq ','⊆':'\\subseteq ','⊊':'\\subsetneq ','⋂':'\\bigcap ','⋃':'\\bigcup ','⨿':'\\coprod ','≥':'\\geq ','⊂':'\\subset ','⊇':'\\supseteq ','∞':'\\infty ','∑':'\\sum ','≈':'\\approx ','≡':'\\equiv ','∣':'\\mid ','∥':'\\parallel ','α':'\\alpha ','β':'\\beta ','γ':'\\gamma ','δ':'\\delta ','ε':'\\varepsilon ','λ':'\\lambda ','μ':'\\mu ','ν':'\\nu ','ρ':'\\rho ','σ':'\\sigma ','τ':'\\tau ','φ':'\\varphi ','ψ':'\\psi ','ω':'\\omega '};
+const symbols={'𝒩':'\\mathcal{N}','∂':'\\partial ','𝒪':'\\mathcal{O}','⟨':'\\langle ','⟩':'\\rangle ','·':'\\cdot ','ℕ':'\\mathbb{N}','¬':'\\neg ','×':'\\times ','ι':'\\iota ','π':'\\pi ','′':'\\prime ','→':'\\to ','↦':'\\mapsto ','⇒':'\\Rightarrow ','⇔':'\\Leftrightarrow ','∀':'\\forall ','∃':'\\exists ','∅':'\\varnothing ','∈':'\\in ','∉':'\\notin ','∏':'\\prod ','∖':'\\setminus ','∘':'\\circ ','∧':'\\land ','∨':'\\lor ','∩':'\\cap ','∪':'\\cup ','≠':'\\ne ','≤':'\\leq ','⊆':'\\subseteq ','⊊':'\\subsetneq ','⋂':'\\bigcap ','⋃':'\\bigcup ','⨿':'\\coprod ','≥':'\\geq ','⊂':'\\subset ','⊇':'\\supseteq ','∞':'\\infty ','∑':'\\sum ','≈':'\\approx ','≡':'\\equiv ','∣':'\\mid ','∥':'\\parallel ','α':'\\alpha ','β':'\\beta ','γ':'\\gamma ','δ':'\\delta ','ε':'\\varepsilon ','λ':'\\lambda ','μ':'\\mu ','ν':'\\nu ','ρ':'\\rho ','σ':'\\sigma ','τ':'\\tau ','φ':'\\varphi ','ψ':'\\psi ','ω':'\\omega '};
 const roman=new Set(['De','Morgan','Boolean','Galois','iff','on','Knaster','Tarski']);
-const op={sup:'\\sup ',inf:'\\inf ',id:'\\mathrm{id}',Fix:'\\operatorname{Fix}',op:'\\mathrm{op}'};
+const op={sup:'\\sup ',inf:'\\inf ',id:'\\mathrm{id}',Fix:'\\operatorname{Fix}',op:'\\mathrm{op}',Int:'\\operatorname{Int}',Ext:'\\operatorname{Ext}'};
 const txt=s=>String(s).replace(/[\\{}$%&#_^~]/g,c=>({'\\':'\\textbackslash{}','{':'\\{','}':'\\}','$':'\\$','%':'\\%','&':'\\&','#':'\\#','_':'\\_','^':'\\textasciicircum{}','~':'\\textasciitilde{}'}[c]));
 // Plain ledger notation, not a general TeX parser. Only ASCII scripts and listed symbols are interpreted.
 function math(s,breaks=true){
@@ -24,7 +24,12 @@ function math(s,breaks=true){
    }else throw Error('Empty script in '+s);
    result+=c+'{'+math(arg,false)+'}';continue;
   }
-  const match=(c+s.slice(i)).match(/^(sup|inf|Fix|id|op)(?![a-z])/);
+  if(c==='c'&&s.slice(i,i+2)==='l('){
+   let end=i+2,depth=1;
+   while(end<s.length&&depth){if(s[end]==='(')depth++;else if(s[end]===')')depth--;if(depth)end++;}
+   if(!depth){result+='\\overline{'+math(s.slice(i+2,end),false)+'}';i=end+1;continue;}
+  }
+  const match=(c+s.slice(i)).match(/^(sup|inf|Fix|id|op|Int|Ext)(?![a-z])/);
   if(match){result+=op[match[0]];i+=match[0].length-1;continue;}
   if(c==='′'){result+="'";continue;}
   if(c==='\\')result+='\\backslash ';

@@ -5908,7 +5908,7 @@
       "id": "K-000194",
       "kind": "definition",
       "title": "近傍と近傍系",
-      "statement": "位相空間 (X,𝒪) の x∈X に対し、x∈U⊆N となる U∈𝒪 が存在する部分集合 N⊆X を x の近傍という。近傍全体を N(x)（花文字）と記す。",
+      "statement": "位相空間 (X,𝒪) の点 x∈X に対し、x∈U⊆N となる U∈𝒪 が存在する部分集合 N⊆X を x の近傍という。近傍全体を 𝒩(x) と記す。",
       "assumptions": [],
       "position": [
         53,
@@ -5929,14 +5929,15 @@
         "K-000027",
         "K-000146"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000195",
       "kind": "proposition",
       "title": "近傍系の性質",
-      "statement": "各 x∈X について X∈N(x)、N∈N(x)⇒x∈N、N∈N(x) かつ N⊆M⊆X⇒M∈N(x)、N,M∈N(x)⇒N∩M∈N(x)。また N∈N(x) なら M∈N(x) で、すべての y∈M に対し N∈N(y) となるものが存在する。",
+      "statement": "位相空間 X の各点 x について、(1) X∈𝒩(x)、N∈𝒩(x) なら x∈N、(2) N∈𝒩(x) かつ N⊆M⊆X なら M∈𝒩(x)、(3) N,M∈𝒩(x) なら N∩M∈𝒩(x)、(4) N∈𝒩(x) なら M∈𝒩(x) で全ての y∈M に対し N∈𝒩(y) となるものが存在する。",
       "assumptions": [],
       "position": [
         53,
@@ -5958,14 +5959,15 @@
         "K-000147",
         "K-000194"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000196",
       "kind": "proposition",
       "title": "開集合の近傍による判定",
-      "statement": "A⊆X が開集合 ⇔ すべての x∈A に対し A∈N(x)。",
+      "statement": "位相空間 X の部分集合 A が開集合であることと、全ての x∈A に対し A∈𝒩(x) となることは同値。",
       "assumptions": [],
       "position": [
         53,
@@ -5981,18 +5983,21 @@
         "K-000005",
         "K-000007",
         "K-000017",
+        "K-000019",
+        "K-000024",
         "K-000045",
         "K-000146",
         "K-000194"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000197",
       "kind": "theorem",
       "title": "近傍系による位相の特徴づけ",
-      "statement": "集合 X の各点 x に部分集合族 N(x)⊆P(X) が与えられ、命題「近傍系の性質」の四条件を満たすなら、それを近傍系とする位相が一意に存在する。",
+      "statement": "集合 X の各点 x に部分集合族 𝒩(x)⊆P(X) が与えられ、近傍系の四条件（K-000195）を満たすなら、それらを近傍系とする位相が一意に存在する。",
       "assumptions": [],
       "position": [
         53,
@@ -6018,14 +6023,15 @@
         "K-000195",
         "K-000196"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000198",
       "kind": "definition",
       "title": "内部と閉包",
-      "statement": "A⊆X の内部 Int(A) は A に含まれる開集合全体の合併、閉包 overline(A) は A を含む閉集合全体の共通部分。",
+      "statement": "位相空間 X の部分集合 A の内部 Int(A) は A に含まれる開集合全体の合併、閉包 cl(A) は A を含む閉集合全体の共通部分。",
       "assumptions": [],
       "position": [
         53,
@@ -6048,14 +6054,15 @@
         "K-000146",
         "K-000148"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000199",
       "kind": "proposition",
       "title": "内部と閉包の極値性",
-      "statement": "Int(A) は A に含まれる最大の開集合、閉包は A を含む最小の閉集合。A が開 ⇔ Int(A)=A、A が閉 ⇔ 閉包=A。",
+      "statement": "位相空間 X の部分集合 A について、Int(A) は A に含まれる最大の開集合、cl(A) は A を含む最小の閉集合。A が開 ⇔ Int(A)=A、A が閉 ⇔ cl(A)=A。",
       "assumptions": [],
       "position": [
         53,
@@ -6073,19 +6080,21 @@
         "K-000017",
         "K-000019",
         "K-000045",
+        "K-000072",
         "K-000146",
         "K-000148",
         "K-000149",
         "K-000198"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000200",
       "kind": "proposition",
       "title": "内部と閉包の補集合による双対性",
-      "statement": "Int(A)=X∖閉包(X∖A)、閉包(A)=X∖Int(X∖A)。",
+      "statement": "位相空間 X の部分集合 A について、Int(A)=X∖cl(X∖A)、cl(A)=X∖Int(X∖A)。",
       "assumptions": [],
       "position": [
         53,
@@ -6106,14 +6115,15 @@
         "K-000148",
         "K-000198"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000201",
       "kind": "proposition",
       "title": "内部と閉包の近傍による特徴づけ",
-      "statement": "x∈Int(A) ⇔ A∈N(x)。x∈閉包(A) ⇔ すべての N∈N(x) に対し N∩A≠∅。",
+      "statement": "位相空間 X の A⊆X、x∈X に対して、x∈Int(A) ⇔ A∈𝒩(x)。x∈cl(A) ⇔ 全ての N∈𝒩(x) に対し N∩A≠∅。",
       "assumptions": [],
       "position": [
         53,
@@ -6138,14 +6148,15 @@
         "K-000199",
         "K-000200"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000202",
       "kind": "proposition",
       "title": "内部と閉包の演算則",
-      "statement": "内部・閉包は包含を保存し冪等である。Int(A)⊆A⊆閉包(A)。Int(X)=X、閉包(∅)=∅。Int(A∩B)=Int(A)∩Int(B)、閉包(A∪B)=閉包(A)∪閉包(B)。",
+      "statement": "位相空間 X の部分集合 A,B について、内部と閉包は包含を保存し冪等である。Int(A)⊆A⊆cl(A)、Int(X)=X、cl(∅)=∅。Int(A∩B)=Int(A)∩Int(B)、cl(A∪B)=cl(A)∪cl(B)。",
       "assumptions": [],
       "position": [
         53,
@@ -6163,20 +6174,24 @@
         "K-000017",
         "K-000019",
         "K-000029",
+        "K-000031",
+        "K-000046",
         "K-000146",
+        "K-000147",
         "K-000149",
         "K-000198",
         "K-000199",
         "K-000200"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000203",
       "kind": "definition",
       "title": "外部と境界",
-      "statement": "A⊆X の外部 Ext(A)=Int(X∖A)、境界 ∂A=閉包(A)∖Int(A)。",
+      "statement": "位相空間 X の部分集合 A の外部 Ext(A)=Int(X∖A)、境界 ∂A=cl(A)∖Int(A)。",
       "assumptions": [],
       "position": [
         53,
@@ -6196,14 +6211,15 @@
         "K-000031",
         "K-000198"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000204",
       "kind": "proposition",
       "title": "境界の特徴づけ",
-      "statement": "∂A=閉包(A)∩閉包(X∖A)=∂(X∖A) は閉集合。x∈∂A ⇔ x のすべての近傍が A と X∖A の双方と交わる。X は Int(A)、Ext(A)、∂A の互いに素な合併。",
+      "statement": "位相空間 X の部分集合 A について、∂A=cl(A)∩cl(X∖A)=∂(X∖A) は閉集合。x∈∂A ⇔ x の全ての近傍が A と X∖A の双方と交わる。X は Int(A)、Ext(A)、∂A の互いに素な合併。",
       "assumptions": [],
       "position": [
         53,
@@ -6219,24 +6235,27 @@
         "K-000005",
         "K-000007",
         "K-000017",
+        "K-000019",
         "K-000029",
         "K-000031",
         "K-000148",
         "K-000149",
+        "K-000195",
         "K-000198",
         "K-000199",
         "K-000200",
         "K-000201",
         "K-000203"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000205",
       "kind": "definition",
       "title": "集積点と導集合",
-      "statement": "A⊆X に対し、すべての N∈N(x) が A∖{x} と交わるとき x を A の集積点という。集積点全体を A′ と記す。",
+      "statement": "位相空間 X の部分集合 A に対し、全ての N∈𝒩(x) が A∖{x} と交わる点 x∈X を A の集積点という。集積点全体を導集合 A′ と記す。",
       "assumptions": [],
       "position": [
         53,
@@ -6252,19 +6271,22 @@
         "K-000005",
         "K-000007",
         "K-000017",
+        "K-000019",
         "K-000023",
         "K-000024",
+        "K-000027",
         "K-000029",
         "K-000194"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000206",
       "kind": "proposition",
       "title": "閉包と導集合",
-      "statement": "閉包(A)=A∪A′。A が閉集合 ⇔ A′⊆A。",
+      "statement": "位相空間 X の部分集合 A について、cl(A)=A∪A′。A が閉集合 ⇔ A′⊆A。",
       "assumptions": [],
       "position": [
         53,
@@ -6289,14 +6311,15 @@
         "K-000201",
         "K-000205"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     },
     {
       "id": "K-000207",
       "kind": "theorem",
       "title": "Kuratowski の閉包公理",
-      "statement": "集合 X 上の写像 c:P(X)→P(X) が c(∅)=∅、A⊆c(A)、c(c(A))=c(A)、c(A∪B)=c(A)∪c(B) を満たすなら c を閉包作用素とする位相が一意に存在する。逆も成り立つ。",
+      "statement": "集合 X 上の写像 c:P(X)→P(X) が c(∅)=∅、A⊆c(A)、c(c(A))=c(A)、c(A∪B)=c(A)∪c(B) を全ての A,B⊆X について満たすことと、c を閉包の写像とする位相が存在することは同値。その位相は一意。",
       "assumptions": [],
       "position": [
         53,
@@ -6321,6 +6344,8 @@
         "K-000034",
         "K-000045",
         "K-000100",
+        "K-000110",
+        "K-000118",
         "K-000146",
         "K-000148",
         "K-000149",
@@ -6328,8 +6353,9 @@
         "K-000199",
         "K-000202"
       ],
-      "status": "draft",
-      "source": "volumes/N-53/main.tex"
+      "status": "verified",
+      "source": "volumes/N-53/main.tex",
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
     }
   ],
   "notes": [
@@ -7078,7 +7104,7 @@
       "number": 53,
       "title": "近傍と閉包",
       "area": "位相",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         8
       ],
