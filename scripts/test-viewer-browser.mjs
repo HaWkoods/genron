@@ -92,6 +92,12 @@ try{
  }
  assert.ok(found,"Cross-note PDF link must work");
  await page.goto(origin+"?note=statements");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-30));await waitPage(2);
+ await page.goto(origin+"?note=notation");await rendered(1).waitFor();
+ const notationLink=sheet(1).locator(".annotation[href*='id=K-000002']").first();
+ await notationLink.waitFor();await notationLink.hover();await page.locator("#preview:not([hidden])").waitFor();
+ assert.match(await page.locator("#preview").innerText(),/量化/);
+ await notationLink.click();await page.waitForURL(/id=K-000002/);await page.locator(".target").waitFor();
+ await page.goBack();await page.waitForURL(/note=notation/);await rendered(1).waitFor();
  await page.setViewportSize({width:390,height:844});await page.goto(origin+"?note=3");await rendered(1).waitFor();await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-150));await rendered(2).waitFor();assert.equal(await page.locator(".pdf-shell .page").count(),6);
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
  assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");

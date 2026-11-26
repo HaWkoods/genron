@@ -52,7 +52,10 @@ try{
  }
  const catalogue=statementsTex(ledger).replace(/(\\entryhead\{[^\n]*\})\{(K-\d{6})\}/g,(all,head,id)=>head+"{\\href{"+baseUrl+"?id="+id+"}{"+id+"}}");
  compile(catalogue,"statements.pdf",[],entries.filter(e=>e.kind!=="exercise").map(e=>e.id));
- compile(fs.readFileSync(path.join(root,"docs/notation.tex"),"utf8"),"notation.pdf",[]);
+ const notation=fs.readFileSync(path.join(root,"docs/notation.tex"),"utf8").replaceAll("https://hawkoods.github.io/genron/",baseUrl);
+ const notationIds=[...new Set([...notation.matchAll(/\\NotationRef\{(K-\d{6})\}/g)].map(m=>m[1]))];
+ for(const id of notationIds)if(!entries.some(e=>e.id===id))throw Error("Unpublished notation reference "+id);
+ compile(notation,"notation.pdf",[],notationIds);
  const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise})=>({number,title,area,goals,depends_on,treatise}));
  const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
  const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status})=>({number,title,area,goals,depends_on,treatise,status,depth:depth.get(number)}));

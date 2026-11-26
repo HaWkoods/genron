@@ -1,0 +1,1662 @@
+[
+  {
+    "title": "数学的言語・集合",
+    "rows": [
+      {
+        "tex": "\\forall",
+        "label": "全称量化",
+        "id": "K-000002"
+      },
+      {
+        "tex": "\\exists",
+        "label": "存在量化",
+        "id": "K-000002"
+      },
+      {
+        "tex": "\\exists!",
+        "label": "一意存在",
+        "id": "K-000006"
+      },
+      {
+        "tex": "\\neg",
+        "label": "否定",
+        "id": "K-000001"
+      },
+      {
+        "tex": "\\land",
+        "label": "連言",
+        "id": "K-000001"
+      },
+      {
+        "tex": "\\lor",
+        "label": "選言",
+        "id": "K-000001"
+      },
+      {
+        "tex": "\\Rightarrow",
+        "label": "含意",
+        "id": "K-000001"
+      },
+      {
+        "tex": "\\Leftrightarrow",
+        "label": "同値",
+        "id": "K-000001"
+      },
+      {
+        "tex": "\\varnothing",
+        "label": "空集合",
+        "id": "K-000021"
+      },
+      {
+        "tex": "x\\in A",
+        "label": "所属",
+        "id": "K-000018"
+      },
+      {
+        "tex": "x\\notin A",
+        "label": "非所属",
+        "id": "K-000018"
+      },
+      {
+        "tex": "A\\subseteq B",
+        "label": "部分集合",
+        "id": "K-000019"
+      },
+      {
+        "tex": "A\\subsetneq B",
+        "label": "真部分集合",
+        "id": "K-000019"
+      },
+      {
+        "tex": "\\mathcal P(X)",
+        "label": "冪集合",
+        "id": "K-000027"
+      },
+      {
+        "tex": "\\{x\\in X\\mid P(x)\\}",
+        "label": "部分集合の指定",
+        "id": "K-000024"
+      },
+      {
+        "tex": "A\\cup B",
+        "label": "合併",
+        "id": "K-000029"
+      },
+      {
+        "tex": "A\\cap B",
+        "label": "共通部分",
+        "id": "K-000029"
+      },
+      {
+        "tex": "A\\setminus B",
+        "label": "差集合",
+        "id": "K-000029"
+      },
+      {
+        "tex": "(A_i)_{i\\in I}",
+        "label": "集合族",
+        "id": "K-000044"
+      },
+      {
+        "tex": "\\bigcup_{i\\in I}A_i",
+        "label": "集合族の合併",
+        "id": "K-000045"
+      },
+      {
+        "tex": "\\bigcap_{i\\in I}A_i",
+        "label": "集合族の共通部分",
+        "id": "K-000045"
+      },
+      {
+        "tex": "A\\times B",
+        "label": "直積",
+        "id": "K-000033"
+      },
+      {
+        "tex": "\\prod_{i\\in I}A_i",
+        "label": "直積族",
+        "id": "K-000047"
+      },
+      {
+        "tex": "\\coprod_{i\\in I}A_i",
+        "label": "非交和",
+        "id": "K-000049"
+      },
+      {
+        "tex": "(a,b)",
+        "label": "順序対",
+        "id": "K-000032"
+      },
+      {
+        "tex": "f:X\\to Y",
+        "label": "写像",
+        "id": "K-000034"
+      },
+      {
+        "tex": "x\\mapsto f(x)",
+        "label": "写像の指定",
+        "id": "K-000035"
+      },
+      {
+        "tex": "f(A)",
+        "label": "像",
+        "id": "K-000037"
+      },
+      {
+        "tex": "f^{-1}(B)",
+        "label": "逆像",
+        "id": "K-000037"
+      },
+      {
+        "tex": "f^{-1}",
+        "label": "逆写像",
+        "id": "K-000041"
+      },
+      {
+        "tex": "f\\vert_A",
+        "label": "制限",
+        "id": "K-000042"
+      },
+      {
+        "tex": "g\\circ f",
+        "label": "合成",
+        "id": "K-000036"
+      },
+      {
+        "tex": "\\mathrm{id}_X",
+        "label": "恒等写像",
+        "id": "K-000036"
+      },
+      {
+        "tex": "Y^X",
+        "label": "写像全体",
+        "id": "K-000047"
+      },
+      {
+        "tex": "x\\sim y",
+        "label": "同値関係",
+        "id": "K-000052"
+      },
+      {
+        "tex": "[x]",
+        "label": "同値類",
+        "id": "K-000053"
+      },
+      {
+        "tex": "X/{\\sim}",
+        "label": "商集合",
+        "id": "K-000053"
+      },
+      {
+        "tex": "\\pi",
+        "label": "標準全射",
+        "id": "K-000053"
+      },
+      {
+        "tex": "\\lvert X\\rvert",
+        "label": "有限集合の元の個数",
+        "id": "K-000111"
+      },
+      {
+        "tex": "\\mathbb N",
+        "label": "自然数集合（0を含む）",
+        "id": "K-000099"
+      },
+      {
+        "tex": "\\leq",
+        "label": "半順序",
+        "id": "K-000068"
+      },
+      {
+        "tex": "<",
+        "label": "狭義順序",
+        "id": "K-000069"
+      },
+      {
+        "tex": "\\sup",
+        "label": "上限",
+        "id": "K-000073"
+      },
+      {
+        "tex": "\\inf",
+        "label": "下限",
+        "id": "K-000073"
+      },
+      {
+        "tex": "\\vee",
+        "label": "結び",
+        "id": "K-000079"
+      },
+      {
+        "tex": "\\wedge",
+        "label": "交わり",
+        "id": "K-000079"
+      },
+      {
+        "tex": "P^{\\mathrm{op}}",
+        "label": "双対順序",
+        "id": "K-000070"
+      },
+      {
+        "tex": "\\operatorname{Fix}(c)",
+        "label": "閉包作用素の固定元集合",
+        "id": "K-000091"
+      },
+      {
+        "tex": "c",
+        "label": "順序集合の閉包作用素",
+        "id": "K-000091"
+      },
+      {
+        "tex": "f\\dashv g",
+        "label": "随伴（順序保存型）",
+        "id": "K-000093"
+      },
+      {
+        "tex": "x^c",
+        "label": "Boolean束の補元",
+        "id": "K-000090"
+      },
+      {
+        "tex": "\\aleph_0",
+        "label": "可算無限濃度",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{card}X",
+        "label": "一般の濃度",
+        "id": null
+      },
+      {
+        "tex": "\\omega",
+        "label": "最小無限順序数",
+        "id": null
+      }
+    ]
+  },
+  {
+    "title": "位相・収束",
+    "rows": [
+      {
+        "tex": "\\mathcal O",
+        "label": "開集合系",
+        "id": "K-000146"
+      },
+      {
+        "tex": "(X,\\mathcal O)",
+        "label": "位相空間",
+        "id": "K-000146"
+      },
+      {
+        "tex": "U\\in\\mathcal O",
+        "label": "開集合",
+        "id": "K-000146"
+      },
+      {
+        "tex": "X\\setminus U",
+        "label": "開集合の補集合（閉集合）",
+        "id": "K-000148"
+      },
+      {
+        "tex": "\\mathcal C",
+        "label": "閉集合系",
+        "id": "K-000149"
+      },
+      {
+        "tex": "\\mathcal O(\\mathcal S)",
+        "label": "生成位相",
+        "id": "K-000154"
+      },
+      {
+        "tex": "\\mathcal O_X",
+        "label": "空間Xの位相",
+        "id": "K-000146"
+      },
+      {
+        "tex": "\\mathcal O_1\\subseteq\\mathcal O_2",
+        "label": "位相の粗密",
+        "id": "K-000152"
+      },
+      {
+        "tex": "\\mathcal N(x)",
+        "label": "近傍系",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal B_x",
+        "label": "近傍基",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal B",
+        "label": "開基",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal S",
+        "label": "準開基",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Int}(A)",
+        "label": "内部",
+        "id": null
+      },
+      {
+        "tex": "\\overline A",
+        "label": "閉包",
+        "id": null
+      },
+      {
+        "tex": "\\partial A",
+        "label": "境界",
+        "id": null
+      },
+      {
+        "tex": "A'",
+        "label": "集積点集合",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Ext}(A)",
+        "label": "外部",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal O\\vert_A",
+        "label": "部分空間の位相",
+        "id": null
+      },
+      {
+        "tex": "d(x,y)",
+        "label": "距離",
+        "id": null
+      },
+      {
+        "tex": "B_d(x,r)",
+        "label": "開球",
+        "id": null
+      },
+      {
+        "tex": "\\overline B_d(x,r)",
+        "label": "閉球",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{diam}A",
+        "label": "直径",
+        "id": null
+      },
+      {
+        "tex": "d(x,A)",
+        "label": "点と集合の距離",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal F",
+        "label": "フィルター",
+        "id": null
+      },
+      {
+        "tex": "x_i\\to x",
+        "label": "収束",
+        "id": null
+      },
+      {
+        "tex": "\\widehat X",
+        "label": "完備化",
+        "id": null
+      },
+      {
+        "tex": "X\\cong Y",
+        "label": "同相",
+        "id": null
+      },
+      {
+        "tex": "X/{\\sim}",
+        "label": "商位相空間",
+        "id": null
+      },
+      {
+        "tex": "\\pi_0(X)",
+        "label": "経路連結成分の集合",
+        "id": null
+      },
+      {
+        "tex": "\\pi_1(X,x)",
+        "label": "基本群",
+        "id": null
+      },
+      {
+        "tex": "\\pi_n(X,x)",
+        "label": "高次ホモトピー群",
+        "id": null
+      },
+      {
+        "tex": "f\\simeq g",
+        "label": "ホモトピー",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{supp}f",
+        "label": "函数の台",
+        "id": null
+      }
+    ]
+  },
+  {
+    "title": "代数・数体系",
+    "rows": [
+      {
+        "tex": "\\mathbb Z",
+        "label": "整数環",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb Q",
+        "label": "有理数体",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb R",
+        "label": "実数体",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb C",
+        "label": "複素数体",
+        "id": null
+      },
+      {
+        "tex": "M",
+        "label": "モノイド",
+        "id": "K-000163"
+      },
+      {
+        "tex": "1_M",
+        "label": "モノイドの単位元",
+        "id": "K-000163"
+      },
+      {
+        "tex": "xy",
+        "label": "二項演算の値",
+        "id": "K-000159"
+      },
+      {
+        "tex": "x^n",
+        "label": "自然数冪",
+        "id": "K-000168"
+      },
+      {
+        "tex": "G",
+        "label": "群",
+        "id": null
+      },
+      {
+        "tex": "H\\leq G",
+        "label": "部分群",
+        "id": null
+      },
+      {
+        "tex": "N\\trianglelefteq G",
+        "label": "正規部分群",
+        "id": null
+      },
+      {
+        "tex": "1_G",
+        "label": "群の単位元",
+        "id": null
+      },
+      {
+        "tex": "x^{-1}",
+        "label": "群の逆元",
+        "id": null
+      },
+      {
+        "tex": "\\langle S\\rangle",
+        "label": "生成部分群",
+        "id": null
+      },
+      {
+        "tex": "G/N",
+        "label": "商群",
+        "id": null
+      },
+      {
+        "tex": "G/H",
+        "label": "左剰余類集合",
+        "id": null
+      },
+      {
+        "tex": "[G:H]",
+        "label": "部分群の指数",
+        "id": null
+      },
+      {
+        "tex": "Z(G)",
+        "label": "群の中心",
+        "id": null
+      },
+      {
+        "tex": "C_G(S)",
+        "label": "中心化群",
+        "id": null
+      },
+      {
+        "tex": "N_G(H)",
+        "label": "正規化群",
+        "id": null
+      },
+      {
+        "tex": "[G,G]",
+        "label": "導来部分群",
+        "id": null
+      },
+      {
+        "tex": "[x,y]",
+        "label": "交換子",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{ord}(x)",
+        "label": "元の位数",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Aut}(G)",
+        "label": "自己同型群",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Inn}(G)",
+        "label": "内部自己同型群",
+        "id": null
+      },
+      {
+        "tex": "\\ker f",
+        "label": "準同型の核",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Im}f",
+        "label": "準同型の像",
+        "id": null
+      },
+      {
+        "tex": "A,\\ R",
+        "label": "環（変数）",
+        "id": null
+      },
+      {
+        "tex": "K,\\ k",
+        "label": "体（変数）",
+        "id": null
+      },
+      {
+        "tex": "L/K",
+        "label": "体の拡大",
+        "id": null
+      },
+      {
+        "tex": "[L:K]",
+        "label": "拡大次数",
+        "id": null
+      },
+      {
+        "tex": "\\mathfrak a",
+        "label": "イデアル",
+        "id": null
+      },
+      {
+        "tex": "\\mathfrak p",
+        "label": "素イデアル",
+        "id": null
+      },
+      {
+        "tex": "\\mathfrak m",
+        "label": "極大イデアル",
+        "id": null
+      },
+      {
+        "tex": "(0)",
+        "label": "零イデアル",
+        "id": null
+      },
+      {
+        "tex": "(a_1,\\ldots,a_n)",
+        "label": "生成イデアル",
+        "id": null
+      },
+      {
+        "tex": "A^\\times",
+        "label": "単元群",
+        "id": null
+      },
+      {
+        "tex": "A/\\mathfrak a",
+        "label": "商環",
+        "id": null
+      },
+      {
+        "tex": "\\sqrt{\\mathfrak a}",
+        "label": "イデアルの根基",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Nil}(A)",
+        "label": "冪零根基",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Jac}(A)",
+        "label": "Jacobson根基",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Spec}A",
+        "label": "素スペクトル",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{MaxSpec}A",
+        "label": "極大スペクトル",
+        "id": null
+      },
+      {
+        "tex": "S^{-1}A",
+        "label": "局所化",
+        "id": null
+      },
+      {
+        "tex": "A_{\\mathfrak p}",
+        "label": "素イデアルでの局所化",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Frac}(A)",
+        "label": "分数体",
+        "id": null
+      },
+      {
+        "tex": "A[X_1,\\ldots,X_n]",
+        "label": "多項式環",
+        "id": null
+      },
+      {
+        "tex": "A[[X]]",
+        "label": "形式冪級数環",
+        "id": null
+      },
+      {
+        "tex": "\\deg f",
+        "label": "多項式の次数",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{char}K",
+        "label": "体の標数",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Gal}(L/K)",
+        "label": "Galois群",
+        "id": null
+      },
+      {
+        "tex": "\\overline K",
+        "label": "代数閉包",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal O_K",
+        "label": "代数体の整数環",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Tr}_{L/K}",
+        "label": "体のトレース",
+        "id": null
+      },
+      {
+        "tex": "N_{L/K}",
+        "label": "体のノルム",
+        "id": null
+      },
+      {
+        "tex": "v",
+        "label": "付値",
+        "id": null
+      },
+      {
+        "tex": "\\lvert\\cdot\\rvert_v",
+        "label": "付値に対応する絶対値",
+        "id": null
+      },
+      {
+        "tex": "K_v",
+        "label": "付値による完備化",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb Z_p",
+        "label": "p進整数環",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb Q_p",
+        "label": "p進数体",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Hom}_A(M,N)",
+        "label": "加群準同型全体",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{End}_A(M)",
+        "label": "加群自己準同型環",
+        "id": null
+      },
+      {
+        "tex": "M\\oplus N",
+        "label": "直和",
+        "id": null
+      },
+      {
+        "tex": "M\\otimes_A N",
+        "label": "テンソル積",
+        "id": null
+      },
+      {
+        "tex": "M/\\mathfrak a M",
+        "label": "商加群",
+        "id": null
+      },
+      {
+        "tex": "M^*",
+        "label": "代数的双対",
+        "id": null
+      }
+    ]
+  },
+  {
+    "title": "線形代数・行列",
+    "rows": [
+      {
+        "tex": "V,\\ W",
+        "label": "線形空間（変数）",
+        "id": null
+      },
+      {
+        "tex": "\\dim_K V",
+        "label": "次元",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{span}_K S",
+        "label": "線形包",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal L_K(V,W)",
+        "label": "線形写像全体（純代数）",
+        "id": null
+      },
+      {
+        "tex": "V^*",
+        "label": "双対空間",
+        "id": null
+      },
+      {
+        "tex": "V^{**}",
+        "label": "二重双対空間",
+        "id": null
+      },
+      {
+        "tex": "T^\\vee",
+        "label": "双対写像",
+        "id": null
+      },
+      {
+        "tex": "A=(a_{ij})",
+        "label": "行列",
+        "id": null
+      },
+      {
+        "tex": "M_{m,n}(K)",
+        "label": "m行n列行列全体",
+        "id": null
+      },
+      {
+        "tex": "M_n(K)",
+        "label": "n次正方行列全体",
+        "id": null
+      },
+      {
+        "tex": "I_n",
+        "label": "単位行列",
+        "id": null
+      },
+      {
+        "tex": "0_{m,n}",
+        "label": "零行列",
+        "id": null
+      },
+      {
+        "tex": "E_{ij}",
+        "label": "行列単位",
+        "id": null
+      },
+      {
+        "tex": "A^{\\mathsf T}",
+        "label": "転置行列",
+        "id": null
+      },
+      {
+        "tex": "\\overline A",
+        "label": "成分ごとの複素共役行列",
+        "id": null
+      },
+      {
+        "tex": "A^*",
+        "label": "共役転置行列",
+        "id": null
+      },
+      {
+        "tex": "A^{-1}",
+        "label": "逆行列",
+        "id": null
+      },
+      {
+        "tex": "\\det A",
+        "label": "行列式",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{tr}A",
+        "label": "跡",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{rank}A",
+        "label": "階数",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{adj}A",
+        "label": "余因子転置行列",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{diag}(a_1,\\ldots,a_n)",
+        "label": "対角行列",
+        "id": null
+      },
+      {
+        "tex": "[T]_{\\mathcal B,\\mathcal C}",
+        "label": "線形写像の行列（始域基底B、終域基底C）",
+        "id": null
+      },
+      {
+        "tex": "[v]_{\\mathcal B}",
+        "label": "基底Bに関する座標列",
+        "id": null
+      },
+      {
+        "tex": "\\chi_A(t)",
+        "label": "特性多項式（det(tI-A)）",
+        "id": null
+      },
+      {
+        "tex": "m_A(t)",
+        "label": "最小多項式",
+        "id": null
+      },
+      {
+        "tex": "\\sigma(A)",
+        "label": "スペクトル",
+        "id": null
+      },
+      {
+        "tex": "\\lambda",
+        "label": "固有値（変数）",
+        "id": null
+      },
+      {
+        "tex": "\\ker(A-\\lambda I)",
+        "label": "固有空間",
+        "id": null
+      },
+      {
+        "tex": "\\ker((A-\\lambda I)^k)",
+        "label": "一般化固有空間（十分大きいk）",
+        "id": null
+      },
+      {
+        "tex": "s_j(A)",
+        "label": "特異値（降順）",
+        "id": null
+      },
+      {
+        "tex": "\\mathrm{GL}_n(K)",
+        "label": "一般線形群",
+        "id": null
+      },
+      {
+        "tex": "\\mathrm{SL}_n(K)",
+        "label": "特殊線形群",
+        "id": null
+      },
+      {
+        "tex": "\\mathrm O(n)",
+        "label": "直交群",
+        "id": null
+      },
+      {
+        "tex": "\\mathrm U(n)",
+        "label": "ユニタリ群",
+        "id": null
+      },
+      {
+        "tex": "\\bigwedge^k V",
+        "label": "外冪",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Sym}^k V",
+        "label": "対称冪",
+        "id": null
+      },
+      {
+        "tex": "T(V)",
+        "label": "テンソル代数",
+        "id": null
+      }
+    ]
+  },
+  {
+    "title": "微分積分・解析",
+    "rows": [
+      {
+        "tex": "f'(x)",
+        "label": "一変数の導函数の値",
+        "id": null
+      },
+      {
+        "tex": "f^{(k)}(x)",
+        "label": "k階導函数の値",
+        "id": null
+      },
+      {
+        "tex": "Df(x)",
+        "label": "全微分（線形写像）",
+        "id": null
+      },
+      {
+        "tex": "D^kf(x)",
+        "label": "k階全微分（多重線形写像）",
+        "id": null
+      },
+      {
+        "tex": "\\partial_i f",
+        "label": "第i偏導函数",
+        "id": null
+      },
+      {
+        "tex": "\\partial^\\alpha f",
+        "label": "多重指数による偏導函数",
+        "id": null
+      },
+      {
+        "tex": "J_f(x)",
+        "label": "Jacobi行列",
+        "id": null
+      },
+      {
+        "tex": "\\det J_f(x)",
+        "label": "Jacobi行列式（正方の場合）",
+        "id": null
+      },
+      {
+        "tex": "H_f(x)",
+        "label": "Hesse行列（スカラー値函数）",
+        "id": null
+      },
+      {
+        "tex": "\\nabla f",
+        "label": "勾配",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{div}X",
+        "label": "発散",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{rot}X",
+        "label": "回転（3次元）",
+        "id": null
+      },
+      {
+        "tex": "\\Delta f",
+        "label": "Laplace作用素の適用",
+        "id": null
+      },
+      {
+        "tex": "\\alpha!",
+        "label": "多重指数階乗",
+        "id": null
+      },
+      {
+        "tex": "x^\\alpha",
+        "label": "多重指数冪",
+        "id": null
+      },
+      {
+        "tex": "o(h)",
+        "label": "Landauの小さいo",
+        "id": null
+      },
+      {
+        "tex": "O(h)",
+        "label": "Landauの大きいO",
+        "id": null
+      },
+      {
+        "tex": "\\limsup",
+        "label": "上極限",
+        "id": null
+      },
+      {
+        "tex": "\\liminf",
+        "label": "下極限",
+        "id": null
+      },
+      {
+        "tex": "\\sum_{n=0}^\\infty a_n",
+        "label": "級数",
+        "id": null
+      },
+      {
+        "tex": "\\int_a^b f(x)\\,dx",
+        "label": "区間上の積分",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Re}z",
+        "label": "実部",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Im}z",
+        "label": "虚部",
+        "id": null
+      },
+      {
+        "tex": "\\overline z",
+        "label": "複素共役",
+        "id": null
+      },
+      {
+        "tex": "\\lvert z\\rvert",
+        "label": "絶対値",
+        "id": null
+      },
+      {
+        "tex": "\\arg z",
+        "label": "偏角（枝を明示）",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Res}_{z=a}f",
+        "label": "留数",
+        "id": null
+      },
+      {
+        "tex": "\\oint_\\gamma f(z)\\,dz",
+        "label": "閉曲線上の複素積分",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal H(U)",
+        "label": "正則函数全体",
+        "id": null
+      },
+      {
+        "tex": "\\widehat f",
+        "label": "Fourier変換",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal F f",
+        "label": "Fourier変換作用素の値",
+        "id": null
+      },
+      {
+        "tex": "f*g",
+        "label": "畳込み",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal D(U)",
+        "label": "試験函数空間",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal D'(U)",
+        "label": "超函数空間",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal S(\\mathbb R^n)",
+        "label": "Schwartz空間",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal S'(\\mathbb R^n)",
+        "label": "緩増加超函数空間",
+        "id": null
+      },
+      {
+        "tex": "W^{k,p}(U)",
+        "label": "Sobolev空間",
+        "id": null
+      },
+      {
+        "tex": "H^k(U)",
+        "label": "L2型Sobolev空間",
+        "id": null
+      },
+      {
+        "tex": "\\lVert x\\rVert",
+        "label": "ノルム",
+        "id": null
+      },
+      {
+        "tex": "\\langle x,y\\rangle",
+        "label": "内積",
+        "id": null
+      },
+      {
+        "tex": "X^*",
+        "label": "連続双対空間",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal L(X,Y)",
+        "label": "有界線形作用素全体",
+        "id": null
+      },
+      {
+        "tex": "T^*",
+        "label": "Hilbert空間の随伴作用素",
+        "id": null
+      },
+      {
+        "tex": "\\lVert T\\rVert_{\\mathrm{op}}",
+        "label": "作用素ノルム",
+        "id": null
+      },
+      {
+        "tex": "\\sigma(T)",
+        "label": "作用素のスペクトル",
+        "id": null
+      },
+      {
+        "tex": "\\rho(T)",
+        "label": "レゾルベント集合",
+        "id": null
+      },
+      {
+        "tex": "R(\\lambda,T)",
+        "label": "レゾルベント",
+        "id": null
+      },
+      {
+        "tex": "C(X)",
+        "label": "連続函数全体",
+        "id": null
+      },
+      {
+        "tex": "C_c(X)",
+        "label": "コンパクト台連続函数全体",
+        "id": null
+      },
+      {
+        "tex": "C_0(X)",
+        "label": "無限遠で消える連続函数全体",
+        "id": null
+      },
+      {
+        "tex": "C^k(U)",
+        "label": "k回連続微分可能函数全体",
+        "id": null
+      },
+      {
+        "tex": "C^\\infty(U)",
+        "label": "滑らかな函数全体",
+        "id": null
+      }
+    ]
+  },
+  {
+    "title": "測度・確率",
+    "rows": [
+      {
+        "tex": "\\mathcal A",
+        "label": "σ-加法族",
+        "id": "K-000182"
+      },
+      {
+        "tex": "(X,\\mathcal A)",
+        "label": "可測空間",
+        "id": null
+      },
+      {
+        "tex": "\\sigma(\\mathcal S)",
+        "label": "生成σ-加法族",
+        "id": "K-000187"
+      },
+      {
+        "tex": "\\mathcal B(X)",
+        "label": "Borel加法族",
+        "id": null
+      },
+      {
+        "tex": "\\mu",
+        "label": "測度",
+        "id": null
+      },
+      {
+        "tex": "(X,\\mathcal A,\\mu)",
+        "label": "測度空間",
+        "id": null
+      },
+      {
+        "tex": "\\mu^*",
+        "label": "外測度",
+        "id": null
+      },
+      {
+        "tex": "\\mu\\otimes\\nu",
+        "label": "積測度",
+        "id": null
+      },
+      {
+        "tex": "\\mathbf 1_A",
+        "label": "指示函数",
+        "id": null
+      },
+      {
+        "tex": "\\int_A f\\,d\\mu",
+        "label": "測度に関する積分",
+        "id": null
+      },
+      {
+        "tex": "\\frac{d\\nu}{d\\mu}",
+        "label": "Radon--Nikodym微分",
+        "id": null
+      },
+      {
+        "tex": "f_*\\mu",
+        "label": "像測度",
+        "id": null
+      },
+      {
+        "tex": "\\mu\\ll\\nu",
+        "label": "絶対連続",
+        "id": null
+      },
+      {
+        "tex": "\\mu\\perp\\nu",
+        "label": "相互特異",
+        "id": null
+      },
+      {
+        "tex": "L^p(X,\\mu)",
+        "label": "Lebesgue空間",
+        "id": null
+      },
+      {
+        "tex": "\\lVert f\\rVert_p",
+        "label": "Lpノルム",
+        "id": null
+      },
+      {
+        "tex": "\\ell^p",
+        "label": "数列空間",
+        "id": null
+      },
+      {
+        "tex": "(\\Omega,\\mathcal F,\\mathbb P)",
+        "label": "確率空間",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb E[X]",
+        "label": "期待値",
+        "id": null
+      },
+      {
+        "tex": "\\mathbb E[X\\mid\\mathcal G]",
+        "label": "条件付き期待値",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Var}(X)",
+        "label": "分散",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Cov}(X,Y)",
+        "label": "共分散",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal L(X)",
+        "label": "確率変数の法則",
+        "id": null
+      },
+      {
+        "tex": "(\\mathcal F_t)_{t\\geq0}",
+        "label": "フィルトレーション",
+        "id": null
+      },
+      {
+        "tex": "(X_t)_{t\\geq0}",
+        "label": "確率過程",
+        "id": null
+      },
+      {
+        "tex": "B_t",
+        "label": "Brown運動",
+        "id": null
+      },
+      {
+        "tex": "X_n\\xrightarrow{\\mathrm{a.s.}}X",
+        "label": "概収束",
+        "id": null
+      },
+      {
+        "tex": "X_n\\xrightarrow{\\mathbb P}X",
+        "label": "確率収束",
+        "id": null
+      },
+      {
+        "tex": "X_n\\xrightarrow{\\mathrm d}X",
+        "label": "分布収束",
+        "id": null
+      }
+    ]
+  },
+  {
+    "title": "圏・幾何・ホモロジー",
+    "rows": [
+      {
+        "tex": "\\mathcal C,\\mathcal D",
+        "label": "圏（変数）",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Ob}(\\mathcal C)",
+        "label": "対象全体",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Hom}_{\\mathcal C}(X,Y)",
+        "label": "射集合",
+        "id": null
+      },
+      {
+        "tex": "F:\\mathcal C\\to\\mathcal D",
+        "label": "函手",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal C^{\\mathrm{op}}",
+        "label": "反対圏",
+        "id": null
+      },
+      {
+        "tex": "\\eta:F\\Rightarrow G",
+        "label": "自然変換",
+        "id": null
+      },
+      {
+        "tex": "\\varprojlim",
+        "label": "射影極限",
+        "id": null
+      },
+      {
+        "tex": "\\varinjlim",
+        "label": "帰納極限",
+        "id": null
+      },
+      {
+        "tex": "F\\dashv G",
+        "label": "随伴函手",
+        "id": null
+      },
+      {
+        "tex": "(M,\\mathcal A)",
+        "label": "微分多様体",
+        "id": null
+      },
+      {
+        "tex": "(U,\\varphi)",
+        "label": "座標近傍",
+        "id": null
+      },
+      {
+        "tex": "\\psi\\circ\\varphi^{-1}",
+        "label": "座標変換",
+        "id": null
+      },
+      {
+        "tex": "T_pM",
+        "label": "接空間",
+        "id": null
+      },
+      {
+        "tex": "TM",
+        "label": "接束",
+        "id": null
+      },
+      {
+        "tex": "T_p^*M",
+        "label": "余接空間",
+        "id": null
+      },
+      {
+        "tex": "T^*M",
+        "label": "余接束",
+        "id": null
+      },
+      {
+        "tex": "df_p",
+        "label": "接写像",
+        "id": null
+      },
+      {
+        "tex": "f^*\\omega",
+        "label": "微分形式の引戻し",
+        "id": null
+      },
+      {
+        "tex": "\\mathfrak X(M)",
+        "label": "ベクトル場全体",
+        "id": null
+      },
+      {
+        "tex": "\\Omega^k(M)",
+        "label": "微分k形式全体",
+        "id": null
+      },
+      {
+        "tex": "d\\omega",
+        "label": "外微分",
+        "id": null
+      },
+      {
+        "tex": "\\omega\\wedge\\eta",
+        "label": "外積",
+        "id": null
+      },
+      {
+        "tex": "\\iota_X\\omega",
+        "label": "内部積",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal L_X\\omega",
+        "label": "Lie微分",
+        "id": null
+      },
+      {
+        "tex": "g",
+        "label": "Riemann計量",
+        "id": null
+      },
+      {
+        "tex": "\\nabla",
+        "label": "接続",
+        "id": null
+      },
+      {
+        "tex": "\\nabla_XY",
+        "label": "共変微分",
+        "id": null
+      },
+      {
+        "tex": "R",
+        "label": "曲率テンソル",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Ric}",
+        "label": "Ricci曲率",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{grad}f",
+        "label": "Riemann勾配",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Hess}f",
+        "label": "Riemann Hessian",
+        "id": null
+      },
+      {
+        "tex": "\\mathfrak g",
+        "label": "Lie代数",
+        "id": null
+      },
+      {
+        "tex": "[X,Y]",
+        "label": "Lie括弧",
+        "id": null
+      },
+      {
+        "tex": "\\exp",
+        "label": "指数写像",
+        "id": null
+      },
+      {
+        "tex": "C_n(X)",
+        "label": "鎖群",
+        "id": null
+      },
+      {
+        "tex": "\\partial_n",
+        "label": "境界写像",
+        "id": null
+      },
+      {
+        "tex": "Z_n(X)",
+        "label": "サイクル群",
+        "id": null
+      },
+      {
+        "tex": "B_n(X)",
+        "label": "境界群",
+        "id": null
+      },
+      {
+        "tex": "H_n(X;A)",
+        "label": "ホモロジー群",
+        "id": null
+      },
+      {
+        "tex": "H^n(X;A)",
+        "label": "コホモロジー群",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Ext}_A^n(M,N)",
+        "label": "Ext函手",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Tor}_n^A(M,N)",
+        "label": "Tor函手",
+        "id": null
+      },
+      {
+        "tex": "(X,\\mathcal O_X)",
+        "label": "環付き空間",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal F(U)",
+        "label": "層の切断集合",
+        "id": null
+      },
+      {
+        "tex": "\\mathcal F_x",
+        "label": "層の茎",
+        "id": null
+      },
+      {
+        "tex": "V(I)",
+        "label": "イデアルの零点集合",
+        "id": null
+      },
+      {
+        "tex": "D(f)",
+        "label": "基本開集合",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname{Proj}S",
+        "label": "射影スペクトル",
+        "id": null
+      },
+      {
+        "tex": "G=(V,E)",
+        "label": "グラフ",
+        "id": null
+      },
+      {
+        "tex": "\\deg(v)",
+        "label": "頂点の次数",
+        "id": null
+      },
+      {
+        "tex": "A_G",
+        "label": "隣接行列",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname*{argmin}_{x\\in X}f(x)",
+        "label": "最小化点集合",
+        "id": null
+      },
+      {
+        "tex": "\\operatorname*{argmax}_{x\\in X}f(x)",
+        "label": "最大化点集合",
+        "id": null
+      }
+    ]
+  }
+]
