@@ -44,3 +44,7 @@
 定義・命題一覧 `docs/statements.md` を知識台帳から生成する。読者が定義や命題の仮定と結論を確認するためのもので、証明・解説は掲載しない。`node scripts/knowledge.mjs statements > docs/statements.md` で台帳と同期し、PDF掲載処理とCIにも組み込む。
 
 定義・命題一覧はPDFを正規の閲覧形式とし、A5判・本文10ptの暫定共通書式を継承する。`scripts/statements-tex.mjs` で台帳から原稿を生成し、pLaTeX 2回、dvipdfmx、ログ検査、全頁確認を実施する。`scripts/publish-pdf.mjs` に原稿・PDF・Markdownの同期を統合した。生成後のPDFを確認し、総目次及びREADMEから直接閲覧できるようにする。
+
+## 電子閲覧サイト
+
+[検索・PDF閲覧サイトの設計](viewer-design.md) に従い、恒久IDに基づく参照移動・知識項目のプレビューを整備する。プレビューの初期幅は580px、上下左右の余白は28pxとし、読者が調整できるようにする。現段階では設計記録であり実装完了を意味しない。
