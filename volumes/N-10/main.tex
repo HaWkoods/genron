@@ -1,0 +1,109 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-10}
+\fancyhead[R]{\small 環と環準同型\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 環と環準同型}\par\vspace{2mm}
+{\small N-10\quad 草稿 第1版}
+\end{center}
+\section{環と環準同型}
+% genron:begin K-000249
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000159
+% genron:use K-000160
+% genron:use K-000161
+% genron:use K-000163
+% genron:use K-000225
+\Needspace{4\baselineskip}
+\begin{defn}[環と可換環]\label{k249}
+集合 $A$ 上の演算 $+$，$\cdot$ に対して $(A,+)$ が可換群，$(A,\cdot)$ がモノイドであり，$a(b+c)=ab+ac$，$(a+b)c=ac+bc$ が任意の元について成立するとき環という。各単位元を $0,1$ と記す。$0=1$ を許す。乗法が可換なら可換環という。
+\end{defn}
+% genron:end K-000249
+% genron:begin K-000250
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000227
+% genron:use K-000249
+\Needspace{4\baselineskip}
+\begin{prop}[零元と符号]\label{k250}
+任意の $a,b\in A$ に対し $a0=0a=0$，$a(-b)=(-a)b=-(ab)$，$(-a)(-b)=ab$ が成立する。
+\end{prop}
+\begin{proof}
+分配律から $a0=a0+a0$ となり，簡約律から $a0=0$ を得る。$0a=0$ も同様である。$ab+a(-b)=a(b-b)=0$ より $a(-b)=-(ab)$ であり，右分配律から $(-a)b=-(ab)$ を得る。最後の式はこれらを続けて適用する。
+\end{proof}
+% genron:end K-000250
+% genron:begin K-000251
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000228
+% genron:use K-000249
+\Needspace{4\baselineskip}
+\begin{defn}[部分環と環準同型]\label{k251}
+環 $A$ の部分集合 $B$ が $1$ を含み，加法，加法逆元，乗法について閉じるとき部分環という。環の間の写像で加法，乗法及び乗法単位元を保存するものを環準同型という。その逆写像も環準同型である全単射を環同型という。
+\end{defn}
+% genron:end K-000251
+% genron:begin K-000252
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000041
+% genron:use K-000227
+% genron:use K-000251
+\Needspace{4\baselineskip}
+\begin{prop}[部分環と準同型の判定]\label{k252}
+$B\subseteq A$ が部分環であるためには $1\in B$ かつ $b-c,bc\in B$（$b,c\in B$）であることが必要十分である。環準同型の像及び部分環の逆像は部分環であり，全単射な環準同型は環同型である。
+\end{prop}
+\begin{proof}
+判定の十分性は $1-1=0$，$0-b=-b$，$b-(-c)=b+c$ による。準同型 $f$ は $f(0)=f(0)+f(0)$ から零元を保存し，$f(b)+f(-b)=0$ から逆元を保存する。従って像と部分環の逆像は判定条件を満たす。全単射の場合 $u=f(a),v=f(b)$ と書けば $f^{-1}(u+v)=a+b$，$f^{-1}(uv)=ab$ であり，単位元も保存される。
+\end{proof}
+% genron:end K-000252
+\end{document}
