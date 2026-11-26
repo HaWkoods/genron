@@ -58,6 +58,13 @@ try{
  assert.equal(await page.locator(".web-chapter").count(),partNotes.length);
  assert.equal(await page.locator(".web-entry").count(),planData.entries.filter(e=>partNotes.some(n=>n.number===e.position[0])).length);
  assert.equal(await page.locator(".pdf-shell").count(),0);
+ const logic=page.locator("#K-000001");
+ assert.equal(await logic.locator(".web-math-table tr").count(),5);
+ assert.match(await logic.innerText(),/最後の記号は/);
+ assert.doesNotMatch(await logic.innerText(),/[、。]/);
+ assert.ok(await page.locator("#K-000004 .katex-display").count()>0);
+ assert.ok(await page.locator("#K-000030 .katex-display").count()>0);
+
  await page.goto(origin+"?id=K-000002&view=web");
  await page.locator(".web-entry[id='K-000002']").waitFor();
  assert.ok(await page.locator(".web-article .katex").count()>0,"Web math must be rendered");
