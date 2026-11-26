@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {execFileSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
-import {validate, affected, changedEntries, available, validPosition} from "./knowledge-core.mjs";
+import {validate, affected, changedEntries, available, graph, prerequisites} from "./knowledge-core.mjs";
 
 const root=fileURLToPath(new URL("../",import.meta.url));
 const ledgerPath="docs/knowledge.json";
@@ -44,9 +44,17 @@ function main(){
  const valid=diagnostics(result);
  if(cmd==="available"){
   if(!valid){process.exitCode=1;return}
-  const p=(args[0]??"").split(".").map(Number);
-  if(args.length!==1||!validPosition(p))throw Error("Usage: available V.C.S.N");
-  console.log(JSON.stringify(available(ledger,p),null,2));return;
+  console.log(JSON.stringify(available(ledger,args),null,2));return;
+ }
+ if(cmd==="prerequisites"){
+  if(!valid){process.exitCode=1;return}
+  if(args.length!==1)throw Error("Usage: prerequisites K-000001");
+  console.log(JSON.stringify(prerequisites(ledger,args[0]),null,2));return;
+ }
+ if(cmd==="graph"){
+  if(!valid){process.exitCode=1;return}
+  if(args.length>1||args.length===1&&!["knowledge","notes"].includes(args[0]))throw Error("Usage: graph [knowledge|notes]");
+  console.log(JSON.stringify(graph(ledger,args[0]??"knowledge"),null,2));return;
  }
  if(cmd==="impact"){
   if(!Array.isArray(ledger.entries))throw Error("Invalid ledger entries");
@@ -59,6 +67,6 @@ function main(){
   const current=new Map(ledger.entries.map(e=>[e.id,e]));
   console.log(JSON.stringify({...r,review_required:[...new Set([...r.changed,...r.affected])].filter(id=>current.get(id)?.status==="verified"),locations:[...new Set([...r.changed,...r.affected])].map(id=>({id,source:current.get(id)?.source??null,status:current.get(id)?.status??"removed"}))},null,2));if(!valid)process.exitCode=1;return;
  }
- throw Error("Usage: knowledge.mjs check [--strict] | available V.C.S.N | impact ID... | impact --base COMMIT");
+ throw Error("Usage: knowledge.mjs check [--strict] | available [ID...] | prerequisites ID | graph [knowledge|notes] | impact ID... | impact --base COMMIT");
 }
 try{main()}catch(e){console.error(e.message);process.exitCode=1}
