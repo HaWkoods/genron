@@ -38,7 +38,11 @@ function collectProofs(source){
  const macros=Object.fromEntries([...source.matchAll(/\\newcommand\{\\([A-Za-z]+)\}\{((?:[^{}]|\{[^{}]*\})*)\}/g)].map(m=>[m[1],m[2]]));
  for(const m of source.matchAll(/^% genron:begin (K-\d+)\s*\n([\s\S]*?)^% genron:end \1\s*$/gm)){
   const proofs=[...m[2].matchAll(/\\begin\{proof\}(?:\[([^\]]*)\])?([\s\S]*?)\\end\{proof\}/g)].map(p=>({title:p[1]??"証明",tex:p[2].trim()}));
-  if(proofs.length)webProofs.set(m[1],{proofs,labels:Object.fromEntries(labels),macros});
+  const block=m[2].replace(/^%[^\n]*\n/gm,"").replace(/\\Needspace\{[^}]*\}/g,"").replace(/\\label\{[^}]*\}/g,"").trim();
+  const content=block.replace(/\\begin\{(?:ruledef|principle|defn|prop|thm|ax)\}(?:\[[^\]]*\])?/g,"").replace(/\\end\{(?:ruledef|principle|defn|prop|thm|ax)\}/g,"\n\n").trim();
+  const sections=[...source.slice(0,m.index).matchAll(/\\section\{([^}]+)\}/g)];
+  const sectionTitle=sections.at(-1)?.[1]??"";
+  webProofs.set(m[1],{proofs,content,sectionTitle,labels:Object.fromEntries(labels),macros});
  }
 }
 
