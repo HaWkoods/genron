@@ -29,7 +29,7 @@ try{
  assert.equal(await page.locator(".pdf-shell .page").count(),6);
  const y1=(await sheet(1).boundingBox()).y,y2=(await sheet(2).boundingBox()).y;
  assert.ok(y2>y1+(await sheet(1).boundingBox()).height,"Pages must be vertically stacked");
- await page.mouse.move(950,700);await page.mouse.wheel(0,Math.ceil(y2-y1));await waitPage(2);
+ await page.mouse.move(950,700);await page.mouse.wheel(0,Math.ceil(y2-90));await waitPage(2);
  assert.match(page.url(),/note=3&page=2/);
  await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(3);
  await page.getByRole("button",{name:"← 前頁",exact:true}).click();await waitPage(2);
