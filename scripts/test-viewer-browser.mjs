@@ -53,13 +53,13 @@ try{
  for(const [old,a] of Object.entries(planData.aliases??{})){
   await page.goto(origin+"?note="+old);
   await page.locator(".target").waitFor();
-  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+" "));
+  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+"\\s"));
   await page.goto(origin+"?note="+old+"&page=1");
   await page.locator(".page[data-page='1'] .annotations").waitFor();
-  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+old+" "));
+  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+old+"\\s"));
   await page.goto(origin+"?id="+a.first);
   await page.locator(".target").waitFor();
-  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+" "));
+  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+"\\s"));
  }
  // Scroll through the actual N-3 document without pressing a page button.
  const currentPage=page.getByRole("spinbutton",{name:"ページ番号"});
