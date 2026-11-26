@@ -29,6 +29,14 @@ try{
   if(fs.readFileSync(pdf).subarray(0,5).toString()!=="%PDF-")throw Error("Not a PDF: "+id);
   run("pdfinfo",[pdf],dir);
  }
+ // Preserve historical PDF paths, including notes never successfully deployed before consolidation.
+ for(const old of Object.keys(ledger.note_aliases??{})){
+  const id="N-"+old,dir=path.join(root,"archive",id),out=path.join(tmp,id);
+  fs.mkdirSync(out);
+  for(let i=0;i<2;i++)run("platex",["-interaction=nonstopmode","-halt-on-error","-no-shell-escape","-output-directory="+out,"main.tex"],dir);
+  run("dvipdfmx",["-o",path.join(out,"main.pdf"),path.join(out,"main.dvi")],dir);
+  run("pdfinfo",[path.join(out,"main.pdf")],dir);
+ }
  // Build the reader-facing statement catalogue from the same ledger snapshot.
  const catalogue=path.join(tmp,"statements");
  fs.mkdirSync(catalogue);
@@ -50,6 +58,7 @@ try{
  fs.copyFileSync(path.join(catalogue,"statements.tex"),path.join(root,"docs","statements.tex"));
  fs.copyFileSync(path.join(catalogue,"statements.pdf"),path.join(root,"docs","statements.pdf"));
  for(const n of notes)fs.copyFileSync(path.join(tmp,"N-"+n.number,"main.pdf"),path.join(root,"volumes","N-"+n.number,"main.pdf"));
+ for(const old of Object.keys(ledger.note_aliases??{}))fs.copyFileSync(path.join(tmp,"N-"+old,"main.pdf"),path.join(root,"volumes","N-"+old,"main.pdf"));
  const index=execFileSync(process.execPath,["scripts/knowledge.mjs","graph","plan","--markdown"],{cwd:root,encoding:"utf8"});
  const statements=execFileSync(process.execPath,["scripts/knowledge.mjs","statements"],{cwd:root,encoding:"utf8"});
  fs.writeFileSync(path.join(root,"docs/roadmap.md"),index);
