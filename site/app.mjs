@@ -56,15 +56,15 @@ function positionPreview(el){
  preview.style.top=clamp(top,margin,Math.max(margin,innerHeight-h-margin))+"px"
 }
 function hidePreview(){clearTimeout(closeTimer);preview.hidden=true;active=null;pinned=false}
-function deferClose(){clearTimeout(closeTimer);if(!pinned)closeTimer=setTimeout(()=>{if(!preview.matches(":hover")&&!preview.contains(document.activeElement)&&!active?.matches(":hover")&&document.activeElement!==active)hidePreview()},240)}
+function deferClose(){clearTimeout(closeTimer);if(!pinned)closeTimer=setTimeout(()=>{if(!preview.matches(":hover")&&!preview.contains(document.activeElement)&&!active?.matches(":hover")&&!active?.matches(":focus-visible"))hidePreview()},240)}
 function showPreview(el,e,pin=false){clearTimeout(closeTimer);if(active!==el||preview.hidden){fillPreview(preview,e);active=el}pinned=pin;preview.hidden=false;positionPreview(el)}
 preview.addEventListener("pointerenter",()=>clearTimeout(closeTimer));preview.addEventListener("pointerleave",deferClose);
 preview.addEventListener("focusout",deferClose);
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!preview.hidden){const a=active;hidePreview();if(a?.isConnected){a.focus({preventScroll:true});hidePreview()}}});
-document.addEventListener("pointerdown",e=>{if(pinned&&!preview.contains(e.target)&&!active?.contains(e.target))hidePreview()});
+document.addEventListener("pointerdown",e=>{if(!preview.hidden&&!preview.contains(e.target)&&!active?.contains(e.target))hidePreview()});
 addEventListener("resize",()=>{if(active)positionPreview(active)});
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
-function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>showPreview(a,e));a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
+function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
 function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements")return {n,page:parseInt(p.get("page"),10)||1};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 function showHome(){
@@ -104,29 +104,60 @@ async function loadReader(info,token,scroll){
  const nav=anchor("← 検索・総目次",root.href);side.append(nav);
  if(info.n==="statements"){for(const n of notes.values())side.append(anchor("N-"+n.number+"　"+n.title,url("note",n.number)))}else for(const e of entries.values())if(e.position[0]===info.n){const a=anchor(e.id+"　"+e.title,url("id",e.id),e.id===info.id?"active":"");bindPreview(a,e);side.append(a)}
  const controls=node("div","toolbar"),shell=node("div","pdf-shell"),status=node("p","loading","PDFを読み込んでいます。");
+ controls.setAttribute("aria-label","ページ操作");
  shell.append(status);const previous=button("← 前頁",()=>turn(-1)),next=button("次頁 →",()=>turn(1));const pnum=node("input");pnum.type="number";pnum.min=1;pnum.setAttribute("aria-label","ページ番号");const pageCount=node("span","meta","/ …");
  const z=node("select");z.setAttribute("aria-label","表示倍率");for(const [v,t] of [["fit","幅に合わせる"],["0.9","90%"],["1.1","110%"],["1.4","140%"],["1.8","180%"]]){const o=node("option","",t);o.value=v;z.append(o)}
  const download=anchor("PDFを開く ↗",new URL(file,root).href);download.target="_blank";download.rel="noopener";
- controls.append(previous,pnum,pageCount,next,z,download);content.append(heading,controls,shell);layout.append(side,content);main.replaceChildren(layout);
+ const bottom=node("div","page-footer"),prevBottom=button("← 前のページ",()=>turn(-1)),nextBottom=button("次のページ →",()=>turn(1)),bottomCount=node("span","meta");
+ bottom.setAttribute("aria-label","ページ末尾の操作");bottomCount.setAttribute("aria-live","polite");
+ bottom.append(prevBottom,bottomCount,nextBottom);
+ const published=[...notes.keys()].sort((a,b)=>a-b);
+ const noteNav=node("div","note-nav");
+ if(info.n!=="statements"){
+  const idx=published.indexOf(info.n);
+  if(idx>0)noteNav.append(anchor("← 前のノート：N-"+published[idx-1],url("note",published[idx-1])));
+  if(idx+1<published.length)noteNav.append(anchor("次のノート：N-"+published[idx+1]+" →",url("note",published[idx+1])));
+ }
+ if(info.id){
+  const items=[...entries.values()].filter(e=>e.position[0]===info.n).sort((a,b)=>{for(let i=0;i<4;i++){if(a.position[i]!==b.position[i])return a.position[i]-b.position[i]}return 0});
+  const idx=items.findIndex(e=>e.id===info.id);
+  const itemNav=node("div","item-nav");
+  if(idx>0)itemNav.append(anchor("← 前の知識項目",url("id",items[idx-1].id)));
+  if(idx>=0&&idx+1<items.length)itemNav.append(anchor("次の知識項目 →",url("id",items[idx+1].id)));
+  side.insertBefore(itemNav,side.children[2]??null);
+ }
+ for(const b of [previous,next,prevBottom,nextBottom])b.disabled=true;
+ for(const bar of [controls,bottom])bar.addEventListener("pointerenter",hidePreview);
+ controls.append(previous,pnum,pageCount,next,z,download);content.append(heading,controls,shell,bottom,noteNav);layout.append(side,content);main.replaceChildren(layout);
  try{job=pdfjs.getDocument({url:new URL(file,root).href,isEvalSupported:false,cMapUrl:new URL("./vendor/pdfjs/cmaps/",root).href,cMapPacked:true,standardFontDataUrl:new URL("./vendor/pdfjs/standard_fonts/",root).href});
  const doc=await job.promise;if(token!==ticket){await doc.destroy();return}
  const dest=info.id?await destination(doc,info.id):null;if(info.id&&!dest)throw Error("PDF内の参照先が見つかりません："+info.id);
  state={doc,n:info.n,page:clamp(dest?.page??info.page??1,1,doc.numPages),zoom:"fit",target:dest,id:info.id};
  pageCount.textContent="/ "+doc.numPages;pnum.max=doc.numPages;
- async function display(target=null,restore=null){
-  const s=state;if(!s||token!==ticket)return;hidePreview();if(task){try{task.cancel()}catch{}}
-  const page=await doc.getPage(s.page);if(token!==ticket||s!==state)return;
+ let displayVersion=0;
+ function syncControls(busy=false){
+  const p=state.page;pnum.value=p;previous.disabled=prevBottom.disabled=busy||p<=1;next.disabled=nextBottom.disabled=busy||p>=doc.numPages;
+  bottomCount.textContent=p+" / "+doc.numPages+" 頁";pnum.disabled=busy;z.disabled=busy;
+  shell.setAttribute("aria-busy",String(busy));
+ }
+ async function display(target=null,restore=null,goTop=false){
+  const s=state;if(!s||token!==ticket)return;const version=++displayVersion,pageNumber=s.page;
+  const current=()=>token===ticket&&s===state&&version===displayVersion;
+  hidePreview();syncControls(true);if(task){try{task.cancel()}catch{}}
+  const page=await doc.getPage(pageNumber);if(!current())return;
   const base=page.getViewport({scale:1});const scale=s.zoom==="fit"?clamp((shell.clientWidth-34)/base.width,.65,2):Number(s.zoom);
   const view=page.getViewport({scale});const wrap=node("div","page");wrap.style.width=view.width+"px";wrap.style.height=view.height+"px";wrap.style.setProperty("--scale-factor",String(scale));
   const canvas=node("canvas");const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.ceil(view.width*dpr);canvas.height=Math.ceil(view.height*dpr);canvas.style.width=view.width+"px";canvas.style.height=view.height+"px";wrap.append(canvas);shell.replaceChildren(wrap);
-  pnum.value=s.page;previous.disabled=s.page<=1;next.disabled=s.page>=doc.numPages;
+  wrap.dataset.page=String(pageNumber);
   const localTask=page.render({canvasContext:canvas.getContext("2d"),viewport:view,transform:dpr===1?null:[dpr,0,0,dpr,0,0]});task=localTask;
   try{await localTask.promise}catch(e){if(e.name==="RenderingCancelledException")return;throw e}
-  if(token!==ticket||task!==localTask)return;
+  if(!current()||task!==localTask)return;
   const textLayer=node("div","textLayer");wrap.append(textLayer);
   if(pdfjs.TextLayer)try{await new pdfjs.TextLayer({textContentSource:page.streamTextContent(),container:textLayer,viewport:view}).render()}catch{}
+  if(!current())return;
+  const pageAnnotations=await page.getAnnotations({intent:"display"});if(!current())return;
   const annotations=node("div","annotations");wrap.append(annotations);
-  for(const a of await page.getAnnotations({intent:"display"})){
+  for(const a of pageAnnotations){
    if(a.subtype!=="Link"||!a.rect)continue;const e=readRef(a);let href=null;
    if(e)href=url("id",e.id);else if(a.dest)href="#pdf-destination";else{try{const u=new URL(a.url);if(u.protocol==="https:"||u.protocol==="http:")href=u.href}catch{}}
    if(!href)continue;
@@ -138,12 +169,20 @@ async function loadReader(info,token,scroll){
    else{box.target="_blank";box.rel="noopener"}
    annotations.append(box)
   }
+  syncControls(false);
   if(restore!==null)window.scrollTo(0,restore);
+  else if(goTop)shell.scrollIntoView({block:"start",behavior:"instant"});
   else if(target&&Number.isFinite(target.y)){const y=clamp(view.convertToViewportPoint(0,target.y)[1],0,view.height);const mark=node("div","target");mark.style.top=y+"px";wrap.append(mark);mark.scrollIntoView({block:"center"});}
  }
  function setPageUrl(){const u=new URL(url("note",state.n));u.searchParams.set("page",state.page);history.replaceState(null,"",u);state.target=null}
- function turn(delta){if(!state||token!==ticket)return;state.page=clamp(state.page+delta,1,doc.numPages);setPageUrl();display().catch(showError)}
- pnum.onchange=()=>{state.page=clamp(parseInt(pnum.value,10)||1,1,doc.numPages);setPageUrl();display().catch(showError)};
+ function go(page){
+  if(!state||token!==ticket||shell.getAttribute("aria-busy")==="true")return;
+  const p=clamp(page,1,doc.numPages);if(p===state.page){syncControls();return}
+  state.page=p;setPageUrl();display(null,null,true).catch(showError);
+ }
+ function turn(delta){if(state&&token===ticket)go(state.page+delta)}
+ pnum.onchange=()=>go(parseInt(pnum.value,10)||1);
+ pnum.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();go(parseInt(pnum.value,10)||1)}};
  z.onchange=()=>{state.zoom=z.value;display(state.target).catch(showError)};
  await display(dest,scroll)
  }catch(e){if(token===ticket){shell.replaceChildren(node("p","error","PDFを表示できませんでした："+e.message),download.cloneNode(true))}}
