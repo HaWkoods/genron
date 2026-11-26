@@ -170,7 +170,7 @@ function showHome(){
   const meta=node("div","result-head"),label=node("span","meta","N-"+n.number+(context&&t?"　"+t.id+" "+t.title:""));
   meta.append(label,node("span","status"+(notes.has(n.number)?" published":ready(n)?" ready":""),status(n)));
   d.append(meta);
-  if(notes.has(n.number))d.append(anchor(n.title,url("note",n.number)));else d.append(node("strong","planned-title",n.title));
+  if(notes.has(n.number)){d.append(anchor(n.title,url("note",n.number)));const web=anchor("Web本文",webUrl("note",n.number));web.style.marginLeft="1em";d.append(web)}else d.append(node("strong","planned-title",n.title));
   d.append(node("span","summary",n.goals.join("；")));
   const pre=node("div","preconditions");if(Number.isInteger(n.depth))pre.append("依存層 "+n.depth+"　");
   pre.append("直接前提：");if(!n.depends_on.length)pre.append("なし");else n.depends_on.forEach((id,i)=>{if(i)pre.append("・");const target=byNumber.get(id);pre.append(anchor("N-"+id,notes.has(id)?url("note",id):qurl("N-"+id),"dep-link"));if(target)pre.lastChild.title=target.title});
@@ -218,7 +218,7 @@ function showHome(){
  const readyBox=node("section","ready-box");readyBox.append(node("h2","","現在着手可能なノート"));
  const candidates=plan.filter(ready).sort((a,b)=>(a.depth??0)-(b.depth??0)||a.number-b.number);
  const readyLinks=node("div","ready-links");for(const n of candidates)readyLinks.append(anchor("N-"+n.number+" "+n.title,qurl("N-"+n.number)));if(!candidates.length)readyLinks.append(node("span","muted","なし"));readyBox.append(readyLinks);
- search.addEventListener("input",update);main.replaceChildren(h,intro,search,filters,readyBox,list);update()
+ search.addEventListener("input",update);const start=node("p","muted");start.append("新しい閲覧形式：",anchor("Web版を試す",webUrl("note",1)),"（旧版PDFも閲覧できます）");main.replaceChildren(h,intro,start,search,filters,readyBox,list);update()
 }
 async function destination(doc,d){
  if(typeof d==="string")d=await doc.getDestination(d);
@@ -378,10 +378,11 @@ async function loadReader(info,token,scroll){
  }catch(e){if(token===ticket){disposeReader?.();disposeReader=null;shell.replaceChildren(node("p","error","PDFを表示できませんでした："+e.message),download.cloneNode(true))}}
 }
 
+function webUrl(key,val){const u=new URL(url(key,val));u.searchParams.set("view","web");return u.href}
 function showWeb(info,restore){
  const n=notes.get(info.n), items=data.entries.filter(e=>e.position[0]===info.n).sort((a,b)=>{for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0});
  const layout=node("div","reader"), side=node("aside","sidebar"), article=node("article","web-article");
- side.append(node("h2","","このノートの内容"));
+ side.append(node("h2","","このノートの内容"),anchor("← 検索・総目次",root.href));
  article.style.cssText="min-width:0;background:var(--paper);border:1px solid var(--line);padding:clamp(18px,4vw,48px);font-family:Yu Mincho,Hiragino Mincho ProN,serif;line-height:1.95;overflow-wrap:anywhere";
  article.append(node("p","meta",n.area+" ／ N-"+n.number),node("h1","",n.title),node("p","muted","Web版試作：旧台帳の定義・命題を直接表示しています。本文・証明は再設計後に執筆します。"));
  const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");article.append(anchor("旧版PDFを閲覧",legacy.href));
@@ -391,7 +392,7 @@ function showWeb(info,restore){
   const link=anchor(e.title,"#"+e.id);side.append(link);
   if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,e.assumptions.join("；"));section.append(p)}
   const p=node("p");renderParts(p,e.preview?.statement,e.statement);section.append(p);
-  if(e.depends_on?.length){const d=node("details");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,url("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
+  if(e.depends_on?.length){const d=node("details");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
   article.append(section);
  }
  layout.append(side,article);main.replaceChildren(layout);
