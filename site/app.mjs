@@ -19,13 +19,14 @@ function applySettings(){
  for(const k of ["width","padding"]){$("#"+k).value=prefs[k];$("#"+k+"-value").textContent=prefs[k]+" px"}
  try{localStorage.setItem("genron-preview-v1",JSON.stringify(prefs))}catch{}
  if(active&&!preview.hidden)positionPreview(active);
+ fitMath($("#settings-sample .sample"));
 }
 applySettings();
 for(const k of ["width","padding"])$("#"+k).addEventListener("input",e=>{prefs[k]=Number(e.target.value);applySettings()});
 $("#reset").onclick=()=>{prefs={...defaults};applySettings()};
 $("#settings-open").onclick=()=>{
  hidePreview();const sample=$("#settings-sample");sample.replaceChildren();const e=entries?.get("K-000060")??data?.entries[0];
- if(e){const box=node("div","sample");fillPreview(box,e,false);sample.append(box)}dialog.showModal()
+ if(e){const box=node("div","sample");fillPreview(box,e,false);sample.append(box)}dialog.showModal();fitMath(sample.querySelector(".sample"))
 };
 function renderParts(target,parts,raw){
  if(!Array.isArray(parts)){target.textContent=raw;return}
@@ -35,6 +36,21 @@ function renderParts(target,parts,raw){
    try{katex.render(p.tex,span,{throwOnError:true,trust:false,strict:"ignore",output:"htmlAndMathml"});target.append(span)}
    catch{target.append(document.createTextNode(p.raw??p.tex))}
   }else target.append(document.createTextNode(p.text??p.raw??""))
+ }
+}
+// Keep ordinary inline math at its normal size; only shrink indivisible formulas
+// that would exceed the full available paragraph width. No horizontal scrolling.
+function fitMath(box){
+ if(!box||!box.isConnected||!box.clientWidth)return;
+ for(const span of box.querySelectorAll(".math")){
+  span.style.fontSize="";
+  const paragraph=span.closest("p")??box;
+  const available=paragraph.clientWidth;
+  const natural=span.getBoundingClientRect().width;
+  if(available>0&&natural>available-2){
+   const base=parseFloat(getComputedStyle(span).fontSize);
+   span.style.fontSize=base*(available-2)/natural+"px";
+  }
  }
 }
 function fillPreview(box,e,withClose=true){
@@ -51,6 +67,7 @@ function positionPreview(el){
  const r=el.getBoundingClientRect(),gap=10,margin=12;
  if(r.bottom<0||r.top>innerHeight)return hidePreview();
  preview.style.left="0px";preview.style.top="0px";
+ fitMath(preview);
  const w=preview.offsetWidth,h=preview.offsetHeight;
  const below=innerHeight-r.bottom-margin-gap,above=r.top-margin-gap;
  let top=below>=h||below>=above?r.bottom+gap:r.top-h-gap;
@@ -64,7 +81,8 @@ preview.addEventListener("pointerenter",()=>clearTimeout(closeTimer));preview.ad
 preview.addEventListener("focusout",deferClose);
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!preview.hidden){const a=active;hidePreview();if(a?.isConnected){a.focus({preventScroll:true});hidePreview()}}});
 document.addEventListener("pointerdown",e=>{if(!preview.hidden&&!preview.contains(e.target)&&!active?.contains(e.target))hidePreview()});
-addEventListener("resize",()=>{if(active)positionPreview(active)});
+addEventListener("resize",()=>{if(active)positionPreview(active);fitMath($("#settings-sample .sample"))});
+document.fonts?.ready.then(()=>{if(active)positionPreview(active);fitMath($("#settings-sample .sample"))});
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}

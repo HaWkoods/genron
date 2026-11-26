@@ -103,6 +103,9 @@ try{
  await page.goBack();await page.waitForURL(/note=notation/);await rendered(1).waitFor();
  await page.setViewportSize({width:390,height:844});await page.goto(origin+"?note=3");await rendered(1).waitFor();await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-150));await rendered(2).waitFor();assert.equal(await page.locator(".pdf-shell .page").count(),6);
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
+ assert.equal(await page.locator("#preview").evaluate(el=>getComputedStyle(el).overflowX),"hidden");
+ assert.ok(await page.locator("#preview").evaluate(el=>el.scrollWidth<=el.clientWidth+1),"Preview must not overflow horizontally");
+ assert.ok(await page.locator("#preview").evaluate(el=>[...el.querySelectorAll(".math")].every(s=>getComputedStyle(s).overflowX==="visible"&&s.getBoundingClientRect().width<=s.closest("p").clientWidth+1)),"Inline math must fit without internal scrollbars");
  assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");
  console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, continuous scrolling, single-page mode, mode persistence, direct page links, next note, next knowledge item.");
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}
