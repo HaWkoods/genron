@@ -29,7 +29,7 @@ try{
  assert.equal(await page.locator(".pdf-shell .page").count(),6);
  const y1=(await sheet(1).boundingBox()).y,y2=(await sheet(2).boundingBox()).y;
  assert.ok(y2>y1+(await sheet(1).boundingBox()).height,"Pages must be vertically stacked");
- await page.mouse.move(950,700);await page.mouse.wheel(0,Math.ceil(y2-90));await waitPage(2);
+ await page.mouse.move(950,700);await page.mouse.wheel(0,Math.ceil(y2-30));await waitPage(2);
  assert.match(page.url(),/note=3&page=2/);
  await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(3);
  await page.getByRole("button",{name:"← 前頁",exact:true}).click();await waitPage(2);
@@ -64,7 +64,7 @@ try{
   }
  }
  assert.ok(found,"Cross-note PDF link must work");
- await page.goto(origin+"?note=statements");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-90));await waitPage(2);
+ await page.goto(origin+"?note=statements");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-30));await waitPage(2);
  await page.setViewportSize({width:390,height:844});await page.goto(origin+"?note=3");await rendered(1).waitFor();await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-150));await rendered(2).waitFor();assert.equal(await page.locator(".pdf-shell .page").count(),6);
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
  assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");
