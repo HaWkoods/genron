@@ -24,6 +24,10 @@ jobs:
         run: |
           node scripts/knowledge.mjs graph plan --markdown > /tmp/genron-roadmap.md
           diff -u docs/roadmap.md /tmp/genron-roadmap.md
+      - name: Verify generated statements
+        run: |
+          node scripts/knowledge.mjs statements > /tmp/genron-statements.md
+          diff -u docs/statements.md /tmp/genron-statements.md
       - name: Report affected knowledge
         if: github.event_name != 'workflow_dispatch'
         env:

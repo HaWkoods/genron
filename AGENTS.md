@@ -20,3 +20,5 @@
 - 素朴集合論では選択公理を写像・集合族等の導入後に明示的な公理として述べ、正式原稿の恒久 ID を台帳に登録する。使用箇所の直接・間接依存を追跡し、形式的な独立性の議論は後続の現代的集合論に委ねる。
 - ノートの計画は docs/knowledge.json の notes、確立した知識は entries で管理する。計画上の前提と実際の証明依存を区別する。notes を改訂したら `node scripts/knowledge.mjs graph plan --markdown > docs/roadmap.md` で閲覧用総目次を再生成し、両方を検証する。
 - 検証済みノートの掲載用PDFは `volumes/N-番号/main.pdf` に置く。PDFと生成された総目次を同期してコミットし、目次からGitHubのPDFプレビューを開けることを確認する。`scripts/publish-pdf.mjs` と `.github/workflows/publish-pdf.yml` を利用する。未掲載や未検証のノートにはPDFリンクを付けない。自動組版だけで数学的査読・全頁確認を代替しない。
+
+- 読者向けの `docs/statements.md` は台帳の検証済み項目（演習を除く）から自動生成する。証明・解説を追加せず、種類・名称・恒久ID・仮定・statement を掲載順に示す。台帳変更時は `node scripts/knowledge.mjs statements > docs/statements.md` で再生成し、原稿・総目次と同期する。手で独立管理しない。

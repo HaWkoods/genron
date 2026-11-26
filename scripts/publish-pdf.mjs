@@ -31,5 +31,7 @@ try{
  // Do not update the index or copy any output until all selected compilations succeed.
  for(const n of notes)fs.copyFileSync(path.join(tmp,"N-"+n.number,"main.pdf"),path.join(root,"volumes","N-"+n.number,"main.pdf"));
  const index=execFileSync(process.execPath,["scripts/knowledge.mjs","graph","plan","--markdown"],{cwd:root,encoding:"utf8"});
+ const statements=execFileSync(process.execPath,["scripts/knowledge.mjs","statements"],{cwd:root,encoding:"utf8"});
  fs.writeFileSync(path.join(root,"docs/roadmap.md"),index);
+ fs.writeFileSync(path.join(root,"docs/statements.md"),statements);
 }finally{fs.rmSync(tmp,{recursive:true,force:true})}

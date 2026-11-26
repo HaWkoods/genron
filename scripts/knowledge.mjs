@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {execFileSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
-import {validate, affected, changedEntries, available, graph, prerequisites, planGraph, planPrerequisites, planMermaid, planMarkdown} from "./knowledge-core.mjs";
+import {validate, affected, changedEntries, available, graph, prerequisites, planGraph, planPrerequisites, planMermaid, planMarkdown, statementsMarkdown} from "./knowledge-core.mjs";
 
 const root=fileURLToPath(new URL("../",import.meta.url));
 const ledgerPath="docs/knowledge.json";
@@ -65,6 +65,11 @@ function main(){
   if(args[0]==="plan"){if(args[1]==="--mermaid")process.stdout.write(planMermaid(ledger));else if(args[1]==="--markdown")process.stdout.write(planMarkdown(ledger,publishedPDFs(ledger)));else console.log(JSON.stringify(planGraph(ledger),null,2));}
   else console.log(JSON.stringify(graph(ledger,args[0]??"knowledge"),null,2));return;
  }
+ if(cmd==="statements"){
+  if(args.length)throw Error("Usage: statements");
+  if(!valid){process.exitCode=1;return}
+  process.stdout.write(statementsMarkdown(ledger));return;
+ }
  if(cmd==="impact"){
   if(!Array.isArray(ledger.entries))throw Error("Invalid ledger entries");
   let ledgers=[ledger],changed=args;
@@ -76,6 +81,6 @@ function main(){
   const current=new Map(ledger.entries.map(e=>[e.id,e]));
   console.log(JSON.stringify({...r,review_required:[...new Set([...r.changed,...r.affected])].filter(id=>current.get(id)?.status==="verified"),locations:[...new Set([...r.changed,...r.affected])].map(id=>({id,source:current.get(id)?.source??null,status:current.get(id)?.status??"removed"}))},null,2));if(!valid)process.exitCode=1;return;
  }
- throw Error("Usage: knowledge.mjs check [--strict] | available [ID...] | prerequisites ID | graph [knowledge|notes|plan] | impact ID... | impact --base COMMIT");
+ throw Error("Usage: knowledge.mjs check [--strict] | available [ID...] | prerequisites ID | graph [knowledge|notes|plan] | statements | impact ID... | impact --base COMMIT");
 }
 try{main()}catch(e){console.error(e.message);process.exitCode=1}

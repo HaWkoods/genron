@@ -1,4 +1,4 @@
-import {validate, affected, changedEntries, available, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMarkdown} from "./knowledge-core.mjs";
+import {validate, affected, changedEntries, available, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMarkdown, statementsMarkdown} from "./knowledge-core.mjs";
 function runTests(){
  const tests=[];
  const base={schema_version:1,foundation:{status:"adopted",description:"fixture only"},entries:[]};
@@ -71,6 +71,15 @@ function runTests(){
  check("published verified note links to PDF",planMarkdown(published,[1]).includes("[Fixture 1](../volumes/N-1/main.pdf)"));
  check("unpublished verified note is marked but not linked",planMarkdown(published).includes("Fixture 1（PDF未掲載）")&&!planMarkdown(published).includes("../volumes/N-1/main.pdf"));
  check("planned note never links to PDF",!planMarkdown(published,[2]).includes("../volumes/N-2/main.pdf"));
+ const rnote={number:1,title:"確認",area:"基礎",status:"verified",depends_on:[],goals:["fixture"]};
+ const ritems=[{id:"K-900002",kind:"theorem",title:"後続",statement:"x<y & P_a",assumptions:["仮定 A"],position:[1,1,2,1],status:"verified",review:"査読記録"},{id:"K-900001",kind:"axiom",title:"公理",statement:"最初の記述",assumptions:[],position:[1,1,1,1],status:"verified"},{id:"K-900003",kind:"definition",title:"未検証",statement:"未検証の記述",assumptions:[],position:[1,1,3,1],status:"draft"},{id:"K-900004",kind:"exercise",title:"演習",statement:"演習問題",assumptions:[],position:[1,1,3,2],status:"verified"}];
+ const rtext=statementsMarkdown({notes:[rnote],entries:ritems});
+ check("statements include verified statements, assumptions, kinds and IDs",rtext.includes("公理（公理）")&&rtext.includes("K-900002")&&rtext.includes("仮定 A")&&rtext.includes("x&lt;y &amp;"));
+ check("statements exclude draft and exercises",!rtext.includes("K-900003")&&!rtext.includes("K-900004"));
+ check("statements omit internal review metadata",!rtext.includes("査読記録"));
+ check("statements order by source position",rtext.indexOf("K-900001")<rtext.indexOf("K-900002"));
+ check("statements count and note links",rtext.includes("全2項目")&&rtext.includes("](#n-1)")&&rtext.includes('id="n-1"'));
+ check("empty statements list",statementsMarkdown({notes:[],entries:[]}).includes("全0項目"));
  return tests;
 }
 for(const name of runTests()) console.log("PASS "+name);

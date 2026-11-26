@@ -38,3 +38,7 @@
 ## PDF掲載
 
 検証済みノートのPDFは `volumes/N-番号/main.pdf` としてGitHubに掲載する。`node scripts/publish-pdf.mjs N-番号` は厳格な台帳検証・pLaTeX二回・dvipdfmx・pdfinfoを実行し、成功後にPDFと総目次を生成する。main の関連変更では GitHub Actions の Publish verified note PDFs が同じ処理を行い、PDFと目次をコミットする。原稿が verified でPDFが存在するノートのみ、総目次の題名に相対リンクを生成する。掲載の成功とPDFの内容・目視確認は別に検証する。
+
+## 復習・確認用の一覧
+
+定義・命題一覧 `docs/statements.md` を知識台帳から生成する。読者が定義や命題の仮定と結論を確認するためのもので、証明・解説は掲載しない。`node scripts/knowledge.mjs statements > docs/statements.md` で台帳と同期し、PDF掲載処理とCIにも組み込む。

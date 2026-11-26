@@ -248,7 +248,34 @@ function planMarkdown(ledger,published=[]){
  const noteTitle=n=>n.status==="verified"?(pdfs.has(n.number)?`[${n.title}](../volumes/N-${n.number}/main.pdf)`:`${n.title}（PDF未掲載）`):n.title;
  const g=planGraph(ledger), depth=new Map(g.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
  const table=["| ID | 層 | ノート | 分野 | 状態 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+noteTitle(n)+" | "+n.area+" | "+n.status+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
- return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。完成済みのノート名のリンクをクリックすると、GitHub上でPDFを閲覧できる。未掲載のPDFにはリンクを付けない。\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
+ return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。完成済みのノート名のリンクをクリックすると、GitHub上でPDFを閲覧できる。未掲載のPDFにはリンクを付けない。\n\n[定義・命題一覧（復習・確認用）](statements.md)\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
 }
 
-export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown};
+function statementsMarkdown(ledger){
+ const names={axiom:"公理",convention:"規約",definition:"定義",lemma:"補題",proposition:"命題",theorem:"定理",corollary:"系",construction:"構成",background:"背景原理"};
+ const escape=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/[\\\x60*_\[\]~$]/g,c=>"\\"+c).replace(/\r?\n/g," ");
+ const entries=(ledger.entries??[]).filter(e=>e.status==="verified"&&Object.hasOwn(names,e.kind)).sort((a,b)=>{
+  for(let i=0;i<4;i++)if(a.position[i]!==b.position[i])return a.position[i]-b.position[i];
+  return a.id.localeCompare(b.id);
+ });
+ const notes=new Map((ledger.notes??[]).map(n=>[n.number,n.title]));
+ const groups=new Map();
+ for(const e of entries){const n=e.position[0];if(!groups.has(n))groups.set(n,[]);groups.get(n).push(e)}
+ const lines=["# 数学原論　定義・命題一覧","","[総目次・PDF](roadmap.md) · [知識台帳](knowledge.json)","","知識台帳から自動生成した復習・確認用の一覧。検証済みの記法・公理・定義・構成・結果を、各ノート内の掲載順に掲げる（全"+entries.length+"項目）。証明・解説は収録しない。本文の厳密な記述と照合するには総目次から該当ノートを参照する。","","## ノート別索引",""];
+ for(const [n,items] of groups)lines.push("- [N-"+n+" "+escape(notes.get(n)??"")+"（"+items.length+"項目）](#n-"+n+")");
+ for(const [n,items] of groups){
+  lines.push("","---","",'<a id="n-'+n+'"></a>',"## N-"+n+" "+escape(notes.get(n)??""),"");
+  let section="";
+  for(const e of items){
+   const current=e.position[1]+"."+e.position[2];
+   if(current!==section){section=current;lines.push("### 第"+e.position[1]+"章 第"+e.position[2]+"節","")}
+   lines.push("**"+names[e.kind]+"（"+escape(e.title)+"）**　"+e.id,"");
+   if(e.assumptions.length)lines.push("仮定： "+e.assumptions.map(escape).join("；")+"","");
+   lines.push(escape(e.statement),"");
+  }
+ }
+ if(!entries.length)lines.push("検証済みの項目はまだない。","");
+ return lines.join("\n").trimEnd()+"\n";
+}
+
+export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown, statementsMarkdown};
