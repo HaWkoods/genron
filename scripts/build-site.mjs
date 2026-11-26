@@ -28,6 +28,20 @@ for(const name of ["katex.min.js","katex.min.css","fonts"])cp(path.join(modules,
 cp(path.join(modules,"katex/LICENSE"),path.join(out,"vendor/katex/LICENSE"));
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),"genron-viewer-"));
 let anchorCount=0,referenceCount=0;
+
+const webProofs=new Map();
+function collectProofs(source){
+ const labels=new Map();
+ for(const m of source.matchAll(/^% genron:begin (K-\d+)\s*\n([\s\S]*?)^% genron:end \1\s*$/gm)){
+  for(const label of m[2].matchAll(/\\label\{([^}]+)\}/g))labels.set(label[1],m[1]);
+ }
+ const macros=Object.fromEntries([...source.matchAll(/\\newcommand\{\\([A-Za-z]+)\}\{((?:[^{}]|\{[^{}]*\})*)\}/g)].map(m=>[m[1],m[2]]));
+ for(const m of source.matchAll(/^% genron:begin (K-\d+)\s*\n([\s\S]*?)^% genron:end \1\s*$/gm)){
+  const proofs=[...m[2].matchAll(/\\begin\{proof\}(?:\[([^\]]*)\])?([\s\S]*?)\\end\{proof\}/g)].map(p=>({title:p[1]??"証明",tex:p[2].trim()}));
+  if(proofs.length)webProofs.set(m[1],{proofs,labels:Object.fromEntries(labels),macros});
+ }
+}
+
 function compile(tex,file,ids,refs=[]){
  const dir=fs.mkdtempSync(path.join(tmp,"tex-"));fs.writeFileSync(path.join(dir,"main.tex"),tex);
  for(let i=0;i<2;i++)run("platex",["-interaction=nonstopmode","-halt-on-error","-no-shell-escape","main.tex"],dir);
@@ -47,6 +61,7 @@ try{
  for(const n of verified){
   const dir=path.join(root,"volumes","N-"+n.number);
   const source=fs.readFileSync(path.join(dir,"main.tex"),"utf8");
+  collectProofs(source);
   const p=prepareTex(source,entries,n.number,baseUrl);
   compile(p.tex,"N-"+n.number+".pdf",p.anchors,p.references);
  }
@@ -66,7 +81,7 @@ try{
  const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise})=>({number,title,area,goals,depends_on,treatise}));
  const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
  const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status})=>({number,title,area,goals,depends_on,treatise,status,depth:depth.get(number)}));
- const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,kind,title,statement,assumptions,position,depends_on,preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
+ const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,kind,title,statement,assumptions,position,depends_on,webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
  fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,aliases:ledger.note_aliases??{},entries:publicEntries,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");
  console.log("Site: "+verified.length+" notes, "+entries.length+" entries, "+anchorCount+" named destinations, "+referenceCount+" distinct targets counted per PDF.");
