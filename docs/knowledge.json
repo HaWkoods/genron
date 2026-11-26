@@ -7603,9 +7603,9 @@
         "K-000163",
         "K-000225"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000250",
@@ -7630,9 +7630,9 @@
         "K-000227",
         "K-000249"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000251",
@@ -7658,9 +7658,9 @@
         "K-000228",
         "K-000249"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000252",
@@ -7687,9 +7687,9 @@
         "K-000227",
         "K-000251"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000253",
@@ -7719,9 +7719,9 @@
         "K-000217",
         "K-000218"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000254",
@@ -7746,9 +7746,9 @@
         "K-000042",
         "K-000253"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000255",
@@ -7774,9 +7774,9 @@
         "K-000253",
         "K-000254"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000256",
@@ -7801,9 +7801,9 @@
         "K-000047",
         "K-000253"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000257",
@@ -7830,9 +7830,9 @@
         "K-000253",
         "K-000256"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000258",
@@ -7862,9 +7862,9 @@
         "K-000217",
         "K-000218"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-57/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000259",
@@ -7890,9 +7890,9 @@
         "K-000053",
         "K-000258"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-57/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000260",
@@ -7918,9 +7918,9 @@
         "K-000258",
         "K-000259"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-57/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000261",
@@ -7949,9 +7949,9 @@
         "K-000258",
         "K-000259"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-57/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000262",
@@ -7980,9 +7980,9 @@
         "K-000258",
         "K-000260"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-57/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000263",
@@ -8008,9 +8008,9 @@
         "K-000225",
         "K-000228"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-63/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000264",
@@ -8038,9 +8038,9 @@
         "K-000228",
         "K-000263"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-63/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000265",
@@ -8065,9 +8065,9 @@
         "K-000228",
         "K-000263"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-63/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000266",
@@ -8092,9 +8092,9 @@
         "K-000225",
         "K-000265"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-63/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000267",
@@ -8121,9 +8121,9 @@
         "K-000264",
         "K-000266"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-63/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000268",
@@ -8149,9 +8149,9 @@
         "K-000264",
         "K-000267"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-63/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000269",
@@ -8176,9 +8176,9 @@
         "K-000072",
         "K-000233"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000270",
@@ -8207,9 +8207,9 @@
         "K-000233",
         "K-000269"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000271",
@@ -8236,9 +8236,9 @@
         "K-000236",
         "K-000269"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000272",
@@ -8265,9 +8265,9 @@
         "K-000239",
         "K-000271"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000273",
@@ -8293,9 +8293,9 @@
         "K-000068",
         "K-000075"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-95/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000274",
@@ -8320,9 +8320,9 @@
         "K-000194",
         "K-000273"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-95/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000275",
@@ -8351,9 +8351,9 @@
         "K-000273",
         "K-000274"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-95/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000276",
@@ -8383,9 +8383,9 @@
         "K-000273",
         "K-000275"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-95/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000277",
@@ -8411,9 +8411,9 @@
         "K-000241",
         "K-000245"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-116/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000278",
@@ -8438,9 +8438,9 @@
         "K-000241",
         "K-000277"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-116/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000279",
@@ -8464,9 +8464,9 @@
         "K-000017",
         "K-000278"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-116/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000280",
@@ -8495,9 +8495,9 @@
         "K-000279",
         "K-000278"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-116/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     },
     {
       "id": "K-000281",
@@ -8527,9 +8527,9 @@
         "K-000277",
         "K-000278"
       ],
-      "status": "draft",
+      "status": "verified",
       "source": "volumes/N-116/main.tex",
-      "review": "初稿。文献本文照合・厳格検査・pLaTeX組版・全頁校正未完了。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
     }
   ],
   "notes": [
@@ -8672,7 +8672,7 @@
       "number": 10,
       "title": "環と環準同型",
       "area": "代数",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         62
       ],
@@ -9317,7 +9317,7 @@
       "number": 56,
       "title": "部分空間と積位相",
       "area": "位相",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         54,
         55
@@ -9331,7 +9331,7 @@
       "number": 57,
       "title": "商位相と終位相",
       "area": "位相",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         55
       ],
@@ -9414,7 +9414,7 @@
       "number": 63,
       "title": "剰余類と正規部分群",
       "area": "代数",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         62
       ],
@@ -9779,7 +9779,7 @@
       "number": 90,
       "title": "超フィルター",
       "area": "位相",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         14,
         6
@@ -9848,7 +9848,7 @@
       "number": 95,
       "title": "ネットとフィルター",
       "area": "位相",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         14,
         4
@@ -10135,7 +10135,7 @@
       "number": 116,
       "title": "自然変換",
       "area": "構造",
-      "status": "draft",
+      "status": "verified",
       "depends_on": [
         18
       ],
