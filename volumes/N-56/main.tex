@@ -1,0 +1,129 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-56}
+\fancyhead[R]{\small 部分空間と積位相\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 部分空間と積位相}\par\vspace{2mm}
+{\small N-56\quad 草稿 第1版}
+\end{center}
+\section{部分空間と積位相}
+% genron:begin K-000253
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000038
+% genron:use K-000046
+% genron:use K-000146
+% genron:use K-000213
+% genron:use K-000217
+% genron:use K-000218
+\Needspace{4\baselineskip}
+\begin{thm}[初期位相]\label{k253}
+集合 $X$ から位相空間族 $(Y_i,\mathcal O_i)_{i\in I}$ への写像族 $f_i$ を考える。全 $f_i$ を連続にする最粗位相が存在する。これを初期位相という。位相空間 $Z$ から $X$ への写像 $g$ の連続性は全 $f_i\circ g$ の連続性と同値である。
+\end{thm}
+\begin{proof}
+$\{f_i^{-1}(U)\mid i\in I,\ U\in\mathcal O_i\}$ を部分基として位相を生成する。各 $f_i$ は連続であり，候補となる他の位相はこの部分基を含む。従って最粗性が従う。各合成が連続なら部分基の各元の $g$ による逆像は開であり，逆像は有限交叉と任意合併を保存するから $g$ は連続である。逆は連続写像の合成による。
+\end{proof}
+% genron:end K-000253
+% genron:begin K-000254
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000042
+% genron:use K-000253
+\Needspace{4\baselineskip}
+\begin{defn}[部分空間]\label{k254}
+位相空間 $X$ の部分集合 $A$ に包含写像 $j\colon A\to X$ による初期位相を入れたものを部分空間という。
+\end{defn}
+% genron:end K-000254
+% genron:begin K-000255
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000038
+% genron:use K-000253
+% genron:use K-000254
+\Needspace{4\baselineskip}
+\begin{prop}[部分空間の開集合]\label{k255}
+部分空間 $A$ の開集合は $A\cap U$（$U\in\mathcal O_X$）の形である。$g\colon Z\to A$ の連続性は $j\circ g$ の連続性と同値である。
+\end{prop}
+\begin{proof}
+包含写像の逆像の族は逆像の演算則により既に位相であるから初期位相に一致する。後半は初期位相の普遍性による。
+\end{proof}
+% genron:end K-000255
+% genron:begin K-000256
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000047
+% genron:use K-000253
+\Needspace{4\baselineskip}
+\begin{defn}[積位相]\label{k256}
+位相空間族 $(X_i,\mathcal O_i)_{i\in I}$ の直積 $X=\prod_{i\in I}X_i$ に射影 $p_i\colon X\to X_i$ の族による初期位相を入れる。これを積位相という。
+\end{defn}
+% genron:end K-000256
+% genron:begin K-000257
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000048
+% genron:use K-000213
+% genron:use K-000253
+% genron:use K-000256
+\Needspace{4\baselineskip}
+\begin{thm}[積位相の開基と普遍性]\label{k257}
+積位相は $\bigcap_{i\in J}p_i^{-1}(U_i)$（$J\subseteq I$ は有限，$U_i\in\mathcal O_i$）を開基に持つ。有限積では開集合の直積が開基となる。連続写像族 $g_i\colon Z\to X_i$ は $p_i\circ g=g_i$ を満たす一意の連続写像 $g\colon Z\to X$ を定める。
+\end{thm}
+\begin{proof}
+射影による開集合の逆像は部分基であり，その有限交叉全体が開基となる。同じ座標が複数回現れるときはその座標の開集合を交叉させればよい。有限積では制限しない座標に $X_i$ を取る。空の交叉は $X$ とする。集合の直積の普遍性から $g$ が一意に存在し，初期位相の普遍性から連続である。
+\end{proof}
+% genron:end K-000257
+\end{document}
