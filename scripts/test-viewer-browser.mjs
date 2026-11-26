@@ -93,6 +93,22 @@ try{
  assert.ok(await proof.locator(".katex").count()>0);
  assert.deepEqual(errors,[],"Proof rendering JavaScript errors");
 
+
+ // Explicit prose citations must be linked, not only listed as dependencies.
+ await page.goto(origin+"?id=K-000057&view=web");
+ const citation=page.locator("#K-000057 a.web-citation[href*='id=K-000047']");
+ await citation.waitFor();
+ assert.match(await citation.innerText(),/定義 4\.4.*写像の集合と直積族/);
+ await citation.hover();
+ await page.locator("#preview:not([hidden])").waitFor();
+ assert.match(await page.locator("#preview").innerText(),/写像の集合と直積族/);
+ assert.match(await page.locator("#preview .foot a").getAttribute("href"),/view=web/);
+ await citation.click();
+ await page.waitForURL(/id=K-000047/);
+ await page.locator("#K-000047.web-entry").waitFor();
+ assert.equal(await page.locator(".pdf-shell").count(),0);
+ assert.deepEqual(errors,[],"Web citation navigation errors");
+
  // Web-only publications never require a PDF.
  for(const n of planData.notes.filter(n=>n.web_only)){
   await page.goto(origin+"?note="+n.number);
