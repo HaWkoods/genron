@@ -1,0 +1,421 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-53}
+\fancyhead[R]{\small 近傍と閉包\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 近傍と閉包}\par\vspace{2mm}
+{\small N-53\quad 草稿}
+\end{center}
+以下，特に断らない限り $(X,\mathcal O)$ を位相空間とする。N-8「位相と開集合」を前提とし，開集合系による位相の記述を各点の近傍系及び部分集合の閉包による記述に移す。選択公理は用いない。
+\Needspace{8\baselineskip}
+\section{近傍系}
+% genron:begin K-000194
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{defn}[近傍と近傍系]\label{k194}
+位相空間 $(X,\mathcal O)$ の点 $x$ と部分集合 $N\subseteq X$ を考える。$x\in U\subseteq N$ となる開集合 $U$ が存在するとき，$N$ を $x$ の\textbf{近傍}という。$x$ の近傍全体を $\mathcal N(x)$ と記す。すなわち
+\[
+ \mathcal N(x)=\{N\in\Pow(X)\mid
+ \exists U\in\mathcal O,\ x\in U\subseteq N\}.
+\]
+近傍系は冪集合の部分集合として存在する。近傍そのものが開集合であることは要求しない。
+\end{defn}
+% genron:end K-000194
+% genron:begin K-000195
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000029
+% genron:use K-000146
+% genron:use K-000147
+% genron:use K-000194
+\Needspace{4\baselineskip}
+\begin{prop}[近傍系の性質]\label{k195}
+各 $x\in X$ について次が成り立つ。
+\begin{enumerate}
+\item $X\in\mathcal N(x)$，かつ $N\in\mathcal N(x)$ なら $x\in N$.
+\item $N\in\mathcal N(x)$，$N\subseteq M\subseteq X$ なら $M\in\mathcal N(x)$.
+\item $N,M\in\mathcal N(x)$ なら $N\cap M\in\mathcal N(x)$.
+\item $N\in\mathcal N(x)$ なら $M\in\mathcal N(x)$ で，任意の $y\in M$ に対して $N\in\mathcal N(y)$ となるものが存在する。
+\end{enumerate}
+\end{prop}
+\begin{proof}
+$X$ 自身が開集合であるから $X\in\mathcal N(x)$ である。$N$ が近傍なら定義により $x\in N$ である。$N$ に含まれる開集合 $U$ で $x\in U$ となるものは，$N$ を含む $M$ にも含まれる。これにより (2) を得る。$N,M$ が近傍なら $x\in U\subseteq N$，$x\in V\subseteq M$ となる開集合 $U,V$ が存在する。$x\in U\cap V\subseteq N\cap M$ であり，$U\cap V$ は開集合であるから (3) が成立する。(4) については $x\in U\subseteq N$ となる開集合 $U$ を取り $M=U$ とすればよい。
+\end{proof}
+% genron:end K-000195
+% genron:begin K-000196
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000194
+\Needspace{4\baselineskip}
+\begin{prop}[開集合の近傍による判定]\label{k196}
+部分集合 $A$ が開集合であるためには，すべての $x\in A$ に対して $A\in\mathcal N(x)$ となることが必要十分である。
+\end{prop}
+\begin{proof}
+$A$ が開集合なら $A$ 自身を用いて各点の近傍であることを得る。逆に条件を仮定する。$\mathcal U=\{U\in\mathcal O\mid U\subseteq A\}$ とおけば $\bigcup\mathcal U\subseteq A$ である。各 $x\in A$ について条件により $x\in U\subseteq A$ なる開集合が存在するから $A\subseteq\bigcup\mathcal U$ でもある。従って $A=\bigcup\mathcal U$ は開集合である。空集合の場合も同じ論証が成り立つ。ここでは各点に対し同時に開集合を選ぶ必要はない。
+\end{proof}
+% genron:end K-000196
+% genron:begin K-000197
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000147
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000196
+\Needspace{4\baselineskip}
+\begin{thm}[近傍系による位相の特徴づけ]\label{k197}
+集合 $X$ の各点 $x$ に $\mathcal N(x)\subseteq\Pow(X)$ が与えられ，命題\ref{k195}の四条件を満たすとする。このとき，これらを近傍系とする位相が一意に存在する。
+\end{thm}
+\begin{proof}
+$\mathcal O=\{U\in\Pow(X)\mid \forall x\in U,\ U\in\mathcal N(x)\}$ と定める。空集合は条件を空虚に満たし，$X$ は (1) により条件を満たす。$U,V\in\mathcal O$ なら $x\in U\cap V$ に対し (3) を適用できる。部分族の合併 $W$ の点 $x$ はある元 $U$ に属するから (2) により $W\in\mathcal N(x)$ となる。従って \GenronRefText{K-000147}{位相の有限交叉条件} により $\mathcal O$ は位相である。
+
+この位相の近傍 $N$ は，$x\in U\subseteq N$ となる $U\in\mathcal O$ を含むから (2) により与えられた $\mathcal N(x)$ に属する。逆に $N\in\mathcal N(x)$ とし，
+\[
+ U=\{y\in X\mid N\in\mathcal N(y)\}
+\]
+と定める。(1) により $U\subseteq N$ であり $x\in U$ である。各 $y\in U$ に対し (4) により $M\in\mathcal N(y)$ で $M\subseteq U$ となるものが存在する。(2) により $U\in\mathcal N(y)$ である。従って $U\in\mathcal O$ であり，$N$ はこの位相の近傍である。一意性は命題\ref{k196}から従う。
+\end{proof}
+% genron:end K-000197
+\Needspace{8\baselineskip}
+\section{内部と閉包}
+% genron:begin K-000198
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000148
+\Needspace{4\baselineskip}
+\begin{defn}[内部と閉包]\label{k198}
+部分集合 $A\subseteq X$ に対して
+\begin{align*}
+ \operatorname{Int}(A)&=\bigcup\{U\in\mathcal O\mid U\subseteq A\},\\
+ \overline A&=\bigcap\{F\subseteq X\mid A\subseteq F,\ F\text{ は閉集合}\}
+\end{align*}
+と定め，前者を $A$ の\textbf{内部}，後者を $A$ の\textbf{閉包}という。いずれも母集合は $X$ とする。特に閉包を定める族は $X$ を含む。
+\end{defn}
+% genron:end K-000198
+% genron:begin K-000199
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000148
+% genron:use K-000149
+% genron:use K-000198
+\Needspace{4\baselineskip}
+\begin{prop}[内部と閉包の極値性]\label{k199}
+$\operatorname{Int}(A)$ は $A$ に含まれる開集合の最大元，$\overline A$ は $A$ を含む閉集合の最小元である。従って $A$ が開集合であることは $\operatorname{Int}(A)=A$ と，$A$ が閉集合であることは $\overline A=A$ と同値である。
+\end{prop}
+\begin{proof}
+開集合族の合併は開集合であり，その各元が $A$ に含まれるから合併も $A$ に含まれる。$A$ に含まれる任意の開集合はこの合併に含まれる。閉集合族については \GenronRefText{K-000149}{閉集合系の特徴づけ} を用いれば同様に共通部分は閉集合である。各閉集合が $A$ を含むから共通部分も $A$ を含み，かつ各閉集合に含まれる。等号の条件はこれらの最大・最小性から直ちに従う。
+\end{proof}
+% genron:end K-000199
+% genron:begin K-000200
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000031
+% genron:use K-000046
+% genron:use K-000148
+% genron:use K-000198
+\Needspace{4\baselineskip}
+\begin{prop}[内部と閉包の補集合による双対性]\label{k200}
+任意の $A\subseteq X$ について
+\[
+ \operatorname{Int}(A)=X\setminus\overline{X\setminus A},
+ \qquad
+ \overline A=X\setminus\operatorname{Int}(X\setminus A)
+\]
+が成り立つ。
+\end{prop}
+\begin{proof}
+$A$ に含まれる開集合と $X\setminus A$ を含む閉集合は補集合を取ることにより一対一に対応する。\GenronRefText{K-000046}{集合族に対する De Morgan の法則} を適用すれば第一式を得る。第一式で $A$ を $X\setminus A$ に替え，補集合を取れば第二式を得る。
+\end{proof}
+% genron:end K-000200
+% genron:begin K-000201
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000029
+% genron:use K-000031
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000200
+\Needspace{4\baselineskip}
+\begin{prop}[内部と閉包の近傍による特徴づけ]\label{k201}
+$x\in X$ に対し
+\begin{align*}
+ x\in\operatorname{Int}(A)&\iff A\in\mathcal N(x),\\
+ x\in\overline A&\iff
+ \forall N\in\mathcal N(x),\ N\cap A\ne\varnothing
+\end{align*}
+が成り立つ。
+\end{prop}
+\begin{proof}
+第一式の左辺は $x$ を含み $A$ に含まれる開集合の存在と同値であり，これは近傍の定義にほかならない。命題\ref{k200}と第一式により，$x\notin\overline A$ は $X\setminus A\in\mathcal N(x)$ と同値である。もしこれが成立すれば $N=X\setminus A$ は $A$ と交わらない近傍である。逆にそのような近傍 $N$ が存在すれば $N\subseteq X\setminus A$ であり，近傍の上方閉性（命題\ref{k195}）から $X\setminus A\in\mathcal N(x)$ となる。従って第二式を得る。
+\end{proof}
+% genron:end K-000201
+% genron:begin K-000202
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000029
+% genron:use K-000146
+% genron:use K-000149
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000200
+\Needspace{4\baselineskip}
+\begin{prop}[内部と閉包の演算則]\label{k202}
+内部及び閉包は包含関係を保存する。さらに
+\begin{gather*}
+ \operatorname{Int}(A)\subseteq A\subseteq\overline A,\qquad
+ \operatorname{Int}(X)=X,\quad \overline\varnothing=\varnothing,\\
+ \operatorname{Int}(\operatorname{Int}(A))=\operatorname{Int}(A),
+ \qquad \overline{\overline A}=\overline A,\\
+ \operatorname{Int}(A\cap B)=
+ \operatorname{Int}(A)\cap\operatorname{Int}(B),\\
+ \overline{A\cup B}=\overline A\cup\overline B
+\end{gather*}
+が成り立つ。
+\end{prop}
+\begin{proof}
+$A\subseteq B$ なら $A$ に含まれる開集合 $\operatorname{Int}(A)$ は $B$ にも含まれ，$B$ を含む閉集合 $\overline B$ は $A$ をも含む。命題\ref{k199}から単調性を得る。包含と冪等性，$X$ の内部と空集合の閉包についても同命題から従う。$\operatorname{Int}(A)\cap\operatorname{Int}(B)$ は $A\cap B$ に含まれる開集合であるから $\operatorname{Int}(A\cap B)$ に含まれ，逆の包含は単調性による。最後の等式はこの等式と補集合による双対性から従う。
+\end{proof}
+% genron:end K-000202
+\Needspace{8\baselineskip}
+\section{境界と集積点}
+% genron:begin K-000203
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000031
+% genron:use K-000198
+\Needspace{4\baselineskip}
+\begin{defn}[外部と境界]\label{k203}
+部分集合 $A$ に対して
+\[
+ \operatorname{Ext}(A)=\operatorname{Int}(X\setminus A),
+ \qquad \partial A=\overline A\setminus\operatorname{Int}(A)
+\]
+と定め，前者を $A$ の\textbf{外部}，後者を $A$ の\textbf{境界}という。
+\end{defn}
+% genron:end K-000203
+% genron:begin K-000204
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000031
+% genron:use K-000148
+% genron:use K-000149
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000200
+% genron:use K-000201
+% genron:use K-000203
+\Needspace{4\baselineskip}
+\begin{prop}[境界の特徴づけ]\label{k204}
+境界は閉集合であり，
+\[
+ \partial A=\overline A\cap\overline{X\setminus A}
+             =\partial(X\setminus A)
+\]
+が成立する。点 $x$ が $\partial A$ に属するためには，$x$ のすべての近傍が $A$ と $X\setminus A$ の双方と交わることが必要十分である。また $X$ は $\operatorname{Int}(A)$，$\operatorname{Ext}(A)$，$\partial A$ の互いに素な合併である。
+\end{prop}
+\begin{proof}
+命題\ref{k200}によって $X\setminus\operatorname{Int}(A)=\overline{X\setminus A}$ であるから境界の第一の表示を得る。第二の表示及び閉集合であることが従う。命題\ref{k201}を双方の閉包に適用すれば近傍による条件を得る。$\operatorname{Ext}(A)=X\setminus\overline A$ であり，$\operatorname{Int}(A)\subseteq\overline A$ である。従って三集合は互いに素で合併が $X$ である。
+\end{proof}
+% genron:end K-000204
+% genron:begin K-000205
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000029
+% genron:use K-000194
+\Needspace{4\baselineskip}
+\begin{defn}[集積点と導集合]\label{k205}
+部分集合 $A\subseteq X$ に対し，任意の $N\in\mathcal N(x)$ について
+\[
+ N\cap(A\setminus\{x\})\ne\varnothing
+\]
+となる点 $x\in X$ を $A$ の\textbf{集積点}という。$A$ の集積点全体からなる集合を $A'$ と記し，これを $A$ の導集合という。
+\end{defn}
+% genron:end K-000205
+% genron:begin K-000206
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000029
+% genron:use K-000194
+% genron:use K-000195
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000201
+% genron:use K-000205
+\Needspace{4\baselineskip}
+\begin{prop}[閉包と導集合]\label{k206}
+任意の部分集合 $A$ に対して $\overline A=A\cup A'$ が成り立つ。従って $A$ が閉集合であるための必要十分条件は $A'\subseteq A$ である。
+\end{prop}
+\begin{proof}
+$x\in A$ ならすべての近傍は $x$ を含むから $x\in\overline A$ である。$x\in A'$ ならすべての近傍が $A\setminus\{x\}$ と交わり，従って $A$ と交わるから $x\in\overline A$ である。逆に $x\in\overline A$ で $x\notin A$ なら $A\setminus\{x\}=A$ であるから $x\in A'$ である。よって等式を得る。閉集合の条件は命題\ref{k199}から従う。
+\end{proof}
+% genron:end K-000206
+\Needspace{8\baselineskip}
+\section{閉包による位相の記述}
+% genron:begin K-000207
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000031
+% genron:use K-000034
+% genron:use K-000045
+% genron:use K-000100
+% genron:use K-000146
+% genron:use K-000148
+% genron:use K-000149
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000202
+\Needspace{4\baselineskip}
+\begin{thm}[Kuratowski の閉包公理]\label{k207}
+集合 $X$ 上の写像 $c:\Pow(X)\to\Pow(X)$ に対して次は同値である。
+\begin{enumerate}
+\item $c$ を閉包の写像とする位相が存在する。
+\item 任意の $A,B\subseteq X$ について
+\begin{gather*}
+ c(\varnothing)=\varnothing,\quad A\subseteq c(A),\\
+ c(c(A))=c(A),\quad c(A\cup B)=c(A)\cup c(B)
+\end{gather*}
+が成り立つ。
+\end{enumerate}
+この位相は存在すれば一意である。
+\end{thm}
+\begin{proof}
+(1) から (2) は命題\ref{k202}による。逆に (2) を仮定する。$A\subseteq B$ なら $A\cup B=B$ であるから $c(A)\cup c(B)=c(B)$，従って $c(A)\subseteq c(B)$ となる。
+
+$\mathcal C=\{F\subseteq X\mid c(F)=F\}$ と定める。$\varnothing\in\mathcal C$ は仮定から，$X\in\mathcal C$ は $X\subseteq c(X)\subseteq X$ から従う。$\mathcal A\subseteq\mathcal C$ に対し $F=\bigcap\mathcal A$ とおく。各 $E\in\mathcal A$ について $c(F)\subseteq c(E)=E$ であるから $c(F)\subseteq F$ となり，仮定から逆の包含も成り立つ。空の族については $F=X$ である。二つの固定元の合併が固定元であることは最後の公理から従う。有限合併の場合は空集合と二元の合併から数学的帰納法により従う。従って \GenronRefText{K-000149}{閉集合系の特徴づけ} によって $\mathcal C$ を閉集合系とする位相が一意に存在する。
+
+任意の $A\subseteq X$ に対し $c(A)$ は $A$ を含む固定元である。$A$ を含む固定元 $F$ に対して単調性から $c(A)\subseteq c(F)=F$ である。従って $c(A)$ は $A$ を含む閉集合の最小元であり，命題\ref{k199}によりこの位相の閉包に等しい。閉包が与えられれば閉集合はその固定元として決まるから位相も一意である。
+\end{proof}
+% genron:end K-000207
+\par\medskip\noindent{\small\textbf{参考文献.} G. E. Bredon, \textit{Topology and Geometry}, Springer, 1993, Ch.~I, \S2, Definitions 2.3--2.4（近傍と近傍基）．J. M. Lee, \textit{Introduction to Topological Manifolds}, 2nd ed., Springer, 2011, Ch.~2（内部・閉包・外部・境界）．証明は原論の既出事項から再構成した。}
+\end{document}
