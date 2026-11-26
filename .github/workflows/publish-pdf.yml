@@ -1,0 +1,42 @@
+name: Publish verified note PDFs
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'volumes/**'
+      - 'docs/knowledge.json'
+      - 'scripts/publish-pdf.mjs'
+      - 'scripts/knowledge*.mjs'
+      - '.github/workflows/publish-pdf.yml'
+      - '**/*.sty'
+      - '**/*.cls'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: genron-pdf-main
+  cancel-in-progress: true
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pLaTeX and PDF utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-lang-japanese texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended poppler-utils
+      - name: Compile verified notes and regenerate index
+        run: node scripts/publish-pdf.mjs
+      - name: Commit PDFs and index
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- docs/roadmap.md
+          find volumes -type f -path '*/N-*/main.pdf' -print0 | xargs -0 -r git add -- 
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Publish verified note PDFs and refresh index'
+          git push origin HEAD:main
