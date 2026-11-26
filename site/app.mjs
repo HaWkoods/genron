@@ -384,7 +384,7 @@ function renderProof(target,proof,metadata){
  const tex=proof.tex;
  const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\})/g;
  const macros=Object.fromEntries(Object.entries(metadata.macros??{}).map(([k,v])=>["\\"+k,v]));
- const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.trim())continue;const p=node("span");p.style.whiteSpace="pre-wrap";p.textContent=line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1");target.append(p);if(s.includes("\n\n"))target.append(node("br"))}};
+ const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));target.append(p);if(s.includes("\n\n"))target.append(node("br"))}};
  let last=0;
  for(const m of tex.matchAll(pattern)){
   plain(tex.slice(last,m.index));last=m.index+m[0].length;
@@ -403,6 +403,42 @@ function renderProof(target,proof,metadata){
  plain(tex.slice(last));
 }
 
+
+
+const jpPunctuation=s=>String(s).replaceAll("、","，").replaceAll("。","．");
+function renderBookText(target,tex,metadata){
+ const special=/\\begin\{(tabular|enumerate|itemize|center)\}(?:\{([^{}]*)\})?([\s\S]*?)\\end\{\1\}/g;
+ let last=0;
+ function paragraph(text){
+  if(!text.trim())return;
+  // Keep math delimiters intact; the shared renderer handles display math and references.
+  const p=node("div","web-paragraph");renderProof(p,{tex:text.trim()},metadata);target.append(p);
+ }
+ for(const m of tex.matchAll(special)){
+  paragraph(tex.slice(last,m.index));last=m.index+m[0].length;
+  if(m[1]==="center"){const div=node("div","web-centered");renderBookText(div,m[3],metadata);target.append(div)}
+  else if(m[1]==="tabular"){
+   const table=node("table","web-math-table");
+   for(const row of m[3].trim().split(/\\\\/)){if(!row.trim())continue;const tr=node("tr");for(const cell of row.split(/(?<!\\)&/)){const td=node("td");renderProof(td,{tex:cell.trim()},metadata);tr.append(td)}table.append(tr)}
+   target.append(table);
+  }else{
+   const list=node(m[1]==="enumerate"?"ol":"ul","web-math-list");
+   for(const item of m[3].split(/\\item\b/)){if(!item.trim())continue;const li=node("li");renderBookText(li,item,metadata);list.append(li)}target.append(list)
+  }
+ }
+ paragraph(tex.slice(last));
+}
+function appendWebProof(section,proof,metadata){
+ const block=node("details","web-proof");block.append(node("summary","",jpPunctuation(proof.title)));const body=node("div","proof-body");renderBookText(body,proof.tex,metadata);block.append(body,node("div","web-qed","□"));section.append(block);
+ block.addEventListener("toggle",()=>{if(block.open)fitMath(body)});
+}
+function renderSourceEntry(section,e){
+ const metadata=e.webProof;
+ const re=/\\begin\{proof\}(?:\[([^\]]*)\])?([\s\S]*?)\\end\{proof\}/g;
+ let last=0;
+ for(const m of metadata.content.matchAll(re)){renderBookText(section,metadata.content.slice(last,m.index),metadata);appendWebProof(section,{title:m[1]??"証明",tex:m[2]},metadata);last=m.index+m[0].length}
+ renderBookText(section,metadata.content.slice(last),metadata);
+}
 
 function showWeb(info,restore){
  const selected=notes.get(info.n);
@@ -425,17 +461,20 @@ function showWeb(info,restore){
   if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
   const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");chapter.append(anchor("旧版PDFを閲覧",legacy.href,"web-legacy"));
   const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);
+  let lastSection="";
   for(const e of items){
+   const sectionTitle=e.webProof?.sectionTitle;
+   if(sectionTitle&&sectionTitle!==lastSection){chapter.append(node("h4","web-section-title",sectionTitle));lastSection=sectionTitle}
    const section=node("section","web-entry");section.id=e.id;
-   const number=e.position.slice(1).join(".");
+   const number=e.position.slice(-2).join(".");
    const heading=node("h4","web-statement-title",(types[e.kind]??e.kind)+" "+number+"（"+e.title+"）");
    section.append(heading);
    const link=anchor(e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
-   if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,e.assumptions.join("；"));section.append(p)}
-   const p=node("p");renderParts(p,e.preview?.statement,e.statement);section.append(p);
-   for(const proof of e.webProof?.proofs??[]){
-    const block=node("details","web-proof");block.append(node("summary","",proof.title));const body=node("div","proof-body");renderProof(body,proof,e.webProof);block.append(body,node("div","web-qed","□"));section.append(block);
-    block.addEventListener("toggle",()=>{if(block.open)fitMath(body)});
+   if(e.webProof?.content)renderSourceEntry(section,e);
+   else{
+    if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,jpPunctuation(e.assumptions.join("；")));section.append(p)}
+    const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement));section.append(p);
+    for(const proof of e.webProof?.proofs??[])appendWebProof(section,proof,e.webProof);
    }
    if(e.depends_on?.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
    chapter.append(section);
