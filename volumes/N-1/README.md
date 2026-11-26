@@ -8,7 +8,7 @@
 - 検証した原稿の Git blob SHA: c6fcba4840161573d9b79149fe13e5ccb5fc7e0c（手元でのコンパイル対象とリポジトリの取得内容が一致）。
 - platex -interaction=nonstopmode -halt-on-error main.tex を2回、dvipdfmx main.dvi。6頁、A5。ログに Overfull/Underfull/Warning/Error の一致なし。全頁をレンダリングし改ページ・数式・本文を目視確認。参考文献の孤立頁を修正し再コンパイルした。
 - 台帳に K-000001〜K-000017 を登録。46件の既存テスト、変更前後の台帳検証・影響抽出をコア関数で実行。変更後のエラー・警告なし。CLIおよびGitHub Actionsの実行結果は未確認。数学的検証は通常の数学的査読であり形式証明ではない。
-- PDFは今回のチャットで提供。GitHubにはpLaTeX原稿を正本として保存する。
+- pLaTeX原稿を正本とし、掲載用PDFは main.pdf とする。掲載用PDFの生成と目次更新は Publish verified note PDFs ワークフロー、または `node scripts/publish-pdf.mjs N-1` で行う。掲載の確認は総目次を参照。
 
 ## 参考文献調査
 
