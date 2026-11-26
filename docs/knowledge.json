@@ -4,5 +4,761 @@
     "status": "adopted",
     "description": "運用上の基礎方針：通常の古典的数学推論、等号、論理結合子・量化、集合・所属の素朴な言語を背景として使用する。冒頭で論理記号を自然言語による数学的文章の省略記号として定め、続いて論理記号の組合せの略記（制限付き量化等）、通常の古典的推論に基づく論理法則を確認し、素朴集合論に進む。形式的構文・意味論は導入しない。数理論理学・現代的集合論は後続の発展的・応用的な枝とする。特定の形式的公理系は未選定。無制限内包は認めず、実質的な集合存在原理・追加前提は個別に明示・登録する。選択公理は素朴集合論において公理として明示的に採用し、正式原稿に恒久IDを付し依存関係を追跡する。具体的な背景知識の範囲は順次確定する。詳細は docs/foundations.md。"
   },
-  "entries": []
+  "entries": [],
+  "notes": [
+    {
+      "number": 1,
+      "title": "数学的言語",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [],
+      "goals": [
+        "自然言語の略記としての論理記号",
+        "制限付き量化等の略記",
+        "自然言語による論理法則・証明方法"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "集合・写像・関係",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [
+        1
+      ],
+      "goals": [
+        "外延性と集合存在の明示",
+        "部分集合・演算・直積・写像・集合族",
+        "同値関係・商集合"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "選択公理",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [
+        2
+      ],
+      "goals": [
+        "選択函数の存在を公理として採用",
+        "任意の空でない集合族の直積の非空性",
+        "全射の右逆"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "順序と束",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [
+        2
+      ],
+      "goals": [
+        "半順序・全順序・上限下限",
+        "束・完備束・分配束・Boolean束",
+        "順序保存写像"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "自然数と有限集合",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [
+        2,
+        4
+      ],
+      "goals": [
+        "自然数の存在原理・帰納法・再帰",
+        "有限集合・有限列",
+        "有限選択の証明（選択公理不要）"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "整列と極大原理",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [
+        3,
+        4,
+        5
+      ],
+      "goals": [
+        "整列集合と必要な超限帰納・再帰",
+        "Hartogs型の存在論証に必要な集合原理",
+        "整列定理・Zornの補題・選択公理の同値"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "濃度と可算性",
+      "area": "基礎",
+      "status": "planned",
+      "depends_on": [
+        5
+      ],
+      "goals": [
+        "単射・全射による比較",
+        "Cantor–Bernstein・Cantorの定理",
+        "可算集合（選択を要する結果は分離）"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "位相空間",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        2,
+        4
+      ],
+      "goals": [
+        "開集合・閉集合・近傍・連続写像",
+        "部分・積・商位相",
+        "連結・分離・コンパクト性の基本（一般の積のコンパクト性は後続）"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "モノイドと群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        2,
+        5
+      ],
+      "goals": [
+        "演算・準同型・部分構造・商",
+        "自由モノイド・自由群",
+        "群作用の基本"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "環と体",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        9
+      ],
+      "goals": [
+        "環・イデアル・商環・体",
+        "整域・分数体・多項式環",
+        "環の局所化の基本"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "整数・有理数",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        10,
+        4
+      ],
+      "goals": [
+        "自然数から整数・有理数を構成",
+        "順序環・順序体",
+        "Archimedes性・整除の初歩"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "実数と複素数",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        11
+      ],
+      "goals": [
+        "Dedekind切断等の順序による実数構成",
+        "完備順序体の性質と一意性",
+        "複素数体の代数的構成（代数学の基本定理は後続）"
+      ]
+    },
+    {
+      "number": 13,
+      "title": "距離空間",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        8,
+        12
+      ],
+      "goals": [
+        "距離・収束・Cauchy列・完備性",
+        "完備化・コンパクト性の距離的特徴",
+        "Banachの不動点定理"
+      ]
+    },
+    {
+      "number": 14,
+      "title": "一様空間とフィルター",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        8,
+        6
+      ],
+      "goals": [
+        "フィルター・超フィルター・一様構造",
+        "積のコンパクト性（Tychonoff）",
+        "一様完備化の基本"
+      ]
+    },
+    {
+      "number": 15,
+      "title": "有限次元線形代数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        10
+      ],
+      "goals": [
+        "有限生成線形空間・基底・次元",
+        "線形写像・行列・行列式",
+        "固有値・標準形の基礎"
+      ]
+    },
+    {
+      "number": 16,
+      "title": "加群と線形空間",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        10,
+        6
+      ],
+      "goals": [
+        "加群・自由加群・直和・商加群",
+        "任意次元線形空間の基底存在",
+        "PID上の有限生成加群"
+      ]
+    },
+    {
+      "number": 17,
+      "title": "多重線形代数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        15,
+        16
+      ],
+      "goals": [
+        "テンソル積の構成・普遍性",
+        "双対・対称代数・外積代数",
+        "有限次元の内在的な行列式"
+      ]
+    },
+    {
+      "number": 18,
+      "title": "圏と普遍構成",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        9,
+        8
+      ],
+      "goals": [
+        "圏・函手・自然変換",
+        "普遍性・表現可能性・極限・余極限",
+        "随伴・Yoneda（小ささの条件を明示）"
+      ]
+    },
+    {
+      "number": 19,
+      "title": "有限群と表現",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        15,
+        9
+      ],
+      "goals": [
+        "Sylow理論・組成列",
+        "群表現・指標（必要な体の条件を明示）",
+        "Maschkeの定理"
+      ]
+    },
+    {
+      "number": 20,
+      "title": "多項式と体の拡大",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        10,
+        15,
+        6
+      ],
+      "goals": [
+        "代数拡大・超越拡大",
+        "代数閉包・分離・正規",
+        "Galois対応"
+      ]
+    },
+    {
+      "number": 21,
+      "title": "可換環論",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        16,
+        18
+      ],
+      "goals": [
+        "Noether環・局所化・整拡大",
+        "素イデアル・次元・局所環",
+        "加群の有限性と基本構造"
+      ]
+    },
+    {
+      "number": 22,
+      "title": "実変数函数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        13,
+        15
+      ],
+      "goals": [
+        "数列・級数・函数列",
+        "連続函数と一様収束",
+        "一変数微分・Riemann積分・微積分基本定理"
+      ]
+    },
+    {
+      "number": 23,
+      "title": "ノルム空間と微分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        13,
+        15,
+        16
+      ],
+      "goals": [
+        "ノルム・Banach空間・有限次元ノルムの同値",
+        "Fréchet微分・連鎖律",
+        "逆写像・陰函数定理（適切な完備性）"
+      ]
+    },
+    {
+      "number": 24,
+      "title": "測度と積分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        22,
+        3
+      ],
+      "goals": [
+        "σ-代数・外測度・測度・可測函数",
+        "Lebesgue積分と収束定理",
+        "積測度・Tonelli・Fubini・Radon–Nikodym"
+      ]
+    },
+    {
+      "number": 25,
+      "title": "位相線形空間と函数解析",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        23,
+        14,
+        24
+      ],
+      "goals": [
+        "局所凸性・弱位相・双対性",
+        "Hahn–Banach・一様有界性・開写像",
+        "Hilbert空間・作用素・L^p空間"
+      ]
+    },
+    {
+      "number": 26,
+      "title": "複素函数論",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        22,
+        23
+      ],
+      "goals": [
+        "正則函数・複素積分・Cauchy理論",
+        "級数展開・留数・解析接続",
+        "代数学の基本定理"
+      ]
+    },
+    {
+      "number": 27,
+      "title": "位相群と位相環",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        14,
+        10
+      ],
+      "goals": [
+        "位相群・商・連続準同型",
+        "完備化・位相環・位相体",
+        "局所コンパクト群の基礎"
+      ]
+    },
+    {
+      "number": 28,
+      "title": "付値と完備体",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        27,
+        13,
+        20
+      ],
+      "goals": [
+        "絶対値・付値・非Archimedes距離",
+        "完備化と有限拡大",
+        "局所体・Henselの補題"
+      ]
+    },
+    {
+      "number": 29,
+      "title": "調和解析",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        25,
+        27
+      ],
+      "goals": [
+        "Haar測度（存在・一意性）",
+        "Fourier解析・畳込み",
+        "局所コンパクト可換群の双対性入門"
+      ]
+    },
+    {
+      "number": 30,
+      "title": "ホモロジー代数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        18,
+        16
+      ],
+      "goals": [
+        "複体・完全列・ホモロジー",
+        "射影・入射分解",
+        "導来函手・Ext・Tor"
+      ]
+    },
+    {
+      "number": 31,
+      "title": "位相多様体と被覆",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        8,
+        13,
+        9
+      ],
+      "goals": [
+        "位相多様体・基本群・ホモトピー",
+        "被覆空間と持ち上げ",
+        "基本群と被覆の対応"
+      ]
+    },
+    {
+      "number": 32,
+      "title": "代数的位相",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        31,
+        30
+      ],
+      "goals": [
+        "特異ホモロジー・コホモロジー",
+        "長完全列・切除・Mayer–Vietoris",
+        "基本的な双対性"
+      ]
+    },
+    {
+      "number": 33,
+      "title": "微分多様体と微分形式",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        31,
+        23,
+        17,
+        24
+      ],
+      "goals": [
+        "滑らかな多様体・接空間・ベクトル束",
+        "微分形式・外微分・分割の一",
+        "多様体上の積分・Stokesの定理"
+      ]
+    },
+    {
+      "number": 34,
+      "title": "微分幾何",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        33
+      ],
+      "goals": [
+        "接続・曲率・測地線",
+        "Riemann計量・距離",
+        "基本的な幾何学的変分"
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Lie群とLie環",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        33,
+        27,
+        19
+      ],
+      "goals": [
+        "Lie群・Lie環・指数写像",
+        "随伴表現・部分群",
+        "Lie環の構造と基本表現"
+      ]
+    },
+    {
+      "number": 36,
+      "title": "層と代数幾何",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        21,
+        8,
+        20
+      ],
+      "goals": [
+        "前層・層・茎",
+        "Specと構造層・アフィンスキーム",
+        "スキームの基本構成"
+      ]
+    },
+    {
+      "number": 37,
+      "title": "代数的整数論",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        21,
+        28
+      ],
+      "goals": [
+        "整数環・Dedekind整域・イデアル分解",
+        "分岐・局所化・完備化",
+        "数体の基本定理（幾何的手法を必要時導入）"
+      ]
+    },
+    {
+      "number": 38,
+      "title": "組合せ論とグラフ理論",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        5,
+        9
+      ],
+      "goals": [
+        "数え上げ・母函数の形式的利用",
+        "グラフ・木・連結性",
+        "群作用による数え上げ"
+      ]
+    },
+    {
+      "number": 39,
+      "title": "微分方程式と力学系",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        23,
+        22
+      ],
+      "goals": [
+        "常微分方程式の存在・一意性",
+        "流れ・安定性",
+        "線形系・変分方程式"
+      ]
+    },
+    {
+      "number": 40,
+      "title": "偏微分方程式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        25,
+        29,
+        39
+      ],
+      "goals": [
+        "分布・Sobolev空間",
+        "弱解と変分法（必要な基本原理を本ノートで導入）",
+        "楕円型・発展方程式の基本"
+      ]
+    },
+    {
+      "number": 41,
+      "title": "確率論",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        24
+      ],
+      "goals": [
+        "確率空間・確率変数・独立性",
+        "条件付き期待値・大数法則・中心極限定理",
+        "離散時間マルチンゲール"
+      ]
+    },
+    {
+      "number": 42,
+      "title": "確率過程と確率解析",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        41,
+        25
+      ],
+      "goals": [
+        "確率過程の構成・Brown運動",
+        "確率積分・Itô公式",
+        "確率微分方程式"
+      ]
+    },
+    {
+      "number": 43,
+      "title": "凸解析と最適化",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        23,
+        25
+      ],
+      "goals": [
+        "凸函数・分離・凸双対",
+        "有限次元最適性条件・制約問題",
+        "勾配法・近接法"
+      ]
+    },
+    {
+      "number": 44,
+      "title": "変分学",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        43,
+        33,
+        39
+      ],
+      "goals": [
+        "函数空間上の極値・変分",
+        "Euler–Lagrange方程式",
+        "直接法と必要なコンパクト性"
+      ]
+    },
+    {
+      "number": 45,
+      "title": "数理力学",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        44,
+        34
+      ],
+      "goals": [
+        "Lagrange・Hamilton形式",
+        "シンプレクティック構造・保存則",
+        "力学の幾何学的構成"
+      ]
+    },
+    {
+      "number": 46,
+      "title": "数理金融",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        42,
+        43
+      ],
+      "goals": [
+        "無裁定・価格付け・測度変換",
+        "Black–Scholes型モデル",
+        "ポートフォリオ最適化"
+      ]
+    },
+    {
+      "number": 47,
+      "title": "計算可能性と形式言語",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        38,
+        5
+      ],
+      "goals": [
+        "文字列・形式言語・再帰函数",
+        "計算モデル・決定可能性",
+        "停止問題"
+      ]
+    },
+    {
+      "number": 48,
+      "title": "数理論理学",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        47,
+        10
+      ],
+      "goals": [
+        "形式的構文・意味論・証明体系",
+        "完全性・モデル理論の基本",
+        "算術の形式化と不完全性"
+      ]
+    },
+    {
+      "number": 49,
+      "title": "現代的集合論",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        48,
+        6,
+        7,
+        14
+      ],
+      "goals": [
+        "ZF・ZFCの形式的記述",
+        "順序数・基数・超限再帰の発展",
+        "モデル・相対的無矛盾性・強制法入門"
+      ]
+    },
+    {
+      "number": 50,
+      "title": "数理モデリング",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        41,
+        43,
+        39,
+        38
+      ],
+      "goals": [
+        "現象の抽象化・モデル設計・推定の基礎",
+        "ネットワーク・動的システム・意思決定",
+        "社会システム等への応用とモデル検証"
+      ]
+    }
+  ]
 }
