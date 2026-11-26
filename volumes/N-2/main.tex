@@ -1,0 +1,965 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-2}
+\fancyhead[R]{\small 集合・写像・関係\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 集合・写像・関係}\par\vspace{2mm}
+{\small N-2\quad 第1版}
+\end{center}
+\noindent 本篇では N-1「数学的言語」の記法と通常の古典的推論を前提として，集合，写像及び関係の基礎を展開する。集合そのものを形式的体系の対象とすることはしないが，集合の存在に関する原理はその都度明示する。特に，選択公理は本篇では用いない。以下，対象は集合として扱う。数体系はまだ前提としない。
+\Needspace{8\baselineskip}
+\section{集合の相等と存在}
+% genron:begin K-000018
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+\Needspace{4\baselineskip}
+\begin{principle}[外延性]\label{k18}
+集合 $A,B$ に対して，$A=B$ であるための必要十分条件は
+\[
+ \forall x\ (x\in A\iffc x\in B)
+\]
+である。ここで対象の範囲は集合の元となり得る対象全体とする。
+\end{principle}
+必要性は等号の意味から従い，十分性を集合に関する原理として認める。従って，ある条件を満たす元をちょうど含む集合が存在するなら，その集合はただ一つである。以後，元の条件によって集合を指定するときには，まず存在を確かめ，次いで外延性によって一意性を保証する。
+% genron:end K-000018
+% genron:begin K-000019
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+\Needspace{4\baselineskip}
+\begin{defn}[部分集合]\label{k19}
+$A,B$ を集合とする。$A$ の任意の元が $B$ の元であるとき，$A$ を $B$ の部分集合といい，$A\subseteq B$ と書く。$A\subseteq B$ かつ $A\ne B$ のとき $A\subsetneq B$ と書く。
+\end{defn}
+% genron:end K-000019
+% genron:begin K-000020
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000012
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+\Needspace{4\baselineskip}
+\begin{prop}[包含の性質]\label{k20}
+任意の集合 $A,B,C$ について次が成り立つ。
+\begin{align*}
+ &A\subseteq A,\\
+ &(A\subseteq B\land B\subseteq C)\impc A\subseteq C,\\
+ &A=B\iffc(A\subseteq B\land B\subseteq A).
+\end{align*}
+\end{prop}
+\begin{proof}
+第1式は定義による。第2式では任意の $x\in A$ は $B$ に属し，従って $C$ に属する。第3式の必要性は第1式による。十分性は，双方の包含から任意の対象 $x$ について $x\in A\iffc x\in B$ を得るので，外延性による。
+\end{proof}
+% genron:end K-000020
+% genron:begin K-000021
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+\Needspace{4\baselineskip}
+\begin{principle}[空集合の存在]\label{k21}
+元を持たない集合が存在する。
+\end{principle}
+外延性によりこのような集合はただ一つである。これを空集合といい $\varnothing$ と書く。空集合以外の集合を空でない集合という。
+% genron:end K-000021
+% genron:begin K-000022
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000013
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000021
+\Needspace{4\baselineskip}
+\begin{prop}[空集合の特徴]\label{k22}
+任意の集合 $A$ に対して $\varnothing\subseteq A$ である。また $A$ が空でないことと $A$ に元が存在することは同値である。
+\end{prop}
+\begin{proof}
+空の範囲における全称言明は成り立つので，前半を得る。元がなければ外延性によって $A=\varnothing$ であり，逆に $A=\varnothing$ なら元は存在しない。N-1 の量化の否定及び古典的推論により後半を得る。
+\end{proof}
+% genron:end K-000022
+% genron:begin K-000023
+% genron:use K-000021
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+\Needspace{4\baselineskip}
+\begin{principle}[対集合の存在]\label{k23}
+任意の集合 $a,b$ に対し，$x\in C\iffc (x=a\lor x=b)$ を満たす集合 $C$ が存在する。
+\end{principle}
+この集合を $\{a,b\}$ と書く。$\{a,a\}$ を $\{a\}$ と略記する。外延性により $\{a,b\}=\{b,a\}$ である。$\{a\}$ はただ一つの元 $a$ を持つ。特に $\{\varnothing\}\ne\varnothing$ であり，少なくとも二つの相異なる集合が得られた。
+% genron:end K-000023
+% genron:begin K-000024
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+\Needspace{4\baselineskip}
+\begin{principle}[部分集合の指定]\label{k24}
+集合 $A$ と，その各元について意味の定まった数学的条件 $P(x)$ が与えられたとき，$A$ の元のうち $P(x)$ を満たすものをちょうど元とする集合が存在する。
+\end{principle}
+外延性により一意に定まるこの集合を
+\[
+ \{x\in A\mid P(x)\}
+\]
+と書く。条件に現れる他の対象は予め指定する。本原理は既に存在する集合の部分集合を指定する原理であって，任意の条件から無制限に集合を作る原理ではない。
+% genron:end K-000024
+% genron:begin K-000025
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+\Needspace{4\baselineskip}
+\begin{prop}[全ての集合からなる集合は存在しない]\label{k25}
+全ての集合を元とする集合は存在しない。
+\end{prop}
+\begin{proof}
+そのような集合 $U$ が存在すると仮定する。原理\ref{k24}により $R=\{x\in U\mid x\notin x\}$ が存在する。$R$ は集合であるから $R\in U$ であり，$R\in R\iffc R\notin R$ を得る。これは N-1 の古典的推論に反する。
+\end{proof}
+% genron:end K-000025
+% genron:begin K-000026
+% genron:use K-000021
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+\Needspace{4\baselineskip}
+\begin{principle}[合併集合の存在]\label{k26}
+集合 $C$ が与えられたとき，その元のうち少なくとも一つに属する対象全体からなる集合が存在する。
+\end{principle}
+これを $\bigcup C$ と書く。すなわち
+\[
+ x\in\bigcup C\iffc\exists A\in C,\ x\in A.
+\]
+特に $\bigcup\varnothing=\varnothing$ である。
+% genron:end K-000026
+% genron:begin K-000027
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+\Needspace{4\baselineskip}
+\begin{principle}[冪集合の存在]\label{k27}
+任意の集合 $A$ に対して，$A$ の部分集合全体からなる集合が存在する。
+\end{principle}
+これを $A$ の冪集合といい $\Pow(A)$ と書く。$B\in\Pow(A)\iffc B\subseteq A$ である。
+% genron:end K-000027
+% genron:begin K-000028
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000006
+% genron:use K-000017
+% genron:use K-000018
+\Needspace{4\baselineskip}
+\begin{principle}[一意に指定された元の集合]\label{k28}
+集合 $A$ の各元 $x$ に対し，条件 $P(x,y)$ を満たす集合 $y$ がただ一つ存在するとする。このとき，これらの $y$ 全体からなる集合が存在する。
+\end{principle}
+これを
+\[
+ \{y\mid \exists x\in A,\ P(x,y)\}
+\]
+と書く。この原理は既に各 $x$ について存在と一意性が示された対象の集まりを保証するものであって，存在のみから一斉に元を選ぶ原理ではない。これは後に選択公理を述べる際に重要な区別となる。
+
+以上の原理は本篇及び後続の数学で必要とする集合の存在を保証するためのものである。これらを形式言語による公理系として研究することはしない。無限集合の存在原理その他は必要となる段階で述べる。
+% genron:end K-000028
+\Needspace{8\baselineskip}
+\section{集合演算}
+% genron:begin K-000029
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000026
+\Needspace{4\baselineskip}
+\begin{defn}[二集合の演算]\label{k29}
+集合 $A,B$ に対し
+\begin{align*}
+ A\cup B&=\bigcup\{A,B\},\\
+ A\cap B&=\{x\in A\mid x\in B\},\\
+ A\setminus B&=\{x\in A\mid x\notin B\}
+\end{align*}
+と定め，それぞれ合併集合，共通部分，差集合という。$B\subseteq A$ のとき $A\setminus B$ を $A$ における $B$ の補集合という。
+\end{defn}
+合併，共通部分及び差の所属条件はそれぞれ $x\in A\lor x\in B$，$x\in A\land x\in B$，$x\in A\land x\notin B$ である。
+% genron:end K-000029
+% genron:begin K-000030
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000009
+% genron:use K-000010
+% genron:use K-000011
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000020
+% genron:use K-000021
+% genron:use K-000029
+\Needspace{4\baselineskip}
+\begin{prop}[集合演算の法則]\label{k30}
+集合 $A,B,C$ について次の法則が成り立つ。
+\begin{align*}
+ A\cup B&=B\cup A,& A\cap B&=B\cap A,\\
+ (A\cup B)\cup C&=A\cup(B\cup C),\\
+ (A\cap B)\cap C&=A\cap(B\cap C),\\
+ A\cup A&=A,& A\cap A&=A,\\
+ A\cap(B\cup C)&=(A\cap B)\cup(A\cap C),\\
+ A\cup(B\cap C)&=(A\cup B)\cap(A\cup C),\\
+ A\cap(A\cup B)&=A,& A\cup(A\cap B)&=A,\\
+ A\cup\varnothing&=A,& A\cap\varnothing&=\varnothing,\\
+ A\setminus A&=\varnothing.
+\end{align*}
+また $A\subseteq B$，$A\cap B=A$，$A\cup B=B$ は互いに同値である。
+\end{prop}
+\begin{proof}
+最初の八つの等式（交換，結合，冪等，分配）及び二つの吸収律は，任意の $x$ の所属条件に N-1 の対応する論理法則を適用して外延性によって得る。例えば
+\begin{align*}
+ x\in A\cap(B\cup C)
+ &\iffc x\in A\land(x\in B\lor x\in C)\\
+ &\iffc (x\in A\land x\in B)\lor(x\in A\land x\in C)\\
+ &\iffc x\in(A\cap B)\cup(A\cap C).
+\end{align*}
+空集合との演算及び $A\setminus A$ についても所属条件から従う。$A\subseteq B$ なら $A$ の元は全て $A\cap B$ に属し，$A\cup B$ の元は全て $B$ に属する。逆の包含は定義から従う。$A\cap B=A$ なら $A=A\cap B\subseteq B$ であり，$A\cup B=B$ なら $A\subseteq A\cup B=B$ である。
+\end{proof}
+% genron:end K-000030
+% genron:begin K-000031
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000008
+% genron:use K-000011
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000029
+\Needspace{4\baselineskip}
+\begin{prop}[補集合の法則]\label{k31}
+$A,B$ を集合 $E$ の部分集合とする。このとき
+\begin{align*}
+ A\cup(E\setminus A)&=E,\\
+ A\cap(E\setminus A)&=\varnothing,\\
+ E\setminus(E\setminus A)&=A,\\
+ E\setminus(A\cup B)&=(E\setminus A)\cap(E\setminus B),\\
+ E\setminus(A\cap B)&=(E\setminus A)\cup(E\setminus B).
+\end{align*}
+\end{prop}
+\begin{proof}
+両辺とも $E$ の部分集合であるから，$x\in E$ に対してのみ所属条件を比較すればよい。初めの二式は排中律と矛盾律，第3式は二重否定，最後の二式は N-1 の De Morgan の法則からそれぞれ従う。
+\end{proof}
+% genron:end K-000031
+% genron:begin K-000032
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000023
+\Needspace{4\baselineskip}
+\begin{defn}[順序対]\label{k32}
+集合 $a,b$ の順序対を
+\[
+ (a,b)=\bigl\{\{a\},\{a,b\}\bigr\}
+\]
+と定める。対集合の存在原理によりこれは集合である。
+\end{defn}
+\noindent この構成は次の特徴を持つ。
+\[
+ (a,b)=(c,d)\iffc a=c\land b=d.
+\]
+\begin{proof}
+十分性は明らかである。必要性を示す。$\{a\}$ は右辺の順序対の元なので $\{a\}=\{c\}$ 又は $\{a\}=\{c,d\}$ であり，いずれの場合にも $c=a$ である。よって $\{\{a\},\{a,b\}\}=\{\{a\},\{a,d\}\}$ となる。$b=a$ なら左辺は $\{\{a\}\}$ であり，$\{a,d\}=\{a\}$ から $d=a=b$ を得る。$b\ne a$ なら $\{a,b\}\ne\{a\}$ なので $\{a,b\}=\{a,d\}$ となり，$b\ne a$ から $b=d$ を得る。
+\end{proof}
+% genron:end K-000032
+% genron:begin K-000033
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000032
+\Needspace{4\baselineskip}
+\begin{defn}[直積]\label{k33}
+集合 $A,B$ に対して $a\in A$，$b\in B$ を満たす順序対 $(a,b)$ 全体からなる集合を $A\times B$ と書き，直積という。
+\end{defn}
+\begin{proof}[存在の証明]
+$E=A\cup B$ とおく。$a\in A,b\in B$ なら $\{a\},\{a,b\}\in\Pow(E)$ であり，$(a,b)\in\Pow(\Pow(E))$ である。よって原理\ref{k24}により
+\[
+ \{z\in\Pow(\Pow(E))\mid
+ \exists a\in A,\ \exists b\in B,\ z=(a,b)\}
+\]
+が存在し，求める集合となる。
+\end{proof}
+$A$ 又は $B$ が空集合なら直積は空集合である。逆に両者が空でなければ，それぞれの元 $a,b$ の存在を用いて $(a,b)\in A\times B$ を得る。従って直積が空であることは少なくとも一方が空であることと同値である。この論証は選択公理を必要としない。
+% genron:end K-000033
+\Needspace{8\baselineskip}
+\section{写像}
+% genron:begin K-000034
+% genron:use K-000018
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000006
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000032
+% genron:use K-000033
+\Needspace{4\baselineskip}
+\begin{defn}[写像]\label{k34}
+集合 $A,B$ と，$A\times B$ の部分集合 $G$ であって
+\[
+ \forall a\in A,\ \exists!b\in B,\ (a,b)\in G
+\]
+を満たすものの組 $(A,(B,G))$ を $A$ から $B$ への写像という。これを $f:A\to B$ と書く。$A,B$ をそれぞれ始域，終域，$G$ をグラフという。上の条件における $b$ を $f(a)$ と書く。
+\end{defn}
+写像の相等は始域，終域及びグラフがそれぞれ等しいことである。始域と終域の等しい写像 $f,g$ に対しては $f=g$ と $\forall a\in A,\ f(a)=g(a)$ は同値である。これはグラフの所属条件及び順序対の相等による。
+% genron:end K-000034
+% genron:begin K-000035
+% genron:use K-000006
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000034
+\Needspace{4\baselineskip}
+\begin{prop}[写像の指定]\label{k35}
+各 $a\in A$ について条件 $P(a,b)$ を満たす $b\in B$ がただ一つ存在するとする。このとき，任意の $a\in A$ に対して $P(a,f(a))$ を満たす写像 $f:A\to B$ がただ一つ存在する。
+\end{prop}
+\begin{proof}
+$G=\{(a,b)\in A\times B\mid P(a,b)\}$ とすればよい。存在は原理\ref{k24}，写像の条件は仮定による。任意の他の写像も同じグラフを持つから一意である。
+\end{proof}
+特に $\varnothing$ から任意の集合への写像はただ一つ存在し，そのグラフは空集合である。$A\ne\varnothing$ なら $A$ から $\varnothing$ への写像は存在しない。
+% genron:end K-000035
+% genron:begin K-000036
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000035
+\Needspace{4\baselineskip}
+\begin{defn}[合成と恒等写像]\label{k36}
+$f:A\to B$，$g:B\to C$ に対し，$(g\circ f)(a)=g(f(a))$ によって定まる写像 $g\circ f:A\to C$ を合成という。また $\id_A(a)=a$ で定まる写像 $\id_A:A\to A$ を恒等写像という。
+\end{defn}
+これらは命題\ref{k35}によって存在する。さらに $h:C\to D$ が与えられれば
+\[
+ h\circ(g\circ f)=(h\circ g)\circ f,
+ \qquad f\circ\id_A=f=\id_B\circ f.
+\]
+実際，両辺の始域と終域が一致し，各元 $a$ における値を比較すればそれぞれ $h(g(f(a)))$ と $f(a)$ に等しい。
+% genron:end K-000036
+% genron:begin K-000037
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000034
+\Needspace{4\baselineskip}
+\begin{defn}[像と逆像]\label{k37}
+写像 $f:A\to B$ と部分集合 $S\subseteq A$，$T\subseteq B$ に対し
+\begin{align*}
+ f(S)&=\{b\in B\mid\exists a\in S,\ f(a)=b\},\\
+ f^{-1}(T)&=\{a\in A\mid f(a)\in T\}
+\end{align*}
+をそれぞれ $S$ の $f$ による像，$T$ の $f$ による逆像という。
+\end{defn}
+これらの存在は部分集合の指定の原理による。逆像の記法は，逆写像の存在を前提としない。
+% genron:end K-000037
+% genron:begin K-000038
+% genron:use K-000034
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000015
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000029
+% genron:use K-000037
+\Needspace{4\baselineskip}
+\begin{prop}[像・逆像と集合演算]\label{k38}
+$f:A\to B$，$S,S'\subseteq A$，$T,T'\subseteq B$ とする。
+\begin{align*}
+ f(S\cup S')&=f(S)\cup f(S'),\\
+ f(S\cap S')&\subseteq f(S)\cap f(S'),\\
+ f^{-1}(T\cup T')&=f^{-1}(T)\cup f^{-1}(T'),\\
+ f^{-1}(T\cap T')&=f^{-1}(T)\cap f^{-1}(T'),\\
+ f^{-1}(B\setminus T)&=A\setminus f^{-1}(T),\\
+ S&\subseteq f^{-1}(f(S)),\\
+ f(f^{-1}(T))&=T\cap f(A).
+\end{align*}
+\end{prop}
+\begin{proof}
+最初の式は $b\in f(S\cup S')$ が，$S$ 又は $S'$ の元 $a$ で $f(a)=b$ を満たすものの存在と同値であることによる。第2式では $b\in f(S\cap S')$ を与える元 $a$ は $S,S'$ の双方に属する。逆像に関する三式は $a$ の所属条件を $f(a)$ の所属条件に書き換えればよい。第6式は $a\in S$ なら $f(a)\in f(S)$ であることによる。最後の式は $b\in f(f^{-1}(T))$ が $b\in T$ かつ $b=f(a)$ となる $a\in A$ が存在することと同値であることによる。
+\end{proof}
+% genron:end K-000038
+% genron:begin K-000039
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000037
+\Needspace{4\baselineskip}
+\begin{defn}[単射・全射・全単射]\label{k39}
+写像 $f:A\to B$ について次のように定める。
+\begin{align*}
+ \text{単射}:&\quad\forall a,a'\in A,\ f(a)=f(a')\impc a=a',\\
+ \text{全射}:&\quad\forall b\in B,\ \exists a\in A,\ f(a)=b.
+\end{align*}
+単射かつ全射を全単射という。
+\end{defn}
+像の定義により全射であることと $f(A)=B$ は同値である。
+% genron:end K-000039
+% genron:begin K-000040
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000036
+% genron:use K-000039
+\Needspace{4\baselineskip}
+\begin{prop}[合成と単射・全射]\label{k40}
+$f:A\to B$，$g:B\to C$ を写像とする。
+\begin{enumerate}
+\item $f,g$ が共に単射なら $g\circ f$ は単射である。
+\item $f,g$ が共に全射なら $g\circ f$ は全射である。
+\item $g\circ f$ が単射なら $f$ は単射である。
+\item $g\circ f$ が全射なら $g$ は全射である。
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(1) $g(f(a))=g(f(a'))$ なら順に $f(a)=f(a')$，$a=a'$ を得る。(2) $c\in C$ を任意にとり，$g(b)=c$ を満たす $b\in B$，次いで $f(a)=b$ を満たす $a\in A$ の存在を用いれば $g(f(a))=c$ となる。(3) $f(a)=f(a')$ なら $g(f(a))=g(f(a'))$ であるから $a=a'$ となる。(4) 任意の $c\in C$ は $g(f(a))$ の形で表されるから $g$ の像に属する。
+\end{proof}
+% genron:end K-000040
+% genron:begin K-000041
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000006
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000039
+% genron:use K-000040
+\Needspace{4\baselineskip}
+\begin{prop}[逆写像]\label{k41}
+写像 $f:A\to B$ が全単射であるための必要十分条件は，写像 $g:B\to A$ であって
+\[
+ g\circ f=\id_A,\qquad f\circ g=\id_B
+\]
+を満たすものが存在することである。このような $g$ はただ一つ存在する。
+\end{prop}
+\begin{proof}
+$f$ が全単射なら，各 $b\in B$ について $f(a)=b$ を満たす $a\in A$ がただ一つ存在する。命題\ref{k35}によりこれを $g(b)$ とする写像 $g$ が存在する。定義から双方の合成の等式が従う。逆に上の等式が成り立てば，恒等写像は全単射であるから命題\ref{k40}により $f$ は単射かつ全射である。$g,g'$ がともに条件を満たせば $g=g\circ(f\circ g')=(g\circ f)\circ g'=g'$ となる。
+\end{proof}
+この写像を逆写像といい $f^{-1}:B\to A$ と書く。部分集合の逆像と区別するため，引数が元か部分集合かを明示する。
+% genron:end K-000041
+% genron:begin K-000042
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000037
+% genron:use K-000039
+\Needspace{4\baselineskip}
+\begin{defn}[制限・包含・終域の縮小]\label{k42}
+$S\subseteq A$ に対して $i:S\to A$，$i(s)=s$ を包含写像という。$f:A\to B$ の $S$ への制限を $f|_S=f\circ i$ と定める。$f(A)\subseteq T\subseteq B$ のときは同じ値を持つ写像 $A\to T$ を定めることができる。これを終域の縮小という。
+\end{defn}
+命題\ref{k35}によりこれらは一意に定まる。特に $f$ を $A\to f(A)$ と $f(A)\to B$ の合成として表すことができ，前者は全射，後者は単射である。
+% genron:end K-000042
+% genron:begin K-000043
+% genron:use K-000006
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+\Needspace{4\baselineskip}
+\begin{prop}[直積の普遍性]\label{k43}
+直積 $A\times B$ からの写像 $p(a,b)=a$，$q(a,b)=b$ をそれぞれ第1，第2射影という。任意の集合 $X$ と写像 $u:X\to A$，$v:X\to B$ に対し
+\[
+ p\circ w=u,\qquad q\circ w=v
+\]
+を満たす写像 $w:X\to A\times B$ がただ一つ存在する。
+\end{prop}
+\begin{proof}
+順序対の特徴により射影は一意に定まる。$w(x)=(u(x),v(x))$ は条件を満たす。条件を満たす $w'$ の各値は，その二成分がそれぞれ $u(x),v(x)$ であるから $w(x)$ に等しい。
+\end{proof}
+% genron:end K-000043
+\Needspace{8\baselineskip}
+\section{集合族と積・和}
+% genron:begin K-000044
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000034
+% genron:use K-000035
+\Needspace{4\baselineskip}
+\begin{defn}[集合族]\label{k44}
+集合 $I$ の各元 $i$ に集合 $A_i$ が一意に定められているとき，この対応を $I$ を添字集合とする集合族といい $(A_i)_{i\in I}$ と書く。
+\end{defn}
+原理\ref{k28}により値の集合 $C=\{A_i\mid i\in I\}$ が存在するから，この集合族は写像 $I\to C$ によって表される。$I=\varnothing$ の場合も許す。
+% genron:end K-000044
+% genron:begin K-000045
+% genron:use K-000025
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000021
+% genron:use K-000024
+% genron:use K-000026
+% genron:use K-000029
+% genron:use K-000044
+\Needspace{4\baselineskip}
+\begin{defn}[集合族の合併と共通部分]\label{k45}
+集合族 $(A_i)_{i\in I}$ に対し
+\[
+ \bigcup_{i\in I}A_i=\bigcup\{A_i\mid i\in I\}
+\]
+と定める。すべての $A_i$ が集合 $E$ の部分集合であるとき，$E$ における共通部分を
+\[
+ \{x\in E\mid\forall i\in I,\ x\in A_i\}
+\]
+と定める。
+\end{defn}
+$I\ne\varnothing$ なら，どの共通の上界 $E$ においても同じ集合が得られる。実際，共通部分の各元は全ての $A_i$ に属するので，特に一つの $A_i$ に属し，任意の上界に属する。合併集合が上界の一つである。よって $I\ne\varnothing$ ならこの集合を単に $\bigcap_{i\in I} A_i$ と書く。$I=\varnothing$ のときは合併が $\varnothing$，$E$ における共通部分が $E$ となる。全ての集合を元とする集合は存在しない（命題\ref{k25}）ので，後者では母集合 $E$ を省略してはならない。
+% genron:end K-000045
+% genron:begin K-000046
+% genron:use K-000028
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000013
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000024
+% genron:use K-000029
+% genron:use K-000037
+% genron:use K-000044
+% genron:use K-000045
+\Needspace{4\baselineskip}
+\begin{prop}[集合族と逆像・補集合]\label{k46}
+$f:A\to B$ とし，$(T_i)_{i\in I}$ を $B$ の部分集合からなる集合族とする。共通部分はそれぞれ $A,B$ においてとるものとする。このとき
+\begin{align*}
+ f^{-1}\Bigl(\bigcup_{i\in I}T_i\Bigr)
+   &=\bigcup_{i\in I}f^{-1}(T_i),\\
+ f^{-1}\Bigl(\bigcap_{i\in I}T_i\Bigr)
+   &=\bigcap_{i\in I}f^{-1}(T_i),\\
+ B\setminus\bigcup_{i\in I}T_i
+   &=\bigcap_{i\in I}(B\setminus T_i),\\
+ B\setminus\bigcap_{i\in I}T_i
+   &=\bigcup_{i\in I}(B\setminus T_i).
+\end{align*}
+\end{prop}
+\begin{proof}
+初めの二式は，$a\in A$ の左辺への所属がそれぞれ $\exists i\in I,\ f(a)\in T_i$，$\forall i\in I,\ f(a)\in T_i$ と同値であることによる。後の二式は $b\in B$ に対し N-1 の量化の否定を適用する。これらの論証は $I=\varnothing$ の場合も成立する。
+\end{proof}
+% genron:end K-000046
+% genron:begin K-000047
+% genron:use K-000032
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000028
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000044
+% genron:use K-000045
+\Needspace{4\baselineskip}
+\begin{defn}[写像の集合と直積族]\label{k47}
+$A$ から $B$ への写像全体からなる集合を $B^A$ と書く。集合族 $(A_i)_{i\in I}$ に対し $U=\bigcup_{i\in I}A_i$ とおき，
+\[
+ \prod_{i\in I}A_i=\{f\in U^I\mid\forall i\in I,\ f(i)\in A_i\}
+\]
+を集合族の直積という。
+\end{defn}
+\begin{proof}[存在の証明]
+$\Pow(A\times B)$ から写像のグラフとなる条件を満たす部分集合だけを分離する。各グラフ $G$ に対し写像 $(A,(B,G))$ が一意に定まるから，原理\ref{k28}によって $B^A$ が存在する。直積族の存在は $U^I$ に部分集合の指定を適用すればよい。
+\end{proof}
+$I=\varnothing$ の場合は $U=\varnothing$ であり，空集合から空集合への唯一の写像が積の唯一の元となる。ある $A_i=\varnothing$ なら積は空集合となる。逆に全ての $A_i$ が空でない場合に積が空でないといえるかは，次篇における選択公理の問題である。
+% genron:end K-000047
+% genron:begin K-000048
+% genron:use K-000006
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000044
+% genron:use K-000047
+\Needspace{4\baselineskip}
+\begin{prop}[集合族の直積の普遍性]\label{k48}
+$P=\prod_{i\in I}A_i$ とする。各 $i\in I$ に対して $p_i(f)=f(i)$ による写像 $p_i:P\to A_i$ を射影という。集合 $X$ と，写像 $g_i:X\to A_i$ の族が与えられたとき，
+\[
+ \forall i\in I,\quad p_i\circ g=g_i
+\]
+を満たす写像 $g:X\to P$ がただ一つ存在する。
+\end{prop}
+\begin{proof}
+$x\in X$ を固定する。各 $i\in I$ に対して $g_i(x)\in A_i$ が一意に定まるから，命題\ref{k35}により $i\mapsto g_i(x)$ なる写像が存在し，$P$ の元である。この元を $g(x)$ として $g$ を定めればよい。条件を満たす他の写像は各 $x$ について全ての $i$ で同じ値を持つ元を対応させるから $g$ に等しい。$I=\varnothing$ の場合にも $P$ が一元集合であることから成立する。
+\end{proof}
+% genron:end K-000048
+% genron:begin K-000049
+% genron:use K-000039
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000044
+% genron:use K-000045
+\Needspace{4\baselineskip}
+\begin{defn}[非交和とその普遍性]\label{k49}
+集合族 $(A_i)_{i\in I}$ に対し $U=\bigcup_{i\in I}A_i$ とおき
+\[
+ D=\coprod_{i\in I}A_i=\{(i,a)\in I\times U\mid a\in A_i\}
+\]
+と定め，非交和という。$\iota_i:A_i\to D$ を $\iota_i(a)=(i,a)$ で定める。
+\end{defn}
+集合 $X$ と写像 $g_i:A_i\to X$ の族が与えられたとき，各 $i\in I$ について $g\circ\iota_i=g_i$ となる写像 $g:D\to X$ がただ一つ存在する。
+\begin{proof}
+各 $z\in D$ は一意に $(i,a)$ の形に表されるから，$g(z)=g_i(a)$ と定めることができる。これは所要の条件を満たす。他の写像が同じ条件を満たせば全ての $z=(i,a)$ で値が一致するので等しい。空の族の場合にも $D=\varnothing$ であるから成立する。
+\end{proof}
+% genron:end K-000049
+\Needspace{8\baselineskip}
+\section{関係と商集合}
+% genron:begin K-000050
+% genron:use K-000034
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000033
+\Needspace{4\baselineskip}
+\begin{defn}[関係]\label{k50}
+$A\times B$ の部分集合 $R$ を $A$ から $B$ への関係という。$(a,b)\in R$ を $a\,R\,b$ と書く。$A=B$ の場合には $A$ 上の関係という。
+\end{defn}
+写像のグラフは，各 $a$ にただ一つの $b$ が対応する関係にほかならない。
+% genron:end K-000050
+% genron:begin K-000051
+% genron:use K-000036
+% genron:use K-000034
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000014
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000050
+\Needspace{4\baselineskip}
+\begin{defn}[逆関係と関係の合成]\label{k51}
+関係 $R\subseteq A\times B$ に対し，その逆関係を
+\[
+ R^{-1}=\{(b,a)\in B\times A\mid a\,R\,b\}
+\]
+と定める。関係 $S\subseteq B\times C$ が与えられたとき，合成を
+\[
+ S\circ R=\{(a,c)\in A\times C\mid
+ \exists b\in B,\ (a\,R\,b\land b\,S\,c)\}
+\]
+と定める。
+\end{defn}
+これらは部分集合の指定により存在する。さらに $T\subseteq C\times D$ について $T\circ(S\circ R)=(T\circ S)\circ R$ である。実際，いずれの所属条件も $b\in B,c\in C$ が存在して $a\,R\,b$，$b\,S\,c$，$c\,T\,d$ が成り立つことである。写像のグラフの合成は写像の合成のグラフに一致する。
+% genron:end K-000051
+% genron:begin K-000052
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000050
+\Needspace{4\baselineskip}
+\begin{defn}[同値関係]\label{k52}
+集合 $A$ 上の関係 $\sim$ が次の三条件を満たすとき，同値関係という。
+\begin{align*}
+ &\forall x\in A,\ x\sim x &&\text{（反射律）},\\
+ &\forall x,y\in A,\ x\sim y\impc y\sim x &&\text{（対称律）},\\
+ &\forall x,y,z\in A,\ (x\sim y\land y\sim z)\impc x\sim z
+ &&\text{（推移律）}.
+\end{align*}
+\end{defn}
+% genron:end K-000052
+% genron:begin K-000053
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000052
+\Needspace{4\baselineskip}
+\begin{defn}[同値類と商集合]\label{k53}
+$\sim$ を $A$ 上の同値関係とする。$x\in A$ に対し $[x]=\{y\in A\mid x\sim y\}$ を $x$ の同値類という。同値類全体からなる集合
+\[
+ A/{\sim}=\{C\in\Pow(A)\mid\exists x\in A,\ C=[x]\}
+\]
+を商集合という。写像 $\pi:A\to A/{\sim}$，$\pi(x)=[x]$ を標準全射という。
+\end{defn}
+存在は原理\ref{k24}，\ref{k27}及び命題\ref{k35}による。定義により $\pi$ は全射である。任意の $x,y\in A$ について
+\[
+ x\sim y\iffc [x]=[y]\iffc [x]\cap[y]\ne\varnothing.
+\]
+\begin{proof}
+$x\sim y$ とする。$z\in[x]$ なら対称律及び推移律から $y\sim z$ となり，$z\in[y]$ である。逆包含も同様である。$[x]=[y]$ なら反射律から $x\in[x]\cap[y]$ である。共通部分に元 $z$ があれば $x\sim z$，$y\sim z$ より $x\sim y$ を得る。
+\end{proof}
+% genron:end K-000053
+% genron:begin K-000054
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000021
+% genron:use K-000022
+% genron:use K-000024
+% genron:use K-000026
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000033
+% genron:use K-000050
+% genron:use K-000052
+% genron:use K-000053
+\Needspace{4\baselineskip}
+\begin{prop}[同値関係と分割]\label{k54}
+集合 $A$ の部分集合からなる集合 $\mathcal C$ が，その各元が空でなく，相異なる二元は共通の元を持たず，$\bigcup\mathcal C=A$ を満たすとき，$A$ の分割という。同値関係の商集合は $A$ の分割である。逆に分割 $\mathcal C$ に対し
+\[
+ x\sim y\iffc\exists C\in\mathcal C,\ x\in C\land y\in C
+\]
+で同値関係が定まり，その商集合は $\mathcal C$ に等しい。
+\end{prop}
+\begin{proof}
+同値類は反射律により空でなく，定義\ref{k53}に続く特徴により相異なる同値類は交わらない。各 $x\in A$ は $[x]$ に属するから合併は $A$ である。逆に分割では各元はただ一つの $C$ に属する。従って上の関係は反射的かつ対称的であり，$x\sim y$，$y\sim z$ なら二つの部分集合が $y$ を共有して一致するので $x\sim z$ となる。$x$ が属する唯一の $C$ はちょうど $[x]$ である。各 $C$ は空でないから同値類として現れる。$A=\varnothing$ のときは空の分割と空の関係が対応する。
+\end{proof}
+% genron:end K-000054
+% genron:begin K-000055
+% genron:use K-000006
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000036
+% genron:use K-000039
+% genron:use K-000052
+% genron:use K-000053
+\Needspace{4\baselineskip}
+\begin{prop}[商集合の普遍性]\label{k55}
+$\sim$ を $A$ 上の同値関係とし，$\pi:A\to A/{\sim}$ を標準全射とする。写像 $f:A\to B$ について，次の二条件は同値である。
+\begin{enumerate}
+\item $x\sim y$ ならば $f(x)=f(y)$ である。
+\item 写像 $\bar f:A/{\sim}\to B$ であって $\bar f\circ\pi=f$ を満たすものがただ一つ存在する。
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(1) を仮定する。$C\in A/{\sim}$ ならある $x$ が存在して $C=[x]$ である。他に $C=[y]$ なら $x\sim y$ なので $f(x)=f(y)$ である。従って $\bar f(C)$ は「ある $x\in A$ について $C=[x]$ かつ $b=f(x)$」を満たす唯一の $b\in B$ として定まる。命題\ref{k35}によって写像が存在する。定義から合成の等式を得る。一意性は $\pi$ が全射であることから従う。逆に (2) を仮定すると，$x\sim y$ なら $\pi(x)=\pi(y)$ であり，$f(x)=\bar f(\pi(x))=\bar f(\pi(y))=f(y)$ となる。
+\end{proof}
+ここでは各同値類の代表元を一斉に選ぶ必要はない。値が一意に定まることを示した上で写像を構成したのである。
+% genron:end K-000055
+% genron:begin K-000056
+% genron:use K-000035
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000041
+% genron:use K-000042
+% genron:use K-000050
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000055
+\Needspace{4\baselineskip}
+\begin{prop}[写像の標準分解]\label{k56}
+写像 $f:A\to B$ に対し $x\sim_f y\iffc f(x)=f(y)$ と定めると，$\sim_f$ は同値関係である。このとき $f$ は
+\[
+ A\xrightarrow{\pi} A/{\sim_f}
+ \xrightarrow{\widetilde f} f(A)
+ \xrightarrow{i} B
+\]
+という形に分解される。ここで $\pi$ は標準全射，$\widetilde f$ は全単射，$i$ は包含写像である。
+\end{prop}
+\begin{proof}
+関係は $A\times A$ の部分集合として存在し，等号の性質から三つの同値関係の条件を満たす。$f$ の終域を $f(A)$ に縮小した写像に命題\ref{k55}を適用し，$\widetilde f([x])=f(x)$ で定まる写像を得る。任意の $b\in f(A)$ はある $f(x)$ なので全射である。$\widetilde f([x])=\widetilde f([y])$ なら $x\sim_f y$ であり $[x]=[y]$ となるので単射である。各 $x$ で値を比較すれば $f=i\circ\widetilde f\circ\pi$ が成り立つ。
+\end{proof}
+% genron:end K-000056
+\section*{参考文献}
+\noindent T. Jech, \textit{Set Theory}, 3rd Millennium ed., Springer, 2003, Ch.~1（集合存在の諸原理及び順序対の構成）。\par
+\noindent J. M. Lee, \textit{Introduction to Topological Manifolds}, 2nd ed., Springer, 2011, Appendix A（集合・写像・関係及び集合族の構成）。\par
+\noindent 本篇の論証及び構成順序は原論の前提に従って記述した。次篇 N-3 では選択公理を独立に述べる。
+\end{document}

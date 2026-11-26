@@ -362,6 +362,1134 @@
       "status": "verified",
       "source": "volumes/N-1/main.tex",
       "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+    },
+    {
+      "id": "K-000018",
+      "kind": "axiom",
+      "title": "外延性",
+      "statement": "集合 A,B は任意の対象 x について x∈A⇔x∈B が成り立つとき等しい。逆は等号の意味から従う。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000019",
+      "kind": "definition",
+      "title": "部分集合",
+      "statement": "A⊆B ⇔ ∀x∈A, x∈B。A⊊B ⇔ A⊆B かつ A≠B。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000020",
+      "kind": "proposition",
+      "title": "包含の性質",
+      "statement": "A⊆A；A⊆B かつ B⊆C なら A⊆C；A=B ⇔ A⊆B かつ B⊆A。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000012",
+        "K-000017",
+        "K-000018",
+        "K-000019"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000021",
+      "kind": "axiom",
+      "title": "空集合の存在",
+      "statement": "元を一つも持たない集合が存在する。外延性により一意であり ∅ と記す。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000022",
+      "kind": "proposition",
+      "title": "空集合の特徴",
+      "statement": "任意の集合 A について ∅⊆A。A≠∅ ⇔ ∃x∈A。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000013",
+        "K-000017",
+        "K-000018",
+        "K-000019",
+        "K-000021"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000023",
+      "kind": "axiom",
+      "title": "対集合の存在",
+      "statement": "任意の集合 a,b に対し x∈C ⇔ (x=a または x=b) を満たす集合 C が存在し一意。{a,b} と記す。{a}={a,a}。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000021"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000024",
+      "kind": "axiom",
+      "title": "部分集合の指定",
+      "statement": "集合 A の各元について意味を持つ数学的条件 P(x) に対し x∈B ⇔ x∈A かつ P(x) を満たす集合 B が存在し一意。{x∈A | P(x)} と記す。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000019"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000025",
+      "kind": "proposition",
+      "title": "全ての集合からなる集合は存在しない",
+      "statement": "すべての集合を元とする集合は存在しない。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000026",
+      "kind": "axiom",
+      "title": "合併集合の存在",
+      "statement": "集合 C に対して x∈U ⇔ ∃A∈C, x∈A を満たす集合 U が存在し一意。⋃C と記す。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        9
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000021"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000027",
+      "kind": "axiom",
+      "title": "冪集合の存在",
+      "statement": "集合 A に対し B∈P(A) ⇔ B⊆A を満たす集合 P(A) が存在し一意。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        10
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000019"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000028",
+      "kind": "axiom",
+      "title": "一意に指定された元の集合",
+      "statement": "集合 A と各 x∈A に対してただ一つの集合 y を指定する条件 P(x,y) が与えられたとき、それらの y 全体からなる集合が存在する。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        1,
+        11
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000018"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000029",
+      "kind": "definition",
+      "title": "二集合の演算",
+      "statement": "A∪B=⋃{A,B}、A∩B={x∈A | x∈B}、A∖B={x∈A | x∉B}。B⊆A のとき A∖B は A における B の補集合。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000019",
+        "K-000023",
+        "K-000024",
+        "K-000026"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000030",
+      "kind": "proposition",
+      "title": "集合演算の法則",
+      "statement": "合併・共通部分は交換・結合・冪等・分配・吸収律を満たす。A∪∅=A、A∩∅=∅、A∖A=∅。A⊆B ⇔ A∩B=A ⇔ A∪B=B。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000009",
+        "K-000010",
+        "K-000011",
+        "K-000017",
+        "K-000018",
+        "K-000019",
+        "K-000020",
+        "K-000021",
+        "K-000029"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000031",
+      "kind": "proposition",
+      "title": "補集合の法則",
+      "statement": "A,B⊆E のとき A∪(E∖A)=E、A∩(E∖A)=∅、E∖(E∖A)=A、E∖(A∪B)=(E∖A)∩(E∖B)、E∖(A∩B)=(E∖A)∪(E∖B)。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000008",
+        "K-000011",
+        "K-000017",
+        "K-000018",
+        "K-000019",
+        "K-000021",
+        "K-000029"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000032",
+      "kind": "construction",
+      "title": "順序対",
+      "statement": "(a,b)={{a},{a,b}} と構成する。(a,b)=(c,d) ⇔ a=c かつ b=d。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000018",
+        "K-000023"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000033",
+      "kind": "construction",
+      "title": "直積",
+      "statement": "A×B={(a,b) | a∈A,b∈B} は P(P(A∪B)) の部分集合として存在する。A×B=∅ ⇔ A=∅ または B=∅。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000019",
+        "K-000021",
+        "K-000022",
+        "K-000024",
+        "K-000027",
+        "K-000029",
+        "K-000032"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000034",
+      "kind": "definition",
+      "title": "写像",
+      "statement": "写像 f:A→B は始域 A、終域 B、グラフ G⊆A×B を持ち、任意の a∈A にただ一つの b∈B が対応するもの。f(a)=b ⇔ (a,b)∈G。相等は始域・終域・グラフの一致。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000018",
+        "K-000024",
+        "K-000032",
+        "K-000033"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000035",
+      "kind": "proposition",
+      "title": "写像の指定",
+      "statement": "A の各 a に一意に b∈B を指定する条件 P(a,b) は一意の写像 f:A→B を定める。空集合から任意の B への写像は一意。A≠∅ なら A→∅ は存在しない。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000018",
+        "K-000021",
+        "K-000022",
+        "K-000024",
+        "K-000033",
+        "K-000034"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000036",
+      "kind": "construction",
+      "title": "合成と恒等写像",
+      "statement": "f:A→B、g:B→C の合成 g∘f:A→C は (g∘f)(a)=g(f(a)) で定まる。id_A(a)=a。合成は結合的、恒等写像は単位。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000034",
+        "K-000035"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000037",
+      "kind": "definition",
+      "title": "像と逆像",
+      "statement": "f:A→B、S⊆A、T⊆B に対し f(S)={b∈B | ∃a∈S,f(a)=b}、f^{-1}(T)={a∈A | f(a)∈T}。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000019",
+        "K-000024",
+        "K-000034"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000038",
+      "kind": "proposition",
+      "title": "像・逆像と集合演算",
+      "statement": "S,S′⊆A、T,T′⊆B に対し f(S∪S′)=f(S)∪f(S′)、f(S∩S′)⊆f(S)∩f(S′)、f^{-1}(T∪T′)=f^{-1}(T)∪f^{-1}(T′)、f^{-1}(T∩T′)=f^{-1}(T)∩f^{-1}(T′)、f^{-1}(B∖T)=A∖f^{-1}(T)。S⊆f^{-1}(f(S))、f(f^{-1}(T))=T∩f(A)。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000015",
+        "K-000017",
+        "K-000018",
+        "K-000019",
+        "K-000029",
+        "K-000034",
+        "K-000037"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000039",
+      "kind": "definition",
+      "title": "単射・全射・全単射",
+      "statement": "f:A→B が単射 ⇔ ∀a,a′∈A, f(a)=f(a′)⇒a=a′。全射 ⇔ ∀b∈B,∃a∈A,f(a)=b ⇔ f(A)=B。双方を全単射という。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000034",
+        "K-000037"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000040",
+      "kind": "proposition",
+      "title": "合成と単射・全射",
+      "statement": "f:A→B、g:B→C がともに単射なら g∘f は単射、ともに全射なら全射。g∘f が単射なら f は単射、全射なら g は全射。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000036",
+        "K-000039"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000041",
+      "kind": "proposition",
+      "title": "逆写像",
+      "statement": "f:A→B が全単射 ⇔ g:B→A で g∘f=id_A、f∘g=id_B を満たすものが存在する。その g は一意。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000034",
+        "K-000035",
+        "K-000036",
+        "K-000039",
+        "K-000040"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000042",
+      "kind": "construction",
+      "title": "制限・包含・終域の縮小",
+      "statement": "S⊆A なら包含 i:S→A, i(s)=s と制限 f|_S:S→B が存在。f(A)⊆T⊆B なら f を A→T に終域縮小できる。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        9
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000019",
+        "K-000034",
+        "K-000035",
+        "K-000036",
+        "K-000037",
+        "K-000039"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000043",
+      "kind": "proposition",
+      "title": "直積の普遍性",
+      "statement": "射影 p:A×B→A、q:A×B→B に対し任意の u:X→A,v:X→B を満たす w:X→A×B で p∘w=u,q∘w=v が一意に存在する。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        3,
+        10
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000032",
+        "K-000033",
+        "K-000034",
+        "K-000035",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000044",
+      "kind": "definition",
+      "title": "集合族",
+      "statement": "添字集合 I の各 i に集合 A_i が一意に与えられる対応を集合族 (A_i)_{i∈I} という。一意に指定された元の集合の原理により値の集合 C={A_i | i∈I} が存在し、I→C として表せる。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        4,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000028",
+        "K-000034",
+        "K-000035"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000045",
+      "kind": "construction",
+      "title": "集合族の合併と共通部分",
+      "statement": "集合族の合併 ⋃_{i∈I}A_i=⋃{A_i|i∈I}。すべて A_i⊆E のとき E における共通部分は {x∈E|∀i∈I,x∈A_i}。I≠∅ なら共通部分は E に依存せず存在、I=∅ なら E に等しい。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        4,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000021",
+        "K-000024",
+        "K-000025",
+        "K-000026",
+        "K-000029",
+        "K-000044"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000046",
+      "kind": "proposition",
+      "title": "集合族と逆像・補集合",
+      "statement": "T_i⊆B と f:A→B に対し f^{-1}(⋃T_i)=⋃f^{-1}(T_i)、f^{-1}(⋂_B T_i)=⋂_A f^{-1}(T_i)。B∖⋃T_i=⋂_B(B∖T_i)、B∖⋂_B T_i=⋃(B∖T_i)。空添字を含み、共通部分は指定母集合内。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        4,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000013",
+        "K-000017",
+        "K-000018",
+        "K-000024",
+        "K-000028",
+        "K-000029",
+        "K-000037",
+        "K-000044",
+        "K-000045"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000047",
+      "kind": "construction",
+      "title": "写像の集合と直積族",
+      "statement": "B^A は A→B の写像全体。グラフを P(A×B) 内で分離してから写像に対応させて存在を得る。集合族の積 ∏A_i={f∈U^I | ∀i,f(i)∈A_i}, U=⋃A_i。I=∅ なら積は一元集合、空の因子があれば空。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        4,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000021",
+        "K-000022",
+        "K-000024",
+        "K-000027",
+        "K-000028",
+        "K-000032",
+        "K-000033",
+        "K-000034",
+        "K-000035",
+        "K-000044",
+        "K-000045"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000048",
+      "kind": "proposition",
+      "title": "集合族の直積の普遍性",
+      "statement": "P=∏A_i、p_i:P→A_i,f↦f(i)。集合 X と各 i に写像 g_i:X→A_i が一意に指定される族に対し p_i∘g=g_i を満たす g:X→P が一意に存在。空添字を含む。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        4,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000034",
+        "K-000035",
+        "K-000036",
+        "K-000044",
+        "K-000047"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000049",
+      "kind": "construction",
+      "title": "非交和とその普遍性",
+      "statement": "D=⨿A_i={(i,a)∈I×U|a∈A_i}、ι_i:A_i→D、a↦(i,a)。任意の g_i:A_i→X の族に対し g:D→X で g∘ι_i=g_i が一意に存在。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        4,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000024",
+        "K-000032",
+        "K-000033",
+        "K-000034",
+        "K-000035",
+        "K-000036",
+        "K-000039",
+        "K-000044",
+        "K-000045"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000050",
+      "kind": "definition",
+      "title": "関係",
+      "statement": "A から B への関係は A×B の部分集合 R。a R b ⇔ (a,b)∈R。A=B なら A 上の関係。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000033",
+        "K-000034"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000051",
+      "kind": "construction",
+      "title": "逆関係と関係の合成",
+      "statement": "R⊆A×B の逆関係 R^{-1}⊆B×A、b R^{-1} a ⇔ a R b。S⊆B×C の合成 S∘R⊆A×C、a(S∘R)c ⇔ ∃b∈B,a R b ∧ b S c。合成は結合的。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000014",
+        "K-000017",
+        "K-000018",
+        "K-000024",
+        "K-000033",
+        "K-000034",
+        "K-000036",
+        "K-000050"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000052",
+      "kind": "definition",
+      "title": "同値関係",
+      "statement": "A 上の関係 ~ が反射的 x~x、対称的 x~y⇒y~x、推移的 x~y∧y~z⇒x~z なら同値関係。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000050"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000053",
+      "kind": "construction",
+      "title": "同値類と商集合",
+      "statement": "[x]={y∈A|x~y}。x~y ⇔ [x]=[y] ⇔ [x]∩[y]≠∅。A/~={[x]|x∈A}⊆P(A)。標準全射 π:A→A/~。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000021",
+        "K-000022",
+        "K-000024",
+        "K-000027",
+        "K-000029",
+        "K-000034",
+        "K-000035",
+        "K-000039",
+        "K-000052"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000054",
+      "kind": "proposition",
+      "title": "同値関係と分割",
+      "statement": "分割 C⊆P(A) は各元が非空、相異なる元は交わらず、⋃C=A。A/~ は分割。逆に x~y ⇔ ∃C∈分割,x,y∈C は同値関係で同値類の集合は元の分割。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000018",
+        "K-000021",
+        "K-000022",
+        "K-000024",
+        "K-000026",
+        "K-000027",
+        "K-000029",
+        "K-000033",
+        "K-000050",
+        "K-000052",
+        "K-000053"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000055",
+      "kind": "proposition",
+      "title": "商集合の普遍性",
+      "statement": "~ が A 上の同値関係、π:A→A/~、f:A→B とする。∃!g:A/~→B, g∘π=f ⇔ ∀x,y∈A,x~y⇒f(x)=f(y)。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000006",
+        "K-000017",
+        "K-000034",
+        "K-000035",
+        "K-000036",
+        "K-000039",
+        "K-000052",
+        "K-000053"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+    },
+    {
+      "id": "K-000056",
+      "kind": "proposition",
+      "title": "写像の標準分解",
+      "statement": "f:A→B による x~_f y ⇔ f(x)=f(y) は同値関係。標準全射 A→A/~_f、全単射 A/~_f→f(A)、包含 f(A)→B の合成が f。",
+      "assumptions": [],
+      "position": [
+        2,
+        1,
+        5,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000017",
+        "K-000024",
+        "K-000033",
+        "K-000034",
+        "K-000035",
+        "K-000036",
+        "K-000037",
+        "K-000039",
+        "K-000041",
+        "K-000042",
+        "K-000050",
+        "K-000052",
+        "K-000053",
+        "K-000055"
+      ],
+      "status": "verified",
+      "source": "volumes/N-2/main.tex",
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
     }
   ],
   "notes": [
@@ -381,7 +1509,7 @@
       "number": 2,
       "title": "集合・写像・関係",
       "area": "基礎",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         1
       ],
