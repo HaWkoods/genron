@@ -403,25 +403,47 @@ function renderProof(target,proof,metadata){
  plain(tex.slice(last));
 }
 
+
 function showWeb(info,restore){
- const n=notes.get(info.n), items=data.entries.filter(e=>e.position[0]===info.n).sort((a,b)=>{for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0});
- const layout=node("div","reader"), side=node("aside","sidebar"), article=node("article","web-article");
- side.append(node("h2","","このノートの内容"),anchor("← 検索・総目次",root.href));
- article.style.cssText="min-width:0;background:var(--paper);border:1px solid var(--line);padding:clamp(18px,4vw,48px);font-family:Yu Mincho,Hiragino Mincho ProN,serif;line-height:1.95;overflow-wrap:anywhere";
- article.append(node("p","meta",n.area+" ／ N-"+n.number),node("h1","",n.title),node("p","muted","Web版試作：旧台帳の記述と既存原稿の証明を表示します。全面改訂前の内容です。"));
- const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");article.append(anchor("旧版PDFを閲覧",legacy.href));
- for(const e of items){
-  const section=node("section","web-entry");section.id=e.id;section.style.cssText="margin:28px 0;padding-top:22px;border-top:1px solid var(--line);scroll-margin-top:24px";
-  const title=node("h2","",(types[e.kind]??e.kind)+"（"+e.title+"）");section.append(title,node("div","meta",e.id));
-  const link=anchor(e.title,"#"+e.id);side.append(link);
-  if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,e.assumptions.join("；"));section.append(p)}
-  const p=node("p");renderParts(p,e.preview?.statement,e.statement);section.append(p);
-  for(const proof of e.webProof?.proofs??[]){const block=node("div","web-proof");block.style.cssText="margin:1em 0 1.5em";block.append(node("h3","",proof.title));const body=node("div","proof-body");renderProof(body,proof,e.webProof);block.append(body,node("div","","□"));block.lastChild.style.textAlign="right";section.append(block)}
-  if(e.depends_on?.length){const d=node("details");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
-  article.append(section);
+ const selected=notes.get(info.n);
+ const treatise=data.treatises.find(t=>t.id===selected.treatise);
+ const part=data.parts.find(p=>p.id===treatise?.part);
+ const group=part?data.treatises.filter(t=>t.part===part.id):[];
+ const plan=data.plan??data.notes;
+ const members=group.length?group.flatMap(t=>plan.filter(n=>n.treatise===t.id)): [selected];
+ const layout=node("div","reader web-reader"),side=node("aside","sidebar web-toc"),article=node("article","web-article");
+ side.append(node("h2","","部内目次"),anchor("← 検索・総目次",root.href));
+ article.append(node("p","web-running","数学原論　｜　"+(part?.id??"")),node("h1","web-part-title",part?.title??selected.title),node("p","muted","Web版試作・旧原稿から移行中"));
+ const order=(a,b)=>{for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0};
+ let previous=null;
+ for(const n of members){
+  const t=data.treatises.find(t=>t.id===n.treatise);
+  if(t?.id!==previous){previous=t?.id;article.append(node("h2","web-treatise",t?.title??""));side.append(node("h3","web-toc-group",t?.title??""))}
+  const chapter=node("section","web-chapter");chapter.id="N-"+n.number;
+  side.append(anchor(n.title,"#"+chapter.id,"web-toc-note"));
+  chapter.append(node("h3","web-note-title",n.title),node("p","meta","N-"+n.number));
+  if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
+  const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");chapter.append(anchor("旧版PDFを閲覧",legacy.href,"web-legacy"));
+  const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);
+  for(const e of items){
+   const section=node("section","web-entry");section.id=e.id;
+   const number=e.position.slice(1).join(".");
+   const heading=node("h4","web-statement-title",(types[e.kind]??e.kind)+" "+number+"（"+e.title+"）");
+   section.append(heading);
+   const link=anchor(e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
+   if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,e.assumptions.join("；"));section.append(p)}
+   const p=node("p");renderParts(p,e.preview?.statement,e.statement);section.append(p);
+   for(const proof of e.webProof?.proofs??[]){
+    const block=node("details","web-proof");block.append(node("summary","",proof.title));const body=node("div","proof-body");renderProof(body,proof,e.webProof);block.append(body,node("div","web-qed","□"));section.append(block);
+    block.addEventListener("toggle",()=>{if(block.open)fitMath(body)});
+   }
+   if(e.depends_on?.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
+   chapter.append(section);
+  }
+  article.append(chapter);
  }
  layout.append(side,article);main.replaceChildren(layout);
- requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore);else if(info.id)document.getElementById(info.id)?.scrollIntoView();else window.scrollTo(0,0)});
+ requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore);else document.getElementById(info.id??"N-"+info.n)?.scrollIntoView()});
 }
 
 function showError(e){main.replaceChildren(node("p","error",String(e.message??e)),anchor("検索・総目次へ戻る",root.href))}
