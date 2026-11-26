@@ -105,6 +105,7 @@ function validate(ledger,sources={}){
   previous.set(b.path,e);
  }
  for(const e of entries.values())if(e.source&&e.status!=="retired"&&!parsed.blocks.has(e.id))report("MISSING_BLOCK",`${e.id} in ${e.source}`);
+ const p=validatePlan(ledger);errors.push(...p.errors);warnings.push(...p.warnings);
  return {errors,warnings};
 }
 
@@ -133,7 +134,7 @@ function graph(ledger,mode="knowledge"){
  const nodes=new Map(),edges=new Map();
  for(const e of active){
   const id=nodeId(e);
-  if(!nodes.has(id))nodes.set(id,{id,title:mode==="notes"?"Note "+e.position[0]:e.title,members:[],status:mode==="notes"?"verified":e.status});
+  if(!nodes.has(id))nodes.set(id,{id,title:mode==="notes"?(ledger.notes?.find(n=>n.number===e.position[0])?.title??"Note "+e.position[0]):e.title,members:[],status:mode==="notes"?"verified":e.status});
   const n=nodes.get(id);n.members.push(e.id);if(mode==="notes"&&e.status!=="verified")n.status="incomplete";
  }
  for(const e of active)for(const d of Array.isArray(e.depends_on)?e.depends_on:[]){
@@ -176,4 +177,76 @@ function available(ledger,completed=[]){
  return order.map(id=>byId.get(id)).filter(e=>e.status==="verified"&&!known.has(e.id)&&e.depends_on.every(d=>known.has(d)));
 }
 
-export {validate, affected, changedEntries, available, validPosition, graph, prerequisites};
+// Planned note graph is separate from the dependency graph established by manuscript items.
+function planGraph(ledger){
+ const notes=Array.isArray(ledger.notes)?ledger.notes:[], ids=new Set(notes.map(n=>n.number));
+ const nodes=notes.map(n=>({id:"N-"+n.number,title:n.title,area:n.area,status:n.status,goals:n.goals}));
+ const edges=notes.flatMap(n=>(Array.isArray(n.depends_on)?n.depends_on:[]).filter(d=>ids.has(d)).map(d=>({from:"N-"+d,to:"N-"+n.number})));
+ const incoming=new Map(nodes.map(n=>[n.id,0])), out=new Map();
+ for(const {from,to} of edges){incoming.set(to,incoming.get(to)+1);if(!out.has(from))out.set(from,[]);out.get(from).push(to)}
+ const sort=xs=>xs.sort((a,b)=>Number(a.slice(2))-Number(b.slice(2)));
+ let ready=sort([...incoming.keys()].filter(k=>incoming.get(k)===0)),layers=[],seen=new Set();
+ while(ready.length){layers.push(ready);const next=[];for(const a of ready){seen.add(a);for(const b of out.get(a)??[]){incoming.set(b,incoming.get(b)-1);if(incoming.get(b)===0)next.push(b)}}ready=sort(next)}
+ return {nodes,edges,layers,unordered:sort(nodes.map(n=>n.id).filter(id=>!seen.has(id)))};
+}
+function validatePlan(ledger){
+ const errors=[],warnings=[];
+ if(ledger.notes===undefined)return {errors,warnings}; // legacy test fixtures and historical ledgers
+ const add=(code,msg)=>errors.push(code+": "+msg), warn=(code,msg)=>warnings.push(code+": "+msg);
+ if(!Array.isArray(ledger.notes)){add("PLAN_SCHEMA","notes must be an array");return {errors,warnings}}
+ const map=new Map(), nonempty=v=>typeof v==="string"&&v.trim().length>0;
+ for(const n of ledger.notes){
+  if(!n||!Number.isSafeInteger(n.number)||n.number<1){add("PLAN_ID","invalid note number");continue}
+  if(map.has(n.number)){add("PLAN_DUPLICATE_ID","N-"+n.number);continue}
+  map.set(n.number,n);
+  if(!nonempty(n.title)||!nonempty(n.area)||!["planned","draft","verified","review","retired"].includes(n.status)||!Array.isArray(n.goals)||!n.goals.length||!n.goals.every(nonempty)||!Array.isArray(n.depends_on)||!n.depends_on.every(d=>Number.isSafeInteger(d)&&d>0)){add("PLAN_SCHEMA","N-"+n.number);continue}
+  if(new Set(n.depends_on).size!==n.depends_on.length)add("PLAN_DUPLICATE_DEPENDENCY","N-"+n.number);
+ }
+ if(errors.length)return {errors,warnings};
+ for(const n of map.values())for(const d of n.depends_on){
+  if(!map.has(d))add("PLAN_UNKNOWN_DEPENDENCY","N-"+n.number+" requires N-"+d);
+  else if(n.status!=="retired"&&map.get(d).status==="retired")add("PLAN_RETIRED_DEPENDENCY","N-"+n.number+" requires retired N-"+d);
+ }
+ const g=planGraph(ledger);
+ if(g.unordered.length)add("PLAN_CYCLE","Blocked: "+g.unordered.join(", "));
+ const members=new Map();
+ const byId=new Map((ledger.entries??[]).filter(e=>e&&typeof e.id==="string").map(e=>[e.id,e]));
+ for(const e of byId.values())if(validPosition(e.position)&&e.status!=="retired"){
+  const n=e.position[0];if(!map.has(n)){add("PLAN_UNKNOWN_NOTE",e.id+" in N-"+n);continue}
+  if(map.get(n).status==="retired")add("PLAN_RETIRED_NOTE",e.id+" in N-"+n);
+  if(!members.has(n))members.set(n,[]);members.get(n).push(e);
+ }
+ const closure=n=>{const seen=new Set(),q=[...(map.get(n)?.depends_on??[])];for(let i=0;i<q.length;i++){const d=q[i];if(seen.has(d))continue;seen.add(d);q.push(...(map.get(d)?.depends_on??[]))}return seen};
+ for(const [n,items] of members){
+  const allowed=closure(n);
+  for(const e of items)for(const id of Array.isArray(e.depends_on)?e.depends_on:[]){
+   const d=byId.get(id);if(!d||!validPosition(d.position)||d.position[0]===n)continue;
+   if(!allowed.has(d.position[0]))add("PLAN_UNDECLARED_NOTE_DEPENDENCY",e.id+" requires "+id+" across unplanned branches");
+  }
+ }
+ for(const n of map.values())if(n.status==="verified"){
+  const items=members.get(n.number)??[];
+  if(!items.length||items.some(e=>e.status!=="verified"))add("PLAN_UNVERIFIED_NOTE","N-"+n.number+" has missing or unverified knowledge");
+  for(const d of n.depends_on)if(map.get(d)?.status!=="verified")add("PLAN_UNVERIFIED_PREREQUISITE","N-"+n.number+" requires N-"+d);
+ }
+ return {errors,warnings};
+}
+function planPrerequisites(ledger,id){
+ const num=Number(id.replace(/^N-/,"")), notes=new Map(ledger.notes.map(n=>[n.number,n]));
+ if(!notes.has(num))throw Error("Unknown planned note: "+id);
+ const seen=new Set(),q=[...notes.get(num).depends_on];
+ for(let i=0;i<q.length;i++){const d=q[i];if(seen.has(d))continue;seen.add(d);q.push(...notes.get(d).depends_on)}
+ return planGraph(ledger).layers.flat().map(k=>Number(k.slice(2))).filter(n=>seen.has(n)).map(n=>notes.get(n));
+}
+function planMermaid(ledger){
+ const g=planGraph(ledger);
+ const esc=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+ return ["flowchart TD",...g.nodes.map(n=>"  "+n.id.replace("-","")+"[\""+n.id+" "+esc(n.title)+"\"]"),...g.edges.map(e=>"  "+e.from.replace("-","")+" --> "+e.to.replace("-",""))].join("\n")+"\n";
+}
+function planMarkdown(ledger){
+ const g=planGraph(ledger), depth=new Map(g.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
+ const table=["| ID | 層 | ノート | 分野 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+n.title+" | "+n.area+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
+ return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。全項目は計画であり、成立済みの知識ではない。\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
+}
+
+export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown};
