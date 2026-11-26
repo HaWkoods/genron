@@ -1,0 +1,335 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-8}
+\fancyhead[R]{\small 位相と開集合\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 位相と開集合}\par\vspace{2mm}
+{\small N-8\quad 第1版}
+\end{center}
+集合 $X$ の部分集合のうち，あるものを開集合として指定する。個々の点の間に距離を与えることなく，この指定のみから空間の構造を定めるのが本篇の目的である。N-2「集合・写像・関係」，N-4「順序と束」，N-5「自然数と有限集合」を前提とし，選択公理を用いない。
+\Needspace{8\baselineskip}
+\section{位相の公理}
+% genron:begin K-000146
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000027
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000110
+% genron:use K-000118
+\Needspace{4\baselineskip}
+\begin{defn}[位相空間]\label{k146}
+集合 $X$ とその冪集合の部分集合 $\tau\subseteq\Pow(X)$ を考える。次の三条件を満たす $\tau$ を $X$ 上の\textbf{位相}という。
+\begin{enumerate}
+\item $\varnothing,X\in\tau$.
+\item $\mathcal U\subseteq\tau$ が有限集合なら $\bigcap\mathcal U\in\tau$.
+\item 任意の $\mathcal U\subseteq\tau$ に対して $\bigcup\mathcal U\in\tau$.
+\end{enumerate}
+組 $(X,\tau)$ を位相空間，$\tau$ の元を開集合という。空の族の共通部分は母集合 $X$，空の族の合併は $\varnothing$ とする（\GenronRefText{K-000045}{集合族の演算の規約}）。$X=\varnothing$ も許す。
+\end{defn}
+% genron:end K-000146
+% genron:begin K-000147
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000118
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{prop}[位相の有限交叉条件]\label{k147}
+$\tau\subseteq\Pow(X)$ が位相であるためには，$X\in\tau$ であり，二つの元の共通部分及び任意の部分族の合併で閉じていることが必要十分である。
+\end{prop}
+\begin{proof}
+必要性は定義から明らかである。逆に，空の族の合併を取れば $\varnothing\in\tau$ である。有限部分族 $\mathcal U$ を取り，自然数 $n$ との全単射により $(U_i)_{i\in n}$ と列挙する。$n=0$ なら共通部分は $X$ である。$n$ 個の共通部分が $\tau$ に属すれば，$n+1$ 個の共通部分はその集合と $U_n$ との共通部分である。\GenronRefText{K-000100}{数学的帰納法}により任意の有限部分族の共通部分が $\tau$ に属する。
+\end{proof}
+% genron:end K-000147
+% genron:begin K-000148
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000031
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{defn}[閉集合]\label{k148}
+位相空間 $(X,\tau)$ の部分集合 $F$ が $X\setminus F\in\tau$ を満たすとき，$F$ を閉集合という。
+\end{defn}
+% genron:end K-000148
+% genron:begin K-000149
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000031
+% genron:use K-000041
+% genron:use K-000045
+% genron:use K-000046
+% genron:use K-000113
+% genron:use K-000146
+% genron:use K-000148
+\Needspace{4\baselineskip}
+\begin{prop}[閉集合系の特徴づけ]\label{k149}
+$\mathcal C\subseteq\Pow(X)$ がある位相の閉集合全体であるためには，$\varnothing,X\in\mathcal C$ であり，任意の部分族の共通部分及び有限部分族の合併で閉じていることが必要十分である。このような位相は一意である。
+\end{prop}
+\begin{proof}
+補集合を取る写像 $A\mapsto X\setminus A$ は $\Pow(X)$ からそれ自身への全単射であり，その逆写像は自身である。任意の部分族 $\mathcal A\subseteq\Pow(X)$ について \GenronRefText{K-000046}{集合族の De Morgan の法則} により
+\[
+ X\setminus\bigcup\mathcal A=\bigcap_{A\in\mathcal A}(X\setminus A),\qquad
+ X\setminus\bigcap\mathcal A=\bigcup_{A\in\mathcal A}(X\setminus A)
+\]
+が成り立つ。補集合写像は有限族を有限族に移す（\GenronRefText{K-000113}{有限集合の像}）。従って開集合系の三条件を補集合によって移せば閉集合系の三条件を得，逆も同様である。位相は $\{X\setminus F\mid F\in\mathcal C\}$ 以外にない。
+\end{proof}
+% genron:end K-000149
+% genron:begin K-000150
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{defn}[離散位相と密着位相]\label{k150}
+任意の集合 $X$ について $\Pow(X)$ と $\{\varnothing,X\}$ はともに位相である。前者を離散位相，後者を密着位相という。前者の位相の公理は集合演算の定義から従う。後者では空の族を含め，合併及び共通部分は $\varnothing$ 又は $X$ となる。$X$ が高々一元からなる場合には両者は一致する。
+\end{defn}
+% genron:end K-000150
+% genron:begin K-000151
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000027
+% genron:use K-000030
+% genron:use K-000068
+% genron:use K-000146
+% genron:use K-000147
+% genron:use K-000150
+\Needspace{4\baselineskip}
+\begin{prop}[二元集合上の位相]\label{k151}
+相異なる二元 $a,b$ からなる集合 $X=\{a,b\}$ 上の位相は
+\[\{\varnothing,X\},\quad \{\varnothing,\{a\},X\},\quad
+\{\varnothing,\{b\},X\},\quad \Pow(X)\]
+の四つに限る。
+\end{prop}
+\begin{proof}
+$X$ の部分集合は $\varnothing,\{a\},\{b\},X$ に限る。位相は $\varnothing$ と $X$ を含むから，上に挙げた四つの族以外にはなり得ない。最初と最後は定義\ref{k150}による。中間の二つは包含関係について全順序であり，空でない部分族の合併は最大の元，共通部分は最小の元となる。空の部分族についても必要な条件を満たす。従って四つはすべて位相である。
+\end{proof}
+% genron:end K-000151
+\Needspace{8\baselineskip}
+\section{位相の比較と生成}
+% genron:begin K-000152
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000068
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{defn}[位相の粗密]\label{k152}
+同じ集合 $X$ 上の二つの位相 $\tau,\upsilon$ に対して $\tau\subseteq\upsilon$ のとき，$\tau$ は $\upsilon$ より粗く，$\upsilon$ は $\tau$ より細かいという。等しい場合を含む。この関係は包含関係による半順序である。
+\end{defn}
+% genron:end K-000152
+% genron:begin K-000153
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000147
+\Needspace{4\baselineskip}
+\begin{prop}[位相系の共通部分]\label{k153}
+$X$ 上の位相からなる集合族 $(\tau_i)_{i\in I}$ に対し
+\[\tau=\bigcap_{i\in I}\tau_i\]
+は $X$ 上の位相である。$I=\varnothing$ の場合は冪集合 $\Pow(X)$ を母集合とする。
+\end{prop}
+\begin{proof}
+任意の $i\in I$ に対して $X\in\tau_i$ だから $X\in\tau$ である。$U,V\in\tau$ なら各 $i$ に対して $U,V\in\tau_i$，従って $U\cap V\in\tau_i$ である。ゆえに $U\cap V\in\tau$ である。また $\mathcal U\subseteq\tau$ なら各 $i$ に対して $\mathcal U\subseteq\tau_i$ だから $\bigcup\mathcal U\in\tau_i$，従って $\bigcup\mathcal U\in\tau$ である。命題\ref{k147}を適用すればよい。
+\end{proof}
+% genron:end K-000153
+% genron:begin K-000154
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000146
+% genron:use K-000150
+% genron:use K-000152
+% genron:use K-000153
+\Needspace{4\baselineskip}
+\begin{thm}[生成位相]\label{k154}
+任意の $\mathcal S\subseteq\Pow(X)$ に対し，$\mathcal S$ を含む位相のうち最も粗いものが一意に存在する。これを $\tau(\mathcal S)$ と記し，$\mathcal S$ の生成する位相という。また $\mathcal S\subseteq\mathcal T$ なら $\tau(\mathcal S)\subseteq\tau(\mathcal T)$ である。
+\end{thm}
+\begin{proof}
+集合 $\Pow(\Pow(X))$ の部分集合
+\[\mathfrak F=\{\upsilon\subseteq\Pow(X)\mid
+ \upsilon\text{ は位相},\ \mathcal S\subseteq\upsilon\}\]
+を作る。$\Pow(X)\in\mathfrak F$ なので空ではない。命題\ref{k153}により $\tau=\bigcap\mathfrak F$ は位相である。各 $\upsilon\in\mathfrak F$ は $\mathcal S$ を含むから $\tau$ も含む。しかも任意の $\upsilon\in\mathfrak F$ に対して $\tau\subseteq\upsilon$ である。最小元の一意性は包含関係の反対称律による。$\mathcal S\subseteq\mathcal T$ なら $\tau(\mathcal T)$ は $\mathcal S$ を含む位相だから，最小性によって $\tau(\mathcal S)\subseteq\tau(\mathcal T)$ を得る。
+\end{proof}
+% genron:end K-000154
+% genron:begin K-000155
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000073
+% genron:use K-000085
+% genron:use K-000087
+% genron:use K-000152
+% genron:use K-000153
+% genron:use K-000154
+\Needspace{4\baselineskip}
+\begin{prop}[位相全体の完備束]\label{k155}
+集合 $X$ 上の位相全体を包含関係で順序づけると完備束となる。任意の位相族 $(\tau_i)_{i\in I}$ の下限は共通部分，上限は $\tau(\bigcup_{i\in I}\tau_i)$ である。
+\end{prop}
+\begin{proof}
+位相全体は冪集合の冪集合の部分集合である。命題\ref{k153}によれば共通部分は位相であり，集合の包含に関する下限の定義を満たす。上界である位相は各 $\tau_i$ を含むこととその合併を含むことが同値である。定理\ref{k154}から上界の最小元が存在し，所定の式で与えられる。従って \GenronRefText{K-000085}{完備束の定義}を満たす。空の族の場合，下限は離散位相，上限は密着位相である。
+\end{proof}
+% genron:end K-000155
+% genron:begin K-000156
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000068
+% genron:use K-000146
+% genron:use K-000147
+\Needspace{4\baselineskip}
+\begin{prop}[位相の合併は一般に位相でない]\label{k156}
+三つの相異なる元 $a,b,c$ からなる集合 $X$ を取る。二つの位相 $\tau_1=\{\varnothing,\{a\},X\}$ と $\tau_2=\{\varnothing,\{b\},X\}$ の合併は位相ではない。
+\end{prop}
+\begin{proof}
+各 $\tau_i$ は，その三元が包含順序について鎖をなし，空の合併・共通部分も含むので位相である。他方 $\{a\},\{b\}\in\tau_1\cup\tau_2$ であるにもかかわらず $\{a,b\}\notin\tau_1\cup\tau_2$ である。従って合併は位相の公理を満たさない。
+\end{proof}
+% genron:end K-000156
+\Needspace{8\baselineskip}
+\section{順序から生ずる位相}
+% genron:begin K-000157
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{prop}[上集合の位相]\label{k157}
+順序集合 $(X,\leq)$ において，$x\in U$，$x\leq y$ ならば $y\in U$ となる部分集合 $U\subseteq X$ を上集合という。上集合全体 $\tau_{\leq}$ は $X$ 上の位相であり，任意の部分族の共通部分で閉じている。
+\end{prop}
+\begin{proof}
+$\varnothing$ と $X$ は上集合である。上集合族の合併の元 $x$ は，ある上集合 $U$ に属する。$x\leq y$ なら $y\in U$ であり，従って合併に属する。共通部分の元 $x$ はすべての $U$ に属するから，$x\leq y$ なら $y$ もすべての $U$ に属する。空の族の場合も規約どおり成立する。
+\end{proof}
+% genron:end K-000157
+% genron:begin K-000158
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000110
+% genron:use K-000113
+% genron:use K-000117
+% genron:use K-000146
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合上の位相]\label{k158}
+有限集合 $X$ 上の任意の位相は，任意の部分族の共通部分で閉じている。
+\end{prop}
+\begin{proof}
+\GenronRefText{K-000117}{有限集合の冪集合の有限性}により $\Pow(X)$ は有限である。位相の任意の部分族 $\mathcal U\subseteq\Pow(X)$ も \GenronRefText{K-000113}{有限集合の部分集合の有限性} によって有限である。従って位相の有限交叉条件を適用できる。
+\end{proof}
+% genron:end K-000158
+\par\medskip\noindent{\small\textbf{参考文献.} J. M. Lee, \textit{Introduction to Topological Manifolds}, 2nd ed., Springer, 2011, Ch. 2, Topological Spaces（位相の公理・例・閉集合系）。}
+\end{document}

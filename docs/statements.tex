@@ -21,7 +21,7 @@
 {\LARGE 定義・命題一覧}\par\vspace{2mm}
 {\small 読者確認用}
 \end{center}
-知識台帳の検証済み項目（全145項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
+知識台帳の検証済み項目（全193項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
 \bigskip
 \textbf{ノート別目次}\par\smallskip
 \hyperlink{note-1}{N-1\quad 数学的言語}\dotfill 17項目\par
@@ -31,6 +31,9 @@
 \hyperlink{note-5}{N-5\quad 自然数と有限集合}\dotfill 24項目\par
 \hyperlink{note-6}{N-6\quad 整列と極大原理}\dotfill 12項目\par
 \hyperlink{note-7}{N-7\quad 濃度と可算性}\dotfill 13項目\par
+\hyperlink{note-8}{N-8\quad 位相と開集合}\dotfill 13項目\par
+\hyperlink{note-9}{N-9\quad 二項演算とモノイド}\dotfill 19項目\par
+\hyperlink{note-24}{N-24\quad 集合環とσ-加法族}\dotfill 16項目\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-1}{}
@@ -424,4 +427,135 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 高々可算集合 \(I\) を添字とする集合族 \((A_{i})\) に，各単射 \(e_{i}:A_{i}\to \mathbb{N}\) が族として与えられていれば，合併は高々可算である。\par
 \entryhead{系（冪集合の非可算性）}{K-000145}
 \(P(\mathbb{N})\) は高々可算でない。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-8}{}
+\section*{N-8\quad 位相と開集合}
+\pdfbookmark[1]{N-8 位相と開集合}{bookmark-8}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（位相空間）}{K-000146}
+集合 \(X\) の部分集合族 \(\tau \subseteq \allowbreak P(X)\) が \(\varnothing ,\allowbreak X\in \tau \)、有限交叉及び任意の合併で閉じるとき \(X\) 上の位相という。\((X,\allowbreak \tau )\) は位相空間、\(\tau \) の元は開集合。空集合上の位相も許す。\par
+\entryhead{命題（位相の有限交叉条件）}{K-000147}
+\(\tau \subseteq \allowbreak P(X)\) が位相であるためには \(X\in \tau \)、二元の共通部分及び任意の合併で閉じることが必要十分。\par
+\entryhead{定義（閉集合）}{K-000148}
+位相空間 \((X,\allowbreak \tau )\) の部分集合 \(F\) は \(X\setminus F\in \tau \) のとき閉集合である。\par
+\entryhead{命題（閉集合系の特徴づけ）}{K-000149}
+\(C\subseteq \allowbreak P(X)\) がある位相の閉集合全体となる iff \(\varnothing ,\allowbreak X\in C\)、任意交叉及び有限合併で閉じる。この位相は一意で \(\tau =\allowbreak \{X\setminus F\) \(\mid \) \(F\in C\}\)。\par
+\entryhead{定義（離散位相と密着位相）}{K-000150}
+任意の集合 \(X\) 上で \(P(X)\) と \(\{\varnothing ,\allowbreak X\}\) は位相であり、それぞれ離散位相、密着位相という。 \(X\) が高々一元の場合は両者が一致する。\par
+\entryhead{命題（二元集合上の位相）}{K-000151}
+相異なる \(a,\allowbreak b\) に対して \(X=\allowbreak \{a,\allowbreak b\}\) 上の位相は \(\{\varnothing ,\allowbreak X\}\)、\(\{\varnothing ,\allowbreak \{a\},\allowbreak X\}\)、\(\{\varnothing ,\allowbreak \{b\},\allowbreak X\}\)、\(P(X)\) の四つである。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（位相の粗密）}{K-000152}
+同じ集合 \(X\) 上の位相 \(\tau ,\allowbreak \tau '\) に対し \(\tau \subseteq \allowbreak \tau '\) のとき \(\tau \) は \(\tau '\) より粗い、\(\tau '\) は \(\tau \) より細かいという。\par
+\entryhead{命題（位相系の共通部分）}{K-000153}
+\(X\) 上の位相の任意の族の共通部分は \(X\) 上の位相。空の族の場合は \(P(X)\)。\par
+\entryhead{定理（生成位相）}{K-000154}
+任意の \(S\subseteq \allowbreak P(X)\) に対し \(S\) を含む最小の位相 \(\tau (S)\) が一意に存在し、\(S\) を含む全位相の共通部分で与えられる。\(S\subseteq \allowbreak T\Rightarrow \allowbreak \tau (S)\subseteq \allowbreak \tau (T)\)。\par
+\entryhead{命題（位相全体の完備束）}{K-000155}
+集合 \(X\) 上の位相全体は包含順序で完備束。任意の位相族の下限は共通部分、上限はその合併の生成位相。\par
+\entryhead{命題（位相の合併は一般に位相でない）}{K-000156}
+三元集合 \(X=\allowbreak \{a,\allowbreak b,\allowbreak c\}\) 上の二つの位相 \(\{\varnothing ,\allowbreak \{a\},\allowbreak X\}\) と \(\{\varnothing ,\allowbreak \{b\},\allowbreak X\}\) の合併は位相でない。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{命題（上集合の位相）}{K-000157}
+順序集合 \((X,\allowbreak \leq \allowbreak )\) の上集合（\(x\in U\)、\(x\leq \allowbreak y\) なら \(y\in U\) となる部分集合 \(U\)）全体は位相で、任意交叉でも閉じる。\par
+\entryhead{命題（有限集合上の位相）}{K-000158}
+有限集合 \(X\) 上の位相は任意交叉でも閉じる。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-9}{}
+\section*{N-9\quad 二項演算とモノイド}
+\pdfbookmark[1]{N-9 二項演算とモノイド}{bookmark-9}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（二項演算）}{K-000159}
+集合 \(M\) 上の二項演算とは写像 \(\mu :M\times M\to M\) である。通常 \(\mu (x,\allowbreak y)\) を \(xy\) と記す。\par
+\entryhead{定義（結合律と交換律）}{K-000160}
+二項演算がすべての \(x,\allowbreak y,\allowbreak z\in M\) に対し \((xy)z=\allowbreak x(yz)\) を満たすとき結合的、すべての \(x,\allowbreak y\in M\) に対し \(xy=\allowbreak yx\) を満たすとき可換という。\par
+\entryhead{定義（単位元）}{K-000161}
+左単位元 \(e\) はすべての \(x\in M\) について \(ex=\allowbreak x\)、右単位元 \(e\) は \(xe=\allowbreak x\) を満たす元。両方を満たす元を単位元という。\par
+\entryhead{命題（単位元の一意性）}{K-000162}
+左単位元 \(l\) と右単位元 \(r\) が存在すれば \(l=\allowbreak r\) で、その元は単位元。特に単位元は一意。\par
+\entryhead{定義（半群とモノイド）}{K-000163}
+非空集合 \(M\) と結合的二項演算の組を半群という。単位元を持つ半群をモノイドという。演算が可換なら可換半群、可換モノイドという。単位元は \(1_{M}\) と記す。 加法的記法では単位元を 0 と記す。\par
+\entryhead{命題（モノイドの基本例）}{K-000164}
+自然数集合 \(\mathbb{N}\) は加法及び乗法で可換モノイド。\(P(X)\) は合併及び共通部分で可換モノイド。\(X^{X}\) は写像の合成でモノイド。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{構成（有限列の積）}{K-000165}
+モノイド \(M\) の有限列 \(x:n\to M\) の積 \(P(x)\) を、空列では \(1_{M}\)、\(n=\allowbreak S(m)\) のとき \(P(x)=\allowbreak P(x\mid _{m})\cdot x_{m}\) で一意に定める。\par
+\entryhead{命題（有限列の連接と積）}{K-000166}
+有限列 \(x,\allowbreak y\) の連接 \(x\ast y\) に対し \(P(x\ast y)=\allowbreak P(x)P(y)\)。空列も含む。\par
+\entryhead{命題（有限積の括弧の独立性）}{K-000167}
+空でない有限列の元を順序を変えず二項演算で任意に括弧づけして得た値は \(P(x)\) に等しい。\par
+\entryhead{定義（自然数冪）}{K-000168}
+\(x\in M\) の自然数冪 \(x^{n}\) は \(x\) の \(n\) 個の定値列の積。\(x^{0}=\allowbreak 1_{M}\)、\(x^{n+1}=\allowbreak x^{n}\) \(x\)。\par
+\entryhead{命題（自然数冪の法則）}{K-000169}
+\(m,\allowbreak n\in \mathbb{N}\) に対し \(x^{m+n}=\allowbreak x^{m}\) \(x^{n}\)、\((x^{m})^{n}=\allowbreak x^{mn}\)。\(xy=\allowbreak yx\) なら \((xy)^{n}=\allowbreak x^{n}y^{n}\)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（モノイド準同型）}{K-000170}
+モノイド \(M,\allowbreak N\) の間の写像 \(f:M\to N\) が \(f(xy)=\allowbreak f(x)f(y)\)、\(f(1_{M})=\allowbreak 1_{N}\) を満たすとき準同型という。演算の保存のみでは単位元の保存は従わない。\par
+\entryhead{命題（準同型と有限積）}{K-000171}
+モノイド準同型 \(f\) は有限列の積を保存する。恒等写像と準同型の合成は準同型。\par
+\entryhead{定義（モノイド同型）}{K-000172}
+準同型 \(f:M\to N\) が逆写像を持ち、その逆写像も準同型であるときモノイド同型という。\par
+\entryhead{命題（全単射なモノイド準同型）}{K-000173}
+全単射なモノイド準同型はモノイド同型である。\par
+\entryhead{定義（部分モノイド）}{K-000174}
+モノイド \(M\) の部分集合 \(A\) が \(1_{M}\) を含み、積で閉じるとき部分モノイドという。制限された演算と同じ単位元でモノイドになる。\par
+\entryhead{命題（準同型と部分モノイド）}{K-000175}
+準同型 \(f:M\to N\) に対して部分モノイドの像及び逆像はそれぞれ部分モノイド。\par
+\entryhead{定理（生成部分モノイド）}{K-000176}
+部分集合 \(S\subseteq \allowbreak M\) を含む最小の部分モノイドは \(S\) の元の有限列の積全体（空積を含む）。 この集合を \(\langle S\rangle _{M}\) と記す。\par
+\entryhead{命題（生成部分モノイドと準同型）}{K-000177}
+準同型 \(f:M\to N\) と \(S\subseteq \allowbreak M\) に対して \(f(\langle S\rangle _{M})=\allowbreak \langle f(S)\rangle _{N}\)。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-24}{}
+\section*{N-24\quad 集合環とσ-加法族}
+\pdfbookmark[1]{N-24 集合環とσ-加法族}{bookmark-24}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（集合環と集合代数）}{K-000178}
+\(R\subseteq \allowbreak P(X)\) が \(\varnothing \) を含み、二元の合併及び差で閉じるとき集合環という。\(X\in R\) のとき集合代数という。\par
+\entryhead{命題（集合環の有限演算）}{K-000179}
+集合環は二元の共通部分及び有限合併で閉じる。空でない有限族の共通部分でも閉じる。\par
+\entryhead{命題（集合代数の判定）}{K-000180}
+\(A\subseteq \allowbreak P(X)\) が集合代数である iff \(X\in A\)、補集合及び二元の合併で閉じる。二元の共通部分で合併を置き換えても同値。\par
+\entryhead{命題（集合環とBoolean束）}{K-000181}
+集合環は包含順序で最小元 \(\varnothing \) を持つ分配束である。集合代数は最大元 \(X\) を持ち、補集合を補元とするBoolean束である。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（σ-集合環とσ-加法族）}{K-000182}
+集合環 \(R\) が任意の \(\mathbb{N}\) 添字列 \((A_{n})\) の合併 \(\bigcup _{n\in \mathbb{N}}\) \(A_{n}\) で閉じるとき \(\sigma -\)集合環という。\(X\in R\) なら \(\sigma -\)加法族（\(\sigma -\)代数）という。 組 \((X,\allowbreak A)\) は \(A\) が \(X\) 上の \(\sigma -\)加法族であるとき可測空間という。\par
+\entryhead{命題（σ-集合環の可算演算）}{K-000183}
+\(\sigma -\)集合環は高々可算の族の合併及び空でない高々可算族の共通部分で閉じる。\(\sigma -\)加法族では空の共通部分も許す。\par
+\entryhead{命題（σ-加法族の判定）}{K-000184}
+\(A\subseteq \allowbreak P(X)\) は \(\sigma -\)加法族 iff \(X\in A\)、補集合と \(\mathbb{N}\) 添字列の合併で閉じる。合併を共通部分で置き換えても同値。\par
+\entryhead{命題（列の非交化）}{K-000185}
+集合環 \(R\) の元の列 \((A_{n})\) に対し \(B_{n}=\allowbreak A_{n}\setminus \bigcup _{k<n}\) \(A_{k}\) とおくと \(B_{n}\in R\)、互いに素、\(\bigcup _{k\leq n}B_{k}=\allowbreak \bigcup _{k\leq n}A_{k}\)、\(\bigcup B_{n}=\allowbreak \bigcup A_{n}\)。\par
+\entryhead{命題（互いに素な列による判定）}{K-000186}
+集合環 \(R\) は互いに素な \(\mathbb{N}\) 添字列の合併で閉じる iff \(\sigma -\)集合環。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定理（生成集合環・生成集合代数・生成σ-加法族）}{K-000187}
+任意の \(S\subseteq \allowbreak P(X)\) を含む最小の集合環、集合代数、\(\sigma -\)集合環、\(\sigma -\)加法族がそれぞれ一意に存在する。各々 \(S\) を含む該当する全集合族の共通部分で与えられる。 順に \(r(S),\allowbreak a(S),\allowbreak r_{\sigma }(S),\allowbreak \sigma (S)\) と記す。\par
+\entryhead{命題（生成作用素）}{K-000188}
+\(r,\allowbreak a,\allowbreak r_{\sigma },\allowbreak \sigma \) は \(P(P(X))\) 上の閉包作用素である。生成される各種類の集合族全体は包含順序で完備束となる。\par
+\entryhead{定理（生成集合代数の具体形）}{K-000189}
+\(a(S)\) は \(S\) とその補集合からなる族の有限交叉の有限合併全体。空の交叉は \(X\)、空の合併は \(\varnothing \)。\par
+\entryhead{命題（有限余有限集合代数）}{K-000190}
+\(X=\allowbreak \mathbb{N}\times \{0,\allowbreak 1\}\) 上で有限集合又は補集合が有限の集合全体は集合代数だが \(\sigma -\)加法族でない。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{命題（逆像によるσ-加法族の判定）}{K-000191}
+写像 \(f:X\to Y\)、\(X\) 上の \(\sigma -\)加法族 \(A\) に対し \(\{B\subseteq \allowbreak Y\) \(\mid \) \(f^{-1}(B)\in A\}\) は \(Y\) 上の \(\sigma -\)加法族。\par
+\entryhead{命題（生成族による逆像条件）}{K-000192}
+\(S\subseteq \allowbreak P(Y)\)、写像 \(f:X\to Y\)、\(X\) 上の \(\sigma -\)加法族 \(A\) について、すべての \(B\in S\) で \(f^{-1}(B)\in A\) ならすべての \(B\in \sigma (S)\) で \(f^{-1}(B)\in A\)。\par
+\entryhead{命題（全射による逆像族）}{K-000193}
+全射 \(f:X\to Y\) と \(Y\) 上の \(\sigma -\)加法族 \(B\) に対し \(\{f^{-1}(B)\mid B\in B\}\) は \(X\) 上の \(\sigma -\)加法族。\par
 \end{document}

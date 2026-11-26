@@ -1,0 +1,426 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-24}
+\fancyhead[R]{\small 集合環と$\sigma$-加法族\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 集合環と$\sigma$-加法族}\par\vspace{2mm}
+{\small N-24\quad 第1版}
+\end{center}
+集合の大きさを測る理論を構成するには，まず測る対象として許す集合の族を定めなければならない。本篇では集合の演算で閉じる族とその生成を論ずる。測度や実数の理論は前提としない。N-2，N-4，N-7 及びその前提を用い，選択公理は使用しない。母集合 $X$ を固定する。補集合は $X$ に関するものとする。
+\Needspace{8\baselineskip}
+\section{集合環と集合代数}
+% genron:begin K-000178
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000021
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000031
+\Needspace{4\baselineskip}
+\begin{defn}[集合環と集合代数]\label{k178}
+集合 $X$ の部分集合族 $\mathcal R\subseteq\Pow(X)$ が $\varnothing$ を含み，
+\[ A,B\in\mathcal R\ \Longrightarrow\ A\cup B,\ A\setminus B\in\mathcal R \]
+を満たすとき集合環という。集合環であって $X$ を含むものを $X$ 上の集合代数という。本篇の集合環は集合の演算に関する用語であり，後に導入する代数的な環の概念を前提としない。
+\end{defn}
+% genron:end K-000178
+% genron:begin K-000179
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000030
+% genron:use K-000045
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000118
+% genron:use K-000178
+\Needspace{4\baselineskip}
+\begin{prop}[集合環の有限演算]\label{k179}
+集合環は二元の共通部分，有限族の合併及び空でない有限族の共通部分で閉じている。
+\end{prop}
+\begin{proof}
+$A,B\in\mathcal R$ なら $A\cap B=A\setminus(A\setminus B)$ であり，右辺は集合環の元である。有限族の合併は二元の合併を反復して得られる。空の合併は $\varnothing$ である。共通部分については空でない有限族を列挙し，最初の元から二元の共通部分を反復する帰納法を用いる。空の共通部分 $X$ が集合環に属するとは限らない。
+\end{proof}
+% genron:end K-000179
+% genron:begin K-000180
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000031
+% genron:use K-000046
+% genron:use K-000178
+% genron:use K-000179
+\Needspace{4\baselineskip}
+\begin{prop}[集合代数の判定]\label{k180}
+$\mathcal A\subseteq\Pow(X)$ が集合代数であるためには，$X\in\mathcal A$ であり，補集合及び二元の合併で閉じることが必要十分である。合併の代りに二元の共通部分で閉じることを要求しても同値である。
+\end{prop}
+\begin{proof}
+必要性は補集合が $X\setminus A$ であること及び集合環の定義による。逆に $X\in\mathcal A$ と補集合に関する閉性から $\varnothing\in\mathcal A$ である。$A,B\in\mathcal A$ なら
+\[A\setminus B=X\setminus((X\setminus A)\cup B)\in\mathcal A.\]
+よって集合環となり，$X$ を含む。合併と共通部分の交換は De Morgan の法則による。
+\end{proof}
+% genron:end K-000180
+% genron:begin K-000181
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000030
+% genron:use K-000079
+% genron:use K-000083
+% genron:use K-000088
+% genron:use K-000089
+% genron:use K-000178
+% genron:use K-000179
+% genron:use K-000180
+\Needspace{4\baselineskip}
+\begin{prop}[集合環とBoolean束]\label{k181}
+集合環 $\mathcal R$ は，包含順序で最小元 $\varnothing$ を持つ分配束である。集合代数 $\mathcal A$ は最大元 $X$ を持ち，補集合を補元とする Boolean 束である。
+\end{prop}
+\begin{proof}
+命題\ref{k179}により集合環は冪集合の二項和・交叉で閉じる。\GenronRefText{K-000083}{部分束の性質}により束となり，分配律は冪集合から受け継がれる。最小元は $\varnothing$ である。集合代数の場合は $X$ も含み，任意の元 $A$ の補集合 $X\setminus A$ も含む。この補集合は $A$ との合併が $X$，共通部分が $\varnothing$ だから \GenronRefText{K-000089}{Boolean 束の定義}を満たす。
+\end{proof}
+% genron:end K-000181
+\Needspace{8\baselineskip}
+\section{可算演算}
+% genron:begin K-000182
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000099
+% genron:use K-000178
+\Needspace{4\baselineskip}
+\begin{defn}[σ-集合環とσ-加法族]\label{k182}
+集合環 $\mathcal R$ が，任意の列 $(A_n)_{n\in\mathbb N}$ ($A_n\in\mathcal R$) に対し $\bigcup_{n\in\mathbb N}A_n\in\mathcal R$ を満たすとき $\sigma$-集合環という。$X$ を含む $\sigma$-集合環を $\sigma$-加法族（又は $\sigma$-代数）という。組 $(X,\mathcal A)$（$\mathcal A$ は $X$ 上の $\sigma$-加法族）を可測空間という。
+\end{defn}
+% genron:end K-000182
+% genron:begin K-000183
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000029
+% genron:use K-000035
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000045
+% genron:use K-000046
+% genron:use K-000099
+% genron:use K-000138
+% genron:use K-000141
+% genron:use K-000179
+% genron:use K-000182
+\Needspace{4\baselineskip}
+\begin{prop}[σ-集合環の可算演算]\label{k183}
+$\sigma$-集合環は高々可算の添字集合を持つ任意の族の合併で閉じ，空でない高々可算の添字集合を持つ族の共通部分でも閉じる。$\sigma$-加法族では空の族の共通部分も許される。
+\end{prop}
+\begin{proof}
+$\mathcal R$ を $\sigma$-集合環，$(A_i)_{i\in I}$ をその元からなる族とする。高々可算性により単射 $j\colon I\to\mathbb N$ が存在する。$n\in j(I)$ なら $B_n=A_i$（$j(i)=n$ を満たす $i$ は一意），それ以外なら $B_n=\varnothing$ とおく。この列は $\mathcal R$ に値を取り，$\bigcup_{i\in I}A_i=\bigcup_{n\in\mathbb N}B_n$ である。従って合併は $\mathcal R$ に属する。
+
+$I\ne\varnothing$ のとき $i_0\in I$ を一つ取る。集合の差と合併に関する閉性によって
+\[\bigcap_{i\in I}A_i=A_{i_0}\setminus\bigcup_{i\in I}(A_{i_0}\setminus A_i)\in\mathcal R.\]
+$\sigma$-加法族ならば空の共通部分 $X$ も属する。ここでは単射を一つ取ることと，各添字について同時に代表を選ぶことを混同してはならない。列 $B_n$ の値は一意に指定されており，選択公理を用いていない。
+\end{proof}
+% genron:end K-000183
+% genron:begin K-000184
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000035
+% genron:use K-000046
+% genron:use K-000099
+% genron:use K-000102
+% genron:use K-000107
+% genron:use K-000180
+% genron:use K-000182
+% genron:use K-000183
+\Needspace{4\baselineskip}
+\begin{prop}[σ-加法族の判定]\label{k184}
+$\mathcal A\subseteq\Pow(X)$ が $\sigma$-加法族であるためには $X\in\mathcal A$ であり，補集合及び $\mathbb N$ を添字集合とする列の合併で閉じることが必要十分である。合併を共通部分で置き換えても同値である。
+\end{prop}
+\begin{proof}
+必要性は定義から従う。逆に補集合に関する閉性によって $\varnothing\in\mathcal A$ であり，$A,B\in\mathcal A$ に対して $C_0=A$，$C_1=B$，その他の $C_n=\varnothing$ とした列の合併は $A\cup B$ である。命題\ref{k180}によって集合代数であり，仮定から $\sigma$-加法族となる。補集合は列の合併と共通部分とを取り替えるので，後半も成り立つ。
+\end{proof}
+% genron:end K-000184
+% genron:begin K-000185
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000035
+% genron:use K-000045
+% genron:use K-000099
+% genron:use K-000100
+% genron:use K-000103
+% genron:use K-000104
+% genron:use K-000110
+% genron:use K-000178
+% genron:use K-000179
+\Needspace{4\baselineskip}
+\begin{prop}[列の非交化]\label{k185}
+集合環 $\mathcal R$ の元の列 $(A_n)_{n\in\mathbb N}$ に対し
+\[B_n=A_n\setminus\bigcup_{k<n}A_k\quad(n\in\mathbb N)\]
+とおく。このとき $B_n\in\mathcal R$ であり，$B_n$ は互いに素である。また
+\[\bigcup_{k\leq n}B_k=\bigcup_{k\leq n}A_k,\qquad
+\bigcup_{n\in\mathbb N}B_n=\bigcup_{n\in\mathbb N}A_n.\]
+\end{prop}
+\begin{proof}
+$k<n$ を満たす自然数の集合は $n$ であり有限であるから，命題\ref{k179}により $\bigcup_{k<n}A_k\in\mathcal R$ である。従って $B_n\in\mathcal R$ である。$m<n$ なら $B_m\subseteq A_m$，$B_n\cap A_m=\varnothing$ なので $B_m\cap B_n=\varnothing$ である。$x\in\bigcup_{k\leq n}A_k$ とすれば $x\in A_k$ を満たす最小の $k\leq n$ が \GenronRefText{K-000104}{最小元の原理}により存在する。この $k$ に対して $x\in B_k$ である。逆の包含は $B_k\subseteq A_k$ による。全体の合併についても，ある $n$ に対し $x\in A_n$ なら今得た有限合併の等式を適用すればよい。
+\end{proof}
+% genron:end K-000185
+% genron:begin K-000186
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000182
+% genron:use K-000185
+\Needspace{4\baselineskip}
+\begin{prop}[互いに素な列による判定]\label{k186}
+集合環 $\mathcal R$ が $\sigma$-集合環であるためには，互いに素な $\mathcal R$ の元の任意の列の合併が $\mathcal R$ に属することが必要十分である。
+\end{prop}
+\begin{proof}
+任意の列に命題\ref{k185}を適用し，互いに素な列 $(B_n)$ で同じ合併を持つものを得る。仮定によりその合併は $\mathcal R$ に属する。逆は定義から明らかである。
+\end{proof}
+% genron:end K-000186
+\Needspace{8\baselineskip}
+\section{集合族の生成}
+% genron:begin K-000187
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000073
+% genron:use K-000178
+% genron:use K-000182
+\Needspace{4\baselineskip}
+\begin{thm}[生成集合環・生成集合代数・生成σ-加法族]\label{k187}
+任意の $\mathcal S\subseteq\Pow(X)$ に対して $\mathcal S$ を含む最小の集合環，集合代数，$\sigma$-集合環及び $\sigma$-加法族がそれぞれ一意に存在する。順に $r(\mathcal S)$，$a(\mathcal S)$，$r_\sigma(\mathcal S)$，$\sigma(\mathcal S)$ と記す。
+\end{thm}
+\begin{proof}
+まず $\Pow(X)$ は四種類のいずれの集合族でもある。指定した種類の集合族で $\mathcal S$ を含むもの全体を $\mathfrak F\subseteq\Pow(\Pow(X))$ とする。$\mathfrak F$ は空でない。$\mathcal H=\bigcap\mathfrak F$ とおくと $\mathcal S\subseteq\mathcal H$ である。四種類の集合族に共通する $\varnothing$ は $\mathcal H$ にも属する。$A,B\in\mathcal H$ なら任意の $\mathcal C\in\mathfrak F$ に対して $A,B\in\mathcal C$ であるから $A\cup B,A\setminus B\in\mathcal C$，従って $\mathcal H$ に属する。集合代数と $\sigma$-加法族の場合，$X$ も $\mathcal H$ に属する。$\sigma$-集合環と $\sigma$-加法族の場合，$\mathcal H$ の元の列は各 $\mathcal C$ の元の列でもあるから，その合併は $\mathcal H$ に属する。従って $\mathcal H$ は指定した種類の集合族であり，構成から最小である。最小元は一意である。
+\end{proof}
+% genron:end K-000187
+% genron:begin K-000188
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000087
+% genron:use K-000091
+% genron:use K-000092
+% genron:use K-000187
+\Needspace{4\baselineskip}
+\begin{prop}[生成作用素]\label{k188}
+前定理の四つの生成操作は $\Pow(\Pow(X))$ 上の閉包作用素である。それぞれの種類の集合族全体は包含順序について完備束となる。
+\end{prop}
+\begin{proof}
+生成操作の一つを $c$ とする。$\mathcal S\subseteq c(\mathcal S)$ は定義から従う。$\mathcal S\subseteq\mathcal T$ なら $c(\mathcal T)$ は $\mathcal S$ を含む指定された種類の集合族だから，最小性により $c(\mathcal S)\subseteq c(\mathcal T)$ である。$c(\mathcal S)$ は既に指定された種類の集合族だから $c(c(\mathcal S))=c(\mathcal S)$ である。従って \GenronRefText{K-000091}{閉包作用素の定義}を満たす。固定元は指定された種類の集合族全体であり，\GenronRefText{K-000092}{閉包作用素の固定元に関する定理}を適用すれば後半を得る。
+\end{proof}
+% genron:end K-000188
+% genron:begin K-000189
+% genron:use K-000119
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000029
+% genron:use K-000030
+% genron:use K-000031
+% genron:use K-000045
+% genron:use K-000046
+% genron:use K-000100
+% genron:use K-000116
+% genron:use K-000118
+% genron:use K-000180
+% genron:use K-000187
+\Needspace{4\baselineskip}
+\begin{thm}[生成集合代数の具体形]\label{k189}
+$\mathcal S\subseteq\Pow(X)$ とし，$\mathcal D=\mathcal S\cup\{X\setminus A\mid A\in\mathcal S\}$ とおく。集合代数 $a(\mathcal S)$ は $\mathcal D$ の元の有限個の共通部分を有限個合併して得られる集合全体からなる。空の共通部分 $X$ と空の合併 $\varnothing$ を許す。
+\end{thm}
+\begin{proof}
+述べた形の集合全体を $\mathcal H$ とする。$\varnothing,X$ と $\mathcal S$ は $\mathcal H$ に含まれ，有限合併で閉じる。$E=\bigcup_{i\in I}E_i$，$F=\bigcup_{j\in J}F_j$ がその形なら
+\[E\cap F=\bigcup_{(i,j)\in I\times J}(E_i\cap F_j).\]
+ここで $I,J$ は有限であり，各 $E_i,F_j$ は $\mathcal D$ の元の有限交叉である。各々の有限交叉を与える有限部分族は \GenronRefText{K-000119}{有限選択} により同時に指定できる。右辺は有限個の有限交叉の合併だから $\mathcal H$ に属する（有限集合の直積・合併を用いる）。$E_i=\bigcap_{k\in K_i}D_{i,k}$ の補集合は $\bigcup_{k\in K_i}(X\setminus D_{i,k})$ であり，$\mathcal D$ が補集合で閉じるので $\mathcal H$ に属する。$E$ の補集合はそれらの有限交叉であり，今示した閉性によって $\mathcal H$ に属する。空の交叉及び合併でも同じ等式が成立する。従って $\mathcal H$ は $\mathcal S$ を含む集合代数である。一方，$\mathcal S$ を含む任意の集合代数は $\mathcal D$，その有限交叉及び有限合併を含む。ゆえに $\mathcal H=a(\mathcal S)$ である。
+\end{proof}
+% genron:end K-000189
+% genron:begin K-000190
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000029
+% genron:use K-000030
+% genron:use K-000031
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000099
+% genron:use K-000102
+% genron:use K-000107
+% genron:use K-000110
+% genron:use K-000113
+% genron:use K-000116
+% genron:use K-000139
+% genron:use K-000180
+% genron:use K-000184
+\Needspace{4\baselineskip}
+\begin{prop}[有限余有限集合代数]\label{k190}
+$X=\mathbb N\times\{0,1\}$ とする。$A\subseteq X$ であって $A$ 又は $X\setminus A$ が有限であるもの全体は集合代数であるが，$\sigma$-加法族ではない。
+\end{prop}
+\begin{proof}
+この族を $\mathcal A$ とする。$\varnothing,X$ は $\mathcal A$ に属し，補集合で閉じる。$A,B\in\mathcal A$ がともに有限なら $A\cup B$ も有限である。一方が有限な補集合を持つなら，$X\setminus(A\cup B)$ はその有限な補集合の部分集合だから有限である。従って命題\ref{k180}により集合代数である。各 $n\in\mathbb N$ について $\{(n,0)\}\in\mathcal A$ であるが，その合併 $E=\mathbb N\times\{0\}$ も補集合 $\mathbb N\times\{1\}$ も有限ではない。実際，それぞれ $\mathbb N$ と全単射を持つ（\GenronRefText{K-000139}{自然数集合の無限性}）。従って $E\notin\mathcal A$ である。
+\end{proof}
+% genron:end K-000190
+\Needspace{8\baselineskip}
+\section{写像による集合族の移送}
+% genron:begin K-000191
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000037
+% genron:use K-000038
+% genron:use K-000046
+% genron:use K-000184
+\Needspace{4\baselineskip}
+\begin{prop}[逆像によるσ-加法族の判定]\label{k191}
+写像 $f\colon X\to Y$ と $X$ 上の $\sigma$-加法族 $\mathcal A$ に対し
+\[\mathcal B=\{B\subseteq Y\mid f^{-1}(B)\in\mathcal A\}\]
+は $Y$ 上の $\sigma$-加法族である。
+\end{prop}
+\begin{proof}
+$f^{-1}(Y)=X\in\mathcal A$ なので $Y\in\mathcal B$ である。$B\in\mathcal B$ なら $f^{-1}(Y\setminus B)=X\setminus f^{-1}(B)\in\mathcal A$ だから $Y\setminus B\in\mathcal B$ である。$(B_n)$ が $\mathcal B$ の元の列なら，$f^{-1}(\bigcup_n B_n)=\bigcup_n f^{-1}(B_n)\in\mathcal A$ である。逆像の族は一意に指定されるから選択を必要としない。命題\ref{k184}によって結論を得る。
+\end{proof}
+% genron:end K-000191
+% genron:begin K-000192
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000187
+% genron:use K-000191
+\Needspace{4\baselineskip}
+\begin{prop}[生成族による逆像条件]\label{k192}
+$\mathcal S\subseteq\Pow(Y)$，写像 $f\colon X\to Y$ 及び $X$ 上の $\sigma$-加法族 $\mathcal A$ を考える。任意の $B\in\mathcal S$ に対して $f^{-1}(B)\in\mathcal A$ ならば，任意の $B\in\sigma(\mathcal S)$ に対して $f^{-1}(B)\in\mathcal A$ である。
+\end{prop}
+\begin{proof}
+命題\ref{k191}による集合族 $\mathcal B=\{B\subseteq Y\mid f^{-1}(B)\in\mathcal A\}$ は仮定により $\mathcal S$ を含む $\sigma$-加法族である。生成の最小性（定理\ref{k187}）から $\sigma(\mathcal S)\subseteq\mathcal B$ である。
+\end{proof}
+% genron:end K-000192
+% genron:begin K-000193
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000035
+% genron:use K-000037
+% genron:use K-000038
+% genron:use K-000039
+% genron:use K-000046
+% genron:use K-000184
+\Needspace{4\baselineskip}
+\begin{prop}[全射による逆像族]\label{k193}
+全射 $f\colon X\to Y$ と $Y$ 上の $\sigma$-加法族 $\mathcal B$ に対して
+\[\mathcal C=\{f^{-1}(B)\mid B\in\mathcal B\}\]
+は $X$ 上の $\sigma$-加法族である。
+\end{prop}
+\begin{proof}
+$X=f^{-1}(Y)\in\mathcal C$ であり，補集合に関して閉じる。$f$ は全射であるから $B=f(f^{-1}(B))$ がすべての $B\subseteq Y$ に対して成り立つ。従って $\mathcal C$ の元の列 $(C_n)$ に対し $B_n=f(C_n)$ とおけば，$B_n\in\mathcal B$，$f^{-1}(B_n)=C_n$ である。これは一意に指定された列である。よって $\bigcup_n C_n=f^{-1}(\bigcup_n B_n)\in\mathcal C$ となる。命題\ref{k184}から従う。
+\end{proof}
+% genron:end K-000193
+\par\noindent\textbf{注意.} 一般の写像 $f$ に対して逆像全体の族が $\sigma$-加法族となることを証明する際には，逆像の列 $(C_n)$ に対し $f^{-1}(B_n)=C_n$ を満たす列 $(B_n)$ の存在を正当化しなければならない。各 $n$ に対する $B_n$ の存在から列の存在を無条件には推論しない。本篇では選択公理を用いず，全射の場合と，任意の写像に対する命題\ref{k191}及び命題\ref{k192}を確立した。
+\par\medskip\noindent{\small\textbf{参考文献.} V. I. Bogachev, \textit{Measure Theory}, Vol. I, Springer, 2007, \S1.2, pp. 3--6（集合代数・$\sigma$-加法族の生成，逆像の性質）。本篇では選択公理を使わない論証に限定した。}
+\end{document}

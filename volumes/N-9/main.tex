@@ -1,0 +1,443 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-9}
+\fancyhead[R]{\small 二項演算とモノイド\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+
+\newcommand{\GenronRef}[1]{#1}
+\newcommand{\GenronRefText}[2]{#2}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 二項演算とモノイド}\par\vspace{2mm}
+{\small N-9\quad 第1版}
+\end{center}
+集合の直積上に定義された写像を一つの演算とみなし，その満たすべき法則を調べる。本篇では結合律及び単位元を持つ構造を出発点とし，有限個の元の積と準同型，生成される部分構造を論ずる。N-2 及び N-5 を前提とする。選択公理は用いない。
+\Needspace{8\baselineskip}
+\section{演算と単位元}
+% genron:begin K-000159
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000033
+% genron:use K-000034
+\Needspace{4\baselineskip}
+\begin{defn}[二項演算]\label{k159}
+集合 $M$ 上の二項演算とは写像 $\mu\colon M\times M\to M$ である。演算を固定するときは $\mu(x,y)$ を $xy$ と記すことがある。複数の演算があるときは区別して記す。
+\end{defn}
+% genron:end K-000159
+% genron:begin K-000160
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000159
+\Needspace{4\baselineskip}
+\begin{defn}[結合律と交換律]\label{k160}
+二項演算が
+\[ (xy)z=x(yz)\quad(x,y,z\in M) \]
+を満たすとき結合的であるという。また $xy=yx$ ($x,y\in M$) を満たすとき可換であるという。
+\end{defn}
+% genron:end K-000160
+% genron:begin K-000161
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000159
+\Needspace{4\baselineskip}
+\begin{defn}[単位元]\label{k161}
+二項演算を持つ集合 $M$ の元 $e$ が任意の $x\in M$ に対して $ex=x$（それぞれ $xe=x$）を満たすとき左単位元（それぞれ右単位元）という。両条件を満たす元を単位元という。
+\end{defn}
+% genron:end K-000161
+% genron:begin K-000162
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000161
+\Needspace{4\baselineskip}
+\begin{prop}[単位元の一意性]\label{k162}
+左単位元 $l$ と右単位元 $r$ が存在すれば $l=r$ である。従って単位元は存在すれば一意である。
+\end{prop}
+\begin{proof}
+左単位元の性質によって $lr=r$，右単位元の性質によって $lr=l$ となるから $l=r$ である。この元は両条件を満たす。
+\end{proof}
+% genron:end K-000162
+% genron:begin K-000163
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000159
+% genron:use K-000160
+% genron:use K-000161
+% genron:use K-000162
+\Needspace{4\baselineskip}
+\begin{defn}[半群とモノイド]\label{k163}
+結合的二項演算を持つ空でない集合を半群という。単位元を持つ半群をモノイドという。演算が可換である場合には可換半群，可換モノイドという。モノイドの単位元は $1_M$ 又は，混同のおそれがなければ $1$ と記す。単位元は命題\ref{k162}によって一意であるから，モノイドの指定において別に単位元を選ぶ必要はない。加法的記法を用いるときは演算を $+$，単位元を $0$ と記す。
+\end{defn}
+% genron:end K-000163
+% genron:begin K-000164
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000030
+% genron:use K-000034
+% genron:use K-000036
+% genron:use K-000047
+% genron:use K-000099
+% genron:use K-000107
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000163
+\Needspace{4\baselineskip}
+\begin{prop}[モノイドの基本例]\label{k164}
+次の集合は，それぞれ示された演算に関してモノイドとなる。
+\begin{enumerate}
+\item $(\mathbb N,+)$ と $(\mathbb N,\cdot)$.
+\item $(\Pow(X),\cup)$ と $(\Pow(X),\cap)$.
+\item $X$ から自身への写像全体 $X^X$（演算は合成）。
+\end{enumerate}
+最初の二組は可換である。第3の例は $X=\varnothing$ の場合も含む。
+\end{prop}
+\begin{proof}
+(1) は \GenronRefText{K-000108}{自然数の加法の法則} 及び \GenronRefText{K-000109}{乗法の法則} による。単位元はそれぞれ $0,1$ である。(2) は \GenronRefText{K-000030}{集合演算の諸法則} による。単位元はそれぞれ $\varnothing,X$ である。(3) は \GenronRefText{K-000036}{写像の合成の結合律及び恒等写像の性質} による。$X^X$ は恒等写像を含み，これが単位元である。
+\end{proof}
+% genron:end K-000164
+\Needspace{8\baselineskip}
+\section{有限個の元の積}
+% genron:begin K-000165
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000035
+% genron:use K-000042
+% genron:use K-000047
+% genron:use K-000097
+% genron:use K-000099
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000103
+% genron:use K-000105
+% genron:use K-000118
+% genron:use K-000163
+\Needspace{4\baselineskip}
+\begin{defn}[有限列の積]\label{k165}
+モノイド $M$ の元の有限列 $x=(x_i)_{i\in n}$ に対し，その積を $P(x)$ と記し，次のように定める。$n=0$ のとき $P(x)=1_M$ とし，$n=S(m)$ のとき
+\[P(x)=P(x|_m)\,x_m\]
+とする。ここに $x|_m$ は $m$ への制限である。各有限列に対してこの値が一意に定まることを示す。
+\end{defn}
+\begin{proof}
+固定した有限列 $x\colon n\to M$ に対し，$F\colon\mathbb N\times M\to M$ を $F(k,u)=ux_k$ ($k\in n$)，$F(k,u)=u$ ($k\notin n$) と定める。\GenronRefText{K-000105}{自然数上の再帰定理}による写像 $v$ を初期値 $v(0)=1_M$ で取る。$P(x)=v(n)$ とおく。$m\leq n$ について $x|_m$ から同様に作る再帰列は，第 $m$ 項まで $v$ と一致する。実際 $0$ で一致し，$k<m$ で一致すれば $k$ 番目の係数が同じなので後者でも一致する。従ってこの定め方は所定の再帰式を満たす。逆に再帰式を満たす値は帰納法によりすべての有限列に対して一意である。有限列全体は $\bigcup_{n\in\mathbb N}M^n$ という集合をなすから，値を割り当てる写像も存在する。
+\end{proof}
+% genron:end K-000165
+% genron:begin K-000166
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000035
+% genron:use K-000042
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000103
+% genron:use K-000107
+% genron:use K-000108
+% genron:use K-000118
+% genron:use K-000163
+% genron:use K-000165
+\Needspace{4\baselineskip}
+\begin{prop}[有限列の連接と積]\label{k166}
+$M$ の有限列 $x\colon m\to M$，$y\colon n\to M$ の連接 $x*y\colon m+n\to M$ を
+\[
+(x*y)_k=\begin{cases}x_k &(k<m),\\y_j &(k=m+j,\ j<n)\end{cases}
+\]
+で定める。このとき $P(x*y)=P(x)P(y)$ である。
+\end{prop}
+\begin{proof}
+\GenronRefText{K-000108}{加法の法則}により，$m\leq k<m+n$ を満たす $k$ は一意に $m+j$ ($j<n$) と書ける。ここで $m+j<m+n$ と $j<n$ が同値であることは，同じ自然数を加えたときに順序が保たれ反映されることから従う。実際 $j\leq n$ なら $n=j+t$ となる $t$ が存在し，$m+n=(m+j)+t$ である。逆に $m+j\leq m+n$ なら $m+n=(m+j)+t$ となり，消去律により $n=j+t$ となる。等号は消去律によって反映される。従って連接は写像として定まる。
+
+$n$ に関する帰納法を用いる。$n=0$ なら $x*y=x$ で，$P(y)=1_M$ である。$n=S(r)$ とすると，連接の最後の元は $y_r$ であり，それを除いた列は $x*(y|_r)$ である。従って帰納法の仮定と結合律により
+\[P(x*y)=P(x*(y|_r))y_r
+=(P(x)P(y|_r))y_r=P(x)P(y).\]
+これで示された。
+\end{proof}
+% genron:end K-000166
+% genron:begin K-000167
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000104
+% genron:use K-000163
+% genron:use K-000165
+% genron:use K-000166
+\Needspace{4\baselineskip}
+\begin{prop}[有限積の括弧の独立性]\label{k167}
+空でない有限列 $(x_i)_{i\in n}$ の元を順序を変えずに二項演算で任意に括弧づけして得られる値はすべて $P(x)$ に等しい。従ってこの積の括弧を省略できる。
+\end{prop}
+\begin{proof}
+ここで括弧づけは，長さ1の列ではその唯一の元を値とし，長さ2以上の列では空でない前半と後半に分け，各部分の括弧づけの値を掛けるという再帰的な操作を意味する。長さ1の場合は定義\ref{k165}と単位元の性質により成り立つ。長さ $n$ の括弧づけの最後の演算に対応する二列の長さはともに $n$ 未満である。強い帰納法の仮定によってそれらの値は各列の積に等しく，命題\ref{k166}により全体の積に等しい。
+\end{proof}
+% genron:end K-000167
+% genron:begin K-000168
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000035
+% genron:use K-000099
+% genron:use K-000107
+% genron:use K-000165
+\Needspace{4\baselineskip}
+\begin{defn}[自然数冪]\label{k168}
+モノイド $M$ の元 $x$ と自然数 $n$ に対し，長さ $n$ の定値列 $x$ の積を $x^n$ と記す。従って $x^0=1_M$，$x^{n+1}=x^nx$ である。
+\end{defn}
+% genron:end K-000168
+% genron:begin K-000169
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000100
+% genron:use K-000107
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000163
+% genron:use K-000166
+% genron:use K-000168
+\Needspace{4\baselineskip}
+\begin{prop}[自然数冪の法則]\label{k169}
+任意の $x,y\in M$，$m,n\in\mathbb N$ に対して
+\[x^{m+n}=x^mx^n,\qquad (x^m)^n=x^{mn}\]
+が成り立つ。さらに $xy=yx$ ならば $(xy)^n=x^ny^n$ である。
+\end{prop}
+\begin{proof}
+最初の等式は定値列の連接に命題\ref{k166}を適用して得られる。第二の等式を $n$ に関して帰納法で示す。$n=0$ では両辺とも $1_M$ である。帰納法の仮定を用いると
+\[(x^m)^{n+1}=(x^m)^nx^m=x^{mn}x^m=x^{mn+m}=x^{m(n+1)}.\]
+最後の主張について，$xy=yx$ なら任意の $n$ について $y^nx=xy^n$ である。$n=0$ では明らかであり，$y^{n+1}x=y^n(yx)=y^n(xy)=(xy^n)y=xy^{n+1}$ だからである。これを用い，帰納法で $(xy)^{n+1}=(xy)^nxy=x^ny^nxy=x^{n+1}y^{n+1}$ を得る。
+\end{proof}
+% genron:end K-000169
+\Needspace{8\baselineskip}
+\section{準同型と部分モノイド}
+% genron:begin K-000170
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000102
+% genron:use K-000107
+% genron:use K-000109
+% genron:use K-000163
+% genron:use K-000164
+\Needspace{4\baselineskip}
+\begin{defn}[モノイド準同型]\label{k170}
+モノイド $M,N$ の間の写像 $f\colon M\to N$ が
+\[f(xy)=f(x)f(y),\quad f(1_M)=1_N\]
+を満たすときモノイド準同型という。演算の保存だけから単位元の保存が従うとは限らない。例えば $\mathbb N$ の乗法モノイド上の定値写像 $x\mapsto0$ は演算を保存するが単位元を保存しない。
+\end{defn}
+% genron:end K-000170
+% genron:begin K-000171
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000036
+% genron:use K-000100
+% genron:use K-000165
+% genron:use K-000170
+\Needspace{4\baselineskip}
+\begin{prop}[準同型と有限積]\label{k171}
+モノイド準同型 $f\colon M\to N$ と $M$ の任意の有限列 $x$ について $f(P(x))=P(f\circ x)$ が成り立つ。恒等写像及び二つのモノイド準同型の合成は準同型である。
+\end{prop}
+\begin{proof}
+有限列の長さに関する帰納法を用いる。長さ0については単位元の保存である。長さ $n+1$ なら，$f(P(x))=f(P(x|_n))f(x_n)$ であり，帰納法の仮定と有限積の定義によって $P(f\circ x)$ に等しい。恒等写像については明らかである。$g\colon N\to L$ も準同型なら，$(g\circ f)(xy)=g(f(x)f(y))=g(f(x))g(f(y))$ であり，単位元の保存も直ちに従う。
+\end{proof}
+% genron:end K-000171
+% genron:begin K-000172
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000041
+% genron:use K-000170
+\Needspace{4\baselineskip}
+\begin{defn}[モノイド同型]\label{k172}
+モノイド準同型 $f\colon M\to N$ が逆写像を持ち，その逆写像もモノイド準同型であるときモノイド同型という。
+\end{defn}
+% genron:end K-000172
+% genron:begin K-000173
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000039
+% genron:use K-000041
+% genron:use K-000170
+% genron:use K-000172
+\Needspace{4\baselineskip}
+\begin{prop}[全単射なモノイド準同型]\label{k173}
+全単射なモノイド準同型 $f\colon M\to N$ はモノイド同型である。
+\end{prop}
+\begin{proof}
+$u,v\in N$ に対して $x=f^{-1}(u)$，$y=f^{-1}(v)$ とおく。$f(xy)=uv$ だから $f^{-1}(uv)=xy=f^{-1}(u)f^{-1}(v)$ である。また $f(1_M)=1_N$ だから $f^{-1}(1_N)=1_M$ である。従って逆写像も準同型である。
+\end{proof}
+% genron:end K-000173
+% genron:begin K-000174
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000042
+% genron:use K-000163
+% genron:use K-000170
+\Needspace{4\baselineskip}
+\begin{defn}[部分モノイド]\label{k174}
+モノイド $M$ の部分集合 $A$ が $1_M\in A$ 及び $x,y\in A\Rightarrow xy\in A$ を満たすとき，$M$ の部分モノイドという。$M$ の演算を $A$ に制限すれば $A$ はモノイドとなる。実際，結合律は $M$ から受け継がれ，$1_M$ は $A$ においても単位元である。包含写像 $A\to M$ は準同型である。
+\end{defn}
+% genron:end K-000174
+% genron:begin K-000175
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000170
+% genron:use K-000174
+\Needspace{4\baselineskip}
+\begin{prop}[準同型と部分モノイド]\label{k175}
+準同型 $f\colon M\to N$ に対し，$M$ の部分モノイドの像は $N$ の部分モノイドであり，$N$ の部分モノイドの逆像は $M$ の部分モノイドである。
+\end{prop}
+\begin{proof}
+$A\subseteq M$ が部分モノイドなら $1_N=f(1_M)\in f(A)$ である。$u,v\in f(A)$ なら $f(x)=u$，$f(y)=v$ となる $x,y\in A$ があり，$uv=f(xy)\in f(A)$ である。$B\subseteq N$ が部分モノイドなら $f(1_M)=1_N\in B$ なので $1_M\in f^{-1}(B)$ である。$x,y\in f^{-1}(B)$ なら $f(xy)=f(x)f(y)\in B$ であるから $xy\in f^{-1}(B)$ である。
+\end{proof}
+% genron:end K-000175
+% genron:begin K-000176
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000028
+% genron:use K-000035
+% genron:use K-000047
+% genron:use K-000100
+% genron:use K-000118
+% genron:use K-000165
+% genron:use K-000166
+% genron:use K-000174
+\Needspace{4\baselineskip}
+\begin{thm}[生成部分モノイド]\label{k176}
+モノイド $M$ の任意の部分集合 $S$ に対し，$S$ を含む最小の部分モノイドが存在する。これを $\langle S\rangle_M$ と記す。これは $S$ の元からなるすべての有限列の積の集合である。特に $\langle\varnothing\rangle_M=\{1_M\}$ である。
+\end{thm}
+\begin{proof}
+有限列の積の集合 $C=\{P(x)\mid x\in\bigcup_{n\in\mathbb N}S^n\}$ を考える。これは有限列全体の集合の像として存在する。空列の積が $1_M$，長さ1の列の積がその元なので $1_M\in C$ かつ $S\subseteq C$ である。$u=P(x)$，$v=P(y)$ とすれば命題\ref{k166}により $uv=P(x*y)\in C$ であるから $C$ は部分モノイドである。他方 $S$ を含む部分モノイド $A$ は $1_M$ を含み，積で閉じるので，長さについての帰納法によって $S$ の元の任意の有限列の積を含む。よって $C\subseteq A$ である。最小性から一意性が従う。
+\end{proof}
+% genron:end K-000176
+% genron:begin K-000177
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000037
+% genron:use K-000170
+% genron:use K-000175
+% genron:use K-000176
+\Needspace{4\baselineskip}
+\begin{prop}[生成部分モノイドと準同型]\label{k177}
+準同型 $f\colon M\to N$ と $S\subseteq M$ に対し
+\[f(\langle S\rangle_M)=\langle f(S)\rangle_N\]
+が成り立つ。
+\end{prop}
+\begin{proof}
+命題\ref{k175}によって左辺は $f(S)$ を含む部分モノイドである。定理\ref{k176}の最小性により $\langle f(S)\rangle_N\subseteq f(\langle S\rangle_M)$ となる。逆に $f^{-1}(\langle f(S)\rangle_N)$ は $S$ を含む部分モノイドであるから $\langle S\rangle_M\subseteq f^{-1}(\langle f(S)\rangle_N)$ となり，像を取って逆の包含を得る。
+\end{proof}
+% genron:end K-000177
+\par\medskip\noindent{\small\textbf{参考文献.} S. Lang, \textit{Algebra}, revised 3rd ed., Springer, 2002, Ch. I, \S1（モノイド・有限積）；S. Mac Lane, \textit{Categories for the Working Mathematician}, 2nd ed., Springer, 1998（モノイドを演算と単位元の写像により捉える観点）。}
+\end{document}
