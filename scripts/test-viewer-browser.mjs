@@ -61,6 +61,14 @@ try{
  await page.locator(".pdf-shell").waitFor();
  assert.deepEqual(errors,[],"Web reader JavaScript errors");
 
+ // Original proof content is rendered in the native reader.
+ await page.goto(origin+"?id=K-000020&view=web");
+ const proof=page.locator(".web-entry[id='K-000020'] .web-proof");
+ await proof.waitFor();
+ assert.match(await proof.innerText(),/第1式は定義による/);
+ assert.ok(await proof.locator(".katex").count()>0);
+ assert.deepEqual(errors,[],"Proof rendering JavaScript errors");
+
  // Merged-away note numbers retain their section and archived page URLs.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   await page.goto(origin+"?note="+old);
