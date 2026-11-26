@@ -67,6 +67,10 @@ function runTests(){
  check("unknown actual note",has(validate({...dag,notes:[note(1)]},dagSources),"PLAN_UNKNOWN_NOTE"));
  check("verified empty note rejected",has(validate({...pl,notes:[{...note(1),status:"verified"}]}),"PLAN_UNVERIFIED_NOTE"));
  check("generated plan markdown",planMarkdown(pl).includes("N1 --> N2"));
+ const published={...pl,notes:[{...note(1),status:"verified"},note(2,[1]),note(3)]};
+ check("published verified note links to PDF",planMarkdown(published,[1]).includes("[Fixture 1](../volumes/N-1/main.pdf)"));
+ check("unpublished verified note is marked but not linked",planMarkdown(published).includes("Fixture 1（PDF未掲載）")&&!planMarkdown(published).includes("../volumes/N-1/main.pdf"));
+ check("planned note never links to PDF",!planMarkdown(published,[2]).includes("../volumes/N-2/main.pdf"));
  return tests;
 }
 for(const name of runTests()) console.log("PASS "+name);
