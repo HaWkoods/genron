@@ -243,10 +243,12 @@ function planMermaid(ledger){
  const esc=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
  return ["flowchart TD",...g.nodes.map(n=>"  "+n.id.replace("-","")+"[\""+n.id+" "+esc(n.title)+"\"]"),...g.edges.map(e=>"  "+e.from.replace("-","")+" --> "+e.to.replace("-",""))].join("\n")+"\n";
 }
-function planMarkdown(ledger){
+function planMarkdown(ledger,published=[]){
+ const pdfs=new Set(published);
+ const noteTitle=n=>n.status==="verified"?(pdfs.has(n.number)?`[${n.title}](../volumes/N-${n.number}/main.pdf)`:`${n.title}（PDF未掲載）`):n.title;
  const g=planGraph(ledger), depth=new Map(g.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
- const table=["| ID | 層 | ノート | 分野 | 状態 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+n.title+" | "+n.area+" | "+n.status+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
- return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
+ const table=["| ID | 層 | ノート | 分野 | 状態 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+noteTitle(n)+" | "+n.area+" | "+n.status+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
+ return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。完成済みのノート名のリンクをクリックすると、GitHub上でPDFを閲覧できる。未掲載のPDFにはリンクを付けない。\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
 }
 
 export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown};
