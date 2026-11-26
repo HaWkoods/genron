@@ -21,13 +21,16 @@
 {\LARGE 定義・命題一覧}\par\vspace{2mm}
 {\small 読者確認用}
 \end{center}
-知識台帳の検証済み項目（全96項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
+知識台帳の検証済み項目（全145項目）を各ノートの掲載順に掲げる。証明・解説は収録しない。本文の厳密な記述については該当ノートを参照されたい。
 \bigskip
 \textbf{ノート別目次}\par\smallskip
 \hyperlink{note-1}{N-1\quad 数学的言語}\dotfill 17項目\par
 \hyperlink{note-2}{N-2\quad 集合・写像・関係}\dotfill 39項目\par
 \hyperlink{note-3}{N-3\quad 選択公理}\dotfill 11項目\par
 \hyperlink{note-4}{N-4\quad 順序と束}\dotfill 29項目\par
+\hyperlink{note-5}{N-5\quad 自然数と有限集合}\dotfill 24項目\par
+\hyperlink{note-6}{N-6\quad 整列と極大原理}\dotfill 12項目\par
+\hyperlink{note-7}{N-7\quad 濃度と可算性}\dotfill 13項目\par
 \par\bigskip
 \Needspace{12\baselineskip}
 \hypertarget{note-1}{}
@@ -286,4 +289,139 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 写像 \(h:A\to B\) に対する像写像 \(h_{\ast }:P(A)\to P(B)\) と逆像写像 \(h^{\ast }:P(B)\to P(A)\) は順序保存で \(h(S)\subseteq \allowbreak T\) iff \(S\subseteq \allowbreak h^{-1}(T)\)。合併と共通部分の保存が随伴から従う。\par
 \entryhead{定理（完備束の不動点定理）}{K-000096}
 完備束 \(L\) 上の順序保存写像 \(f:L\to L\) の固定元集合は制限順序で完備束。特に固定元が存在する。\(S\subseteq \allowbreak \operatorname{Fix}(f)\) の上限は \(\inf _{L}\{u\in L\) \(\mid \) \(\forall s\in S,\allowbreak s\leq \allowbreak u\) かつ \(f(u)\leq \allowbreak u\}\)、下限は双対。選択公理不要。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-5}{}
+\section*{N-5\quad 自然数と有限集合}
+\pdfbookmark[1]{N-5 自然数と有限集合}{bookmark-5}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（後者と帰納的集合）}{K-000097}
+集合 \(x\) の後者 \(S(x)=\allowbreak x\cup \{x\}\) とする。\(0=\allowbreak \varnothing \) を含み，\(x\in E\Rightarrow \allowbreak S(x)\in E\) を満たす集合 \(E\) を帰納的集合という。\par
+\entryhead{公理（無限公理）}{K-000098}
+帰納的集合が存在する。\par
+\entryhead{構成（自然数の集合）}{K-000099}
+全ての帰納的集合に含まれる帰納的集合 \(N\) が一意に存在する。これを自然数の集合とする。\par
+\entryhead{定理（数学的帰納法）}{K-000100}
+\(B\subseteq \allowbreak N\) が \(0\in B\) および \(n\in B\Rightarrow \allowbreak S(n)\in B\) を満たすなら \(B=\allowbreak N\)。\par
+\entryhead{命題（自然数の基本性質）}{K-000101}
+各 \(n\in N\) は推移的な集合（\(x\in n\Rightarrow \allowbreak x\subseteq \allowbreak n\)）で，\(n\subseteq \allowbreak N\)，\(n\notin n\)。各 \(x\in n\) は \(x\notin x\)。\par
+\entryhead{命題（後者の単射性と前者）}{K-000102}
+\(S:N\to N\) は単射で 0 はその像に属さない。0 以外の自然数は一意の自然数の後者である。\par
+\entryhead{命題（自然数の順序）}{K-000103}
+\(m<n\) \(\Leftrightarrow \allowbreak \) \(m\in n\)，\(m\leq \allowbreak n\) \(\Leftrightarrow \allowbreak \) \(m\subseteq \allowbreak n\) と定めると \(N\) は全順序集合となる。\(m<S(n)\) \(\Leftrightarrow \allowbreak \) \(m\leq \allowbreak n\)。\par
+\entryhead{命題（最小元の原理と強い帰納法）}{K-000104}
+\(N\) の非空部分集合は最小元を持つ。各 \(n\) について全ての \(m<n\) における \(P(m)\) から \(P(n)\) が従えば，全ての \(n\) で \(P(n)\)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定理（再帰定理）}{K-000105}
+集合 \(X\)，\(a\in X\)，写像 \(F:N\times X\to X\) に対し \(u:N\to X\) で \(u(0)=\allowbreak a\)，\(u(S(n))=\allowbreak F(n,\allowbreak u(n))\) を満たすものが一意に存在する。\par
+\entryhead{命題（帰納的体系の一意性）}{K-000106}
+集合 \(X\) に \(a\in X\) と単射 \(t:X\to X\) があり，\(a\notin t(X)\)，\(a\) を含み \(t\) で閉じる部分集合が \(X\) だけなら，一意の全単射 \(u:N\to X\) が \(u(0)=\allowbreak a\)，\(u(S(n))=\allowbreak t(u(n))\) を満たす。\par
+\entryhead{定義（加法と乗法）}{K-000107}
+自然数の加法・乗法を \(m+0=\allowbreak m\)，\(m+S(n)=\allowbreak S(m+n)\)，\(m\times 0=\allowbreak 0\)，\(m\times S(n)=\allowbreak m\times n+m\) で定める。\(1=\allowbreak S(0)\)。\par
+\entryhead{命題（加法の法則）}{K-000108}
+自然数の加法は結合的・可換で 0 を単位元とし，\(m+n=\allowbreak m+k\Rightarrow \allowbreak n=\allowbreak k\)。\(m\leq \allowbreak n\) \(\Leftrightarrow \allowbreak \) \(\exists k\in N,\allowbreak n=\allowbreak m+k\)。\par
+\entryhead{命題（乗法の法則）}{K-000109}
+自然数の乗法は結合的・可換で 1 を単位元とし，0 は吸収元。加法に対する分配律を満たす。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定義（有限集合と濃度）}{K-000110}
+集合 \(A\) がある \(n\in N\) と全単射を持つとき有限集合という。\par
+\entryhead{命題（有限集合の単射比較）}{K-000111}
+自然数 \(m,\allowbreak n\) の間に単射 \(m\to n\) が存在する iff \(m\leq \allowbreak n\)。特に自然数との全単射が存在する場合，その自然数は一意。これを有限集合の元の個数 \(\mid A\mid \) とする。\par
+\entryhead{命題（有限集合への一元の添加）}{K-000112}
+有限集合 \(A\) と \(a\notin A\) に対し \(A\cup \{a\}\) は有限で \(\mid A\cup \{a\}\mid =\allowbreak S(\mid A\mid )\)。\par
+\entryhead{命題（有限集合の部分集合と像）}{K-000113}
+有限集合 \(A\) の部分集合 \(B\) は有限で \(\mid B\mid \leq \allowbreak \mid A\mid \)，等号は \(B=\allowbreak A\) のときに限る。任意の写像 \(f:A\to X\) の像は有限。\par
+\entryhead{命題（有限集合間の写像）}{K-000114}
+有限集合 \(A,\allowbreak B\) の間の単射の存在 iff \(\mid A\mid \leq \allowbreak \mid B\mid \)。全射 \(f:A\to B\) なら \(\mid B\mid \leq \allowbreak \mid A\mid \)。\(\mid A\mid =\allowbreak \mid B\mid \) のとき単射と全射と全単射は同値。\par
+\entryhead{命題（有限集合の非交和）}{K-000115}
+互いに交わらない有限集合 \(A,\allowbreak B\) の合併は有限で \(\mid A\cup B\mid =\allowbreak \mid A\mid +\mid B\mid \)。\par
+\entryhead{命題（有限集合の直積・合併）}{K-000116}
+有限集合 \(A,\allowbreak B\) の直積は有限で \(\mid A\times B\mid =\allowbreak \mid A\mid \times \mid B\mid \)。任意の二つの有限集合の合併も有限。\par
+\entryhead{命題（有限集合の冪集合）}{K-000117}
+有限集合 \(A\) の冪集合は有限である。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{定義（有限列と有限族）}{K-000118}
+添字集合が自然数 \(n\) である集合族又は写像を長さ \(n\) の有限列と呼ぶ。有限集合を添字集合とする族を有限族と呼ぶ。\par
+\entryhead{定理（有限選択）}{K-000119}
+有限集合 \(I\) と各 \(A_{i}\ne \varnothing \) を満たす集合族に対し \(\prod A_{i}\ne \varnothing \)。選択公理を用いない。\par
+\entryhead{命題（有限個の有限集合の合併と積）}{K-000120}
+有限集合を添字集合とする有限集合の族の合併及び直積は有限。空の添字集合も含む。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-6}{}
+\section*{N-6\quad 整列と極大原理}
+\pdfbookmark[1]{N-6 整列と極大原理}{bookmark-6}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（整列集合と始切片）}{K-000121}
+全順序集合 \(W\) の空でない任意の部分集合が最小元を持つとき整列集合という。\(W_{<a}=\allowbreak \{x\in W\) \(\mid \) \(x<a\}\) を \(a\) の真の始切片とする。始切片は下方閉な部分集合。\par
+\entryhead{命題（始切片の形）}{K-000122}
+整列集合 \(W\) の真の始切片は一意の \(a\in W\) によって \(W_{<a}\) と表される。任意の部分集合は制限順序で整列集合。\par
+\entryhead{定理（超限帰納法）}{K-000123}
+整列集合 \(W\) の各 \(a\) について，全 \(x<a\) における \(P(x)\) から \(P(a)\) が従うなら，全 \(a\in W\) について \(P(a)\)。\par
+\entryhead{定理（超限再帰）}{K-000124}
+整列集合 \(W\) と集合 \(X\) に対し，各 \(a\in W\) および \(h:W_{<a}\to X\) に値 \(F(a,\allowbreak h)\in X\) が一意に指定されるなら，\(u:W\to X\) で \(u(a)=\allowbreak F(a,\allowbreak u\mid _{W_{<a}})\) を満たすものが一意に存在する。\par
+\entryhead{命題（整列集合の自己埋込み）}{K-000125}
+整列集合 \(W\) の順序埋込み \(f:W\to W\) は全ての \(a\) で \(a\leq \allowbreak f(a)\)。従って \(W\) は自身の真の始切片と順序同型でない。\par
+\entryhead{命題（整列集合の同型の一意性）}{K-000126}
+整列集合 \(W,\allowbreak V\) の順序同型は存在すれば一意である。\(W\) の相異なる真の始切片は順序同型でない。\par
+\entryhead{定理（整列集合の比較定理）}{K-000127}
+任意の整列集合 \(W,\allowbreak V\) について，\(W\)と\(V\)が順序同型，\(W\)が\(V\)の真の始切片と順序同型，\(V\)が\(W\)の真の始切片と順序同型，のうちただ一つが成立する。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定理（Hartogs の定理）}{K-000128}
+任意の集合 \(A\) に対し，\(A\) への単射が存在しない整列集合 \(H\) が存在する。選択公理を用いない。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第3節}
+\entryhead{定理（整列定理）}{K-000129}
+仮定： 順方向は選択公理を使用。逆方向は整列可能性を仮定。\par
+選択公理の下で任意の集合は整列順序を持つ。逆に任意の集合の整列可能性から選択公理が従う。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第4節}
+\entryhead{定理（Hausdorff の極大原理）}{K-000130}
+整列定理の下で任意の順序集合 \(P\) の任意の鎖 \(C\) は包含極大な鎖に含まれる。\par
+\entryhead{定理（Zorn の補題）}{K-000131}
+順序集合 \(P\) の任意の鎖（空の鎖を含む）が \(P\) 内に上界を持つなら \(P\) は極大元を持つ。選択公理の下で成立する。\par
+\entryhead{定理（Zorn の補題からの選択公理）}{K-000132}
+仮定： 逆方向は \(Zorn\) の補題を仮定し、選択公理を使用せず論証する。\par
+\(Zorn\) の補題を一般命題として仮定すれば選択公理が従う。従って選択公理・整列定理・\(Hausdorff\) の極大原理・\(Zorn\) の補題は同値。\par
+\par\bigskip
+\Needspace{12\baselineskip}
+\hypertarget{note-7}{}
+\section*{N-7\quad 濃度と可算性}
+\pdfbookmark[1]{N-7 濃度と可算性}{bookmark-7}
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第1節}
+\entryhead{定義（濃度の比較）}{K-000133}
+\(A\)と\(B\)が全単射を持つとき同じ濃度という。\(\mid A\mid \leq \allowbreak \mid B\mid \) は単射 \(A\to B\) の存在，\(\mid A\mid =\allowbreak \mid B\mid \) は全単射の存在を表す。一般の濃度を集合として定義するものではない。\par
+\entryhead{命題（濃度の比較の性質）}{K-000134}
+同濃度は反射的・対称的・推移的。単射による比較は反射的・推移的。同濃度の集合で置換しても比較は不変。\par
+\entryhead{定理（Cantor--Bernstein の定理）}{K-000135}
+集合 \(A,\allowbreak B\) の間に単射 \(A\to B\) と \(B\to A\) が存在するなら全単射 \(A\to B\) が存在する。選択公理を用いない。\par
+\entryhead{命題（全射と濃度の比較）}{K-000136}
+単射 \(A\to B\) があり \(A\ne \varnothing \) なら全射 \(B\to A\) が存在する。\par
+\entryhead{定理（Cantor の定理）}{K-000137}
+任意の集合 \(A\) に対し \(\mid A\mid \leq \allowbreak \mid P(A)\mid \) だが，\(P(A)\) への全射 \(A\to P(A)\) は存在しない。従って \(\mid A\mid <\mid P(A)\mid \)。\par
+\Needspace{9\baselineskip}
+\subsection*{第1章\quad 第2節}
+\entryhead{定義（高々可算・可算無限）}{K-000138}
+集合 \(A\) が \(N\) への単射を持つとき高々可算，\(N\) と全単射を持つとき可算無限という。有限集合は高々可算。\par
+\entryhead{命題（自然数集合の無限性）}{K-000139}
+\(N\) は有限集合でない。従って可算無限集合は有限でない。\par
+\entryhead{定理（自然数の無限部分集合）}{K-000140}
+\(N\) の有限でない部分集合 \(B\) は \(N\) と順序同型である。\par
+\entryhead{命題（高々可算集合の分類）}{K-000141}
+高々可算集合は有限集合又は可算無限集合のいずれか一方である。任意の部分集合及び像も高々可算。\par
+\entryhead{定理（自然数の二項直積）}{K-000142}
+\(N\times N\) は可算無限である。\par
+\entryhead{命題（可算集合の有限積・有限合併）}{K-000143}
+有限個の高々可算集合の直積及び合併は高々可算である。\par
+\entryhead{命題（指定された単射を持つ可算族の合併）}{K-000144}
+高々可算集合 \(I\) を添字とする集合族 \((A_{i})\) に，各単射 \(e_{i}:A_{i}\to N\) が族として与えられていれば，合併は高々可算である。\par
+\entryhead{系（冪集合の非可算性）}{K-000145}
+\(P(N)\) は高々可算でない。\par
 \end{document}

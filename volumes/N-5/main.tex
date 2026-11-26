@@ -1,0 +1,623 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-5}
+\fancyhead[R]{\small 自然数と有限集合\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 自然数と有限集合}\par\vspace{2mm}
+{\small N-5\quad 第1版}
+\end{center}
+本篇は N-2「集合・写像・関係」及び N-4「順序と束」を前提とする。自然数を集合として構成し，帰納法と再帰の根拠を明らかにする。有限集合の理論をこれに基づいて展開する。選択公理は用いない。
+\Needspace{8\baselineskip}
+\section{自然数の構成}
+% genron:begin K-000097
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000021
+% genron:use K-000023
+% genron:use K-000029
+\Needspace{4\baselineskip}
+\begin{defn}[後者と帰納的集合]\label{k97}
+$0=\varnothing$ とし，集合 $x$ に対して
+\[ S(x)=x\cup\{x\} \]
+を $x$ の後者と呼ぶ。$0\in E$ かつ $x\in E\impc S(x)\in E$ を満たす集合 $E$ を帰納的集合という。
+\end{defn}
+% genron:end K-000097
+% genron:begin K-000098
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000097
+\Needspace{4\baselineskip}
+\begin{principle}[無限公理]\label{k98}
+帰納的集合が存在するものとする。
+\end{principle}
+% genron:end K-000098
+% genron:begin K-000099
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000045
+% genron:use K-000097
+% genron:use K-000098
+\Needspace{4\baselineskip}
+\begin{defn}[自然数の集合]\label{k99}
+帰納的集合のうち包含関係に関して最小のもの $\mathbb N$ が存在する。$\mathbb N$ の元を自然数と呼ぶ。
+\end{defn}
+\begin{proof}
+無限公理により帰納的集合 $E$ を一つ取る。$\Pow(E)$ の部分集合
+\[ \mathcal I=\{B\subseteq E\mid B\text{ は帰納的集合}\} \]
+を作り，$\mathbb N=\bigcap_{B\in\mathcal I}B$ と定める。$E\in\mathcal I$ である。各 $B\in\mathcal I$ は $0$ を含むから $0\in\mathbb N$ であり，$n\in\mathbb N$ なら各 $B$ は $S(n)$ をも含む。従って $\mathbb N$ は帰納的集合である。任意の帰納的集合 $D$ に対し $E\cap D\in\mathcal I$ であるから $\mathbb N\subseteq D$ となる。最小性により一意である。
+\end{proof}
+% genron:end K-000099
+% genron:begin K-000100
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000018
+% genron:use K-000024
+% genron:use K-000099
+\Needspace{4\baselineskip}
+\begin{thm}[数学的帰納法]\label{k100}
+$B\subseteq\mathbb N$ が帰納的集合であるならば $B=\mathbb N$ である。従って自然数に関する条件 $P(n)$ について $P(0)$ と
+\[ \forall n\in\mathbb N,\quad P(n)\impc P(S(n)) \]
+を示せば，すべての自然数について $P(n)$ が成り立つ。
+\end{thm}
+\begin{proof}
+前半は $\mathbb N$ の最小性から従う。後半には $B=\{n\in\mathbb N\mid P(n)\}$ に前半を適用する。
+\end{proof}
+% genron:end K-000100
+% genron:begin K-000101
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000021
+% genron:use K-000029
+% genron:use K-000097
+% genron:use K-000099
+% genron:use K-000100
+\Needspace{4\baselineskip}
+\begin{prop}[自然数の基本性質]\label{k101}
+各 $n\in\mathbb N$ は次の条件を満たす。
+\begin{align*}
+ &n\subseteq\mathbb N,\qquad n\notin n,\\
+ &x\in n\impc x\subseteq n,\qquad x\in n\impc x\notin x.
+\end{align*}
+ここで第3条件を満たす集合を推移的という。
+\end{prop}
+\begin{proof}
+$0$ については明らかである。$n$ について成り立つと仮定する。$S(n)$ の元は $n$ 又は $n$ の元であるから，$S(n)\subseteq\mathbb N$ であり，各元は $S(n)$ に含まれ，自身を元としない。もし $S(n)\in S(n)$ ならば，直前の性質により $S(n)\notin S(n)$ となり矛盾する。従って $S(n)$ についても四条件が成立し，帰納法により結論を得る。
+\end{proof}
+% genron:end K-000101
+% genron:begin K-000102
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000028
+% genron:use K-000035
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000097
+% genron:use K-000099
+% genron:use K-000100
+% genron:use K-000101
+\Needspace{4\baselineskip}
+\begin{prop}[後者の単射性と前者]\label{k102}
+$S\colon\mathbb N\to\mathbb N$ は単射であり，$0\notin S(\mathbb N)$ である。また，$0$ 以外の自然数はただ一つの自然数の後者である。
+\end{prop}
+\begin{proof}
+$n\in S(n)$ より $S(n)\ne0$ である。$S(n)=S(m)$ かつ $n\ne m$ ならば $n\in m$ かつ $m\in n$ となる。$m$ の推移性より $m\in m$ となり矛盾する。従って 後者の指定は一意であるから $S$ は写像として定まり，単射である。$\{0\}\cup S(\mathbb N)$ は $\mathbb N$ の帰納的部分集合であるから $\mathbb N$ に等しい。
+\end{proof}
+% genron:end K-000102
+% genron:begin K-000103
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000101
+% genron:use K-000102
+\Needspace{4\baselineskip}
+\begin{prop}[自然数の順序]\label{k103}
+自然数 $m,n$ について $m<n$ を $m\in n$ と定め，$m\leq n$ を $m=n$ 又は $m<n$ と定める。この関係は全順序であり，
+\[ m\leq n\iffc m\subseteq n,\qquad m<S(n)\iffc m\leq n \]
+が成り立つ。
+\end{prop}
+\begin{proof}
+推移性及び非反射性は命題\ref{k101}による。全順序性は $n$ に関する帰納法で示す。$0$ については，任意の $m\ne0$ が $0$ を元とすることは $m$ に関する帰納法で従う。実際 $S(0)$ は $0$ を含み，$m\ne0$ かつ $0\in m$ なら $0\in S(m)$ となる。$n$ とすべての自然数の比較可能性を仮定する。$m\leq n$ なら $m<S(n)$ である。$n<m$ の場合，$S(n)\subseteq m$ である。このとき $S(n)=m$ 又は $S(n)\in m$ となることを $m$ についての帰納法で示す。$n\in0$ は不可能であり，$n\in S(k)$ なら $n=k$ 又は $n\in k$ である。前者では $S(n)=S(k)$，後者では帰納法の仮定より $S(n)=k$ 又は $S(n)\in k$ であり，いずれも $S(n)\in S(k)$ となる。従って $S(n)$ と $m$ は比較可能である。これで全順序性を得る。$m<n$ なら $m\subseteq n$ であり，逆に $m\subseteq n$ かつ $n<m$ なら $n\in m\subseteq n$ となり矛盾する。最後の同値は後者の定義による。
+\end{proof}
+% genron:end K-000103
+% genron:begin K-000104
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000072
+% genron:use K-000100
+% genron:use K-000101
+% genron:use K-000103
+\Needspace{4\baselineskip}
+\begin{prop}[最小元の原理と強い帰納法]\label{k104}
+$\mathbb N$ の任意の空でない部分集合は最小元を持つ。また，各 $n\in\mathbb N$ に対し
+\[ (\forall m<n,\ P(m))\impc P(n) \]
+が成り立つならば，すべての自然数について $P(n)$ が成り立つ（強い帰納法）。
+\end{prop}
+\begin{proof}
+$B\subseteq\mathbb N$ が最小元を持たないと仮定する。$n\cap B=\varnothing$ がすべての $n$ について成り立つことを帰納法で示す。$n=0$ は明らかである。$n\cap B=\varnothing$ のとき，$n\in B$ ならば全順序性から $n$ が $B$ の最小元となる。従って $n\notin B$ であり $S(n)\cap B=\varnothing$ である。任意の $b\in B$ は $S(b)$ に属するから $B=\varnothing$ となる。強い帰納法は反例の集合に最小元が存在することを用いれば直ちに従う。
+\end{proof}
+% genron:end K-000104
+\Needspace{8\baselineskip}
+\section{再帰的定義}
+% genron:begin K-000105
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000035
+% genron:use K-000037
+% genron:use K-000042
+% genron:use K-000047
+% genron:use K-000051
+% genron:use K-000097
+% genron:use K-000099
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000103
+% genron:use K-000104
+\Needspace{4\baselineskip}
+\begin{thm}[再帰定理]\label{k105}
+集合 $X$，元 $a\in X$，写像 $F\colon\mathbb N\times X\to X$ に対し，
+\[ u(0)=a,\qquad u(S(n))=F(n,u(n))\quad(n\in\mathbb N) \]
+を満たす写像 $u\colon\mathbb N\to X$ が一意に存在する。
+\end{thm}
+\begin{proof}
+自然数 $n$ を始域とする写像 $v\colon n\to X$ で，$0\in n$ なら $v(0)=a$，また $S(k)\in n$ なら $v(S(k))=F(k,v(k))$ となるものを許容写像と呼ぶ。$S(k)\in n$ なら $k\in n$ である。すべての $n$ について許容写像が一意に存在することを帰納法で示す。$n=0$ では空写像である。$n=0$ の後者では新しい値を $a$ と定めればよい。$n=S(k)$ ならば $k\in n$ であり，$S(n)=n\cup\{n\}$ 上への拡張では新しい値は $F(k,v(k))$ でなければならない。この指定によって許容写像が得られ，任意の許容写像の制限は元の $v$ に等しいから一意である。
+
+許容写像 $v_n$ は一意に指定されるので，そのグラフの集合を作ることができる。$m\leq n$ なら $v_n|_m=v_m$ である。従ってグラフの合併は単価であり，各 $n$ は $S(n)$ に属するから始域は $\mathbb N$ である。これを終域 $X$ の写像 $u$ とすれば求める条件が成り立つ。任意の解の各自然数への制限は許容写像であるから，解は一意である。
+\end{proof}
+% genron:end K-000105
+% genron:begin K-000106
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000039
+% genron:use K-000041
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000103
+% genron:use K-000105
+\Needspace{4\baselineskip}
+\begin{prop}[帰納的体系の一意性]\label{k106}
+集合 $X$ の元 $a$ と単射 $t\colon X\to X$ が $a\notin t(X)$ を満たし，$a$ を含み $t$ で閉じる部分集合が $X$ のみであるとする。このとき再帰定理により定まる写像 $u\colon\mathbb N\to X$，$u(0)=a$，$u(S(n))=t(u(n))$ は全単射である。
+\end{prop}
+\begin{proof}
+$u(\mathbb N)$ は $a$ を含み $t$ で閉じるから $X$ に等しい。単射性は「すべての $m$ に対し $u(n)=u(m)$ なら $n=m$」を $n$ について帰納法で示す。$n=0$ では $m\ne0$ のとき $u(m)\in t(X)$ となり矛盾する。$n=S(k)$ では $m\ne0$，従って $m=S(l)$ であり，$t$ の単射性と帰納法の仮定から $k=l$ を得る。
+\end{proof}
+% genron:end K-000106
+% genron:begin K-000107
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000028
+% genron:use K-000033
+% genron:use K-000035
+% genron:use K-000097
+% genron:use K-000105
+\Needspace{4\baselineskip}
+\begin{defn}[加法と乗法]\label{k107}
+$1=S(0)$ とする。再帰定理により各 $m\in\mathbb N$ に対して
+\begin{align*}
+ m+0&=m,&m+S(n)&=S(m+n),\\
+ m\cdot0&=0,&m\cdot S(n)&=m\cdot n+m
+\end{align*}
+を満たす写像が順次一意に定まる。これらの値は一意に指定されるので $\mathbb N\times\mathbb N$ から $\mathbb N$ への写像を定める。これを加法及び乗法と呼び，$mn=m\cdot n$ とも記す。特に $S(n)=n+1$ である。
+\end{defn}
+% genron:end K-000107
+% genron:begin K-000108
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000103
+% genron:use K-000104
+% genron:use K-000107
+\Needspace{4\baselineskip}
+\begin{prop}[加法の法則]\label{k108}
+任意の自然数 $a,b,c$ について
+\begin{align*}
+ (a+b)+c&=a+(b+c),&a+b&=b+a,\\
+ 0+a&=a,&a+b=a+c&\impc b=c.
+\end{align*}
+更に $a\leq b$ であるための必要十分条件は $b=a+c$ となる自然数 $c$ が存在することである。
+\end{prop}
+\begin{proof}
+$0+b=b$ 及び $S(a)+b=S(a+b)$ は $b$ に関する帰納法で得る。結合律は $c$ に関する帰納法で得る。実際，$c=0$ は明らかで，$(a+b)+S(c)=S((a+b)+c)=S(a+(b+c))=a+(b+S(c))$ となる。可換律は $b=0$ の場合と $a+S(b)=S(a+b)=S(b+a)=S(b)+a$ によって従う。消去律は可換律を用いて $b+a=c+a$ と書き，$a$ に関する帰納法と後者の単射性を用いる。
+
+$a\leq a+c$ は $c$ に関する帰納法で従う。逆に $a\leq b$ なら $b=a+c$ と書けることを $b$ について示す。$b=0$ なら $a=0$ である。$a\leq S(b)$ の場合，$a=S(b)$ なら $c=0$ を取り，さもなければ $a\leq b$ であるから $b=a+c$ と書け，$S(b)=a+S(c)$ となる。
+\end{proof}
+% genron:end K-000108
+% genron:begin K-000109
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000100
+% genron:use K-000107
+% genron:use K-000108
+\Needspace{4\baselineskip}
+\begin{prop}[乗法の法則]\label{k109}
+任意の自然数 $a,b,c$ について
+\begin{align*}
+ a(b+c)&=ab+ac,&(a+b)c&=ac+bc,\\
+ (ab)c&=a(bc),&ab&=ba,\\
+ a1&=1a=a,&a0&=0a=0.
+\end{align*}
+\end{prop}
+\begin{proof}
+右の変数に関する帰納法から $0b=0$，$1b=b$ を得る。$a1=a$ は定義による。第1の分配律は $c$ に関する帰納法で得る。実際，$c=0$ の場合は明らかで，$a(b+S(c))=a(b+c)+a=ab+ac+a=ab+aS(c)$ となる。第2の分配律についても $c=0$ は明らかであり，
+\[(a+b)S(c)=(a+b)c+(a+b)=ac+a+bc+b\]
+より帰納法が適用できる。$S(a)b=ab+b$ が従うから，$b$ に関する帰納法で $aS(b)=ab+a=ba+a=S(b)a$ を得て可換律が成立する。最後に $c$ に関する帰納法と第1の分配律から
+\[(ab)S(c)=(ab)c+ab=a(bc)+ab=a(bS(c))\]
+となり結合律が従う。
+\end{proof}
+% genron:end K-000109
+\Needspace{8\baselineskip}
+\section{有限集合}
+% genron:begin K-000110
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000039
+% genron:use K-000099
+\Needspace{4\baselineskip}
+\begin{defn}[有限集合と濃度]\label{k110}
+集合 $A$ がある自然数 $n$ と全単射を持つとき，$A$ を有限集合という。
+\end{defn}
+% genron:end K-000110
+% genron:begin K-000111
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000039
+% genron:use K-000040
+% genron:use K-000041
+% genron:use K-000042
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000103
+% genron:use K-000110
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合の単射比較]\label{k111}
+自然数 $m,n$ に対し，単射 $m\to n$ が存在するための必要十分条件は $m\leq n$ である。従って有限集合 $A$ と全単射を持つ自然数は一意である。この数を $|A|$ と記す。
+\end{prop}
+\begin{proof}
+$m\leq n$ なら包含写像が単射である。逆を $n$ について帰納法で示す。$n=0$ なら $m=0$ である。単射 $f\colon m\to S(n)$ があるとする。$m=0$ なら明らかである。$m=S(k)$ ならば，$f(k)$ と $n$ を交換し他の元を固定する $S(n)$ の全単射を $f$ に合成する。得られる単射は $k$ を $n$ に送る。従ってその $k$ への制限は終域を $n$ に縮小できる。帰納法の仮定より $k\leq n$ であり，$S(k)\subseteq S(n)$ が従う。全単射の場合は逆写像にも適用して一意性を得る。
+\end{proof}
+% genron:end K-000111
+% genron:begin K-000112
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000029
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000097
+% genron:use K-000110
+% genron:use K-000111
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合への一元の添加]\label{k112}
+有限集合 $A$ と $a\notin A$ に対し $A\cup\{a\}$ は有限であり，$|A\cup\{a\}|=S(|A|)$ となる。
+\end{prop}
+\begin{proof}
+$n=|A|$ とし，全単射 $f\colon n\to A$ を取る。$f$ のグラフに $(n,a)$ を加え，始域を $S(n)$，終域を $A\cup\{a\}$ とすれば全単射を得る。
+\end{proof}
+% genron:end K-000112
+% genron:begin K-000113
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000037
+% genron:use K-000039
+% genron:use K-000042
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000112
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合の部分集合と像]\label{k113}
+有限集合の部分集合及び像は有限である。有限集合 $A$ の部分集合 $B$ に対し $|B|\leq |A|$ であり，等号は $B=A$ のときに限る。
+\end{prop}
+\begin{proof}
+部分集合については $A$ を自然数に移して示せばよい。$n$ の部分集合が有限であることを $n$ について帰納法で示す。$n=0$ は明らかである。$B\subseteq S(n)$ ならば $B\cap n$ は有限で，$B$ はこれに $n$ を加えたもの又はこれ自身である。従って有限である。包含写像に命題\ref{k111}を適用して不等式を得る。$B\subsetneq A$ なら $a\in A\setminus B$ を取ると $S(|B|)=|B\cup\{a\}|\leq |A|$ であるから等号は成立しない。
+
+像については $A$ を自然数に移し，$n$ を始域とする写像の像が有限であることを帰納法で示す。$S(n)$ を始域とする写像 $f$ の像は $f(n)$ を $f|_n$ の像に添加したもの（既に属している場合を含む）である。命題\ref{k112}を用いればよい。
+\end{proof}
+% genron:end K-000113
+% genron:begin K-000114
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000039
+% genron:use K-000040
+% genron:use K-000041
+% genron:use K-000053
+% genron:use K-000097
+% genron:use K-000104
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000113
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合間の写像]\label{k114}
+有限集合 $A,B$ に対し，単射 $A\to B$ が存在することと $|A|\leq |B|$ は同値である。全射 $f\colon A\to B$ が存在するなら $|B|\leq |A|$ である。特に $|A|=|B|$ ならば写像 $f\colon A\to B$ の単射性，全射性及び全単射性は同値である。
+\end{prop}
+\begin{proof}
+単射については自然数に移し命題\ref{k111}を適用する。全射について $A$ を自然数 $n$ に移す。各 $b\in B$ の逆像は $n$ の空でない部分集合であるから，その最小元を指定することにより右逆が得られる。この写像は単射である（合成が恒等写像であるため）から所要の不等式が従う。$|A|=|B|$ のとき単射 $f$ の像は $B$ と同じ個数の元を持つから命題\ref{k113}により $B$ に等しい。全射 $f$ の右逆は単射であり，像の個数が $A$ の個数に等しいから全射でもある。従って右逆は全単射で，$f$ はその逆写像となる。
+\end{proof}
+% genron:end K-000114
+% genron:begin K-000115
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000039
+% genron:use K-000042
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000107
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000112
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合の非交和]\label{k115}
+互いに交わらない有限集合 $A,B$ に対して $A\cup B$ は有限であり，$|A\cup B|=|A|+|B|$ である。
+\end{prop}
+\begin{proof}
+$A$ を固定し，$|B|$ について帰納法を用いる。$B=\varnothing$ の場合は明らかである。$|B|=S(n)$ の場合，$B$ と $S(n)$ の全単射によって $B=B'\cup\{b\}$，$|B'|=n$，$b\notin B'$ と書ける。$b\notin A$ であるから，帰納法の仮定と命題\ref{k112}より
+\[ |A\cup B|=S(|A\cup B'|)=S(|A|+n)=|A|+S(n). \]
+\end{proof}
+% genron:end K-000115
+% genron:begin K-000116
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000029
+% genron:use K-000033
+% genron:use K-000039
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000107
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000113
+% genron:use K-000115
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合の直積・合併]\label{k116}
+有限集合 $A,B$ の直積は有限であり $|A\times B|=|A|\,|B|$ である。また $A\cup B$ も有限である。
+\end{prop}
+\begin{proof}
+$|B|$ について帰納法を用いる。$B=\varnothing$ の場合は直積も空集合である。$B=B'\cup\{b\}$，$b\notin B'$ と書ける場合，$A\times B$ は $A\times B'$ と $A\times\{b\}$ の非交和であり，後者は $A$ と全単射を持つ。命題\ref{k115}と乗法の定義から結論を得る。$A\cup B=A\cup(B\setminus A)$ は非交和であり，$B\setminus A$ は有限であるから最後の主張も従う。
+\end{proof}
+% genron:end K-000116
+% genron:begin K-000117
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000039
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000112
+% genron:use K-000115
+\Needspace{4\baselineskip}
+\begin{prop}[有限集合の冪集合]\label{k117}
+有限集合 $A$ の冪集合 $\Pow(A)$ は有限である。
+\end{prop}
+\begin{proof}
+$|A|$ について帰納法を用いる。$\Pow(\varnothing)=\{\varnothing\}$ は有限である。$A=A'\cup\{a\}$，$a\notin A'$ と書ける場合，$\Pow(A)$ は $a$ を含まない部分集合の族と含む部分集合の族に分割される。前者は $\Pow(A')$，後者は $C\mapsto C\cup\{a\}$ により $\Pow(A')$ と全単射を持つ。両者は帰納法の仮定から有限であり，命題\ref{k115}を用いればよい。
+\end{proof}
+% genron:end K-000117
+\Needspace{8\baselineskip}
+\section{有限族}
+% genron:begin K-000118
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000034
+% genron:use K-000044
+% genron:use K-000099
+% genron:use K-000110
+\Needspace{4\baselineskip}
+\begin{defn}[有限列と有限族]\label{k118}
+自然数 $n$ を始域とする写像を長さ $n$ の有限列という。有限集合を添字集合とする族を有限族という。長さ $0$ の列も許す。
+\end{defn}
+% genron:end K-000118
+% genron:begin K-000119
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000032
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000118
+\Needspace{4\baselineskip}
+\begin{thm}[有限選択]\label{k119}
+有限集合 $I$ を添字集合とする集合族 $(A_i)_{i\in I}$ の各因子が空でないならば，$\prod_{i\in I}A_i$ は空でない。
+\end{thm}
+\begin{proof}
+$I$ を自然数に移して示す。$I=0$ では空写像が所要の元である。$I=S(n)$ であるとき，帰納法の仮定によって $n$ を始域とする直積の元 $f$ が存在する。また $A_n\ne\varnothing$ であるから $a\in A_n$ が存在する。$f$ のグラフに $(n,a)$ を加え，終域を $S(n)$ 個の集合の合併に拡大すれば，所要の直積の元を得る。これは各帰納段階で二つの存在言明を用いる論証であって，選択公理を必要としない。
+\end{proof}
+% genron:end K-000119
+% genron:begin K-000120
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000042
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000048
+% genron:use K-000097
+% genron:use K-000100
+% genron:use K-000110
+% genron:use K-000115
+% genron:use K-000116
+% genron:use K-000118
+\Needspace{4\baselineskip}
+\begin{prop}[有限個の有限集合の合併と積]\label{k120}
+有限集合を添字集合とする有限集合の族の合併と直積は有限である。
+\end{prop}
+\begin{proof}
+添字集合を自然数に移し，帰納法を用いる。空の合併は空集合，空の直積は一元集合である。$S(n)$ 個の集合の合併は先頭 $n$ 個の合併と最後の集合との合併である。直積は先頭 $n$ 個の直積と最後の集合との二項直積に全単射を持つ。この全単射は $f\mapsto(f|_n,f(n))$ であり，第1成分の終域は先頭 $n$ 個の集合の合併に縮小する。逆は指定された値を添加し終域を全因子の合併に拡大することで定まる。命題\ref{k116}を用いる。
+\end{proof}
+% genron:end K-000120
+\Needspace{4\baselineskip}
+\par\medskip\noindent\textbf{参考文献}\par\smallskip
+\noindent T. Jech, \textit{Set Theory}, Third Millennium Edition, Springer, 2003, Chs.~1--3.
+\end{document}

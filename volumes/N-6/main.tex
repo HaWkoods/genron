@@ -1,0 +1,377 @@
+\documentclass[a5paper,10pt,dvipdfmx]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=17mm,headsep=5mm,includehead]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small 数学原論\quad N-6}
+\fancyhead[R]{\small 整列と極大原理\quad\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\theoremstyle{definition}
+\newtheorem{ruledef}{規約}[section]
+\newtheorem{principle}[ruledef]{原理}
+\newtheorem{defn}[ruledef]{定義}
+\theoremstyle{plain}
+\newtheorem{prop}[ruledef]{命題}
+\newtheorem{thm}[ruledef]{定理}
+\renewcommand{\proofname}{証明}
+\newcommand{\iffc}{\Longleftrightarrow}
+\newcommand{\impc}{\Longrightarrow}
+\usepackage{needspace}
+\newcommand{\Pow}{\mathcal{P}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\emptysetc}{\varnothing}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+
+\begin{document}
+\begin{center}
+{\small 数学原論}\par\vspace{4mm}
+{\LARGE 整列と極大原理}\par\vspace{2mm}
+{\small N-6\quad 第1版}
+\end{center}
+本篇は N-3「選択公理」，N-4「順序と束」及び N-5「自然数と有限集合」を前提とする。整列集合の比較及び超限再帰を整備し，選択公理・整列定理・極大原理の関係を明らかにする。選択公理を実際に用いる箇所を明示する。
+\Needspace{8\baselineskip}
+\section{整列集合}
+% genron:begin K-000121
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000070
+% genron:use K-000072
+\Needspace{4\baselineskip}
+\begin{defn}[整列集合と始切片]\label{k121}
+全順序集合 $W$ の空でない任意の部分集合が最小元を持つとき，$W$ を整列集合という。空集合も整列集合である。$W$ の部分集合 $J$ が $x\in J$, $y<x$ ならば $y\in J$ を満たすとき，$J$ を始切片という。$a\in W$ に対し
+\[ W_{<a}=\{x\in W\mid x<a\} \]
+と記す。$J\ne W$ である始切片を真の始切片という。
+\end{defn}
+% genron:end K-000121
+% genron:begin K-000122
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000029
+% genron:use K-000070
+% genron:use K-000072
+% genron:use K-000121
+\Needspace{4\baselineskip}
+\begin{prop}[始切片の形]\label{k122}
+整列集合の真の始切片は $W_{<a}$ の形に一意に表される。また任意の部分集合は制限順序で整列集合となる。
+\end{prop}
+\begin{proof}
+$J$ を真の始切片とし，$a$ を $W\setminus J$ の最小元とする。$x<a$ なら $x\in J$ であり，$x\in J$ なら $a\leq x$ は始切片の性質と $a\notin J$ に反する。従って $J=W_{<a}$ である。$a<b$ なら $a\in W_{<b}\setminus W_{<a}$ であるから表示は一意である。最後の主張は定義から従う。
+\end{proof}
+% genron:end K-000122
+% genron:begin K-000123
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000121
+\Needspace{4\baselineskip}
+\begin{thm}[超限帰納法]\label{k123}
+整列集合 $W$ の各 $a$ に対し，
+\[ (\forall x<a,\ P(x))\impc P(a) \]
+が成り立つならば，すべての $a\in W$ について $P(a)$ が成り立つ。
+\end{thm}
+\begin{proof}
+反例があればその集合は最小元 $a$ を持つ。$a$ より小さい元では条件が成り立つから仮定より $P(a)$ となり矛盾する。
+\end{proof}
+% genron:end K-000123
+% genron:begin K-000124
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000026
+% genron:use K-000027
+% genron:use K-000028
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000042
+% genron:use K-000047
+% genron:use K-000121
+% genron:use K-000122
+% genron:use K-000123
+\Needspace{4\baselineskip}
+\begin{thm}[超限再帰]\label{k124}
+整列集合 $W$ と集合 $X$ を与える。各 $a\in W$ 及び各写像 $h\colon W_{<a}\to X$ に対して，$F(a,h)\in X$ が一意に指定されているとする。このとき
+\[ u(a)=F(a,u|_{W_{<a}})\quad(a\in W) \]
+を満たす写像 $u\colon W\to X$ は一意に存在する。
+\end{thm}
+\begin{proof}
+始切片 $J\subseteq W$ を始域とする写像 $v\colon J\to X$ で，すべての $a\in J$ に対し所要の関係を満たすものを部分解と呼ぶ。部分解のグラフ全体は $\Pow(W\times X)$ の部分集合として存在する。任意の二つの始切片は包含関係で比較可能である。二つの部分解が共通の始域上で異なる値を取るなら，そのような元の最小元 $a$ が存在し，$W_{<a}$ 上の値が一致することから $a$ における値も等しい。矛盾である。
+
+そこで部分解のグラフの合併を取ると，始切片 $J$ 上の写像 $v\colon J\to X$ が得られる。任意の $a\in J$ はある部分解の始域に属し，その部分解は $W_{<a}$ 上でも $v$ と一致するので，$v$ 自身は部分解である。$J\ne W$ と仮定すれば $W\setminus J$ の最小元 $a$ が存在する。命題\ref{k122}より $J=W_{<a}$ である。$a$ における値を $F(a,v)$ として $v$ を拡張すればより大きな部分解となる。これは $v$ のグラフが全ての部分解のグラフを含むことに反する。従って $J=W$ である。一意性は先に示した比較から従う。
+\end{proof}
+% genron:end K-000124
+% genron:begin K-000125
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000069
+% genron:use K-000076
+% genron:use K-000121
+% genron:use K-000123
+\Needspace{4\baselineskip}
+\begin{prop}[整列集合の自己埋込み]\label{k125}
+整列集合 $W$ の順序埋込み $f\colon W\to W$ に対し $a\leq f(a)$ がすべての $a\in W$ で成り立つ。従って $W$ は自身の真の始切片と順序同型でない。
+\end{prop}
+\begin{proof}
+$f(a)<a$ となる $a$ が存在すれば，その最小元を取る。$b=f(a)$ とおくと $b<a$ であるから $b\leq f(b)$ となるが，順序埋込みの性質より $f(b)<f(a)=b$ であり矛盾する。$W$ から $W_{<a}$ への順序同型があれば，包含写像と合成して $f(a)<a$ となる自己埋込みを得るので不可能である。
+\end{proof}
+% genron:end K-000125
+% genron:begin K-000126
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000036
+% genron:use K-000041
+% genron:use K-000076
+% genron:use K-000121
+% genron:use K-000122
+% genron:use K-000125
+\Needspace{4\baselineskip}
+\begin{prop}[整列集合の同型の一意性]\label{k126}
+整列集合の間の順序同型は存在すれば一意であり，同じ整列集合の相異なる真の始切片は順序同型でない。
+\end{prop}
+\begin{proof}
+二つの同型 $f,g\colon W\to V$ があるとすれば，$g^{-1}\circ f$ は $W$ の自己同型である。命題\ref{k125}をこの自己同型及びその逆に適用すると，任意の $x\in W$ が固定されることが従う。従って $f=g$ である。$a<b$ なら $W_{<a}$ は整列集合 $W_{<b}$ の真の始切片であるから，命題\ref{k125}により両者は同型でない。
+\end{proof}
+% genron:end K-000126
+% genron:begin K-000127
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000033
+% genron:use K-000035
+% genron:use K-000042
+% genron:use K-000076
+% genron:use K-000121
+% genron:use K-000122
+% genron:use K-000125
+% genron:use K-000126
+\Needspace{4\baselineskip}
+\begin{thm}[整列集合の比較定理]\label{k127}
+二つの整列集合 $W,V$ に対して，次のうちただ一つが成り立つ。
+\begin{enumerate}
+\item $W$ と $V$ は順序同型である。
+\item $W$ は $V$ の真の始切片と順序同型である。
+\item $V$ は $W$ の真の始切片と順序同型である。
+\end{enumerate}
+\end{thm}
+\begin{proof}
+$W\times V$ の部分集合 $R$ を，$(a,b)\in R$ が $W_{<a}$ と $V_{<b}$ の順序同型の存在を意味するように定める。命題\ref{k126}から，各 $a$ に対応する $b$ は高々一つであり，各 $b$ に対応する $a$ も高々一つである。$(a,b)\in R$ であり $x<a$ とする。$W_{<a}\to V_{<b}$ の同型による $x$ の像を $y$ とすれば，この同型の制限により $(x,y)\in R$ となる。逆方向も同様である。従って $R$ はそれぞれ始切片となる始域 $J\subseteq W$ と像 $K\subseteq V$ の間の順序同型のグラフである（$x<a$ の像は $b$ より小さく，逆も成り立つ）。
+
+もし $J,K$ がともに真の始切片ならば，$J=W_{<a}$，$K=V_{<b}$ と書ける。このとき $J$ と $K$ が順序同型なので $(a,b)\in R$ となる。しかし $a\notin J$ であり矛盾する。従って少なくとも一方は全体に等しい。これで三つの場合のいずれかが成立する。
+
+相互排他性は命題\ref{k125}から従う。実際，(1)と(2)又は(3)が同時に成り立てば同型を合成して自身の真の始切片との同型を得る。(2)と(3)が同時に成り立つ場合も二つの順序同型と包含を合成すれば $W$ は自身の真の始切片と同型になる。
+\end{proof}
+% genron:end K-000127
+\Needspace{8\baselineskip}
+\section{整列型の集合と Hartogs の定理}
+% genron:begin K-000128
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000042
+% genron:use K-000050
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000055
+% genron:use K-000068
+% genron:use K-000076
+% genron:use K-000121
+% genron:use K-000122
+% genron:use K-000125
+% genron:use K-000126
+% genron:use K-000127
+\Needspace{4\baselineskip}
+\begin{thm}[Hartogs の定理]\label{k128}
+任意の集合 $A$ に対し，$A$ への単射が存在しない整列集合 $H$ が存在する。
+\end{thm}
+\begin{proof}
+$A$ の部分集合 $B$ と $B$ 上の整列順序 $r$ との組 $(B,r)$ 全体を $\mathcal W$ とする。$\mathcal W$ は $\Pow(A)\times\Pow(A\times A)$ の部分集合である。順序同型を持つという関係は $\mathcal W$ 上の同値関係であるから，商集合 $H$ が存在する。$(B,r)$ の類を $[B,r]$ と記す。$H$ の二元 $s,t$ について，$s<t$ を「$s$ の代表が $t$ の代表の真の始切片と順序同型である」と定める。これは代表の取り方によらない。比較定理と命題\ref{k125}から比較可能性及び非反射性が従い，順序同型によって始切片を移すことから推移性が従う。従って $H$ は全順序集合となる。
+
+$t=[B,r]$ とする。各 $b\in B$ にその始切片 $B_{<b}$ の制限順序の類を対応させる写像は，$B$ から $H_{<t}$ への順序同型である。実際，$b<b'$ なら $B_{<b}$ は $B_{<b'}$ の真の始切片であり，この写像は狭義順序を保つ。定義により $t$ より小さい類はすべてこの形である。任意の空でない $C\subseteq H$ に対し，$t\in C$ を一つ取る。$C\cap H_{<t}$ が空なら $t$ が最小元であり，空でなければ整列集合 $B$ との同型により $C\cap H_{<t}$ に最小元があり，これは $C$ の最小元でもある。従って $H$ は整列集合である。
+
+もし単射 $i\colon H\to A$ があれば，その像 $B$ に $H$ の順序を移して整列順序 $r$ を得る。このとき $t=[B,r]\in H$ に対し，前段の結果から $H_{<t}$ と $B$ が順序同型である。他方 $H$ と $B$ も順序同型であるから，$H$ は自身の真の始切片と同型になり矛盾する。
+\end{proof}
+% genron:end K-000128
+\Needspace{8\baselineskip}
+\section{選択公理と整列定理}
+% genron:begin K-000129
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000045
+% genron:use K-000047
+% genron:use K-000057
+% genron:use K-000060
+% genron:use K-000068
+% genron:use K-000076
+% genron:use K-000121
+% genron:use K-000124
+% genron:use K-000128
+\Needspace{4\baselineskip}
+\begin{thm}[整列定理]\label{k129}
+選択公理を仮定すれば，任意の集合 $A$ 上に整列順序が存在する。逆にこの一般命題から選択公理が従う。
+\end{thm}
+\begin{proof}
+選択公理（N-3, K-000060）を用いて，$\Pow(A)\setminus\{\varnothing\}$ を添字集合とし，各空でない $B\subseteq A$ に元 $c(B)\in B$ を指定する選択函数を取る。Hartogs の定理によって $A$ への単射を持たない整列集合 $H$ を取る。超限再帰を値域 $\Pow(A)$ に対して適用し，写像 $u\colon H\to\Pow(A)$ を次のように定める。$a\in H$ までの値が定まっているとき
+\[ R_a=A\setminus\bigcup_{x<a}u(x) \]
+とおき，$R_a\ne\varnothing$ なら $u(a)=\{c(R_a)\}$，$R_a=\varnothing$ なら $u(a)=\varnothing$ とする。これは値の一意指定である。
+
+もしすべての $a$ で $u(a)$ が空でなければ，各一元集合の唯一の元を対応させる写像 $H\to A$ は単射になる。相異なる段階で同一の元を取らないように定めたからである。矛盾である。従って $u(a)=\varnothing$ となる最小の $a$ が存在する。このとき $R_a=\varnothing$ であるから $H_{<a}$ と $A$ との間に，先に取った元を対応させる全単射が得られる。この写像により整列順序を $A$ に移す。
+
+逆にすべての集合が整列可能であるとする。空でない集合からなる集合族 $(A_i)_{i\in I}$ に対して $U=\bigcup_{i\in I}A_i$ を整列し，各 $A_i$ の最小元を $f(i)$ と定めれば選択函数が得られる。$I=\varnothing$ の場合も空写像でよい。
+\end{proof}
+% genron:end K-000129
+\Needspace{8\baselineskip}
+\section{極大原理}
+% genron:begin K-000130
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000035
+% genron:use K-000039
+% genron:use K-000068
+% genron:use K-000075
+% genron:use K-000102
+% genron:use K-000107
+% genron:use K-000121
+% genron:use K-000124
+% genron:use K-000129
+\Needspace{4\baselineskip}
+\begin{thm}[Hausdorff の極大原理]\label{k130}
+整列定理（従って選択公理）の下で，任意の順序集合 $P$ の任意の鎖 $C$ は包含関係に関して極大な鎖に含まれる。
+\end{thm}
+\begin{proof}
+整列定理により $P$ に，与えられた順序とは別の整列順序 $\prec$ を与える。超限再帰により $\{0,1\}$ に値を取る写像 $u$ を定める。$a$ より $\prec$ に関して先行する元の値が定まったとき，$a$ が元の順序について $C$ のすべての元及び先行する $u(x)=1$ なるすべての $x$ と比較可能である場合に限り $u(a)=1$ とする。
+
+$D=C\cup\{a\in P\mid u(a)=1\}$ は鎖である。実際，後から加えられた元は先に加えられた元及び $C$ の元と比較可能である。$a\notin D$ なら $u(a)=0$ であるから，$C$ の元又は先に加えられた元のうち $a$ と比較不能な元が存在する。従って $D$ を含む鎖に $a$ を加えることはできない。これは $D$ の極大性を意味する。
+\end{proof}
+% genron:end K-000130
+% genron:begin K-000131
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000068
+% genron:use K-000072
+% genron:use K-000075
+% genron:use K-000130
+\Needspace{4\baselineskip}
+\begin{thm}[Zorn の補題]\label{k131}
+選択公理の下で，順序集合 $P$ の任意の鎖が $P$ 内に上界を持つならば，$P$ は極大元を持つ。ここで空の鎖も含める（従って仮定から $P\ne\varnothing$ となる）。
+\end{thm}
+\begin{proof}
+Hausdorff の極大原理を空の鎖に適用し，包含極大な鎖 $D$ を取る。仮定より $D$ の上界 $u\in P$ が存在する。$D\cup\{u\}$ は鎖であるから $u\in D$ となる。$u\leq v$ なる $v\in P$ があれば $v$ も $D$ の上界であり，同じ理由で $v\in D$ となる。$u$ は $D$ の上界なので $v\leq u$，従って $u=v$ となる。よって $u$ は極大元である。
+\end{proof}
+% genron:end K-000131
+% genron:begin K-000132
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000023
+% genron:use K-000024
+% genron:use K-000026
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000032
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000035
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000057
+% genron:use K-000068
+% genron:use K-000072
+% genron:use K-000075
+% genron:use K-000129
+% genron:use K-000130
+% genron:use K-000131
+\Needspace{4\baselineskip}
+\begin{thm}[Zorn の補題からの選択公理]\label{k132}
+Zorn の補題を一般命題として仮定すれば選択公理が従う。従って選択公理，整列定理，Hausdorff の極大原理及び Zorn の補題は互いに同値である。
+\end{thm}
+\begin{proof}
+空でない集合からなる集合族 $(A_i)_{i\in I}$ を与え，$U=\bigcup_{i\in I}A_i$ とする。$J\subseteq I$ を始域とする写像 $f\colon J\to U$ で $f(i)\in A_i$ となるもののグラフ全体を $P$ とする。これは $\Pow(I\times U)$ の部分集合として存在し，包含関係による順序集合である。任意の鎖 $C\subseteq P$ に対し $\bigcup C$ は単価な関係であり，その始域上で所要の条件を満たす写像のグラフとなる。よって $\bigcup C\in P$ は上界である。空の鎖の合併は空写像のグラフである。
+
+Zorn の補題を仮定して，極大なグラフ $G\in P$ を取る。その始域 $J$ が $I$ に等しくなければ $i\in I\setminus J$ を一つ取り，$a\in A_i$ を一つ取る。$G\cup\{(i,a)\}\in P$ は $G$ を真に含むので矛盾する。従って $J=I$ であり，$G$ は選択函数のグラフである。同値性の残りの含意は前節及び命題\ref{k130}，定理\ref{k131}の証明による。
+\end{proof}
+% genron:end K-000132
+\Needspace{4\baselineskip}
+\par\medskip\noindent\textbf{参考文献}\par\smallskip
+\noindent T. Jech, \textit{Set Theory}, Third Millennium Edition, Springer, 2003, Ch.~2, Ch.~5. 整列順序及び Hartogs 型の議論を参照した。順序数を先に構成せず，整列集合の型の比較によって論証した。
+\end{document}
