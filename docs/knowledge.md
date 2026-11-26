@@ -100,3 +100,7 @@ check はエラーで終了コード1、通常の警告だけなら0。strict �
 ### PDF版
 
 正規の閲覧先は [定義・命題一覧（PDF）](statements.pdf)。`node scripts/statements-tex.mjs > docs/statements.tex` で台帳の同じ項目をA5判のpLaTeX原稿に変換する。原稿には仮定とstatementを残し、証明・解説を新たに追加しない。ノート別目次・PDFしおり・知識IDを付す。`node scripts/publish-pdf.mjs` にPDF生成を統合する。Unicode数学記号・ASCIIの上下添字等の変換は限定的な組版処理であり、一般の数式構文解析ではない。新しい記法を追加する際は変換規則と全頁の組版を確認する。CIはTeX生成結果の一致とPDFヘッダを検査するが、PDFの完全な内容・表示の正しさを保証するものではない。
+
+## 部・篇の分類（2026-11-27）
+
+分類は `parts: [{id: "P-01", title}]`、`treatises: [{id: "T-01", part: "P-01", title, goals}]`、各 `notes[].treatise` で管理する。部・篇のIDは恒久的な分類識別子であり、依存辺ではない。分類の実在・重複・空の部篇を検査する。ノートDAGは従来どおり notes[].depends_on、実際の知識DAGは entries[].depends_on のみから導出する。分類導入前の履歴・テスト用台帳は引き続き読み込める。総目次は部・篇別の折りたたみ表と着手可能ノートを生成し、大規模な全体Mermaid図は埋め込まない（従来のCLIで取得可能）。計画ノートはPDFリンクを持たず、公開されたもののみリンクを付す。

@@ -4437,7 +4437,8 @@
         "自然言語の略記としての論理記号",
         "制限付き量化等の略記",
         "自然言語による論理法則・証明方法"
-      ]
+      ],
+      "treatise": "T-01"
     },
     {
       "number": 2,
@@ -4451,7 +4452,8 @@
         "外延性と集合存在の明示",
         "部分集合・演算・直積・写像・集合族",
         "同値関係・商集合"
-      ]
+      ],
+      "treatise": "T-02"
     },
     {
       "number": 3,
@@ -4465,7 +4467,8 @@
         "選択函数の存在を公理として採用",
         "任意の空でない集合族の直積の非空性",
         "全射の右逆"
-      ]
+      ],
+      "treatise": "T-03"
     },
     {
       "number": 4,
@@ -4479,7 +4482,8 @@
         "半順序・全順序・上限下限",
         "束・完備束・分配束・Boolean束",
         "順序保存写像"
-      ]
+      ],
+      "treatise": "T-04"
     },
     {
       "number": 5,
@@ -4494,7 +4498,8 @@
         "自然数の存在原理・帰納法・再帰",
         "有限集合・有限列",
         "有限選択の証明（選択公理不要）"
-      ]
+      ],
+      "treatise": "T-05"
     },
     {
       "number": 6,
@@ -4510,7 +4515,8 @@
         "整列集合と必要な超限帰納・再帰",
         "Hartogs型の存在論証に必要な集合原理",
         "整列定理・Zornの補題・選択公理の同値"
-      ]
+      ],
+      "treatise": "T-06"
     },
     {
       "number": 7,
@@ -4524,11 +4530,12 @@
         "単射・全射による比較",
         "Cantor–Bernstein・Cantorの定理",
         "可算集合（選択を要する結果は分離）"
-      ]
+      ],
+      "treatise": "T-07"
     },
     {
       "number": 8,
-      "title": "位相空間",
+      "title": "位相と開集合",
       "area": "位相",
       "status": "planned",
       "depends_on": [
@@ -4537,14 +4544,13 @@
         5
       ],
       "goals": [
-        "開集合・閉集合・近傍・連続写像",
-        "部分・積・商位相",
-        "連結・分離・コンパクト性の基本（一般の積のコンパクト性は後続）"
-      ]
+        "開集合系の公理・閉集合・基本例"
+      ],
+      "treatise": "T-08"
     },
     {
       "number": 9,
-      "title": "モノイドと群",
+      "title": "二項演算とモノイド",
       "area": "代数",
       "status": "planned",
       "depends_on": [
@@ -4552,19 +4558,5016 @@
         5
       ],
       "goals": [
+        "結合律・単位元・準同型・部分モノイド"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 10,
+      "title": "環と環準同型",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        62
+      ],
+      "goals": [
+        "環・単位元・可換環・部分環"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 11,
+      "title": "整数の構成",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        5,
+        10
+      ],
+      "goals": [
+        "自然数の差による整数環"
+      ],
+      "treatise": "T-11"
+    },
+    {
+      "number": 12,
+      "title": "Dedekind切断",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        79,
+        4
+      ],
+      "goals": [
+        "切断の集合・順序・上限性"
+      ],
+      "treatise": "T-12"
+    },
+    {
+      "number": 13,
+      "title": "距離と距離位相",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        54,
+        81
+      ],
+      "goals": [
+        "距離・開球・距離位相"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 14,
+      "title": "フィルターと収束",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        53,
+        4
+      ],
+      "goals": [
+        "フィルター基・収束・集積"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 15,
+      "title": "線形空間と部分空間",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        70
+      ],
+      "goals": [
+        "線形結合・生成・線形独立"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 16,
+      "title": "加群と準同型",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        10,
+        64
+      ],
+      "goals": [
+        "部分加群・核・像・商加群"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 17,
+      "title": "双対空間",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        97
+      ],
+      "goals": [
+        "双対写像・双対基底・双対性"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 18,
+      "title": "圏と函手",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        9,
+        2
+      ],
+      "goals": [
+        "小圏と大圏の約束・合成・函手"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 19,
+      "title": "有限群の基本構造",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        63,
+        5
+      ],
+      "goals": [
+        "Lagrange定理・元の位数・巡回群"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 20,
+      "title": "体の拡大と次数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        70,
+        96
+      ],
+      "goals": [
+        "拡大体・塔の公式・合成体"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 21,
+      "title": "Noether環とNoether加群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        16,
+        69,
+        4
+      ],
+      "goals": [
+        "昇鎖条件・有限生成性"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 22,
+      "title": "実数列",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        82,
+        84
+      ],
+      "goals": [
+        "単調列・上極限下極限・部分列"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 23,
+      "title": "ノルム空間とBanach空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        85,
+        15,
+        83
+      ],
+      "goals": [
+        "ノルム・有界線形写像・完備性"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 24,
+      "title": "集合環とσ-加法族",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        2,
+        7,
+        4
+      ],
+      "goals": [
+        "集合環・代数・σ-加法族・生成"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 25,
+      "title": "L^p空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        168,
+        23
+      ],
+      "goals": [
+        "Hölder・Minkowski・完備性"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 26,
+      "title": "複素微分と正則函数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        83,
+        155
+      ],
+      "goals": [
+        "複素微分・Cauchy–Riemann方程式"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 27,
+      "title": "位相群",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        62,
+        56
+      ],
+      "goals": [
+        "群演算の連続性・近傍系・連続準同型"
+      ],
+      "treatise": "T-27"
+    },
+    {
+      "number": 28,
+      "title": "絶対値と付値",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        194,
+        81
+      ],
+      "goals": [
+        "絶対値・付値・誘導位相"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 29,
+      "title": "局所コンパクト空間とRadon測度",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        195,
+        172
+      ],
+      "goals": [
+        "正則測度・コンパクト台連続函数"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 30,
+      "title": "複体と完全列",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        16,
+        116
+      ],
+      "goals": [
+        "鎖複体・鎖写像・完全列"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 31,
+      "title": "位相多様体",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        58,
+        61,
+        13,
+        96
+      ],
+      "goals": [
+        "局所Euclid性・座標・境界"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 32,
+      "title": "特異鎖と単体",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        215,
+        30,
+        96
+      ],
+      "goals": [
+        "標準単体・境界・特異鎖複体"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 33,
+      "title": "微分多様体",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        31,
+        155
+      ],
+      "goals": [
+        "微分構造・座標変換・滑らかな写像"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 34,
+      "title": "接続",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        231,
+        232
+      ],
+      "goals": [
+        "共変微分・接続形式"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 35,
+      "title": "Lie群",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        33,
+        27
+      ],
+      "goals": [
+        "滑らかな群演算・Lie群の射"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 36,
+      "title": "素スペクトルとZariski位相",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        138,
+        54
+      ],
+      "goals": [
+        "Spec・基本開集合・閉集合"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 37,
+      "title": "代数的整数と整数環",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        133,
+        139,
+        99
+      ],
+      "goals": [
+        "整数環・整基底・判別式"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 38,
+      "title": "有限集合の数え上げ",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        5,
+        75
+      ],
+      "goals": [
+        "加法原理・乗法原理・二項係数"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 39,
+      "title": "常微分方程式の定式化",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        155,
+        150
+      ],
+      "goals": [
+        "初期値問題・積分方程式"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 40,
+      "title": "試験函数と分布",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        233,
+        205,
+        178
+      ],
+      "goals": [
+        "試験函数・分布・分布微分"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 41,
+      "title": "確率空間",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        161
+      ],
+      "goals": [
+        "確率測度・事象・独立事象"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 42,
+      "title": "確率過程と有限次元分布",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        284,
+        169
+      ],
+      "goals": [
+        "確率過程・Kolmogorov拡張"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 43,
+      "title": "凸集合と凸函数",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        153,
+        81
+      ],
+      "goals": [
+        "凸包・凸函数・Jensen不等式"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 44,
+      "title": "函数空間と汎函数",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        155,
+        25
+      ],
+      "goals": [
+        "汎函数・許容函数・第一変分"
+      ],
+      "treatise": "T-44"
+    },
+    {
+      "number": 45,
+      "title": "Lagrange力学",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        305,
+        240
+      ],
+      "goals": [
+        "配置空間・作用・運動方程式"
+      ],
+      "treatise": "T-45"
+    },
+    {
+      "number": 46,
+      "title": "離散時間金融市場",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        285,
+        298
+      ],
+      "goals": [
+        "ポートフォリオ・無裁定"
+      ],
+      "treatise": "T-46"
+    },
+    {
+      "number": 47,
+      "title": "文字列と形式言語",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        66,
+        5
+      ],
+      "goals": [
+        "アルファベット・語・言語演算"
+      ],
+      "treatise": "T-47"
+    },
+    {
+      "number": 48,
+      "title": "命題論理の構文と意味",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        47,
+        1
+      ],
+      "goals": [
+        "形式的命題・真理値・充足"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 49,
+      "title": "ZFとZFC",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        328,
+        6
+      ],
+      "goals": [
+        "集合論の形式言語・公理・初期体系との区別"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 50,
+      "title": "数理モデルと仮定",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        285,
+        43
+      ],
+      "goals": [
+        "抽象化・状態変数・評価基準・識別"
+      ],
+      "treatise": "T-50"
+    },
+    {
+      "number": 51,
+      "title": "前層",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        116,
+        8
+      ],
+      "goals": [
+        "開集合の圏・制限写像・前層"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 52,
+      "title": "Abel群の層と加群の層",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        351,
+        211
+      ],
+      "goals": [
+        "層の圏・核余核・茎での完全性"
+      ],
+      "treatise": "T-52"
+    },
+    {
+      "number": 53,
+      "title": "近傍と閉包",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        8
+      ],
+      "goals": [
+        "近傍・内部・閉包・境界・集積点"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 54,
+      "title": "開基と部分基",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        53
+      ],
+      "goals": [
+        "生成位相・開基・部分基"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 55,
+      "title": "連続写像と同相",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        53
+      ],
+      "goals": [
+        "逆像による連続性・局所判定・同相"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 56,
+      "title": "部分空間と積位相",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        54,
+        55
+      ],
+      "goals": [
+        "初期位相・部分空間・有限積・一般積の構成"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 57,
+      "title": "商位相と終位相",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        55
+      ],
+      "goals": [
+        "商写像・非交和・貼り合わせ・終位相"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 58,
+      "title": "分離公理",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        56,
+        57
+      ],
+      "goals": [
+        "T0・T1・Hausdorff・正則・正規"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 59,
+      "title": "連結性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        56,
+        57
+      ],
+      "goals": [
+        "連結成分・弧状連結の基本・連結性保存"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 60,
+      "title": "コンパクト性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        56,
+        58
+      ],
+      "goals": [
+        "開被覆・有限交叉性・有限積・コンパクト集合"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 61,
+      "title": "可算性と局所性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        54,
+        60,
+        7
+      ],
+      "goals": [
+        "第一・第二可算・Lindelöf性・局所コンパクト性"
+      ],
+      "treatise": "T-08"
+    },
+    {
+      "number": 62,
+      "title": "群と部分群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        9
+      ],
+      "goals": [
+        "逆元・部分群判定・生成部分群"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 63,
+      "title": "剰余類と正規部分群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        62
+      ],
+      "goals": [
+        "左右剰余類・正規性・商群"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 64,
+      "title": "群準同型の同型定理",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        63
+      ],
+      "goals": [
+        "核・像・第一から第三同型定理"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 65,
+      "title": "群の直積と直和",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        62,
+        64
+      ],
+      "goals": [
+        "積の普遍性・可換群の直和"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 66,
+      "title": "自由モノイドと自由群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        64,
+        5
+      ],
+      "goals": [
+        "語・簡約・自由構成・普遍性"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 67,
+      "title": "群の表示",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        66
+      ],
+      "goals": [
+        "生成元と関係・関係式による商構成"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 68,
+      "title": "群作用",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        63
+      ],
+      "goals": [
+        "軌道・固定点・安定化群・軌道安定化群定理"
+      ],
+      "treatise": "T-09"
+    },
+    {
+      "number": 69,
+      "title": "イデアルと商環",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        10,
+        64
+      ],
+      "goals": [
+        "イデアル・商・同型定理"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 70,
+      "title": "整域と体",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        69
+      ],
+      "goals": [
+        "零因子・単元・素・極大イデアル"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 71,
+      "title": "分数体",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        70
+      ],
+      "goals": [
+        "整域の分数体の構成と普遍性"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 72,
+      "title": "多項式環",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        10,
+        5
+      ],
+      "goals": [
+        "形式多項式・評価準同型・普遍性"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 73,
+      "title": "整域の整除",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        70
+      ],
+      "goals": [
+        "整除・既約元・素元・最大公約元"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 74,
+      "title": "可換環の局所化",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        69
+      ],
+      "goals": [
+        "積閉集合・分数による構成・普遍性"
+      ],
+      "treatise": "T-10"
+    },
+    {
+      "number": 75,
+      "title": "整数の順序と整除",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        11,
+        4,
+        73
+      ],
+      "goals": [
+        "順序環・除法算法・Euclid算法"
+      ],
+      "treatise": "T-11"
+    },
+    {
+      "number": 76,
+      "title": "素数と一意分解",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        75
+      ],
+      "goals": [
+        "Bézout等式・素因数分解"
+      ],
+      "treatise": "T-11"
+    },
+    {
+      "number": 77,
+      "title": "整数の合同",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        76,
+        69
+      ],
+      "goals": [
+        "合同式・中国剰余定理"
+      ],
+      "treatise": "T-11"
+    },
+    {
+      "number": 78,
+      "title": "有理数体の構成",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        75,
+        71
+      ],
+      "goals": [
+        "分数体の順序・Archimedes性"
+      ],
+      "treatise": "T-11"
+    },
+    {
+      "number": 79,
+      "title": "順序体",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        78
+      ],
+      "goals": [
+        "正元・順序体の性質・Archimedes性の特徴"
+      ],
+      "treatise": "T-11"
+    },
+    {
+      "number": 80,
+      "title": "実数体の構成",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        12
+      ],
+      "goals": [
+        "切断上の加法・乗法・順序体公理"
+      ],
+      "treatise": "T-12"
+    },
+    {
+      "number": 81,
+      "title": "完備順序体",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        80
+      ],
+      "goals": [
+        "上限公理・Archimedes性・有理数の稠密性"
+      ],
+      "treatise": "T-12"
+    },
+    {
+      "number": 82,
+      "title": "実数体の一意性",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        81
+      ],
+      "goals": [
+        "完備順序体の同型・下限・単調収束"
+      ],
+      "treatise": "T-12"
+    },
+    {
+      "number": 83,
+      "title": "複素数体",
+      "area": "数体系",
+      "status": "planned",
+      "depends_on": [
+        81,
+        70
+      ],
+      "goals": [
+        "複素数の構成・共役・絶対値"
+      ],
+      "treatise": "T-12"
+    },
+    {
+      "number": 84,
+      "title": "点列と収束",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        13,
+        7
+      ],
+      "goals": [
+        "収束・連続性の点列判定・Cauchy列"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 85,
+      "title": "完備距離空間",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        84
+      ],
+      "goals": [
+        "完備性・閉部分空間・完備化"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 86,
+      "title": "全有界性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        13,
+        60
+      ],
+      "goals": [
+        "有限ε被覆・全有界集合"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 87,
+      "title": "距離空間のコンパクト性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        85,
+        86,
+        3
+      ],
+      "goals": [
+        "点列コンパクト性との同値・選択の明示"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 88,
+      "title": "一様連続性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        84,
+        87
+      ],
+      "goals": [
+        "一様連続・連続延長・コンパクト性"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 89,
+      "title": "縮小写像と不動点",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        85
+      ],
+      "goals": [
+        "Banach不動点定理・反復近似"
+      ],
+      "treatise": "T-13"
+    },
+    {
+      "number": 90,
+      "title": "超フィルター",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        14,
+        6
+      ],
+      "goals": [
+        "超フィルター補題・延長・選択の使用"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 91,
+      "title": "積のコンパクト性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        90,
+        60
+      ],
+      "goals": [
+        "超フィルターによるTychonoff定理"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 92,
+      "title": "一様構造",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        14,
+        56
+      ],
+      "goals": [
+        "近縁・一様連続・誘導位相"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 93,
+      "title": "一様空間の完備性",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        92,
+        90
+      ],
+      "goals": [
+        "Cauchyフィルター・完備性"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 94,
+      "title": "一様空間の完備化",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        93
+      ],
+      "goals": [
+        "分離化・完備化と普遍性"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 95,
+      "title": "ネットとフィルター",
+      "area": "位相",
+      "status": "planned",
+      "depends_on": [
+        14,
+        4
+      ],
+      "goals": [
+        "有向集合・ネット・収束の対応"
+      ],
+      "treatise": "T-14"
+    },
+    {
+      "number": 96,
+      "title": "有限次元と基底",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        15,
+        5
+      ],
+      "goals": [
+        "基底・交換補題・次元"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 97,
+      "title": "線形写像",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        96
+      ],
+      "goals": [
+        "核・像・階数・次元定理"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 98,
+      "title": "行列と基底変換",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        97
+      ],
+      "goals": [
+        "行列表示・行基本変形・連立方程式"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 99,
+      "title": "行列式",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        98
+      ],
+      "goals": [
+        "交代多重線形性・積公式・逆行列"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 100,
+      "title": "固有値と不変部分空間",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        98,
+        72
+      ],
+      "goals": [
+        "固有空間・特性多項式・三角化条件"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 101,
+      "title": "Cayley–Hamiltonの定理",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        99,
+        100
+      ],
+      "goals": [
+        "消去多項式・最小多項式"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 102,
+      "title": "Jordan標準形",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        101,
+        108
+      ],
+      "goals": [
+        "分解する最小多項式・Jordan鎖"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 103,
+      "title": "双線形形式",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        97
+      ],
+      "goals": [
+        "双線形形式・対称形式・合同変換"
+      ],
+      "treatise": "T-15"
+    },
+    {
+      "number": 104,
+      "title": "加群の直和と直積",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        16
+      ],
+      "goals": [
+        "族の直和・直積・普遍性"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 105,
+      "title": "自由加群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        104
+      ],
+      "goals": [
+        "自由加群の構成・基底"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 106,
+      "title": "任意次元線形空間",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        105,
+        6,
+        96
+      ],
+      "goals": [
+        "Zornの補題による基底存在・次元"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 107,
+      "title": "単項イデアル整域",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        73,
+        69
+      ],
+      "goals": [
+        "PID・Euclid整域・一意分解"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 108,
+      "title": "PID上の有限生成加群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        105,
+        107,
+        98,
+        21
+      ],
+      "goals": [
+        "部分加群・Smith標準形・構造定理"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 109,
+      "title": "有限生成Abel群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        108,
+        76
+      ],
+      "goals": [
+        "不変因子・基本因子"
+      ],
+      "treatise": "T-16"
+    },
+    {
+      "number": 110,
+      "title": "多重線形写像",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        15
+      ],
+      "goals": [
+        "多重線形性・交代性"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 111,
+      "title": "テンソル積",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        105,
+        110
+      ],
+      "goals": [
+        "自由加群の商・普遍性・函手性"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 112,
+      "title": "テンソル代数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        111
+      ],
+      "goals": [
+        "次数付き代数・テンソル積の結合性"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 113,
+      "title": "対称代数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        112
+      ],
+      "goals": [
+        "対称積・普遍性"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 114,
+      "title": "外積代数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        112
+      ],
+      "goals": [
+        "外積・外冪・交代写像"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 115,
+      "title": "行列式と外冪",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        114,
+        99
+      ],
+      "goals": [
+        "最上外冪・内在的行列式"
+      ],
+      "treatise": "T-17"
+    },
+    {
+      "number": 116,
+      "title": "自然変換",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        18
+      ],
+      "goals": [
+        "自然性・自然同型・函手圏の大きさ"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 117,
+      "title": "普遍性と表現可能性",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        116
+      ],
+      "goals": [
+        "普遍元・表現可能函手"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 118,
+      "title": "極限と余極限",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        117
+      ],
+      "goals": [
+        "錐・積・等化子・引戻し"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 119,
+      "title": "随伴函手",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        117
+      ],
+      "goals": [
+        "Homの自然同型・単位・余単位"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 120,
+      "title": "Yonedaの補題",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        116
+      ],
+      "goals": [
+        "局所小圏・Yoneda埋込み"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 121,
+      "title": "随伴と極限保存",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        118,
+        119
+      ],
+      "goals": [
+        "左随伴と余極限・右随伴と極限"
+      ],
+      "treatise": "T-18"
+    },
+    {
+      "number": 122,
+      "title": "有限群の作用",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        19,
+        68
+      ],
+      "goals": [
+        "類等式・共役・中心"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 123,
+      "title": "Sylowの定理",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        122,
+        76
+      ],
+      "goals": [
+        "p群・Sylow部分群・三定理"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 124,
+      "title": "組成列と可解群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        19,
+        64
+      ],
+      "goals": [
+        "組成列・Jordan–Hölder・可解性"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 125,
+      "title": "群表現",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        97,
+        62
+      ],
+      "goals": [
+        "表現・部分表現・同値"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 126,
+      "title": "完全可約性",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        125,
+        19
+      ],
+      "goals": [
+        "Maschkeの定理・標数条件"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 127,
+      "title": "指標と直交関係",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        126,
+        83
+      ],
+      "goals": [
+        "Schurの補題・複素指標・直交性"
+      ],
+      "treatise": "T-19"
+    },
+    {
+      "number": 128,
+      "title": "一変数多項式の整除",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        72,
+        107
+      ],
+      "goals": [
+        "除法算法・既約分解・剰余体"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 129,
+      "title": "代数元と単拡大",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        20,
+        128
+      ],
+      "goals": [
+        "最小多項式・単拡大の構成"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 130,
+      "title": "分解体と代数閉包",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        129,
+        6
+      ],
+      "goals": [
+        "分解体・埋込み・代数閉包"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 131,
+      "title": "分離拡大",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        129
+      ],
+      "goals": [
+        "分離多項式・分離次数・原始元"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 132,
+      "title": "正規拡大",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        130,
+        131
+      ],
+      "goals": [
+        "正規性・埋込みによる特徴"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 133,
+      "title": "Galois対応",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        132,
+        19
+      ],
+      "goals": [
+        "固定体・有限Galois拡大・対応"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 134,
+      "title": "方程式と可解性",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        133,
+        124
+      ],
+      "goals": [
+        "冪根拡大・方程式の可解性"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 135,
+      "title": "超越拡大",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        129,
+        6
+      ],
+      "goals": [
+        "代数独立・超越基底・超越次数"
+      ],
+      "treatise": "T-20"
+    },
+    {
+      "number": 136,
+      "title": "Hilbert基底定理",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        21,
+        72
+      ],
+      "goals": [
+        "多項式環のNoether性"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 137,
+      "title": "局所化と加群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        74,
+        16
+      ],
+      "goals": [
+        "加群局所化・完全性"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 138,
+      "title": "素イデアルと局所環",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        74,
+        70
+      ],
+      "goals": [
+        "素イデアル対応・局所環・根基"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 139,
+      "title": "整拡大",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        129,
+        16,
+        138,
+        128
+      ],
+      "goals": [
+        "整元・有限加群・整閉包"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 140,
+      "title": "整拡大の素イデアル",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        139,
+        6
+      ],
+      "goals": [
+        "lying over・going up・incomparability"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 141,
+      "title": "Krull次元",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        138,
+        140
+      ],
+      "goals": [
+        "素イデアル鎖・次元・高さ"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 142,
+      "title": "有限生成加群とNakayama",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        21,
+        138
+      ],
+      "goals": [
+        "Nakayama補題・局所生成"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 143,
+      "title": "Artin環と分解",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        21,
+        138,
+        77
+      ],
+      "goals": [
+        "降鎖条件・Artin環の構造"
+      ],
+      "treatise": "T-21"
+    },
+    {
+      "number": 144,
+      "title": "実級数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        22
+      ],
+      "goals": [
+        "収束判定・絶対収束・並べ替え"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 145,
+      "title": "実変数連続函数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        88,
+        82
+      ],
+      "goals": [
+        "中間値・最大最小・連続函数"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 146,
+      "title": "函数列と一様収束",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        145,
+        144
+      ],
+      "goals": [
+        "各点収束・一様収束・連続性"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 147,
+      "title": "一変数微分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        145
+      ],
+      "goals": [
+        "導函数・平均値定理・単調性"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 148,
+      "title": "Taylorの定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        147
+      ],
+      "goals": [
+        "高階導函数・剰余項・Taylor展開"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 149,
+      "title": "Riemann積分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        145,
+        82
+      ],
+      "goals": [
+        "上下和・可積分性・積分の性質"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 150,
+      "title": "微積分の基本定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        147,
+        149
+      ],
+      "goals": [
+        "原始函数・基本定理・置換・部分積分"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 151,
+      "title": "函数級数と冪級数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        146,
+        148,
+        150
+      ],
+      "goals": [
+        "項別微積分・収束半径"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 152,
+      "title": "初等函数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        147,
+        151
+      ],
+      "goals": [
+        "指数・対数・三角函数の構成・微分・基本恒等式"
+      ],
+      "treatise": "T-22"
+    },
+    {
+      "number": 153,
+      "title": "有限次元ノルム空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        23,
+        96,
+        87
+      ],
+      "goals": [
+        "ノルムの同値・コンパクト性"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 154,
+      "title": "線形作用素のノルム",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        23
+      ],
+      "goals": [
+        "作用素ノルム・完備性"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 155,
+      "title": "Fréchet微分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        154
+      ],
+      "goals": [
+        "微分可能性・連鎖律"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 156,
+      "title": "高階微分とTaylor公式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        155,
+        148,
+        110
+      ],
+      "goals": [
+        "高階微分・対称性・剰余"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 157,
+      "title": "逆写像定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        155,
+        89
+      ],
+      "goals": [
+        "Banach空間の局所逆写像"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 158,
+      "title": "陰函数定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        157,
+        97
+      ],
+      "goals": [
+        "陰函数・パラメータ依存"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 159,
+      "title": "有限次元の階数定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        158,
+        97
+      ],
+      "goals": [
+        "定階数・局所標準形"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 160,
+      "title": "多変数積分の変数変換",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        170,
+        164,
+        157,
+        99
+      ],
+      "goals": [
+        "Euclid空間のLebesgue積分・Jacobian・変数変換定理"
+      ],
+      "treatise": "T-23"
+    },
+    {
+      "number": 161,
+      "title": "測度と測度空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        24,
+        82
+      ],
+      "goals": [
+        "可算加法性・連続性・完備測度"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 162,
+      "title": "外測度",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        161
+      ],
+      "goals": [
+        "外測度・Carathéodory可測性"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 163,
+      "title": "測度の拡張",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        162,
+        3
+      ],
+      "goals": [
+        "前測度・拡張定理・一意性"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 164,
+      "title": "Lebesgue測度",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        163,
+        13,
+        149
+      ],
+      "goals": [
+        "区間長・Borel集合・完備化"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 165,
+      "title": "可測函数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        24,
+        82
+      ],
+      "goals": [
+        "可測函数・演算・単函数近似"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 166,
+      "title": "非負函数の積分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        161,
+        165
+      ],
+      "goals": [
+        "単函数積分・非負積分・単調収束"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 167,
+      "title": "可積分函数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        166,
+        83
+      ],
+      "goals": [
+        "符号付き・複素函数・線形性"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 168,
+      "title": "積分と極限",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        167
+      ],
+      "goals": [
+        "Fatou補題・優収束・積分の連続性"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 169,
+      "title": "積測度",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        163,
+        166
+      ],
+      "goals": [
+        "直積σ-加法族・σ有限積測度"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 170,
+      "title": "TonelliとFubini",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        169,
+        168
+      ],
+      "goals": [
+        "切断・反復積分・定理"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 171,
+      "title": "符号付き測度",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        167
+      ],
+      "goals": [
+        "Hahn分解・Jordan分解・全変動"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 172,
+      "title": "Radon–Nikodymの定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        171,
+        168
+      ],
+      "goals": [
+        "絶対連続・密度・Lebesgue分解"
+      ],
+      "treatise": "T-24"
+    },
+    {
+      "number": 173,
+      "title": "内積空間とHilbert空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        23,
+        103
+      ],
+      "goals": [
+        "直交性・射影定理・Hilbert空間"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 174,
+      "title": "Hilbert空間の双対性",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        173
+      ],
+      "goals": [
+        "Riesz表現・随伴作用素"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 175,
+      "title": "Baireのカテゴリー定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        85,
+        3
+      ],
+      "goals": [
+        "稠密開集合・完全距離空間"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 176,
+      "title": "一様有界性と開写像",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        175,
+        154
+      ],
+      "goals": [
+        "Banach–Steinhaus・開写像・閉グラフ"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 177,
+      "title": "位相線形空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        92,
+        23
+      ],
+      "goals": [
+        "連続演算・近傍・商・一様性"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 178,
+      "title": "局所凸空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        177,
+        4
+      ],
+      "goals": [
+        "半ノルム・局所凸性・Minkowski汎函数"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 179,
+      "title": "Hahn–Banachの定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        178,
+        6
+      ],
+      "goals": [
+        "線形汎函数の延長・分離"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 180,
+      "title": "弱位相と弱*位相",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        179,
+        56
+      ],
+      "goals": [
+        "双対対・弱収束・Banach–Alaoglu"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 181,
+      "title": "Hilbert空間の作用素",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        174
+      ],
+      "goals": [
+        "自己随伴・正作用素・直交分解"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 182,
+      "title": "コンパクト作用素",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        181,
+        87
+      ],
+      "goals": [
+        "コンパクト作用素・スペクトルの基礎"
+      ],
+      "treatise": "T-25"
+    },
+    {
+      "number": 183,
+      "title": "複素曲線と線積分",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        26,
+        150
+      ],
+      "goals": [
+        "曲線・複素積分・原始函数"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 184,
+      "title": "Cauchyの積分定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        183,
+        59,
+        215
+      ],
+      "goals": [
+        "三角形・局所原始函数・単連結領域の定理"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 185,
+      "title": "Cauchyの積分公式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        184
+      ],
+      "goals": [
+        "円板の積分公式・導函数の公式"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 186,
+      "title": "正則函数の冪級数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        185,
+        151
+      ],
+      "goals": [
+        "Taylor展開・一致の定理・零点"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 187,
+      "title": "最大値原理と代数学の基本定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        186
+      ],
+      "goals": [
+        "Liouville・最大値原理・基本定理"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 188,
+      "title": "Laurent展開と孤立特異点",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        186,
+        183
+      ],
+      "goals": [
+        "Laurent級数・特異点の分類"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 189,
+      "title": "留数定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        188,
+        184
+      ],
+      "goals": [
+        "留数・偏角の原理・Rouché"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 190,
+      "title": "解析接続",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        186,
+        216
+      ],
+      "goals": [
+        "芽・解析接続・モノドロミー"
+      ],
+      "treatise": "T-26"
+    },
+    {
+      "number": 191,
+      "title": "位相群の部分群と商",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        27,
+        63,
+        57
+      ],
+      "goals": [
+        "閉部分群・商群・開写像"
+      ],
+      "treatise": "T-27"
+    },
+    {
+      "number": 192,
+      "title": "位相群の一様構造",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        27,
+        92
+      ],
+      "goals": [
+        "左右一様性・両側一様性"
+      ],
+      "treatise": "T-27"
+    },
+    {
+      "number": 193,
+      "title": "位相群の完備化",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        192,
+        94
+      ],
+      "goals": [
+        "群演算の延長・分離完備化"
+      ],
+      "treatise": "T-27"
+    },
+    {
+      "number": 194,
+      "title": "位相環と位相体",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        27,
+        70
+      ],
+      "goals": [
+        "環演算・逆元の連続性・位相体"
+      ],
+      "treatise": "T-27"
+    },
+    {
+      "number": 195,
+      "title": "局所コンパクト群",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        191,
+        61
+      ],
+      "goals": [
+        "コンパクト近傍・商と局所コンパクト性"
+      ],
+      "treatise": "T-27"
+    },
+    {
+      "number": 196,
+      "title": "非Archimedes絶対値",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        28
+      ],
+      "goals": [
+        "強三角不等式・付値環・剰余体"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 197,
+      "title": "絶対値付き体の完備化",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        28,
+        85
+      ],
+      "goals": [
+        "体演算の延長・完備化の普遍性"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 198,
+      "title": "完備体上の有限次元空間",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        197,
+        96
+      ],
+      "goals": [
+        "一般の絶対値に対するノルム同値・完備性"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 199,
+      "title": "絶対値の有限拡大への延長",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        198,
+        132
+      ],
+      "goals": [
+        "完備体の有限拡大・延長の存在と一意性"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 200,
+      "title": "離散付値とHenselの補題",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        196,
+        197,
+        128
+      ],
+      "goals": [
+        "離散付値環・Hensel持ち上げ"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 201,
+      "title": "局所体",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        199,
+        200,
+        195
+      ],
+      "goals": [
+        "局所コンパクトな付値体・基本構造"
+      ],
+      "treatise": "T-28"
+    },
+    {
+      "number": 202,
+      "title": "Haar測度",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        29,
+        191
+      ],
+      "goals": [
+        "局所コンパクト群の左不変測度の存在・一意性"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 203,
+      "title": "畳込みと群環",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        202,
+        170,
+        25
+      ],
+      "goals": [
+        "畳込み・L^1群代数・近似単位"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 204,
+      "title": "Fourier級数",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        173,
+        151,
+        152
+      ],
+      "goals": [
+        "三角函数系・直交展開・収束"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 205,
+      "title": "Fourier変換",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        203,
+        168,
+        152,
+        204
+      ],
+      "goals": [
+        "実Euclid空間のFourier変換・反転"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 206,
+      "title": "Plancherelの定理",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        205,
+        173
+      ],
+      "goals": [
+        "L^2 Fourier変換・Parseval"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 207,
+      "title": "局所コンパクト可換群の双対",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        202,
+        192,
+        83
+      ],
+      "goals": [
+        "連続指標・双対群・双対性入門"
+      ],
+      "treatise": "T-29"
+    },
+    {
+      "number": 208,
+      "title": "ホモロジーと連結準同型",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        30
+      ],
+      "goals": [
+        "ホモロジー・蛇の補題・長完全列"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 209,
+      "title": "射影加群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        105,
+        117
+      ],
+      "goals": [
+        "持ち上げ性・射影分解"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 210,
+      "title": "入射加群",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        16,
+        6
+      ],
+      "goals": [
+        "入射性・Baer判定・十分な入射対象"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 211,
+      "title": "Abel圏と完全函手",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        208,
+        118
+      ],
+      "goals": [
+        "Abel圏・加法函手・完全性"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 212,
+      "title": "導来函手",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        209,
+        210,
+        211
+      ],
+      "goals": [
+        "分解・比較定理・長完全列"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 213,
+      "title": "Ext函手",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        212,
+        17
+      ],
+      "goals": [
+        "Ext・拡大の分類"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 214,
+      "title": "Tor函手と平坦性",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        212,
+        111
+      ],
+      "goals": [
+        "Tor・平坦加群・完全性"
+      ],
+      "treatise": "T-30"
+    },
+    {
+      "number": 215,
+      "title": "道とホモトピー",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        59,
+        81
+      ],
+      "goals": [
+        "道・ホモトピー・変形収縮"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 216,
+      "title": "基本群",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        215,
+        64
+      ],
+      "goals": [
+        "道の積・基本群・函手性"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 217,
+      "title": "被覆空間",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        31,
+        216
+      ],
+      "goals": [
+        "被覆写像・局所自明性・例"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 218,
+      "title": "持ち上げ定理",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        217
+      ],
+      "goals": [
+        "道・ホモトピー・写像の持ち上げ"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 219,
+      "title": "普遍被覆",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        218,
+        68
+      ],
+      "goals": [
+        "半局所単連結性・普遍被覆の構成"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 220,
+      "title": "被覆の分類",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        219,
+        63
+      ],
+      "goals": [
+        "基本群の部分群・被覆変換群"
+      ],
+      "treatise": "T-31"
+    },
+    {
+      "number": 221,
+      "title": "特異ホモロジー",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        32,
+        208
+      ],
+      "goals": [
+        "ホモトピー不変性・鎖ホモトピー"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 222,
+      "title": "相対ホモロジー",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        221
+      ],
+      "goals": [
+        "対・長完全列"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 223,
+      "title": "切除定理",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        222
+      ],
+      "goals": [
+        "重心細分・切除"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 224,
+      "title": "Mayer–Vietoris系列",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        223
+      ],
+      "goals": [
+        "長完全列・球面のホモロジー"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 225,
+      "title": "特異コホモロジー",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        221,
+        213
+      ],
+      "goals": [
+        "余鎖・普遍係数定理"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 226,
+      "title": "Cup積",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        225,
+        111
+      ],
+      "goals": [
+        "コホモロジー環・次数付き可換性"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 227,
+      "title": "向きと基本類",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        223,
+        31
+      ],
+      "goals": [
+        "局所ホモロジー・向き・基本類"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 228,
+      "title": "Poincaré双対性",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        226,
+        227
+      ],
+      "goals": [
+        "コンパクト向き付き多様体の双対性"
+      ],
+      "treatise": "T-32"
+    },
+    {
+      "number": 229,
+      "title": "接空間と接写像",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        33,
+        17
+      ],
+      "goals": [
+        "曲線・導分・接写像"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 230,
+      "title": "部分多様体",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        229,
+        159
+      ],
+      "goals": [
+        "はめ込み・埋込み・正則値定理"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 231,
+      "title": "ベクトル束と切断",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        229,
+        97
+      ],
+      "goals": [
+        "局所自明性・接束・余接束"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 232,
+      "title": "ベクトル場とLie括弧",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        231,
+        156
+      ],
+      "goals": [
+        "導分・Lie括弧・流れの準備"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 233,
+      "title": "分割の一",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        33,
+        61,
+        148,
+        60
+      ],
+      "goals": [
+        "局所有限被覆・滑らかな分割の一"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 234,
+      "title": "微分形式",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        231,
+        114
+      ],
+      "goals": [
+        "外積・引戻し・形式の局所表示"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 235,
+      "title": "外微分",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        234,
+        232
+      ],
+      "goals": [
+        "外微分・自然性・Poincaréの補題"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 236,
+      "title": "多様体の向き",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        230,
+        115
+      ],
+      "goals": [
+        "向き・体積形式・境界の向き"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 237,
+      "title": "多様体上の積分",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        233,
+        234,
+        236,
+        170,
+        157,
+        160
+      ],
+      "goals": [
+        "変数変換・コンパクト台形式の積分"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 238,
+      "title": "Stokesの定理",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        237,
+        235,
+        150
+      ],
+      "goals": [
+        "境界上の積分と外微分"
+      ],
+      "treatise": "T-33"
+    },
+    {
+      "number": 239,
+      "title": "曲率と捩率",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        34,
+        235
+      ],
+      "goals": [
+        "曲率・捩率・Bianchi恒等式"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 240,
+      "title": "Riemann計量",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        231,
+        103
+      ],
+      "goals": [
+        "計量・長さ・誘導距離"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 241,
+      "title": "Levi-Civita接続",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        34,
+        240
+      ],
+      "goals": [
+        "計量との両立・捩率なし・Koszul公式"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 242,
+      "title": "測地線",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        241,
+        272
+      ],
+      "goals": [
+        "測地線方程式・指数写像"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 243,
+      "title": "Riemann曲率",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        239,
+        241
+      ],
+      "goals": [
+        "曲率テンソル・断面曲率・Ricci曲率"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 244,
+      "title": "測地線の変分",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        242,
+        243
+      ],
+      "goals": [
+        "第一・第二変分・Jacobi場"
+      ],
+      "treatise": "T-34"
+    },
+    {
+      "number": 245,
+      "title": "Lie環",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        35,
+        232
+      ],
+      "goals": [
+        "左不変ベクトル場・Lie環"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 246,
+      "title": "指数写像",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        245,
+        272
+      ],
+      "goals": [
+        "一径数部分群・指数写像"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 247,
+      "title": "随伴表現",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        246,
+        125
+      ],
+      "goals": [
+        "Ad・ad・括弧"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 248,
+      "title": "Lie部分群",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        246,
+        230,
+        159
+      ],
+      "goals": [
+        "Lie部分群・閉部分群定理入門"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 249,
+      "title": "Lie環の基本構造",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        245,
+        100
+      ],
+      "goals": [
+        "イデアル・可解・冪零・半単純性"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 250,
+      "title": "Lie環の表現",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        249,
+        125
+      ],
+      "goals": [
+        "表現・基本例・sl2の初歩"
+      ],
+      "treatise": "T-35"
+    },
+    {
+      "number": 251,
+      "title": "構造層",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        36,
+        347,
+        137
+      ],
+      "goals": [
+        "局所化による構造層・茎"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 252,
+      "title": "局所環付き空間",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        351,
+        138
+      ],
+      "goals": [
+        "局所準同型・局所環付き空間の射"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 253,
+      "title": "アフィンスキーム",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        251,
+        252
+      ],
+      "goals": [
+        "アフィンスキームと環の反変対応"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 254,
+      "title": "スキーム",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        253,
+        349
+      ],
+      "goals": [
+        "アフィン開被覆・貼り合わせ"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 255,
+      "title": "スキームの射",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        254,
+        118
+      ],
+      "goals": [
+        "射・ファイバー積・基本性質"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 256,
+      "title": "準連接層",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        254,
+        52,
+        137
+      ],
+      "goals": [
+        "加群の層化・準連接性"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 257,
+      "title": "有限型と次元",
+      "area": "幾何",
+      "status": "planned",
+      "depends_on": [
+        255,
+        141,
+        136
+      ],
+      "goals": [
+        "有限型・有限表示・次元"
+      ],
+      "treatise": "T-36"
+    },
+    {
+      "number": 258,
+      "title": "Dedekind整域",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        141,
+        21,
+        139
+      ],
+      "goals": [
+        "Dedekind整域の特徴"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 259,
+      "title": "分数イデアルと一意分解",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        258,
+        137
+      ],
+      "goals": [
+        "分数イデアル・素イデアル分解"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 260,
+      "title": "数体の埋込みと格子",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        37,
+        153,
+        17
+      ],
+      "goals": [
+        "実複素埋込み・格子・共体積"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 261,
+      "title": "Minkowskiの定理",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        260,
+        164,
+        170
+      ],
+      "goals": [
+        "凸体定理・格子点"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 262,
+      "title": "イデアル類群の有限性",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        259,
+        261
+      ],
+      "goals": [
+        "類群・ノルム・有限性"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 263,
+      "title": "単数定理",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        261,
+        37,
+        150,
+        152
+      ],
+      "goals": [
+        "対数埋込み・Dirichletの単数定理"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 264,
+      "title": "分岐と剰余次数",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        259,
+        133
+      ],
+      "goals": [
+        "素イデアルの分解・分岐指数"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 265,
+      "title": "数体の局所化と完備化",
+      "area": "代数",
+      "status": "planned",
+      "depends_on": [
+        264,
+        201
+      ],
+      "goals": [
+        "局所体・分解群・慣性群"
+      ],
+      "treatise": "T-37"
+    },
+    {
+      "number": 266,
+      "title": "包除原理",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        38
+      ],
+      "goals": [
+        "包除・全射の数え上げ"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 267,
+      "title": "母函数",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        38,
+        72
+      ],
+      "goals": [
+        "形式冪級数・漸化式"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 268,
+      "title": "グラフと連結性",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        38
+      ],
+      "goals": [
+        "グラフ・道・連結成分"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 269,
+      "title": "木と全域木",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        268
+      ],
+      "goals": [
+        "木の特徴・全域木"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 270,
+      "title": "群作用による数え上げ",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        122,
+        38
+      ],
+      "goals": [
+        "Burnside補題・軌道の計数"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 271,
+      "title": "グラフ上の流れ",
+      "area": "離散",
+      "status": "planned",
+      "depends_on": [
+        268,
+        75
+      ],
+      "goals": [
+        "ネットワーク・最大流最小カット"
+      ],
+      "treatise": "T-38"
+    },
+    {
+      "number": 272,
+      "title": "存在と一意性",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        39,
+        89,
+        153
+      ],
+      "goals": [
+        "Picard–Lindelöf定理"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 273,
+      "title": "解の延長と連続依存性",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        272
+      ],
+      "goals": [
+        "最大解・Gronwall不等式・依存性"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 274,
+      "title": "線形微分方程式系",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        272,
+        101,
+        151,
+        154
+      ],
+      "goals": [
+        "基本解行列・行列指数"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 275,
+      "title": "流れと力学系",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        273,
+        232
+      ],
+      "goals": [
+        "局所流・軌道・平衡点"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 276,
+      "title": "変分方程式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        273,
+        156
+      ],
+      "goals": [
+        "初期値に関する微分・変分方程式"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 277,
+      "title": "安定性",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        274,
+        275
+      ],
+      "goals": [
+        "Lyapunov安定性・線形化"
+      ],
+      "treatise": "T-39"
+    },
+    {
+      "number": 278,
+      "title": "分布の畳込みとFourier変換",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        40,
+        205
+      ],
+      "goals": [
+        "畳込み・緩増加分布"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 279,
+      "title": "Sobolev空間",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        40,
+        25
+      ],
+      "goals": [
+        "弱微分・Sobolevノルム・完備性"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 280,
+      "title": "Sobolev埋込みとコンパクト性",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        279,
+        205
+      ],
+      "goals": [
+        "埋込み・Rellich型コンパクト性"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 281,
+      "title": "弱解と変分形式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        279,
+        174
+      ],
+      "goals": [
+        "弱形式・Lax–Milgramの定理"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 282,
+      "title": "楕円型方程式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        281,
+        280
+      ],
+      "goals": [
+        "Poisson方程式・境界値・弱解"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 283,
+      "title": "発展方程式",
+      "area": "解析",
+      "status": "planned",
+      "depends_on": [
+        281,
+        274,
+        206
+      ],
+      "goals": [
+        "熱方程式・波動方程式の基本解"
+      ],
+      "treatise": "T-40"
+    },
+    {
+      "number": 284,
+      "title": "確率変数と分布",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        41,
+        165
+      ],
+      "goals": [
+        "分布・分布函数・独立変数"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 285,
+      "title": "期待値と分散",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        284,
+        167
+      ],
+      "goals": [
+        "期待値・分散・共分散・不等式"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 286,
+      "title": "確率変数列の収束",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        285,
+        168
+      ],
+      "goals": [
+        "確率収束・概収束・L^p収束"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 287,
+      "title": "条件付き期待値",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        285,
+        172
+      ],
+      "goals": [
+        "条件付き期待値の存在・塔の性質"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 288,
+      "title": "大数法則",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        286
+      ],
+      "goals": [
+        "弱法則・強法則の基本"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 289,
+      "title": "特性函数と中心極限定理",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        286,
+        205,
+        291
+      ],
+      "goals": [
+        "特性函数・連続性定理・CLT"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 290,
+      "title": "離散時間マルチンゲール",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        287
+      ],
+      "goals": [
+        "フィルトレーション・停止時刻・基本不等式"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 291,
+      "title": "確率分布の基本例",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        285,
+        164,
+        152
+      ],
+      "goals": [
+        "Bernoulli・二項・Poisson・正規分布と基本計算"
+      ],
+      "treatise": "T-41"
+    },
+    {
+      "number": 292,
+      "title": "Brown運動",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        42,
+        289,
+        291
+      ],
+      "goals": [
+        "Gaussian過程・連続修正版"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 293,
+      "title": "連続時間マルチンゲール",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        290,
+        42
+      ],
+      "goals": [
+        "適合性・停止時刻・収束"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 294,
+      "title": "確率積分",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        292,
+        293,
+        173
+      ],
+      "goals": [
+        "単純過程・Itô等距離・積分構成"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 295,
+      "title": "Itô公式",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        294,
+        156
+      ],
+      "goals": [
+        "二次変動・Itô公式"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 296,
+      "title": "確率微分方程式",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        295,
+        272
+      ],
+      "goals": [
+        "強解・存在と一意性"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 297,
+      "title": "確率測度の変換",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        295,
+        172
+      ],
+      "goals": [
+        "指数マルチンゲール・Girsanovの定理"
+      ],
+      "treatise": "T-42"
+    },
+    {
+      "number": 298,
+      "title": "凸集合の分離",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        43,
+        179
+      ],
+      "goals": [
+        "分離定理・支持超平面"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 299,
+      "title": "凸共役と劣微分",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        298
+      ],
+      "goals": [
+        "Fenchel共役・劣微分・双共役"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 300,
+      "title": "最適性条件",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        299,
+        155
+      ],
+      "goals": [
+        "停留条件・凸問題の最適性"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 301,
+      "title": "制約付き最適化",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        300,
+        158
+      ],
+      "goals": [
+        "Lagrange乗数・KKT条件"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 302,
+      "title": "凸双対性",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        301,
+        299
+      ],
+      "goals": [
+        "双対問題・強双対性・条件"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 303,
+      "title": "勾配法",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        300,
+        156
+      ],
+      "goals": [
+        "Lipschitz勾配・降下補題・収束"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 304,
+      "title": "近接写像と近接勾配法",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        299,
+        303
+      ],
+      "goals": [
+        "近接作用素・反復法"
+      ],
+      "treatise": "T-43"
+    },
+    {
+      "number": 305,
+      "title": "Euler–Lagrange方程式",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        44,
+        150
+      ],
+      "goals": [
+        "基本補題・変分による方程式"
+      ],
+      "treatise": "T-44"
+    },
+    {
+      "number": 306,
+      "title": "第二変分",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        305,
+        156
+      ],
+      "goals": [
+        "第二変分・必要条件・Legendre条件"
+      ],
+      "treatise": "T-44"
+    },
+    {
+      "number": 307,
+      "title": "制約付き変分",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        305,
+        301
+      ],
+      "goals": [
+        "等周問題・乗数"
+      ],
+      "treatise": "T-44"
+    },
+    {
+      "number": 308,
+      "title": "直接法",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        44,
+        280,
+        180,
+        299
+      ],
+      "goals": [
+        "弱下半連続性・強制性・極小元"
+      ],
+      "treatise": "T-44"
+    },
+    {
+      "number": 309,
+      "title": "多様体上の変分",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        305,
+        237,
+        276
+      ],
+      "goals": [
+        "曲線の変分・座標不変性"
+      ],
+      "treatise": "T-44"
+    },
+    {
+      "number": 310,
+      "title": "保存則と対称性",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        45,
+        35
+      ],
+      "goals": [
+        "Noetherの定理・保存量"
+      ],
+      "treatise": "T-45"
+    },
+    {
+      "number": 311,
+      "title": "Legendre変換とHamilton力学",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        45,
+        299
+      ],
+      "goals": [
+        "正則Lagrangian・Hamilton方程式"
+      ],
+      "treatise": "T-45"
+    },
+    {
+      "number": 312,
+      "title": "シンプレクティック構造",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        235,
+        231,
+        311
+      ],
+      "goals": [
+        "標準形式・Hamiltonベクトル場"
+      ],
+      "treatise": "T-45"
+    },
+    {
+      "number": 313,
+      "title": "Poisson括弧",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        312,
+        232
+      ],
+      "goals": [
+        "Poisson括弧・保存則"
+      ],
+      "treatise": "T-45"
+    },
+    {
+      "number": 314,
+      "title": "幾何学的力学",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        313,
+        242
+      ],
+      "goals": [
+        "測地線流・正準変換・運動量写像入門"
+      ],
+      "treatise": "T-45"
+    },
+    {
+      "number": 315,
+      "title": "価格付けとリスク中立測度",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        46,
+        287
+      ],
+      "goals": [
+        "基本定理の有限状態版・複製"
+      ],
+      "treatise": "T-46"
+    },
+    {
+      "number": 316,
+      "title": "連続時間市場",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        296,
+        315
+      ],
+      "goals": [
+        "自己金融戦略・割引価格"
+      ],
+      "treatise": "T-46"
+    },
+    {
+      "number": 317,
+      "title": "Black–Scholesモデル",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        316,
+        297,
+        152,
+        291
+      ],
+      "goals": [
+        "価格公式・ヘッジ"
+      ],
+      "treatise": "T-46"
+    },
+    {
+      "number": 318,
+      "title": "ポートフォリオ最適化",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        46,
+        302
+      ],
+      "goals": [
+        "平均分散・効用最大化"
+      ],
+      "treatise": "T-46"
+    },
+    {
+      "number": 319,
+      "title": "金融リスクの数理",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        315,
+        285
+      ],
+      "goals": [
+        "損失分布・リスク尺度"
+      ],
+      "treatise": "T-46"
+    },
+    {
+      "number": 320,
+      "title": "有限オートマトン",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        47,
+        268
+      ],
+      "goals": [
+        "決定性・非決定性・受理"
+      ],
+      "treatise": "T-47"
+    },
+    {
+      "number": 321,
+      "title": "形式文法",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        47
+      ],
+      "goals": [
+        "生成規則・文脈自由文法"
+      ],
+      "treatise": "T-47"
+    },
+    {
+      "number": 322,
+      "title": "Turing機械",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        47,
+        5
+      ],
+      "goals": [
+        "計算モデル・符号化・万能機械"
+      ],
+      "treatise": "T-47"
+    },
+    {
+      "number": 323,
+      "title": "再帰函数",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        322,
+        5
+      ],
+      "goals": [
+        "原始再帰・μ再帰・計算可能性"
+      ],
+      "treatise": "T-47"
+    },
+    {
+      "number": 324,
+      "title": "決定可能性と停止問題",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        322,
+        7
+      ],
+      "goals": [
+        "対角化・停止問題・還元"
+      ],
+      "treatise": "T-47"
+    },
+    {
+      "number": 325,
+      "title": "命題論理の証明体系",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        48
+      ],
+      "goals": [
+        "形式的導出・健全性・完全性"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 326,
+      "title": "一階述語論理の構文",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        48,
+        321
+      ],
+      "goals": [
+        "項・式・自由変数・代入"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 327,
+      "title": "一階構造と意味論",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        326,
+        2
+      ],
+      "goals": [
+        "構造・割当て・充足関係"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 328,
+      "title": "一階論理の証明体系",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        327,
+        325
+      ],
+      "goals": [
+        "推論規則・健全性"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 329,
+      "title": "Gödelの完全性定理",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        328,
+        6
+      ],
+      "goals": [
+        "Henkin構成・完全性・コンパクト性"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 330,
+      "title": "モデル理論の初歩",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        329
+      ],
+      "goals": [
+        "初等部分構造・Löwenheim–Skolem"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 331,
+      "title": "算術の形式化",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        328,
+        323,
+        11
+      ],
+      "goals": [
+        "Peano算術・Gödel番号化"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 332,
+      "title": "不完全性定理",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        331,
+        324,
+        329
+      ],
+      "goals": [
+        "対角化補題・第一第二不完全性"
+      ],
+      "treatise": "T-48"
+    },
+    {
+      "number": 333,
+      "title": "順序数",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        49,
+        6
+      ],
+      "goals": [
+        "von Neumann順序数・整列型"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 334,
+      "title": "超限再帰と順序数演算",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        333
+      ],
+      "goals": [
+        "超限再帰・加法乗法・累乗"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 335,
+      "title": "基数と基数演算",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        333,
+        7
+      ],
+      "goals": [
+        "始順序数・基数演算・選択公理"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 336,
+      "title": "正則性と累積階層",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        334
+      ],
+      "goals": [
+        "階数・V階層・整礎性"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 337,
+      "title": "集合論のモデル",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        336,
+        330,
+        332
+      ],
+      "goals": [
+        "推移モデル・相対的無矛盾性"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 338,
+      "title": "構成可能集合",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        337
+      ],
+      "goals": [
+        "L階層・構成可能性・相対的無矛盾性入門"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 339,
+      "title": "強制法の初歩",
+      "area": "数学の研究",
+      "status": "planned",
+      "depends_on": [
+        337,
+        90
+      ],
+      "goals": [
+        "半順序・generic filter・名前・強制関係"
+      ],
+      "treatise": "T-49"
+    },
+    {
+      "number": 340,
+      "title": "推定とモデル検証",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        50,
+        288,
+        303
+      ],
+      "goals": [
+        "推定量・誤差・感度・検証"
+      ],
+      "treatise": "T-50"
+    },
+    {
+      "number": 341,
+      "title": "ネットワークモデル",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        271,
+        50
+      ],
+      "goals": [
+        "ネットワーク指標・制約・伝播"
+      ],
+      "treatise": "T-50"
+    },
+    {
+      "number": 342,
+      "title": "動的システムのモデル化",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        277,
+        50
+      ],
+      "goals": [
+        "状態方程式・平衡・安定性"
+      ],
+      "treatise": "T-50"
+    },
+    {
+      "number": 343,
+      "title": "意思決定と最適化",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        302,
+        50
+      ],
+      "goals": [
+        "目的函数・制約・多目的問題"
+      ],
+      "treatise": "T-50"
+    },
+    {
+      "number": 344,
+      "title": "社会システムの数理",
+      "area": "応用",
+      "status": "planned",
+      "depends_on": [
+        340,
+        341,
+        342,
+        343
+      ],
+      "goals": [
+        "社会現象のモデル化・評価・限界"
+      ],
+      "treatise": "T-50"
+    },
+    {
+      "number": 345,
+      "title": "層と貼り合わせ",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        51
+      ],
+      "goals": [
+        "局所性・貼り合わせ公理"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 346,
+      "title": "芽と茎",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        345,
+        118,
+        14
+      ],
+      "goals": [
+        "芽・茎・茎による同型判定"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 347,
+      "title": "層化",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        346,
+        119
+      ],
+      "goals": [
+        "層化の構成・普遍性"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 348,
+      "title": "エタール空間",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        347,
+        55
+      ],
+      "goals": [
+        "局所同相・集合値層との同値"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 349,
+      "title": "順像層と逆像層",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        347,
+        55
+      ],
+      "goals": [
+        "順像・逆像・随伴"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 350,
+      "title": "定数層と局所定数層",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        348,
+        349
+      ],
+      "goals": [
+        "定数前層の層化・局所定数性"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 351,
+      "title": "群の層・環の層",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        347,
+        10
+      ],
+      "goals": [
+        "代数構造の層・環付き空間"
+      ],
+      "treatise": "T-51"
+    },
+    {
+      "number": 352,
+      "title": "入射層と分解",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        52,
+        210
+      ],
+      "goals": [
+        "十分な入射対象・入射分解"
+      ],
+      "treatise": "T-52"
+    },
+    {
+      "number": 353,
+      "title": "層係数コホモロジー",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        352,
+        212
+      ],
+      "goals": [
+        "大域切断の右導来函手・長完全列"
+      ],
+      "treatise": "T-52"
+    },
+    {
+      "number": 354,
+      "title": "弛緩層と非輪状分解",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        353
+      ],
+      "goals": [
+        "弛緩性・非輪状性・計算"
+      ],
+      "treatise": "T-52"
+    },
+    {
+      "number": 355,
+      "title": "Čechコホモロジー",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        353,
+        30
+      ],
+      "goals": [
+        "開被覆・Čech複体・精密化"
+      ],
+      "treatise": "T-52"
+    },
+    {
+      "number": 356,
+      "title": "Čechと導来函手の比較",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        354,
+        355
+      ],
+      "goals": [
+        "比較写像・Leray被覆と成立条件"
+      ],
+      "treatise": "T-52"
+    },
+    {
+      "number": 357,
+      "title": "局所から大域への障害",
+      "area": "構造",
+      "status": "planned",
+      "depends_on": [
+        356,
+        349
+      ],
+      "goals": [
+        "貼り合わせ障害・連結準同型・具体例"
+      ],
+      "treatise": "T-52"
+    }
+  ],
+  "parts": [
+    {
+      "id": "P-01",
+      "title": "数学的基礎"
+    },
+    {
+      "id": "P-02",
+      "title": "数体系"
+    },
+    {
+      "id": "P-03",
+      "title": "代数学"
+    },
+    {
+      "id": "P-04",
+      "title": "位相と一様構造"
+    },
+    {
+      "id": "P-05",
+      "title": "解析学"
+    },
+    {
+      "id": "P-06",
+      "title": "幾何学と代数的位相"
+    },
+    {
+      "id": "P-07",
+      "title": "圏・層・ホモロジー代数"
+    },
+    {
+      "id": "P-08",
+      "title": "離散数学"
+    },
+    {
+      "id": "P-09",
+      "title": "確率・最適化・応用数学"
+    },
+    {
+      "id": "P-10",
+      "title": "数学の形式的研究"
+    }
+  ],
+  "treatises": [
+    {
+      "id": "T-01",
+      "part": "P-01",
+      "title": "数学的言語",
+      "goals": [
+        "自然言語の略記としての論理記号",
+        "制限付き量化等の略記",
+        "自然言語による論理法則・証明方法"
+      ]
+    },
+    {
+      "id": "T-02",
+      "part": "P-01",
+      "title": "集合・写像・関係",
+      "goals": [
+        "外延性と集合存在の明示",
+        "部分集合・演算・直積・写像・集合族",
+        "同値関係・商集合"
+      ]
+    },
+    {
+      "id": "T-03",
+      "part": "P-01",
+      "title": "選択公理",
+      "goals": [
+        "選択函数の存在を公理として採用",
+        "任意の空でない集合族の直積の非空性",
+        "全射の右逆"
+      ]
+    },
+    {
+      "id": "T-04",
+      "part": "P-01",
+      "title": "順序と束",
+      "goals": [
+        "半順序・全順序・上限下限",
+        "束・完備束・分配束・Boolean束",
+        "順序保存写像"
+      ]
+    },
+    {
+      "id": "T-05",
+      "part": "P-01",
+      "title": "自然数と有限集合",
+      "goals": [
+        "自然数の存在原理・帰納法・再帰",
+        "有限集合・有限列",
+        "有限選択の証明（選択公理不要）"
+      ]
+    },
+    {
+      "id": "T-06",
+      "part": "P-01",
+      "title": "整列と極大原理",
+      "goals": [
+        "整列集合と必要な超限帰納・再帰",
+        "Hartogs型の存在論証に必要な集合原理",
+        "整列定理・Zornの補題・選択公理の同値"
+      ]
+    },
+    {
+      "id": "T-07",
+      "part": "P-01",
+      "title": "濃度と可算性",
+      "goals": [
+        "単射・全射による比較",
+        "Cantor–Bernstein・Cantorの定理",
+        "可算集合（選択を要する結果は分離）"
+      ]
+    },
+    {
+      "id": "T-08",
+      "part": "P-04",
+      "title": "位相空間",
+      "goals": [
+        "開集合・閉集合・近傍・連続写像",
+        "部分・積・商位相",
+        "連結・分離・コンパクト性の基本（一般の積のコンパクト性は後続）"
+      ]
+    },
+    {
+      "id": "T-09",
+      "part": "P-03",
+      "title": "モノイドと群",
+      "goals": [
         "演算・準同型・部分構造・商",
         "自由モノイド・自由群",
         "群作用の基本"
       ]
     },
     {
-      "number": 10,
+      "id": "T-10",
+      "part": "P-03",
       "title": "環と体",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        9
-      ],
       "goals": [
         "環・イデアル・商環・体",
         "整域・分数体・多項式環",
@@ -4572,14 +9575,9 @@
       ]
     },
     {
-      "number": 11,
+      "id": "T-11",
+      "part": "P-02",
       "title": "整数・有理数",
-      "area": "数体系",
-      "status": "planned",
-      "depends_on": [
-        10,
-        4
-      ],
       "goals": [
         "自然数から整数・有理数を構成",
         "順序環・順序体",
@@ -4587,13 +9585,9 @@
       ]
     },
     {
-      "number": 12,
+      "id": "T-12",
+      "part": "P-02",
       "title": "実数と複素数",
-      "area": "数体系",
-      "status": "planned",
-      "depends_on": [
-        11
-      ],
       "goals": [
         "Dedekind切断等の順序による実数構成",
         "完備順序体の性質と一意性",
@@ -4601,15 +9595,9 @@
       ]
     },
     {
-      "number": 13,
+      "id": "T-13",
+      "part": "P-04",
       "title": "距離空間",
-      "area": "位相",
-      "status": "planned",
-      "depends_on": [
-        8,
-        12,
-        3
-      ],
       "goals": [
         "距離・収束・Cauchy列・完備性",
         "完備化・コンパクト性の距離的特徴（可算選択等を用いる証明は明示）",
@@ -4617,14 +9605,9 @@
       ]
     },
     {
-      "number": 14,
+      "id": "T-14",
+      "part": "P-04",
       "title": "一様空間とフィルター",
-      "area": "位相",
-      "status": "planned",
-      "depends_on": [
-        8,
-        6
-      ],
       "goals": [
         "フィルター・超フィルター・一様構造",
         "積のコンパクト性（Tychonoff）",
@@ -4632,13 +9615,9 @@
       ]
     },
     {
-      "number": 15,
+      "id": "T-15",
+      "part": "P-03",
       "title": "有限次元線形代数",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        10
-      ],
       "goals": [
         "有限生成線形空間・基底・次元",
         "線形写像・行列・行列式",
@@ -4646,14 +9625,9 @@
       ]
     },
     {
-      "number": 16,
+      "id": "T-16",
+      "part": "P-03",
       "title": "加群と線形空間",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        10,
-        6
-      ],
       "goals": [
         "加群・自由加群・直和・商加群",
         "任意次元線形空間の基底存在",
@@ -4661,14 +9635,9 @@
       ]
     },
     {
-      "number": 17,
+      "id": "T-17",
+      "part": "P-03",
       "title": "多重線形代数",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        15,
-        16
-      ],
       "goals": [
         "テンソル積の構成・普遍性",
         "双対・対称代数・外積代数",
@@ -4676,14 +9645,9 @@
       ]
     },
     {
-      "number": 18,
+      "id": "T-18",
+      "part": "P-07",
       "title": "圏と普遍構成",
-      "area": "構造",
-      "status": "planned",
-      "depends_on": [
-        9,
-        8
-      ],
       "goals": [
         "圏・函手・自然変換",
         "普遍性・表現可能性・極限・余極限",
@@ -4691,14 +9655,9 @@
       ]
     },
     {
-      "number": 19,
+      "id": "T-19",
+      "part": "P-03",
       "title": "有限群と表現",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        15,
-        9
-      ],
       "goals": [
         "Sylow理論・組成列",
         "群表現・指標（必要な体の条件を明示）",
@@ -4706,15 +9665,9 @@
       ]
     },
     {
-      "number": 20,
+      "id": "T-20",
+      "part": "P-03",
       "title": "多項式と体の拡大",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        10,
-        15,
-        6
-      ],
       "goals": [
         "代数拡大・超越拡大",
         "代数閉包・分離・正規",
@@ -4722,14 +9675,9 @@
       ]
     },
     {
-      "number": 21,
+      "id": "T-21",
+      "part": "P-03",
       "title": "可換環論",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        16,
-        18
-      ],
       "goals": [
         "Noether環・局所化・整拡大",
         "素イデアル・次元・局所環",
@@ -4737,14 +9685,9 @@
       ]
     },
     {
-      "number": 22,
+      "id": "T-22",
+      "part": "P-05",
       "title": "実変数函数",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        13,
-        15
-      ],
       "goals": [
         "数列・級数・函数列",
         "連続函数と一様収束",
@@ -4752,14 +9695,9 @@
       ]
     },
     {
-      "number": 23,
+      "id": "T-23",
+      "part": "P-05",
       "title": "ノルム空間と微分",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        13,
-        15
-      ],
       "goals": [
         "ノルム・Banach空間・有限次元ノルムの同値",
         "Fréchet微分・連鎖律",
@@ -4767,14 +9705,9 @@
       ]
     },
     {
-      "number": 24,
+      "id": "T-24",
+      "part": "P-05",
       "title": "測度と積分",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        22,
-        3
-      ],
       "goals": [
         "σ-代数・外測度・測度・可測函数",
         "Lebesgue積分と収束定理",
@@ -4782,15 +9715,9 @@
       ]
     },
     {
-      "number": 25,
+      "id": "T-25",
+      "part": "P-05",
       "title": "位相線形空間と函数解析",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        23,
-        14,
-        24
-      ],
       "goals": [
         "局所凸性・弱位相・双対性",
         "Hahn–Banach・一様有界性・開写像",
@@ -4798,15 +9725,9 @@
       ]
     },
     {
-      "number": 26,
+      "id": "T-26",
+      "part": "P-05",
       "title": "複素函数論",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        22,
-        23,
-        12
-      ],
       "goals": [
         "正則函数・複素積分・Cauchy理論",
         "級数展開・留数・解析接続",
@@ -4814,14 +9735,9 @@
       ]
     },
     {
-      "number": 27,
+      "id": "T-27",
+      "part": "P-04",
       "title": "位相群と位相環",
-      "area": "構造",
-      "status": "planned",
-      "depends_on": [
-        14,
-        10
-      ],
       "goals": [
         "位相群・商・連続準同型",
         "完備化・位相環・位相体",
@@ -4829,15 +9745,9 @@
       ]
     },
     {
-      "number": 28,
+      "id": "T-28",
+      "part": "P-04",
       "title": "付値と完備体",
-      "area": "構造",
-      "status": "planned",
-      "depends_on": [
-        27,
-        13,
-        20
-      ],
       "goals": [
         "絶対値・付値・非Archimedes距離",
         "完備化と有限拡大",
@@ -4845,14 +9755,9 @@
       ]
     },
     {
-      "number": 29,
+      "id": "T-29",
+      "part": "P-05",
       "title": "調和解析",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        25,
-        27
-      ],
       "goals": [
         "Haar測度（存在・一意性）",
         "Fourier解析・畳込み",
@@ -4860,14 +9765,9 @@
       ]
     },
     {
-      "number": 30,
+      "id": "T-30",
+      "part": "P-07",
       "title": "ホモロジー代数",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        18,
-        16
-      ],
       "goals": [
         "複体・完全列・ホモロジー",
         "射影・入射分解",
@@ -4875,15 +9775,9 @@
       ]
     },
     {
-      "number": 31,
+      "id": "T-31",
+      "part": "P-06",
       "title": "位相多様体と被覆",
-      "area": "幾何",
-      "status": "planned",
-      "depends_on": [
-        8,
-        13,
-        9
-      ],
       "goals": [
         "位相多様体・基本群・ホモトピー",
         "被覆空間と持ち上げ",
@@ -4891,14 +9785,9 @@
       ]
     },
     {
-      "number": 32,
+      "id": "T-32",
+      "part": "P-06",
       "title": "代数的位相",
-      "area": "幾何",
-      "status": "planned",
-      "depends_on": [
-        31,
-        30
-      ],
       "goals": [
         "特異ホモロジー・コホモロジー",
         "長完全列・切除・Mayer–Vietoris",
@@ -4906,16 +9795,9 @@
       ]
     },
     {
-      "number": 33,
+      "id": "T-33",
+      "part": "P-06",
       "title": "微分多様体と微分形式",
-      "area": "幾何",
-      "status": "planned",
-      "depends_on": [
-        31,
-        23,
-        17,
-        24
-      ],
       "goals": [
         "滑らかな多様体・接空間・ベクトル束",
         "微分形式・外微分・分割の一",
@@ -4923,13 +9805,9 @@
       ]
     },
     {
-      "number": 34,
+      "id": "T-34",
+      "part": "P-06",
       "title": "微分幾何",
-      "area": "幾何",
-      "status": "planned",
-      "depends_on": [
-        33
-      ],
       "goals": [
         "接続・曲率・測地線",
         "Riemann計量・距離",
@@ -4937,14 +9815,9 @@
       ]
     },
     {
-      "number": 35,
+      "id": "T-35",
+      "part": "P-06",
       "title": "Lie群とLie環",
-      "area": "幾何",
-      "status": "planned",
-      "depends_on": [
-        33,
-        27
-      ],
       "goals": [
         "Lie群・Lie環・指数写像",
         "随伴表現・部分群",
@@ -4952,15 +9825,9 @@
       ]
     },
     {
-      "number": 36,
+      "id": "T-36",
+      "part": "P-06",
       "title": "代数幾何",
-      "area": "幾何",
-      "status": "planned",
-      "depends_on": [
-        21,
-        20,
-        51
-      ],
       "goals": [
         "Zariski位相・Specと構造層",
         "局所環付き空間・アフィンスキーム・スキーム",
@@ -4968,16 +9835,9 @@
       ]
     },
     {
-      "number": 37,
+      "id": "T-37",
+      "part": "P-03",
       "title": "代数的整数論",
-      "area": "代数",
-      "status": "planned",
-      "depends_on": [
-        21,
-        28,
-        15,
-        24
-      ],
       "goals": [
         "整数環・Dedekind整域・イデアル分解",
         "分岐・局所化・完備化",
@@ -4985,14 +9845,9 @@
       ]
     },
     {
-      "number": 38,
+      "id": "T-38",
+      "part": "P-08",
       "title": "組合せ論とグラフ理論",
-      "area": "離散",
-      "status": "planned",
-      "depends_on": [
-        11,
-        9
-      ],
       "goals": [
         "数え上げ・母函数の形式的利用",
         "グラフ・木・連結性",
@@ -5000,14 +9855,9 @@
       ]
     },
     {
-      "number": 39,
+      "id": "T-39",
+      "part": "P-05",
       "title": "微分方程式と力学系",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        23,
-        22
-      ],
       "goals": [
         "常微分方程式の存在・一意性",
         "流れ・安定性",
@@ -5015,15 +9865,9 @@
       ]
     },
     {
-      "number": 40,
+      "id": "T-40",
+      "part": "P-05",
       "title": "偏微分方程式",
-      "area": "解析",
-      "status": "planned",
-      "depends_on": [
-        25,
-        29,
-        39
-      ],
       "goals": [
         "分布・Sobolev空間",
         "弱解と変分法（必要な基本原理を本ノートで導入）",
@@ -5031,13 +9875,9 @@
       ]
     },
     {
-      "number": 41,
+      "id": "T-41",
+      "part": "P-09",
       "title": "確率論",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        24
-      ],
       "goals": [
         "確率空間・確率変数・独立性",
         "条件付き期待値・大数法則・中心極限定理（必要な特性函数の補題を導入）",
@@ -5045,14 +9885,9 @@
       ]
     },
     {
-      "number": 42,
+      "id": "T-42",
+      "part": "P-09",
       "title": "確率過程と確率解析",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        41,
-        25
-      ],
       "goals": [
         "確率過程の構成・Brown運動",
         "確率積分・Itô公式",
@@ -5060,14 +9895,9 @@
       ]
     },
     {
-      "number": 43,
+      "id": "T-43",
+      "part": "P-09",
       "title": "凸解析と最適化",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        23,
-        25
-      ],
       "goals": [
         "凸函数・分離・凸双対",
         "有限次元最適性条件・制約問題",
@@ -5075,15 +9905,9 @@
       ]
     },
     {
-      "number": 44,
+      "id": "T-44",
+      "part": "P-09",
       "title": "変分学",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        43,
-        33,
-        39
-      ],
       "goals": [
         "函数空間上の極値・変分",
         "Euler–Lagrange方程式",
@@ -5091,14 +9915,9 @@
       ]
     },
     {
-      "number": 45,
+      "id": "T-45",
+      "part": "P-09",
       "title": "数理力学",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        44,
-        34
-      ],
       "goals": [
         "Lagrange・Hamilton形式",
         "シンプレクティック構造・保存則",
@@ -5106,14 +9925,9 @@
       ]
     },
     {
-      "number": 46,
+      "id": "T-46",
+      "part": "P-09",
       "title": "数理金融",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        42,
-        43
-      ],
       "goals": [
         "無裁定・価格付け・測度変換",
         "Black–Scholes型モデル",
@@ -5121,14 +9935,9 @@
       ]
     },
     {
-      "number": 47,
+      "id": "T-47",
+      "part": "P-10",
       "title": "計算可能性と形式言語",
-      "area": "数学の研究",
-      "status": "planned",
-      "depends_on": [
-        5,
-        9
-      ],
       "goals": [
         "文字列・形式言語・再帰函数",
         "計算モデル・決定可能性",
@@ -5136,14 +9945,9 @@
       ]
     },
     {
-      "number": 48,
+      "id": "T-48",
+      "part": "P-10",
       "title": "数理論理学",
-      "area": "数学の研究",
-      "status": "planned",
-      "depends_on": [
-        47,
-        10
-      ],
       "goals": [
         "形式的構文・意味論・証明体系",
         "完全性・モデル理論の基本",
@@ -5151,16 +9955,9 @@
       ]
     },
     {
-      "number": 49,
+      "id": "T-49",
+      "part": "P-10",
       "title": "現代的集合論",
-      "area": "数学の研究",
-      "status": "planned",
-      "depends_on": [
-        48,
-        6,
-        7,
-        14
-      ],
       "goals": [
         "ZF・ZFCの形式的記述",
         "順序数・基数・超限再帰の発展",
@@ -5168,16 +9965,9 @@
       ]
     },
     {
-      "number": 50,
+      "id": "T-50",
+      "part": "P-09",
       "title": "数理モデリング",
-      "area": "応用",
-      "status": "planned",
-      "depends_on": [
-        41,
-        43,
-        39,
-        38
-      ],
       "goals": [
         "現象の抽象化・モデル設計・推定の基礎",
         "ネットワーク・動的システム・意思決定",
@@ -5185,14 +9975,9 @@
       ]
     },
     {
-      "number": 51,
+      "id": "T-51",
+      "part": "P-07",
       "title": "層の理論",
-      "area": "構造",
-      "status": "planned",
-      "depends_on": [
-        18,
-        10
-      ],
       "goals": [
         "開集合の圏・前層・層の局所性と貼り合わせ条件",
         "切断・芽・茎・層化の普遍性・茎による同型判定",
@@ -5201,14 +9986,9 @@
       ]
     },
     {
-      "number": 52,
+      "id": "T-52",
+      "part": "P-07",
       "title": "層係数コホモロジー",
-      "area": "構造",
-      "status": "planned",
-      "depends_on": [
-        51,
-        30
-      ],
       "goals": [
         "Abel群の層・環の層上の加群・茎での完全性",
         "大域切断函手・入射分解の存在・右導来函手としての層係数コホモロジー",

@@ -1,3 +1,4 @@
+import {planGraph} from "./knowledge-core.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -51,9 +52,11 @@ try{
  }
  const catalogue=statementsTex(ledger).replace(/(\\entryhead\{[^\n]*\})\{(K-\d{6})\}/g,(all,head,id)=>head+"{\\href{"+baseUrl+"?id="+id+"}{"+id+"}}");
  compile(catalogue,"statements.pdf",[],entries.filter(e=>e.kind!=="exercise").map(e=>e.id));
- const publicNotes=verified.map(({number,title,area,goals,depends_on})=>({number,title,area,goals,depends_on}));
+ const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise})=>({number,title,area,goals,depends_on,treatise}));
+ const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
+ const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status})=>({number,title,area,goals,depends_on,treatise,status,depth:depth.get(number)}));
  const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,kind,title,statement,assumptions,position,depends_on,preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
- fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,entries:publicEntries})+"\n");
+ fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,entries:publicEntries,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");
  console.log("Site: "+verified.length+" notes, "+entries.length+" entries, "+anchorCount+" named destinations, "+referenceCount+" distinct targets counted per PDF.");
 }finally{fs.rmSync(tmp,{recursive:true,force:true})}

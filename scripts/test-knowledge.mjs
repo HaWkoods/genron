@@ -71,6 +71,14 @@ function runTests(){
  check("published verified note links to PDF",planMarkdown(published,[1]).includes("[Fixture 1](../volumes/N-1/main.pdf)"));
  check("unpublished verified note is marked but not linked",planMarkdown(published).includes("Fixture 1（PDF未掲載）")&&!planMarkdown(published).includes("../volumes/N-1/main.pdf"));
  check("planned note never links to PDF",!planMarkdown(published,[2]).includes("../volumes/N-2/main.pdf"));
+ const hierarchical={...pl,parts:[{id:"P-01",title:"基礎"}],treatises:[{id:"T-01",part:"P-01",title:"集合",goals:["fixture"]}],notes:pl.notes.map(n=>({...n,treatise:"T-01"}))};
+ check("valid classification hierarchy",validate(hierarchical).errors.length===0);
+ check("classification rejects unknown treatise",has(validate({...hierarchical,notes:[{...hierarchical.notes[0],treatise:"T-99"},...hierarchical.notes.slice(1)]}),"NOTE_UNKNOWN_TREATISE"));
+ check("classification rejects unknown part",has(validate({...hierarchical,treatises:[{...hierarchical.treatises[0],part:"P-99"}]}),"TREATISE_UNKNOWN_PART"));
+ check("classification rejects duplicate part",has(validate({...hierarchical,parts:[...hierarchical.parts,...hierarchical.parts]}),"PART_DUPLICATE"));
+ check("classification rejects duplicate treatise",has(validate({...hierarchical,treatises:[...hierarchical.treatises,...hierarchical.treatises]}),"TREATISE_DUPLICATE"));
+ check("hierarchical roadmap uses grouped sections and note anchors",planMarkdown(hierarchical).includes("<details>")&&planMarkdown(hierarchical).includes('id="n-2"')&&!planMarkdown(hierarchical).includes("flowchart TD"));
+ check("classification does not affect DAG",JSON.stringify(planGraph(hierarchical))===JSON.stringify(planGraph(pl)));
  const rnote={number:1,title:"確認",area:"基礎",status:"verified",depends_on:[],goals:["fixture"]};
  const ritems=[{id:"K-900002",kind:"theorem",title:"後続",statement:"x<y & P_a",assumptions:["仮定 A"],position:[1,1,2,1],status:"verified",review:"査読記録"},{id:"K-900001",kind:"axiom",title:"公理",statement:"最初の記述",assumptions:[],position:[1,1,1,1],status:"verified"},{id:"K-900003",kind:"definition",title:"未検証",statement:"未検証の記述",assumptions:[],position:[1,1,3,1],status:"draft"},{id:"K-900004",kind:"exercise",title:"演習",statement:"演習問題",assumptions:[],position:[1,1,3,2],status:"verified"}];
  const rtext=statementsMarkdown({notes:[rnote],entries:ritems});

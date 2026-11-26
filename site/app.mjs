@@ -70,22 +70,73 @@ function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerTy
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
 function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements")return {n,page:parseInt(p.get("page"),10)||1};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 function showHome(){
- const h=node("h1","","数学原論");const intro=node("p","muted",notes.size+"篇のノート・"+entries.size+"項目の知識を検索");
- const search=node("input","search");search.type="search";search.placeholder="ノート名・定義・命題・知識IDを検索";search.setAttribute("aria-label","検索");search.value=new URL(location.href).searchParams.get("q")??"";
- const filters=node("div","filters"), count=node("span","meta result-count"), list=node("div","results");
- let mode="all";const buttons=[["all","すべて"],["note","ノート"],["entry","定義・命題"]].map(([v,t])=>{const b=button(t,()=>{mode=v;update()});filters.append(b);return [v,b]});filters.append(count);
+ const plan=data.plan??data.notes.map(n=>({...n,status:"verified"})),byNumber=new Map(plan.map(n=>[n.number,n]));
+ const parts=data.parts??[],treatises=data.treatises??[],byTreatise=new Map(treatises.map(t=>[t.id,t])),byPart=new Map(parts.map(p=>[p.id,p]));
+ const h=node("h1","","数学原論");const intro=node("p","muted",parts.length+"部・"+treatises.length+"篇・"+plan.length+"ノート（公開 "+notes.size+"篇）／ "+entries.size+"知識項目");
+ const search=node("input","search");search.type="search";search.placeholder="部・篇・ノート名・定義・命題・IDを検索";search.setAttribute("aria-label","検索");search.value=new URL(location.href).searchParams.get("q")??"";
+ const filters=node("div","filters"),count=node("span","meta result-count"),list=node("div","results");
+ const allowed=["all","note","verified","planned","entry"];let mode=new URL(location.href).searchParams.get("filter")??"all";if(!allowed.includes(mode))mode="all";
+ const buttons=[["all","すべて"],["note","ノート"],["verified","公開済み"],["planned","制作予定"],["entry","定義・命題"]].map(([v,t])=>{const b=button(t,()=>{mode=v;update()});filters.append(b);return [v,b]});filters.append(count);
  const normalize=s=>String(s).normalize("NFKC").toLocaleLowerCase().replace(/\s+/g," ");
+ const ready=n=>n.status==="planned"&&n.depends_on.every(d=>notes.has(d));
+ const status=n=>notes.has(n.number)?"公開済み":ready(n)?"着手可能":n.status==="draft"?"草稿":n.status==="review"?"再検証中":"制作予定";
+ const partOf=n=>byPart.get(byTreatise.get(n.treatise)?.part);
+ const qurl=q=>url("q",q);
+ function noteCard(n,context=true){
+  const t=byTreatise.get(n.treatise),p=partOf(n),d=node("article","result note-result");
+  d.dataset.note=String(n.number);d.dataset.status=n.status;
+  const meta=node("div","result-head"),label=node("span","meta","N-"+n.number+(context&&t?"　"+t.id+" "+t.title:""));
+  meta.append(label,node("span","status"+(notes.has(n.number)?" published":ready(n)?" ready":""),status(n)));
+  d.append(meta);
+  if(notes.has(n.number))d.append(anchor(n.title,url("note",n.number)));else d.append(node("strong","planned-title",n.title));
+  d.append(node("span","summary",n.goals.join("；")));
+  const pre=node("div","preconditions");if(Number.isInteger(n.depth))pre.append("依存層 "+n.depth+"　");
+  pre.append("直接前提：");if(!n.depends_on.length)pre.append("なし");else n.depends_on.forEach((id,i)=>{if(i)pre.append("・");const target=byNumber.get(id);pre.append(anchor("N-"+id,notes.has(id)?url("note",id):qurl("N-"+id),"dep-link"));if(target)pre.lastChild.title=target.title});
+  d.append(pre);return d
+ }
  function update(){
-  const q=normalize(search.value.trim()), terms=q?q.split(" "):[];
+  const q=normalize(search.value.trim()),terms=q?q.split(" "):[];
   const match=s=>terms.every(t=>normalize(s).includes(t));
+  const exactNote=q.match(/^n-(\d+)$/);
+  const exactPart=q.match(/^p-\d{2,}$/),exactTreatise=q.match(/^t-\d{2,}$/);
   buttons.forEach(([v,b])=>b.setAttribute("aria-pressed",String(v===mode)));
-  const u=new URL(root);if(search.value)u.searchParams.set("q",search.value);history.replaceState(history.state,"",u);
+  const u=new URL(root);if(search.value)u.searchParams.set("q",search.value);if(mode!=="all")u.searchParams.set("filter",mode);history.replaceState(history.state,"",u);
   list.replaceChildren();let total=0;
-  if(mode!=="entry")for(const n of notes.values()){if(!match(["N-"+n.number,n.title,n.area,...n.goals].join(" ")))continue;const d=node("article","result");d.append(node("span","meta","N-"+n.number+"　ノート"),anchor(n.title,url("note",n.number)),node("span","summary",n.goals.join("；")));list.append(d);total++}
-  if(mode!=="note"&&(terms.length||mode==="entry"))for(const e of entries.values()){if(!match([e.id,e.title,e.statement,...e.assumptions,notes.get(e.position[0])?.title,"N-"+e.position[0]].join(" ")))continue;const d=node("article","result");const a=anchor((types[e.kind]??e.kind)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",e.id+"　N-"+e.position[0]),a,node("span","summary",e.statement));list.append(d);total++}
+  const found=mode==="entry"?[]:plan.filter(n=>{
+   if(mode==="verified"&&!notes.has(n.number)||mode==="planned"&&notes.has(n.number))return false;
+   const t=byTreatise.get(n.treatise),p=partOf(n);
+   if(exactNote)return n.number===Number(exactNote[1]);
+   if(exactTreatise)return normalize(t?.id??"")===q;
+   if(exactPart)return normalize(p?.id??"")===q;
+   return match(["N-"+n.number,n.title,n.area,...n.goals,t?.id,t?.title,p?.id,p?.title].join(" "))
+  });
+  if(!q&&mode!=="entry"&&parts.length){
+   for(const p of parts){
+    const ts=treatises.filter(t=>t.part===p.id),ns=found.filter(n=>ts.some(t=>t.id===n.treatise));if(!ns.length)continue;
+    const pd=node("details","part-group"),ps=node("summary","part-summary");ps.append(node("span","group-id",p.id),node("strong","",p.title),node("span","group-count",ns.filter(n=>notes.has(n.number)).length+" / "+ns.length+" ノート"));pd.append(ps);pd.open=ns.some(n=>notes.has(n.number));
+    for(const t of ts){
+     const items=ns.filter(n=>n.treatise===t.id);if(!items.length)continue;
+     const td=node("details","treatise-group"),tsum=node("summary","treatise-summary");tsum.append(node("span","group-id",t.id),node("strong","",t.title),node("span","group-count",items.filter(n=>notes.has(n.number)).length+" / "+items.length));td.append(tsum);
+     td.open=items.some(n=>notes.has(n.number));td.append(node("p","treatise-goals",t.goals.join("；")));
+     for(const n of items)td.append(noteCard(n,false));pd.append(td)
+    }list.append(pd)
+   }
+   total+=found.length
+  }else{for(const n of found){list.append(noteCard(n));total++}}
+  if((mode==="all"&&terms.length)||mode==="entry")for(const e of entries.values()){
+   const n=byNumber.get(e.position[0]),t=byTreatise.get(n?.treatise),p=n&&partOf(n);
+   if(!match([e.id,e.title,e.statement,...e.assumptions,n?.title,"N-"+e.position[0],t?.title,t?.id,p?.title,p?.id].join(" ")))continue;
+   if(exactNote&&e.position[0]!==Number(exactNote[1]))continue;
+   if(exactTreatise&&normalize(t?.id??"")!==q)continue;
+   if(exactPart&&normalize(p?.id??"")!==q)continue;
+   const d=node("article","result knowledge-result"),a=anchor((types[e.kind]??e.kind)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",e.id+"　N-"+e.position[0]),a,node("span","summary",e.statement));list.append(d);total++
+  }
   count.textContent=total+"件";if(!total)list.append(node("p","empty","一致する項目がありません。"));
  }
- search.addEventListener("input",update);main.replaceChildren(h,intro,search,filters,list);update()
+ const readyBox=node("section","ready-box");readyBox.append(node("h2","","現在着手可能なノート"));
+ const candidates=plan.filter(ready).sort((a,b)=>(a.depth??0)-(b.depth??0)||a.number-b.number);
+ const readyLinks=node("div","ready-links");for(const n of candidates)readyLinks.append(anchor("N-"+n.number+" "+n.title,qurl("N-"+n.number)));if(!candidates.length)readyLinks.append(node("span","muted","なし"));readyBox.append(readyLinks);
+ search.addEventListener("input",update);main.replaceChildren(h,intro,search,filters,readyBox,list);update()
 }
 async function destination(doc,d){
  if(typeof d==="string")d=await doc.getDestination(d);

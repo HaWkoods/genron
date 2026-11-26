@@ -189,9 +189,24 @@ function planGraph(ledger){
  while(ready.length){layers.push(ready);const next=[];for(const a of ready){seen.add(a);for(const b of out.get(a)??[]){incoming.set(b,incoming.get(b)-1);if(incoming.get(b)===0)next.push(b)}}ready=sort(next)}
  return {nodes,edges,layers,unordered:sort(nodes.map(n=>n.id).filter(id=>!seen.has(id)))};
 }
+function validateHierarchy(ledger){
+ const errors=[],warnings=[];
+ if(ledger.parts===undefined&&ledger.treatises===undefined)return {errors,warnings}; // historical schemas
+ const fail=(code,msg)=>errors.push(code+": "+msg),str=x=>typeof x==="string"&&x.trim().length>0;
+ if(!Array.isArray(ledger.parts)||!Array.isArray(ledger.treatises)||!Array.isArray(ledger.notes)){fail("HIERARCHY_SCHEMA","parts, treatises, notes arrays required");return {errors,warnings}}
+ const parts=new Map(),treatises=new Map();
+ for(const p of ledger.parts){if(!p||!/^P-\d{2,}$/.test(p.id??"")||!str(p.title)){fail("PART_SCHEMA",JSON.stringify(p));continue}if(parts.has(p.id))fail("PART_DUPLICATE",p.id);parts.set(p.id,p)}
+ for(const t of ledger.treatises){if(!t||!/^T-\d{2,}$/.test(t.id??"")||!str(t.title)||!Array.isArray(t.goals)||!t.goals.length||!t.goals.every(str)){fail("TREATISE_SCHEMA",JSON.stringify(t));continue}if(treatises.has(t.id))fail("TREATISE_DUPLICATE",t.id);treatises.set(t.id,t);if(!parts.has(t.part))fail("TREATISE_UNKNOWN_PART",t.id+" -> "+t.part)}
+ for(const n of ledger.notes)if(n&& !treatises.has(n.treatise))fail("NOTE_UNKNOWN_TREATISE","N-"+n.number+" -> "+n.treatise);
+ for(const p of parts.values())if(![...treatises.values()].some(t=>t.part===p.id))fail("PART_EMPTY",p.id);
+ for(const t of treatises.values())if(!ledger.notes.some(n=>n?.treatise===t.id))fail("TREATISE_EMPTY",t.id);
+ return {errors,warnings}
+}
+
 function validatePlan(ledger){
  const errors=[],warnings=[];
- if(ledger.notes===undefined)return {errors,warnings}; // legacy test fixtures and historical ledgers
+ if(ledger.notes===undefined)return validateHierarchy(ledger); // legacy test fixtures and historical ledgers
+ const hierarchy=validateHierarchy(ledger);errors.push(...hierarchy.errors);warnings.push(...hierarchy.warnings);
  const add=(code,msg)=>errors.push(code+": "+msg), warn=(code,msg)=>warnings.push(code+": "+msg);
  if(!Array.isArray(ledger.notes)){add("PLAN_SCHEMA","notes must be an array");return {errors,warnings}}
  const map=new Map(), nonempty=v=>typeof v==="string"&&v.trim().length>0;
@@ -247,6 +262,30 @@ function planMarkdown(ledger,published=[]){
  const pdfs=new Set(published);
  const noteTitle=n=>n.status==="verified"?(pdfs.has(n.number)?`[${n.title}](../volumes/N-${n.number}/main.pdf)`:`${n.title}（PDF未掲載）`):n.title;
  const g=planGraph(ledger), depth=new Map(g.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
+ if(Array.isArray(ledger.parts)&&Array.isArray(ledger.treatises)){
+  const esc=s=>String(s).replace(/\|/g,"\\|").replace(/\r?\n/g," ");
+  const ids=n=>n.depends_on.map(d=>"[N-"+d+"](#n-"+d+")").join(", ")||"なし";
+  const count=ns=>ns.filter(n=>n.status==="verified").length+"/"+ns.length;
+  const all=ledger.notes.filter(n=>n.status!=="retired"),byNumber=new Map(all.map(n=>[n.number,n]));
+  const ready=all.filter(n=>n.status==="planned"&&n.depends_on.every(d=>byNumber.get(d)?.status==="verified")).sort((a,b)=>depth.get("N-"+a.number)-depth.get("N-"+b.number)||a.number-b.number);
+  const lines=["# 数学原論：総目次","","部・篇は分類階層、ノートと知識の依存関係は別個のDAGである。番号の大小は論理順を意味しない。予定は暫定であり、実際の依存は原稿と知識台帳で検証する。","", "**全"+ledger.parts.length+"部・"+ledger.treatises.length+"篇・"+all.length+"ノート（完成 "+count(all)+"）**","","[電子閲覧室](https://hawkoods.github.io/genron/) · [定義・命題一覧（PDF）](statements.pdf) · [テキスト版](statements.md)","","## 現在着手可能なノート","","| ID | ノート | 層 | 直接前提 |","|---|---|---:|---|"];
+  for(const n of ready)lines.push("| [N-"+n.number+"](#n-"+n.number+") | "+esc(n.title)+" | "+depth.get("N-"+n.number)+" | "+ids(n)+" |");
+  if(!ready.length)lines.push("| — | なし | — | — |");
+  lines.push("","## 部別の構成","","| 部 | 篇数 | 完成 / 計画総数 |","|---|---:|---:|");
+  for(const p of ledger.parts){const ts=ledger.treatises.filter(t=>t.part===p.id),ns=all.filter(n=>ts.some(t=>t.id===n.treatise));lines.push("| ["+p.id+" "+esc(p.title)+"](#"+p.id.toLowerCase()+") | "+ts.length+" | "+count(ns)+" |")}
+  for(const p of ledger.parts){
+   const ts=ledger.treatises.filter(t=>t.part===p.id),ns=all.filter(n=>ts.some(t=>t.id===n.treatise));
+   lines.push("",'<a id="'+p.id.toLowerCase()+'"></a>',"## "+p.id+" "+p.title+"（"+count(ns)+"）","");
+   for(const t of ts){
+    const items=ns.filter(n=>n.treatise===t.id).sort((a,b)=>a.number-b.number);
+    lines.push('<a id="'+t.id.toLowerCase()+'"></a>',"<details>","<summary>"+t.id+" "+t.title+"（"+count(items)+"）</summary>","",t.goals.join("；")+"。","","| ID | 層 | ノート | 状態 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|");
+    for(const n of items)lines.push('| <a id="n-'+n.number+'"></a>N-'+n.number+" | "+depth.get("N-"+n.number)+" | "+noteTitle(n)+" | "+n.status+" | "+ids(n)+" | "+esc(n.goals.join("；"))+" |");
+    lines.push("","</details>","");
+   }
+  }
+  lines.push("## 依存関係の確認","","全ノートの計画DAGは \`node scripts/knowledge.mjs graph plan\`（JSON）、\`graph plan --mermaid\`（Mermaid）で生成できる。巨大な全体図は総目次には埋め込まない。個別の前提は \`prerequisites N-番号\` で取得する。","");
+  return lines.join("\n")
+ }
  const table=["| ID | 層 | ノート | 分野 | 状態 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+noteTitle(n)+" | "+n.area+" | "+n.status+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
  return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。完成済みのノート名のリンクをクリックすると、GitHub上でPDFを閲覧できる。未掲載のPDFにはリンクを付けない。\n\n[定義・命題一覧（PDF）](statements.pdf) · [テキスト版](statements.md)\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
 }
@@ -278,4 +317,4 @@ function statementsMarkdown(ledger){
  return lines.join("\n").trimEnd()+"\n";
 }
 
-export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown, statementsMarkdown};
+export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown, statementsMarkdown, validateHierarchy};

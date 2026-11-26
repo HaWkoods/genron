@@ -20,6 +20,20 @@ try{
  browser=await chromium.launch({executablePath,headless:true,args:["--no-sandbox"]});
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors=[];page.on("pageerror",e=>{errors.push(e.message);console.error(e)});
+ // Hierarchy is generated from the canonical plan; planned nodes never point to nonexistent PDFs.
+ await page.goto(origin);await page.locator(".part-group").first().waitFor();
+ const planData=JSON.parse(fs.readFileSync(path.join(base,"data.json"),"utf8"));
+ assert.equal(await page.locator(".part-group").count(),planData.parts.length);
+ assert.equal(await page.locator(".treatise-group").count(),planData.treatises.length);
+ assert.equal(await page.locator(".note-result").count(),planData.plan.length);
+ assert.equal(await page.locator('.note-result[data-status="planned"] a[href*="note="]').count()>0,true,"Published prerequisites may link to PDFs");
+ assert.equal(await page.locator('.note-result[data-status="planned"] > a[href*="note="]').count(),0);
+ await page.getByRole("searchbox").fill("Radon–Nikodym");
+ const planned=page.locator(".note-result").filter({hasText:"Radon–Nikodymの定理"});await planned.waitFor();assert.equal(await planned.getAttribute("data-status"),"planned");assert.equal(await planned.locator("strong.planned-title").count(),1);
+ await page.getByRole("button",{name:"公開済み",exact:true}).click();assert.equal(await page.locator(".note-result").count(),0);
+ await page.getByRole("searchbox").fill("選択公理");await page.locator('.note-result[data-note="3"] > a').waitFor();
+ await page.getByRole("button",{name:"すべて",exact:true}).click();await page.getByRole("searchbox").fill("N-8");await page.locator('.note-result[data-note="8"]').waitFor();assert.equal(await page.locator(".note-result").count(),1);
+
  // Scroll through the actual N-3 document without pressing a page button.
  const currentPage=page.getByRole("spinbutton",{name:"ページ番号"});
  const sheet=n=>page.locator('.page[data-page="'+n+'"]');
