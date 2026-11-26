@@ -49,6 +49,18 @@ try{
  await page.goto(origin+"?view=map");await page.locator(".map-stage canvas").first().waitFor();
  assert.deepEqual(errors,[],"Map JavaScript errors");
 
+ // Merged-away note numbers retain their section and archived page URLs.
+ for(const [old,a] of Object.entries(planData.aliases??{})){
+  await page.goto(origin+"?note="+old);
+  await page.locator(".target").waitFor();
+  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+" "));
+  await page.goto(origin+"?note="+old+"&page=1");
+  await page.locator(".page[data-page='1'] .annotations").waitFor();
+  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+old+" "));
+  await page.goto(origin+"?id="+a.first);
+  await page.locator(".target").waitFor();
+  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+" "));
+ }
  // Scroll through the actual N-3 document without pressing a page button.
  const currentPage=page.getByRole("spinbutton",{name:"ページ番号"});
  const sheet=n=>page.locator('.page[data-page="'+n+'"]');
