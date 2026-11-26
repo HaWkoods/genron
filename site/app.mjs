@@ -87,6 +87,70 @@ addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
 function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation")return {n,page:parseInt(p.get("page"),10)||1};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
+
+function showMap(){
+ const plan=data.plan??[], by=new Map(plan.map(n=>[n.number,n])), parts=data.parts??[], ts=data.treatises??[];
+ const successors=new Map(plan.map(n=>[n.number,[]]));
+ for(const n of plan)for(const p of n.depends_on??[])successors.get(p)?.push(n.number);
+ const walk=(id,up,one=false)=>{const seen=new Set([id]),q=[id];for(let i=0;i<q.length;i++){if(one&&i>0)break;for(const v of (up?by.get(q[i])?.depends_on:successors.get(q[i]))??[])if(!seen.has(v)){seen.add(v);q.push(v)}}return seen};
+ const depth=new Map();function rank(id,vis=new Set()){if(depth.has(id))return depth.get(id);if(vis.has(id))throw Error("依存関係に循環があります");vis.add(id);let d=0;for(const p of by.get(id)?.depends_on??[])if(by.has(p))d=Math.max(d,rank(p,vis)+1);vis.delete(id);depth.set(id,d);return d}
+ for(const n of plan)rank(n.number);
+ const pos=new Map(),regions=[];let x=40;const dy=105;
+ for(const p of [...parts,{id:"other",title:"その他"}]){
+  let start=x;
+  const groups=p.id==="other"?[{id:"other",title:"その他"}]:ts.filter(t=>t.part===p.id);
+  for(const t of groups){
+   const members=plan.filter(n=>t.id==="other"?!ts.some(s=>s.id===n.treatise&&parts.some(p=>p.id===s.part)):n.treatise===t.id);
+   if(!members.length)continue;
+   const rows=new Map();for(const n of members){let d=depth.get(n.number);if(!rows.has(d))rows.set(d,[]);rows.get(d).push(n)}
+   const cols=Math.max(...[...rows.values()].map(a=>a.length)),w=cols*184+24;
+   for(const [d,arr] of rows)arr.sort((a,b)=>a.number-b.number).forEach((n,i)=>pos.set(n.number,{x:x+12+i*184,y:100+d*dy}));
+   regions.push({x,w,title:t.title,part:false});x+=w+12;
+  }
+  if(x>start){regions.push({x:start-8,w:x-start+4,title:p.title,part:true});x+=32}
+ }
+ const W=Math.max(x,300),H=200+Math.max(0,...depth.values())*dy;
+ const head=node("h1","","数学構造地図"),desc=node("p","muted","矢印は前提から後続へ。予定を含む全ノートの論理的関係を表示します。");
+ const tools=node("div","map-tools"), search=node("input");search.type="search";search.placeholder="ノート名・番号";search.setAttribute("aria-label","ノート検索");
+ const results=node("select");results.setAttribute("aria-label","検索結果");
+ function selectControl(label,opts){const s=node("select");s.setAttribute("aria-label",label);for(const [v,t] of opts){let o=node("option","",t);o.value=v;s.append(o)}tools.append(s);return s}
+ tools.append(search,results);
+ const direction=selectControl("依存方向",[["down","後続"],["up","前提"],["both","両方向"],["path","学習経路"]]);
+ const scope=selectControl("関係の深さ",[["all","推移的関係"],["one","直接関係"]]);
+ const layout=selectControl("表示範囲",[["all","全体地図"],["local","局所地図"]]);
+ const wrap=node("div","map-wrap"), stage=node("div","map-stage"), panel=node("aside","map-panel"), canvas=node("canvas"), mini=node("canvas","map-mini");canvas.tabIndex=0;canvas.setAttribute("aria-label","ノート依存関係グラフ");mini.setAttribute("aria-label","ミニマップ");stage.append(canvas,mini);wrap.append(stage,panel);
+ let selected=null,scale=1,tx=0,ty=0,visible=new Set(by.keys()),active=new Set(by.keys()),drag=null,frame=0;
+ const ctx=canvas.getContext("2d"),mc=mini.getContext("2d");
+ const dark=()=>matchMedia("(prefers-color-scheme: dark)").matches;
+ function bounds(ids){const a=[...ids].map(i=>pos.get(i)).filter(Boolean);if(!a.length)return [0,0,W,H];let l=Math.min(...a.map(p=>p.x))-30,t=Math.min(...a.map(p=>p.y))-60,r=Math.max(...a.map(p=>p.x))+200,b=Math.max(...a.map(p=>p.y))+80;return [l,t,r-l,b-t]}
+ function fit(local=false){const [l,t,w,h]=local?bounds(visible):[0,0,W,H];scale=Math.min(canvas.clientWidth/w,canvas.clientHeight/h,1.4);tx=(canvas.clientWidth-w*scale)/2-l*scale;ty=(canvas.clientHeight-h*scale)/2-t*scale;draw()}
+ function zoom(f,cx=canvas.clientWidth/2,cy=canvas.clientHeight/2){const s=clamp(scale*f,.015,3);tx=cx-(cx-tx)*s/scale;ty=cy-(cy-ty)*s/scale;scale=s;draw()}
+ function draw(){if(frame)return;frame=requestAnimationFrame(()=>{frame=0;paint()})}
+ function prep(c,g){const d=Math.min(devicePixelRatio||1,2),w=c.clientWidth,h=c.clientHeight;if(c.width!==Math.round(w*d)||c.height!==Math.round(h*d)){c.width=Math.round(w*d);c.height=Math.round(h*d)}g.setTransform(d,0,0,d,0,0);g.clearRect(0,0,w,h)}
+ function paint(){
+  prep(canvas,ctx);const fg=dark()?"#e2e8f0":"#23364c";ctx.save();ctx.translate(tx,ty);ctx.scale(scale,scale);
+  for(const r of regions.filter(r=>r.part)){ctx.fillStyle=dark()?"#253247":"#e8eef5";ctx.fillRect(r.x,10,r.w,H-20);ctx.fillStyle=fg;ctx.font="bold 24px sans-serif";ctx.fillText(r.title,r.x+10,36)}
+  for(const r of regions.filter(r=>!r.part)){ctx.strokeStyle="#9baabd";ctx.lineWidth=1/scale;ctx.strokeRect(r.x,46,r.w,H-65);if(scale>.13){ctx.fillStyle=fg;ctx.font="17px sans-serif";ctx.fillText(r.title,r.x+8,70,r.w-16)}}
+  for(const n of plan){if(!visible.has(n.number))continue;const b=pos.get(n.number);for(const id of n.depends_on??[]){if(!visible.has(id)||!pos.has(id))continue;const a=pos.get(id),on=active.has(id)&&active.has(n.number);ctx.globalAlpha=on?.65:.07;ctx.strokeStyle=on?"#4778a5":"#8793a1";ctx.fillStyle=ctx.strokeStyle;ctx.lineWidth=on?1.3/scale:.7/scale;ctx.beginPath();ctx.moveTo(a.x+82,a.y+38);ctx.bezierCurveTo(a.x+82,(a.y+b.y)/2,b.x+82,(a.y+b.y)/2,b.x+82,b.y);ctx.stroke();if(scale>.13){ctx.beginPath();ctx.moveTo(b.x+82,b.y);ctx.lineTo(b.x+77,b.y-9);ctx.lineTo(b.x+87,b.y-9);ctx.fill()}}}
+  for(const n of plan){if(!visible.has(n.number))continue;const p=pos.get(n.number);ctx.globalAlpha=active.has(n.number)?1:.15;ctx.fillStyle=n.number===selected?"#245b91":dark()?"#435b75":"#a7bdd3";if(scale<.18){ctx.fillRect(p.x,p.y,164,38)}else{ctx.fillRect(p.x,p.y,164,38);ctx.fillStyle=n.number===selected||dark()?"#fff":"#152b42";ctx.font="12px sans-serif";ctx.fillText("N-"+n.number,p.x+6,p.y+13);if(scale>.34){ctx.font="14px sans-serif";ctx.fillText(n.title,p.x+6,p.y+30,152)}}}
+  ctx.restore();prep(mini,mc);const m=Math.min(mini.clientWidth/W,mini.clientHeight/H),ox=(mini.clientWidth-W*m)/2,oy=(mini.clientHeight-H*m)/2;mc.fillStyle=dark()?"#182334":"#fff";mc.fillRect(0,0,mini.clientWidth,mini.clientHeight);for(const [id,p] of pos){mc.globalAlpha=active.has(id)?1:.2;mc.fillStyle=id===selected?"#245b91":"#879eb5";mc.fillRect(ox+p.x*m,oy+p.y*m,Math.max(2,164*m),Math.max(2,38*m))}mc.globalAlpha=1;mc.strokeStyle="#d26b34";mc.lineWidth=1.5;mc.strokeRect(ox-tx/scale*m,oy-ty/scale*m,canvas.clientWidth/scale*m,canvas.clientHeight/scale*m);
+ }
+ function refresh(refit=false){active=selected===null?new Set(by.keys()):direction.value==="both"?new Set([...walk(selected,true,scope.value==="one"),...walk(selected,false,scope.value==="one")]):walk(selected,direction.value!=="down",direction.value!=="path"&&scope.value==="one");visible=layout.value==="local"?active:new Set(by.keys());scope.disabled=direction.value==="path";panel.replaceChildren();if(selected===null){panel.append(node("h2","","ノートを選択"),node("p","muted","検索または地図上のノートを選択してください。"))}else{const n=by.get(selected);panel.append(node("h2","","N-"+selected+" "+n.title),node("p","",(n.goals??[]).join("；")));if(notes.has(selected))panel.append(anchor("ノートを読む",url("note",selected)));else panel.append(node("p","muted","本文は未掲載です。"));const items=[...entries.values()].filter(e=>e.position[0]===selected);if(items.length){panel.append(node("h3","","定義・命題"));for(const e of items){const a=anchor(e.title,url("id",e.id));bindPreview(a,e);panel.append(a)}}if(direction.value==="path"){panel.append(node("h3","","学習順序（前提を先に）"));for(const id of [...active].sort((a,b)=>depth.get(a)-depth.get(b)||a-b)){const n=by.get(id);panel.append(button("N-"+id+" "+n.title,()=>choose(id)))}}}
+ if(refit)fit(layout.value==="local");else draw()}
+ function choose(id){selected=id;results.value=String(id);refresh(layout.value==="local");if(layout.value!=="local"){const p=pos.get(id);scale=Math.max(scale,.65);tx=canvas.clientWidth/2-(p.x+82)*scale;ty=canvas.clientHeight/2-(p.y+19)*scale;draw()}}
+ function searchUpdate(){const q=search.value.normalize("NFKC").toLowerCase().trim();results.replaceChildren();const placeholder=node("option","","ノートを選択");placeholder.value="";results.append(placeholder);for(const n of plan){if(!q||(/^\d+$/.test(q)?n.number===Number(q):("N-"+n.number+" "+n.title).toLowerCase().includes(q))){const o=node("option","","N-"+n.number+" "+n.title);o.value=n.number;results.append(o)}}if(selected!==null)results.value=String(selected)}
+ search.oninput=searchUpdate;search.onkeydown=e=>{if(e.key==="Enter"&&results.options.length>1)choose(Number(results.options[1].value))};results.onchange=()=>{if(results.value)choose(Number(results.value))};
+ direction.onchange=scope.onchange=()=>refresh(layout.value==="local");layout.onchange=()=>refresh(true);
+ tools.append(button("＋",()=>zoom(1.4)),button("−",()=>zoom(1/1.4)),button("全体に戻す",()=>{selected=null;layout.value="all";search.value="";searchUpdate();refresh(true)}));
+ canvas.addEventListener("wheel",e=>{e.preventDefault();const r=canvas.getBoundingClientRect();zoom(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+ canvas.onpointerdown=e=>{canvas.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY,tx,ty}};
+ canvas.onpointermove=e=>{if(drag){tx=drag.tx+e.clientX-drag.x;ty=drag.ty+e.clientY-drag.y;draw()}};
+ canvas.onpointercancel=()=>drag=null;
+ canvas.onpointerup=e=>{if(!drag)return;const click=Math.hypot(e.clientX-drag.x,e.clientY-drag.y)<5;drag=null;if(click){const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left-tx)/scale,y=(e.clientY-r.top-ty)/scale;for(const [id,p] of pos)if(visible.has(id)&&x>=p.x&&x<=p.x+164&&y>=p.y&&y<=p.y+38){choose(id);break}}};
+ mini.onclick=e=>{const r=mini.getBoundingClientRect(),m=Math.min(r.width/W,r.height/H);tx=canvas.clientWidth/2-(e.clientX-r.left-(r.width-W*m)/2)/m*scale;ty=canvas.clientHeight/2-(e.clientY-r.top-(r.height-H*m)/2)/m*scale;draw()};
+ main.replaceChildren(head,desc,tools,wrap);searchUpdate();refresh(true);const obs=new ResizeObserver(draw);obs.observe(stage);disposeReader=()=>{obs.disconnect();cancelAnimationFrame(frame)};
+}
+
 function showHome(){
  const plan=data.plan??data.notes.map(n=>({...n,status:"verified"})),byNumber=new Map(plan.map(n=>[n.number,n]));
  const parts=data.parts??[],treatises=data.treatises??[],byTreatise=new Map(treatises.map(t=>[t.id,t])),byPart=new Map(parts.map(p=>[p.id,p]));
@@ -317,7 +381,7 @@ function showError(e){main.replaceChildren(node("p","error",String(e.message??e)
 async function render(restore=null){
  const t=++ticket;hidePreview();disposeReader?.();disposeReader=null;
  const oldJob=job;job=null;state=null;if(oldJob){try{await oldJob.destroy()}catch{}}if(t!==ticket)return;
- try{const info=routeInfo();if(info)await loadReader(info,t,restore);else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
+ try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info)await loadReader(info,t,restore);else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
 }
 document.addEventListener("click",ev=>{
  if(ev.defaultPrevented||ev.button!==0||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
