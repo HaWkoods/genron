@@ -1,4 +1,4 @@
-import {validate, affected, changedEntries, available, graph, prerequisites} from "./knowledge-core.mjs";
+import {validate, affected, changedEntries, available, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMarkdown} from "./knowledge-core.mjs";
 function runTests(){
  const tests=[];
  const base={schema_version:1,foundation:{status:"adopted",description:"fixture only"},entries:[]};
@@ -54,6 +54,19 @@ function runTests(){
  check("acyclic knowledge but cyclic note grouping rejected",has(validate(grouped,groupedSources),"NOTE_CYCLE")&&graph(grouped).unordered.length===0);
  let rejected=false;try{available(dag,[b.id])}catch{rejected=true}
  check("non-closed completed set rejected",rejected);
+ const note=(number,depends_on=[])=>({number,title:"Fixture "+number,area:"fixture",status:"planned",depends_on,goals:["fixture"]});
+ const pl={...base,notes:[note(1),note(2,[1,3]),note(3)]};
+ check("planned DAG without knowledge",validate(pl).errors.length===0&&graph(pl,"notes").nodes.length===0);
+ check("planned layers",JSON.stringify(planGraph(pl).layers)===JSON.stringify([["N-1","N-3"],["N-2"]]));
+ check("planned prerequisites",planPrerequisites(pl,"N-2").map(n=>n.number).join(",")==="1,3");
+ check("planned cycle",has(validate({...pl,notes:[note(1,[2]),note(2,[1])]}),"PLAN_CYCLE"));
+ check("duplicate note number",has(validate({...pl,notes:[note(1),note(1)]}),"PLAN_DUPLICATE_ID"));
+ check("unknown note reference",has(validate({...pl,notes:[note(1,[2])]}),"PLAN_UNKNOWN_DEPENDENCY"));
+ check("actual note dependency consistent with plan",validate({...dag,notes:pl.notes},dagSources).errors.length===0);
+ check("unplanned cross-note dependency",has(validate({...dag,notes:[note(1),note(2,[1]),note(3)]},dagSources),"PLAN_UNDECLARED_NOTE_DEPENDENCY"));
+ check("unknown actual note",has(validate({...dag,notes:[note(1)]},dagSources),"PLAN_UNKNOWN_NOTE"));
+ check("verified empty note rejected",has(validate({...pl,notes:[{...note(1),status:"verified"}]}),"PLAN_UNVERIFIED_NOTE"));
+ check("generated plan markdown",planMarkdown(pl).includes("N1 --> N2"));
  return tests;
 }
 for(const name of runTests()) console.log("PASS "+name);
