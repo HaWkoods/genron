@@ -377,11 +377,32 @@ async function loadReader(info,token,scroll){
   schedule();
  }catch(e){if(token===ticket){disposeReader?.();disposeReader=null;shell.replaceChildren(node("p","error","PDFを表示できませんでした："+e.message),download.cloneNode(true))}}
 }
+
+function showWeb(info,restore){
+ const n=notes.get(info.n), items=data.entries.filter(e=>e.position[0]===info.n).sort((a,b)=>{for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0});
+ const layout=node("div","reader"), side=node("aside","sidebar"), article=node("article","web-article");
+ side.append(node("h2","","このノートの内容"));
+ article.style.cssText="min-width:0;background:var(--paper);border:1px solid var(--line);padding:clamp(18px,4vw,48px);font-family:Yu Mincho,Hiragino Mincho ProN,serif;line-height:1.95;overflow-wrap:anywhere";
+ article.append(node("p","meta",n.area+" ／ N-"+n.number),node("h1","",n.title),node("p","muted","Web版試作：旧台帳の定義・命題を直接表示しています。本文・証明は再設計後に執筆します。"));
+ const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");article.append(anchor("旧版PDFを閲覧",legacy.href));
+ for(const e of items){
+  const section=node("section","web-entry");section.id=e.id;section.style.cssText="margin:28px 0;padding-top:22px;border-top:1px solid var(--line);scroll-margin-top:24px";
+  const title=node("h2","",(types[e.kind]??e.kind)+"（"+e.title+"）");section.append(title,node("div","meta",e.id));
+  const link=anchor(e.title,"#"+e.id);side.append(link);
+  if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,e.assumptions.join("；"));section.append(p)}
+  const p=node("p");renderParts(p,e.preview?.statement,e.statement);section.append(p);
+  if(e.depends_on?.length){const d=node("details");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,url("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
+  article.append(section);
+ }
+ layout.append(side,article);main.replaceChildren(layout);
+ requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore);else if(info.id)document.getElementById(info.id)?.scrollIntoView();else window.scrollTo(0,0)});
+}
+
 function showError(e){main.replaceChildren(node("p","error",String(e.message??e)),anchor("検索・総目次へ戻る",root.href))}
 async function render(restore=null){
  const t=++ticket;hidePreview();disposeReader?.();disposeReader=null;
  const oldJob=job;job=null;state=null;if(oldJob){try{await oldJob.destroy()}catch{}}if(t!==ticket)return;
- try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info)await loadReader(info,t,restore);else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
+ try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info){const p=new URL(location.href).searchParams;if(typeof info.n==='number'&&!info.archive&&!p.has('page')&&p.get('view')==='web')showWeb(info,restore);else await loadReader(info,t,restore)}else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
 }
 document.addEventListener("click",ev=>{
  if(ev.defaultPrevented||ev.button!==0||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
