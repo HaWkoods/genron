@@ -41,13 +41,15 @@ function main(){
   if(!diagnostics(result)||args.includes("--strict")&&result.warnings.length){process.exitCode=1;return}
   console.log("OK: "+ledger.entries.length+" entries; "+result.warnings.length+" warnings.");return;
  }
- if(!diagnostics(result)){process.exitCode=1;return}
+ const valid=diagnostics(result);
  if(cmd==="available"){
+  if(!valid){process.exitCode=1;return}
   const p=(args[0]??"").split(".").map(Number);
   if(args.length!==1||!validPosition(p))throw Error("Usage: available V.C.S.N");
   console.log(JSON.stringify(available(ledger,p),null,2));return;
  }
  if(cmd==="impact"){
+  if(!Array.isArray(ledger.entries))throw Error("Invalid ledger entries");
   let ledgers=[ledger],changed=args;
   if(args[0]==="--base"){
    if(args.length!==2)throw Error("Usage: impact --base COMMIT");
@@ -55,7 +57,7 @@ function main(){
   }else if(!args.length||args.some(id=>!ledger.entries.some(e=>e.id===id)))throw Error("Usage: impact K-000001 [K-...]");
   const r=affected(ledgers,changed);
   const current=new Map(ledger.entries.map(e=>[e.id,e]));
-  console.log(JSON.stringify({...r,review_required:r.affected.filter(id=>current.get(id)?.status==="verified"),locations:[...new Set([...r.changed,...r.affected])].map(id=>({id,source:current.get(id)?.source??null,status:current.get(id)?.status??"removed"}))},null,2));return;
+  console.log(JSON.stringify({...r,review_required:[...new Set([...r.changed,...r.affected])].filter(id=>current.get(id)?.status==="verified"),locations:[...new Set([...r.changed,...r.affected])].map(id=>({id,source:current.get(id)?.source??null,status:current.get(id)?.status??"removed"}))},null,2));if(!valid)process.exitCode=1;return;
  }
  throw Error("Usage: knowledge.mjs check [--strict] | available V.C.S.N | impact ID... | impact --base COMMIT");
 }
