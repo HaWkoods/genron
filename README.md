@@ -27,3 +27,7 @@ Node.js 22（外部パッケージ不要）で `node scripts/test-knowledge.mjs`
 ## PDFの閲覧と掲載
 
 [総目次](docs/roadmap.md)の完成ノート名からGitHubのPDFプレビューを開ける。PDFの掲載先は `volumes/N-番号/main.pdf`。GitHub Actions の [Publish verified note PDFs](.github/workflows/publish-pdf.yml) は main の原稿・台帳等の変更時に検証済みノートをpLaTeXで再生成し、PDFと総目次をコミットする。手元でも `node scripts/publish-pdf.mjs N-1`（pLaTeX、dvipdfmx、pdfinfo が必要）で掲載用PDFと総目次を生成できる。未掲載のノートにリンクは付けない。
+
+## 電子閲覧室
+
+[閲覧サイト（GitHub Pages）](https://hawkoods.github.io/genron/) — 検索・PDF参照・プレビュー。公開設定が未完了の場合は [Actions](https://github.com/HaWkoods/genron/actions/workflows/reader.yml) と [設計・公開手順](docs/viewer-design.md) を参照。

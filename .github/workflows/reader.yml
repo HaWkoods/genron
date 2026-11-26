@@ -1,0 +1,64 @@
+name: Build and deploy reader
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'volumes/**'
+      - 'docs/knowledge.json'
+      - 'scripts/viewer-tex.mjs'
+      - 'scripts/build-site.mjs'
+      - 'scripts/test-viewer*.mjs'
+      - 'scripts/statements-tex.mjs'
+      - 'scripts/knowledge*.mjs'
+      - '.github/workflows/reader.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: genron-reader
+  cancel-in-progress: true
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install TeX and PDF tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-lang-japanese texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended poppler-utils
+      - name: Install viewer libraries
+        run: npm install --no-save --ignore-scripts --package-lock=false --omit=optional pdfjs-dist@4.10.38 katex@0.16.22 playwright-core@1.51.1
+      - name: Test and build
+        run: |
+          node scripts/test-viewer-tex.mjs
+          node scripts/test-knowledge.mjs
+          node scripts/test-statements-tex.mjs
+          node scripts/build-site.mjs
+      - name: Browser smoke test
+        run: node scripts/test-viewer-browser.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: genron-reader
+          path: _site
+          include-hidden-files: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,6 +1,6 @@
 # 数学原論　検索・PDF閲覧サイトの設計
 
-2026-11-27。設計段階。サイト及びPDF参照の実装は未着手。
+2026-11-27。初版実装を追加。公開状態・テスト結果は Actions と実際のサイトで確認する。
 
 ## 確定した閲覧方針
 
@@ -27,6 +27,27 @@
 
 幅と余白は読者が設定画面で変更できるようにする。ブラウザ内の設定保存、キーボードフォーカスからの表示、Escapeでの閉じる操作、画面端に応じた表示方向の変更は実装時の推奨仕様。画面が狭いときは設定値に固執せず読みやすさを優先する。数学的な内容の欠落や省略によってボックスを小さくしない。
 
-## 実装候補（未確定）
+## 実装方針
 
 GitHub Pages、PDF.js、数式レンダラー（KaTeX又はMathJax）、pLaTeX/hyperrefによる恒久ID付きの移動先とリンク、知識台帳に基づく検索データの生成、GitHub Actionsによる同期を検討する。実装時にはライブラリの版、配信経路、PDFリンク注釈の形式、セキュリティ、実際のブラウザでの挙動を確認する。既存原稿の明示参照は段階的に改修し、定義の単なる出現や台帳の依存注釈だけを機械的に本文参照へ変換しない。知識台帳の記述がプレビューの出典であり、PDF本文からの逐語引用とは限らない。数学的内容を変更する必要が生じた場合は既存の改訂規約に従う。
+
+## 初版の実装
+
+- site/index.html、style.css、app.mjs：ノート・知識の検索、PDF.js の単頁ビューア、ページ移動・倍率、恒久IDへのジャンプ、戻る操作、ホバーとタッチ用プレビュー、幅・余白の保存。プレビューは KaTeX で台帳の記法を可能な範囲で組版し、変換不能な箇所は原記述を表示する。
+- scripts/viewer-tex.mjs：公開時の原稿コピーに hyperref の named destination と URI リンクを埋め込む。正本のTeXや定理番号を改変しない。既存の同一ノート内の明示的な `\\ref{...}` と本文中の知識IDをリンク化する。選択公理の明示参照は名称を含めてリンク化する。他の自然言語の参照や単なる定義語の出現は自動認識しない。
+- 新しい本文参照は、台帳登録済みの恒久IDを明記するか、既存の `\\ref` を用いる。専用命令 `\\GenronRef{K-番号}` / `\\GenronRefText{K-番号}{表示文字列}` も変換に対応するが、使用する原稿には通常のpLaTeX組版用のフォールバック定義（それぞれID、表示文字列を表示）と genron:use 注釈を設けること。後者の表示文字列は入れ子のないものとする。
+- scripts/build-site.mjs：同じコミットの検証済み原稿・台帳から閲覧用PDFと公開検索データを生成し、全知識IDのPDF移動先及び実際の参照URIを検査する。台帳の査読記録などは検索データに含めない。PDF.js 4.10.38 と KaTeX 0.16.22 をサイト内に配布する。
+- scripts/test-viewer-tex.mjs、scripts/test-viewer-browser.mjs：変換の単体テスト及びChromeによる実際の検索・PDF・ホバー操作のスモークテスト。
+- .github/workflows/reader.yml：main の原稿・台帳・サイトの変更時に構築し、ブラウザ検査後、GitHub Pages 用成果物を作成する。GitHub Pages の Source は GitHub Actions を選択する必要がある。公開URLの予定は https://hawkoods.github.io/genron/ 。ビルド成功と公開成功は区別する。
+
+ローカルでは Node.js 22、pLaTeX/dvipdfmx、poppler-utils、Chrome が必要。リポジトリの根で以下を実行する。
+
+```sh
+npm install --no-save --ignore-scripts --package-lock=false --omit=optional pdfjs-dist@4.10.38 katex@0.16.22 playwright-core@1.51.1
+node scripts/test-viewer-tex.mjs
+node scripts/build-site.mjs
+node scripts/test-viewer-browser.mjs
+python3 -m http.server 8000 --directory _site
+```
+
+公開サイトは `_site` のみから構成する。データ・PDFの更新はサイト構築時に同じ台帳の版から行う。GitHubに掲載する従来のPDFと、参照注釈を付したサイト用PDFは別の生成物とする。

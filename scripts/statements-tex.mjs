@@ -48,6 +48,21 @@ function formatted(s){
  }
  return out+txt(s.slice(last));
 }
+
+// Same limited notation conversion as the printed catalogue; keep original text on errors.
+export function previewParts(s){
+ const re=new RegExp('[!-~'+Object.keys(symbols).join('')+']+','gu');
+ const out=[];let last=0;
+ for(const m of String(s).matchAll(re)){
+  if(m.index>last)out.push({text:s.slice(last,m.index)});
+  const t=m[0];if(roman.has(t)||/^N-\d+$/.test(t)||/^K-\d+$/.test(t)||/^\d+$/.test(t)||/^[,.;:!?]+$/.test(t))out.push({text:t});
+  else {try{out.push({tex:math(t,false),raw:t})}catch{out.push({text:t})}}
+  last=m.index+t.length;
+ }
+ if(last<s.length)out.push({text:s.slice(last)});
+ return out;
+}
+
 export function statementsTex(ledger){
  const entries=ledger.entries.filter(e=>e.status==='verified'&&Object.hasOwn(kinds,e.kind)).sort((a,b)=>{for(let i=0;i<4;i++){const d=a.position[i]-b.position[i];if(d)return d;}return a.id.localeCompare(b.id)});
  const names=new Map((ledger.notes??[]).map(n=>[n.number,n.title]));

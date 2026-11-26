@@ -26,3 +26,5 @@
 - 定義・命題一覧の正規の閲覧先は `docs/statements.pdf` とする。`scripts/statements-tex.mjs` が同じ台帳から `docs/statements.tex` を生成し、pLaTeX 2回とdvipdfmxでPDFを生成する。`scripts/publish-pdf.mjs` に統合済み。台帳変更時にはPDF・TeX・Markdownの各一覧を同時に更新し、組版・全頁・数式・項目数を確認する。Markdownは補助的な閲覧形式とする。
 
 - 検索・PDF閲覧サイトの設計は `docs/viewer-design.md` に従う。定義・命題参照のプレビューは可変型（初期幅580px、内側余白28px）を採用する。実装済みの機能と設計段階の仕様を区別する。
+
+- 電子閲覧室は `site/`、`scripts/viewer-tex.mjs`、`scripts/build-site.mjs`、`.github/workflows/reader.yml` で管理する。本文中の明示参照には登録済みの恒久ID又はラベルを用い、公開時の named destination・URI リンクを検査する。サイトの参照機能を維持し、PDFと検索データを同じ台帳の版から生成する。

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数学原論 — 電子閲覧室</title><link rel="stylesheet" href="./vendor/katex/katex.min.css"><link rel="stylesheet" href="./style.css"></head>
+<body>
+<header class="bar"><a class="brand" href="./">数学原論 <small>GENRON</small></a><nav><a href="./">検索・総目次</a><a href="?note=statements">定義・命題一覧</a><button id="settings-open">閲覧設定</button><a href="https://github.com/HaWkoods/genron">GitHub</a></nav></header>
+<main id="app"><p class="loading">知識台帳を読み込んでいます。</p></main>
+<aside id="preview" class="preview" hidden aria-label="参照内容" tabindex="-1"></aside>
+<dialog id="settings"><form method="dialog"><div class="dialog-head"><h2>参照プレビュー設定</h2><button value="close" aria-label="閉じる">×</button></div>
+<label for="width">基準幅 <output id="width-value">580 px</output></label><input id="width" type="range" min="300" max="760" step="20" value="580">
+<label for="padding">上下左右の余白 <output id="padding-value">28 px</output></label><input id="padding" type="range" min="12" max="40" step="4" value="28">
+<p class="muted">設定はこのブラウザに保存されます。狭い画面では自動で縮小します。</p><div id="settings-sample"></div>
+<div class="actions"><button id="reset" type="button">初期値に戻す</button><button value="close">閉じる</button></div></form></dialog>
+<footer>数学原論 — 知識台帳と連動した電子閲覧室</footer>
+<script src="./vendor/katex/katex.min.js"></script><script type="module" src="./app.mjs"></script></body></html>
