@@ -1,4 +1,4 @@
-import {validate, affected, changedEntries, available} from "./knowledge-core.mjs";
+import {validate, affected, changedEntries, available, graph, prerequisites} from "./knowledge-core.mjs";
 function runTests(){
  const tests=[];
  const base={schema_version:1,foundation:{status:"adopted",description:"fixture only"},entries:[]};
@@ -33,7 +33,27 @@ function runTests(){
  check("deleted old edge impact",affected([ledger(a,b,c),ledger(a,{...b,depends_on:[]},c)],[a.id]).affected.length===2);
  check("statement change",changedEntries(ledger(a,b),ledger({...a,statement:"changed"},b)).join(",")===a.id);
  check("manuscript change",changedEntries(ledger(a,b),ledger(a,b),src(a,b),{"volumes/test.tex":block(a)+block(b)+"changed"}).length===2);
- check("available strictly before position",available(ledger(a,b,c),b.position).map(e=>e.id).join(",")===a.id);
+ check("available roots",available(ledger(a,b,c)).map(e=>e.id).join(",")===a.id);
+ check("available after learning root",available(ledger(a,b,c),[a.id]).map(e=>e.id).join(",")===b.id);
+ const independent={...a,id:"K-000004",position:[3,1,1,1],source:"volumes/other.tex"};
+ const merge={...c,position:[2,1,1,1],source:"volumes/merge.tex",depends_on:[b.id,independent.id]};
+ const dag=ledger(a,b,independent,merge);
+ const dagSources={...src(a,b),"volumes/other.tex":block(independent),"volumes/merge.tex":block(merge)};
+ check("cross-note dependency may point to higher note number",validate(dag,dagSources).errors.length===0);
+ check("parallel roots",available(dag).map(e=>e.id).join(",")===[a.id,independent.id].join(","));
+ check("branch need not be completed",available(dag,[a.id]).map(e=>e.id).join(",")===[independent.id,b.id].join(","));
+ check("merge requires both branches",available(dag,[a.id,b.id]).map(e=>e.id).join(",")===independent.id);
+ check("merge ready",available(dag,[a.id,b.id,independent.id]).map(e=>e.id).join(",")===merge.id);
+ check("target closure",prerequisites(dag,merge.id).map(e=>e.id).join(",")===[a.id,independent.id,b.id].join(","));
+ check("unrelated knowledge excluded",prerequisites(dag,b.id).map(e=>e.id).join(",")===a.id);
+ check("topological layers",JSON.stringify(graph(dag).layers)===JSON.stringify([[a.id,independent.id],[b.id],[merge.id]]));
+ check("note graph layers",JSON.stringify(graph(dag,"notes").layers)===JSON.stringify([["N-1","N-3"],["N-2"]]));
+ const cross={...b,depends_on:[independent.id]}, returnToOther={...independent,id:"K-000005",position:[3,1,1,2],depends_on:[cross.id]};
+ const grouped=ledger(a,cross,independent,returnToOther);
+ const groupedSources={...src(a,cross),"volumes/other.tex":block(independent)+block(returnToOther)};
+ check("acyclic knowledge but cyclic note grouping rejected",has(validate(grouped,groupedSources),"NOTE_CYCLE")&&graph(grouped).unordered.length===0);
+ let rejected=false;try{available(dag,[b.id])}catch{rejected=true}
+ check("non-closed completed set rejected",rejected);
  return tests;
 }
 for(const name of runTests()) console.log("PASS "+name);
