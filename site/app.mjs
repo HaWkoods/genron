@@ -379,12 +379,36 @@ async function loadReader(info,token,scroll){
 }
 
 function webUrl(key,val){const u=new URL(url(key,val));u.searchParams.set("view","web");return u.href}
+
+function renderProof(target,proof,metadata){
+ const tex=proof.tex;
+ const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\})/g;
+ const macros=Object.fromEntries(Object.entries(metadata.macros??{}).map(([k,v])=>["\\"+k,v]));
+ const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.trim())continue;const p=node("span");p.style.whiteSpace="pre-wrap";p.textContent=line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1");target.append(p);if(s.includes("\n\n"))target.append(node("br"))}};
+ let last=0;
+ for(const m of tex.matchAll(pattern)){
+  plain(tex.slice(last,m.index));last=m.index+m[0].length;
+  const token=m[0];const ref=token.match(/^\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
+  if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(ref[2]??e.title,webUrl("id",id));bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
+  const display=token.startsWith("\\[")||token.startsWith("$")||token.startsWith("\\begin");
+  let formula=token;
+  if(token.startsWith("\\[" )||token.startsWith("$"))formula=token.slice(2,-2);
+  else if(token.startsWith("$"))formula=token.slice(1,-1);
+  else if(m[2]){const env=m[2].replace("*","");const inner=token.slice(token.indexOf("}")+1,token.lastIndexOf("\\end"));formula=env==="align"?"\\begin{aligned}"+inner+"\\end{aligned}":env==="gather"||env==="multline"?"\\begin{gathered}"+inner+"\\end{gathered}":inner}
+  const span=node(display?"div":"span",display?"proof-display":"math");
+  if(display){span.style.cssText="max-width:100%;overflow-x:auto;margin:0.8em 0"}
+  try{katex.render(formula,span,{displayMode:display,throwOnError:true,trust:false,strict:"ignore",macros:{...macros}})}catch{span.textContent=token;span.title="未変換の原稿数式"}
+  target.append(span)
+ }
+ plain(tex.slice(last));
+}
+
 function showWeb(info,restore){
  const n=notes.get(info.n), items=data.entries.filter(e=>e.position[0]===info.n).sort((a,b)=>{for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0});
  const layout=node("div","reader"), side=node("aside","sidebar"), article=node("article","web-article");
  side.append(node("h2","","このノートの内容"),anchor("← 検索・総目次",root.href));
  article.style.cssText="min-width:0;background:var(--paper);border:1px solid var(--line);padding:clamp(18px,4vw,48px);font-family:Yu Mincho,Hiragino Mincho ProN,serif;line-height:1.95;overflow-wrap:anywhere";
- article.append(node("p","meta",n.area+" ／ N-"+n.number),node("h1","",n.title),node("p","muted","Web版試作：旧台帳の定義・命題を直接表示しています。本文・証明は再設計後に執筆します。"));
+ article.append(node("p","meta",n.area+" ／ N-"+n.number),node("h1","",n.title),node("p","muted","Web版試作：旧台帳の記述と既存原稿の証明を表示します。全面改訂前の内容です。"));
  const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");article.append(anchor("旧版PDFを閲覧",legacy.href));
  for(const e of items){
   const section=node("section","web-entry");section.id=e.id;section.style.cssText="margin:28px 0;padding-top:22px;border-top:1px solid var(--line);scroll-margin-top:24px";
@@ -392,6 +416,7 @@ function showWeb(info,restore){
   const link=anchor(e.title,"#"+e.id);side.append(link);
   if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,e.assumptions.join("；"));section.append(p)}
   const p=node("p");renderParts(p,e.preview?.statement,e.statement);section.append(p);
+  for(const proof of e.webProof?.proofs??[]){const block=node("div","web-proof");block.style.cssText="margin:1em 0 1.5em";block.append(node("h3","",proof.title));const body=node("div","proof-body");renderProof(body,proof,e.webProof);block.append(body,node("div","","□"));block.lastChild.style.textAlign="right";section.append(block)}
   if(e.depends_on?.length){const d=node("details");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
   article.append(section);
  }
