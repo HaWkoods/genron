@@ -245,8 +245,8 @@ function planMermaid(ledger){
 }
 function planMarkdown(ledger){
  const g=planGraph(ledger), depth=new Map(g.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
- const table=["| ID | 層 | ノート | 分野 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+n.title+" | "+n.area+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
- return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。全項目は計画であり、成立済みの知識ではない。\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
+ const table=["| ID | 層 | ノート | 分野 | 状態 | 直接前提 | 到達目標 |","|---|---:|---|---|---|---|---|",...ledger.notes.map(n=>"| N-"+n.number+" | "+depth.get("N-"+n.number)+" | "+n.title+" | "+n.area+" | "+n.status+" | "+(n.depends_on.map(d=>"N-"+d).join(", ")||"なし")+" | "+n.goals.join("；")+" |")];
+ return "# 数学原論：予定ノートグラフ\n\nこのファイルは docs/knowledge.json の notes から生成する。この図は計画上の依存関係を表す。成立済みの個別知識は entries で確認する。\n\n```mermaid\n"+planMermaid(ledger)+"```\n\n"+table.join("\n")+"\n";
 }
 
 export {validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown};
