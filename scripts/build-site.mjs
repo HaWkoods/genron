@@ -50,6 +50,13 @@ try{
   const p=prepareTex(source,entries,n.number,baseUrl);
   compile(p.tex,"N-"+n.number+".pdf",p.anchors,p.references);
  }
+ // Keep historical direct PDF and page URLs for merged-away notes.
+ for(const [old,a] of Object.entries(ledger.note_aliases??{})){
+  const historicalEntries=entries.map(e=>a.ids.includes(e.id)?{...e,position:[Number(old),...e.position.slice(1)]}:e);
+  const original=fs.readFileSync(path.join(root,"archive","N-"+old,"main.tex"),"utf8");
+  const p=prepareTex(original,historicalEntries,Number(old),baseUrl);
+  compile(p.tex,"N-"+old+".pdf",p.anchors,p.references);
+ }
  const catalogue=statementsTex(ledger).replace(/(\\entryhead\{[^\n]*\})\{(K-\d{6})\}/g,(all,head,id)=>head+"{\\href{"+baseUrl+"?id="+id+"}{"+id+"}}");
  compile(catalogue,"statements.pdf",[],entries.filter(e=>e.kind!=="exercise").map(e=>e.id));
  const notation=fs.readFileSync(path.join(root,"docs/notation.tex"),"utf8").replaceAll("https://hawkoods.github.io/genron/",baseUrl);
@@ -60,7 +67,7 @@ try{
  const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
  const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status})=>({number,title,area,goals,depends_on,treatise,status,depth:depth.get(number)}));
  const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,kind,title,statement,assumptions,position,depends_on,preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
- fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,entries:publicEntries,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
+ fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,aliases:ledger.note_aliases??{},entries:publicEntries,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");
  console.log("Site: "+verified.length+" notes, "+entries.length+" entries, "+anchorCount+" named destinations, "+referenceCount+" distinct targets counted per PDF.");
 }finally{fs.rmSync(tmp,{recursive:true,force:true})}
