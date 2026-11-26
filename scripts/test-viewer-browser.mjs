@@ -49,6 +49,18 @@ try{
  await page.goto(origin+"?view=map");await page.locator(".map-stage canvas").first().waitFor();
  assert.deepEqual(errors,[],"Map JavaScript errors");
 
+ // Native Web reader prototype: direct HTML, stable IDs and legacy escape hatch.
+ await page.goto(origin+"?note=1&view=web");
+ await page.locator(".web-article").waitFor();
+ assert.equal(await page.locator(".web-entry").count(),planData.entries.filter(e=>e.position[0]===1).length);
+ assert.equal(await page.locator(".pdf-shell").count(),0);
+ await page.goto(origin+"?id=K-000002&view=web");
+ await page.locator(".web-entry[id='K-000002']").waitFor();
+ assert.ok(await page.locator(".web-article .katex").count()>0,"Web math must be rendered");
+ await page.getByRole("link",{name:"旧版PDFを閲覧"}).click();
+ await page.locator(".pdf-shell").waitFor();
+ assert.deepEqual(errors,[],"Web reader JavaScript errors");
+
  // Merged-away note numbers retain their section and archived page URLs.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   await page.goto(origin+"?note="+old);
