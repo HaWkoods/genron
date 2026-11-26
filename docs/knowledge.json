@@ -6456,7 +6456,7 @@
       "id": "K-000211",
       "kind": "proposition",
       "title": "開基と位相の粗密",
-      "statement": "同じ集合 X 上の位相 𝒪₁,𝒪₂ の開基 ℬ_1,ℬ_2 に対し、𝒪₁⊆𝒪₂ ⇔ 任意の B∈ℬ_1 と x∈ℬ に対し x∈C⊆B なる C∈ℬ_2 が存在する。",
+      "statement": "同じ集合 X 上の位相 𝒪_1,𝒪_2 の開基 ℬ_1,ℬ_2 に対し、𝒪_1⊆𝒪_2 ⇔ 任意の B∈ℬ_1 と x∈B に対し x∈C⊆B なる C∈ℬ_2 が存在する。",
       "assumptions": [],
       "position": [
         54,
@@ -6585,7 +6585,7 @@
       "id": "K-000215",
       "kind": "proposition",
       "title": "開基から得られる近傍基",
-      "statement": "開基 ℬ に対し各点 x の族 ℬ_x={B∈ℬ | x∈ℬ} は x の近傍基である。",
+      "statement": "開基 ℬ に対し各点 x の族 ℬ_x={B∈ℬ | x∈B} は x の近傍基である。",
       "assumptions": [],
       "position": [
         54,
