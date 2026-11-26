@@ -20,14 +20,24 @@ try{
  browser=await chromium.launch({executablePath,headless:true,args:["--no-sandbox"]});
  const page=await browser.newPage({viewport:{width:1440,height:1000}});
  const errors=[];page.on("pageerror",e=>{errors.push(e.message);console.error(e)});
- // Check actual page changes on desktop and at the end of a page, not just button clicks.
- await page.goto(origin+"?note=1");await page.locator('.page[data-page="1"] .annotations').waitFor();
- await page.getByRole("button",{name:"次頁 →",exact:true}).click();await page.locator('.page[data-page="2"] .annotations').waitFor();assert.equal(await page.getByRole("spinbutton",{name:"ページ番号"}).inputValue(),"2");assert.match(page.url(),/page=2/);
- await page.getByRole("button",{name:"次のページ →",exact:true}).click();await page.locator('.page[data-page="3"] .annotations').waitFor();assert.equal(await page.getByRole("spinbutton",{name:"ページ番号"}).inputValue(),"3");
- await page.getByRole("button",{name:"← 前のページ",exact:true}).click();await page.locator('.page[data-page="2"] .annotations').waitFor();
- const pageInput=page.getByRole("spinbutton",{name:"ページ番号"});await pageInput.fill("6");await pageInput.press("Enter");await page.locator('.page[data-page="6"] .annotations').waitFor();assert.ok(await page.getByRole("button",{name:"次頁 →",exact:true}).isDisabled());
- await page.getByRole("link",{name:"次のノート：N-2 →",exact:true}).click();await page.locator('.page[data-page="1"] .annotations').waitFor();assert.match(page.url(),/note=2/);
- await page.goto(origin+"?id=K-000001");await page.locator(".annotations").waitFor();await page.getByRole("link",{name:"次の知識項目 →",exact:true}).click();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000002/);
+ // Scroll through the actual N-3 document without pressing a page button.
+ const currentPage=page.getByRole("spinbutton",{name:"ページ番号"});
+ const sheet=n=>page.locator('.page[data-page="'+n+'"]');
+ const rendered=n=>sheet(n).locator(".annotations");
+ const waitPage=async n=>{await page.waitForFunction(n=>document.querySelector('input[aria-label="ページ番号"]')?.value===String(n),n);await rendered(n).waitFor()};
+ await page.goto(origin+"?note=3");await rendered(1).waitFor();
+ assert.equal(await page.locator(".pdf-shell .page").count(),6);
+ const y1=(await sheet(1).boundingBox()).y,y2=(await sheet(2).boundingBox()).y;
+ assert.ok(y2>y1+(await sheet(1).boundingBox()).height,"Pages must be vertically stacked");
+ await page.mouse.move(950,700);await page.mouse.wheel(0,Math.ceil(y2-y1));await waitPage(2);
+ assert.match(page.url(),/note=3&page=2/);
+ await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(3);
+ await page.getByRole("button",{name:"← 前頁",exact:true}).click();await waitPage(2);
+ await currentPage.fill("6");await currentPage.press("Enter");await waitPage(6);
+ assert.ok(await page.getByRole("button",{name:"次頁 →",exact:true}).isDisabled());
+ await page.getByRole("link",{name:"次のノート：N-4 →",exact:true}).click();await rendered(1).waitFor();assert.match(page.url(),/note=4/);
+ await page.goto(origin+"?note=3&page=3");await waitPage(3);
+ await page.goto(origin+"?id=K-000001");await page.locator(".target").waitFor();await page.getByRole("link",{name:"次の知識項目 →",exact:true}).click();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000002/);
  await page.goto(origin);await page.getByRole("searchbox").fill("選択公理");
  const searchResult=page.locator(".result a[href*='id=K-000060']");await searchResult.waitFor();
  await searchResult.hover();await page.locator("#preview:not([hidden])").waitFor();
@@ -36,20 +46,27 @@ try{
  assert.equal(await page.locator("#preview").evaluate(el=>getComputedStyle(el).paddingLeft),"28px");
  await page.getByRole("button",{name:"閲覧設定"}).click();await page.locator("#width").fill("700");await page.locator("#padding").fill("36");await page.getByRole("button",{name:"閉じる",exact:true}).last().click();
  await page.reload();await searchResult.waitFor();await searchResult.hover();assert.equal(Math.round((await page.locator("#preview").boundingBox()).width),700);
- await searchResult.click();await page.locator(".page canvas").waitFor();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000060/);
+ await searchResult.click();await page.locator(".target").waitFor();await page.locator(".page:has(.target) .annotations").waitFor();assert.match(page.url(),/id=K-000060/);
  await page.goBack();await searchResult.waitFor();
- await page.goto(origin+"?id=K-000129");await page.locator(".page canvas").waitFor();
- // Find a real PDF link in the proof of well-ordering; traverse the note if necessary.
+ await page.goto(origin+"?id=K-000129");await page.locator(".target").waitFor();
+ // Navigate to each page through ordinary scroll and inspect real PDF annotations.
  let found=false;
- for(let i=0;i<8;i++){
-  await page.locator(".annotations").waitFor();
-  const link=page.locator(".annotation[href*='id=K-000060']").first();
-  if(await link.count()){await link.hover();await page.locator("#preview:not([hidden])").waitFor();assert.match(await page.locator("#preview").innerText(),/選択公理/);await link.click();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000060/);found=true;break}
-  const next=page.getByRole("button",{name:"次頁 →"});if(await next.isDisabled())break;await next.click();await page.waitForTimeout(350);
+ for(let i=1;i<=7;i++){
+  await sheet(i).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-100));
+  await rendered(i).waitFor();
+  const link=sheet(i).locator(".annotation[href*='id=K-000060']").first();
+  if(await link.count()){
+   await link.scrollIntoViewIfNeeded();await link.hover();await page.locator("#preview:not([hidden])").waitFor();assert.match(await page.locator("#preview").innerText(),/選択公理/);
+   const originalY=await page.evaluate(()=>scrollY);
+   await link.click();await page.waitForURL(/id=K-000060/);await page.locator(".page:has(.target) .annotations").waitFor();
+   await page.goBack();await page.waitForURL(/note=6|id=K-000129/);await rendered(i).waitFor();
+   assert.ok(Math.abs(await page.evaluate(()=>scrollY)-originalY)<100,"Back should restore reading position");found=true;break
+  }
  }
  assert.ok(found,"Cross-note PDF link must work");
- await page.goto(origin+"?note=statements");await page.locator('.page[data-page="1"] .annotations').waitFor();await page.getByRole("button",{name:"次頁 →",exact:true}).click();await page.locator('.page[data-page="2"] .annotations').waitFor();
+ await page.goto(origin+"?note=statements");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-90));await waitPage(2);
+ await page.setViewportSize({width:390,height:844});await page.goto(origin+"?note=3");await rendered(1).waitFor();await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-150));await rendered(2).waitFor();assert.equal(await page.locator(".pdf-shell .page").count(),6);
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
  assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");
- console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, page navigation (top and bottom), next note, next knowledge item.");
+ console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, continuous scrolling, direct page links, next note, next knowledge item.");
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}
