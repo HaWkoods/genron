@@ -2849,7 +2849,7 @@
       "id": "K-000099",
       "kind": "construction",
       "title": "自然数の集合",
-      "statement": "全ての帰納的集合に含まれる帰納的集合 N が一意に存在する。これを自然数の集合とする。",
+      "statement": "全ての帰納的集合に含まれる帰納的集合 ℕ が一意に存在する。これを自然数の集合とする。",
       "assumptions": [],
       "position": [
         5,
@@ -2880,7 +2880,7 @@
       "id": "K-000100",
       "kind": "theorem",
       "title": "数学的帰納法",
-      "statement": "B⊆N が 0∈B および n∈B⇒S(n)∈B を満たすなら B=N。",
+      "statement": "B⊆ℕ が 0∈B および n∈B⇒S(n)∈B を満たすなら B=ℕ。",
       "assumptions": [],
       "position": [
         5,
@@ -2908,7 +2908,7 @@
       "id": "K-000101",
       "kind": "proposition",
       "title": "自然数の基本性質",
-      "statement": "各 n∈N は推移的な集合（x∈n⇒x⊆n）で，n⊆N，n∉n。各 x∈n は x∉x。",
+      "statement": "各 n∈ℕ は推移的な集合（x∈n⇒x⊆n）で，n⊆ℕ，n∉n。各 x∈n は x∉x。",
       "assumptions": [],
       "position": [
         5,
@@ -2939,7 +2939,7 @@
       "id": "K-000102",
       "kind": "proposition",
       "title": "後者の単射性と前者",
-      "statement": "S:N→N は単射で 0 はその像に属さない。0 以外の自然数は一意の自然数の後者である。",
+      "statement": "S:ℕ→ℕ は単射で 0 はその像に属さない。0 以外の自然数は一意の自然数の後者である。",
       "assumptions": [],
       "position": [
         5,
@@ -2973,7 +2973,7 @@
       "id": "K-000103",
       "kind": "proposition",
       "title": "自然数の順序",
-      "statement": "m<n ⇔ m∈n，m≤n ⇔ m⊆n と定めると N は全順序集合となる。m<S(n) ⇔ m≤n。",
+      "statement": "m<n ⇔ m∈n，m≤n ⇔ m⊆n と定めると ℕ は全順序集合となる。m<S(n) ⇔ m≤n。",
       "assumptions": [],
       "position": [
         5,
@@ -3005,7 +3005,7 @@
       "id": "K-000104",
       "kind": "proposition",
       "title": "最小元の原理と強い帰納法",
-      "statement": "N の非空部分集合は最小元を持つ。各 n について全ての m<n における P(m) から P(n) が従えば，全ての n で P(n)。",
+      "statement": "ℕ の非空部分集合は最小元を持つ。各 n について全ての m<n における P(m) から P(n) が従えば，全ての n で P(n)。",
       "assumptions": [],
       "position": [
         5,
@@ -3034,7 +3034,7 @@
       "id": "K-000105",
       "kind": "theorem",
       "title": "再帰定理",
-      "statement": "集合 X，a∈X，写像 F:N×X→X に対し u:N→X で u(0)=a，u(S(n))=F(n,u(n)) を満たすものが一意に存在する。",
+      "statement": "集合 X，a∈X，写像 F:ℕ×X→X に対し u:ℕ→X で u(0)=a，u(S(n))=F(n,u(n)) を満たすものが一意に存在する。",
       "assumptions": [],
       "position": [
         5,
@@ -3072,7 +3072,7 @@
       "id": "K-000106",
       "kind": "proposition",
       "title": "帰納的体系の一意性",
-      "statement": "集合 X に a∈X と単射 t:X→X があり，a∉t(X)，a を含み t で閉じる部分集合が X だけなら，一意の全単射 u:N→X が u(0)=a，u(S(n))=t(u(n)) を満たす。",
+      "statement": "集合 X に a∈X と単射 t:X→X があり，a∉t(X)，a を含み t で閉じる部分集合が X だけなら，一意の全単射 u:ℕ→X が u(0)=a，u(S(n))=t(u(n)) を満たす。",
       "assumptions": [],
       "position": [
         5,
@@ -3105,7 +3105,7 @@
       "id": "K-000107",
       "kind": "definition",
       "title": "加法と乗法",
-      "statement": "自然数の加法・乗法を m+0=m，m+S(n)=S(m+n)，m×0=0，m×S(n)=m×n+m で定める。1=S(0)。",
+      "statement": "自然数の加法・乗法を m+0=m，m+S(n)=S(m+n)，m·0=0，m·S(n)=m·n+m で定める。1=S(0)。",
       "assumptions": [],
       "position": [
         5,
@@ -3135,7 +3135,7 @@
       "id": "K-000108",
       "kind": "proposition",
       "title": "加法の法則",
-      "statement": "自然数の加法は結合的・可換で 0 を単位元とし，m+n=m+k⇒n=k。m≤n ⇔ ∃k∈N,n=m+k。",
+      "statement": "自然数の加法は結合的・可換で 0 を単位元とし，m+n=m+k⇒n=k。m≤n ⇔ ∃k∈ℕ,n=m+k。",
       "assumptions": [],
       "position": [
         5,
@@ -3194,7 +3194,7 @@
       "id": "K-000110",
       "kind": "definition",
       "title": "有限集合と濃度",
-      "statement": "集合 A がある n∈N と全単射を持つとき有限集合という。",
+      "statement": "集合 A がある n∈ℕ と全単射を持つとき有限集合という。",
       "assumptions": [],
       "position": [
         5,
@@ -3389,7 +3389,7 @@
       "id": "K-000116",
       "kind": "proposition",
       "title": "有限集合の直積・合併",
-      "statement": "有限集合 A,B の直積は有限で |A×B|=|A|×|B|。任意の二つの有限集合の合併も有限。",
+      "statement": "有限集合 A,B の直積は有限で |A×B|=|A|·|B|。任意の二つの有限集合の合併も有限。",
       "assumptions": [],
       "position": [
         5,
@@ -4143,7 +4143,7 @@
       "id": "K-000138",
       "kind": "definition",
       "title": "高々可算・可算無限",
-      "statement": "集合 A が N への単射を持つとき高々可算，N と全単射を持つとき可算無限という。有限集合は高々可算。",
+      "statement": "集合 A が ℕ への単射を持つとき高々可算，ℕ と全単射を持つとき可算無限という。有限集合は高々可算。",
       "assumptions": [],
       "position": [
         7,
@@ -4174,7 +4174,7 @@
       "id": "K-000139",
       "kind": "proposition",
       "title": "自然数集合の無限性",
-      "statement": "N は有限集合でない。従って可算無限集合は有限でない。",
+      "statement": "ℕ は有限集合でない。従って可算無限集合は有限でない。",
       "assumptions": [],
       "position": [
         7,
@@ -4208,7 +4208,7 @@
       "id": "K-000140",
       "kind": "theorem",
       "title": "自然数の無限部分集合",
-      "statement": "N の有限でない部分集合 B は N と順序同型である。",
+      "statement": "ℕ の有限でない部分集合 B は ℕ と順序同型である。",
       "assumptions": [],
       "position": [
         7,
@@ -4282,7 +4282,7 @@
       "id": "K-000142",
       "kind": "theorem",
       "title": "自然数の二項直積",
-      "statement": "N×N は可算無限である。",
+      "statement": "ℕ×ℕ は可算無限である。",
       "assumptions": [],
       "position": [
         7,
@@ -4365,7 +4365,7 @@
       "id": "K-000144",
       "kind": "proposition",
       "title": "指定された単射を持つ可算族の合併",
-      "statement": "高々可算集合 I を添字とする集合族 (A_i) に，各単射 e_i:A_i→N が族として与えられていれば，合併は高々可算である。",
+      "statement": "高々可算集合 I を添字とする集合族 (A_i) に，各単射 e_i:A_i→ℕ が族として与えられていれば，合併は高々可算である。",
       "assumptions": [],
       "position": [
         7,
@@ -4398,7 +4398,7 @@
       "id": "K-000145",
       "kind": "corollary",
       "title": "冪集合の非可算性",
-      "statement": "P(N) は高々可算でない。",
+      "statement": "P(ℕ) は高々可算でない。",
       "assumptions": [],
       "position": [
         7,

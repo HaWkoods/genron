@@ -301,33 +301,33 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \entryhead{公理（無限公理）}{K-000098}
 帰納的集合が存在する。\par
 \entryhead{構成（自然数の集合）}{K-000099}
-全ての帰納的集合に含まれる帰納的集合 \(N\) が一意に存在する。これを自然数の集合とする。\par
+全ての帰納的集合に含まれる帰納的集合 \(\mathbb{N}\) が一意に存在する。これを自然数の集合とする。\par
 \entryhead{定理（数学的帰納法）}{K-000100}
-\(B\subseteq \allowbreak N\) が \(0\in B\) および \(n\in B\Rightarrow \allowbreak S(n)\in B\) を満たすなら \(B=\allowbreak N\)。\par
+\(B\subseteq \allowbreak \mathbb{N}\) が \(0\in B\) および \(n\in B\Rightarrow \allowbreak S(n)\in B\) を満たすなら \(B=\allowbreak \mathbb{N}\)。\par
 \entryhead{命題（自然数の基本性質）}{K-000101}
-各 \(n\in N\) は推移的な集合（\(x\in n\Rightarrow \allowbreak x\subseteq \allowbreak n\)）で，\(n\subseteq \allowbreak N\)，\(n\notin n\)。各 \(x\in n\) は \(x\notin x\)。\par
+各 \(n\in \mathbb{N}\) は推移的な集合（\(x\in n\Rightarrow \allowbreak x\subseteq \allowbreak n\)）で，\(n\subseteq \allowbreak \mathbb{N}\)，\(n\notin n\)。各 \(x\in n\) は \(x\notin x\)。\par
 \entryhead{命題（後者の単射性と前者）}{K-000102}
-\(S:N\to N\) は単射で 0 はその像に属さない。0 以外の自然数は一意の自然数の後者である。\par
+\(S:\mathbb{N}\to \mathbb{N}\) は単射で 0 はその像に属さない。0 以外の自然数は一意の自然数の後者である。\par
 \entryhead{命題（自然数の順序）}{K-000103}
-\(m<n\) \(\Leftrightarrow \allowbreak \) \(m\in n\)，\(m\leq \allowbreak n\) \(\Leftrightarrow \allowbreak \) \(m\subseteq \allowbreak n\) と定めると \(N\) は全順序集合となる。\(m<S(n)\) \(\Leftrightarrow \allowbreak \) \(m\leq \allowbreak n\)。\par
+\(m<n\) \(\Leftrightarrow \allowbreak \) \(m\in n\)，\(m\leq \allowbreak n\) \(\Leftrightarrow \allowbreak \) \(m\subseteq \allowbreak n\) と定めると \(\mathbb{N}\) は全順序集合となる。\(m<S(n)\) \(\Leftrightarrow \allowbreak \) \(m\leq \allowbreak n\)。\par
 \entryhead{命題（最小元の原理と強い帰納法）}{K-000104}
-\(N\) の非空部分集合は最小元を持つ。各 \(n\) について全ての \(m<n\) における \(P(m)\) から \(P(n)\) が従えば，全ての \(n\) で \(P(n)\)。\par
+\(\mathbb{N}\) の非空部分集合は最小元を持つ。各 \(n\) について全ての \(m<n\) における \(P(m)\) から \(P(n)\) が従えば，全ての \(n\) で \(P(n)\)。\par
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第2節}
 \entryhead{定理（再帰定理）}{K-000105}
-集合 \(X\)，\(a\in X\)，写像 \(F:N\times X\to X\) に対し \(u:N\to X\) で \(u(0)=\allowbreak a\)，\(u(S(n))=\allowbreak F(n,\allowbreak u(n))\) を満たすものが一意に存在する。\par
+集合 \(X\)，\(a\in X\)，写像 \(F:\mathbb{N}\times X\to X\) に対し \(u:\mathbb{N}\to X\) で \(u(0)=\allowbreak a\)，\(u(S(n))=\allowbreak F(n,\allowbreak u(n))\) を満たすものが一意に存在する。\par
 \entryhead{命題（帰納的体系の一意性）}{K-000106}
-集合 \(X\) に \(a\in X\) と単射 \(t:X\to X\) があり，\(a\notin t(X)\)，\(a\) を含み \(t\) で閉じる部分集合が \(X\) だけなら，一意の全単射 \(u:N\to X\) が \(u(0)=\allowbreak a\)，\(u(S(n))=\allowbreak t(u(n))\) を満たす。\par
+集合 \(X\) に \(a\in X\) と単射 \(t:X\to X\) があり，\(a\notin t(X)\)，\(a\) を含み \(t\) で閉じる部分集合が \(X\) だけなら，一意の全単射 \(u:\mathbb{N}\to X\) が \(u(0)=\allowbreak a\)，\(u(S(n))=\allowbreak t(u(n))\) を満たす。\par
 \entryhead{定義（加法と乗法）}{K-000107}
-自然数の加法・乗法を \(m+0=\allowbreak m\)，\(m+S(n)=\allowbreak S(m+n)\)，\(m\times 0=\allowbreak 0\)，\(m\times S(n)=\allowbreak m\times n+m\) で定める。\(1=\allowbreak S(0)\)。\par
+自然数の加法・乗法を \(m+0=\allowbreak m\)，\(m+S(n)=\allowbreak S(m+n)\)，\(m\cdot 0=\allowbreak 0\)，\(m\cdot S(n)=\allowbreak m\cdot n+m\) で定める。\(1=\allowbreak S(0)\)。\par
 \entryhead{命題（加法の法則）}{K-000108}
-自然数の加法は結合的・可換で 0 を単位元とし，\(m+n=\allowbreak m+k\Rightarrow \allowbreak n=\allowbreak k\)。\(m\leq \allowbreak n\) \(\Leftrightarrow \allowbreak \) \(\exists k\in N,\allowbreak n=\allowbreak m+k\)。\par
+自然数の加法は結合的・可換で 0 を単位元とし，\(m+n=\allowbreak m+k\Rightarrow \allowbreak n=\allowbreak k\)。\(m\leq \allowbreak n\) \(\Leftrightarrow \allowbreak \) \(\exists k\in \mathbb{N},\allowbreak n=\allowbreak m+k\)。\par
 \entryhead{命題（乗法の法則）}{K-000109}
 自然数の乗法は結合的・可換で 1 を単位元とし，0 は吸収元。加法に対する分配律を満たす。\par
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第3節}
 \entryhead{定義（有限集合と濃度）}{K-000110}
-集合 \(A\) がある \(n\in N\) と全単射を持つとき有限集合という。\par
+集合 \(A\) がある \(n\in \mathbb{N}\) と全単射を持つとき有限集合という。\par
 \entryhead{命題（有限集合の単射比較）}{K-000111}
 自然数 \(m,\allowbreak n\) の間に単射 \(m\to n\) が存在する iff \(m\leq \allowbreak n\)。特に自然数との全単射が存在する場合，その自然数は一意。これを有限集合の元の個数 \(\mid A\mid \) とする。\par
 \entryhead{命題（有限集合への一元の添加）}{K-000112}
@@ -339,7 +339,7 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \entryhead{命題（有限集合の非交和）}{K-000115}
 互いに交わらない有限集合 \(A,\allowbreak B\) の合併は有限で \(\mid A\cup B\mid =\allowbreak \mid A\mid +\mid B\mid \)。\par
 \entryhead{命題（有限集合の直積・合併）}{K-000116}
-有限集合 \(A,\allowbreak B\) の直積は有限で \(\mid A\times B\mid =\allowbreak \mid A\mid \times \mid B\mid \)。任意の二つの有限集合の合併も有限。\par
+有限集合 \(A,\allowbreak B\) の直積は有限で \(\mid A\times B\mid =\allowbreak \mid A\mid \cdot \mid B\mid \)。任意の二つの有限集合の合併も有限。\par
 \entryhead{命題（有限集合の冪集合）}{K-000117}
 有限集合 \(A\) の冪集合は有限である。\par
 \Needspace{9\baselineskip}
@@ -409,19 +409,19 @@ Galois 接続 \((f,\allowbreak g)\) において \(S\subseteq \allowbreak P\) �
 \Needspace{9\baselineskip}
 \subsection*{第1章\quad 第2節}
 \entryhead{定義（高々可算・可算無限）}{K-000138}
-集合 \(A\) が \(N\) への単射を持つとき高々可算，\(N\) と全単射を持つとき可算無限という。有限集合は高々可算。\par
+集合 \(A\) が \(\mathbb{N}\) への単射を持つとき高々可算，\(\mathbb{N}\) と全単射を持つとき可算無限という。有限集合は高々可算。\par
 \entryhead{命題（自然数集合の無限性）}{K-000139}
-\(N\) は有限集合でない。従って可算無限集合は有限でない。\par
+\(\mathbb{N}\) は有限集合でない。従って可算無限集合は有限でない。\par
 \entryhead{定理（自然数の無限部分集合）}{K-000140}
-\(N\) の有限でない部分集合 \(B\) は \(N\) と順序同型である。\par
+\(\mathbb{N}\) の有限でない部分集合 \(B\) は \(\mathbb{N}\) と順序同型である。\par
 \entryhead{命題（高々可算集合の分類）}{K-000141}
 高々可算集合は有限集合又は可算無限集合のいずれか一方である。任意の部分集合及び像も高々可算。\par
 \entryhead{定理（自然数の二項直積）}{K-000142}
-\(N\times N\) は可算無限である。\par
+\(\mathbb{N}\times \mathbb{N}\) は可算無限である。\par
 \entryhead{命題（可算集合の有限積・有限合併）}{K-000143}
 有限個の高々可算集合の直積及び合併は高々可算である。\par
 \entryhead{命題（指定された単射を持つ可算族の合併）}{K-000144}
-高々可算集合 \(I\) を添字とする集合族 \((A_{i})\) に，各単射 \(e_{i}:A_{i}\to N\) が族として与えられていれば，合併は高々可算である。\par
+高々可算集合 \(I\) を添字とする集合族 \((A_{i})\) に，各単射 \(e_{i}:A_{i}\to \mathbb{N}\) が族として与えられていれば，合併は高々可算である。\par
 \entryhead{系（冪集合の非可算性）}{K-000145}
-\(P(N)\) は高々可算でない。\par
+\(P(\mathbb{N})\) は高々可算でない。\par
 \end{document}
