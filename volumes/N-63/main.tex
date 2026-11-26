@@ -27,42 +27,18 @@
 \newcommand{\GenronRefText}[2]{#2}
 \clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
 
+% Historical source. Canonical knowledge now belongs to N-62.
 \begin{document}
 \begin{center}
 {\small 数学原論}\par\vspace{4mm}
 {\LARGE 剰余類と正規部分群}\par\vspace{2mm}
-{\small N-63\quad 第1版}
+{\small N-63\quad 旧版（統合前）}
 \end{center}
 \section{剰余類と正規部分群}
-% genron:begin K-000263
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000028
-% genron:use K-000225
-% genron:use K-000228
 \Needspace{4\baselineskip}
 \begin{defn}[左右剰余類]\label{k263}
 群 $G$ の部分群 $H$ と $a\in G$ に対し $aH=\{ah\mid h\in H\}$，$Ha=\{ha\mid h\in H\}$ をそれぞれ左剰余類，右剰余類という。
 \end{defn}
-% genron:end K-000263
-% genron:begin K-000264
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000052
-% genron:use K-000054
-% genron:use K-000225
-% genron:use K-000228
-% genron:use K-000263
 \Needspace{4\baselineskip}
 \begin{prop}[剰余類の分割]\label{k264}
 $aH=bH\iff a^{-1}b\in H$，$Ha=Hb\iff ba^{-1}\in H$ が成立し，左右剰余類はそれぞれ $G$ の分割をなす。
@@ -70,32 +46,10 @@ $aH=bH\iff a^{-1}b\in H$，$Ha=Hb\iff ba^{-1}\in H$ が成立し，左右剰余�
 \begin{proof}
 $aH=bH$ なら $b\in aH$ から $a^{-1}b\in H$ を得る。逆に $b=ah$（$h\in H$）なら $hH=H$ である（逆包含には $h^{-1}\in H$ を使う）。右剰余類も同様である。関係 $a^{-1}b\in H$ は単位元，逆元，積の閉性から同値関係であり，その同値類は左剰余類である。右側も同様である。
 \end{proof}
-% genron:end K-000264
-% genron:begin K-000265
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000228
-% genron:use K-000263
 \Needspace{4\baselineskip}
 \begin{defn}[正規部分群]\label{k265}
 部分群 $H$ がすべての $a\in G$ について $aHa^{-1}=H$ を満たすとき正規部分群という。
 \end{defn}
-% genron:end K-000265
-% genron:begin K-000266
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000225
-% genron:use K-000265
 \Needspace{4\baselineskip}
 \begin{prop}[正規性の判定]\label{k266}
 正規性は全 $a\in G$ に対する $aH=Ha$ と同値であり，全 $a\in G,h\in H$ に対する $aha^{-1}\in H$ とも同値である。
@@ -103,19 +57,6 @@ $aH=bH$ なら $b\in aH$ から $a^{-1}b\in H$ を得る。逆に $b=ah$（$h\in
 \begin{proof}
 $aHa^{-1}=H$ に右から $a$ を掛ければ最初の同値が従う。包含 $aHa^{-1}\subseteq H$ が任意の $a$ について成立するとき $a^{-1}$ に適用して $a^{-1}Ha\subseteq H$ を得る。両辺を $a$ で共役すれば逆包含となる。
 \end{proof}
-% genron:end K-000266
-% genron:begin K-000267
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000053
-% genron:use K-000225
-% genron:use K-000264
-% genron:use K-000266
 \Needspace{4\baselineskip}
 \begin{thm}[商群]\label{k267}
 群 $G$ の部分群 $H$ が正規であれば，左剰余類の集合 $G/H$ 上の積 $(aH)(bH)=abH$ は代表元によらず定まり，群をなす。逆にこの式で演算が定まるなら $H$ は正規である。
@@ -123,18 +64,6 @@ $aHa^{-1}=H$ に右から $a$ を掛ければ最初の同値が従う。包含 $
 \begin{proof}
 $a'=ah,b'=bk$（$h,k\in H$）なら $a'b'=ab(b^{-1}hb)k$ である。正規性から $(b^{-1}hb)k\in H$ なので $a'b'H=abH$ となる。結合律は $G$ のそれから従い，単位元は $H$，逆元は $a^{-1}H$ である。逆に $hH=H$ なので演算の適法性から $(ha)H=aH$ となる。剰余類の判定から $a^{-1}ha\in H$ であり，正規性が従う。
 \end{proof}
-% genron:end K-000267
-% genron:begin K-000268
-% genron:use K-000001
-% genron:use K-000002
-% genron:use K-000003
-% genron:use K-000004
-% genron:use K-000005
-% genron:use K-000007
-% genron:use K-000017
-% genron:use K-000053
-% genron:use K-000264
-% genron:use K-000267
 \Needspace{4\baselineskip}
 \begin{prop}[標準全射]\label{k268}
 商群への標準全射 $q\colon G\to G/H$ は $q(ab)=q(a)q(b)$，$q(e)=H$，$q^{-1}(\{H\})=H$ を満たす。
@@ -142,5 +71,4 @@ $a'=ah,b'=bk$（$h,k\in H$）なら $a'b'=ab(b^{-1}hb)k$ である。正規性�
 \begin{proof}
 最初の二式は商群の演算の定義による。最後の式は $aH=H$ と $a\in H$ が同値であることによる。
 \end{proof}
-% genron:end K-000268
 \end{document}
