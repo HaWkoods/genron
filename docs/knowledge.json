@@ -24279,6 +24279,882 @@
       "status": "draft",
       "source": "volumes/N-166/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000788",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "ノルム空間",
+      "statement": "K=R または C 上の線形空間 E のノルムは正値性・絶対斉次性・三角不等式を満たす函数 E→[0,∞)．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000560",
+        "K-000643",
+        "K-000644",
+        "K-000720",
+        "K-000699"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000789",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "ノルムが定める距離",
+      "statement": "d(x,y)=∥x−y∥ は距離であり，|∥x∥−∥y∥|≤∥x−y∥．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000722",
+        "K-000724"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000790",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形演算の連続性",
+      "statement": "ノルム空間の加法とスカラー倍はそれぞれ二変数について連続である．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000789",
+        "K-000736",
+        "K-000643",
+        "K-000720"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000791",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "有限直積の最大値ノルム",
+      "statement": "K^n 上の ∥x∥_∞=max_j|x_j| はノルムである．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000644",
+        "K-000720",
+        "K-000072",
+        "K-000110"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000792",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "有界線形写像",
+      "statement": "線形写像 T:E→F に対し ∥Tx∥≤C∥x∥ がすべての x で成立する C≥0 が存在するとき有界という．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000561"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000793",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界線形写像と連続性",
+      "statement": "線形写像は有界であること，連続であること，原点で連続であることが同値．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000792",
+        "K-000789",
+        "K-000736",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000794",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Banach空間",
+      "statement": "ノルムから定まる距離に関して完備なノルム空間を Banach 空間という．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000789",
+        "K-000769"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000795",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "実数体・複素数体と有限直積の完備性",
+      "statement": "K=R,C は絶対値ノルムに関して完備であり，K^n は最大値ノルムに関して完備である．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000794",
+        "K-000791",
+        "K-000770",
+        "K-000717",
+        "K-000719",
+        "K-000720",
+        "K-000738",
+        "K-000709"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000796",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分空間のBanach性",
+      "statement": "Banach 空間の線形部分空間が誘導ノルムで Banach であることと閉であることは同値．",
+      "assumptions": [],
+      "position": [
+        23,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000794",
+        "K-000771",
+        "K-000561"
+      ],
+      "status": "draft",
+      "source": "volumes/N-23/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000797",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "点列コンパクト空間",
+      "statement": "任意の点列が空間内に収束する部分列を持つ距離空間を点列コンパクトという．",
+      "assumptions": [],
+      "position": [
+        87,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000734",
+        "K-000731",
+        "K-000722"
+      ],
+      "status": "draft",
+      "source": "volumes/N-87/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000798",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全有界性とCauchy部分列",
+      "statement": "距離空間が全有界であることと任意の点列が Cauchy 部分列を持つことは同値．",
+      "assumptions": [],
+      "position": [
+        87,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000797",
+        "K-000741",
+        "K-000738",
+        "K-000734",
+        "K-000060",
+        "K-000104",
+        "K-000105",
+        "K-000119"
+      ],
+      "status": "draft",
+      "source": "volumes/N-87/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000799",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "点列コンパクト性と完備・全有界性",
+      "statement": "点列コンパクト性は完備かつ全有界であることと同値．",
+      "assumptions": [],
+      "position": [
+        87,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000797",
+        "K-000798",
+        "K-000739",
+        "K-000769"
+      ],
+      "status": "draft",
+      "source": "volumes/N-87/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000800",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト空間の点列コンパクト性",
+      "statement": "コンパクト距離空間は点列コンパクトである．",
+      "assumptions": [],
+      "position": [
+        87,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000797",
+        "K-000372",
+        "K-000373",
+        "K-000198",
+        "K-000201",
+        "K-000104",
+        "K-000105",
+        "K-000731"
+      ],
+      "status": "draft",
+      "source": "volumes/N-87/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000801",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開被覆のLebesgue数",
+      "statement": "空でない点列コンパクト距離空間の任意の開被覆に対し，ある δ>0 について各 δ 球が被覆のいずれかの元に含まれる．",
+      "assumptions": [],
+      "position": [
+        87,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000797",
+        "K-000726",
+        "K-000725",
+        "K-000734",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-87/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000802",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "距離空間のコンパクト性の特徴づけ",
+      "statement": "距離空間のコンパクト性，点列コンパクト性，完備かつ全有界であることは同値．",
+      "assumptions": [],
+      "position": [
+        87,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000800",
+        "K-000799",
+        "K-000801",
+        "K-000741",
+        "K-000372",
+        "K-000119"
+      ],
+      "status": "draft",
+      "source": "volumes/N-87/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000803",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "縮小写像と不動点",
+      "statement": "T:X→X がある 0≤q<1 に対して d(Tx,Ty)≤q d(x,y) を満たすとき縮小写像．Tx=x となる点を不動点という．",
+      "assumptions": [],
+      "position": [
+        89,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-89/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000804",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "縮小反復の距離評価",
+      "statement": "x_{n+1}=Tx_n なら m>n で d(x_m,x_n)≤q^n d(x_1,x_0)/(1−q)．",
+      "assumptions": [],
+      "position": [
+        89,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000803",
+        "K-000105",
+        "K-000100",
+        "K-000168",
+        "K-000169",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-89/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000805",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Banachの不動点定理",
+      "statement": "空でない完備距離空間の縮小写像は唯一の不動点を持ち，任意の初期点からの反復がそこへ収束する．",
+      "assumptions": [],
+      "position": [
+        89,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000804",
+        "K-000769",
+        "K-000737",
+        "K-000733"
+      ],
+      "status": "draft",
+      "source": "volumes/N-89/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000806",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "完備性を欠く場合の反例",
+      "statement": "(0,1) 上の T(x)=x/2 は縮小写像だが不動点を持たない．",
+      "assumptions": [],
+      "position": [
+        89,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000803",
+        "K-000805",
+        "K-000723"
+      ],
+      "status": "draft",
+      "source": "volumes/N-89/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000807",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "実級数",
+      "statement": "実数列 a_n の級数の収束は部分和 s_N=Σ_{n≤N}a_n の有限極限の存在をいう．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000712",
+        "K-000118",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000808",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "級数のCauchy判定",
+      "statement": "実級数が収束することと任意の ε>0 に対し十分大きい m≥n で |Σ_{k=n}^m a_k|<ε となることは同値．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000807",
+        "K-000770",
+        "K-000739",
+        "K-000738"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000809",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負級数の収束と比較判定",
+      "statement": "非負実級数は部分和が上に有界な場合に限り収束する．0≤a_n≤b_n で Σb_n が収束するなら Σa_n も収束．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000807",
+        "K-000713",
+        "K-000762",
+        "K-000708"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000810",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "等比級数",
+      "statement": "|r|<1 なら Σ_{n=0}∞ r^n=1/(1−r)．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000807",
+        "K-000706",
+        "K-000168",
+        "K-000169",
+        "K-000100",
+        "K-000643"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000811",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "絶対収束",
+      "statement": "Σ|a_n| が有限の和に収束するとき Σa_n は絶対収束するという．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000807",
+        "K-000643"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000812",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "絶対収束級数の収束",
+      "statement": "絶対収束級数は収束する．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000811",
+        "K-000808",
+        "K-000644"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000813",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "絶対収束級数の並べ替え",
+      "statement": "絶対収束級数は正整数の任意の置換による並べ替えで絶対収束し，同じ和を持つ．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000812",
+        "K-000809",
+        "K-000039",
+        "K-000110",
+        "K-000072"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000814",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "比による絶対収束判定",
+      "statement": "ある q<1 と N について |a_{n+1}|≤q|a_n| (n≥N) なら Σa_n は絶対収束．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000810",
+        "K-000811",
+        "K-000809",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000815",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "交代級数の収束",
+      "statement": "非負減少実数列 b_n→0 に対し Σ(−1)^{n−1}b_n は収束し，N 項までの誤差は b_{N+1} 以下．",
+      "assumptions": [],
+      "position": [
+        144,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000807",
+        "K-000713",
+        "K-000764",
+        "K-000712"
+      ],
+      "status": "draft",
+      "source": "volumes/N-144/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
     }
   ],
   "notes": [
@@ -24639,7 +25515,7 @@
       "number": 23,
       "title": "ノルム空間とBanach空間",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         85,
         15,
@@ -24649,7 +25525,8 @@
         "ノルム・有界線形写像・完備性"
       ],
       "treatise": "T-23",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 24,
@@ -25629,7 +26506,7 @@
       "number": 87,
       "title": "距離空間のコンパクト性",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         85,
         86,
@@ -25639,7 +26516,8 @@
         "点列コンパクト性との同値・選択の明示"
       ],
       "treatise": "T-13",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 88,
@@ -25660,7 +26538,7 @@
       "number": 89,
       "title": "縮小写像と不動点",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         85
       ],
@@ -25668,7 +26546,8 @@
         "Banach不動点定理・反復近似"
       ],
       "treatise": "T-13",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 90,
@@ -26497,15 +27376,17 @@
       "number": 144,
       "title": "実級数",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        22
+        22,
+        85
       ],
       "goals": [
         "収束判定・絶対収束・並べ替え"
       ],
       "treatise": "T-22",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 145,

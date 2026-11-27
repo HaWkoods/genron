@@ -1,0 +1,90 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{縮小写像}
+% genron:begin K-000803
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000736
+\begin{defn}[縮小写像と不動点]
+距離空間 $(X,d)$ の自己写像 $T$ がある実数 $0\leq q<1$ に対して
+\[
+ d(Tx,Ty)\leq qd(x,y)\quad(x,y\in X)
+\]
+を満たすとき縮小写像という．$T(x)=x$ を満たす $x$ を $T$ の不動点という．縮小写像は連続である．
+\end{defn}
+% genron:end K-000803
+% genron:begin K-000804
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000803
+% genron:use K-000105
+% genron:use K-000100
+% genron:use K-000168
+% genron:use K-000169
+% genron:use K-000706
+\begin{prop}[縮小反復の距離評価]
+縮小写像 $T$ と $x_0\in X$ に対し $x_{n+1}=T(x_n)$ と定める．$m>n\geq0$ ならば
+\[
+ d(x_m,x_n)\leq\frac{q^n}{1-q}d(x_1,x_0)
+\]
+であり，$(x_n)$ は Cauchy 列である．
+\end{prop}
+\begin{proof}
+帰納法によって $d(x_{k+1},x_k)\leq q^k d(x_1,x_0)$ である．三角不等式を繰り返し，有限等比和 $\sum_{k=n}^{m-1}q^k=q^n(1-q^{m-n})/(1-q)$ を用いれば不等式を得る．$q=0$ なら $n\geq1$ で右辺は零である．$0<q<1$ なら $q^{-1}=1+h$ ($h>0$) とおくと，帰納法によって $(1+h)^n\geq1+nh$ である．従って $q^n\leq1/(1+nh)$ は Archimedes 性により任意に小さくできる．これから Cauchy 性が従う．
+\end{proof}
+% genron:end K-000804
+% genron:begin K-000805
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000804
+% genron:use K-000769
+% genron:use K-000737
+% genron:use K-000733
+\begin{prop}[Banachの不動点定理]
+空でない完備距離空間の縮小写像 $T$ はただ一つの不動点 $p$ を持つ．任意の $x_0$ から始めた反復列は $p$ に収束し，
+\[
+ d(x_n,p)\leq \frac{q^n}{1-q}d(x_1,x_0)
+\]
+を満たす．
+\end{prop}
+\begin{proof}
+前命題により反復列は Cauchy 列であり，完備性によって $p$ に収束する．$T$ の連続性から $Tx_n\to Tp$ であるが $Tx_n=x_{n+1}\to p$ なので極限の一意性により $Tp=p$ である．別の不動点 $p'$ があれば $d(p,p')=d(Tp,Tp')\leq qd(p,p')$ であり $q<1$ から $d(p,p')=0$ となる．誤差評価は前命題の不等式で $m\to\infty$ とすれば従う．実際，$|d(x_m,x_n)-d(p,x_n)|\leq d(x_m,p)\to0$ である．
+\end{proof}
+% genron:end K-000805
+% genron:begin K-000806
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000803
+% genron:use K-000805
+% genron:use K-000723
+\begin{example}[完備性を欠く場合の反例]
+実数の開区間 $(0,1)$ 上で $T(x)=x/2$ とおくと，$T$ は縮小写像であるが不動点を持たない．
+\end{example}
+\begin{proof}
+$d(Tx,Ty)=d(x,y)/2$ である．不動点の方程式 $x=x/2$ の解は $0$ だけであるが，$0$ は $(0,1)$ に属さない．従って完備性を外して不動点定理を述べることはできない．
+\end{proof}
+% genron:end K-000806

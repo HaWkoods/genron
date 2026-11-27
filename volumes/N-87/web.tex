@@ -1,0 +1,132 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{点列コンパクト性}
+% genron:begin K-000797
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000734
+% genron:use K-000731
+% genron:use K-000722
+\begin{defn}[点列コンパクト空間]
+距離空間 $X$ の任意の点列が $X$ 内の点に収束する部分列を持つとき，$X$ を点列コンパクトという．
+\end{defn}
+% genron:end K-000797
+% genron:begin K-000798
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000797
+% genron:use K-000741
+% genron:use K-000738
+% genron:use K-000734
+% genron:use K-000060
+% genron:use K-000104
+% genron:use K-000105
+% genron:use K-000119
+\begin{prop}[全有界性とCauchy部分列]
+距離空間が全有界であるための必要十分条件は，任意の点列が Cauchy 部分列を持つことである．
+\end{prop}
+\begin{proof}
+全有界とする．各正整数 $k$ について半径 $2^{-k}$ の有限開球被覆を選択公理によって固定し，その球を有限列として順序付ける．点列 $(x_n)$ に対し $I_0$ を正整数全体とする．無限集合 $I_{k-1}$ が得られているとき，有限被覆の中には $I_{k-1}$ に属する添字の項を無限個含む球がある．そのような最初の球に属する添字全体を $I_k$ とする．これにより $I_k\subseteq I_{k-1}$ なる無限集合列が定まる．$n_0=0$ とし，$I_k$ の元で $n_{k-1}$ より大きい最小のものを $n_k$ とする．$p,q\geq k$ なら $n_p,n_q\in I_k$ なので $d(x_{n_p},x_{n_q})<2^{1-k}$ であり，Cauchy 部分列を得る．
+
+逆に全有界でないならば，ある $\varepsilon>0$ について有限個の半径 $\varepsilon$ の開球では空間を覆えない．選択函数を固定し，既に選んだ点を中心とする球の外から次の点を取る操作を反復すると，$m\ne n$ なら $d(x_m,x_n)\geq\varepsilon$ となる点列を得る．これは Cauchy 部分列を持たない．
+\end{proof}
+% genron:end K-000798
+% genron:begin K-000799
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000797
+% genron:use K-000798
+% genron:use K-000739
+% genron:use K-000769
+\begin{prop}[点列コンパクト性と完備・全有界性]
+距離空間が点列コンパクトであることと，完備かつ全有界であることは同値である．
+\end{prop}
+\begin{proof}
+点列コンパクトならすべての点列が収束部分列，従って Cauchy 部分列を持つので全有界である．任意の Cauchy 列も収束部分列を持ち，その極限へ列全体が収束するから完備である．逆に完備かつ全有界ならば任意の点列は Cauchy 部分列を持ち，その部分列は完備性により収束する．
+\end{proof}
+% genron:end K-000799
+\section{開被覆によるコンパクト性}
+% genron:begin K-000800
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000797
+% genron:use K-000372
+% genron:use K-000373
+% genron:use K-000198
+% genron:use K-000201
+% genron:use K-000104
+% genron:use K-000105
+% genron:use K-000731
+\begin{prop}[コンパクト空間の点列コンパクト性]
+コンパクト距離空間は点列コンパクトである．
+\end{prop}
+\begin{proof}
+点列 $(x_n)$ に対し $F_m=\overline{\{x_n\mid n\geq m\}}$ とおく．$F_m$ は空でない閉集合の減少列である．従って有限交叉性とコンパクト性により $x\in\bigcap_m F_m$ が存在する．$n_0=0$ とし，$n_k>n_{k-1}$ かつ $d(x,x_{n_k})<1/k$ となる最小の正整数を取る．閉包の近傍による判定からこのような整数が存在する．従って $x_{n_k}\to x$ である．
+\end{proof}
+% genron:end K-000800
+% genron:begin K-000801
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000797
+% genron:use K-000726
+% genron:use K-000725
+% genron:use K-000734
+% genron:use K-000060
+\begin{prop}[開被覆のLebesgue数]
+空でない点列コンパクト距離空間 $X$ の開被覆 $\mathcal U$ に対して，ある $\delta>0$ が存在し，すべての $x\in X$ について $B(x,\delta)$ が $\mathcal U$ のいずれかの元に含まれる．
+\end{prop}
+\begin{proof}
+そのような $\delta$ が存在しないと仮定する．各正整数 $n$ に対し $B(x_n,1/n)$ がどの被覆集合にも含まれない点 $x_n$ を選択公理によって取る．収束部分列 $x_{n_k}\to x$ を取り，$x\in U\in\mathcal U$ とする．ある $r>0$ について $B(x,r)\subseteq U$ である．十分大きい $k$ に対し $d(x_{n_k},x)<r/2$ かつ $1/n_k<r/2$ となるので $B(x_{n_k},1/n_k)\subseteq B(x,r)\subseteq U$ となり矛盾する．
+\end{proof}
+% genron:end K-000801
+% genron:begin K-000802
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000800
+% genron:use K-000799
+% genron:use K-000801
+% genron:use K-000741
+% genron:use K-000372
+% genron:use K-000119
+\begin{prop}[距離空間のコンパクト性の特徴づけ]
+距離空間について，コンパクト性，点列コンパクト性，完備かつ全有界であることは互いに同値である．
+\end{prop}
+\begin{proof}
+既にコンパクト性から点列コンパクト性，点列コンパクト性と完備・全有界性の同値を示した．空間が空の場合はすべての条件を満たす．空でない点列コンパクト空間の任意の開被覆に対し Lebesgue 数 $\delta>0$ を取る．全有界性により有限個の半径 $\delta$ の開球で空間を覆える．各球は被覆のある元に含まれるので，その元を有限個取れば有限部分被覆を得る．
+\end{proof}
+% genron:end K-000802

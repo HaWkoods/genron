@@ -1,0 +1,203 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{ノルムと距離}
+% genron:begin K-000788
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000560
+% genron:use K-000643
+% genron:use K-000644
+% genron:use K-000720
+% genron:use K-000699
+\begin{defn}[ノルム空間]
+$K$ を実数体又は複素数体とする．$K$ 上の線形空間 $E$ における実数値函数 $\|\cdot\|$ が任意の $x,y\in E,\lambda\in K$ について
+\[
+ \|x\|\geq0,\quad \|x\|=0\Leftrightarrow x=0,\quad
+ \|\lambda x\|=|\lambda|\|x\|,\quad
+ \|x+y\|\leq\|x\|+\|y\|
+\]
+を満たすとき，これを $E$ 上のノルムといい，$(E,\|\cdot\|)$ をノルム空間という．
+\end{defn}
+% genron:end K-000788
+% genron:begin K-000789
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000722
+% genron:use K-000724
+\begin{prop}[ノルムが定める距離]
+ノルム空間 $E$ において $d(x,y)=\|x-y\|$ と定めると距離となる．また
+\[
+ |\|x\|-\|y\||\leq\|x-y\|
+\]
+である．
+\end{prop}
+\begin{proof}
+正値性はノルムの第一条件により，対称性は $\|-v\|=\|v\|$ による．$x-z=(x-y)+(y-z)$ と三角不等式から距離の三角不等式を得る．後の不等式は $d(x,0)=\|x\|$ に逆三角不等式を適用したものである．
+\end{proof}
+% genron:end K-000789
+% genron:begin K-000790
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000789
+% genron:use K-000736
+% genron:use K-000643
+% genron:use K-000720
+\begin{prop}[線形演算の連続性]
+ノルム空間の加法及びスカラー倍は連続である．ここで二変数の空間には距離の和を入れる．
+\end{prop}
+\begin{proof}
+加法について
+\[
+ \|(x'+y')-(x+y)\|\leq\|x'-x\|+\|y'-y\|
+\]
+である．スカラー倍については
+\[
+ \|\lambda'x'-\lambda x\|
+ \leq |\lambda'|\|x'-x\|+|\lambda'-\lambda|\|x\|.
+\]
+$|\lambda'-\lambda|<1$ なら $|\lambda'|\leq|\lambda|+1$ である．従って右辺は二変数の距離が十分小さければ任意に小さくなる．なお二つの距離の和が直積上の距離となることは各公理から直ちに従う．
+\end{proof}
+% genron:end K-000790
+% genron:begin K-000791
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000644
+% genron:use K-000720
+% genron:use K-000072
+% genron:use K-000110
+\begin{example}[有限直積の最大値ノルム]
+正整数 $n$ に対し $K^n$ 上の
+\[
+ \|x\|_\infty=\max_{1\leq j\leq n}|x_j|
+\]
+はノルムである．
+\end{example}
+\begin{proof}
+最大値は有限非空集合の元なので存在する．全成分が零である場合に限り値は零であり，絶対斉次性は絶対値の乗法性から従う．各成分について $|x_j+y_j|\leq|x_j|+|y_j|\leq\|x\|_\infty+\|y\|_\infty$ であるから三角不等式も成立する．
+\end{proof}
+% genron:end K-000791
+\section{線形写像と完備性}
+% genron:begin K-000792
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000561
+\begin{defn}[有界線形写像]
+ノルム空間 $E,F$ の間の線形写像 $T:E\to F$ について，ある実数 $C\geq0$ が存在してすべての $x\in E$ に対し $\|Tx\|\leq C\|x\|$ となるとき，$T$ を有界線形写像という．
+\end{defn}
+% genron:end K-000792
+% genron:begin K-000793
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000792
+% genron:use K-000789
+% genron:use K-000736
+% genron:use K-000706
+\begin{prop}[有界線形写像と連続性]
+線形写像 $T:E\to F$ について次は同値である．
+
+(1) $T$ は有界である．
+
+(2) $T$ は連続である．
+
+(3) $T$ は $0$ で連続である．
+\end{prop}
+\begin{proof}
+(1) なら $\|Tx-Ty\|\leq C\|x-y\|$ であり，任意の点で連続となる．(2) から (3) は明らかである．(3) と仮定すれば，ある $\delta>0$ について $\|x\|<\delta$ なら $\|Tx\|<1$ となる．$x\ne0$ に対し $u=\delta x/(2\|x\|)$ とおけば $\|u\|=\delta/2$ なので $\|Tx\|<2\|x\|/\delta$ である．$x=0$ でも非狭義不等式は成立する．従って (1) を得る．
+\end{proof}
+% genron:end K-000793
+% genron:begin K-000794
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000789
+% genron:use K-000769
+\begin{defn}[Banach空間]
+ノルムによって定まる距離に関して完備なノルム空間を Banach 空間という．
+\end{defn}
+% genron:end K-000794
+% genron:begin K-000795
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000794
+% genron:use K-000791
+% genron:use K-000770
+% genron:use K-000717
+% genron:use K-000719
+% genron:use K-000720
+% genron:use K-000738
+% genron:use K-000709
+\begin{prop}[実数体・複素数体と有限直積の完備性]
+$K=\mathbb R,\mathbb C$ は絶対値ノルムに関して Banach 空間であり，任意の正整数 $n$ について $K^n$ は最大値ノルムに関して Banach 空間である．
+\end{prop}
+\begin{proof}
+実数については実数体の距離完備性による．複素 Cauchy 列 $z_n=a_n+ib_n$ に対して $|a_n-a_m|,|b_n-b_m|\leq |z_n-z_m|$ なので両成分は実 Cauchy 列である．極限を $a,b$ とすれば $|z_n-(a+ib)|\leq |a_n-a|+|b_n-b|$ なので収束する．有限直積の Cauchy 列についても各成分は Cauchy 列であり，成分ごとの極限を取る．成分が有限個しかないので，同じ $N$ 以降で全成分の誤差を $\varepsilon$ 未満にできる．従って最大値ノルムで収束する．
+\end{proof}
+% genron:end K-000795
+% genron:begin K-000796
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000794
+% genron:use K-000771
+% genron:use K-000561
+\begin{prop}[閉部分空間のBanach性]
+Banach 空間 $E$ の線形部分空間 $F$ が誘導ノルムについて Banach 空間であるための必要十分条件は $F$ が閉であることである．
+\end{prop}
+\begin{proof}
+誘導ノルムから得る距離は $E$ の距離の制限に等しい．従って閉部分空間と距離完備性に関する命題を適用すればよい．
+\end{proof}
+% genron:end K-000796

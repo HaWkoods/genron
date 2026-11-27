@@ -1,0 +1,184 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{級数の収束}
+% genron:begin K-000807
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000712
+% genron:use K-000118
+% genron:use K-000105
+\begin{defn}[実級数]
+実数列 $(a_n)$ に対し $s_N=\sum_{n=1}^N a_n$ を第 $N$ 部分和という．部分和列が実数 $s$ に収束するとき，級数 $\sum_{n=1}^\infty a_n$ は収束するといい，その和を $s$ とする．
+\end{defn}
+% genron:end K-000807
+% genron:begin K-000808
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000770
+% genron:use K-000739
+% genron:use K-000738
+\begin{prop}[級数のCauchy判定]
+実級数 $\sum_n a_n$ が収束するための必要十分条件は，任意の $\varepsilon>0$ に対してある正整数 $N$ が存在し，$m\geq n\geq N$ ならば
+\[
+ \left|\sum_{k=n}^m a_k\right|<\varepsilon
+\]
+となることである．特に収束級数の一般項は零に収束する．
+\end{prop}
+\begin{proof}
+$s_m-s_{n-1}=\sum_{k=n}^m a_k$ であるから条件は部分和列の Cauchy 性に等しい．実数体の完備性により Cauchy 性は収束と同値である．$m=n$ の場合を取れば一般項は零に収束する．
+\end{proof}
+% genron:end K-000808
+% genron:begin K-000809
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000713
+% genron:use K-000762
+% genron:use K-000708
+\begin{prop}[非負級数の収束と比較判定]
+非負実数列 $(a_n)$ の級数は部分和列が上に有界であるとき，かつそのときに限り収束する．また十分大きい $n$ について $0\leq a_n\leq b_n$ が成り立ち $\sum_n b_n$ が収束するならば $\sum_n a_n$ も収束する．
+\end{prop}
+\begin{proof}
+非負の場合部分和列は増加するので，上に有界なら単調有界数列の収束によって収束する．逆に収束数列は有界である．比較については初めの有限項を除くと $\sum_{n=N}^m a_n\leq\sum_{n=N}^m b_n$ であり，後者の部分和は上に有界であるから結論を得る．
+\end{proof}
+% genron:end K-000809
+% genron:begin K-000810
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000706
+% genron:use K-000168
+% genron:use K-000169
+% genron:use K-000100
+% genron:use K-000643
+\begin{prop}[等比級数]
+$r\in\mathbb R$ が $|r|<1$ を満たすならば
+\[
+ \sum_{n=0}^\infty r^n=\frac1{1-r}
+\]
+である．
+\end{prop}
+\begin{proof}
+有限和に $1-r$ を掛けると $1-r^{N+1}$ となる．$0<|r|<1$ のとき $h=|r|^{-1}-1>0$ とおくと，帰納法で $(1+h)^n\geq1+nh$ を得るので $|r|^n\leq(1+nh)^{-1}\to0$ である．$r=0$ の場合も同様に公式が成立する．従って有限和の公式で極限を取ればよい．
+\end{proof}
+% genron:end K-000810
+\section{絶対収束と順序交換}
+% genron:begin K-000811
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000643
+\begin{defn}[絶対収束]
+実級数 $\sum_n a_n$ について $\sum_n|a_n|$ が収束するとき，もとの級数は絶対収束するという．
+\end{defn}
+% genron:end K-000811
+% genron:begin K-000812
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000811
+% genron:use K-000808
+% genron:use K-000644
+\begin{prop}[絶対収束級数の収束]
+絶対収束級数は収束する．
+\end{prop}
+\begin{proof}
+任意の $m\geq n$ について $\left|\sum_{k=n}^m a_k\right|\leq\sum_{k=n}^m |a_k|$ である．絶対値級数の Cauchy 性からもとの級数の Cauchy 性が従い，従って収束する．
+\end{proof}
+% genron:end K-000812
+% genron:begin K-000813
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000812
+% genron:use K-000809
+% genron:use K-000039
+% genron:use K-000110
+% genron:use K-000072
+\begin{prop}[絶対収束級数の並べ替え]
+絶対収束級数 $\sum_n a_n=s$ と正整数集合の任意の全単射 $\sigma$ に対し，$\sum_n a_{\sigma(n)}$ は絶対収束し，その和は $s$ である．
+\end{prop}
+\begin{proof}
+絶対値の並べ替えの任意の有限部分和は，その添字をすべて含む元の絶対値級数の初項からの部分和以下である．従って並べ替えは絶対収束する．$\varepsilon>0$ に対し $\sum_{k>N}|a_k|<\varepsilon$ となる $N$ を取る．全射性により $1,\ldots,N$ が $\sigma(1),\ldots,\sigma(M)$ に含まれる $M$ が存在する．$m\geq M$ について，並べ替えの第 $m$ 部分和と $s$ の差は，選ばれなかった添字に対応する項の和であり，その絶対値は $\sum_{k>N}|a_k|$ 以下である．厳密には，もとの第 $L$ 部分和（$L\geq\max_{j\leq m}\sigma(j)$）との差を取って同じ不等式を得た後，$L$ の極限を取ればよい．
+\end{proof}
+% genron:end K-000813
+% genron:begin K-000814
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000810
+% genron:use K-000811
+% genron:use K-000809
+% genron:use K-000100
+\begin{prop}[比による絶対収束判定]
+ある $0\leq q<1$ と正整数 $N$ について，すべての $n\geq N$ で $|a_{n+1}|\leq q|a_n|$ が成り立つならば $\sum_n a_n$ は絶対収束する．
+\end{prop}
+\begin{proof}
+帰納法で $|a_{N+k}|\leq q^k|a_N|$ である．等比級数の収束と比較判定を適用すれば絶対値級数の収束を得る．
+\end{proof}
+% genron:end K-000814
+% genron:begin K-000815
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000713
+% genron:use K-000764
+% genron:use K-000712
+\begin{prop}[交代級数の収束]
+非負減少数列 $(b_n)$ が零に収束するならば交代級数 $\sum_{n\geq1}(-1)^{n-1}b_n$ は収束する．第 $N$ 部分和 $s_N$ と和 $s$ の差は $|s-s_N|\leq b_{N+1}$ を満たす．
+\end{prop}
+\begin{proof}
+偶数番の部分和列は $s_{2k+2}-s_{2k}=b_{2k+1}-b_{2k+2}\geq0$ なので増加する．奇数番の部分和列は同様に減少する．各偶数番部分和は対応する奇数番部分和以下であり，偶数番は $s_1$ 以下，奇数番は $s_2$ 以上である．従って双方は収束し，差 $s_{2k-1}-s_{2k}=b_{2k}$ が零に収束するので極限は同じである．また和は任意の隣接する二部分和の間にあり，その差の絶対値は $b_{N+1}$ である．
+\end{proof}
+% genron:end K-000815
