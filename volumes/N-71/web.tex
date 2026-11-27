@@ -1,0 +1,85 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. II：局所化と分数体の記述を確認．既出の局所化を再構成せず普遍性を詳述する．
+\section{分数表示と普遍性}
+% genron:begin K-000568
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000454
+% genron:use K-000450
+% genron:use K-000444
+% genron:use K-000452
+% genron:use K-000451
+\begin{prop}[分数体の分数表示]
+整域 $A$ の分数体 $\operatorname{Frac}(A)$ の任意の元は $a/b$（$a,b\in A$，$b\ne0$）と表示される．このとき
+\[
+a/b=c/d\quad\Longleftrightarrow\quad ad=bc
+\]
+である．標準単射により $A$ を部分環と同一視すると $a/b=ab^{-1}$ である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000454}で構成した分数体は $A\setminus\{0\}$ による局所化である．\GenronRef{K-000450}の同値関係はある非零元 $u$ について $u(ad-bc)=0$ となることである．整域性によりこれは $ad=bc$ と同値である．局所化の積により $b/1$ の逆元は $1/b$ なので最後の等式を得る．
+\end{proof}
+% genron:end K-000568
+% genron:begin K-000569
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000568
+% genron:use K-000453
+% genron:use K-000443
+% genron:use K-000251
+% genron:use K-000329
+% genron:use K-000282
+\begin{prop}[分数体の普遍性]
+整域 $A$，体 $L$ 及び単射環準同型 $f:A\to L$ に対し，標準単射 $i:A\to\operatorname{Frac}(A)$ について $F\circ i=f$ を満たす環準同型 $F:\operatorname{Frac}(A)\to L$ がただ一つ存在する．$F$ は単射であり，$F(a/b)=f(a)f(b)^{-1}$ である．
+\end{prop}
+\begin{proof}
+$b\ne0$ なら $f(b)\ne0$ であり，$L$ では単元である．\GenronRef{K-000453}により延長が一意に存在する．分数表示からその値は主張の通りである．$F(a/b)=0$ なら $f(a)=0$，従って $a=0$ であり，核は零である．加法について準同型なので単射となる．
+\end{proof}
+% genron:end K-000569
+% genron:begin K-000570
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000569
+% genron:use K-000252
+\begin{prop}[分数体の特徴づけ]
+体 $L$ と単射環準同型 $f:A\to L$ が与えられ，$L$ の全ての元が $f(a)f(b)^{-1}$（$a,b\in A$，$b\ne0$）と書けるなら，$f$ を延長する $\operatorname{Frac}(A)\to L$ の同型がただ一つ存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000569}の延長は仮定により全射である．同命題の単射性と一意性から結論を得る．
+\end{proof}
+% genron:end K-000570
+% genron:begin K-000571
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000569
+% genron:use K-000454
+% genron:use K-000443
+% genron:use K-000251
+% genron:use K-000252
+\begin{prop}[分数体と最小の部分体]
+体 $L$ の部分環 $A$ を含む最小の部分体は $\{ab^{-1}\mid a,b\in A,\ b\ne0\}$ である．この部分体は $A$ の分数体と同型である．
+\end{prop}
+\begin{proof}
+包含写像を \GenronRef{K-000569}に適用する．延長の像は体であり，表示式から指定した集合に等しい．$A$ を含む任意の部分体は全ての非零 $b\in A$ の逆元と $a$ との積を含むのでこの像を含む．
+\end{proof}
+% genron:end K-000571

@@ -1,0 +1,114 @@
+% Web専用原稿．
+% Eisenbud, Commutative Algebra with a View Toward Algebraic Geometry, §1, Theorem 1.2：最高次係数を用いる証明を確認．有限次数部分を有限生成加群として扱う．
+\section{多項式環のNoether性}
+% genron:begin K-000586
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000351
+% genron:use K-000352
+% genron:use K-000354
+% genron:use K-000327
+% genron:use K-000249
+\begin{prop}[最高次係数のイデアル]
+可換環 $A$ と $A[X]$ のイデアル $I$ を考える．$I$ の非零多項式の最高次係数及び $0$ の全体 $L$ は $A$ のイデアルである．
+\end{prop}
+\begin{proof}
+非零 $a,b\in L$ を取り，それぞれ最高次係数が $a,b$ である $f,g\in I$ を選ぶ．次数を $r,s$ とし，$m=\max(r,s)$ とおく．$X^{m-r}f+X^{m-s}g\in I$ の $m$ 次係数は $a+b$ である．$a+b\ne0$ ならこれが最高次係数であり，$a+b=0$ なら定義により $L$ に属する．$c\in A$ に対して $ca\ne0$ なら $cf$ の最高次係数は $ca$ であり，$ca=0$ の場合も $ca\in L$ である．特に $c=-1$ と取れば逆元について閉じる．従って $L$ はイデアルである．
+\end{proof}
+% genron:end K-000586
+% genron:begin K-000587
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000352
+% genron:use K-000354
+% genron:use K-000335
+% genron:use K-000338
+% genron:use K-000467
+% genron:use K-000456
+% genron:use K-000462
+\begin{prop}[有界次数多項式の加群]
+可換Noether環 $A$ と自然数 $d$ を考える．零多項式及び次数が $d$ 未満の多項式の全体を $P_d$ とすると，係数ごとの加法とスカラー倍について $P_d$ は Noether $A$ 加群である．
+\end{prop}
+\begin{proof}
+係数表示により $A^d\to P_d$，$(a_0,\ldots,a_{d-1})\mapsto\sum_{i=0}^{d-1}a_iX^i$ は $A$ 加群同型である．$d=0$ の場合は零加群である．標準座標の有限個の元が $A^d$ を生成するから \GenronRef{K-000467}により Noether である．加群同型は部分加群の昇鎖を相互に移すので $P_d$ も Noether である．
+\end{proof}
+% genron:end K-000587
+% genron:begin K-000588
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000586
+% genron:use K-000587
+% genron:use K-000463
+% genron:use K-000466
+% genron:use K-000327
+% genron:use K-000328
+% genron:use K-000354
+% genron:use K-000104
+\begin{prop}[Hilbert基底定理]
+$A$ が可換Noether環ならば，多項式環 $A[X]$ も Noether 環である．
+\end{prop}
+\begin{proof}
+$I$ を $A[X]$ の任意のイデアルとする．\GenronRef{K-000586}のイデアル $L$ が零なら $I=0$ であり，有限生成である．$L\ne0$ とする．\GenronRef{K-000463}により $L$ は有限個の非零元 $a_1,\ldots,a_r$ により生成される．各 $i$ について最高次係数 $a_i$ を持つ $f_i\in I$ を取り，$d=\max_i\deg f_i$ とおく．$I\cap P_d$ は $P_d$ の部分加群なので \GenronRef{K-000587}及び \GenronRef{K-000463}により有限個の $g_1,\ldots,g_s$ によって $A$ 加群として生成される．$J$ を $f_1,\ldots,f_r,g_1,\ldots,g_s$ の生成する $A[X]$ のイデアルとする．$J\subseteq I$ である．
+
+$I$ の非零元 $f$ が $J$ に属することを次数 $n=\deg f$ に関する強い帰納法で示す．$n<d$ なら $f$ は $g_j$ の $A$ 線形結合である．$n\ge d$ とする．$f$ の最高次係数 $a$ は $L$ に属するので $a=\sum_i c_i a_i$（$c_i\in A$）と書ける．
+\[
+h=f-\sum_{i=1}^r c_i X^{n-\deg f_i}f_i
+\]
+は $I$ に属し，零であるか次数が $n$ 未満である．前者では $h\in J$ であり，後者では帰納法により $h\in J$ である．従って $f\in J$ となる．以上から $I=J$ であり，$I$ は有限生成である．全てのイデアルが有限生成であることから \GenronRef{K-000463}及び \GenronRef{K-000466}により結論を得る．
+\end{proof}
+% genron:end K-000588
+% genron:begin K-000589
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000588
+% genron:use K-000100
+% genron:use K-000351
+\begin{prop}[有限変数多項式環のNoether性]
+$A$ が可換Noether環なら，有限個の変数を持つ反復多項式環 $A[X_1]\cdots[X_n]$ は Noether 環である．
+\end{prop}
+\begin{proof}
+$n=0$ では $A$ 自身である．$n$ 変数の場合が Noether なら \GenronRef{K-000588}をその環に適用して $n+1$ 変数の場合を得る．帰納法により成立する．
+\end{proof}
+% genron:end K-000589
+% genron:begin K-000590
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000589
+% genron:use K-000353
+% genron:use K-000332
+% genron:use K-000333
+% genron:use K-000462
+% genron:use K-000466
+% genron:use K-000251
+\begin{prop}[有限生成可換代数のNoether性]
+$A$ を可換Noether環，$B$ を可換環とし，環準同型 $u:A\to B$ を考える．$B$ が $u(A)$ と有限個の元 $b_1,\ldots,b_n$ により部分環として生成されるなら $B$ は Noether 環である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000353}を繰り返し適用すると，$u$ を延長し $X_i$ を $b_i$ に移す環準同型 $v:A[X_1]\cdots[X_n]\to B$ を得る．像は $u(A)$ と $b_i$ を含む部分環なので $v$ は全射である．\GenronRef{K-000589}により始域は Noether 環である．商環のイデアルの昇鎖は標準全射の逆像によって始域のイデアルの昇鎖となるから停止する．\GenronRef{K-000332}により $B$ はその商環と同型であり Noether である．
+\end{proof}
+% genron:end K-000590

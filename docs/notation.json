@@ -785,7 +785,7 @@
       {
         "tex": "V,\\ W",
         "label": "線形空間（変数）",
-        "id": null
+        "id": "K-000560"
       },
       {
         "tex": "\\dim_K V",
@@ -795,12 +795,12 @@
       {
         "tex": "\\operatorname{span}_K S",
         "label": "線形包",
-        "id": null
+        "id": "K-000563"
       },
       {
         "tex": "\\mathcal L_K(V,W)",
         "label": "線形写像全体（純代数）",
-        "id": null
+        "id": "K-000561"
       },
       {
         "tex": "V^*",

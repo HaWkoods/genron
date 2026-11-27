@@ -1,0 +1,145 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. III §1, pp.117–118, §4, p.135：加群・基底の記述を確認．基底の存在は後続に委ねる．
+\section{線形空間と部分空間}
+% genron:begin K-000560
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000443
+% genron:use K-000335
+\begin{defn}[線形空間]
+体 $K$ 上の左加群を $K$ 上の線形空間（ベクトル空間）という．その元をベクトル，$K$ の元をスカラーという．以下 $K$ は体とする．
+\end{defn}
+% genron:end K-000560
+% genron:begin K-000561
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000337
+% genron:use K-000338
+\begin{defn}[部分空間と線形写像]
+線形空間 $V$ の部分加群を部分空間という．二つの線形空間 $V,W$ の間の $K$ 加群準同型を線形写像といい，その全体を $\mathcal L_K(V,W)$ と書く．
+\end{defn}
+% genron:end K-000561
+% genron:begin K-000562
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000561
+% genron:use K-000336
+% genron:use K-000337
+\begin{prop}[部分空間の判定]
+線形空間 $V$ の空でない部分集合 $U$ が部分空間であるための必要十分条件は，任意の $x,y\in U$ 及び $a,b\in K$ に対し $ax+by\in U$ となることである．
+\end{prop}
+\begin{proof}
+必要性は定義による．逆に $x\in U$ を取ると $0x+0x=0$ より $0\in U$ である．$a=b=1$ と取れば和について閉じ，$a=-1,b=0$ と取れば逆元について閉じる．$b=0$ と取ればスカラー倍について閉じる．従って $U$ は部分加群である．
+\end{proof}
+% genron:end K-000562
+\section{生成と線形独立}
+% genron:begin K-000563
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000342
+% genron:use K-000118
+\begin{defn}[線形包]
+$S\subseteq V$ とする．有限線形結合
+\[
+\sum_{i=1}^r a_ix_i\quad(r\in\mathbb N,\ a_i\in K,\ x_i\in S)
+\]
+の全体を $S$ の線形包といい，$\operatorname{span}_K S$ と書く．空和は $0$ とする．線形包が $V$ に等しいとき $S$ は $V$ を生成するという．
+\end{defn}
+% genron:end K-000563
+% genron:begin K-000564
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000563
+% genron:use K-000561
+% genron:use K-000342
+\begin{prop}[線形包の最小性]
+$\operatorname{span}_K S$ は $S$ を含む最小の部分空間である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000342}において環を $K$ とした場合である．生成部分加群は部分空間であり，$S$ を含む全ての部分空間に含まれる．
+\end{proof}
+% genron:end K-000564
+% genron:begin K-000565
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000118
+\begin{defn}[線形独立]
+$S\subseteq V$ が線形独立であるとは，任意の相異なる $x_1,\ldots,x_r\in S$ と $a_1,\ldots,a_r\in K$ に対して
+\[
+\sum_{i=1}^r a_ix_i=0\quad\Longrightarrow\quad a_1=\cdots=a_r=0
+\]
+が成り立つことをいう．そうでないとき線形従属という．空集合は線形独立である．
+\end{defn}
+% genron:end K-000565
+% genron:begin K-000566
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000565
+% genron:use K-000563
+% genron:use K-000443
+% genron:use K-000444
+\begin{prop}[線形独立集合への一元添加]
+$S$ を線形独立集合とし，$x\in V\setminus S$ とする．$S\cup\{x\}$ が線形独立であることと $x\notin\operatorname{span}_K S$ は同値である．
+\end{prop}
+\begin{proof}
+$x$ が線形包に属するなら $x=\sum a_is_i$ と書け，重複する $s_i$ の係数をまとめれば $x$ の係数が $1$ の非自明な関係を得る．逆に $S\cup\{x\}$ が従属なら $ax+\sum a_is_i=0$ なる非自明な関係がある．$a=0$ なら $S$ の独立性に反するから $a\ne0$ であり，$x=-\sum a^{-1}a_is_i$ となる．
+\end{proof}
+% genron:end K-000566
+% genron:begin K-000567
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000565
+% genron:use K-000563
+% genron:use K-000336
+% genron:use K-000118
+% genron:use K-000047
+\begin{prop}[線形結合の一意性]
+$S$ が線形独立であることと，$\operatorname{span}_K S$ の各元 $x$ に対し有限個を除いて零となる函数 $a:S\to K$ で $x=\sum_{s\in S}a(s)s$ を満たすものがただ一つ存在することは同値である．
+\end{prop}
+\begin{proof}
+存在は線形包の定義による．二表示の係数函数を $a,b$ とすると，非零成分の添字の合併は有限であり，差を取れば $\sum_s(a(s)-b(s))s=0$ となる．独立性から各差は零である．逆に表示の一意性を零ベクトルに適用すれば零係数函数以外による表示は存在せず，線形独立性を得る．
+\end{proof}
+% genron:end K-000567

@@ -1,0 +1,114 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. III §4, pp.135–136：標準基底と基底上の準同型の一意延長を確認．空の添字集合を許す．
+\section{基底と自由加群}
+% genron:begin K-000580
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000457
+% genron:use K-000343
+% genron:use K-000118
+\begin{defn}[加群の基底と自由加群]
+環 $A$ 上の左加群 $M$ の族 $(e_i)_{i\in I}$ が基底であるとは，任意の $x\in M$ に対し有限台係数族 $(a_i)_{i\in I}\in A^{(I)}$ で $x=\sum_i a_ie_i$ を満たすものがただ一つ存在することをいう．$A^{(I)}$ は $I$ 個の左 $A$ 加群 $A$ の直和である．基底を持つ加群を自由加群という．空族も許す．
+\end{defn}
+% genron:end K-000580
+% genron:begin K-000581
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000580
+% genron:use K-000343
+% genron:use K-000457
+% genron:use K-000456
+\begin{prop}[自由加群の標準基底]
+任意の集合 $I$ に対して $A^{(I)}$ は自由加群である．基底は第 $i$ 成分が $1$，その他の成分が $0$ である元 $e_i$ の族 $(e_i)_{i\in I}$ である．
+\end{prop}
+\begin{proof}
+有限台族 $a=(a_i)_{i\in I}$ に対して $\sum_i a_ie_i=a$ が成分の比較によって成立する．逆にこの等式を満たす係数は各成分を取ることによって $a_i$ と定まり，一意である．$I$ が空のときも零加群と空和により成立する．
+\end{proof}
+% genron:end K-000581
+% genron:begin K-000582
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000580
+% genron:use K-000338
+% genron:use K-000336
+% genron:use K-000458
+\begin{prop}[自由加群の普遍性]
+左 $A$ 加群 $M$ の基底を $(e_i)_{i\in I}$ とする．任意の左 $A$ 加群 $N$ と族 $(y_i)_{i\in I}$ に対し，$f(e_i)=y_i$ を満たす $A$ 準同型 $f:M\to N$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+基底表示の一意性により $f(\sum_i a_ie_i)=\sum_i a_iy_i$ と定めることができる．係数族の加法及び左スカラー倍は成分ごとであるから $f$ は準同型である．$e_i$ の係数表示として第 $i$ 成分が $1$ の標準族を取れば所要の等式を得る．また準同型なら有限和とスカラー倍を保つので上の値以外にはなり得ない．
+\end{proof}
+% genron:end K-000582
+% genron:begin K-000583
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000581
+% genron:use K-000580
+% genron:use K-000582
+% genron:use K-000339
+\begin{prop}[基底と直和による自由加群の特徴づけ]
+左 $A$ 加群 $M$ が $I$ で添字づけられた基底を持つことと，$M$ が $A^{(I)}$ と加群として同型であることは同値である．
+\end{prop}
+\begin{proof}
+基底 $(e_i)$ があれば標準基底を $e_i$ に移す準同型 $A^{(I)}\to M$ が存在し，表示の存在と一意性により全単射となる．逆に同型の下で標準基底を移せば表示の存在と一意性が保存される．
+\end{proof}
+% genron:end K-000583
+% genron:begin K-000584
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000581
+% genron:use K-000582
+% genron:use K-000341
+% genron:use K-000338
+\begin{prop}[自由加群からの全射]
+任意の左 $A$ 加群 $M$ に対し，ある自由加群 $F$ と全射 $A$ 準同型 $q:F\to M$ が存在する．従って $M$ は自由加群の商加群と同型である．
+\end{prop}
+\begin{proof}
+添字集合として $M$ の台集合を取り，$F=A^{(M)}$ とおく．標準基底の元 $e_x$ を $x\in M$ に移す準同型 $q$ は \GenronRef{K-000582}によって存在する．任意の $x$ は $q(e_x)$ であるから全射である．\GenronRef{K-000341}を適用すると $F/\ker q\simeq M$ となる．
+\end{proof}
+% genron:end K-000584
+% genron:begin K-000585
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000582
+% genron:use K-000580
+% genron:use K-000338
+% genron:use K-000060
+\begin{prop}[自由加群からの準同型の持上げ]
+自由左 $A$ 加群 $F$，全射 $A$ 準同型 $q:M\to N$ 及び $A$ 準同型 $f:F\to N$ に対し，$q\circ g=f$ となる $A$ 準同型 $g:F\to M$ が存在する．
+\end{prop}
+\begin{proof}
+$F$ の基底を $(e_i)_{i\in I}$ とする．全射性により各 $q^{-1}(\{f(e_i)\})$ は空でない．選択公理により $q(y_i)=f(e_i)$ となる族 $(y_i)$ を取る．\GenronRef{K-000582}により $g(e_i)=y_i$ とする準同型が存在し，$q\circ g$ と $f$ は基底上で一致するから等しい．
+\end{proof}
+% genron:end K-000585

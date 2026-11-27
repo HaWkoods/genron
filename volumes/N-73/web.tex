@@ -1,0 +1,140 @@
+% Web専用原稿．
+% 整域の簡約律と単項イデアルを用いる独自の論証．Lang, Algebra, Ch. II の整域・素イデアルの記述を参照．一意分解は仮定しない．
+\section{整除と同伴}
+% genron:begin K-000572
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000443
+% genron:use K-000442
+\begin{defn}[整除と同伴元]
+整域 $A$ の元 $a,b$ に対して，ある $c\in A$ について $b=ac$ となるとき $a$ は $b$ を整除するといい，$a\mid b$ と書く．$a\mid b$ かつ $b\mid a$ のとき $a,b$ は同伴であるという．
+\end{defn}
+% genron:end K-000572
+% genron:begin K-000573
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000572
+% genron:use K-000444
+% genron:use K-000442
+% genron:use K-000250
+\begin{prop}[同伴元と単元]
+$a,b\in A$ が同伴であることと，ある単元 $u\in A^\times$ について $b=ua$ となることは同値である．
+\end{prop}
+\begin{proof}
+$b=ua$ なら $a=u^{-1}b$ なので十分である．逆に $b=ac,\ a=bd$ とする．$a=0$ なら $b=0$ であって $u=1$ と取れる．$a\ne0$ なら $a=acd$ より簡約律によって $cd=1$ となり，$c$ は単元である．
+\end{proof}
+% genron:end K-000573
+% genron:begin K-000574
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000572
+% genron:use K-000328
+% genron:use K-000249
+\begin{prop}[整除と単項イデアル]
+$a\in A$ により生成されるイデアルを $(a)$ と書く．$a\mid b$ と $(b)\subseteq(a)$ は同値である．特に同伴元は同じ単項イデアルを生成し，逆も成立する．
+\end{prop}
+\begin{proof}
+可換性と単位元により $(a)=aA$ である．$b=ac$ なら $bA\subseteq aA$ であり，逆に $b\in bA$ なので包含から $b\in aA$ を得る．双方の整除を適用して後半を得る．
+\end{proof}
+% genron:end K-000574
+\section{既約元と素元}
+% genron:begin K-000575
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000572
+% genron:use K-000442
+% genron:use K-000443
+\begin{defn}[既約元と素元]
+$p\in A$ を非零の非単元とする．$p=ab$ なら $a,b$ の少なくとも一方が単元となるとき $p$ を既約元という．任意の $a,b\in A$ に対し $p\mid ab$ なら $p\mid a$ 又は $p\mid b$ となるとき $p$ を素元という．
+\end{defn}
+% genron:end K-000575
+% genron:begin K-000576
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000575
+% genron:use K-000574
+% genron:use K-000444
+% genron:use K-000446
+% genron:use K-000334
+\begin{prop}[素元と既約元の関係]
+素元は既約元である．非零非単元 $p$ が素元であることと $(p)$ が素イデアルであることは同値である．
+\end{prop}
+\begin{proof}
+$p=ab$ とする．素性から例えば $p\mid a$ なら $a=pc$ と書け，$p=pcb$ から $cb=1$ を得るので $b$ は単元である．$p\mid b$ の場合も同様である．非単元 $p$ に対して $(p)$ は真イデアルであり，$ab\in(p)$ は $p\mid ab$ と同値なので，後半は素イデアルの定義から従う．
+\end{proof}
+% genron:end K-000576
+\section{公約元と公倍元}
+% genron:begin K-000577
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000572
+\begin{defn}[最大公約元と最小公倍元]
+$d\in A$ が $d\mid a,\ d\mid b$ を満たし，任意の $c\in A$ について $c\mid a,\ c\mid b$ なら $c\mid d$ となるとき，$d$ を最大公約元という．$m$ が $a\mid m,\ b\mid m$ を満たし，任意の $c\in A$ について $a\mid c,\ b\mid c$ なら $m\mid c$ となるとき，$m$ を最小公倍元という．一般に存在は仮定しない．
+\end{defn}
+% genron:end K-000577
+% genron:begin K-000578
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000577
+% genron:use K-000573
+\begin{prop}[公約元・公倍元の一意性]
+最大公約元及び最小公倍元は存在すれば同伴を除いて一意である．
+\end{prop}
+\begin{proof}
+二つの最大公約元 $d,d'$ について定義を互いに適用して $d\mid d'$ と $d'\mid d$ を得る．最小公倍元についても整除の向きを逆にして同様である．
+\end{proof}
+% genron:end K-000578
+% genron:begin K-000579
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000577
+% genron:use K-000574
+% genron:use K-000328
+% genron:use K-000327
+\begin{prop}[単項イデアルと公約元・公倍元]
+$(a)+(b)=(d)$ ならば $d$ は $a,b$ の最大公約元であり，ある $x,y\in A$ により $d=ax+by$ と書ける．$(a)\cap(b)=(m)$ なら $m$ は最小公倍元である．
+\end{prop}
+\begin{proof}
+ここでイデアルの和は $aA+bA=\{ax+by\mid x,y\in A\}$ である．$a,b\in(d)$ から $d\mid a,b$ を得る．任意の公約元 $c$ に対して $(a)+(b)\subseteq(c)$ なので $c\mid d$ である．$d$ が和イデアルに属することから表示を得る．共通部分は $a,b$ の公倍元全体であるから，それが $(m)$ に等しいとき $m$ は公倍元であり，全ての公倍元は $m$ の倍元である．
+\end{proof}
+% genron:end K-000579

@@ -17217,6 +17217,933 @@
       "status": "verified",
       "source": "volumes/N-210/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000560",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "線形空間",
+      "statement": "体 K 上の左加群を K 上の線形空間という．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000443",
+        "K-000335"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000561",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "部分空間と線形写像",
+      "statement": "K 上の部分加群を部分空間，K 加群準同型を線形写像という．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000337",
+        "K-000338"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000562",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分空間の判定",
+      "statement": "非空部分集合 U⊆V が部分空間 ⇔ 任意の x,y∈U と a,b∈K に対して ax+by∈U．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000561",
+        "K-000336",
+        "K-000337"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000563",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "線形包",
+      "statement": "S⊆V に対し span_K S は S の元の有限線形結合全体である．空和は 0 とする．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000342",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000564",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形包の最小性",
+      "statement": "span_K S は S を含む最小の部分空間である．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000563",
+        "K-000561",
+        "K-000342"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000565",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "線形独立",
+      "statement": "集合 S⊆V は相異なる有限個の元の線形結合が 0 なら全係数が 0 となるとき線形独立という．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000566",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形独立集合への一元添加",
+      "statement": "線形独立な S と x∈V∖S に対して S∪{x} が線形独立 ⇔ x∉span_K S．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000565",
+        "K-000563",
+        "K-000443",
+        "K-000444"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000567",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形結合の一意性",
+      "statement": "S が線形独立 ⇔ span_K S の各元が S 上の有限台係数函数で一意に表示される．",
+      "assumptions": [],
+      "position": [
+        15,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000565",
+        "K-000563",
+        "K-000336",
+        "K-000118",
+        "K-000047"
+      ],
+      "status": "verified",
+      "source": "volumes/N-15/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000568",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数体の分数表示",
+      "statement": "整域 A の分数体の元は a/b (b≠0) と表され，a/b=c/d ⇔ ad=bc．",
+      "assumptions": [],
+      "position": [
+        71,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000454",
+        "K-000450",
+        "K-000444",
+        "K-000452",
+        "K-000451"
+      ],
+      "status": "verified",
+      "source": "volumes/N-71/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000569",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数体の普遍性",
+      "statement": "整域 A から体 L への単射環準同型 f は Frac(A)→L の単射環準同型に一意に延長する．",
+      "assumptions": [],
+      "position": [
+        71,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000568",
+        "K-000453",
+        "K-000443",
+        "K-000251",
+        "K-000329",
+        "K-000282"
+      ],
+      "status": "verified",
+      "source": "volumes/N-71/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000570",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数体の特徴づけ",
+      "statement": "体 L が整域 A の単射像を含み全元がその元の商なら Frac(A) と A 上で一意に同型である．",
+      "assumptions": [],
+      "position": [
+        71,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000569",
+        "K-000252"
+      ],
+      "status": "verified",
+      "source": "volumes/N-71/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000571",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数体と最小の部分体",
+      "statement": "体 L の部分環 A を含む最小の部分体は ab^{-1} (a,b∈A,b≠0) の全体である．",
+      "assumptions": [],
+      "position": [
+        71,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000569",
+        "K-000454",
+        "K-000443",
+        "K-000251",
+        "K-000252"
+      ],
+      "status": "verified",
+      "source": "volumes/N-71/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000572",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "整除と同伴元",
+      "statement": "整域 A の元 a,b について b=ac となる c∈A が存在するとき a∣b と書く．互いに整除するとき同伴という．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000443",
+        "K-000442"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000573",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "同伴元と単元",
+      "statement": "a,b が同伴 ⇔ b=ua となる単元 u∈A× が存在する．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000572",
+        "K-000444",
+        "K-000442",
+        "K-000250"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000574",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整除と単項イデアル",
+      "statement": "a∣b ⇔ (b)⊆(a)．同伴 ⇔ (a)=(b)．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000572",
+        "K-000328",
+        "K-000249"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000575",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "既約元と素元",
+      "statement": "非零非単元 p は p=ab なら a 又は b が単元となるとき既約，p∣ab⇒p∣a 又は p∣b のとき素という．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000572",
+        "K-000442",
+        "K-000443"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000576",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素元と既約元の関係",
+      "statement": "素元は既約元である．非零非単元 p が素元であることと (p) が素イデアルであることは同値である．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000575",
+        "K-000574",
+        "K-000444",
+        "K-000446",
+        "K-000334"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000577",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "最大公約元と最小公倍元",
+      "statement": "d が a,b の公約元で全公約元が d を整除するとき最大公約元という．最小公倍元は双対条件で定める．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000572"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000578",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "公約元・公倍元の一意性",
+      "statement": "最大公約元及び最小公倍元は存在すれば同伴を除いて一意である．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000577",
+        "K-000573"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000579",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単項イデアルと公約元・公倍元",
+      "statement": "(a)+(b)=(d) なら d は最大公約元で d=ax+by と書ける．(a)∩(b)=(m) なら m は最小公倍元である．",
+      "assumptions": [],
+      "position": [
+        73,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000577",
+        "K-000574",
+        "K-000328",
+        "K-000327"
+      ],
+      "status": "verified",
+      "source": "volumes/N-73/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000580",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "加群の基底と自由加群",
+      "statement": "左 A 加群 M の族 (e_i)_{i∈I} が基底とは各元が有限台係数族により一意に Σ a_i e_i と表示されること．基底を持つ加群を自由加群という．",
+      "assumptions": [],
+      "position": [
+        105,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000335",
+        "K-000457",
+        "K-000343",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-105/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000581",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の標準基底",
+      "statement": "任意の集合 I に対して A^{(I)} は標準族 (e_i) を基底に持つ．",
+      "assumptions": [],
+      "position": [
+        105,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000580",
+        "K-000343",
+        "K-000457",
+        "K-000456"
+      ],
+      "status": "verified",
+      "source": "volumes/N-105/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000582",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の普遍性",
+      "statement": "基底 (e_i) を持つ M と加群 N について族 (y_i) は e_i↦y_i とする準同型 M→N を一意に定める．",
+      "assumptions": [],
+      "position": [
+        105,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000580",
+        "K-000338",
+        "K-000336",
+        "K-000458"
+      ],
+      "status": "verified",
+      "source": "volumes/N-105/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000583",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底と直和による自由加群の特徴づけ",
+      "statement": "M が I で添字づけられた基底を持つことと M≅A^{(I)} は同値．",
+      "assumptions": [],
+      "position": [
+        105,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000581",
+        "K-000580",
+        "K-000582",
+        "K-000339"
+      ],
+      "status": "verified",
+      "source": "volumes/N-105/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000584",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群からの全射",
+      "statement": "任意の左 A 加群 M は自由加群の商加群と同型である．",
+      "assumptions": [],
+      "position": [
+        105,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000581",
+        "K-000582",
+        "K-000341",
+        "K-000338"
+      ],
+      "status": "verified",
+      "source": "volumes/N-105/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000585",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群からの準同型の持上げ",
+      "statement": "自由加群 F，全射準同型 q:M→N，準同型 f:F→N に対して qg=f となる準同型 g:F→M が存在する．",
+      "assumptions": [],
+      "position": [
+        105,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000582",
+        "K-000580",
+        "K-000338",
+        "K-000060"
+      ],
+      "status": "verified",
+      "source": "volumes/N-105/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000586",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "最高次係数のイデアル",
+      "statement": "A[X] のイデアル I に対し I の非零多項式の最高次係数と 0 の全体は A のイデアルである．",
+      "assumptions": [],
+      "position": [
+        136,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000351",
+        "K-000352",
+        "K-000354",
+        "K-000327",
+        "K-000249"
+      ],
+      "status": "verified",
+      "source": "volumes/N-136/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000587",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界次数多項式の加群",
+      "statement": "Noether可換環 A と自然数 d に対して次数 d 未満の多項式と 0 の全体は Noether A 加群である．",
+      "assumptions": [],
+      "position": [
+        136,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000352",
+        "K-000354",
+        "K-000335",
+        "K-000338",
+        "K-000467",
+        "K-000456",
+        "K-000462"
+      ],
+      "status": "verified",
+      "source": "volumes/N-136/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000588",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hilbert基底定理",
+      "statement": "可換Noether環 A に対して A[X] も Noether 環である．",
+      "assumptions": [],
+      "position": [
+        136,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000586",
+        "K-000587",
+        "K-000463",
+        "K-000466",
+        "K-000327",
+        "K-000328",
+        "K-000354",
+        "K-000104"
+      ],
+      "status": "verified",
+      "source": "volumes/N-136/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000589",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限変数多項式環のNoether性",
+      "statement": "可換Noether環 A 上の有限変数の反復多項式環はNoetherである．",
+      "assumptions": [],
+      "position": [
+        136,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000588",
+        "K-000100",
+        "K-000351"
+      ],
+      "status": "verified",
+      "source": "volumes/N-136/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000590",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限生成可換代数のNoether性",
+      "statement": "可換Noether環 A の有限個の元で生成される可換 A 代数 B はNoether環である．",
+      "assumptions": [],
+      "position": [
+        136,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000589",
+        "K-000353",
+        "K-000332",
+        "K-000333",
+        "K-000462",
+        "K-000466",
+        "K-000251"
+      ],
+      "status": "verified",
+      "source": "volumes/N-136/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -17444,15 +18371,17 @@
       "number": 15,
       "title": "線形空間と部分空間",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
-        70
+        70,
+        16
       ],
       "goals": [
         "線形結合・生成・線形独立"
       ],
       "treatise": "T-15",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 16,
@@ -18311,15 +19240,17 @@
       "number": 71,
       "title": "分数体",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
-        70
+        70,
+        74
       ],
       "goals": [
         "整域の分数体の構成と普遍性"
       ],
       "treatise": "T-10",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 72,
@@ -18341,7 +19272,7 @@
       "number": 73,
       "title": "整域の整除",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         70
       ],
@@ -18349,7 +19280,8 @@
         "整除・既約元・素元・最大公約元"
       ],
       "treatise": "T-10",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 74,
@@ -18815,15 +19747,17 @@
       "number": 105,
       "title": "自由加群",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
-        104
+        104,
+        3
       ],
       "goals": [
         "自由加群の構成・基底"
       ],
       "treatise": "T-16",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 106,
@@ -19279,7 +20213,7 @@
       "number": 136,
       "title": "Hilbert基底定理",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         21,
         72
@@ -19288,7 +20222,8 @@
         "多項式環のNoether性"
       ],
       "treatise": "T-21",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 137,
