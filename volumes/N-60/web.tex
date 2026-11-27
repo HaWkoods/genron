@@ -1,0 +1,198 @@
+% Web専用原稿．
+% 構成案：開被覆・有限交叉性・閉部分空間・連続像・Hausdorff空間・有限積．
+% 文献確認：Bredon, Topology and Geometry, Ch. I §7（開被覆，有限交叉性，Hausdorff空間のコンパクト部分集合及び連続像の本文を確認）．
+\section{コンパクト空間}
+% genron:begin K-000372
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000146
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000110
+% genron:use K-000254
+\begin{defn}[コンパクト空間]
+位相空間 $X$ の開集合族 $\mathcal U$ が $\bigcup\mathcal U=X$ を満たすとき開被覆という．任意の開被覆が有限部分族による被覆を持つとき $X$ はコンパクトであるという．部分集合がコンパクトであるとは部分空間としてコンパクトであることをいう．空集合もコンパクトである．
+\end{defn}
+% genron:end K-000372
+% genron:begin K-000373
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000148
+% genron:use K-000046
+\begin{prop}[有限交叉性によるコンパクト性の判定]
+空間 $X$ がコンパクトであることと，任意の閉集合族 $\mathcal F$ に対して
+\[
+ \bigcap\mathcal F=\varnothing
+ \ \Longrightarrow\
+ \exists\,\mathcal F_0\subseteq\mathcal F,\quad
+ \mathcal F_0\text{ は有限},\quad \bigcap\mathcal F_0=\varnothing
+\]
+が成立することは同値である．共通部分は $X$ を母集合とし，空族の共通部分も $X$ とする．
+\end{prop}
+\begin{proof}
+閉集合族の各元の補集合を取れば開集合族となる．\GenronRef{K-000046}$ により全共通部分が空であることと補集合族が開被覆であることは同値であり，有限部分族についても同じ対応が成り立つ．
+\end{proof}
+% genron:end K-000373
+% genron:begin K-000374
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000255
+% genron:use K-000024
+% genron:use K-000026
+\begin{prop}[コンパクト部分集合の被覆判定]
+部分集合 $K\subseteq X$ がコンパクトであるための必要十分条件は，$K$ を覆う $X$ の任意の開集合族が $K$ を覆う有限部分族を持つことである．
+\end{prop}
+\begin{proof}
+必要性は開集合を $K$ と交叉して相対開被覆を得ることから従う．相対開被覆 $\mathcal V$ が与えられたときは $\{O\in\mathcal O_X\mid K\cap O\in\mathcal V\}$ を考える．これは $K$ を覆うので有限部分族が $K$ を覆い，その各元と $K$ の交わりが有限部分被覆を与える．この論証に選択公理は不要である．
+\end{proof}
+% genron:end K-000374
+% genron:begin K-000375
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000374
+% genron:use K-000148
+\begin{prop}[閉部分空間のコンパクト性]
+コンパクト空間 $X$ の閉部分集合 $F$ はコンパクトである．
+\end{prop}
+\begin{proof}
+$F$ を覆う開集合族に $X\setminus F$ を加えれば $X$ の開被覆となる．有限部分被覆を取り，$X\setminus F$ を除けば $F$ を覆う有限部分族が得られる．\GenronRef{K-000374}$ を適用する．
+\end{proof}
+% genron:end K-000375
+% genron:begin K-000376
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000374
+% genron:use K-000217
+\begin{prop}[コンパクト性の連続像による保存]
+コンパクト空間 $X$ から位相空間 $Y$ への連続写像 $f$ の像 $f(X)$ はコンパクトである．
+\end{prop}
+\begin{proof}
+像を覆う $Y$ の開集合族の逆像は $X$ の開被覆である．有限部分被覆に対応する有限個の開集合は $f(X)$ を覆う．
+\end{proof}
+% genron:end K-000376
+\section{分離性及び積}
+% genron:begin K-000377
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000374
+% genron:use K-000293
+% genron:use K-000147
+% genron:use K-000148
+% genron:use K-000119
+\begin{prop}[Hausdorff空間のコンパクト部分集合]
+Hausdorff空間 $X$ のコンパクト部分集合 $K$ は閉集合である．
+\end{prop}
+\begin{proof}
+$x\in X\setminus K$ とする．$K$ を覆う開集合族として，$x$ のある開近傍と交わらない開集合すべてを取る．Hausdorff性によってこの族は確かに $K$ を覆う．有限部分族 $V_1,\ldots,V_m$ が $K$ を覆う．有限選択によって各 $V_i$ と交わらない $x$ の開近傍 $U_i$ を取れば $\bigcap_i U_i$ は $K$ と交わらない $x$ の開近傍である．$K=\varnothing$ の場合も空の共通部分を $X$ として成立する．従って補集合は開である．
+\end{proof}
+% genron:end K-000377
+% genron:begin K-000378
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000377
+% genron:use K-000376
+% genron:use K-000224
+% genron:use K-000223
+% genron:use K-000219
+% genron:use K-000372
+\begin{prop}[コンパクト空間からHausdorff空間への全単射]
+コンパクト空間 $X$ から Hausdorff空間 $Y$ への連続全単射 $f$ は同相写像である．
+\end{prop}
+\begin{proof}
+閉部分集合 $F\subseteq X$ はコンパクトであり，$f(F)$ もコンパクトであるから $Y$ の閉集合となる．従って $f^{-1}$ は閉集合の逆像を閉集合に移す写像であり，\GenronRef{K-000219}$ により連続である．
+\end{proof}
+% genron:end K-000378
+% genron:begin K-000379
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000257
+% genron:use K-000147
+% genron:use K-000119
+\begin{prop}[コンパクトな因子と管状近傍]
+$Y$ をコンパクト空間とする．積空間 $X\times Y$ の開集合 $W$ が $\{x\}\times Y$ を含むなら，$x$ の開近傍 $U$ で $U\times Y\subseteq W$ を満たすものが存在する．
+\end{prop}
+\begin{proof}
+$Y=\varnothing$ なら $U=X$ でよい．そうでなければ，$x$ のある開近傍 $U_V$ について $U_V\times V\subseteq W$ となる $Y$ の開集合 $V$ 全体は，積位相の開基により $Y$ を覆う．有限部分被覆 $V_1,\ldots,V_m$ を取る．有限選択により対応する $U_i$ を選べば $U=\bigcap_i U_i$ は所要の開近傍である．
+\end{proof}
+% genron:end K-000379
+% genron:begin K-000380
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000379
+% genron:use K-000257
+% genron:use K-000100
+% genron:use K-000119
+\begin{prop}[コンパクト空間の有限積]
+コンパクト空間 $X,Y$ の積はコンパクトである．従ってコンパクト空間の有限積はコンパクトである．
+\end{prop}
+\begin{proof}
+空の因子がある場合は明らかである．積の開被覆 $\mathcal W$ を取る．各 $x\in X$ に対し $\{x\}\times Y$ は $Y$ と同相なのでコンパクトである．従って $\mathcal W$ の有限部分族の合併 $W_x$ で $\{x\}\times Y$ を含むものがある．管状近傍の命題によって $U\times Y\subseteq W_x$ となる $x$ の開近傍 $U$ がある．この性質を満たす開集合 $U$ 全体が $X$ を覆う．コンパクト性により有限個 $U_1,\ldots,U_k$ を選び，有限選択で各 $U_i$ に対応する $\mathcal W$ の有限部分族を選べば，それらの合併が積を覆う有限部分族である．有限積は帰納法で従う．
+\end{proof}
+% genron:end K-000380
+% genron:begin K-000381
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000110
+% genron:use K-000119
+% genron:use K-000150
+\begin{prop}[有限空間と無限離散空間]
+有限位相空間では開被覆から各点を含む開集合を有限選択によって一つずつ取れば有限部分被覆を得る．他方，無限離散空間では単集合全体からなる開被覆は有限部分被覆を持たない．
+\end{prop}
+% genron:end K-000381

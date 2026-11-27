@@ -1,0 +1,146 @@
+% Web専用原稿．
+% 構成案：連結性・像・合併・閉包・成分・積．弧状連結性は実数区間の導入後の N-215 に移す．
+% 文献確認：Bredon, Topology and Geometry, Ch. I §4（連結性と開閉集合による判定の本文を確認）．
+\section{連結空間}
+% genron:begin K-000364
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000146
+% genron:use K-000254
+\begin{defn}[連結空間]
+位相空間 $X$ が互いに素な二つの空でない開集合の合併として表されないとき，$X$ は連結であるという．部分集合 $C\subseteq X$ が連結であるとは，部分空間として連結であることをいう．空集合及び一元集合は連結である．
+\end{defn}
+% genron:end K-000364
+% genron:begin K-000365
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000364
+% genron:use K-000148
+% genron:use K-000031
+\begin{prop}[開閉集合による連結性の判定]
+空間 $X$ が連結であることと，$X$ の開かつ閉な部分集合が $\varnothing,X$ に限ることは同値である．
+\end{prop}
+\begin{proof}
+開かつ閉な真の非空部分集合 $U$ があれば $X=U\cup(X\setminus U)$ は互いに素な非空開集合による分解である．逆にそのような分解 $X=U\cup V$ があれば $V=X\setminus U$ なので $U$ は開かつ閉である．
+\end{proof}
+% genron:end K-000365
+% genron:begin K-000366
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000364
+% genron:use K-000217
+% genron:use K-000255
+% genron:use K-000037
+\begin{prop}[連結性の連続像による保存]
+連続写像 $f:X\to Y$ において $X$ が連結であれば $f(X)$ は連結である．
+\end{prop}
+\begin{proof}
+$f(X)$ への終域の縮小は連続である（\GenronRef{K-000255}$）．もし $f(X)=U\cup V$ が互いに素な非空開集合による分解なら，逆像は互いに素な非空開集合であり，その合併は $X$ となる．矛盾である．
+\end{proof}
+% genron:end K-000366
+\section{連結部分集合と連結成分}
+% genron:begin K-000367
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000364
+% genron:use K-000255
+% genron:use K-000045
+\begin{prop}[共通点を持つ連結集合の合併]
+連結部分集合族 $(C_i)_{i\in I}$ が共通点 $x$ を持つなら，その合併 $C$ は連結である．
+\end{prop}
+\begin{proof}
+$C=U\cup V$ が互いに素な相対開集合による分解であるとし，$x\in U$ とする．各 $C_i$ は $U,V$ との交わりによって二つの相対開集合に分かれる．連結性及び $x\in C_i\cap U$ により $C_i\cap V=\varnothing$ である．従って $V=\varnothing$ である．
+\end{proof}
+% genron:end K-000367
+% genron:begin K-000368
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000364
+% genron:use K-000201
+% genron:use K-000255
+\begin{prop}[連結集合の閉包]
+連結部分集合 $C$ と $C\subseteq D\subseteq\operatorname{cl}(C)$ を満たす部分集合 $D$ について，$D$ は連結である．特に $\operatorname{cl}(C)$ は連結である．
+\end{prop}
+\begin{proof}
+$D$ の非空相対開集合 $U=D\cap O$（$O$ は $X$ の開集合）は $C$ と交わる．実際 $u\in U$ は $\operatorname{cl}(C)$ に属し，$O$ はその開近傍であるから \GenronRef{K-000201}$ によって $O\cap C\ne\varnothing$ である．従って $D$ の非空開集合による分離は $C$ の分離を与えるので不可能である．
+\end{proof}
+% genron:end K-000368
+% genron:begin K-000369
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000367
+% genron:use K-000368
+% genron:use K-000027
+% genron:use K-000024
+\begin{defn}[連結成分]
+点 $x\in X$ を含む連結部分集合すべての合併を $C(x)$ と書き，$x$ の連結成分という．これは $x$ を含む最大の連結部分集合である．連結成分全体は $X$ を分割し，各成分は閉集合である．
+\end{defn}
+\begin{proof}
+冪集合から条件によって連結部分集合を集めることができる．一元集合 $\{x\}$ は連結であり，\GenronRef{K-000367}$ によって $C(x)$ も連結である．二成分が交わればその合併が連結なので最大性から一致する．\GenronRef{K-000368}$ により成分の閉包も連結であり，最大性から成分自身に等しい．
+\end{proof}
+% genron:end K-000369
+% genron:begin K-000370
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000364
+% genron:use K-000367
+% genron:use K-000257
+% genron:use K-000224
+% genron:use K-000217
+% genron:use K-000100
+\begin{prop}[連結空間の有限積]
+二つの連結空間 $X,Y$ の積は連結である．従って連結空間の有限積は連結である．
+\end{prop}
+\begin{proof}
+一方が空なら積は空である．そうでなければ $x_0\in X$，$y_0\in Y$ を取る．積位相の普遍性から $X\times\{y_0\}$ は $X$ と，$\{x\}\times Y$ は $Y$ と同相であり連結である．各 $x\in X$ に対し両集合は $(x,y_0)$ で交わるのでその合併は連結である．これらの合併はすべて $(x_0,y_0)$ を含み，全体の合併は $X\times Y$ であるから \GenronRef{K-000367}$ を適用する．有限積は帰納法による．
+\end{proof}
+% genron:end K-000370
+% genron:begin K-000371
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000365
+% genron:use K-000150
+\begin{prop}[密着空間と離散空間の連結性]
+密着位相では開閉集合は空集合と全体集合に限るので連結である．離散位相では任意の単集合が開閉であり，二点以上を持つ場合は真の非空開閉集合を持つので連結でない．
+\end{prop}
+% genron:end K-000371

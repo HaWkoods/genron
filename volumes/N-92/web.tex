@@ -1,0 +1,173 @@
+% Web専用原稿．
+% 構成案：近縁系・近縁近傍・誘導位相・一様連続性・部分空間．
+% 文献確認：所蔵資料の検索では一様空間の該当本文を確認できなかった．以下は既出のフィルターと関係の理論から独自に論証した．
+\section{一様構造}
+% genron:begin K-000392
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000233
+% genron:use K-000051
+% genron:use K-000033
+% genron:use K-000024
+\begin{defn}[一様構造]
+空でない集合 $X$ に対し，$X\times X$ 上のフィルター $\mathcal U$ が次の条件を満たすとき一様構造という．
+\begin{enumerate}
+\item 各 $U\in\mathcal U$ は対角集合 $\Delta_X=\{(x,x)\mid x\in X\}$ を含む．
+\item $U\in\mathcal U$ なら $U^{-1}\in\mathcal U$．
+\item 任意の $U\in\mathcal U$ に対し $V\circ V\subseteq U$ を満たす $V\in\mathcal U$ が存在する．
+\end{enumerate}
+$\mathcal U$ の元を近縁という．空集合については別に $\{\varnothing\}$ を一様構造と定める（真のフィルターとは区別する）．
+\end{defn}
+% genron:end K-000392
+% genron:begin K-000393
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000233
+% genron:use K-000051
+\begin{prop}[対称近縁による縮小]
+任意の近縁 $U$ に対し，$V^{-1}=V$，$V\subseteq U$，$V\circ V\subseteq U$ を満たす近縁 $V$ が存在する．
+\end{prop}
+\begin{proof}
+$W\circ W\subseteq U$ となる近縁 $W$ を取り，$V=W\cap W^{-1}\cap U\cap U^{-1}$ とおく．逆関係と有限共通部分の条件から $V$ は近縁であり，$V$ の対称性及び二つの包含関係は定義から従う．
+\end{proof}
+% genron:end K-000393
+\section{誘導位相}
+% genron:begin K-000394
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000024
+\begin{defn}[近縁による近傍]
+近縁 $U$ と $x\in X$ に対し $U[x]=\{y\in X\mid(x,y)\in U\}$ と書く．
+\end{defn}
+% genron:end K-000394
+% genron:begin K-000395
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000394
+% genron:use K-000393
+% genron:use K-000216
+% genron:use K-000214
+\begin{prop}[一様構造の誘導位相]
+各 $x\in X$ における近傍基を $\{U[x]\mid U\in\mathcal U\}$ とする位相が一意に存在する．これを一様構造の誘導位相という．
+\end{prop}
+\begin{proof}
+対角集合の条件により各 $U[x]$ は $x$ を含む．$U[x]\cap V[x]=(U\cap V)[x]$ であるから近傍基の有限共通部分条件を満たす．$V\circ V\subseteq U$ となる近縁 $V$ を取ると，$y\in V[x]$ なら $V[y]\subseteq U[x]$ である．従って \GenronRef{K-000216}$ の三条件が成立する．空集合には唯一の位相がある．
+\end{proof}
+% genron:end K-000395
+% genron:begin K-000396
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000395
+% genron:use K-000393
+% genron:use K-000394
+% genron:use K-000293
+\begin{prop}[分離一様構造]
+一様構造の誘導位相が Hausdorff であることと $\bigcap\mathcal U=\Delta_X$ は同値である．
+\end{prop}
+\begin{proof}
+右辺を仮定し $x\ne y$ とする．$(x,y)\notin U$ となる近縁 $U$ が存在する．対称近縁 $V$ を $V\circ V\subseteq U$ となるように取る．もし $z\in V[x]\cap V[y]$ なら $(x,z),(z,y)\in V$ なので $(x,y)\in U$ となり矛盾する．従って互いに素な近傍がある．逆に Hausdorff であれば $x\ne y$ について $y$ を含まない $x$ の近傍が存在するので，その中に含まれる $U[x]$ に対し $(x,y)\notin U$ となる．
+\end{proof}
+% genron:end K-000396
+% genron:begin K-000397
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000037
+% genron:use K-000043
+\begin{defn}[一様連続写像]
+一様空間 $X,Y$ の写像 $f:X\to Y$ が任意の $Y$ の近縁 $V$ に対し
+\[
+ \{(x,x')\mid(f(x),f(x'))\in V\}\in\mathcal U_X
+\]
+を満たすとき一様連続であるという．
+\end{defn}
+% genron:end K-000397
+% genron:begin K-000398
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000397
+% genron:use K-000395
+% genron:use K-000394
+% genron:use K-000220
+% genron:use K-000221
+% genron:use K-000037
+\begin{prop}[一様連続性と連続性]
+一様連続写像は誘導位相に関して連続であり，一様連続写像の合成は一様連続である．
+\end{prop}
+\begin{proof}
+$f(x)$ の近傍はある近縁 $V$ による $V[f(x)]$ を含む．$U=(f\times f)^{-1}(V)$ は近縁であり，$U[x]$ はその近傍の逆像に含まれる．従って各点で連続である．合成については $(g\circ f)\times(g\circ f)=(g\times g)\circ(f\times f)$ と逆像の合成則を用いる．
+\end{proof}
+% genron:end K-000398
+% genron:begin K-000399
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000395
+% genron:use K-000394
+% genron:use K-000255
+% genron:use K-000233
+\begin{prop}[部分一様空間]
+一様空間 $X$ の部分集合 $A$ に対し，$U\cap(A\times A)$（$U$ は $X$ の近縁）を含む $A\times A$ の部分集合全体を近縁とすると，一様構造となる．その誘導位相は $X$ の誘導位相の部分位相である．
+\end{prop}
+\begin{proof}
+$A$ が空なら規約による．非空なら各制限近縁は対角を含み，有限交叉及び上方包含の条件を満たす．逆関係は制限と可換であり，制限近縁の合成は元の近縁の合成の制限に含まれるので縮小条件も従う．$x\in A$ の近傍基は $U[x]\cap A$ であるから部分位相の近傍基と一致する．
+\end{proof}
+% genron:end K-000399
+% genron:begin K-000400
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000395
+% genron:use K-000234
+\begin{prop}[離散一様構造]
+空でない集合 $X$ 上で対角集合を含む $X\times X$ の部分集合全体を取る．これは主フィルターであり，対角集合は逆関係で変わらず自身との合成も自身であるから一様構造となる．$\Delta_X[x]=\{x\}$ なので誘導位相は離散位相である．
+\end{prop}
+% genron:end K-000400

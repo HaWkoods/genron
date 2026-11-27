@@ -11283,6 +11283,1114 @@
       "status": "verified",
       "source": "volumes/N-122/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000364",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "連結空間",
+      "statement": "空間 X が二つの互いに素な非空開集合の合併でないとき連結という．部分集合は部分空間として判定する．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000146",
+        "K-000254"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000365",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開閉集合による連結性の判定",
+      "statement": "X が連結 ⇔ 開かつ閉な部分集合が ∅,X に限る．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000364",
+        "K-000148",
+        "K-000031"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000366",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連結性の連続像による保存",
+      "statement": "連続写像 f:X→Y に対し X が連結なら f(X) は連結．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000364",
+        "K-000217",
+        "K-000255",
+        "K-000037"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000367",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "共通点を持つ連結集合の合併",
+      "statement": "連結部分集合族が共通点を持つなら合併は連結．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000364",
+        "K-000255",
+        "K-000045"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000368",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連結集合の閉包",
+      "statement": "C が連結で C⊆D⊆cl(C) なら D は連結．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000364",
+        "K-000201",
+        "K-000255"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000369",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "連結成分",
+      "statement": "点 x を含む連結部分集合の合併を x の連結成分という．これは極大連結部分集合で閉集合．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000367",
+        "K-000368",
+        "K-000027",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000370",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連結空間の有限積",
+      "statement": "二つの連結空間 X,Y の積は連結．有限積も連結．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000364",
+        "K-000367",
+        "K-000257",
+        "K-000224",
+        "K-000217",
+        "K-000100"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000371",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "密着空間と離散空間の連結性",
+      "statement": "密着空間は連結．離散空間が連結であるのは高々一元の場合に限る．",
+      "assumptions": [],
+      "position": [
+        59,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000365",
+        "K-000150"
+      ],
+      "status": "verified",
+      "source": "volumes/N-59/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000372",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "コンパクト空間",
+      "statement": "X の任意の開被覆が有限部分被覆を持つときコンパクトという．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000146",
+        "K-000044",
+        "K-000045",
+        "K-000110",
+        "K-000254"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000373",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限交叉性によるコンパクト性の判定",
+      "statement": "X はコンパクト ⇔ 閉集合族の任意の有限部分族の共通部分が非空なら全共通部分も非空．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000148",
+        "K-000046"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000374",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト部分集合の被覆判定",
+      "statement": "K⊆X のコンパクト性は K を覆う X の開集合族が有限部分被覆を持つことと同値．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000255",
+        "K-000024",
+        "K-000026"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000375",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分空間のコンパクト性",
+      "statement": "コンパクト空間の閉部分集合はコンパクト．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000374",
+        "K-000148"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000376",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト性の連続像による保存",
+      "statement": "連続写像 f:X→Y に対し X がコンパクトなら f(X) もコンパクト．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000374",
+        "K-000217"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000377",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hausdorff空間のコンパクト部分集合",
+      "statement": "Hausdorff空間のコンパクト部分集合 K は閉集合．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000374",
+        "K-000293",
+        "K-000147",
+        "K-000148",
+        "K-000119"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000378",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト空間からHausdorff空間への全単射",
+      "statement": "コンパクト X から Hausdorff Y への連続全単射は同相写像．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000377",
+        "K-000376",
+        "K-000224",
+        "K-000223",
+        "K-000219",
+        "K-000372"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000379",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクトな因子と管状近傍",
+      "statement": "Y コンパクト，W⊆X×Y 開，{x}×Y⊆W なら x の開近傍 U で U×Y⊆W となるものが存在する．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000257",
+        "K-000147",
+        "K-000119"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000380",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト空間の有限積",
+      "statement": "X,Y コンパクトなら X×Y コンパクト．有限積にも成立．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000379",
+        "K-000257",
+        "K-000100",
+        "K-000119"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000381",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "有限空間と無限離散空間",
+      "statement": "有限位相空間はコンパクト，無限離散空間はコンパクトでない．",
+      "assumptions": [],
+      "position": [
+        60,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000110",
+        "K-000119",
+        "K-000150"
+      ],
+      "status": "verified",
+      "source": "volumes/N-60/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000382",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "位相群",
+      "statement": "群 G に位相を入れ，積 G×G→G と逆元 G→G が連続なら位相群という．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000225",
+        "K-000217",
+        "K-000256"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000383",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "平行移動と逆元の同相性",
+      "statement": "位相群の左右平行移動と逆元写像は同相写像．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000257",
+        "K-000218",
+        "K-000223",
+        "K-000226"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000384",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "差写像による位相群の判定",
+      "statement": "群 G の位相が群位相 ⇔ (x,y)↦xy^{-1} が連続．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000257",
+        "K-000218"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000385",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単位元近傍の縮小",
+      "statement": "単位元の任意の近傍 U に対し対称開近傍 V で VV⊆U が存在する．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000383",
+        "K-000194",
+        "K-000257",
+        "K-000147"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000386",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単位元近傍による開集合の判定",
+      "statement": "U⊆G が開 ⇔ 各 x∈U に単位元の開近傍 V があり xV⊆U．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000383",
+        "K-000196"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000387",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分位相群",
+      "statement": "位相群の部分群は部分位相によって位相群となる．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000228",
+        "K-000255",
+        "K-000257"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000388",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "連続群準同型",
+      "statement": "位相群の間の連続な群準同型を連続群準同型という．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000282",
+        "K-000217"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000389",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "準同型の単位元における連続性",
+      "statement": "群準同型 f:G→H は単位元で連続なら全点で連続．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000388",
+        "K-000383",
+        "K-000220",
+        "K-000221",
+        "K-000283"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000390",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商位相群",
+      "statement": "正規部分群 N による商群 G/N は商位相で位相群となり標準全射は開写像．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000383",
+        "K-000267",
+        "K-000259",
+        "K-000261",
+        "K-000257",
+        "K-000268",
+        "K-000217",
+        "K-000258"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000391",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "離散群と密着群",
+      "statement": "任意の群の離散位相及び密着位相は群位相．",
+      "assumptions": [],
+      "position": [
+        27,
+        1,
+        2,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000150",
+        "K-000257"
+      ],
+      "status": "verified",
+      "source": "volumes/N-27/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000392",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一様構造",
+      "statement": "X×X 上のフィルター 𝒰 で全近縁が対角を含み，逆関係で閉じ，各 U に V∘V⊆U なる近縁 V が存在するもの．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000233",
+        "K-000051",
+        "K-000033",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000393",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称近縁による縮小",
+      "statement": "各近縁 U に対し対称近縁 V で V⊆U かつ V∘V⊆U が存在．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000233",
+        "K-000051"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000394",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "近縁による近傍",
+      "statement": "近縁 U と x∈X に対し U[x]={y∈X|(x,y)∈U} と書く．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000395",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様構造の誘導位相",
+      "statement": "各点 x の U[x] (U∈𝒰) を近傍基とする位相が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000394",
+        "K-000393",
+        "K-000216",
+        "K-000214"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000396",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分離一様構造",
+      "statement": "誘導位相が Hausdorff ⇔ 全近縁の共通部分が対角集合．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000395",
+        "K-000393",
+        "K-000394",
+        "K-000293"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000397",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一様連続写像",
+      "statement": "f:X→Y が一様連続 ⇔ 任意の Y の近縁 V に対し (f×f)^{-1}(V) が X の近縁．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000037",
+        "K-000043"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000398",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様連続性と連続性",
+      "statement": "一様連続写像は誘導位相に関して連続であり，一様連続写像の合成も一様連続．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000397",
+        "K-000395",
+        "K-000394",
+        "K-000220",
+        "K-000221",
+        "K-000037"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000399",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分一様空間",
+      "statement": "A⊆X の近縁を U∩(A×A) を含む集合全体と定めると一様構造となり誘導位相は部分位相．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000395",
+        "K-000394",
+        "K-000255",
+        "K-000233"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000400",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "離散一様構造",
+      "statement": "対角集合を含む部分集合全体は一様構造で，誘導位相は離散位相．",
+      "assumptions": [],
+      "position": [
+        92,
+        1,
+        2,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000395",
+        "K-000234"
+      ],
+      "status": "verified",
+      "source": "volumes/N-92/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -11694,16 +12802,18 @@
       "number": 27,
       "title": "位相群",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         62,
-        56
+        56,
+        64
       ],
       "goals": [
         "群演算の連続性・近傍系・連続準同型"
       ],
       "treatise": "T-27",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 28,
@@ -12174,21 +13284,22 @@
       "number": 59,
       "title": "連結性",
       "area": "位相",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         56
       ],
       "goals": [
-        "連結成分・弧状連結の基本・連結性保存"
+        "連結性・開閉集合による判定・連続像・連結成分・有限積（道と弧状連結性はN-215）"
       ],
       "treatise": "T-08",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 60,
       "title": "コンパクト性",
       "area": "位相",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         56,
         58
@@ -12197,7 +13308,8 @@
         "開被覆・有限交叉性・有限積・コンパクト集合"
       ],
       "treatise": "T-08",
-      "display_index": 9
+      "display_index": 9,
+      "web_only": true
     },
     {
       "number": 61,
@@ -12660,16 +13772,18 @@
       "number": 92,
       "title": "一様構造",
       "area": "位相",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         14,
-        56
+        56,
+        58
       ],
       "goals": [
         "近縁・一様連続・誘導位相"
       ],
       "treatise": "T-14",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 93,
@@ -14500,7 +15614,8 @@
         81
       ],
       "goals": [
-        "道・ホモトピー・変形収縮"
+        "道・ホモトピー・変形収縮",
+        "弧状連結性・道連結成分"
       ],
       "treatise": "T-31",
       "display_index": 2

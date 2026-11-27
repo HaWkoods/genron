@@ -1,0 +1,188 @@
+% Web専用原稿．
+% 構成案：位相群・平行移動・差写像・単位元近傍・部分群と商群・連続準同型．
+% 文献確認：Bredon, Topology and Geometry, Ch. I §15（節導入を確認）．証明は既出群論と積・商位相から再構成．
+\section{群演算の連続性}
+% genron:begin K-000382
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000217
+% genron:use K-000256
+\begin{defn}[位相群]
+群 $G$ に位相を入れ，積写像 $(x,y)\mapsto xy$ と逆元写像 $x\mapsto x^{-1}$ が連続となるとき，$G$ を位相群という．分離公理は定義に含めない．
+\end{defn}
+% genron:end K-000382
+% genron:begin K-000383
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000257
+% genron:use K-000218
+% genron:use K-000223
+% genron:use K-000226
+\begin{prop}[平行移動と逆元の同相性]
+位相群 $G$ において各 $a\in G$ に対する左平行移動 $x\mapsto ax$，右平行移動 $x\mapsto xa$，及び逆元写像は同相写像である．
+\end{prop}
+\begin{proof}
+定数写像と恒等写像は連続であり，積位相の普遍性から $x\mapsto(a,x)$，$x\mapsto(x,a)$ が連続である．積写像との合成で平行移動は連続となる．逆写像は $a^{-1}$ による平行移動であるから連続である．逆元写像の逆は自身である．
+\end{proof}
+% genron:end K-000383
+% genron:begin K-000384
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000257
+% genron:use K-000218
+\begin{prop}[差写像による位相群の判定]
+位相を備えた群 $G$ が位相群であるための必要十分条件は，写像 $d:G\times G\to G$，$d(x,y)=xy^{-1}$ が連続であることである．
+\end{prop}
+\begin{proof}
+必要性は逆元写像と積写像の連続性から従う．逆に $d(1,y)=y^{-1}$ により逆元写像は連続であり，$d(x,y^{-1})=xy$ により積写像も連続となる．これらの合成の連続性は積位相の普遍性による．
+\end{proof}
+% genron:end K-000384
+\section{単位元の近傍と部分群}
+% genron:begin K-000385
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000383
+% genron:use K-000194
+% genron:use K-000257
+% genron:use K-000147
+\begin{prop}[単位元近傍の縮小]
+位相群の単位元 $1$ の任意の近傍 $U$ に対し，$V^{-1}=V$ かつ $VV\subseteq U$ となる $1$ の開近傍 $V$ が存在する．
+\end{prop}
+\begin{proof}
+積写像の $(1,1)$ における連続性と積位相の開基により $1$ の開近傍 $A,B$ があって $AB\subseteq U$ となる．$V=A\cap B\cap A^{-1}\cap B^{-1}$ とおけば，逆元写像の同相性により開近傍であり，対称性と $VV\subseteq AB$ が従う．
+\end{proof}
+% genron:end K-000385
+% genron:begin K-000386
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000383
+% genron:use K-000196
+\begin{prop}[単位元近傍による開集合の判定]
+部分集合 $U\subseteq G$ が開であるための必要十分条件は，任意の $x\in U$ に対し $1$ の開近傍 $V$ で $xV\subseteq U$ となるものが存在することである．
+\end{prop}
+\begin{proof}
+必要性は $V=x^{-1}U$ を取ればよい．十分性は $xV$ が開集合であってこれらが $U$ を覆うことによる．
+\end{proof}
+% genron:end K-000386
+% genron:begin K-000387
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000228
+% genron:use K-000255
+% genron:use K-000257
+\begin{prop}[部分位相群]
+位相群 $G$ の部分群 $H$ は部分位相によって位相群となる．
+\end{prop}
+\begin{proof}
+$H\times H$ から $G\times G$ への包含は積位相の普遍性によって連続であり，積の制限の像は $H$ に含まれる．部分空間の普遍性によって $H\times H\to H$ は連続である．逆元写像も同じ論証で連続である．
+\end{proof}
+% genron:end K-000387
+% genron:begin K-000388
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000282
+% genron:use K-000217
+\begin{defn}[連続群準同型]
+位相群間の群準同型であって位相空間の写像として連続なものを連続群準同型という．逆写像も連続群準同型である全単射を位相群同型という．
+\end{defn}
+% genron:end K-000388
+% genron:begin K-000389
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000388
+% genron:use K-000383
+% genron:use K-000220
+% genron:use K-000221
+% genron:use K-000283
+\begin{prop}[準同型の単位元における連続性]
+位相群の間の群準同型 $f:G\to H$ が連続であることと，単位元において連続であることは同値である．
+\end{prop}
+\begin{proof}
+十分性のみ示す．$x\in G$ と $f(x)$ の近傍 $W$ に対し $f(x)^{-1}W$ は $1_H$ の近傍である．従ってその逆像は $1_G$ の近傍である．これを $x$ で左平行移動した集合は $x$ の近傍であり，準同型性から $f^{-1}(W)$ に含まれる．\GenronRef{K-000221}$ により連続である．
+\end{proof}
+% genron:end K-000389
+% genron:begin K-000390
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000383
+% genron:use K-000267
+% genron:use K-000259
+% genron:use K-000261
+% genron:use K-000257
+% genron:use K-000268
+% genron:use K-000217
+% genron:use K-000258
+\begin{prop}[商位相群]
+位相群 $G$ の正規部分群 $N$ に対し商群 $G/N$ に商位相を入れると位相群となる．標準全射 $q$ は開写像である．
+\end{prop}
+\begin{proof}
+開集合 $U\subseteq G$ に対し $q^{-1}(q(U))=UN=\bigcup_{n\in N}Un$ は開であるから $q$ は開写像である．$q\times q$ は開矩形を開矩形へ移し，積位相の開基から開全射である．従って商写像である（\GenronRef{K-000261}$）．商群の積写像と $q\times q$ の合成は $q$ と $G$ の積写像の合成に等しく連続である．商位相の普遍性により商群の積は連続である．逆元についても $q$ との合成が連続であることから従う．
+\end{proof}
+% genron:end K-000390
+% genron:begin K-000391
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000150
+% genron:use K-000257
+\begin{prop}[離散群と密着群]
+離散位相の二空間の積は離散であり，離散空間を始域とする写像は連続であるから，任意の群は離散位相で位相群となる．密着位相を終域とする写像も常に連続であるから，密着位相も群位相である．
+\end{prop}
+% genron:end K-000391
