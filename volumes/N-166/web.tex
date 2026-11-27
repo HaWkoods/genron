@@ -1,0 +1,164 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{非負函数の積分}
+% genron:begin K-000781
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000760
+% genron:use K-000746
+\begin{defn}[非負単函数の積分]
+測度空間 $(X,\mathcal A,\mu)$ を固定する．非負単函数 $s$ の相異なる値を $a_1,\ldots,a_m$，$A_j=\{s=a_j\}$ とするとき
+\[
+ I(s)=\sum_{j=1}^m a_j\mu(A_j)
+\]
+と定める．非負拡大実数と非負実数の積において $0\cdot(+\infty)=0$ と約束する．$a>0$ なら $a\cdot(+\infty)=+\infty$ とする．
+\end{defn}
+% genron:end K-000781
+% genron:begin K-000782
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000781
+% genron:use K-000749
+% genron:use K-000760
+\begin{prop}[単函数積分の基本性質]
+非負単函数の積分は任意の有限可測分割による表示 $s=\sum_i b_i1_{B_i}$ に対して $\sum_i b_i\mu(B_i)$ に等しい．また $s\leq t$ なら $I(s)\leq I(t)$ であり，$I(s+t)=I(s)+I(t)$，$I(cs)=cI(s)$ ($c\geq0$ は実数) である．
+\end{prop}
+\begin{proof}
+各 $B_i$ は値 $b_i$ の水準集合に含まれる．水準集合は対応する $B_i$ の互いに素な有限合併なので有限加法性から表示によらないことが従う．二つの単函数の水準集合分割の共通細分を取れば，同じ分割上でそれぞれの値を $a_i,b_i$ と書ける．$s\leq t$ なら空でない分割片で $a_i\leq b_i$ であり，非負和の比較により単調性が従う．加法性と斉次性は同じ分割における係数の和及び定数倍を計算すれば従う．無限測度の分割片についても $0\cdot\infty=0$ の約束によって分配律が成立する．
+\end{proof}
+% genron:end K-000782
+% genron:begin K-000783
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000781
+% genron:use K-000782
+% genron:use K-000715
+% genron:use K-000757
+\begin{defn}[非負可測函数の積分]
+非負拡大実数値可測函数 $f$ に対し
+\[
+ \int_X f\,d\mu=\sup\{I(s)\mid s\text{ は非負単函数},\ s\leq f\}
+\]
+と定める．この集合は零函数の積分を含むので空でない．単函数に対しては単函数積分の単調性により従来の値と一致する．定義から $f\leq g$ ならば $\int f\,d\mu\leq\int g\,d\mu$ である．
+\end{defn}
+% genron:end K-000783
+% genron:begin K-000784
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000783
+% genron:use K-000782
+% genron:use K-000751
+% genron:use K-000759
+% genron:use K-000715
+\begin{prop}[単調収束定理]
+非負拡大実数値可測函数列 $(f_n)$ が $f_n\leq f_{n+1}$ を満たすとし，$f=\sup_n f_n$ とおく．このとき
+\[
+ \int_X f\,d\mu=\sup_n\int_X f_n\,d\mu
+\]
+である．
+\end{prop}
+\begin{proof}
+$f$ は可測である．単調性から右辺 $L$ は左辺以下である．$s\leq f$ なる非負単函数 $s$ と $0<c<1$ を取る．$E_n=\{x\mid f_n(x)\geq c s(x)\}$ は可測であり増加する．$s(x)=0$ ならすべての $E_n$ に属し，$s(x)>0$ なら $f(x)\geq s(x)>cs(x)$ によりある $E_n$ に属する．従って $\bigcup_n E_n=X$ である．$cs1_{E_n}\leq f_n$ より $cI(s1_{E_n})\leq L$ である．$s$ の水準集合を $A_j$，値を $a_j$ とすれば，下からの連続性により $\mu(A_j\cap E_n)\uparrow\mu(A_j)$ である．有限個の非負増加列の和の上限は各上限の和に等しい．これは有限上限の場合にすべての項を同時に任意に近付けられること，無限上限の場合にはその項のみで和が非有界となることから分かる．従って $I(s1_{E_n})\uparrow I(s)$ であり $cI(s)\leq L$ である．$I(s)=+\infty$ なら $L=+\infty$，有限なら $c$ を $1$ に任意に近付ければ $I(s)\leq L$ である．すべての $s$ について上限を取ると左辺は $L$ 以下となる．
+\end{proof}
+% genron:end K-000784
+% genron:begin K-000785
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000784
+% genron:use K-000782
+% genron:use K-000761
+% genron:use K-000757
+% genron:use K-000759
+% genron:use K-000746
+\begin{prop}[非負積分の加法性と斉次性]
+非負拡大実数値可測函数 $f,g$ 及び非負実数 $c$ に対し $f+g,cf$ は可測であり，
+\[
+ \int(f+g)\,d\mu=\int f\,d\mu+\int g\,d\mu,\qquad
+ \int cf\,d\mu=c\int f\,d\mu
+\]
+である．$c=0$ の場合は無限値との積も零とする．
+\end{prop}
+\begin{proof}
+非負単函数の増加列 $s_n\uparrow f,t_n\uparrow g$ を取る．各 $s_n+t_n$ は非負単函数であり $s_n+t_n\uparrow f+g$ である．最後の等式は有限上限の場合の近似と無限上限の場合の非有界性から従う．従って $f+g$ は可測である．単調収束定理及び単函数の加法性から
+\[
+ \int(f+g)\,d\mu=\sup_n(I(s_n)+I(t_n))
+ =\sup_n I(s_n)+\sup_n I(t_n)
+\]
+を得る．右辺の等号も非負増加列の上限の性質による．斉次性は $cs_n\uparrow cf$ と単函数の斉次性を用いれば同様である．
+\end{proof}
+% genron:end K-000785
+% genron:begin K-000786
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000783
+% genron:use K-000781
+% genron:use K-000749
+% genron:use K-000757
+% genron:use K-000706
+\begin{prop}[非負積分が零となる条件]
+非負可測函数 $f$ に対し $\int f\,d\mu=0$ であることと $\mu(\{x\mid f(x)>0\})=0$ であることは同値である．
+\end{prop}
+\begin{proof}
+$A_n=\{f\geq1/n\}$ とすれば $(1/n)1_{A_n}\leq f$ である．積分が零なら $\mu(A_n)=0$ であり，$\{f>0\}=\bigcup_n A_n$ なので劣加法性から測度零である．逆に $\{f>0\}$ が測度零ならば $f$ 以下の非負単函数の正の水準集合はすべて測度零であり，単函数積分は零である．その上限も零である．
+\end{proof}
+% genron:end K-000786
+% genron:begin K-000787
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000784
+% genron:use K-000785
+% genron:use K-000746
+\begin{prop}[非負函数の級数と積分]
+非負可測函数列 $(f_n)$ に対し
+\[
+ \int_X\left(\sum_{n=1}^\infty f_n\right)d\mu
+ =\sum_{n=1}^\infty\int_X f_n\,d\mu
+\]
+である．
+\end{prop}
+\begin{proof}
+有限部分和は非負可測函数であり，その増加列の上限は点ごとの非負級数の和である．単調収束定理と有限和に対する加法性を適用すればよい．
+\end{proof}
+% genron:end K-000787

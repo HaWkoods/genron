@@ -23452,6 +23452,833 @@
       "status": "draft",
       "source": "volumes/N-165/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000762",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "収束数列の有界性と順序",
+      "statement": "収束実数列は有界であり，x_n≤y_n が十分大きい n で成立し x_n→x,y_n→y なら x≤y．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000712",
+        "K-000731",
+        "K-000723",
+        "K-000643",
+        "K-000644",
+        "K-000072",
+        "K-000110"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000763",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "数列の極限と体演算",
+      "statement": "x_n→x,y_n→y なら和・差・積は対応する極限へ収束し，y≠0 なら十分後で商が定義され x_n/y_n→x/y．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000762",
+        "K-000644",
+        "K-000712",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000764",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "挟撃の原理",
+      "statement": "a_n≤x_n≤b_n が十分後に成立し a_n,b_n が同一の実数 l に収束すれば x_n→l．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000712",
+        "K-000643"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000765",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "実数列の上極限と下極限",
+      "statement": "u_m=sup_{n≥m}x_n,l_m=inf_{n≥m}x_n として limsup x_n=inf_m u_m, liminf x_n=sup_m l_m．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000714",
+        "K-000715",
+        "K-000073"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000766",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "上極限・下極限による収束判定",
+      "statement": "liminf x_n≤limsup x_n．両者が同一の有限実数 x であることと x_n→x は同値．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000765",
+        "K-000764",
+        "K-000708",
+        "K-000712"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000767",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "上極限・下極限への部分列",
+      "statement": "有界実数列はその上極限および下極限に収束する部分列を持つ．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000765",
+        "K-000713",
+        "K-000734",
+        "K-000708",
+        "K-000104",
+        "K-000105",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000768",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Bolzano–Weierstrassの定理",
+      "statement": "有界実数列は収束部分列を持つ．",
+      "assumptions": [],
+      "position": [
+        22,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000767"
+      ],
+      "status": "draft",
+      "source": "volumes/N-22/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000769",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "完備距離空間",
+      "statement": "すべての Cauchy 列が空間内の点に収束する距離空間を完備という．",
+      "assumptions": [],
+      "position": [
+        85,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000738",
+        "K-000731"
+      ],
+      "status": "draft",
+      "source": "volumes/N-85/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000770",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "実数体の距離完備性",
+      "statement": "R は通常の距離について完備である．",
+      "assumptions": [],
+      "position": [
+        85,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000769",
+        "K-000705",
+        "K-000707",
+        "K-000708",
+        "K-000723",
+        "K-000738",
+        "K-000643",
+        "K-000644",
+        "K-000072"
+      ],
+      "status": "draft",
+      "source": "volumes/N-85/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000771",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分空間と完備性",
+      "statement": "完備距離空間の閉部分集合は完備であり，任意の距離空間の完備部分集合は閉である．",
+      "assumptions": [],
+      "position": [
+        85,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000769",
+        "K-000730",
+        "K-000735",
+        "K-000733",
+        "K-000739",
+        "K-000198"
+      ],
+      "status": "draft",
+      "source": "volumes/N-85/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000772",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "等長写像と完備化",
+      "statement": "距離を保存する写像を等長写像と呼び，X の稠密な等長埋込みを持つ完備距離空間を X の完備化という．",
+      "assumptions": [],
+      "position": [
+        85,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000198",
+        "K-000039"
+      ],
+      "status": "draft",
+      "source": "volumes/N-85/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000773",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchy列による距離空間の完備化",
+      "statement": "Cauchy 列の集合を d(x_n,y_n)→0 で割り，距離を lim d(x_n,y_n) と定めると完備化を得る．",
+      "assumptions": [],
+      "position": [
+        85,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000769",
+        "K-000770",
+        "K-000772",
+        "K-000738",
+        "K-000739",
+        "K-000724",
+        "K-000052",
+        "K-000053",
+        "K-000644",
+        "K-000060",
+        "K-000735",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-85/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000774",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "距離完備化の一意性",
+      "statement": "二つの完備化の間には埋込みと可換な全射等長写像がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        85,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000773",
+        "K-000772",
+        "K-000771",
+        "K-000733",
+        "K-000735",
+        "K-000739",
+        "K-000724",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-85/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000775",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "外測度",
+      "statement": "P(X) 上の非負拡大実数値函数で空集合で零，単調，可算劣加法的なものを外測度という．",
+      "assumptions": [],
+      "position": [
+        162,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000027",
+        "K-000714",
+        "K-000746"
+      ],
+      "status": "draft",
+      "source": "volumes/N-162/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000776",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "被覆による外測度",
+      "statement": "空集合を含む集合族 C⊆P(X) と c:C→[0,∞] (c(∅)=0) から，可算 C-被覆の費用の下限により外測度を得る．",
+      "assumptions": [],
+      "position": [
+        162,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000775",
+        "K-000715",
+        "K-000708",
+        "K-000746",
+        "K-000747",
+        "K-000060",
+        "K-000142",
+        "K-000138"
+      ],
+      "status": "draft",
+      "source": "volumes/N-162/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000777",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "外測度に関する可測集合",
+      "statement": "任意の T⊆X に対し m*(T)=m*(T∩A)+m*(T\\A) を満たす A を m* 可測という．",
+      "assumptions": [],
+      "position": [
+        162,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000775"
+      ],
+      "status": "draft",
+      "source": "volumes/N-162/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000778",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "外測度可測集合の有限演算",
+      "statement": "外測度可測集合全体は集合代数をなし，互いに素な有限可測族で切断すると外測度は対応する和に分解する．",
+      "assumptions": [],
+      "position": [
+        162,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000777",
+        "K-000178",
+        "K-000180"
+      ],
+      "status": "draft",
+      "source": "volumes/N-162/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000779",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Carathéodoryの定理",
+      "statement": "外測度可測集合は σ-加法族をなし，外測度の制限は完備測度となる．",
+      "assumptions": [],
+      "position": [
+        162,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000778",
+        "K-000775",
+        "K-000182",
+        "K-000185",
+        "K-000186",
+        "K-000748",
+        "K-000753",
+        "K-000746"
+      ],
+      "status": "draft",
+      "source": "volumes/N-162/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000780",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "測度から誘導される外測度",
+      "statement": "測度 μ から可測集合被覆により作る外測度は元の σ-加法族上で μ と一致し，元の可測集合は外測度可測である．",
+      "assumptions": [],
+      "position": [
+        162,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000776",
+        "K-000779",
+        "K-000748",
+        "K-000749",
+        "K-000182"
+      ],
+      "status": "draft",
+      "source": "volumes/N-162/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000781",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "非負単函数の積分",
+      "statement": "s=Σa_j1_{A_j} を互いに素な可測集合による表示とすると ∫s dμ=Σa_j μ(A_j)，0·∞=0 とする．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000748",
+        "K-000760",
+        "K-000746"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000782",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単函数積分の基本性質",
+      "statement": "単函数積分は互いに素な可測分割表示によらず，単調かつ加法的・非負実数に関して斉次である．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000781",
+        "K-000749",
+        "K-000760"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000783",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "非負可測函数の積分",
+      "statement": "非負可測函数 f の積分は f 以下の非負単函数の積分の上限である．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000781",
+        "K-000782",
+        "K-000715",
+        "K-000757"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000784",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単調収束定理",
+      "statement": "非負可測函数列 f_n が増加し f=sup_n f_n なら ∫f dμ=sup_n∫f_n dμ．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000783",
+        "K-000782",
+        "K-000751",
+        "K-000759",
+        "K-000715"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000785",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負積分の加法性と斉次性",
+      "statement": "非負可測 f,g に対し ∫(f+g)=∫f+∫g，非負実数 c に対し ∫cf=c∫f．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000784",
+        "K-000782",
+        "K-000761",
+        "K-000757",
+        "K-000759",
+        "K-000746"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000786",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負積分が零となる条件",
+      "statement": "非負可測函数 f の積分が零であることと μ({f>0})=0 は同値．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000783",
+        "K-000781",
+        "K-000749",
+        "K-000757",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000787",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負函数の級数と積分",
+      "statement": "非負可測函数列 f_n に対し ∫Σ f_n=Σ∫f_n．",
+      "assumptions": [],
+      "position": [
+        166,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000784",
+        "K-000785",
+        "K-000746"
+      ],
+      "status": "draft",
+      "source": "volumes/N-166/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
     }
   ],
   "notes": [
@@ -23796,7 +24623,7 @@
       "number": 22,
       "title": "実数列",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         82,
         84
@@ -23805,7 +24632,8 @@
         "単調列・上極限下極限・部分列"
       ],
       "treatise": "T-22",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 23,
@@ -24770,7 +25598,7 @@
       "number": 85,
       "title": "完備距離空間",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         84
       ],
@@ -24778,7 +25606,8 @@
         "完備性・閉部分空間・完備化"
       ],
       "treatise": "T-13",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 86,
@@ -25939,7 +26768,7 @@
       "number": 162,
       "title": "外測度",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         161
       ],
@@ -25947,7 +26776,8 @@
         "外測度・Carathéodory可測性"
       ],
       "treatise": "T-24",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 163,
@@ -26001,7 +26831,7 @@
       "number": 166,
       "title": "非負函数の積分",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         161,
         165
@@ -26010,7 +26840,8 @@
         "単函数積分・非負積分・単調収束"
       ],
       "treatise": "T-24",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 167,

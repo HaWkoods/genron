@@ -1,0 +1,160 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{外測度}
+% genron:begin K-000775
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000714
+% genron:use K-000746
+\begin{defn}[外測度]
+集合 $X$ の冪集合上の函数 $m^*:\mathcal P(X)\to[0,+\infty]$ が $m^*(\varnothing)=0$，単調性，及び任意の部分集合列 $(E_n)$ に対する
+\[
+ m^*\left(\bigcup_n E_n\right)\leq\sum_n m^*(E_n)
+\]
+を満たすとき $m^*$ を外測度という．
+\end{defn}
+% genron:end K-000775
+% genron:begin K-000776
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000775
+% genron:use K-000715
+% genron:use K-000708
+% genron:use K-000746
+% genron:use K-000747
+% genron:use K-000060
+% genron:use K-000142
+% genron:use K-000138
+\begin{prop}[被覆による外測度]
+$\varnothing\in\mathcal C\subseteq\mathcal P(X)$ とし，$c:\mathcal C\to[0,+\infty]$ が $c(\varnothing)=0$ を満たすものとする．
+\[
+ m^*(E)=\inf\left\{\sum_n c(C_n)\ \middle|\ C_n\in\mathcal C,\ E\subseteq\bigcup_n C_n\right\}
+\]
+と定めると，これは外測度である．被覆が存在しないときは下限を $+\infty$ とする．
+\end{prop}
+\begin{proof}
+空集合を空集合列で覆えば値は零である．$E\subseteq F$ なら $F$ の被覆は $E$ の被覆でもあるので単調性が従う．可算劣加法性を示すため，$\sum_n m^*(E_n)<+\infty$ と仮定する．$\varepsilon>0$ に対し，各 $E_n$ の被覆 $(C_{n,k})_{k\geq1}$ で費用が $m^*(E_n)+\varepsilon 2^{-n}$ 未満となるものを選択公理によって取る．二重添字集合は可算であり，これらの集合は $\bigcup_nE_n$ を覆う．任意の有限部分族の費用は対応する行の総費用の和以下であり，従って $\sum_n m^*(E_n)+\varepsilon$ 以下である．ここで $\sum_{n=1}^N2^{-n}=1-2^{-N}$ は帰納法で確認できる．列挙した被覆の費用も有限部分和の上限を取ることにより同じ上界を持つ．$\varepsilon$ は任意なので劣加法性が従う．右辺が無限大の場合は不等式は自明である．
+\end{proof}
+% genron:end K-000776
+\section{Carathéodory可測性}
+% genron:begin K-000777
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000775
+\begin{defn}[外測度に関する可測集合]
+外測度 $m^*$ に対し，集合 $A\subseteq X$ が任意の $T\subseteq X$ について
+\[
+ m^*(T)=m^*(T\cap A)+m^*(T\setminus A)
+\]
+を満たすとき $A$ を $m^*$ 可測という．外測度の劣加法性によって左辺以下の向きの不等式を示すだけで十分である．
+\end{defn}
+% genron:end K-000777
+% genron:begin K-000778
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000777
+% genron:use K-000178
+% genron:use K-000180
+\begin{prop}[外測度可測集合の有限演算]
+$m^*$ 可測集合全体 $\mathcal M$ は集合代数である．さらに互いに素な $A_1,\ldots,A_n\in\mathcal M$ に対し任意の $T\subseteq X$ について
+\[
+ m^*(T)=\sum_{j=1}^n m^*(T\cap A_j)+m^*(T\setminus\bigcup_{j=1}^n A_j)
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+$\varnothing,X$ は可測であり，補集合によって条件は不変である．$A,B$ が可測なら，まず $A$，次いで $B$ により $T$ を切断すれば
+\[
+ m^*(T)=m^*(T\cap A)+m^*((T\setminus A)\cap B)+m^*(T\setminus(A\cup B)).
+\]
+最初の二項の和は劣加法性により $m^*(T\cap(A\cup B))$ 以上であるから $A\cup B$ は可測である．有限分解の公式は可測性の等式を残余集合に反復適用すれば従う．互いに素であるので各切断部分は $T\cap A_j$ に等しい．
+\end{proof}
+% genron:end K-000778
+% genron:begin K-000779
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000778
+% genron:use K-000775
+% genron:use K-000182
+% genron:use K-000185
+% genron:use K-000186
+% genron:use K-000748
+% genron:use K-000753
+% genron:use K-000746
+\begin{prop}[Carathéodoryの定理]
+$m^*$ 可測集合全体 $\mathcal M$ は $\sigma$-加法族であり，$m^*|_{\mathcal M}$ は完備測度である．
+\end{prop}
+\begin{proof}
+互いに素な $A_n\in\mathcal M$ と $A=\bigcup_n A_n$ を取る．任意の $T\subseteq X$ に対し有限分解公式と単調性から
+\[
+ m^*(T)\geq\sum_{j=1}^n m^*(T\cap A_j)+m^*(T\setminus A)
+\]
+となる．$n$ に関する上限を取ると，非負拡大実数の加法の性質により
+\[
+ m^*(T)\geq\sum_{j=1}^\infty m^*(T\cap A_j)+m^*(T\setminus A)
+ \geq m^*(T\cap A)+m^*(T\setminus A)
+\]
+を得る．従って $A\in\mathcal M$ である．一般の可算合併は集合代数内で非交化できるので $\mathcal M$ は $\sigma$-加法族である．$T=A$ とすれば同じ有限分解から $m^*(A)\geq\sum_j m^*(A_j)$ であり，逆向きは劣加法性による．従って制限は測度である．
+
+$m^*(N)=0$ とし $E\subseteq N$ ならば単調性により $m^*(T\cap E)=0$ であり，$m^*(T\setminus E)\leq m^*(T)$ である．従って $E$ は外測度可測である．このことから制限測度の完備性が従う．
+\end{proof}
+% genron:end K-000779
+% genron:begin K-000780
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000776
+% genron:use K-000779
+% genron:use K-000748
+% genron:use K-000749
+% genron:use K-000182
+\begin{prop}[測度から誘導される外測度]
+測度空間 $(X,\mathcal A,\mu)$ に対して $\mathcal C=\mathcal A,c=\mu$ として得られる外測度を $\mu^*$ とする．このとき $\mu^*|_{\mathcal A}=\mu$ であり，$\mathcal A$ の元はすべて $\mu^*$ 可測である．
+\end{prop}
+\begin{proof}
+$E\in\mathcal A$ なら $E$ 自身を用いた被覆から $\mu^*(E)\leq\mu(E)$ である．任意の可測集合による被覆 $(C_n)$ に対し単調性と劣加法性から $\mu(E)\leq\sum_n\mu(C_n)$ であるので逆向きも従う．
+
+$A\in\mathcal A$，$T\subseteq X$ とし，$T$ の任意の可測集合被覆 $(C_n)$ を取る．$C_n\cap A,C_n\setminus A$ はそれぞれ $T\cap A,T\setminus A$ の被覆を与える．有限加法性により
+\[
+ \mu^*(T\cap A)+\mu^*(T\setminus A)\leq
+ \sum_n\mu(C_n\cap A)+\sum_n\mu(C_n\setminus A)
+ =\sum_n\mu(C_n).
+\]
+最後の等式は有限部分和での加法性及び非負単調列の上限に関する加法性から従う．実際，いずれかの和が無限大なら両辺無限大であり，両方有限なら各部分和を各上限から任意に小さい誤差内に同時に近付けられる．被覆について下限を取れば可測性を得る．
+\end{proof}
+% genron:end K-000780

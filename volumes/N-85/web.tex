@@ -1,0 +1,153 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{完備性}
+% genron:begin K-000769
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000738
+% genron:use K-000731
+\begin{defn}[完備距離空間]
+距離空間 $(X,d)$ の任意の Cauchy 列が $X$ の点に収束するとき，$(X,d)$ を完備距離空間という．部分集合の完備性は誘導距離に関する完備性を意味する．
+\end{defn}
+% genron:end K-000769
+% genron:begin K-000770
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000769
+% genron:use K-000705
+% genron:use K-000707
+% genron:use K-000708
+% genron:use K-000723
+% genron:use K-000738
+% genron:use K-000643
+% genron:use K-000644
+% genron:use K-000072
+\begin{prop}[実数体の距離完備性]
+通常の距離を備えた実数体 $\mathbb R$ は完備である．
+\end{prop}
+\begin{proof}
+Cauchy 列 $(x_n)$ は有界である．実際，ある $N$ 以降の項は $x_N$ からの距離が $1$ 未満であり，残りの有限個の項も有界である．$u_n=\sup_{k\geq n}x_k,\ l_n=\inf_{k\geq n}x_k$ は実数として存在する．$l=\sup_n l_n$，$u=\inf_n u_n$ とおくと，任意の $m,n$ について $l_m\leq u_n$ であるから $l\leq u$ である．任意の $\varepsilon>0$ に対し，$k,j\geq N$ なら $x_k\leq x_j+\varepsilon/2$ となる $N$ を取る．$k$ について上限，$j$ について下限を取ると $u_N\leq l_N+\varepsilon/2$ である．従って $0\leq u-l\leq\varepsilon/2$ であり $u=l$ である．$n\geq N$ なら $x_n,l$ はともに $[l_N,u_N]$ に属すので $|x_n-l|\leq\varepsilon/2$ である．
+\end{proof}
+% genron:end K-000770
+% genron:begin K-000771
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000769
+% genron:use K-000730
+% genron:use K-000735
+% genron:use K-000733
+% genron:use K-000739
+% genron:use K-000198
+\begin{prop}[閉部分空間と完備性]
+完備距離空間の閉部分集合は完備である．逆に任意の距離空間の完備部分集合は閉集合である．
+\end{prop}
+\begin{proof}
+閉部分集合 $A$ の Cauchy 列は $X$ で Cauchy 列であるため $X$ における極限を持つ．極限は $A$ の閉包に属し，$A$ は閉なので $A$ に属する．逆に $A$ が完備で $x$ がその閉包に属するならば，$A$ 内の $x$ に収束する列が存在する．これは Cauchy 列であるから $A$ 内にも極限を持つ．極限の一意性により $x\in A$ である．
+\end{proof}
+% genron:end K-000771
+\section{距離空間の完備化}
+% genron:begin K-000772
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000198
+% genron:use K-000039
+\begin{defn}[等長写像と完備化]
+距離空間間の写像 $i:X\to Y$ がすべての $x,x'\in X$ に対して $d_Y(i(x),i(x'))=d_X(x,x')$ を満たすとき等長写像という．等長写像は距離の分離性から単射である．完備距離空間 $Y$ と稠密な像を持つ等長写像 $i:X\to Y$ の組を $X$ の完備化という．
+\end{defn}
+% genron:end K-000772
+% genron:begin K-000773
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000769
+% genron:use K-000770
+% genron:use K-000772
+% genron:use K-000738
+% genron:use K-000739
+% genron:use K-000724
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000644
+% genron:use K-000060
+% genron:use K-000735
+% genron:use K-000706
+\begin{prop}[Cauchy列による距離空間の完備化]
+任意の距離空間は完備化を持つ．具体的には $X$ の Cauchy 列全体を $C$ とし，
+\[
+ (x_n)\sim(y_n)\ \Longleftrightarrow\ d(x_n,y_n)\to0
+\]
+と定める．商集合 $\widehat X=C/{\sim}$ に
+\[
+ \widehat d([(x_n)],[(y_n)])=\lim_{n\to\infty}d(x_n,y_n)
+\]
+を入れ，$i(x)$ を定数列 $(x,x,\ldots)$ の類とすると $(\widehat X,i)$ は完備化である．
+\end{prop}
+\begin{proof}
+$C$ は正整数から $X$ への写像全体の部分集合である．三角不等式によって $\sim$ の推移性が従い，反射性・対称性も明らかである．
+\[
+ |d(x_n,y_n)-d(x_m,y_m)|\leq d(x_n,x_m)+d(y_n,y_m)
+\]
+なので右辺の定義に用いる実数列は Cauchy 列であり，実数の完備性によって極限を持つ．代表列を $(x'_n),(y'_n)$ に変えたとき，距離の差の絶対値は $d(x_n,x'_n)+d(y_n,y'_n)$ 以下なので極限は不変である．非負性・対称性・三角不等式は各項の対応する性質を極限に移すことによって従い，距離が零であることは類が一致することに等しい．定数列から得る写像 $i$ は等長である．
+
+$z=[(x_n)]$ とすると $i(x_m)\to z$ である．実際，任意の $\varepsilon>0$ に対し $m,n\geq N$ ならば $d(x_m,x_n)<\varepsilon/2$ となる $N$ を選べば，$m\geq N$ で $\widehat d(i(x_m),z)\leq\varepsilon/2$ である．従って $i(X)$ は稠密である．
+
+最後に $\widehat X$ の Cauchy 列 $(z_n)$ を取る．稠密性と選択公理によって $\widehat d(i(a_n),z_n)<1/n$ なる $a_n\in X$ を各 $n$ について選ぶ．
+\[
+ d(a_n,a_m)\leq 1/n+\widehat d(z_n,z_m)+1/m
+\]
+なので $(a_n)$ は Cauchy 列である．$z=[(a_n)]$ とおけば先の議論により $i(a_n)\to z$ であり，三角不等式から $z_n\to z$ となる．従って $\widehat X$ は完備である．$X=\varnothing$ の場合にもこの構成は空の完備距離空間を与える．
+\end{proof}
+% genron:end K-000773
+% genron:begin K-000774
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000773
+% genron:use K-000772
+% genron:use K-000771
+% genron:use K-000733
+% genron:use K-000735
+% genron:use K-000739
+% genron:use K-000724
+% genron:use K-000060
+\begin{prop}[距離完備化の一意性]
+$(Y,i),(Z,j)$ を $X$ の二つの完備化とする．このとき $F\circ i=j$ を満たす全射等長写像 $F:Y\to Z$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+$y\in Y$ に対し $i(x_n)\to y$ となる $X$ の点列を稠密性によって取る．$(x_n)$ は Cauchy 列なので $(j(x_n))$ は $Z$ で収束する．その極限を $F(y)$ とする．別の列 $(x'_n)$ を用いても $d_X(x_n,x'_n)\leq d_Y(i(x_n),y)+d_Y(y,i(x'_n))\to0$ であるから極限は同じである．二点についてこの構成を行い，逆三角不等式によって距離の極限を比較すれば $F$ は等長写像である．定数列を用いると $Fi=j$ である．$F(Y)$ は $Y$ と等長であるため完備であり，従って $Z$ で閉である．しかも稠密集合 $j(X)$ を含むので $F(Y)=Z$ となる．一意性は等長写像が収束列の極限を保存することと $i(X)$ の稠密性から従う．
+\end{proof}
+% genron:end K-000774

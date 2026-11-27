@@ -1,0 +1,156 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{実数列の極限}
+% genron:begin K-000762
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000712
+% genron:use K-000731
+% genron:use K-000723
+% genron:use K-000643
+% genron:use K-000644
+% genron:use K-000072
+% genron:use K-000110
+\begin{prop}[収束数列の有界性と順序]
+収束実数列は有界である．また収束実数列 $(x_n),(y_n)$ の極限を $x,y$ とし，十分大きい $n$ に対して $x_n\leq y_n$ が成立するならば $x\leq y$ である．
+\end{prop}
+\begin{proof}
+$x_n\to x$ とすれば十分後の項について $|x_n|\leq |x|+1$ である．残りの有限個の絶対値と $|x|+1$ の最大値は全項の絶対値の上界である．第二の主張で $x>y$ と仮定し，$\varepsilon=(x-y)/3$ と取れば，十分大きい $n$ で $x_n>x-\varepsilon>y+\varepsilon>y_n$ となり矛盾する．
+\end{proof}
+% genron:end K-000762
+% genron:begin K-000763
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000762
+% genron:use K-000644
+% genron:use K-000712
+% genron:use K-000641
+\begin{prop}[数列の極限と体演算]
+$x_n\to x,\ y_n\to y$ ならば
+\[
+ x_n+y_n\to x+y,\quad x_n-y_n\to x-y,\quad x_ny_n\to xy
+\]
+である．$y\ne0$ ならば十分大きい $n$ について $y_n\ne0$ であり，$x_n/y_n\to x/y$ である．
+\end{prop}
+\begin{proof}
+和と差については誤差の絶対値が $|x_n-x|+|y_n-y|$ 以下であることから従う．積については $|x_n|\leq M$ となる $M\geq1$ を取り，
+\[
+ |x_ny_n-xy|\leq M|y_n-y|+|y||x_n-x|
+\]
+を用いる．両項は任意に小さくできる．$y\ne0$ なら十分後に $|y_n-y|<|y|/2$ なので $|y_n|>|y|/2$ である．従って
+\[
+ |y_n^{-1}-y^{-1}|\leq 2|y_n-y|/|y|^2
+\]
+から逆数の収束を得る．積の結果を適用すれば商についても従う．
+\end{proof}
+% genron:end K-000763
+% genron:begin K-000764
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000712
+% genron:use K-000643
+\begin{prop}[挟撃の原理]
+実数列 $(a_n),(x_n),(b_n)$ が十分後に $a_n\leq x_n\leq b_n$ を満たし，$a_n,b_n$ が同じ実数 $l$ に収束するならば $x_n\to l$ である．
+\end{prop}
+\begin{proof}
+任意の $\varepsilon>0$ に対して十分大きい $n$ では $l-\varepsilon<a_n\leq x_n\leq b_n<l+\varepsilon$ が成立する．これは $|x_n-l|<\varepsilon$ に等しい．
+\end{proof}
+% genron:end K-000764
+\section{上極限と下極限}
+% genron:begin K-000765
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000714
+% genron:use K-000715
+% genron:use K-000073
+\begin{defn}[実数列の上極限と下極限]
+実数列 $(x_n)$ に対し拡大実数において
+\[
+ u_m=\sup_{n\geq m}x_n,\quad l_m=\inf_{n\geq m}x_n
+\]
+とおく．$\limsup_{n\to\infty}x_n=\inf_m u_m$，$\liminf_{n\to\infty}x_n=\sup_m l_m$ と定め，それぞれ上極限，下極限という．
+\end{defn}
+% genron:end K-000765
+% genron:begin K-000766
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000765
+% genron:use K-000764
+% genron:use K-000708
+% genron:use K-000712
+\begin{prop}[上極限・下極限による収束判定]
+常に $\liminf x_n\leq\limsup x_n$ である．また $x_n\to x\in\mathbb R$ であるための必要十分条件は $\liminf x_n=\limsup x_n=x$ である．
+\end{prop}
+\begin{proof}
+任意の $m,k$ に対し $n\geq\max(m,k)$ とすれば $l_m\leq x_n\leq u_k$ である．上限・下限を順に取って第一の不等式を得る．収束する場合，十分後の項は $[x-\varepsilon,x+\varepsilon]$ に含まれ，その尾部の上限・下限も同区間に含まれる．従って上極限は $x+\varepsilon$ 以下，下極限は $x-\varepsilon$ 以上であり，第一の不等式から両者は $x$ に等しい．逆に両者が $x$ なら，任意の $\varepsilon>0$ に対し $u_m<x+\varepsilon$ となる $m$，$l_k>x-\varepsilon$ となる $k$ が存在する．$n\geq\max(m,k)$ ならば $x-\varepsilon<x_n<x+\varepsilon$ である．
+\end{proof}
+% genron:end K-000766
+% genron:begin K-000767
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000765
+% genron:use K-000713
+% genron:use K-000734
+% genron:use K-000708
+% genron:use K-000104
+% genron:use K-000105
+% genron:use K-000706
+\begin{prop}[上極限・下極限への部分列]
+有界実数列 $(x_n)$ の上極限 $u$ と下極限 $l$ は実数であり，それぞれに収束する部分列が存在する．
+\end{prop}
+\begin{proof}
+尾部の上限列 $(u_m)$ は減少し下に有界なので $u$ に収束する．$n_0=0$ とし，$n_k>n_{k-1}$ かつ $x_{n_k}>u-1/k$ を満たす最小の正整数を $n_k$ と定める．そのような整数は存在する．実際，存在しなければ第 $n_{k-1}+1$ 尾部の上限が $u-1/k$ 以下となり，$u$ の定義に反する．$n_k\geq k$ より $u-1/k<x_{n_k}\leq u_k$ であるから $x_{n_k}\to u$ である．下極限については $(-x_n)$ に同じ議論を適用する．
+\end{proof}
+% genron:end K-000767
+% genron:begin K-000768
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000767
+\begin{prop}[Bolzano–Weierstrassの定理]
+任意の有界実数列は収束部分列を持つ．
+\end{prop}
+\begin{proof}
+上極限に収束する部分列の存在による．
+\end{proof}
+% genron:end K-000768
