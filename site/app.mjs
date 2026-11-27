@@ -247,7 +247,7 @@ function showKnowledgePath(){
    const t=data.treatises.find(t=>t.id===n.treatise),p=data.parts.find(p=>p.id===t?.part);
    const li=node("li");li.append(anchor(noteNumber(n)+"　"+n.title,"#"+card.id),node("span","meta","　依存層 "+rank));indexList.append(li);
    card.append(node("p","web-running",[p?.title,t?.title,"依存層 "+rank].filter(Boolean).join("　｜　")));
-   const title=node("h3","web-note-title");title.append(anchor(noteNumber(n)+"　"+n.title,webUrl("note",no)));card.append(title);
+   const title=node("h3","web-note-title");title.append(anchor(noteNumber(n)+"　"+n.title,webUrl("note",no)));card.append(title);if(n.review_status==="draft")card.append(node("p","web-draft-status","草稿公開・査読未了"));
    const roles=[];if(items.some(e=>e.id===selected))roles.push("対象のノート");if(items.some(e=>e.id!==selected&&up.has(e.id)))roles.push("前提");if(items.some(e=>e.id!==selected&&down.has(e.id)))roles.push("後続");
    const bodyItems=(display.value==="full"?all.filter(e=>e.position[0]===no):items.slice()).sort(compareEntryPosition);
    card.append(node("p","meta path-note-meta",roles.join("・")+"　｜　関連知識 "+items.length+"項目　｜　本文 "+bodyItems.length+"項目"));
@@ -282,7 +282,7 @@ function showHome(){
  const buttons=[["all","すべて"],["note","ノート"],["verified","公開済み"],["planned","制作予定"],["entry","定義・命題・公理"],["examples","例・例題"]].map(([v,t])=>{const b=button(t,()=>{mode=v;update()});filters.append(b);return [v,b]});filters.append(count);
  const normalize=s=>String(s).normalize("NFKC").toLocaleLowerCase().replace(/\s+/g," ");
  const ready=n=>n.status==="planned"&&n.depends_on.every(d=>notes.has(d));
- const status=n=>notes.has(n.number)?"公開済み":ready(n)?"着手可能":n.status==="draft"?"草稿":n.status==="review"?"再検証中":"制作予定";
+ const status=n=>notes.has(n.number)?(notes.get(n.number).review_status==="draft"?"公開済み（草稿）":"公開済み"):ready(n)?"着手可能":n.status==="draft"?"草稿":n.status==="review"?"再検証中":"制作予定";
  const partOf=n=>byPart.get(byTreatise.get(n.treatise)?.part);
  const qurl=q=>url("q",q);
  function noteCard(n,context=true){
@@ -518,6 +518,7 @@ function showWeb(info,restore){
   const chapter=node("section","web-chapter");chapter.id="N-"+n.number;
   side.append(anchor(noteNumber(n)+"　"+n.title,"#"+chapter.id,"web-toc-note"));
   chapter.append(node("h3","web-note-title",noteNumber(n)+"　"+n.title));
+  if(n.review_status==="draft")chapter.append(node("p","web-draft-status","草稿公開・査読未了"));
   if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
 
   const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);

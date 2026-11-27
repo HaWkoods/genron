@@ -26957,7 +26957,8 @@
       ],
       "treatise": "T-12",
       "display_index": 1,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 13,
@@ -26974,7 +26975,8 @@
       ],
       "treatise": "T-13",
       "display_index": 1,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 14,
@@ -27120,7 +27122,8 @@
       ],
       "treatise": "T-22",
       "display_index": 1,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 23,
@@ -27137,7 +27140,8 @@
       ],
       "treatise": "T-23",
       "display_index": 1,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 24,
@@ -28017,7 +28021,8 @@
       ],
       "treatise": "T-12",
       "display_index": 2,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 81,
@@ -28032,7 +28037,8 @@
       ],
       "treatise": "T-12",
       "display_index": 3,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 82,
@@ -28047,7 +28053,8 @@
       ],
       "treatise": "T-12",
       "display_index": 4,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 83,
@@ -28063,7 +28070,8 @@
       ],
       "treatise": "T-12",
       "display_index": 5,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 84,
@@ -28080,7 +28088,8 @@
       ],
       "treatise": "T-13",
       "display_index": 2,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 85,
@@ -28095,7 +28104,8 @@
       ],
       "treatise": "T-13",
       "display_index": 3,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 86,
@@ -28111,7 +28121,8 @@
       ],
       "treatise": "T-13",
       "display_index": 4,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 87,
@@ -28128,7 +28139,8 @@
       ],
       "treatise": "T-13",
       "display_index": 5,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 88,
@@ -28144,7 +28156,8 @@
       ],
       "treatise": "T-13",
       "display_index": 6,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 89,
@@ -28159,7 +28172,8 @@
       ],
       "treatise": "T-13",
       "display_index": 7,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 90,
@@ -28312,7 +28326,8 @@
       ],
       "treatise": "T-15",
       "display_index": 5,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 100,
@@ -28329,7 +28344,8 @@
       ],
       "treatise": "T-15",
       "display_index": 6,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 101,
@@ -28345,7 +28361,8 @@
       ],
       "treatise": "T-15",
       "display_index": 7,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 102,
@@ -28999,7 +29016,8 @@
       ],
       "treatise": "T-22",
       "display_index": 2,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 145,
@@ -29135,7 +29153,8 @@
       ],
       "treatise": "T-23",
       "display_index": 2,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 154,
@@ -29150,7 +29169,8 @@
       ],
       "treatise": "T-23",
       "display_index": 3,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 155,
@@ -29258,7 +29278,8 @@
       ],
       "treatise": "T-24",
       "display_index": 2,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 162,
@@ -29273,7 +29294,8 @@
       ],
       "treatise": "T-24",
       "display_index": 3,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 163,
@@ -29289,7 +29311,8 @@
       ],
       "treatise": "T-24",
       "display_index": 4,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 164,
@@ -29322,7 +29345,8 @@
       ],
       "treatise": "T-24",
       "display_index": 6,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 166,
@@ -29338,7 +29362,8 @@
       ],
       "treatise": "T-24",
       "display_index": 7,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 167,
@@ -29355,7 +29380,8 @@
       ],
       "treatise": "T-24",
       "display_index": 8,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 168,
@@ -29371,7 +29397,8 @@
       ],
       "treatise": "T-24",
       "display_index": 9,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 169,
@@ -29475,7 +29502,8 @@
       ],
       "treatise": "T-25",
       "display_index": 4,
-      "web_only": true
+      "web_only": true,
+      "web_preview": true
     },
     {
       "number": 176,
