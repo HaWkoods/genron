@@ -1,0 +1,150 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵の可換環論資料を検索した．PIDの該当本文は未照合．既出の整除論から再構成．
+\section{単項イデアル整域と一意分解}
+% genron:begin K-001119
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000443
+% genron:use K-000327
+% genron:use K-000328
+\begin{defn}[単項イデアル整域]
+すべてのイデアルが一元で生成される整域を単項イデアル整域（PID）という．
+\end{defn}
+% genron:end K-001119
+% genron:begin K-001120
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000443
+% genron:use K-000103
+\begin{defn}[Euclid整域]
+整域 $R$ の非零元に自然数値函数 $\nu$ が定義され，任意の $a\in R,b\ne0$ に対し $a=bq+r$ かつ $r=0$ 又は $\nu(r)<\nu(b)$ となる $q,r\in R$ が存在するとき，$R$ を Euclid 整域という．
+\end{defn}
+% genron:end K-001120
+% genron:begin K-001121
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001119
+% genron:use K-001120
+% genron:use K-000104
+\begin{prop}[Euclid整域の単項性]
+Euclid整域は PID である．
+\end{prop}
+\begin{proof}
+非零イデアル $I$ の非零元のうち $\nu$ の値が最小のもの $b$ を取る．$a\in I$ に対し除法を行うと剰余 $r=a-bq$ は $I$ に属するので，最小性により $r=0$ である．従って $I=(b)$ である．零イデアルは $(0)$ である．
+\end{proof}
+% genron:end K-001121
+% genron:begin K-001122
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001119
+% genron:use K-000577
+% genron:use K-000579
+% genron:use K-000328
+\begin{prop}[最大公約元とBezout等式]
+PID において $(a,b)=(d)$ なら $d$ は $a,b$ の最大公約元であり，$d=ua+vb$ となる $u,v\in R$ が存在する．
+\end{prop}
+\begin{proof}
+$a,b\in(d)$ なので $d$ は公約元である．公約元 $c$ について $(a,b)\subseteq(c)$ だから $c\mid d$ となる．最後の表示は $d\in(a,b)$ による．
+\end{proof}
+% genron:end K-001122
+% genron:begin K-001123
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001119
+% genron:use K-000327
+\begin{prop}[PIDの昇鎖条件]
+PID のイデアルの任意の昇鎖 $I_0\subseteq I_1\subseteq\cdots$ は停止する．
+\end{prop}
+\begin{proof}
+和集合 $I=\bigcup_n I_n$ はイデアルである．$I=(d)$ と書くとある $N$ について $d\in I_N$ となるから $I=I_N$ である．
+\end{proof}
+% genron:end K-001123
+% genron:begin K-001124
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001119
+% genron:use K-000575
+% genron:use K-000446
+% genron:use K-000447
+\begin{prop}[PIDにおける既約元と素元]
+PID の既約元は素元である．
+\end{prop}
+\begin{proof}
+既約元 $p$ に対し $(p)\subseteq(d)\subseteq R$ なら $p=de$ である．既約性から $d$ 又は $e$ が単元なので $(d)=R$ 又は $(p)$ である．従って $(p)$ は極大であり素である．これを素元の定義に読み替える．
+\end{proof}
+% genron:end K-001124
+% genron:begin K-001125
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000572
+% genron:use K-000575
+% genron:use K-000118
+\begin{defn}[一意分解整域]
+零でない非単元が既約元の有限積に表され，その表示が因子の順序及び各因子の同伴元への置換を除いて一意である整域を一意分解整域という．
+\end{defn}
+% genron:end K-001125
+% genron:begin K-001126
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001123
+% genron:use K-001124
+% genron:use K-001125
+% genron:use K-000444
+% genron:use K-000573
+% genron:use K-000100
+% genron:use K-000078
+\begin{prop}[PIDの一意分解]
+PID は一意分解整域である．
+\end{prop}
+\begin{proof}
+有限分解を持たない非零非単元 $a$ があれば，それは既約でなく $a=bc$ と非単元に分かれ，少なくとも一方は有限分解を持たない．その一方 $a_1$ について $(a)\subsetneq(a_1)$ である．等号なら簡約律により他方が単元となるからである．選択公理の下でこれを反復すると真の昇鎖となり矛盾する．二つの既約分解を比較すると一方の最初の因子は素元なので他方のある因子を割り，既約性から同伴となる．単元を調整し簡約する操作を繰り返す．非単元の積は単元でないので因子の個数も一致する．
+\end{proof}
+% genron:end K-001126

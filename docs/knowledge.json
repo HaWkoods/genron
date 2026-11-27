@@ -34867,6 +34867,1061 @@
       "status": "draft",
       "source": "volumes/N-322/web.tex",
       "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001119",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "単項イデアル整域",
+      "statement": "すべてのイデアルが一元で生成される整域を単項イデアル整域（PID）という．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000443",
+        "K-000327",
+        "K-000328"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001120",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Euclid整域",
+      "statement": "整域 $R$ の非零元に自然数値函数 $\\nu$ が定義され，任意の $a\\in R,b\\ne0$ に対し $a=bq+r$ かつ $r=0$ 又は $\\nu(r)<\\nu(b)$ となる $q,r\\in R$ が存在するとき，$R$ を Euclid 整域という．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000443",
+        "K-000103"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001121",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Euclid整域の単項性",
+      "statement": "Euclid整域は PID である．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001119",
+        "K-001120",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001122",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "最大公約元とBezout等式",
+      "statement": "PID において $(a,b)=(d)$ なら $d$ は $a,b$ の最大公約元であり，$d=ua+vb$ となる $u,v\\in R$ が存在する．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001119",
+        "K-000577",
+        "K-000579",
+        "K-000328"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001123",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "PIDの昇鎖条件",
+      "statement": "PID のイデアルの任意の昇鎖 $I_0\\subseteq I_1\\subseteq\\cdots$ は停止する．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001119",
+        "K-000327"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001124",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "PIDにおける既約元と素元",
+      "statement": "PID の既約元は素元である．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001119",
+        "K-000575",
+        "K-000446",
+        "K-000447"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001125",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一意分解整域",
+      "statement": "零でない非単元が既約元の有限積に表され，その表示が因子の順序及び各因子の同伴元への置換を除いて一意である整域を一意分解整域という．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000572",
+        "K-000575",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001126",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "PIDの一意分解",
+      "statement": "PID は一意分解整域である．",
+      "assumptions": [],
+      "position": [
+        107,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001123",
+        "K-001124",
+        "K-001125",
+        "K-000444",
+        "K-000573",
+        "K-000100",
+        "K-000078"
+      ],
+      "status": "draft",
+      "source": "volumes/N-107/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001127",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "加群の分数の関係",
+      "statement": "可換環 $R$，積閉集合 $S$，$R$ 加群 $M$ に対し $(m,s)\\sim(n,t)$ を，ある $u\\in S$ について $u(tm-sn)=0$ となることと定める．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000449",
+        "K-000335"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001128",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数の同値関係",
+      "statement": "この関係は $M\\times S$ 上の同値関係である．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001127",
+        "K-000450"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001129",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化加群",
+      "statement": "商集合 $S^{-1}M=(M\\times S)/{\\sim}$ の類を $m/s$ と書く．\n\\[\nm/s+n/t=(tm+sn)/(st),\\qquad (a/r)(m/s)=am/(rs)\n\\]\nによって $S^{-1}R$ 加群となる．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001128",
+        "K-000451",
+        "K-000335",
+        "K-000336"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001130",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化の零判定",
+      "statement": "$m/s=0$ と，ある $u\\in S$ について $um=0$ となることは同値である．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001129"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001131",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化の函手性",
+      "statement": "加群準同型 $f:M\\to N$ は $m/s\\mapsto f(m)/s$ により準同型 $S^{-1}f$ を誘導し，恒等写像及び合成を保存する．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001129",
+        "K-000338"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001132",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加群局所化の普遍性",
+      "statement": "$S^{-1}R$ 加群 $N$ を標準準同型により $R$ 加群とみなすとき，任意の $R$ 線形写像 $f:M\\to N$ は $m\\mapsto m/1$ を介して一意の $S^{-1}R$ 線形写像に延長される．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001129",
+        "K-000452",
+        "K-000453",
+        "K-000338"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001133",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化の完全性",
+      "statement": "加群準同型列 $L\\xrightarrow f M\\xrightarrow g N$ が中央で完全，すなわち $\\operatorname{im}f=\\ker g$ なら局所化した列も中央で完全である．局所化は単射及び全射を保存する．",
+      "assumptions": [],
+      "position": [
+        137,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001131",
+        "K-001130",
+        "K-000339"
+      ],
+      "status": "draft",
+      "source": "volumes/N-137/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001134",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "イデアルの拡大と縮小",
+      "statement": "環準同型 $h:R\\to B$ に対し，$R$ のイデアル $I$ の像の生成するイデアルを $I^e$，$B$ のイデアル $J$ の逆像を $J^c$ と書く．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000327",
+        "K-000328",
+        "K-000451"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001135",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化イデアルの表示",
+      "statement": "$B=S^{-1}R$ なら $I^e=\\{a/s\\mid a\\in I,s\\in S\\}$ であり，$(J^c)^e=J$ である．$I^e=B$ と $I\\cap S\\ne\\varnothing$ は同値である．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001134",
+        "K-000450",
+        "K-000451",
+        "K-000452",
+        "K-000334"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001136",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化の素イデアル対応",
+      "statement": "$S^{-1}R$ の素イデアルと，$R$ の $S$ と交わらない素イデアルは拡大と縮小によって包含順序を保つ一対一の対応をなす．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001135",
+        "K-000446",
+        "K-000450"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001137",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所環",
+      "statement": "ただ一つの極大イデアルを持つ可換環を局所環という．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001138",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所環の非単元",
+      "statement": "零環でない可換環が局所環であることと，非単元全体がイデアルをなすことは同値である．そのイデアルは唯一の極大イデアルである．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001137",
+        "K-000442",
+        "K-000448",
+        "K-000334"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001139",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素イデアルにおける局所化",
+      "statement": "素イデアル $\\mathfrak p\\subset R$ に対して $R_{\\mathfrak p}=(R\\setminus\\mathfrak p)^{-1}R$ は局所環であり，唯一の極大イデアルは $\\mathfrak p R_{\\mathfrak p}$ である．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001138",
+        "K-001136",
+        "K-000449"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001140",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "イデアルの根基",
+      "statement": "イデアル $I$ の根基を $\\sqrt I=\\{a\\in R\\mid a^n\\in I\\text{ となる正整数 }n\\text{ が存在する}\\}$ と定める．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000327",
+        "K-000249",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001141",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "根基の素イデアル表示",
+      "statement": "$\\sqrt I$ は $I$ を含む全素イデアルの共通部分に等しい．空の共通部分を $R$ とする．特に根基はイデアルである．",
+      "assumptions": [],
+      "position": [
+        138,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001140",
+        "K-001135",
+        "K-001136",
+        "K-000448"
+      ],
+      "status": "draft",
+      "source": "volumes/N-138/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001142",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "鎖複体の短完全列",
+      "statement": "鎖写像 $i:A_\\bullet\\to B_\\bullet$，$p:B_\\bullet\\to C_\\bullet$ に対して，各次数 $n$ で $0\\to A_n\\xrightarrow i B_n\\xrightarrow p C_n\\to0$ が完全であるとき鎖複体の短完全列という．",
+      "assumptions": [],
+      "position": [
+        208,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000533",
+        "K-000534",
+        "K-000535",
+        "K-000536"
+      ],
+      "status": "draft",
+      "source": "volumes/N-208/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001143",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連結準同型",
+      "statement": "鎖複体の短完全列は準同型 $\\partial:H_n(C)\\to H_{n-1}(A)$ を誘導する．",
+      "assumptions": [],
+      "position": [
+        208,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001142",
+        "K-000538",
+        "K-000539"
+      ],
+      "status": "draft",
+      "source": "volumes/N-208/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001144",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "ホモロジーの長完全列",
+      "statement": "鎖複体の短完全列は完全列\n\\[\n\\cdots\\to H_n(A)\\xrightarrow{i_*}H_n(B)\\xrightarrow{p_*}H_n(C)\n\\xrightarrow{\\partial}H_{n-1}(A)\\to\\cdots\n\\]\nを誘導する．",
+      "assumptions": [],
+      "position": [
+        208,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001143",
+        "K-000538",
+        "K-000539",
+        "K-000535"
+      ],
+      "status": "draft",
+      "source": "volumes/N-208/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001145",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連結準同型の自然性",
+      "statement": "短完全列の間の可換な鎖写像の組 $(f_A,f_B,f_C)$ に対し $(f_A)_*\\partial=\\partial'(f_C)_*$ が成立する．",
+      "assumptions": [],
+      "position": [
+        208,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001143",
+        "K-000539"
+      ],
+      "status": "draft",
+      "source": "volumes/N-208/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001146",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "蛇の補題",
+      "statement": "短完全列 $0\\to A\\to B\\to C\\to0$ と $0\\to A'\\to B'\\to C'\\to0$ の間の可換な準同型の組 $(f,g,h)$ に対して，完全列\n\\[\n0\\to\\ker f\\to\\ker g\\to\\ker h\\to\n\\operatorname{coker}f\\to\\operatorname{coker}g\\to\\operatorname{coker}h\\to0\n\\]\nが存在する．",
+      "assumptions": [],
+      "position": [
+        208,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001144",
+        "K-000533",
+        "K-000538"
+      ],
+      "status": "draft",
+      "source": "volumes/N-208/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001147",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "射影加群",
+      "statement": "左加群 $P$ が射影的であるとは，任意の全射準同型 $q:E\\to M$ と準同型 $f:P\\to M$ に対し $q\\widetilde f=f$ を満たす準同型 $\\widetilde f:P\\to E$ が存在することをいう．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000335",
+        "K-000338"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001148",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の射影性",
+      "statement": "自由加群は射影加群である．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001147",
+        "K-000582",
+        "K-000585"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001149",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "射影性の分裂による判定",
+      "statement": "$P$ が射影的であることと，$P$ を終域とする任意の全射が右逆準同型を持つことは同値である．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001147",
+        "K-000337",
+        "K-000338",
+        "K-000583"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001150",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の直和因子としての射影加群",
+      "statement": "加群が射影的であることは，ある自由加群の直和因子に同型であることと同値である．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001148",
+        "K-001149",
+        "K-000584",
+        "K-000583"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001151",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "射影加群の直和",
+      "statement": "射影加群の任意の族の直和は射影加群である．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001147",
+        "K-000583"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001152",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "射影分解",
+      "statement": "加群 $M$ の射影分解とは，各 $P_n$ が射影加群である列\n\\[\n\\cdots\\longrightarrow P_2\\longrightarrow P_1\\longrightarrow P_0\\longrightarrow M\\longrightarrow0\n\\]\nで，各位置において直前の写像の像が直後の写像の核に一致するものをいう．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001147",
+        "K-000339"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001153",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "射影分解の存在",
+      "statement": "任意の加群は自由加群からなる射影分解を持つ．",
+      "assumptions": [],
+      "position": [
+        209,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001152",
+        "K-001148",
+        "K-000584",
+        "K-000581",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-209/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -36567,7 +37622,7 @@
       "number": 107,
       "title": "単項イデアル整域",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         73,
         69
@@ -36576,7 +37631,8 @@
         "PID・Euclid整域・一意分解"
       ],
       "treatise": "T-16",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 108,
@@ -37019,7 +38075,7 @@
       "number": 137,
       "title": "局所化と加群",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         74,
         16
@@ -37028,13 +38084,14 @@
         "加群局所化・完全性"
       ],
       "treatise": "T-21",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 138,
       "title": "素イデアルと局所環",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         74,
         70
@@ -37043,7 +38100,8 @@
         "素イデアル対応・局所環・根基"
       ],
       "treatise": "T-21",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 139,
@@ -38196,7 +39254,7 @@
       "number": 208,
       "title": "ホモロジーと連結準同型",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         30
       ],
@@ -38204,13 +39262,14 @@
         "ホモロジー・蛇の補題・長完全列"
       ],
       "treatise": "T-30",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 209,
       "title": "射影加群",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         105,
         117
@@ -38219,7 +39278,8 @@
         "持ち上げ性・射影分解"
       ],
       "treatise": "T-30",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 210,

@@ -1,0 +1,106 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Rotman, An Introduction to Homological Algebra, Ch. 6 §6.1, p.335 の長完全列と蛇の補題の関係を確認．
+\section{ホモロジーの長完全列}
+% genron:begin K-001142
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000533
+% genron:use K-000534
+% genron:use K-000535
+% genron:use K-000536
+\begin{defn}[鎖複体の短完全列]
+鎖写像 $i:A_\bullet\to B_\bullet$，$p:B_\bullet\to C_\bullet$ に対して，各次数 $n$ で $0\to A_n\xrightarrow i B_n\xrightarrow p C_n\to0$ が完全であるとき鎖複体の短完全列という．
+\end{defn}
+% genron:end K-001142
+% genron:begin K-001143
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001142
+% genron:use K-000538
+% genron:use K-000539
+\begin{prop}[連結準同型]
+鎖複体の短完全列は準同型 $\partial:H_n(C)\to H_{n-1}(A)$ を誘導する．
+\end{prop}
+\begin{proof}
+サイクル $c$ の持上げ $b$ を取る．$p(db)=0$ より一意の $a$ が $i(a)=db$ を満たし，$i(da)=0$ なので $da=0$ である．$\partial[c]=[a]$ と定める．$b$ を別の持上げに替えると $i(x)$ だけ異なり，$a$ は境界 $dx$ だけ異なる．$c$ を $c+dc'$ に替えるときは $c'$ の持上げ $b'$ を取り $b+db'$ を選べば $db$ は変わらない．従って代表元によらない．和及びスカラー倍に対して持上げをそれぞれ和及びスカラー倍に取れば線形性を得る．
+\end{proof}
+% genron:end K-001143
+% genron:begin K-001144
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001143
+% genron:use K-000538
+% genron:use K-000539
+% genron:use K-000535
+\begin{prop}[ホモロジーの長完全列]
+鎖複体の短完全列は完全列
+\[
+\cdots\to H_n(A)\xrightarrow{i_*}H_n(B)\xrightarrow{p_*}H_n(C)
+\xrightarrow{\partial}H_{n-1}(A)\to\cdots
+\]
+を誘導する．
+\end{prop}
+\begin{proof}
+$H_n(B)$ で $p_*[b]=0$ なら $p(b)=dc'$ である．$c'$ の持上げ $b'$ により $b-db'=i(a)$ と書けば $a$ はサイクルであり $[b]=i_*[a]$ となる．逆包含は $pi=0$ による．$H_n(C)$ で $\partial[c]=0$ なら上の構成で $db=i(da')$ なので $b-i(a')$ はサイクルとしての持上げである．逆にそのような持上げがあれば連結像は零となる．$H_{n-1}(A)$ で $i_*[a]=0$ なら $i(a)=db$ となる $b$ が存在し，$p(b)$ はサイクルで連結像は $[a]$ である．逆包含は $i(a)=db$ による．すべての次数で同じ論証を適用する．
+\end{proof}
+% genron:end K-001144
+% genron:begin K-001145
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001143
+% genron:use K-000539
+\begin{prop}[連結準同型の自然性]
+短完全列の間の可換な鎖写像の組 $(f_A,f_B,f_C)$ に対し $(f_A)_*\partial=\partial'(f_C)_*$ が成立する．
+\end{prop}
+\begin{proof}
+$p(b)=c$，$i(a)=db$ とすると $p'f_B(b)=f_C(c)$，$i'f_A(a)=d'f_B(b)$ である．従って $f_B(b)$ を持上げに用いた連結像は $[f_A(a)]$ である．
+\end{proof}
+% genron:end K-001145
+% genron:begin K-001146
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001144
+% genron:use K-000533
+% genron:use K-000538
+\begin{prop}[蛇の補題]
+短完全列 $0\to A\to B\to C\to0$ と $0\to A'\to B'\to C'\to0$ の間の可換な準同型の組 $(f,g,h)$ に対して，完全列
+\[
+0\to\ker f\to\ker g\to\ker h\to
+\operatorname{coker}f\to\operatorname{coker}g\to\operatorname{coker}h\to0
+\]
+が存在する．
+\end{prop}
+\begin{proof}
+各縦の準同型を次数 $1$ から $0$ への微分とする二項鎖複体とみなす．横列の完全性により複体の短完全列を得る．次数 $1$ のホモロジーは核，次数 $0$ のホモロジーは余核（終域を像で割った商加群）であり他の次数は零である．長完全列を適用する．
+\end{proof}
+% genron:end K-001146
