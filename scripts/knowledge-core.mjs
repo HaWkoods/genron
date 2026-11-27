@@ -32,12 +32,17 @@ function parseSources(sources){
  return {blocks,errors,uses};
 }
 
+
+const headingLabels={proposition:"命題",definition:"定義",axiom:"公理",example:"例",worked_example:"例題"};
+function headingKind(e){return e.heading_kind??({convention:"definition",background:"axiom",axiom:"axiom",definition:"definition",example:"example",worked_example:"worked_example",exercise:"worked_example"}[e.kind]??"proposition")}
+function isExample(e){return ["example","worked_example"].includes(headingKind(e))}
+
 function validate(ledger,sources={}){
  const errors=[],warnings=[],entries=new Map(),positions=new Map();
  const report=(code,msg,warning=false)=>(warning?warnings:errors).push(`${code}: ${msg}`);
  if(!ledger||ledger.schema_version!==1||!Array.isArray(ledger.entries)){report("SCHEMA","schema_version=1 and entries array required");return {errors,warnings}}
  if(!ledger.foundation||typeof ledger.foundation!=="object"||Array.isArray(ledger.foundation)||!["undecided","adopted"].includes(ledger.foundation.status)||typeof ledger.foundation.description!=="string")report("FOUNDATION","foundation.status and description required");
- const kinds=["axiom","convention","definition","lemma","proposition","theorem","corollary","construction","exercise","background"];
+ const kinds=["axiom","convention","definition","lemma","proposition","theorem","corollary","construction","exercise","background","example","worked_example"];
  const statuses=["planned","draft","verified","review","retired"];
  const text=x=>typeof x==="string"&&x.trim().length>0;
  for(const e of ledger.entries){
@@ -45,6 +50,9 @@ function validate(ledger,sources={}){
   if(entries.has(e.id)){report("DUPLICATE_ID",e.id);continue}
   entries.set(e.id,e);
   if(!kinds.includes(e.kind)||!statuses.includes(e.status)||!text(e.title)||!text(e.statement)||!Array.isArray(e.assumptions)||!e.assumptions.every(text))report("SCHEMA",e.id+" kind/status/title/statement/assumptions");
+  if(ledger.heading_version===1&&!Object.hasOwn(headingLabels,e.heading_kind))report("HEADING_KIND",e.id);
+  if(e.heading_kind!==undefined&&!Object.hasOwn(headingLabels,e.heading_kind))report("HEADING_KIND",e.id);
+  if(ledger.heading_version===1&&headingKind(e)==="worked_example"&&!text(e.problem_tex))report("WORKED_EXAMPLE_PROMPT",e.id);
   if(!Array.isArray(e.depends_on)||!e.depends_on.every(x=>typeof x==="string"&&/^K-\d{6}$/.test(x))){report("SCHEMA",e.id+" depends_on");}
   else if(new Set(e.depends_on).size!==e.depends_on.length)report("DUPLICATE_DEPENDENCY",e.id);
   if(!validPosition(e.position))report("POSITION",e.id);
@@ -311,16 +319,16 @@ function planMarkdown(ledger,published=[]){
 }
 
 function statementsMarkdown(ledger){
- const names={axiom:"公理",convention:"規約",definition:"定義",lemma:"命題",proposition:"命題",theorem:"命題",corollary:"命題",construction:"命題",background:"背景原理"};
+ const names=headingLabels;
  const escape=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/[\\\x60*_\[\]~$]/g,c=>"\\"+c).replace(/\r?\n/g," ");
- const entries=(ledger.entries??[]).filter(e=>e.status==="verified"&&Object.hasOwn(names,e.kind)).sort((a,b)=>{
+ const entries=(ledger.entries??[]).filter(e=>e.status==="verified"&&!isExample(e)&&Object.hasOwn(names,headingKind(e))).sort((a,b)=>{
   for(let i=0;i<4;i++)if(a.position[i]!==b.position[i])return a.position[i]-b.position[i];
   return a.id.localeCompare(b.id);
  });
  const notes=new Map((ledger.notes??[]).map(n=>[n.number,n.title]));
  const groups=new Map();
  for(const e of entries){const n=e.position[0];if(!groups.has(n))groups.set(n,[]);groups.get(n).push(e)}
- const lines=["# 数学原論　定義・命題一覧","","[PDF版（推奨）](statements.pdf) · [総目次](roadmap.md) · [知識台帳](knowledge.json)","","知識台帳から自動生成した復習・確認用の一覧。検証済みの記法・公理・定義・命題を、各ノート内の掲載順に掲げる（全"+entries.length+"項目）。証明・解説は収録しない。本文の厳密な記述と照合するには総目次から該当ノートを参照する。","","## ノート別索引",""];
+ const lines=["# 数学原論　定義・命題一覧","","[Web版](https://hawkoods.github.io/genron/?note=statements) · [例・例題一覧](https://hawkoods.github.io/genron/?note=examples) · [旧版PDF](statements.pdf) · [総目次](roadmap.md) · [知識台帳](knowledge.json)","","知識台帳から自動生成した復習・確認用の一覧。検証済みの公理・定義・命題のみを、各ノート内の掲載順に掲げる（全"+entries.length+"項目）。証明・解説は収録しない。本文の厳密な記述と照合するには総目次から該当ノートを参照する。","","## ノート別索引",""];
  for(const [n,items] of groups)lines.push("- ["+noteDisplayNumber(ledger,n)+" "+escape(notes.get(n)??"")+"（"+items.length+"項目）](#n-"+n+")");
  for(const [n,items] of groups){
   lines.push("","---","",'<a id="n-'+n+'"></a>',"## "+noteDisplayNumber(ledger,n)+" "+escape(notes.get(n)??""),"");
@@ -328,7 +336,7 @@ function statementsMarkdown(ledger){
   for(const e of items){
    const current=e.position[1]+"."+e.position[2];
    if(current!==section){section=current;lines.push("### 第"+e.position[1]+"章 第"+e.position[2]+"節","")}
-   lines.push("**"+names[e.kind]+(ledger.numbering_version===1?" "+entryDisplayNumber(ledger,e):"")+"（"+escape(e.title)+"）**　"+e.id,"");
+   lines.push("**"+names[headingKind(e)]+(ledger.numbering_version===1?" "+entryDisplayNumber(ledger,e):"")+"（"+escape(e.title)+"）**　"+e.id,"");
    if(e.assumptions.length)lines.push("仮定： "+e.assumptions.map(escape).join("；")+"","");
    lines.push(escape(e.statement),"");
   }
@@ -337,4 +345,4 @@ function statementsMarkdown(ledger){
  return lines.join("\n").trimEnd()+"\n";
 }
 
-export {noteDisplayNumber, entryDisplayNumber, validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown, statementsMarkdown, validateHierarchy};
+export {headingKind, isExample, noteDisplayNumber, entryDisplayNumber, validate, affected, changedEntries, available, validPosition, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMermaid, planMarkdown, statementsMarkdown, validateHierarchy};

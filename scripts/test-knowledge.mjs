@@ -98,6 +98,12 @@ function runTests(){
  const unifiedEntries=unifiedKinds.map((kind,i)=>({...ritems[0],id:"K-91000"+i,kind,title:"分類名を保持する定理"+i,position:[1,1,1,i+1]}));
  const unifiedText=statementsMarkdown({notes:[rnote],entries:unifiedEntries});
  check("all result kinds use proposition heading",unifiedEntries.every(e=>unifiedText.includes("**命題（"+e.title+"）**")));
+ const exampleFixtures=[{...ritems[0],id:"K-920001",heading_kind:"example"},{...ritems[0],id:"K-920002",heading_kind:"worked_example",problem_tex:"問題"}];
+ check("example headings excluded from statement catalogue",exampleFixtures.every(e=>!statementsMarkdown({notes:[rnote],entries:[e]}).includes(e.id)));
+ const headingFixture={...dag,heading_version:1,entries:dag.entries.map(e=>({...e,heading_kind:"proposition"}))};
+ check("explicit heading classifications accepted",validate(headingFixture,dagSources).errors.length===0);
+ check("unknown heading rejected",has(validate({...headingFixture,entries:headingFixture.entries.map(e=>({...e,heading_kind:"remark"}))},dagSources),"HEADING_KIND"));
+ check("worked example requires prompt",has(validate({...headingFixture,entries:headingFixture.entries.map(e=>({...e,heading_kind:"worked_example"}))},dagSources),"WORKED_EXAMPLE_PROMPT"));
  check("empty statements list",statementsMarkdown({notes:[],entries:[]}).includes("全0項目"));
  return tests;
 }

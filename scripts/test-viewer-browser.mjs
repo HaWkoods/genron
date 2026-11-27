@@ -56,10 +56,24 @@ try{
  assert.deepEqual(errors,[],"Map JavaScript errors");
 
 
+ // Separate example catalogue: no theorem entries, and worked solutions are closed.
+ await page.goto(origin+"?note=examples");
+ await page.locator(".web-catalogue").waitFor();
+ assert.equal(await page.locator(".catalogue-entry").count(),planData.entries.filter(e=>["example","worked_example"].includes(e.heading_kind)).length);
+ assert.equal(await page.locator("#catalogue-K-000315").count(),0);
+ assert.match(await page.locator("#catalogue-K-000164 .web-statement-title").innerText(),/^例 /);
+ const worked=page.locator("#catalogue-K-000151");
+ assert.match(await worked.locator(".web-statement-title").innerText(),/^例題 /);
+ assert.match(await worked.locator(".worked-question").innerText(),/すべて求めよ/);
+ assert.equal(await worked.locator(".worked-answer .proof-body").isVisible(),false);
+ await worked.locator(".worked-answer summary").click();
+ assert.equal(await worked.locator(".worked-answer .proof-body").isVisible(),true);
+ assert.match(await worked.locator(".worked-answer .proof-body").innerText(),/四つに限る/);
+ assert.deepEqual(errors,[],"Example catalogue errors");
  // Native catalogues are the default; explicit PDF routes are tested below.
  await page.goto(origin+"?note=statements");
  await page.locator(".web-catalogue").waitFor();
- assert.equal(await page.locator(".catalogue-entry").count(),planData.entries.filter(e=>e.kind!=="exercise").length);
+ assert.equal(await page.locator(".catalogue-entry").count(),planData.entries.filter(e=>!["example","worked_example"].includes(e.heading_kind)).length);
  for(const id of ["K-000047","K-000131","K-000289","K-000315"]){
   const e=planData.entries.find(e=>e.id===id);
   const heading=page.locator("#catalogue-"+id+" .web-statement-title");
@@ -109,7 +123,7 @@ try{
  }
 
  assert.match(await page.locator("#N-1 .web-note-title").innerText(),/^01\.01\.01/);
- assert.match(await logic.locator(".web-statement-title").innerText(),/^規約 01\.01\.01\.1\.1\.1/);
+ assert.match(await logic.locator(".web-statement-title").innerText(),/^定義 01\.01\.01\.1\.1\.1/);
 
  assert.equal(await logic.locator(".web-math-table tr").count(),5);
  // Check TeX source as well as rendered layout: a KaTeX node alone does not prove that symbols survived.

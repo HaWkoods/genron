@@ -20,7 +20,8 @@
       "depends_on": [],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000002",
@@ -39,7 +40,8 @@
       "depends_on": [],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000003",
@@ -56,7 +58,8 @@
       "depends_on": [],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000004",
@@ -79,7 +82,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000005",
@@ -101,7 +105,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000006",
@@ -124,7 +129,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000007",
@@ -143,7 +149,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000008",
@@ -163,7 +170,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000009",
@@ -182,7 +190,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000010",
@@ -202,7 +211,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000011",
@@ -222,7 +232,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000012",
@@ -241,7 +252,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000013",
@@ -266,7 +278,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000014",
@@ -289,7 +302,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000015",
@@ -312,7 +326,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000016",
@@ -338,7 +353,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000017",
@@ -361,7 +377,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-1/main.tex",
-      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。"
+      "review": "2026-11-27 ChatGPT: 自然言語の古典的推論に基づく記法・仮定・証明と依存注釈を点検。pLaTeX 二回、dvipdfmx、ログ確認、全6頁のレンダリング確認。形式的証明の検証ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000018",
@@ -385,7 +402,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000019",
@@ -409,7 +427,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000020",
@@ -436,7 +455,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000021",
@@ -461,7 +481,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000022",
@@ -489,7 +510,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000023",
@@ -515,7 +537,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000024",
@@ -541,7 +564,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000025",
@@ -567,7 +591,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000026",
@@ -593,7 +618,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000027",
@@ -619,7 +645,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000028",
@@ -645,7 +672,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000029",
@@ -673,7 +701,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000030",
@@ -706,7 +735,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000031",
@@ -737,7 +767,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000032",
@@ -764,7 +795,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000033",
@@ -796,7 +828,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000034",
@@ -825,7 +858,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000035",
@@ -856,7 +890,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000036",
@@ -882,7 +917,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000037",
@@ -909,7 +945,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000038",
@@ -939,7 +976,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000039",
@@ -965,7 +1003,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000040",
@@ -991,7 +1030,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000041",
@@ -1021,7 +1061,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000042",
@@ -1051,7 +1092,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000043",
@@ -1081,7 +1123,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000044",
@@ -1108,7 +1151,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000045",
@@ -1139,7 +1183,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000046",
@@ -1171,7 +1216,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000047",
@@ -1207,7 +1253,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000048",
@@ -1237,7 +1284,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000049",
@@ -1270,7 +1318,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000050",
@@ -1296,7 +1345,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000051",
@@ -1327,7 +1377,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000052",
@@ -1352,7 +1403,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000053",
@@ -1386,7 +1438,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000054",
@@ -1421,7 +1474,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000055",
@@ -1452,7 +1506,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000056",
@@ -1489,7 +1544,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-2/main.tex",
-      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 記法、存在根拠、証明及び退化例・依存注釈の点検。pLaTeX 2回、dvipdfmx、ログ及び全頁確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000057",
@@ -1520,7 +1576,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000058",
@@ -1551,7 +1608,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000059",
@@ -1580,7 +1638,9 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "worked_example",
+      "problem_tex": "添字集合 $I=\\{i,j\\}$ による集合族 $(A_k)_{k\\in I}$ の各集合が空でないとする．選択公理を用いずに選択函数の存在を示せ．"
     },
     {
       "id": "K-000060",
@@ -1610,7 +1670,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000061",
@@ -1639,7 +1700,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000062",
@@ -1668,7 +1730,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000063",
@@ -1714,7 +1777,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000064",
@@ -1746,7 +1810,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000065",
@@ -1790,7 +1855,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000066",
@@ -1835,7 +1901,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000067",
@@ -1871,7 +1938,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-3/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000068",
@@ -1900,7 +1968,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000069",
@@ -1929,7 +1998,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000070",
@@ -1962,7 +2032,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000071",
@@ -1992,7 +2063,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000072",
@@ -2025,7 +2097,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000073",
@@ -2055,7 +2128,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000074",
@@ -2082,7 +2156,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000075",
@@ -2110,7 +2185,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000076",
@@ -2140,7 +2216,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000077",
@@ -2175,7 +2252,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000078",
@@ -2204,7 +2282,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000079",
@@ -2237,7 +2316,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000080",
@@ -2267,7 +2347,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000081",
@@ -2299,7 +2380,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000082",
@@ -2327,7 +2409,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000083",
@@ -2364,7 +2447,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000084",
@@ -2395,7 +2479,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000085",
@@ -2427,7 +2512,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000086",
@@ -2457,7 +2543,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000087",
@@ -2500,7 +2587,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000088",
@@ -2534,7 +2622,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000089",
@@ -2565,7 +2654,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000090",
@@ -2598,7 +2688,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000091",
@@ -2628,7 +2719,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000092",
@@ -2661,7 +2753,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000093",
@@ -2693,7 +2786,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000094",
@@ -2723,7 +2817,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000095",
@@ -2757,7 +2852,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000096",
@@ -2788,7 +2884,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-4/main.tex",
-      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 前提・記法・論証・退化例及び依存注釈を点検。pLaTeX 2回、dvipdfmx、ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000097",
@@ -2817,7 +2914,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000098",
@@ -2843,7 +2941,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "axiom"
     },
     {
       "id": "K-000099",
@@ -2874,7 +2973,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000100",
@@ -2902,7 +3002,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000101",
@@ -2933,7 +3034,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000102",
@@ -2967,7 +3069,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000103",
@@ -2999,7 +3102,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000104",
@@ -3028,7 +3132,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000105",
@@ -3066,7 +3171,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000106",
@@ -3099,7 +3205,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000107",
@@ -3129,7 +3236,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000108",
@@ -3160,7 +3268,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000109",
@@ -3188,7 +3297,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000110",
@@ -3215,7 +3325,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000111",
@@ -3249,7 +3360,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000112",
@@ -3281,7 +3393,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000113",
@@ -3315,7 +3428,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000114",
@@ -3349,7 +3463,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000115",
@@ -3383,7 +3498,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000116",
@@ -3418,7 +3534,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000117",
@@ -3452,7 +3569,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000118",
@@ -3481,7 +3599,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000119",
@@ -3516,7 +3635,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000120",
@@ -3554,7 +3674,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-5/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000121",
@@ -3584,7 +3705,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000122",
@@ -3615,7 +3737,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000123",
@@ -3642,7 +3765,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000124",
@@ -3679,7 +3803,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000125",
@@ -3708,7 +3833,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000126",
@@ -3739,7 +3865,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000127",
@@ -3773,7 +3900,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000128",
@@ -3818,7 +3946,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000129",
@@ -3859,7 +3988,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000130",
@@ -3896,7 +4026,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000131",
@@ -3925,7 +4056,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000132",
@@ -3970,7 +4102,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-6/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000133",
@@ -4001,7 +4134,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000134",
@@ -4031,7 +4165,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000135",
@@ -4073,7 +4208,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000136",
@@ -4105,7 +4241,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000137",
@@ -4137,7 +4274,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000138",
@@ -4168,7 +4306,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000139",
@@ -4202,7 +4341,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000140",
@@ -4240,7 +4380,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000141",
@@ -4276,7 +4417,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000142",
@@ -4317,7 +4459,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000143",
@@ -4359,7 +4502,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000144",
@@ -4392,7 +4536,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000145",
@@ -4423,7 +4568,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-7/main.tex",
-      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。"
+      "review": "2026-11-27 ChatGPT: 仮定・論証・依存注釈・退化例を点検し，pLaTeX 2回，dvipdfmx，ログ及び全頁の表示を確認。形式証明ではない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000146",
@@ -4456,7 +4602,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000147",
@@ -4487,7 +4634,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000148",
@@ -4514,7 +4662,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000149",
@@ -4547,7 +4696,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000150",
@@ -4577,7 +4727,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000151",
@@ -4609,7 +4760,9 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "worked_example",
+      "problem_tex": "相異なる二元 $a,b$ からなる集合 $X=\\{a,b\\}$ 上の位相をすべて求めよ．"
     },
     {
       "id": "K-000152",
@@ -4637,7 +4790,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000153",
@@ -4666,7 +4820,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000154",
@@ -4698,7 +4853,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000155",
@@ -4731,7 +4887,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000156",
@@ -4762,7 +4919,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "example"
     },
     {
       "id": "K-000157",
@@ -4793,7 +4951,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "example"
     },
     {
       "id": "K-000158",
@@ -4824,7 +4983,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-8/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000159",
@@ -4851,7 +5011,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000160",
@@ -4877,7 +5038,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000161",
@@ -4903,7 +5065,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000162",
@@ -4929,7 +5092,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000163",
@@ -4958,7 +5122,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000164",
@@ -4993,7 +5158,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "example"
     },
     {
       "id": "K-000165",
@@ -5030,7 +5196,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000166",
@@ -5065,7 +5232,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000167",
@@ -5094,7 +5262,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000168",
@@ -5123,7 +5292,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000169",
@@ -5155,7 +5325,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000170",
@@ -5186,7 +5357,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000171",
@@ -5215,7 +5387,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000172",
@@ -5242,7 +5415,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000173",
@@ -5271,7 +5445,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000174",
@@ -5299,7 +5474,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000175",
@@ -5327,7 +5503,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000176",
@@ -5362,7 +5539,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000177",
@@ -5391,7 +5569,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-9/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000178",
@@ -5420,7 +5599,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000179",
@@ -5452,7 +5632,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000180",
@@ -5482,7 +5663,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000181",
@@ -5515,7 +5697,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000182",
@@ -5544,7 +5727,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000183",
@@ -5581,7 +5765,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000184",
@@ -5614,7 +5799,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000185",
@@ -5648,7 +5834,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000186",
@@ -5675,7 +5862,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000187",
@@ -5706,7 +5894,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000188",
@@ -5735,7 +5924,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000189",
@@ -5772,7 +5962,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000190",
@@ -5812,7 +6003,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "example"
     },
     {
       "id": "K-000191",
@@ -5843,7 +6035,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000192",
@@ -5870,7 +6063,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000193",
@@ -5902,7 +6096,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-24/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。"
+      "review": "2026-11-27 ChatGPT：定義・仮定・証明の内容及び先行項目への依存を照合。選択公理を用いない。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000194",
@@ -5931,7 +6126,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000195",
@@ -5961,7 +6157,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000196",
@@ -5991,7 +6188,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000197",
@@ -6025,7 +6223,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000198",
@@ -6056,7 +6255,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000199",
@@ -6088,7 +6288,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000200",
@@ -6117,7 +6318,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000201",
@@ -6150,7 +6352,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000202",
@@ -6185,7 +6388,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000203",
@@ -6213,7 +6417,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000204",
@@ -6249,7 +6454,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000205",
@@ -6280,7 +6486,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000206",
@@ -6313,7 +6520,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000207",
@@ -6355,7 +6563,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-53/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。"
+      "review": "2026-11-27 ChatGPT：定義・証明・例外（空集合を含む）と先行項目を再照合。選択公理・分離公理を用いない。PDF実機校正は別途。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000208",
@@ -6385,7 +6594,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000209",
@@ -6416,7 +6626,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000210",
@@ -6450,7 +6661,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000211",
@@ -6482,7 +6694,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000212",
@@ -6514,7 +6727,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000213",
@@ -6549,7 +6763,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000214",
@@ -6579,7 +6794,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000215",
@@ -6612,7 +6828,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000216",
@@ -6646,7 +6863,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-54/main.tex",
-      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。"
+      "review": "2026-11-27 ChatGPT：開基・部分基・近傍基の定義と存在・一意性の論証、空の族及び選択公理非依存を確認。組版後の目視確認は読者による。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000217",
@@ -6674,7 +6892,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000218",
@@ -6703,7 +6922,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000219",
@@ -6731,7 +6951,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000220",
@@ -6758,7 +6979,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000221",
@@ -6789,7 +7011,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000222",
@@ -6818,7 +7041,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000223",
@@ -6846,7 +7070,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000224",
@@ -6876,7 +7101,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-55/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000225",
@@ -6903,7 +7129,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000226",
@@ -6932,7 +7159,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000227",
@@ -6960,7 +7188,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000228",
@@ -6990,7 +7219,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000229",
@@ -7018,7 +7248,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000230",
@@ -7045,7 +7276,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000231",
@@ -7075,7 +7307,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000232",
@@ -7111,7 +7344,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000233",
@@ -7140,7 +7374,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000234",
@@ -7170,7 +7405,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000235",
@@ -7199,7 +7435,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000236",
@@ -7230,7 +7467,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000237",
@@ -7258,7 +7496,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000238",
@@ -7286,7 +7525,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000239",
@@ -7314,7 +7554,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000240",
@@ -7351,7 +7592,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000241",
@@ -7381,7 +7623,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000242",
@@ -7413,7 +7656,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "example"
     },
     {
       "id": "K-000243",
@@ -7439,7 +7683,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000244",
@@ -7466,7 +7711,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000245",
@@ -7492,7 +7738,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000246",
@@ -7519,7 +7766,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000247",
@@ -7547,7 +7795,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000248",
@@ -7575,7 +7824,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。"
+      "review": "2026-11-27 ChatGPT：定義・論証と依存先を照合。公開後の目視確認は未実施。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000249",
@@ -7605,7 +7855,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000250",
@@ -7632,7 +7883,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000251",
@@ -7660,7 +7912,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000252",
@@ -7689,7 +7942,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-10/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000253",
@@ -7721,7 +7975,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000254",
@@ -7748,7 +8003,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000255",
@@ -7776,7 +8032,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000256",
@@ -7803,7 +8060,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000257",
@@ -7832,7 +8090,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000258",
@@ -7864,7 +8123,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000259",
@@ -7892,7 +8152,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000260",
@@ -7920,7 +8181,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000261",
@@ -7951,7 +8213,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000262",
@@ -7982,7 +8245,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-56/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000263",
@@ -8010,7 +8274,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000264",
@@ -8040,7 +8305,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000265",
@@ -8067,7 +8333,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000266",
@@ -8094,7 +8361,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000267",
@@ -8123,7 +8391,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000268",
@@ -8151,7 +8420,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-62/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000269",
@@ -8178,7 +8448,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000270",
@@ -8209,7 +8480,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000271",
@@ -8238,7 +8510,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000272",
@@ -8267,7 +8540,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-90/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000273",
@@ -8295,7 +8569,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000274",
@@ -8322,7 +8597,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000275",
@@ -8353,7 +8629,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000276",
@@ -8385,7 +8662,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-14/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000277",
@@ -8413,7 +8691,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000278",
@@ -8440,7 +8719,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000279",
@@ -8466,7 +8746,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000280",
@@ -8497,7 +8778,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000281",
@@ -8529,7 +8811,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-18/main.tex",
-      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。"
+      "review": "2026-11-27 ChatGPT：定義・主要論証、前提ノートの閉包、原稿と台帳の注釈の一致を確認。文献本文との追加照合、CI組版結果と全頁目視は未確認。；統合時に恒久IDを維持し所在を変更。",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000282",
@@ -8556,7 +8839,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000283",
@@ -8584,7 +8868,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000284",
@@ -8610,7 +8895,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000285",
@@ -8638,7 +8924,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000286",
@@ -8666,7 +8953,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000287",
@@ -8695,7 +8983,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000288",
@@ -8724,7 +9013,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000289",
@@ -8753,7 +9043,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000290",
@@ -8784,7 +9075,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000291",
@@ -8813,7 +9105,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000292",
@@ -8842,7 +9135,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-64/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000293",
@@ -8868,7 +9162,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000294",
@@ -8893,7 +9188,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000295",
@@ -8922,7 +9218,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000296",
@@ -8949,7 +9246,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000297",
@@ -8978,7 +9276,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000298",
@@ -9005,7 +9304,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000299",
@@ -9032,7 +9332,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000300",
@@ -9059,7 +9360,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000301",
@@ -9086,7 +9388,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000302",
@@ -9114,7 +9417,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000303",
@@ -9145,7 +9449,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-58/web.tex",
-      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．"
+      "review": "2026-11-27 ChatGPT：定義と証明を数学的に自己査読し既存の前提と照合．外部文献本文との照合，CI及び実画面確認は未実施．Web初版．",
+      "heading_kind": "example"
     },
     {
       "id": "K-000304",
@@ -9173,7 +9478,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000305",
@@ -9203,7 +9509,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000306",
@@ -9235,7 +9542,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "example"
     },
     {
       "id": "K-000307",
@@ -9263,7 +9571,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000308",
@@ -9294,7 +9603,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000309",
@@ -9324,7 +9634,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000310",
@@ -9353,7 +9664,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000311",
@@ -9386,7 +9698,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000312",
@@ -9415,7 +9728,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-68/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000313",
@@ -9446,7 +9760,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000314",
@@ -9478,7 +9793,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000315",
@@ -9512,7 +9828,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000316",
@@ -9540,7 +9857,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000317",
@@ -9568,7 +9886,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "definition"
     },
     {
       "id": "K-000318",
@@ -9607,7 +9926,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000319",
@@ -9637,7 +9957,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     },
     {
       "id": "K-000320",
@@ -9670,7 +9991,8 @@
       ],
       "status": "verified",
       "source": "volumes/N-19/web.tex",
-      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．"
+      "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
+      "heading_kind": "proposition"
     }
   ],
   "notes": [
@@ -15652,5 +15974,6 @@
       ]
     }
   },
-  "numbering_version": 1
+  "numbering_version": 1,
+  "heading_version": 1
 }

@@ -2,7 +2,10 @@ import * as pdfjs from "./vendor/pdfjs/build/pdf.mjs";
 pdfjs.GlobalWorkerOptions.workerSrc=new URL("./vendor/pdfjs/build/pdf.worker.mjs",import.meta.url).href;
 const $=s=>document.querySelector(s);
 const main=$("#app"), preview=$("#preview"), dialog=$("#settings");
-const types={axiom:"公理",convention:"規約",definition:"定義",lemma:"命題",proposition:"命題",theorem:"命題",corollary:"命題",construction:"命題",background:"背景原理",exercise:"演習"};
+const types={axiom:"公理",definition:"定義",proposition:"命題",example:"例",worked_example:"例題"};
+const headingKind=e=>e.heading_kind??({convention:"definition",background:"axiom",definition:"definition",axiom:"axiom",example:"example",worked_example:"worked_example",exercise:"worked_example"}[e.kind]??"proposition");
+const isExample=e=>["example","worked_example"].includes(headingKind(e));
+const headingLabel=e=>types[headingKind(e)];
 const root=new URL("./",location.href);
 const url=(key,val)=>{const u=new URL(root);u.searchParams.set(key,val);return u.href};
 const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
@@ -61,9 +64,9 @@ function fillPreview(box,e,withClose=true){
  box.replaceChildren();
  if(withClose){const close=node("button","close-preview","×");close.setAttribute("aria-label","プレビューを閉じる");close.onclick=hidePreview;box.append(close)}
  box.append(node("div","meta",noteNumber(noteByNumber(e.position[0]))+" "+(notes.get(e.position[0])?.title??"")));
- box.append(node("h3","",(types[e.kind]??e.kind)+" "+entryNumber(e)+"（"+e.title+"）"));
+ box.append(node("h3","",headingLabel(e)+" "+entryNumber(e)+"（"+e.title+"）"));
  if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
- const p=node("p");renderParts(p,e.preview?.statement,e.statement);box.append(p);
+ const p=node("div");if(headingKind(e)==="worked_example")renderBookText(p,e.problem_tex??e.statement,{...e.webProof,noteNumber:e.position[0]});else renderParts(p,e.preview?.statement,e.statement);box.append(p);
  const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",(new URL(location.href).searchParams.get("view")==="web"||isNativeCatalogue(new URL(location.href).searchParams))?webUrl("id",e.id):url("id",e.id)));box.append(foot)
 }
 function positionPreview(el){
@@ -90,7 +93,7 @@ document.fonts?.ready.then(()=>{if(active)positionPreview(active);fitMath($("#se
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
-function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias){if(p.has("page"))return {n:Number(n),page:parseInt(p.get("page"),10)||1,archive:alias};return {n:alias.number,id:alias.first,page:null}}if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
+function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias){if(p.has("page"))return {n:Number(n),page:parseInt(p.get("page"),10)||1,archive:alias};return {n:alias.number,id:alias.first,page:null}}if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 
 function showMap(){
  const plan=data.plan??[], by=new Map(plan.map(n=>[n.number,n])), parts=data.parts??[], ts=data.treatises??[];
@@ -161,8 +164,8 @@ function showHome(){
  const h=node("h1","","数学原論");const intro=node("p","muted",parts.length+"部・"+treatises.length+"篇・"+"数学の諸構造");
  const search=node("input","search");search.type="search";search.placeholder="部・篇・ノート名・定義・命題・IDを検索";search.setAttribute("aria-label","検索");search.value=new URL(location.href).searchParams.get("q")??"";
  const filters=node("div","filters"),count=node("span","meta result-count"),list=node("div","results");
- const allowed=["all","note","verified","planned","entry"];let mode=new URL(location.href).searchParams.get("filter")??"all";if(!allowed.includes(mode))mode="all";
- const buttons=[["all","すべて"],["note","ノート"],["verified","公開済み"],["planned","制作予定"],["entry","定義・命題"]].map(([v,t])=>{const b=button(t,()=>{mode=v;update()});filters.append(b);return [v,b]});filters.append(count);
+ const allowed=["all","note","verified","planned","entry","examples"];let mode=new URL(location.href).searchParams.get("filter")??"all";if(!allowed.includes(mode))mode="all";
+ const buttons=[["all","すべて"],["note","ノート"],["verified","公開済み"],["planned","制作予定"],["entry","定義・命題・公理"],["examples","例・例題"]].map(([v,t])=>{const b=button(t,()=>{mode=v;update()});filters.append(b);return [v,b]});filters.append(count);
  const normalize=s=>String(s).normalize("NFKC").toLocaleLowerCase().replace(/\s+/g," ");
  const ready=n=>n.status==="planned"&&n.depends_on.every(d=>notes.has(d));
  const status=n=>notes.has(n.number)?"公開済み":ready(n)?"着手可能":n.status==="draft"?"草稿":n.status==="review"?"再検証中":"制作予定";
@@ -189,7 +192,7 @@ function showHome(){
   buttons.forEach(([v,b])=>b.setAttribute("aria-pressed",String(v===mode)));
   const u=new URL(root);if(search.value)u.searchParams.set("q",search.value);if(mode!=="all")u.searchParams.set("filter",mode);history.replaceState(history.state,"",u);
   list.replaceChildren();let total=0;
-  const found=mode==="entry"?[]:plan.filter(n=>{
+  const found=mode==="entry"||mode==="examples"?[]:plan.filter(n=>{
    if(mode==="verified"&&!notes.has(n.number)||mode==="planned"&&notes.has(n.number))return false;
    const t=byTreatise.get(n.treatise),p=partOf(n);
    if(exactDisplay)return n.number===exactDisplay.number;
@@ -198,7 +201,7 @@ function showHome(){
    if(exactPart)return normalize(p?.id??"")===q;
    return match(["N-"+n.number,noteNumber(n),n.title,n.area,...n.goals,t?.id,t?.title,p?.id,p?.title].join(" "))
   });
-  if(!q&&mode!=="entry"&&parts.length){
+  if(!q&&mode!=="entry"&&mode!=="examples"&&parts.length){
    for(const p of parts){
     const ts=treatises.filter(t=>t.part===p.id),ns=found.filter(n=>ts.some(t=>t.id===n.treatise));if(!ns.length)continue;
     const pd=node("details","part-group"),ps=node("summary","part-summary");ps.append(node("span","group-id",p.id),node("strong","",p.title));pd.append(ps);pd.open=ns.some(n=>notes.has(n.number));
@@ -211,14 +214,15 @@ function showHome(){
    }
    total+=found.length
   }else{for(const n of found){list.append(noteCard(n));total++}}
-  if((mode==="all"&&terms.length)||mode==="entry")for(const e of entries.values()){
+  if((mode==="all"&&terms.length)||mode==="entry"||mode==="examples")for(const e of entries.values()){
+   if(mode==="entry"&&isExample(e)||mode==="examples"&&!isExample(e))continue;
    const n=byNumber.get(e.position[0]),t=byTreatise.get(n?.treatise),p=n&&partOf(n);
    if(!match([e.id,entryNumber(e),noteNumber(n),e.title,e.statement,...e.assumptions,n?.title,"N-"+e.position[0],t?.title,t?.id,p?.title,p?.id].join(" ")))continue;
    if(exactDisplay&&e.position[0]!==exactDisplay.number)continue;
    if(exactNote&&(data.aliases?.[exactNote[1]]?!data.aliases[exactNote[1]].ids.includes(e.id):e.position[0]!==Number(exactNote[1])))continue;
    if(exactTreatise&&normalize(t?.id??"")!==q)continue;
    if(exactPart&&normalize(p?.id??"")!==q)continue;
-   const d=node("article","result knowledge-result"),a=anchor((types[e.kind]??e.kind)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",entryNumber(e)),a,node("span","summary",e.statement));list.append(d);total++
+   const d=node("article","result knowledge-result"),a=anchor(headingLabel(e)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",entryNumber(e)),a,node("span","summary",headingKind(e)==="worked_example"?"例題：本文で問題と解答を閲覧":e.statement));list.append(d);total++
   }
   count.textContent=total+"件";if(!total)list.append(node("p","empty","一致する項目がありません。"));
  }
@@ -336,7 +340,7 @@ async function loadReader(info,token,scroll){
     if(!href)continue;
     const box=anchor("",href,"annotation");const [x1,y1,x2,y2]=view.convertToViewportRectangle(a.rect);
     Object.assign(box.style,{left:Math.min(x1,x2)+"px",top:Math.min(y1,y2)+"px",width:Math.abs(x1-x2)+"px",height:Math.abs(y1-y2)+"px"});
-    box.setAttribute("aria-label",e?(types[e.kind]??"参照")+"："+e.title+" "+e.id:"PDF内リンク");
+    box.setAttribute("aria-label",e?headingLabel(e)+"："+e.title+" "+e.id:"PDF内リンク");
     if(e)bindPreview(box,e);
     else if(a.dest)box.addEventListener("click",async ev=>{ev.preventDefault();try{const d=await destination(doc,a.dest);if(d&&current()){hidePreview();sync(d.page);scrollToPage(d.page,d.y)}}catch(err){console.error(err)}});
     else{box.target="_blank";box.rel="noopener"}annotations.append(box)
@@ -498,6 +502,33 @@ function renderSourceEntry(section,e){
  renderBookText(section,metadata.content.slice(last),metadata);
 }
 
+
+function renderEntryContent(section,e){
+ if(headingKind(e)==="worked_example"){
+  const metadata={...e.webProof,noteNumber:e.position[0]};
+  const question=node("div","worked-question");
+  renderBookText(question,e.problem_tex??e.statement,metadata);section.append(question);
+  const answer=node("details","web-proof worked-answer"),body=node("div","proof-body");
+  answer.append(node("summary","","解答"));
+  if(metadata.content){
+   const answerTex=metadata.content.replace(/\\begin\{proof\}(?:\[[^\]]*\])?/g,"\n\n").replace(/\\end\{proof\}/g,"\n\n");
+   renderBookText(body,answerTex,metadata);
+  }else{
+   const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement));body.append(p);
+   for(const proof of metadata.proofs??[])renderBookText(body,proof.tex,metadata);
+  }
+  answer.append(body);section.append(answer);
+  answer.addEventListener("toggle",()=>{if(answer.open)fitMath(body)});
+  return;
+ }
+   if(e.webProof?.content)renderSourceEntry(section,e);
+   else{
+    if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,jpPunctuation(e.assumptions.join("；")));section.append(p)}
+    const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement));section.append(p);
+    for(const proof of e.webProof?.proofs??[])appendWebProof(section,proof,e.webProof);
+   }
+}
+
 function showWeb(info,restore){
  const selected=notes.get(info.n);
  const treatise=data.treatises.find(t=>t.id===selected.treatise);
@@ -525,15 +556,10 @@ function showWeb(info,restore){
    if(sectionTitle&&sectionTitle!==lastSection){chapter.append(node("h4","web-section-title",sectionTitle));lastSection=sectionTitle}
    const section=node("section","web-entry");section.id=e.id;
    const number=entryNumber(e);
-   const heading=node("h4","web-statement-title",(types[e.kind]??e.kind)+" "+number+"（"+e.title+"）");
+   const heading=node("h4","web-statement-title",headingLabel(e)+" "+number+"（"+e.title+"）");
    section.append(heading);
    const link=anchor(entryNumber(e)+"　"+e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
-   if(e.webProof?.content)renderSourceEntry(section,e);
-   else{
-    if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,jpPunctuation(e.assumptions.join("；")));section.append(p)}
-    const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement));section.append(p);
-    for(const proof of e.webProof?.proofs??[])appendWebProof(section,proof,e.webProof);
-   }
+   renderEntryContent(section,e);
    if(e.depends_on?.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
    chapter.append(section);
   }
@@ -545,19 +571,21 @@ function showWeb(info,restore){
 
 
 function isNativeCatalogue(p){
- return ["statements","notation"].includes(p.get("note"))&&!p.has("page")&&p.get("view")!=="pdf";
+ return p.get("note")==="examples"||["statements","notation"].includes(p.get("note"))&&!p.has("page")&&p.get("view")!=="pdf";
 }
 function catalogueText(target,parts,raw){
  renderParts(target,parts?.map(p=>p.tex?p:{...p,text:jpPunctuation(p.text??p.raw??"")}),jpPunctuation(raw));
 }
 function showCatalogue(info,restore){
- const isNotation=info.n==="notation",title=isNotation?"記号・記法一覧":"定義・命題一覧";
+ const isNotation=info.n==="notation",examplesOnly=info.n==="examples",title=isNotation?"記号・記法一覧":examplesOnly?"例・例題一覧":"定義・命題・公理一覧";
  const layout=node("div","reader web-reader catalogue-reader"),side=node("aside","sidebar web-toc"),article=node("article","web-article web-catalogue");
  const search=node("input","search catalogue-search");search.type="search";search.placeholder=isNotation?"記号・名称を検索":"名称・本文・分野・番号を検索";search.setAttribute("aria-label",search.placeholder);
  const count=node("p","meta catalogue-count"),body=node("div","catalogue-body");
  const old=new URL(url("note",info.n));old.searchParams.set("view","pdf");old.searchParams.set("page","1");
- side.append(node("h2","","一覧の目次"),anchor("← 検索・総目次",root.href));
- article.append(node("p","web-running","数学原論　｜　索引"),node("h1","web-part-title",title),node("p","muted",isNotation?"記号とその意味を対照する．名称から対応する本文を参照できる．":"知識台帳に基づく復習・参照用の一覧．証明及び詳細な解説は本文を参照されたい．"),anchor("旧版PDFを閲覧",old.href,"web-legacy"),search,count,body);
+ side.append(node("h2","","一覧の目次"),anchor("← 検索・総目次",root.href),anchor("定義・命題・公理一覧",url("note","statements")),anchor("例・例題一覧",url("note","examples")));
+ article.append(node("p","web-running","数学原論　｜　索引"),node("h1","web-part-title",title),node("p","muted",isNotation?"記号とその意味を対照する．名称から対応する本文を参照できる．":examplesOnly?"具体例・反例と，問題及び解答を掲載する．例題の解答は初期状態で閉じている．":"数学的知識の参照用一覧．定義・命題・公理のみを掲載する．証明及び詳細な解説は本文を参照されたい．"));
+ if(!examplesOnly)article.append(anchor("旧版PDFを閲覧",old.href,"web-legacy"));
+ article.append(search,count,body);
  const groups=[];
  if(isNotation){
   for(const [i,g] of (data.notation??[]).entries()){
@@ -577,7 +605,7 @@ function showCatalogue(info,restore){
    groups.push({el:section,items});
   }
  }else{
-  const all=data.entries.filter(e=>e.kind!=="exercise");
+  const all=data.entries.filter(e=>isExample(e)===examplesOnly);
   for(const p of data.parts){
    const section=node("section","catalogue-group");section.id="catalogue-"+p.id;
    section.append(node("h2","web-treatise",p.id+"　"+p.title));
@@ -590,10 +618,12 @@ function showCatalogue(info,restore){
      const noteItems=[];
      for(const e of rows){
       const block=node("section","catalogue-entry");block.id="catalogue-"+e.id;
-      const heading=node("h5","web-statement-title");heading.append((types[e.kind]??e.kind)+" "+entryNumber(e)+"（");const link=anchor(e.title,webUrl("id",e.id),"catalogue-reference");bindPreview(link,e);heading.append(link,"）");block.append(heading);
+      const heading=node("h5","web-statement-title");heading.append(headingLabel(e)+" "+entryNumber(e)+"（");const link=anchor(e.title,webUrl("id",e.id),"catalogue-reference");bindPreview(link,e);heading.append(link,"）");block.append(heading);
       if(e.assumptions.length){const a=node("p");a.append("仮定：");catalogueText(a,e.preview?.assumptions,e.assumptions.join("；"));block.append(a)}
-      const statement=node("p","catalogue-statement");catalogueText(statement,e.preview?.statement,e.statement);block.append(statement);chapter.append(block);
-      noteItems.push({el:block,text:[p.title,t.title,n.title,noteNumber(n),entryNumber(e),e.id,types[e.kind],e.title,e.statement,...e.assumptions].join(" ")});
+      if(examplesOnly)renderEntryContent(block,e);
+      else{const statement=node("p","catalogue-statement");catalogueText(statement,e.preview?.statement,e.statement);block.append(statement)}
+      chapter.append(block);
+      noteItems.push({el:block,text:[p.title,t.title,n.title,noteNumber(n),entryNumber(e),e.id,headingLabel(e),e.title,e.statement,e.problem_tex??"",...e.assumptions].join(" ")});
      }
      if(noteItems.length){treatise.append(chapter);items.push({el:chapter,items:noteItems})}
     }
