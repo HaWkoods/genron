@@ -34,13 +34,13 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .web-entry{scroll-margin-top:24px;margin:1.6em 0 2em}
 .web-entry p{margin:.5em 0;text-align:justify}
 .web-statement-title{font-size:1em;font-weight:bold;margin:0 0 .45em;line-height:1.65}
-.web-proof{margin:.75em 0 1em}
-.web-proof>summary{cursor:pointer;font-weight:bold;width:fit-content;list-style:none}
-.web-proof>summary::-webkit-details-marker{display:none}
-.web-proof>summary::before{content:"▸";display:inline-block;width:1.1em;color:var(--muted)}
-.web-proof[open]>summary::before{content:"▾"}
-.web-proof>summary::after{content:"（表示）";font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin-left:.5em}
-.web-proof[open]>summary::after{content:"（閉じる）"}
+.web-proof,.web-figure-toggle{margin:.75em 0 1em}
+.web-proof>summary,.web-figure-toggle>summary{cursor:pointer;font-weight:bold;width:fit-content;list-style:none}
+.web-proof>summary::-webkit-details-marker,.web-figure-toggle>summary::-webkit-details-marker{display:none}
+.web-proof>summary::before,.web-figure-toggle>summary::before{content:"▸";display:inline-block;width:1.1em;color:var(--muted)}
+.web-proof[open]>summary::before,.web-figure-toggle[open]>summary::before{content:"▾"}
+.web-proof>summary::after,.web-figure-toggle>summary::after{content:"（表示）";font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin-left:.5em}
+.web-proof[open]>summary::after,.web-figure-toggle[open]>summary::after{content:"（閉じる）"}
 .proof-body{margin-top:.5em;text-align:justify}
 .web-qed{text-align:right;margin-top:.15em}
 .web-dependencies{font:12px/1.8 system-ui,sans-serif;margin:.8em 0;color:var(--muted)}
@@ -117,3 +117,8 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .web-figure{margin:1.6em auto 1.8em;max-width:480px;text-align:center;break-inside:avoid}
 .web-figure img{display:block;width:100%;height:auto;margin:0 auto;background:#fff;border:0;border-radius:0;box-sizing:border-box}
 .web-figure figcaption{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif CJK JP",serif;font-size:.88em;line-height:1.65;color:#444;margin:.4em 0 0;text-align:center;overflow-wrap:anywhere}
+
+/* Supplementary graphics share proof disclosure styling, without a proof-ending symbol. */
+.web-figure-toggle:not([open])>figure{display:none}
+.web-figure-toggle>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.web-figure-toggle>.web-figure{margin:1em auto 1.2em}

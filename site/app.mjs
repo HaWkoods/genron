@@ -487,10 +487,15 @@ function renderEntryBody(section,e){
 
 function renderEntryContent(section,e){
  renderEntryBody(section,e);
- for(const f of e.figures??[]){
+ // Supplementary figures and mathematical diagrams are independently collapsible.
+ const figures=e.figures??[];
+ for(const [i,f] of figures.entries()){
+  const block=node("details","web-figure-toggle");
+  const summary=node("summary","",figures.length===1?"図・図式":"図・図式 "+(i+1));
   const figure=node("figure","web-figure"),img=node("img");
   img.setAttribute("src",f.src);img.alt=f.alt;img.loading="lazy";img.decoding="async";
-  figure.append(img,node("figcaption","",f.caption));section.append(figure);
+  figure.append(img,node("figcaption","",f.caption));
+  block.append(summary,figure);section.append(block);
  }
 }
 

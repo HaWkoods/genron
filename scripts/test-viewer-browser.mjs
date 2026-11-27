@@ -99,6 +99,8 @@ try{
   assert.deepEqual(await page.locator(".path-note .web-entry").evaluateAll(els=>els.map(e=>e.id).sort()),expectedFull.sort(),"Full note bodies or relevant entries");
   assert.equal(await page.locator(".path-selected-entry").count(),1);
   assert.equal(await page.locator(".path-note .web-proof[open]").count(),0,"Proofs initially closed");
+  assert.equal(await page.locator(".path-note .web-figure-toggle[open]").count(),0,"Figures initially closed in knowledge paths");
+  assert.equal(await page.locator(".path-note .web-figure-toggle").count(),expectedFull.reduce((sum,id)=>sum+(pathById.get(id).figures??[]).length,0),"Figures preserved in related-note reader");
   assert.ok(await page.locator(".path-note .web-entry p,.path-note .web-entry .web-paragraph").count()>0,"Source text rendered");
 
  }
@@ -312,6 +314,22 @@ try{
   const figureExpected=expected.flatMap(e=>(e.figures??[]).map(f=>({id:e.id,src:f.src})));
   const figureActual=await page.locator(".web-entry .web-figure img").evaluateAll(els=>els.map(img=>({id:img.closest(".web-entry").id,src:img.getAttribute("src"),alt:img.alt,caption:img.closest("figure").querySelector("figcaption")?.textContent??""})));
   assert.deepEqual(figureActual.map(f=>({id:f.id,src:f.src})).sort((a,b)=>a.src.localeCompare(b.src)),figureExpected.slice().sort((a,b)=>a.src.localeCompare(b.src)),"Figures attached to correct entries");
+  const disclosures=page.locator(".web-entry .web-figure-toggle");
+  assert.equal(await disclosures.count(),figureExpected.length,"Each figure has its own disclosure");
+  assert.equal(await page.locator(".web-entry .web-figure-toggle[open]").count(),0,"Figures initially closed");
+  assert.equal(await page.locator(".web-entry .web-figure:visible").count(),0,"Closed figures occupy no visible area");
+  if(figureExpected.length){
+   const first=disclosures.first(),img=first.locator("img"),summary=first.locator("summary");
+   assert.equal(await img.isVisible(),false);
+   await summary.click();
+   assert.equal(await first.getAttribute("open"),"");
+   assert.equal(await img.isVisible(),true);
+   assert.equal(await page.locator(".web-entry .web-figure-toggle[open]").count(),1,"Independent figure disclosure");
+   assert.ok(await img.evaluate(async el=>{await el.decode();return el.naturalWidth>0}),"Expanded image decodes");
+   await summary.click();
+   assert.equal(await first.getAttribute("open"),null);
+   assert.equal(await img.isVisible(),false);
+  }
   for(const f of figureActual){
    assert.ok(f.alt&&f.caption,"Accessible diagram "+f.src);
    if(!coveredFigures.has(f.src)){const response=await page.request.get(origin+f.src);assert.equal(response.status(),200);assert.match(response.headers()["content-type"],/image\/svg\+xml/);assert.ok(await page.evaluate(async src=>{const img=new Image();img.src=src;await img.decode();return img.naturalWidth>0},f.src),"SVG decodes "+f.src);coveredFigures.add(f.src)}
@@ -322,6 +340,22 @@ try{
   assert.equal(await page.locator(".pdf-shell,.web-legacy").count(),0);
  }
  assert.equal(coveredNotes.size,planData.notes.length,"Every public note covered");
+ // Verify actual open/close behavior at a narrow viewport and in the related-note reader.
+ const illustrated=planData.entries.find(e=>e.figures?.length&&!["example","worked_example"].includes(e.heading_kind));
+ if(illustrated){
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(origin+"?view=knowledge-path&target="+illustrated.id+"&scope=direct");
+  const disclosure=page.locator("#"+illustrated.id+" .web-figure-toggle").first();
+  await disclosure.waitFor();
+  assert.equal(await disclosure.getAttribute("open"),null);
+  const summary=disclosure.locator("summary");
+  await summary.focus();await summary.press("Enter");
+  assert.equal(await disclosure.getAttribute("open"),"");
+  assert.ok(await disclosure.locator("img").evaluate(el=>el.getBoundingClientRect().width<=el.closest(".web-entry").clientWidth+1),"Expanded diagram fits mobile article");
+  await summary.press("Enter");
+  assert.equal(await disclosure.getAttribute("open"),null);
+  await page.setViewportSize({width:1440,height:1000});
+ }
  // Retired note aliases are distinct routing cases; retain all of them.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   for(const suffix of ["","&page=1","&view=pdf&page=2"]){
