@@ -1,0 +1,271 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：V. I. Bogachev, Measure Theory, 2007, Vol. II, §9.11, Theorem 9.11.2 と Corollary 9.11.4 の有限被覆による存在・不変積分による一意性の導入を照合．本稿は開集合内部正則・Borel外部正則の規約を明示し，有限被覆数から外測度を構成する．一意性は単位元近傍に台を持つ函数による近似を用いる独自記述．
+\section{Haar測度}
+% genron:begin K-001034
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000614
+% genron:use K-000382
+% genron:use K-000383
+% genron:use K-000993
+% genron:use K-000748
+\begin{defn}[左Haar測度と右Haar測度]
+局所コンパクトHausdorff群 $G$ のBorel加法族上の非零測度 $\mu$ が次を満たすとき，左Haar測度という．コンパクト集合の測度は有限であり，全ての開集合 $U$ について $\mu(U)=\sup_{K\subseteq U,\ K\ {\rm compact}}\mu(K)$ であり，全てのBorel集合 $A$ について $\mu(A)=\inf_{A\subseteq U,\ U\ {\rm open}}\mu(U)$ であり，$g\in G$ に対して $\mu(gA)=\mu(A)$ である．最後の条件を $\mu(Ag)=\mu(A)$ に換えれば右Haar測度という．ここでは全Borel集合についての内部正則性は仮定しない．
+\end{defn}
+% genron:end K-001034
+% genron:begin K-001035
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000614
+% genron:use K-000383
+% genron:use K-000374
+% genron:use K-000121
+% genron:use K-000994
+\begin{prop}[有限被覆数とその正規化]
+単位元を $e$ とし，コンパクト集合 $K$ と開単位元近傍 $V$ に対し $(K:V)$ を $K$ を覆う $V$ の左平行移動の最小個数とする．$(\varnothing:V)=0$ とする．内部が空でないコンパクト集合 $K_0$ を固定し，$c_V(K)=(K:V)/(K_0:V)$ と定める．各 $K$ について $0\leq c_V(K)\leq(K:\operatorname{int}K_0)$ であり，左不変性，単調性，有限劣加法性を満たす．
+\end{prop}
+\begin{proof}
+$G=\bigcup_{g\in G}gV$ は開被覆であり，コンパクト性から有限被覆が存在する．最小個数は自然数の整列性により定まる．$K_0$ は非空なので分母は正である．$K$ を $N=(K:\operatorname{int}K_0)$ 個の $\operatorname{int}K_0$ の左移動で覆い，各 $K_0$ の左移動を $(K_0:V)$ 個の $V$ の左移動で覆えば上界を得る．左不変性は被覆全体の左移動とその逆移動による．単調性及び有限劣加法性はそれぞれ部分集合への制限及び被覆の合併から従う．
+\end{proof}
+% genron:end K-001035
+% genron:begin K-001036
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001035
+% genron:use K-000488
+% genron:use K-000373
+% genron:use K-000888
+% genron:use K-000377
+% genron:use K-000376
+% genron:use K-000380
+% genron:use K-000382
+% genron:use K-000385
+\begin{prop}[コンパクト集合上の不変加法的内容]
+コンパクト集合全体の上に有限非負値函数 $c$ で，$c(K_0)=1$，$c(\varnothing)=0$，単調，左不変，有限劣加法的であり，互いに素なコンパクト集合に対して加法的なものが存在する．
+\end{prop}
+\begin{proof}
+全コンパクト集合 $K$ について $M_K=(K:\operatorname{int}K_0)$ とし，コンパクト積 $P=\prod_K[0,M_K]$ を考える．\GenronRef{K-000488} により $P$ はコンパクトである．開単位元近傍 $W$ ごとに $F_W=\overline{\{c_V:V\subseteq W,\ V\text{ は開単位元近傍}\}}$ を $P$ 内の閉集合として定める．有限個の $W$ の共通部分は再び開単位元近傍なので $(F_W)$ は有限交叉性を持つ．よって $c\in\bigcap_W F_W$ が存在する．\GenronRef{K-001035} の単調性等は有限個の座標の閉条件であるから $c$ についても成立する．
+
+互いに素なコンパクト集合 $K,L$ について $K^{-1}L$ はコンパクトで $e$ を含まない．Hausdorff性と積・逆元演算の連続性により開単位元近傍 $W$ で $W^{-1}W\cap K^{-1}L=\varnothing$ となるものを取れる．$V\subseteq W$ なら一つの $gV$ は $K,L$ の両方に交わり得ない．もし $k=gv,l=gw$ が存在すれば $k^{-1}l=v^{-1}w$ となって矛盾する．従って $K\cup L$ の最小被覆の各要素を振り分けると $(K\cup L:V)\geq(K:V)+(L:V)$ である．逆向きは劣加法性から従う．この等式は $F_W$ 上にも成立する閉条件であるから $c(K\cup L)=c(K)+c(L)$ となる．
+\end{proof}
+% genron:end K-001036
+% genron:begin K-001037
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001036
+% genron:use K-000481
+% genron:use K-000374
+% genron:use K-000375
+% genron:use K-000715
+\begin{prop}[開集合への拡張と被覆不等式]
+\GenronRef{K-001036} の内容 $c$ から開集合 $U$ に対し $p(U)=\sup_{K\subseteq U,\ K\ {\rm compact}}c(K)$ と定める．これは左不変かつ単調である．$U\subseteq\bigcup_n U_n$（全て開集合）なら $p(U)\leq\sum_np(U_n)$ である．また $K\subseteq U$ がコンパクトなら $p(U)\geq c(K)+p(U\setminus K)$ である．
+\end{prop}
+\begin{proof}
+単調性と左不変性は定義から従う．コンパクト集合 $L\subseteq U$ を取る．開集合 $U_n$ がこれを覆うから，各点のコンパクト閉包を持つ開近傍を適当な $U_n$ 内に取り，有限部分被覆を選ぶ．その閉包を $L$ と交わらせ，同じ $U_n$ に属するものを合併すると，有限個のコンパクト集合 $L_n\subseteq U_n$ が $L$ を覆う．有限劣加法性から $c(L)\leq\sum_n p(U_n)$ となる．$L$ について上限を取る．後半について，任意のコンパクト $D\subseteq U\setminus K$ は $K$ と互いに素であり，$c(K)+c(D)=c(K\cup D)\leq p(U)$ である．$D$ について上限を取ればよい．
+\end{proof}
+% genron:end K-001037
+% genron:begin K-001038
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001034
+% genron:use K-001036
+% genron:use K-001037
+% genron:use K-000775
+% genron:use K-000777
+% genron:use K-000779
+% genron:use K-000994
+% genron:use K-000993
+% genron:use K-000749
+% genron:use K-000715
+\begin{prop}[Haar測度の存在]
+任意の局所コンパクトHausdorff群には左Haar測度が存在する．
+\end{prop}
+\begin{proof}
+任意の部分集合 $A\subseteq G$ に対して
+\[
+m^*(A)=\inf_{A\subseteq U,\ U\ {\rm open}}p(U)
+\]
+と定める．空集合の値は零であり単調性は明らかである．可算個の部分集合 $A_n$ について $\sum_nm^*(A_n)<\infty$ の場合，各 $A_n$ を含む開集合 $U_n$ を $p(U_n)<m^*(A_n)+\varepsilon2^{-n}$ となるように取る．\GenronRef{K-001037} の被覆不等式を $\bigcup_nU_n$ に適用し $\varepsilon\downarrow0$ とすれば可算劣加法性が得られる．右辺が無限の場合は自明である．従って外測度である．左不変性は開被覆全体の平行移動から従う．開集合 $U$ では単調性から $m^*(U)=p(U)$ である．
+
+開集合 $U$ の外測度可測性を示す．任意の $A\subseteq G$ とそれを含む開集合 $O$ を取る．コンパクト集合 $K\subseteq O\cap U$ に対し $O\setminus K$ は開で $A\setminus U$ を含むから
+\[
+p(O)\geq c(K)+p(O\setminus K)\geq c(K)+m^*(A\setminus U).
+\]
+$K$ について上限を取ると $p(O)\geq p(O\cap U)+m^*(A\setminus U)\geq m^*(A\cap U)+m^*(A\setminus U)$ である．$O$ について下限を取れば外測度可測性の条件を得る．\GenronRef{K-000779} により全Borel集合が可測であり，制限 $\mu=m^*|_{\mathcal B(G)}$ は測度である．
+
+コンパクト $K$ に対してコンパクト閉包を持つ開近傍 $O$ を取ると $\mu(K)\leq p(O)\leq c(\overline O)<\infty$ である．任意の開集合 $U$ について $\mu(U)=p(U)$ である．コンパクト $K\subseteq U$ について $c(K)\leq m^*(K)$ だから $\mu(U)\leq\sup_{K\subseteq U}\mu(K)$ であり逆の不等式は単調性から従う．外部正則性は外測度の定義そのものである．さらに $\mu(K_0)\geq c(K_0)=1$ なので非零である．従って \GenronRef{K-001034} の条件が全て成立する．
+\end{proof}
+% genron:end K-001038
+% genron:begin K-001039
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001034
+% genron:use K-000749
+% genron:use K-000751
+% genron:use K-000374
+% genron:use K-000375
+% genron:use K-000993
+\begin{prop}[Haar測度の正値性と内部正則性]
+左Haar測度は空でない開集合上で正である．また有限測度のBorel集合について内部正則である．特に $G$ が$\sigma$コンパクト（可算個のコンパクト集合の合併）なら，全Borel集合について内部正則であり，\GenronRef{K-000993} の意味でRadon測度となる．
+\end{prop}
+\begin{proof}
+非零性と外部正則性・開集合の内部正則性から正の測度を持つコンパクト集合 $K$ が存在する．空でない開集合 $U$ の左移動は $G$ を覆うので，$K$ を有限個で覆える．$\mu(U)=0$ なら左不変性と劣加法性により $\mu(K)=0$ となる．
+
+有限測度のBorel集合 $A$ と $\varepsilon>0$ に対し，外部正則性から $A\subseteq O$（開），$\mu(O)<\mu(A)+\varepsilon$ と取る．$\mu(O\setminus A)<\varepsilon$ であり，外部正則性から $O\setminus A\subseteq V$（開），$\mu(V)<2\varepsilon$ と取る．開集合の内部正則性によりコンパクト $K\subseteq O$ で $\mu(K)>\mu(O)-\varepsilon$ となるものが存在する．$K\setminus V$ はコンパクトで $A$ に含まれ，$\mu(K\setminus V)\geq\mu(K)-\mu(V)>\mu(A)-3\varepsilon$ である．これが有限測度集合の内部正則性である．$\sigma$コンパクトな場合，コンパクト集合の有限合併を取って $K_n\uparrow G$ とできる．$A\cap K_n$ は有限測度であり，\GenronRef{K-000751} によりその測度の上限が $\mu(A)$ に等しいので，任意のBorel集合について内部正則性が従う．
+\end{proof}
+% genron:end K-001039
+% genron:begin K-001040
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000380
+% genron:use K-000257
+% genron:use K-000748
+% genron:use K-000781
+% genron:use K-000783
+% genron:use K-000828
+% genron:use K-000759
+% genron:use K-000996
+\begin{prop}[コンパクト台函数の反復積分]
+局所コンパクトHausdorff空間 $X,Y$ のBorel測度 $\mu,\nu$ がコンパクト集合上有限であるとする．連続実函数 $H:X\times Y\to\mathbb R$ があるコンパクト長方形 $K\times L$ の外で零であるなら，反復積分は両順序で存在し
+\[
+\int_X\int_Y H(x,y)\,d\nu(y)\,d\mu(x)=\int_Y\int_X H(x,y)\,d\mu(x)\,d\nu(y)
+\]
+となる．
+\end{prop}
+\begin{proof}
+$K,L$ 上の有限Borel測度へ制限すれば十分である．連続性と積位相の開基によって $K\times L$ を $H$ の振幅が $\varepsilon$ 未満となる相対開長方形で覆い，コンパクト性によって有限部分被覆を選ぶ．この有限個の長方形の各因子の所属・非所属によって $K,L$ をそれぞれ有限Borel分割する．積分割の各非空長方形は被覆の少なくとも一つに含まれる．従って各長方形で $H$ の値を一つ選んで定数とした単函数 $H_\varepsilon$ は $H$ を一様誤差 $\varepsilon$ 未満で近似する．$H_\varepsilon$ は長方形の指示函数の有限線形結合であり，反復積分の等式は直接計算できる．$\varepsilon=1/n$ とすれば内側積分はそれぞれ一様極限としてBorel可測であり，両側の積分の誤差は $\mu(K)\nu(L)/n$ 以下である．$n\to\infty$ として結論を得る．この論証にはBorel加法族と直積加法族の一般的な一致を仮定しない．
+\end{proof}
+% genron:end K-001040
+% genron:begin K-001041
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001034
+% genron:use K-001039
+% genron:use K-001040
+% genron:use K-000995
+% genron:use K-000996
+% genron:use K-000828
+% genron:use K-000781
+% genron:use K-000784
+% genron:use K-000382
+% genron:use K-000376
+% genron:use K-000380
+% genron:use K-000379
+\begin{prop}[Haar測度の一意性]
+同一の局所コンパクトHausdorff群上の二つの左Haar測度 $\mu,\nu$ に対し，ある $a>0$ が存在して $\mu=a\nu$ となる．
+\end{prop}
+\begin{proof}
+まず $f,g\in C_c(G,\mathbb R)$，$g\geq0$，$g\not\equiv0$ を取る．左不変性は指示函数，単函数，非負可測函数，実可積分函数の順に積分の変数移動を保存する．$H(x,y)=f(x)g(y^{-1}x)$ は連続で，$x\in\operatorname{supp}f$，$y\in(\operatorname{supp}f)(\operatorname{supp}g)^{-1}$ なるコンパクト長方形の外で零である．\GenronRef{K-001040} と左不変性を用い，まず $y=xw$，次に積分順序を交換して $x=yz$ とすれば
+\[
+\mu(f)\int_G g(w^{-1})\,d\nu(w)
+=\int_G g(z)\left(\int_G f(yz)\,d\nu(y)\right)d\mu(z)
+\]
+となる．ここで $\mu(f)=\int f\,d\mu$ と略記した．
+
+$z\mapsto J_f(z)=\int f(yz)\,d\nu(y)$ は $e$ で連続で $J_f(e)=\nu(f)$ である．実際，コンパクト単位元近傍 $W$ を固定すると，$z\in W$ に対し $f(yz)$ と $f(y)$ はともに $K=(\operatorname{supp}f)W^{-1}\cup\operatorname{supp}f$ の外で零である．$K$ の各 $y$ で $|f(yz)-f(y)|$ が $(y,e)$ で連続かつ零であることと有限部分被覆によって，任意の $\delta>0$ について全 $y\in K$ でこの差が $\delta$ 未満となる単位元近傍が存在する．$\nu(K)<\infty$ から連続性が従う．
+
+$f_0\in C_c(G,\mathbb R)$ を非負かつ非零に固定する．\GenronRef{K-001039} と連続性から $\mu(f_0),\nu(f_0)>0$ である．任意の $\varepsilon>0$ に対し開単位元近傍 $U$ を十分小さく取り，$z\in U$ なら $|J_f(z)-\nu(f)|<\varepsilon$ かつ $|J_{f_0}(z)-\nu(f_0)|<\varepsilon$ とする．\GenronRef{K-000995} により $g(e)=1$ かつ $0\leq g\leq1,\ \operatorname{supp}g\subseteq U$ となる $g$ を取れる．$\mu(g)>0$ であり，前の等式を $\mu(g)$ で除すと
+\[
+|\mu(f)r_g-\nu(f)|\leq\varepsilon,\qquad
+|\mu(f_0)r_g-\nu(f_0)|\leq\varepsilon,\qquad
+r_g=\frac{\int g(w^{-1})\,d\nu(w)}{\mu(g)} .
+\]
+後者から $r_g$ は $\nu(f_0)/\mu(f_0)$ に任意に近くできるので，前者によって $\nu(f)=\mu(f)\nu(f_0)/\mu(f_0)$ である．従って $a=\mu(f_0)/\nu(f_0)$ とすれば全てのコンパクト台連続実函数で $\mu(f)=a\nu(f)$ が成立する．開集合 $U$ の内部正則性と切断函数の存在から $\mu(U)=\sup\{\mu(f):0\leq f\leq1,\operatorname{supp}f\subseteq U\}$ である（$\nu$ も同様）．よって全開集合で $\mu=a\nu$ が成立し，外部正則性により全Borel集合で成立する．
+\end{proof}
+% genron:end K-001041
+% genron:begin K-001042
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001034
+% genron:use K-001038
+% genron:use K-001039
+% genron:use K-001041
+% genron:use K-000382
+% genron:use K-000383
+\begin{prop}[右Haar測度とコンパクト群の正規化]
+左Haar測度 $\mu$ から $\nu(A)=\mu(A^{-1})$ と定めると右Haar測度になる．右Haar測度も正定数倍を除いて一意である．$G$ がコンパクトなら $\mu(G)=1$ と正規化でき，正規化された左Haar測度は右不変でもある．
+\end{prop}
+\begin{proof}
+逆元写像は同相でありBorel集合，開集合，コンパクト集合を保つ．右移動について $(Ag)^{-1}=g^{-1}A^{-1}$ なので左不変性が右不変性を与える．逆元写像は対合であるから右Haar測度の一意性は \GenronRef{K-001041} に還元される．コンパクト群では $0<\mu(G)<\infty$ なので正規化できる．固定した $g\in G$ について $A\mapsto\mu(Ag)$ は左Haar測度であり全体の値が一である．\GenronRef{K-001041} の一意性によってこれは $\mu$ と一致する．
+\end{proof}
+% genron:end K-001042
+% genron:begin K-001043
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001034
+% genron:use K-001039
+% genron:use K-000993
+% genron:use K-000614
+% genron:use K-000619
+% genron:use K-000381
+% genron:use K-000376
+% genron:use K-000888
+% genron:use K-000749
+% genron:use K-000750
+\begin{example}[非σコンパクト群における正則性の相違]
+非可算離散群 $D$ と実数加法群の直積 $G=D\times\mathbb R$ を考える．左Haar測度 $\mu$ について閉集合 $A=D\times\{0\}$ の測度は無限であるが，$A$ の全コンパクト部分集合は測度零である．従って全Borel集合の内部正則性と外部正則性をともに課す \GenronRef{K-000993} の規約では一般の局所コンパクト群にHaar測度を得られない．
+\end{example}
+\begin{proof}
+$G$ は局所コンパクトHausdorff群である．一点の測度が正なら $\{d\}\times[0,1]$ 内に相異なる点を任意の有限個取ることで有限性に反する．従って一点の測度は零である．$A$ のコンパクト部分集合の $D$ への射影はコンパクトで，離散性により有限である．従ってその部分集合は有限集合で測度零となる．一方 $A$ を含む開集合 $U$ は全ての $d\in D$ に対して空でない開集合 $U\cap(\{d\}\times\mathbb R)$ を含む．各測度は \GenronRef{K-001039} によって正である．非可算個の正数のうち，ある自然数 $n$ について $1/n$ 以上のものが無限個存在する．そうでなければ全体が有限集合の可算合併となり可算だからである．従って有限個の互いに素なこれらの開集合だけでも任意に大きな測度を得る．$\mu(U)=\infty$ であり，外部正則性から $\mu(A)=\infty$ となる．
+\end{proof}
+% genron:end K-001043
