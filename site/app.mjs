@@ -177,12 +177,14 @@ function showKnowledgePath(){
  const direction=node("select");direction.setAttribute("aria-label","知識の依存方向");
  const scope=node("select");scope.setAttribute("aria-label","知識の依存範囲");
  const display=node("select");display.setAttribute("aria-label","ノートの表示内容");
+ const sortOrder=node("select");sortOrder.setAttribute("aria-label","ノートの並び順");
  const option=(value,label)=>{const o=node("option","",label);o.value=value;return o};
  for(const [v,t] of [["up","前提（この知識に至る）"],["down","後続（この知識を用いる）"],["both","前提と後続"]])direction.append(option(v,t));
  for(const [v,t] of [["all","推移的な依存も含む"],["direct","直接依存のみ"]])scope.append(option(v,t));
  direction.value=["up","down","both"].includes(params.get("direction"))?params.get("direction"):"up";
  scope.value=params.get("scope")==="direct"?"direct":"all";
  display.append(option("full","ノート全文"),option("related","関連知識のみ"));display.value=params.get("content")==="related"?"related":"full";
+ sortOrder.append(option("asc","階層番号が小さい順"),option("desc","階層番号が大きい順"));sortOrder.value=params.get("order")==="desc"?"desc":"asc";
  let selected=entries.has(params.get("target"))?params.get("target"):null;
  search.value=params.get("q")??(selected?entries.get(selected).title:"");
  const resultCount=node("p","muted path-match-count");
@@ -191,8 +193,9 @@ function showKnowledgePath(){
  const dirLabel=node("label","path-field");dirLabel.append(node("span","","依存方向"),direction);
  const scopeLabel=node("label","path-field");scopeLabel.append(node("span","","依存範囲"),scope);
  const displayLabel=node("label","path-field");displayLabel.append(node("span","","表示内容"),display);
- tools.append(searchLabel,choiceLabel,dirLabel,scopeLabel,displayLabel);
- page.append(node("h1","","知識からたどるノート"),node("p","muted","定理・命題・定義などを選択すると，知識台帳の依存関係に沿って関係するノートだけを表示します．ノート本文を依存階層の浅い順に続けて読み進められます．"),tools,resultCount,output);
+ const sortLabel=node("label","path-field");sortLabel.append(node("span","","並び順"),sortOrder);
+ tools.append(searchLabel,choiceLabel,dirLabel,scopeLabel,displayLabel,sortLabel);
+ page.append(node("h1","","知識からたどるノート"),node("p","muted","定理・命題・定義などを選択すると，知識台帳の依存関係に沿って関係するノートだけを表示します．ノート本文を依存階層の小さい順または大きい順に続けて読み進められます．"),tools,resultCount,output);
  main.replaceChildren(page);
  const sorted=(a,b)=>(a.knowledge_depth??0)-(b.knowledge_depth??0)||a.id.localeCompare(b.id);
  function updateUrl(){
@@ -200,6 +203,7 @@ function showKnowledgePath(){
   if(direction.value!=="up")u.searchParams.set("direction",direction.value);
   if(scope.value!=="all")u.searchParams.set("scope",scope.value);
   if(display.value!=="full")u.searchParams.set("content",display.value);
+  if(sortOrder.value==="desc")u.searchParams.set("order","desc");
   history.replaceState(history.state,"",u);
  }
  function searchUpdate(keep=false){
@@ -231,7 +235,8 @@ function showKnowledgePath(){
   const groups=new Map();
   for(const id of related){const e=entries.get(id),no=e.position[0];if(!notes.has(no))continue;if(!groups.has(no))groups.set(no,[]);groups.get(no).push(e)}
   const byPlan=new Map((data.plan??data.notes).map(n=>[n.number,n]));
-  const ordered=[...groups].sort(([a],[b])=>(byPlan.get(a)?.depth??0)-(byPlan.get(b)?.depth??0)||a-b);
+  const sign=sortOrder.value==="desc"?-1:1;
+  const ordered=[...groups].sort(([a],[b])=>sign*((byPlan.get(a)?.depth??0)-(byPlan.get(b)?.depth??0))||a-b);
   const counts=node("p","meta path-summary",groups.size+"冊・"+related.size+"関連知識項目（対象を含む）");
   output.append(counts);
   const index=node("details","path-index");index.append(node("summary","","関連ノート目次"));index.open=true;
@@ -263,7 +268,7 @@ function showKnowledgePath(){
  }
  search.oninput=()=>{searchUpdate();refresh()};
  choice.onchange=()=>{selected=choice.value||null;refresh()};
- direction.onchange=scope.onchange=display.onchange=refresh;
+ direction.onchange=scope.onchange=display.onchange=sortOrder.onchange=refresh;
  searchUpdate(true);refresh();
 }
 
