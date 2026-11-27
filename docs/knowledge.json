@@ -41763,6 +41763,834 @@
       "status": "draft",
       "source": "volumes/N-270/web.tex",
       "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001347",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一階論理の導出",
+      "statement": "一階論理式に命題論理の古典自然演繹の規則を適用できるものとする．量化子の規則は次の通りである．\n\\[\n\\frac{A}{\\forall x A}\\ (\\forall I),\\quad\n\\frac{\\forall x A}{A[t/x]}\\ (\\forall E),\\quad\n\\frac{A[t/x]}{\\exists x A}\\ (\\exists I).\n\\]\n$\\forall I$ では $x$ が未解除の仮定に自由に現れないこと，代入を伴う規則では $t$ が $x$ に代入可能であることを要する．$\\exists E$ では $\\exists x A$ の導出及び仮定 $A[y/x]$ から $B$ の導出を用いて $B$ を得，その仮定を解除する．ここで $y$ は $x$ と異なり，$A,B$ 及び他の未解除の仮定に自由に現れず，代入可能な変数とする．導出は有限とし，$\\Gamma\\vdash A$ は未解除の仮定が $\\Gamma$ に属する導出の存在を意味する．",
+      "assumptions": [],
+      "position": [
+        328,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001167",
+        "K-001175",
+        "K-001179"
+      ],
+      "status": "draft",
+      "source": "volumes/N-328/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001348",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "等号の推論規則",
+      "statement": "等号を持つ一階言語では，任意の項 $t$ に対して仮定なしに $t=t$ を導けるとする．$t=u$ と $A[t/x]$ から $A[u/x]$ を導けるものとし，双方の代入が可能であることを要する．",
+      "assumptions": [],
+      "position": [
+        328,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001347",
+        "K-001174",
+        "K-001179"
+      ],
+      "status": "draft",
+      "source": "volumes/N-328/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001349",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "自由変数を含む式の意味論的帰結",
+      "statement": "式の集合 $\\Gamma$ と式 $A$ について，任意の構造 $\\mathcal M$ 及び割当て $s$ が $\\Gamma$ のすべての元を充足するなら $A$ を充足するという条件を $\\Gamma\\models A$ と書く．文に対しては既出の意味論的帰結と一致する．",
+      "assumptions": [],
+      "position": [
+        328,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001258",
+        "K-001259",
+        "K-001262"
+      ],
+      "status": "draft",
+      "source": "volumes/N-328/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001350",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一階論理の健全性",
+      "statement": "$\\Gamma\\vdash A$ ならば $\\Gamma\\models A$ である．",
+      "assumptions": [],
+      "position": [
+        328,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001347",
+        "K-001348",
+        "K-001349",
+        "K-001168",
+        "K-001259",
+        "K-001261"
+      ],
+      "status": "draft",
+      "source": "volumes/N-328/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001351",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "等号の対称性と推移性",
+      "statement": "$s=t\\vdash t=s$ 及び $s=t,t=u\\vdash s=u$ が成立する．",
+      "assumptions": [],
+      "position": [
+        328,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001348",
+        "K-001177"
+      ],
+      "status": "draft",
+      "source": "volumes/N-328/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001352",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "量化子の双対性",
+      "statement": "任意の式 $A$ について $\\neg\\forall x A$ と $\\exists x\\neg A$，及び $\\neg\\exists x A$ と $\\forall x\\neg A$ はそれぞれ相互に導出可能である．",
+      "assumptions": [],
+      "position": [
+        328,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001347",
+        "K-001170",
+        "K-001180"
+      ],
+      "status": "draft",
+      "source": "volumes/N-328/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001353",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "エタール空間",
+      "statement": "位相空間 $X$ 上のエタール空間とは，各 $e\\in E$ が開近傍 $W$ を持ち，$p|_W:W\\to p(W)$ が開集合 $p(W)\\subseteq X$ への同相写像となる連続写像 $p:E\\to X$ をいう．この性質を局所同相という．射は $X$ 上で可換な連続写像とする．",
+      "assumptions": [],
+      "position": [
+        348,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000217",
+        "K-000223",
+        "K-000245"
+      ],
+      "status": "draft",
+      "source": "volumes/N-348/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001354",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "エタール空間の切断の層",
+      "statement": "エタール空間 $p:E\\to X$ に対し，開集合 $U$ 上の連続切断 $s:U\\to E$（$ps=1_U$）の集合は制限によって集合値層 $\\Gamma(E)$ をなす．",
+      "assumptions": [],
+      "position": [
+        348,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001353",
+        "K-000526",
+        "K-000221"
+      ],
+      "status": "draft",
+      "source": "volumes/N-348/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001355",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "芽の空間の位相",
+      "statement": "集合値層 $F$ に対し $E(F)=\\coprod_{x\\in X}F_x$ とし，$p(x,a)=x$ とする．開集合 $U$ と $s\\in F(U)$ に対して $[s,U]=\\{(x,s_x)\\mid x\\in U\\}$ とおくと，これらは $E(F)$ の位相の開基をなし，$p$ は局所同相となる．",
+      "assumptions": [],
+      "position": [
+        348,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001353",
+        "K-001182",
+        "K-001183",
+        "K-000208",
+        "K-000209",
+        "K-000210",
+        "K-000049"
+      ],
+      "status": "draft",
+      "source": "volumes/N-348/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001356",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層から得た芽の空間の切断",
+      "statement": "標準射 $F\\to\\Gamma(E(F))$，$s\\mapsto(x\\mapsto(x,s_x))$ は層同型である．",
+      "assumptions": [],
+      "position": [
+        348,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001355",
+        "K-001354",
+        "K-001186",
+        "K-000526",
+        "K-000532"
+      ],
+      "status": "draft",
+      "source": "volumes/N-348/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001357",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断の芽とエタール空間の点",
+      "statement": "エタール空間 $p:E\\to X$ に対し，$\\Gamma(E)_x\\to p^{-1}(x)$ を芽の $x$ における評価で定めると全単射である．",
+      "assumptions": [],
+      "position": [
+        348,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001353",
+        "K-001354",
+        "K-001182"
+      ],
+      "status": "draft",
+      "source": "volumes/N-348/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001358",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "エタール空間と集合値層の圏の同値",
+      "statement": "芽の空間を作る函手と切断の層を作る函手は互いに逆の自然同型を持つ圏同値を与える．",
+      "assumptions": [],
+      "position": [
+        348,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001356",
+        "K-001357",
+        "K-001185",
+        "K-000245",
+        "K-000277"
+      ],
+      "status": "draft",
+      "source": "volumes/N-348/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001359",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順像層",
+      "statement": "連続写像 $f:X\\to Y$ と $X$ 上の集合値層 $F$ に対し，$Y$ の開集合 $V$ 上で $(f_*F)(V)=F(f^{-1}(V))$ と定める．制限は $F$ の制限による．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000217",
+        "K-000526",
+        "K-000037"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001360",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順像の層性",
+      "statement": "$f_*F$ は $Y$ 上の層であり，$F$ に関して函手的である．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001359",
+        "K-000526",
+        "K-000531",
+        "K-000038"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001361",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "逆像前層",
+      "statement": "$Y$ 上の集合値層 $G$ と $X$ の開集合 $U$ に対し\n\\[\n(f^{-1}_{\\mathrm{pre}}G)(U)=\\varinjlim_{U\\subseteq f^{-1}(V)}G(V)\n\\]\nとおく．添字は条件を満たす $Y$ の開集合であり，逆包含で順序づけ，写像は制限とする．具体的には $(V,s)$ の類で，二つの対は $U\\subseteq f^{-1}(W)$ を満たす共通の縮小 $W$ で切断が一致するとき同値である．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000511",
+        "K-000518",
+        "K-000417",
+        "K-000217"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001362",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "逆像前層の構成",
+      "statement": "この同値関係は同値関係であり，$U'\\subseteq U$ に対する同じ代表元の類への写像で前層となる．この前層は $G$ に関して函手的である．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001361",
+        "K-000418",
+        "K-000052"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001363",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "逆像層",
+      "statement": "逆像前層 $f^{-1}_{\\mathrm{pre}}G$ の層化を $f^{-1}G$ と定める．これは $X$ 上の層である．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001362",
+        "K-001268",
+        "K-001269"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001364",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "逆像層の茎",
+      "statement": "任意の $x\\in X$ に対して $(f^{-1}G)_x\\simeq G_{f(x)}$ という標準全単射がある．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001363",
+        "K-001266",
+        "K-001182",
+        "K-001183"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001365",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "逆像と順像の随伴",
+      "statement": "$f^{-1}$ は $f_*$ の左随伴であり，標準的な自然全単射\n\\[\n\\operatorname{Hom}_X(f^{-1}G,F)\\simeq\n\\operatorname{Hom}_Y(G,f_*F)\n\\]\nが存在する．",
+      "assumptions": [],
+      "position": [
+        349,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001363",
+        "K-001360",
+        "K-001267",
+        "K-000520"
+      ],
+      "status": "draft",
+      "source": "volumes/N-349/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001366",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "群の層",
+      "statement": "位相空間 $X$ 上の集合値層 $F$ で，各開集合 $U$ 上の $F(U)$ が群であり，各制限写像が群準同型であるものを群の層という．射は各成分が群準同型である層の射とする．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000526",
+        "K-000531",
+        "K-000225",
+        "K-000282"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001367",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "環の層",
+      "statement": "各 $F(U)$ が単位的可換環であり，各制限写像が単位元を保つ環準同型である集合値層を可換環の層という．射は各成分がそのような環準同型である層の射とする．零環を許す．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000526",
+        "K-000531",
+        "K-000249",
+        "K-000251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001368",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "群及び環の茎の代数構造",
+      "statement": "群の層の各茎は群となり，環の層の各茎は可換環となる．演算は二つの芽の代表元を共通の開近傍に制限して演算した切断の芽として定める．層の射が誘導する茎写像は対応する準同型である．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001366",
+        "K-001367",
+        "K-001182",
+        "K-001183",
+        "K-001185"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001369",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "茎による代数的層の同型判定",
+      "statement": "群の層又は環の層の射が同型であることと，各茎写像が同型であることは同値である．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001368",
+        "K-001187",
+        "K-000284",
+        "K-000251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001370",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単元の層",
+      "statement": "環の層 $\\mathcal O$ に対し $U\\mapsto\\mathcal O(U)^\\times$ は可換群の層となる．切断 $s\\in\\mathcal O(U)$ が単元であることと各 $x\\in U$ における芽 $s_x$ が単元であることは同値である．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001367",
+        "K-001368",
+        "K-000526",
+        "K-000249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001371",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "環付き空間",
+      "statement": "位相空間 $X$ とその上の可換環の層 $\\mathcal O_X$ の組 $(X,\\mathcal O_X)$ を環付き空間という．すべての点で茎が唯一の極大イデアルを持つ場合，局所環付き空間という．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001367",
+        "K-001368"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001372",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "環付き空間の射",
+      "statement": "環付き空間 $(X,\\mathcal O_X),(Y,\\mathcal O_Y)$ の射とは連続写像 $f:X\\to Y$ と，任意の $Y$ の開集合 $V$ について制限と可換な環準同型 $\\mathcal O_Y(V)\\to\\mathcal O_X(f^{-1}(V))$ の組をいう．局所環付き空間の射についてはさらに，各 $x\\in X$ で誘導される茎の準同型が極大イデアルの逆像を極大イデアルとすることを要する．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001371",
+        "K-000217",
+        "K-001182"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001373",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "環付き空間の射の合成",
+      "statement": "環付き空間の射は基礎空間の写像及び開集合上の準同型の合成によって圏をなす．局所環付き空間の射の合成も局所環付き空間の射である．",
+      "assumptions": [],
+      "position": [
+        351,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001372",
+        "K-000036"
+      ],
+      "status": "draft",
+      "source": "volumes/N-351/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -46956,7 +47784,7 @@
       "number": 328,
       "title": "一階論理の証明体系",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         327,
         325
@@ -46965,7 +47793,8 @@
         "推論規則・健全性"
       ],
       "treatise": "T-48",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 329,
@@ -47261,7 +48090,7 @@
       "number": 348,
       "title": "エタール空間",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         347,
         55
@@ -47270,13 +48099,14 @@
         "局所同相・集合値層との同値"
       ],
       "treatise": "T-51",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 349,
       "title": "順像層と逆像層",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         347,
         55
@@ -47285,7 +48115,8 @@
         "順像・逆像・随伴"
       ],
       "treatise": "T-51",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 350,
@@ -47306,7 +48137,7 @@
       "number": 351,
       "title": "群の層・環の層",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         347,
         10
@@ -47315,7 +48146,8 @@
         "代数構造の層・環付き空間"
       ],
       "treatise": "T-51",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 352,

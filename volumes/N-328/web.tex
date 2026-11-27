@@ -1,0 +1,116 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{一階論理の自然演繹}
+% genron:begin K-001347
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001167
+% genron:use K-001175
+% genron:use K-001179
+\begin{defn}[一階論理の導出]
+一階論理式に命題論理の古典自然演繹の規則を適用できるものとする．量化子の規則は次の通りである．
+\[
+\frac{A}{\forall x A}\ (\forall I),\quad
+\frac{\forall x A}{A[t/x]}\ (\forall E),\quad
+\frac{A[t/x]}{\exists x A}\ (\exists I).
+\]
+$\forall I$ では $x$ が未解除の仮定に自由に現れないこと，代入を伴う規則では $t$ が $x$ に代入可能であることを要する．$\exists E$ では $\exists x A$ の導出及び仮定 $A[y/x]$ から $B$ の導出を用いて $B$ を得，その仮定を解除する．ここで $y$ は $x$ と異なり，$A,B$ 及び他の未解除の仮定に自由に現れず，代入可能な変数とする．導出は有限とし，$\Gamma\vdash A$ は未解除の仮定が $\Gamma$ に属する導出の存在を意味する．
+\end{defn}
+% genron:end K-001347
+% genron:begin K-001348
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001347
+% genron:use K-001174
+% genron:use K-001179
+\begin{defn}[等号の推論規則]
+等号を持つ一階言語では，任意の項 $t$ に対して仮定なしに $t=t$ を導けるとする．$t=u$ と $A[t/x]$ から $A[u/x]$ を導けるものとし，双方の代入が可能であることを要する．
+\end{defn}
+% genron:end K-001348
+% genron:begin K-001349
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001258
+% genron:use K-001259
+% genron:use K-001262
+\begin{defn}[自由変数を含む式の意味論的帰結]
+式の集合 $\Gamma$ と式 $A$ について，任意の構造 $\mathcal M$ 及び割当て $s$ が $\Gamma$ のすべての元を充足するなら $A$ を充足するという条件を $\Gamma\models A$ と書く．文に対しては既出の意味論的帰結と一致する．
+\end{defn}
+% genron:end K-001349
+% genron:begin K-001350
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001347
+% genron:use K-001348
+% genron:use K-001349
+% genron:use K-001168
+% genron:use K-001259
+% genron:use K-001261
+\begin{prop}[一階論理の健全性]
+$\Gamma\vdash A$ ならば $\Gamma\models A$ である．
+\end{prop}
+\begin{proof}
+導出木の高さに関する帰納法を用いる．命題結合子の規則については各構造と割当てで命題論理の健全性の証明を適用する．$\forall I$ では未解除の仮定を充足する割当ての $x$ の値を任意の $a\in M$ に替えても仮定の充足は変わらない．帰納法によりその割当てで $A$ が真となるので全称式を充足する．$\forall E$ は $t$ の値を全称量化の変数へ代入し，代入補題を用いる．$\exists I$ はその値を存在量化の証人とすればよい．$\exists E$ では $\exists x A$ の証人 $a$ を選び，割当ての $y$ の値を $a$ に替える．$y$ の自由出現条件及び代入補題により $A[y/x]$ と他の仮定を充足する．帰納法により変更後の割当てで $B$ が真であり，$y$ が $B$ に自由に現れないので元の割当てでも真である．等号の反射性は項の値の等号である．等号の除去では $t,u$ の値が等しいため代入補題の右辺で同一の割当てを得る．従って各規則は意味論的帰結を保存する．
+\end{proof}
+% genron:end K-001350
+% genron:begin K-001351
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001348
+% genron:use K-001177
+\begin{prop}[等号の対称性と推移性]
+$s=t\vdash t=s$ 及び $s=t,t=u\vdash s=u$ が成立する．
+\end{prop}
+\begin{proof}
+項に現れない変数 $x$ を取り，式 $x=s$ に対して $s=s$ と $s=t$ から等号の規則で $t=s$ を得る．同様に式 $s=x$ を用いて $s=t$ と $t=u$ から $s=u$ を得る．
+\end{proof}
+% genron:end K-001351
+% genron:begin K-001352
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001347
+% genron:use K-001170
+% genron:use K-001180
+\begin{prop}[量化子の双対性]
+任意の式 $A$ について $\neg\forall x A$ と $\exists x\neg A$，及び $\neg\exists x A$ と $\forall x\neg A$ はそれぞれ相互に導出可能である．
+\end{prop}
+\begin{proof}
+$\exists x\neg A$ と $\forall x A$ を仮定すると，存在除去の新変数 $y$ について $\neg A[y/x]$ と全称除去による $A[y/x]$ が矛盾する．従って $\exists x\neg A\vdash\neg\forall x A$ である．逆に $\neg\forall x A$ と $\neg\exists x\neg A$ を仮定する．新変数 $y$ について $\neg A[y/x]$ を仮定すれば存在導入により矛盾するので背理法で $A[y/x]$ を得る．$y$ を任意変数として全称導入し，束縛変数を $x$ に戻す（全称除去で $x$ を代入してから全称導入する）と $\forall x A$ となる．ここで $x$ が他の仮定に自由に現れないことは両仮定が $x$ を量化していることから従う．背理法により $\exists x\neg A$ を得る．第二の対について，$\neg\exists x A$ の下で新変数に対する $A[y/x]$ は存在導入により矛盾するので $\neg A[y/x]$ が導け，前と同様に全称式を得る．逆に $\forall x\neg A$ と $\exists x A$ を仮定し，新変数による存在除去と全称除去から矛盾を得る．
+\end{proof}
+% genron:end K-001352

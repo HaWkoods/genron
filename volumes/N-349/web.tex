@@ -1,0 +1,140 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{順像層・逆像層と随伴}
+% genron:begin K-001359
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000217
+% genron:use K-000526
+% genron:use K-000037
+\begin{defn}[順像層]
+連続写像 $f:X\to Y$ と $X$ 上の集合値層 $F$ に対し，$Y$ の開集合 $V$ 上で $(f_*F)(V)=F(f^{-1}(V))$ と定める．制限は $F$ の制限による．
+\end{defn}
+% genron:end K-001359
+% genron:begin K-001360
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001359
+% genron:use K-000526
+% genron:use K-000531
+% genron:use K-000038
+\begin{prop}[順像の層性]
+$f_*F$ は $Y$ 上の層であり，$F$ に関して函手的である．
+\end{prop}
+\begin{proof}
+開被覆 $V=\bigcup_iV_i$ の逆像は $f^{-1}(V)=\bigcup_i f^{-1}(V_i)$ という開被覆であり，逆像は共通部分を保存する．従って整合切断の貼合せと一意性は $F$ の層条件から従う．層の射は各逆像開集合上の成分写像を与え，恒等と合成を保存する．
+\end{proof}
+% genron:end K-001360
+% genron:begin K-001361
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000511
+% genron:use K-000518
+% genron:use K-000417
+% genron:use K-000217
+\begin{defn}[逆像前層]
+$Y$ 上の集合値層 $G$ と $X$ の開集合 $U$ に対し
+\[
+(f^{-1}_{\mathrm{pre}}G)(U)=\varinjlim_{U\subseteq f^{-1}(V)}G(V)
+\]
+とおく．添字は条件を満たす $Y$ の開集合であり，逆包含で順序づけ，写像は制限とする．具体的には $(V,s)$ の類で，二つの対は $U\subseteq f^{-1}(W)$ を満たす共通の縮小 $W$ で切断が一致するとき同値である．
+\end{defn}
+% genron:end K-001361
+% genron:begin K-001362
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001361
+% genron:use K-000418
+% genron:use K-000052
+\begin{prop}[逆像前層の構成]
+この同値関係は同値関係であり，$U'\subseteq U$ に対する同じ代表元の類への写像で前層となる．この前層は $G$ に関して函手的である．
+\end{prop}
+\begin{proof}
+添字集合は $Y$ を含み，有限交叉で閉じるため，推移性は等号を与える二つの開集合の共通部分を用いて成立する．制限は $U'$ についても同じ代表元と等号成立開集合が条件を満たすので良定義である．制限の合成は代表元上で明らかである．$G\to H$ の射を各代表元の切断に適用することは制限と可換なので類上の写像を定め，恒等と合成を保存する．
+\end{proof}
+% genron:end K-001362
+% genron:begin K-001363
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001362
+% genron:use K-001268
+% genron:use K-001269
+\begin{defn}[逆像層]
+逆像前層 $f^{-1}_{\mathrm{pre}}G$ の層化を $f^{-1}G$ と定める．これは $X$ 上の層である．
+\end{defn}
+% genron:end K-001363
+% genron:begin K-001364
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001363
+% genron:use K-001266
+% genron:use K-001182
+% genron:use K-001183
+\begin{prop}[逆像層の茎]
+任意の $x\in X$ に対して $(f^{-1}G)_x\simeq G_{f(x)}$ という標準全単射がある．
+\end{prop}
+\begin{proof}
+層化によって茎は変わらないので逆像前層の茎を考える．$U\ni x$ 上の類 $(V,s)$ から $s_{f(x)}$ を取る写像は類及び芽の代表元によらない．任意の $f(x)$ での芽は $V\ni f(x)$ 上の切断で表され，$U=f^{-1}(V)$ を取れば前層の芽となるので全射である．二つの切断が $f(x)$ で同じ芽なら共通の縮小 $W$ で一致する．元の二つの $U$ を $f^{-1}(W)$ と交叉すれば $x$ の開近傍で類が一致する．従って単射である．
+\end{proof}
+% genron:end K-001364
+% genron:begin K-001365
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001363
+% genron:use K-001360
+% genron:use K-001267
+% genron:use K-000520
+\begin{prop}[逆像と順像の随伴]
+$f^{-1}$ は $f_*$ の左随伴であり，標準的な自然全単射
+\[
+\operatorname{Hom}_X(f^{-1}G,F)\simeq
+\operatorname{Hom}_Y(G,f_*F)
+\]
+が存在する．
+\end{prop}
+\begin{proof}
+右辺の射 $\alpha$ に対して，逆像前層の $U$ 上の代表元 $(V,s)$ を $\alpha_V(s)|_U$ に移す．制限との可換性から類によらず，前層の射となる．層化の普遍性で左辺の射を得る．逆に左辺の射 $\beta$ に対し $s\in G(V)$ を $U=f^{-1}(V)$ 上の代表元 $(V,s)$ の類とみなし，層化の標準射及び $\beta_U$ を適用すれば右辺の射を得る．両対応は，代表元の定義と層化の普遍性の一意性から逆である．射の合成とこれらの操作は可換なので自然性も成立する．
+\end{proof}
+% genron:end K-001365

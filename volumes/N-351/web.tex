@@ -1,0 +1,147 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{代数構造を持つ層と環付き空間}
+% genron:begin K-001366
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000526
+% genron:use K-000531
+% genron:use K-000225
+% genron:use K-000282
+\begin{defn}[群の層]
+位相空間 $X$ 上の集合値層 $F$ で，各開集合 $U$ 上の $F(U)$ が群であり，各制限写像が群準同型であるものを群の層という．射は各成分が群準同型である層の射とする．
+\end{defn}
+% genron:end K-001366
+% genron:begin K-001367
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000526
+% genron:use K-000531
+% genron:use K-000249
+% genron:use K-000251
+\begin{defn}[環の層]
+各 $F(U)$ が単位的可換環であり，各制限写像が単位元を保つ環準同型である集合値層を可換環の層という．射は各成分がそのような環準同型である層の射とする．零環を許す．
+\end{defn}
+% genron:end K-001367
+% genron:begin K-001368
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001366
+% genron:use K-001367
+% genron:use K-001182
+% genron:use K-001183
+% genron:use K-001185
+\begin{prop}[群及び環の茎の代数構造]
+群の層の各茎は群となり，環の層の各茎は可換環となる．演算は二つの芽の代表元を共通の開近傍に制限して演算した切断の芽として定める．層の射が誘導する茎写像は対応する準同型である．
+\end{prop}
+\begin{proof}
+代表元を替えた場合，芽の一致を与える開近傍を有限個交叉すれば代表切断が同時に一致する．従って演算は代表元によらない．各公理に現れる有限個の代表切断を共通近傍へ制限すると，切断集合の群又は環の公理から芽における公理が従う．射は制限及び演算と可換なので茎写像も準同型である．
+\end{proof}
+% genron:end K-001368
+% genron:begin K-001369
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001368
+% genron:use K-001187
+% genron:use K-000284
+% genron:use K-000251
+\begin{prop}[茎による代数的層の同型判定]
+群の層又は環の層の射が同型であることと，各茎写像が同型であることは同値である．
+\end{prop}
+\begin{proof}
+必要性は茎を取る操作の函手性による．十分性について各茎の写像が全単射なら集合値層として同型である．各開集合上で全単射な群又は環の準同型の逆写像は同じ演算を保存するので，逆射も代数的層の射となる．
+\end{proof}
+% genron:end K-001369
+% genron:begin K-001370
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001367
+% genron:use K-001368
+% genron:use K-000526
+% genron:use K-000249
+\begin{prop}[単元の層]
+環の層 $\mathcal O$ に対し $U\mapsto\mathcal O(U)^\times$ は可換群の層となる．切断 $s\in\mathcal O(U)$ が単元であることと各 $x\in U$ における芽 $s_x$ が単元であることは同値である．
+\end{prop}
+\begin{proof}
+制限は単元を単元へ移す．整合する局所単元の逆元も整合するから，それぞれ貼り合わせれば積が $1$ となる．よって単元の層性を得る．切断が単元ならその芽も単元である．逆に各点で逆元の芽を取り，代表切断を縮小すれば $s$ の局所的な逆元となる．逆元の一意性から重なりで整合するので貼り合わせによって大域的な逆元が得られる．
+\end{proof}
+% genron:end K-001370
+% genron:begin K-001371
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001367
+% genron:use K-001368
+\begin{defn}[環付き空間]
+位相空間 $X$ とその上の可換環の層 $\mathcal O_X$ の組 $(X,\mathcal O_X)$ を環付き空間という．すべての点で茎が唯一の極大イデアルを持つ場合，局所環付き空間という．
+\end{defn}
+% genron:end K-001371
+% genron:begin K-001372
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001371
+% genron:use K-000217
+% genron:use K-001182
+\begin{defn}[環付き空間の射]
+環付き空間 $(X,\mathcal O_X),(Y,\mathcal O_Y)$ の射とは連続写像 $f:X\to Y$ と，任意の $Y$ の開集合 $V$ について制限と可換な環準同型 $\mathcal O_Y(V)\to\mathcal O_X(f^{-1}(V))$ の組をいう．局所環付き空間の射についてはさらに，各 $x\in X$ で誘導される茎の準同型が極大イデアルの逆像を極大イデアルとすることを要する．
+\end{defn}
+% genron:end K-001372
+% genron:begin K-001373
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001372
+% genron:use K-000036
+\begin{prop}[環付き空間の射の合成]
+環付き空間の射は基礎空間の写像及び開集合上の準同型の合成によって圏をなす．局所環付き空間の射の合成も局所環付き空間の射である．
+\end{prop}
+\begin{proof}
+$X\xrightarrow fY\xrightarrow gZ$ に対し開集合 $W\subseteq Z$ 上の写像は $\mathcal O_Z(W)\to\mathcal O_Y(g^{-1}W)\to\mathcal O_X(f^{-1}g^{-1}W)$ とする．制限との可換性，単位律，結合律は各成分の写像から従う．茎写像は各代表元にこの合成を適用することで得られ，極大イデアルの逆像の条件は逆像の合成によって保存される．
+\end{proof}
+% genron:end K-001373
