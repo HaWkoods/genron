@@ -392,6 +392,42 @@ try{
  await page.keyboard.press("Escape");
  assert.equal(await page.locator("#preview").isVisible(),false);
  await page.setViewportSize({width:1440,height:1000});
+ // Figure catalogue is generated from exactly the public figure registry.
+ await page.goto(origin);
+ await page.getByRole("link",{name:"図・図式一覧",exact:true}).first().click();
+ await page.locator(".figure-catalogue").waitFor();
+ const catalogueFigures=planData.entries.flatMap(e=>(e.figures??[]).map(f=>({...f,owner:e})));
+ const expectedIds=catalogueFigures.map(f=>f.figure_id).sort();
+ assert.deepEqual(await page.locator(".figure-item").evaluateAll(els=>els.map(e=>e.dataset.figure).sort()),expectedIds,"All and only public figures appear");
+ assert.equal(await page.locator(".figure-item:visible").count(),expectedIds.length);
+ const galleryFixture=catalogueFigures[0];
+ if(galleryFixture){
+  const item=page.locator(".figure-item[data-figure='"+galleryFixture.figure_id+"']");
+  const search=page.getByRole("searchbox",{name:"図・図式の検索"});
+  await search.fill(galleryFixture.figure_id);
+  assert.equal(await page.locator(".figure-item:visible").count(),1);
+  assert.equal(await item.locator("img").getAttribute("src"),galleryFixture.src);
+  await item.locator("img").scrollIntoViewIfNeeded();
+  assert.ok(await item.locator("img").evaluate(async img=>{await img.decode();return img.naturalWidth>0}));
+  await page.reload();
+  assert.equal(await page.locator(".figure-item:visible").count(),1,"Search survives reload");
+  await search.fill("存在しない図XYZ123");
+  assert.equal(await page.locator(".figure-item:visible").count(),0);
+  assert.equal(await page.locator(".figure-empty").isVisible(),true);
+  await page.getByRole("button",{name:"絞り込み解除"}).click();
+  const part=await item.getAttribute("data-part");
+  await page.getByRole("combobox",{name:"分野",exact:true}).selectOption(part);
+  assert.deepEqual(await page.locator(".figure-item:visible").evaluateAll(els=>[...new Set(els.map(e=>e.dataset.part))]),[part]);
+  await search.fill(galleryFixture.figure_id);
+  await page.setViewportSize({width:390,height:844});
+  assert.ok(await item.evaluate(el=>el.getBoundingClientRect().right<=innerWidth+1&&el.scrollWidth<=el.clientWidth+1),"Gallery fits mobile");
+  await item.locator(".figure-open-link").click();
+  await page.locator("#figure-"+galleryFixture.figure_id+" img").waitFor({state:"visible"});
+  assert.equal(await page.locator("#figure-"+galleryFixture.figure_id).getAttribute("open"),"");
+  await page.goBack();await page.locator(".figure-catalogue").waitFor();
+  assert.equal(await page.locator(".figure-item:visible").count(),1,"Gallery filter restored on return");
+  await page.setViewportSize({width:1440,height:1000});
+ }
  // Retired note aliases are distinct routing cases; retain all of them.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   for(const suffix of ["","&page=1","&view=pdf&page=2"]){

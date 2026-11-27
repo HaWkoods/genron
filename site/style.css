@@ -128,3 +128,21 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 #preview .preview-figure img{width:100%;max-width:100%;height:auto;max-height:48vh;object-fit:contain}
 #preview .preview-figure figcaption{overflow-wrap:anywhere;text-align:left}
 .web-figure-toggle{scroll-margin-top:24px}
+
+/* The figure catalogue uses the same white, book-like presentation as the notes. */
+.figure-catalogue{overflow-wrap:anywhere}
+.figure-tools{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 .6em;font:14px/1.6 system-ui,sans-serif}
+.figure-tools select{min-width:0;max-width:100%;padding:6px 10px;border:1px solid #b7c0c5;border-radius:4px;background:white;color:var(--ink)}
+.figure-count{margin:.8em 0 1.2em}
+.figure-part{scroll-margin-top:18px;margin:1.7em 0 2.3em}
+.figure-treatise{margin:1em 0 2em}
+.figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;row-gap:12px}
+.figure-item{display:flex;flex-direction:column;min-width:0;border-bottom:1px solid var(--line);padding:.7em 0 1.1em}
+.figure-title{margin:0 0 .35em;font-size:1.03em;line-height:1.55}
+.figure-item .web-figure{margin:.4em auto .8em;width:100%;max-width:100%}
+.figure-visual{display:flex;align-items:center;justify-content:center;min-height:140px;aspect-ratio:2/1;background:white}
+.figure-visual img{width:100%;max-height:250px;object-fit:contain}
+.figure-item figcaption{text-align:left;font-size:.85em}
+.figure-source{margin:auto 0 .4em;font-size:.78em;line-height:1.6;color:var(--muted)}
+.figure-actions{display:flex;gap:14px;flex-wrap:wrap;margin:0;font:12px/1.7 system-ui,sans-serif}
+@media(max-width:600px){.figure-grid{grid-template-columns:minmax(0,1fr)}.figure-visual{min-height:130px;aspect-ratio:auto}.figure-catalogue{padding:20px 15px}}

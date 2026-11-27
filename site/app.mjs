@@ -100,7 +100,7 @@ document.fonts?.ready.then(()=>{if(active)positionPreview(active);fitMath($("#se
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
-function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);const figure=p.get("figure");if(figure&&figureIndex.get(figure)?.owner.id!==id)throw Error("未登録の図・図式："+figure);return {n:e.position[0],id,figure,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias)return {n:alias.number,id:alias.first,page:null};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
+function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);const figure=p.get("figure");if(figure&&figureIndex.get(figure)?.owner.id!==id)throw Error("未登録の図・図式："+figure);return {n:e.position[0],id,figure,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples"||n==="figures")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias)return {n:alias.number,id:alias.first,page:null};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 
 function showMap(){
  const plan=data.plan??[], by=new Map(plan.map(n=>[n.number,n])), parts=data.parts??[], ts=data.treatises??[];
@@ -581,7 +581,7 @@ function showCatalogue(info,restore){
  const search=node("input","search catalogue-search");search.type="search";search.placeholder=isNotation?"記号・名称を検索":"名称・本文・分野・番号を検索";search.setAttribute("aria-label",search.placeholder);
  const count=node("p","meta catalogue-count"),body=node("div","catalogue-body");
 
- side.append(node("h2","","一覧の目次"),anchor("← 検索・総目次",root.href),anchor("定義・命題・公理一覧",url("note","statements")),anchor("例・例題一覧",url("note","examples")));
+ side.append(node("h2","","一覧の目次"),anchor("← 検索・総目次",root.href),anchor("定義・命題・公理一覧",url("note","statements")),anchor("例・例題一覧",url("note","examples")),anchor("図・図式一覧",url("note","figures")));
  article.append(node("p","web-running","数学原論　｜　索引"),node("h1","web-part-title",title),node("p","muted",isNotation?"記号とその意味を対照する．名称から対応する本文を参照できる．":examplesOnly?"具体例・反例と，問題及び解答を掲載する．例題の解答は初期状態で閉じている．":"数学的知識の参照用一覧．定義・命題・公理のみを掲載する．証明及び詳細な解説は本文を参照されたい．"));
 
  article.append(search,count,body);
@@ -642,6 +642,58 @@ function showCatalogue(info,restore){
  requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore)});
 }
 
+function showFigureCatalogue(restore){
+ const layout=node("div","reader web-reader figure-reader"),side=node("aside","sidebar web-toc"),article=node("article","web-article figure-catalogue");
+ const params=new URL(location.href).searchParams;
+ const search=node("input","search figure-search");search.type="search";search.placeholder="図名・説明・ノート名・分野を検索";search.setAttribute("aria-label","図・図式の検索");search.value=params.get("q")??"";
+ const tools=node("div","figure-tools"),select=node("select");select.setAttribute("aria-label","分野");
+ const count=node("p","meta figure-count"),body=node("div","figure-catalogue-body"),empty=node("p","muted figure-empty","該当する図・図式はありません．");
+ const option=(value,label)=>{const o=node("option","",label);o.value=value;select.append(o)};
+ option("","すべての部");
+ side.append(node("h2","","図・図式の目次"),anchor("← 検索・総目次",root.href));
+ article.append(node("p","web-running","数学原論　｜　索引"),node("h1","web-part-title","図・図式一覧"),node("p","muted","公開本文の図・図式を部・篇別に集録する．各図から対応する定義・命題等の本文へ移動できる．"));
+ const groups=[];
+ for(const part of data.parts){
+  const section=node("section","figure-part");section.id="figures-"+part.id;
+  section.append(node("h2","web-treatise",part.id+"　"+part.title));
+  const subgroups=[];
+  for(const t of data.treatises.filter(t=>t.part===part.id)){
+   const subsection=node("section","figure-treatise");subsection.append(node("h3","web-section-title",t.id+"　"+t.title));
+   const grid=node("div","figure-grid"),items=[];
+   for(const n of data.notes.filter(n=>n.treatise===t.id).sort((a,b)=>noteNumber(a).localeCompare(noteNumber(b),undefined,{numeric:true}))){
+    const owners=data.entries.filter(e=>e.position[0]===n.number&&e.figures?.length).sort(compareEntryPosition);
+    for(const e of owners)for(const raw of e.figures){
+     const f=figureIndex.get(raw.figure_id);if(!f)throw Error("Unregistered figure "+raw.figure_id);
+     const item=node("section","figure-item");item.dataset.figure=f.figure_id;item.dataset.part=part.id;
+     const title=node("h4","figure-title",f.title);
+     const fig=makeFigure(f);const img=fig.querySelector("img");
+     const visual=anchor("",figureUrl(f),"figure-visual");visual.setAttribute("aria-label",f.title+" の本文を開く");img.replaceWith(visual);visual.append(img);
+     const source=node("p","figure-source");source.append(noteNumber(n)+"　"+n.title);
+     const ownerLink=anchor(headingLabel(e)+"（"+e.title+"）",figureUrl(f),"figure-owner-link");source.append(node("br"),ownerLink);
+     const actions=node("p","figure-actions");actions.append(anchor("本文の図を開く",figureUrl(f),"figure-open-link"));
+     const full=anchor("図を拡大",new URL(f.src,root).href,"figure-full-link");full.target="_blank";full.rel="noopener";actions.append(full);
+     item.append(title,fig,source,actions);grid.append(item);
+     items.push({el:item,text:[part.id,part.title,t.id,t.title,n.title,noteNumber(n),e.title,e.id,entryNumber(e),f.title,f.caption,f.alt,f.figure_id].join(" ")});
+    }
+   }
+   if(items.length){subsection.append(grid);section.append(subsection);subgroups.push({el:subsection,items})}
+  }
+  if(subgroups.length){option(part.id,part.title);const link=anchor(part.title,"#"+section.id);side.append(link);body.append(section);groups.push({part:part.id,el:section,link,subgroups})}
+ }
+ const preferred=params.get("part")??"";select.value=groups.some(g=>g.part===preferred)?preferred:"";
+ const total=figureIndex.size;
+ const normalize=s=>String(s).normalize("NFKC").toLowerCase();
+ function filter(){
+  const terms=normalize(search.value.trim()).split(/\s+/).filter(Boolean);let visible=0;
+  for(const g of groups){let subtotal=0;for(const sub of g.subgroups){let n=0;for(const item of sub.items){const match=(!select.value||select.value===g.part)&&terms.every(q=>normalize(item.text).includes(q));item.el.hidden=!match;n+=Number(match)}sub.el.hidden=!n;subtotal+=n}g.el.hidden=!subtotal;g.link.hidden=!subtotal;visible+=subtotal}
+  count.textContent=visible+" / "+total+" 図・図式";empty.hidden=visible!==0;
+  const u=new URL(root);u.searchParams.set("note","figures");if(search.value)u.searchParams.set("q",search.value);if(select.value)u.searchParams.set("part",select.value);history.replaceState(history.state,"",u);
+ }
+ search.addEventListener("input",filter);select.addEventListener("change",filter);
+ const clear=button("絞り込み解除",()=>{search.value="";select.value="";filter()});
+ tools.append(select,clear);article.append(search,tools,count,empty,body);layout.append(side,article);main.replaceChildren(layout);filter();
+ if(restore!==null)requestAnimationFrame(()=>window.scrollTo(0,restore));
+}
 function showError(e){main.replaceChildren(node("p","error",String(e.message??e)),anchor("検索・総目次へ戻る",root.href))}
 async function render(restore=null){
  hidePreview();disposeReader?.();disposeReader=null;
@@ -654,7 +706,7 @@ async function render(restore=null){
   if(p.searchParams.get("view")==="map"){showMap();return}
   if(p.searchParams.get("view")==="knowledge-path"){showKnowledgePath();if(restore!==null)window.scrollTo(0,restore);return}
   const info=routeInfo();
-  if(info){if(typeof info.n==="string")showCatalogue(info,restore);else showWeb(info,restore)}
+  if(info){if(info.n==="figures")showFigureCatalogue(restore);else if(typeof info.n==="string")showCatalogue(info,restore);else showWeb(info,restore)}
   else{showHome();if(restore!==null)window.scrollTo(0,restore)}
  }catch(e){showError(e)}
 }
