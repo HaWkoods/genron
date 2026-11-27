@@ -33,6 +33,11 @@ jobs:
           node scripts/test-statements-tex.mjs
           # The PDF catalogue is a historical snapshot; Web-only entries are in statements.md.
           test "$(head -c 5 docs/statements.pdf)" = '%PDF-'
+      - name: Verify figure math on manuscript branches
+        if: github.ref != 'refs/heads/main'
+        run: |
+          npm install --no-save --ignore-scripts --package-lock=false --omit=optional mathjax-full@3.2.2
+          node scripts/test-figure-math.mjs
       - name: Report affected knowledge
         if: github.event_name != 'workflow_dispatch'
         env:
