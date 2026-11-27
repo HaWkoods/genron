@@ -33,6 +33,12 @@ try{
  await page.getByRole("button",{name:"公開済み",exact:true}).click();assert.equal(await page.locator(".note-result").count(),0);
  await page.getByRole("searchbox").fill("選択公理");await page.locator('.note-result[data-note="3"] > a').filter({hasText:"選択公理"}).waitFor();
  await page.getByRole("button",{name:"すべて",exact:true}).click();await page.getByRole("searchbox").fill("N-8");await page.locator('.note-result[data-note="8"]').waitFor();assert.equal(await page.locator(".note-result").count(),1);
+ const note8=planData.plan.find(n=>n.number===8);
+ await page.getByRole("searchbox").fill(note8.display_number);
+ await page.locator('.note-result[data-note="8"]').waitFor();
+ assert.equal(await page.locator(".note-result").count(),1);
+ assert.match(await page.locator('.note-result[data-note="8"] .result-head').innerText(),/04\.08\.01/);
+
 
 
  // Exercise the map route from navigation and direct URL.
@@ -41,7 +47,7 @@ try{
  assert.equal(await page.getByRole("combobox",{name:"検索結果"}).locator("option").count(),planData.plan.length+1);
  await page.getByRole("searchbox",{name:"ノート検索"}).fill("N-3");
  await page.getByRole("combobox",{name:"検索結果"}).selectOption("3");
- await page.locator(".map-panel h2").filter({hasText:"N-3"}).waitFor();
+ await page.locator(".map-panel h2").filter({hasText:planData.plan.find(n=>n.number===3).display_number}).waitFor();
  await page.getByRole("combobox",{name:"依存方向"}).selectOption("path");
  await page.getByRole("combobox",{name:"表示範囲"}).selectOption("local");
  await page.getByRole("button",{name:"＋",exact:true}).click();
@@ -59,6 +65,9 @@ try{
  assert.equal(await page.locator(".web-entry").count(),planData.entries.filter(e=>partNotes.some(n=>n.number===e.position[0])).length);
  assert.equal(await page.locator(".pdf-shell").count(),0);
  const logic=page.locator("#K-000001");
+ assert.match(await page.locator("#N-1 .web-note-title").innerText(),/^01\.01\.01/);
+ assert.match(await logic.locator(".web-statement-title").innerText(),/^規約 01\.01\.01\.1\.1\.1/);
+
  assert.equal(await logic.locator(".web-math-table tr").count(),5);
  // Check TeX source as well as rendered layout: a KaTeX node alone does not prove that symbols survived.
  const firstInline=logic.locator(".math").first();

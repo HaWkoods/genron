@@ -1,4 +1,4 @@
-import {validate, affected, changedEntries, available, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMarkdown, statementsMarkdown} from "./knowledge-core.mjs";
+import {noteDisplayNumber,entryDisplayNumber,validate, affected, changedEntries, available, graph, prerequisites, validatePlan, planGraph, planPrerequisites, planMarkdown, statementsMarkdown} from "./knowledge-core.mjs";
 function runTests(){
  const tests=[];
  const base={schema_version:1,foundation:{status:"adopted",description:"fixture only"},entries:[]};
@@ -73,6 +73,13 @@ function runTests(){
  check("planned note never links to PDF",!planMarkdown(published,[2]).includes("../volumes/N-2/main.pdf"));
  const hierarchical={...pl,parts:[{id:"P-01",title:"基礎"}],treatises:[{id:"T-01",part:"P-01",title:"集合",goals:["fixture"]}],notes:pl.notes.map(n=>({...n,treatise:"T-01"}))};
  check("valid classification hierarchy",validate(hierarchical).errors.length===0);
+ const numbered={...hierarchical,numbering_version:1,notes:hierarchical.notes.map((n,i)=>({...n,display_index:i+1}))};
+ check("classified note display",noteDisplayNumber(numbered,2)==="01.01.02");
+ check("classified theorem display",entryDisplayNumber(numbered,{position:[2,1,3,4]})==="01.01.02.1.3.4");
+ check("missing display index rejected",has(validate({...numbered,notes:hierarchical.notes}),"DISPLAY_INDEX"));
+ check("duplicate display index rejected",has(validate({...numbered,notes:numbered.notes.map(n=>({...n,display_index:1}))}),"DISPLAY_INDEX_DUPLICATE"));
+ check("numbered roadmap retains stable anchors",planMarkdown(numbered).includes('id="n-2"></a>01.01.02'));
+
  check("classification rejects unknown treatise",has(validate({...hierarchical,notes:[{...hierarchical.notes[0],treatise:"T-99"},...hierarchical.notes.slice(1)]}),"NOTE_UNKNOWN_TREATISE"));
  check("classification rejects unknown part",has(validate({...hierarchical,treatises:[{...hierarchical.treatises[0],part:"P-99"}]}),"TREATISE_UNKNOWN_PART"));
  check("classification rejects duplicate part",has(validate({...hierarchical,parts:[...hierarchical.parts,...hierarchical.parts]}),"PART_DUPLICATE"));

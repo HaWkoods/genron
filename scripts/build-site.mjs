@@ -1,4 +1,4 @@
-import {planGraph} from "./knowledge-core.mjs";
+import {planGraph,noteDisplayNumber,entryDisplayNumber} from "./knowledge-core.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -86,10 +86,10 @@ try{
  const notationIds=[...new Set([...notation.matchAll(/\\NotationRef\{(K-\d{6})\}/g)].map(m=>m[1]))];
  for(const id of notationIds)if(!entries.some(e=>e.id===id))throw Error("Unpublished notation reference "+id);
  compile(notation,"notation.pdf",[],notationIds);
- const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise,web_only})=>({number,title,area,goals,depends_on,treatise,web_only:!!web_only}));
+ const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise,web_only})=>({number,display_number:noteDisplayNumber(ledger,number),title,area,goals,depends_on,treatise,web_only:!!web_only}));
  const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
- const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status,web_only})=>({number,title,area,goals,depends_on,treatise,status,web_only:!!web_only,depth:depth.get(number)}));
- const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,kind,title,statement,assumptions,position,depends_on,webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
+ const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status,web_only})=>({number,display_number:noteDisplayNumber(ledger,number),title,area,goals,depends_on,treatise,status,web_only:!!web_only,depth:depth.get(number)}));
+ const publicEntries=entries.map(({id,kind,title,statement,assumptions,position,depends_on})=>({id,display_number:entryDisplayNumber(ledger,{position}),kind,title,statement,assumptions,position,depends_on,webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
  fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,aliases:ledger.note_aliases??{},entries:publicEntries,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");
  console.log("Site: "+verified.length+" notes, "+entries.length+" entries, "+anchorCount+" named destinations, "+referenceCount+" distinct targets counted per PDF.");

@@ -9,6 +9,9 @@ const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.classNam
 const anchor=(txt,href,cls)=>{const a=node("a",cls,txt);a.href=href;return a};
 const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
 let data, entries, notes, state=null, ticket=0, job=null, disposeReader=null, closeTimer=0, active=null, pinned=false;
+const noteNumber=n=>n?.display_number??("N-"+(n?.number??""));
+const noteByNumber=n=>notes.get(n)??data.plan?.find(x=>x.number===n);
+const entryNumber=e=>e.display_number??[noteNumber(noteByNumber(e.position[0])),...e.position.slice(1)].join(".");
 const isTouch=()=>matchMedia("(hover: none)").matches;
 const defaults={width:580,padding:28};
 let readingMode="continuous";try{if(localStorage.getItem("genron-reading-mode")==="single")readingMode="single"}catch{}
@@ -56,8 +59,8 @@ function fitMath(box){
 function fillPreview(box,e,withClose=true){
  box.replaceChildren();
  if(withClose){const close=node("button","close-preview","×");close.setAttribute("aria-label","プレビューを閉じる");close.onclick=hidePreview;box.append(close)}
- box.append(node("div","meta","N-"+e.position[0]+" "+(notes.get(e.position[0])?.title??"")+"　｜　"+e.id));
- box.append(node("h3","",(types[e.kind]??e.kind)+"（"+e.title+"）"));
+ box.append(node("div","meta",noteNumber(noteByNumber(e.position[0]))+" "+(notes.get(e.position[0])?.title??"")));
+ box.append(node("h3","",(types[e.kind]??e.kind)+" "+entryNumber(e)+"（"+e.title+"）"));
  if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
  const p=node("p");renderParts(p,e.preview?.statement,e.statement);box.append(p);
  const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",new URL(location.href).searchParams.get("view")==="web"?webUrl("id",e.id):url("id",e.id)));box.append(foot)
@@ -132,13 +135,13 @@ function showMap(){
   for(const r of regions.filter(r=>r.part)){ctx.fillStyle=dark()?"#253247":"#e8eef5";ctx.fillRect(r.x,10,r.w,H-20);ctx.fillStyle=fg;ctx.font="bold 24px sans-serif";ctx.fillText(r.title,r.x+10,36)}
   for(const r of regions.filter(r=>!r.part)){ctx.strokeStyle="#9baabd";ctx.lineWidth=1/scale;ctx.strokeRect(r.x,46,r.w,H-65);if(scale>.13){ctx.fillStyle=fg;ctx.font="17px sans-serif";ctx.fillText(r.title,r.x+8,70,r.w-16)}}
   for(const n of plan){if(!visible.has(n.number))continue;const b=pos.get(n.number);for(const id of n.depends_on??[]){if(!visible.has(id)||!pos.has(id))continue;const a=pos.get(id),on=active.has(id)&&active.has(n.number);ctx.globalAlpha=on?.65:.07;ctx.strokeStyle=on?"#4778a5":"#8793a1";ctx.fillStyle=ctx.strokeStyle;ctx.lineWidth=on?1.3/scale:.7/scale;ctx.beginPath();ctx.moveTo(a.x+82,a.y+38);ctx.bezierCurveTo(a.x+82,(a.y+b.y)/2,b.x+82,(a.y+b.y)/2,b.x+82,b.y);ctx.stroke();if(scale>.13){ctx.beginPath();ctx.moveTo(b.x+82,b.y);ctx.lineTo(b.x+77,b.y-9);ctx.lineTo(b.x+87,b.y-9);ctx.fill()}}}
-  for(const n of plan){if(!visible.has(n.number))continue;const p=pos.get(n.number);ctx.globalAlpha=active.has(n.number)?1:.15;ctx.fillStyle=n.number===selected?"#245b91":dark()?"#435b75":"#a7bdd3";if(scale<.18){ctx.fillRect(p.x,p.y,164,38)}else{ctx.fillRect(p.x,p.y,164,38);ctx.fillStyle=n.number===selected||dark()?"#fff":"#152b42";ctx.font="12px sans-serif";ctx.fillText("N-"+n.number,p.x+6,p.y+13);if(scale>.34){ctx.font="14px sans-serif";ctx.fillText(n.title,p.x+6,p.y+30,152)}}}
+  for(const n of plan){if(!visible.has(n.number))continue;const p=pos.get(n.number);ctx.globalAlpha=active.has(n.number)?1:.15;ctx.fillStyle=n.number===selected?"#245b91":dark()?"#435b75":"#a7bdd3";if(scale<.18){ctx.fillRect(p.x,p.y,164,38)}else{ctx.fillRect(p.x,p.y,164,38);ctx.fillStyle=n.number===selected||dark()?"#fff":"#152b42";ctx.font="12px sans-serif";ctx.fillText(noteNumber(n),p.x+6,p.y+13);if(scale>.34){ctx.font="14px sans-serif";ctx.fillText(n.title,p.x+6,p.y+30,152)}}}
   ctx.restore();prep(mini,mc);const m=Math.min(mini.clientWidth/W,mini.clientHeight/H),ox=(mini.clientWidth-W*m)/2,oy=(mini.clientHeight-H*m)/2;mc.fillStyle=dark()?"#182334":"#fff";mc.fillRect(0,0,mini.clientWidth,mini.clientHeight);for(const [id,p] of pos){mc.globalAlpha=active.has(id)?1:.2;mc.fillStyle=id===selected?"#245b91":"#879eb5";mc.fillRect(ox+p.x*m,oy+p.y*m,Math.max(2,164*m),Math.max(2,38*m))}mc.globalAlpha=1;mc.strokeStyle="#d26b34";mc.lineWidth=1.5;mc.strokeRect(ox-tx/scale*m,oy-ty/scale*m,canvas.clientWidth/scale*m,canvas.clientHeight/scale*m);
  }
- function refresh(refit=false){active=selected===null?new Set(by.keys()):direction.value==="both"?new Set([...walk(selected,true,scope.value==="one"),...walk(selected,false,scope.value==="one")]):walk(selected,direction.value!=="down",direction.value!=="path"&&scope.value==="one");visible=layout.value==="local"?active:new Set(by.keys());scope.disabled=direction.value==="path";panel.replaceChildren();if(selected===null){panel.append(node("h2","","ノートを選択"),node("p","muted","検索または地図上のノートを選択してください。"))}else{const n=by.get(selected);panel.append(node("h2","","N-"+selected+" "+n.title),node("p","",(n.goals??[]).join("；")));if(notes.has(selected))panel.append(anchor("ノートを読む",url("note",selected)));else panel.append(node("p","muted","本文は未掲載です。"));const items=[...entries.values()].filter(e=>e.position[0]===selected);if(items.length){panel.append(node("h3","","定義・命題"));for(const e of items){const a=anchor(e.title,url("id",e.id));bindPreview(a,e);panel.append(a)}}if(direction.value==="path"){panel.append(node("h3","","学習順序（前提を先に）"));for(const id of [...active].sort((a,b)=>depth.get(a)-depth.get(b)||a-b)){const n=by.get(id);panel.append(button("N-"+id+" "+n.title,()=>choose(id)))}}}
+ function refresh(refit=false){active=selected===null?new Set(by.keys()):direction.value==="both"?new Set([...walk(selected,true,scope.value==="one"),...walk(selected,false,scope.value==="one")]):walk(selected,direction.value!=="down",direction.value!=="path"&&scope.value==="one");visible=layout.value==="local"?active:new Set(by.keys());scope.disabled=direction.value==="path";panel.replaceChildren();if(selected===null){panel.append(node("h2","","ノートを選択"),node("p","muted","検索または地図上のノートを選択してください。"))}else{const n=by.get(selected);panel.append(node("h2","",noteNumber(n)+" "+n.title),node("p","",(n.goals??[]).join("；")));if(notes.has(selected))panel.append(anchor("ノートを読む",url("note",selected)));else panel.append(node("p","muted","本文は未掲載です。"));const items=[...entries.values()].filter(e=>e.position[0]===selected);if(items.length){panel.append(node("h3","","定義・命題"));for(const e of items){const a=anchor(e.title,url("id",e.id));bindPreview(a,e);panel.append(a)}}if(direction.value==="path"){panel.append(node("h3","","学習順序（前提を先に）"));for(const id of [...active].sort((a,b)=>depth.get(a)-depth.get(b)||a-b)){const n=by.get(id);panel.append(button(noteNumber(n)+" "+n.title,()=>choose(id)))}}}
  if(refit)fit(layout.value==="local");else draw()}
  function choose(id){selected=id;results.value=String(id);refresh(layout.value==="local");if(layout.value!=="local"){const p=pos.get(id);scale=Math.max(scale,.65);tx=canvas.clientWidth/2-(p.x+82)*scale;ty=canvas.clientHeight/2-(p.y+19)*scale;draw()}}
- function searchUpdate(){const q=search.value.normalize("NFKC").toLowerCase().trim();results.replaceChildren();const placeholder=node("option","","ノートを選択");placeholder.value="";results.append(placeholder);const alias=data.aliases?.[q.replace(/^n-/,"")];for(const n of plan){if(!q||alias?.number===n.number||(/^\d+$/.test(q)?n.number===Number(q):("N-"+n.number+" "+n.title).toLowerCase().includes(q))){const o=node("option","","N-"+n.number+" "+n.title);o.value=n.number;results.append(o)}}if(selected!==null)results.value=String(selected)}
+ function searchUpdate(){const q=search.value.normalize("NFKC").toLowerCase().trim();results.replaceChildren();const placeholder=node("option","","ノートを選択");placeholder.value="";results.append(placeholder);const alias=data.aliases?.[q.replace(/^n-/,"")];for(const n of plan){if(!q||alias?.number===n.number||(/^\d+$/.test(q)?n.number===Number(q):("N-"+n.number+" "+noteNumber(n)+" "+n.title).toLowerCase().includes(q))){const o=node("option","",noteNumber(n)+" "+n.title);o.value=n.number;results.append(o)}}if(selected!==null)results.value=String(selected)}
  search.oninput=searchUpdate;search.onkeydown=e=>{if(e.key==="Enter"&&results.options.length>1)choose(Number(results.options[1].value))};results.onchange=()=>{if(results.value)choose(Number(results.value))};
  direction.onchange=scope.onchange=()=>refresh(layout.value==="local");layout.onchange=()=>refresh(true);
  tools.append(button("＋",()=>zoom(1.4)),button("−",()=>zoom(1/1.4)),button("全体に戻す",()=>{selected=null;layout.value="all";search.value="";searchUpdate();refresh(true)}));
@@ -167,19 +170,20 @@ function showHome(){
  function noteCard(n,context=true){
   const t=byTreatise.get(n.treatise),p=partOf(n),d=node("article","result note-result");
   d.dataset.note=String(n.number);d.dataset.status=n.status;
-  const meta=node("div","result-head"),label=node("span","meta","N-"+n.number+(context&&t?"　"+t.id+" "+t.title:""));
+  const meta=node("div","result-head"),label=node("span","meta",noteNumber(n)+(context&&t?"　"+t.id+" "+t.title:""));
   meta.append(label,node("span","status"+(notes.has(n.number)?" published":ready(n)?" ready":""),status(n)));
   d.append(meta);
   if(notes.has(n.number)){d.append(anchor(n.title,url("note",n.number)));if(!notes.get(n.number)?.web_only){const web=anchor("Web本文",webUrl("note",n.number));web.style.marginLeft="1em";d.append(web)}}else d.append(node("strong","planned-title",n.title));
   d.append(node("span","summary",n.goals.join("；")));
   const pre=node("div","preconditions");if(Number.isInteger(n.depth))pre.append("依存層 "+n.depth+"　");
-  pre.append("直接前提：");if(!n.depends_on.length)pre.append("なし");else n.depends_on.forEach((id,i)=>{if(i)pre.append("・");const target=byNumber.get(id);pre.append(anchor("N-"+id,notes.has(id)?url("note",id):qurl("N-"+id),"dep-link"));if(target)pre.lastChild.title=target.title});
+  pre.append("直接前提：");if(!n.depends_on.length)pre.append("なし");else n.depends_on.forEach((id,i)=>{if(i)pre.append("・");const target=byNumber.get(id);pre.append(anchor(noteNumber(target),notes.has(id)?url("note",id):qurl("N-"+id),"dep-link"));if(target)pre.lastChild.title=target.title});
   d.append(pre);return d
  }
  function update(){
   const q=normalize(search.value.trim()),terms=q?q.split(" "):[];
   const match=s=>terms.every(t=>normalize(s).includes(t));
   const exactNote=q.match(/^n-(\d+)$/);
+  const exactDisplay=plan.find(n=>normalize(noteNumber(n))===q);
   const exactPart=q.match(/^p-\d{2,}$/),exactTreatise=q.match(/^t-\d{2,}$/);
   buttons.forEach(([v,b])=>b.setAttribute("aria-pressed",String(v===mode)));
   const u=new URL(root);if(search.value)u.searchParams.set("q",search.value);if(mode!=="all")u.searchParams.set("filter",mode);history.replaceState(history.state,"",u);
@@ -187,10 +191,11 @@ function showHome(){
   const found=mode==="entry"?[]:plan.filter(n=>{
    if(mode==="verified"&&!notes.has(n.number)||mode==="planned"&&notes.has(n.number))return false;
    const t=byTreatise.get(n.treatise),p=partOf(n);
+   if(exactDisplay)return n.number===exactDisplay.number;
    if(exactNote)return n.number===(data.aliases?.[exactNote[1]]?.number??Number(exactNote[1]));
    if(exactTreatise)return normalize(t?.id??"")===q;
    if(exactPart)return normalize(p?.id??"")===q;
-   return match(["N-"+n.number,n.title,n.area,...n.goals,t?.id,t?.title,p?.id,p?.title].join(" "))
+   return match(["N-"+n.number,noteNumber(n),n.title,n.area,...n.goals,t?.id,t?.title,p?.id,p?.title].join(" "))
   });
   if(!q&&mode!=="entry"&&parts.length){
    for(const p of parts){
@@ -207,17 +212,18 @@ function showHome(){
   }else{for(const n of found){list.append(noteCard(n));total++}}
   if((mode==="all"&&terms.length)||mode==="entry")for(const e of entries.values()){
    const n=byNumber.get(e.position[0]),t=byTreatise.get(n?.treatise),p=n&&partOf(n);
-   if(!match([e.id,e.title,e.statement,...e.assumptions,n?.title,"N-"+e.position[0],t?.title,t?.id,p?.title,p?.id].join(" ")))continue;
+   if(!match([e.id,entryNumber(e),noteNumber(n),e.title,e.statement,...e.assumptions,n?.title,"N-"+e.position[0],t?.title,t?.id,p?.title,p?.id].join(" ")))continue;
+   if(exactDisplay&&e.position[0]!==exactDisplay.number)continue;
    if(exactNote&&(data.aliases?.[exactNote[1]]?!data.aliases[exactNote[1]].ids.includes(e.id):e.position[0]!==Number(exactNote[1])))continue;
    if(exactTreatise&&normalize(t?.id??"")!==q)continue;
    if(exactPart&&normalize(p?.id??"")!==q)continue;
-   const d=node("article","result knowledge-result"),a=anchor((types[e.kind]??e.kind)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",e.id+"　N-"+e.position[0]),a,node("span","summary",e.statement));list.append(d);total++
+   const d=node("article","result knowledge-result"),a=anchor((types[e.kind]??e.kind)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",entryNumber(e)),a,node("span","summary",e.statement));list.append(d);total++
   }
   count.textContent=total+"件";if(!total)list.append(node("p","empty","一致する項目がありません。"));
  }
  const readyBox=node("section","ready-box");readyBox.append(node("h2","","現在着手可能なノート"));
  const candidates=plan.filter(ready).sort((a,b)=>(a.depth??0)-(b.depth??0)||a.number-b.number);
- const readyLinks=node("div","ready-links");for(const n of candidates)readyLinks.append(anchor("N-"+n.number+" "+n.title,qurl("N-"+n.number)));if(!candidates.length)readyLinks.append(node("span","muted","なし"));readyBox.append(readyLinks);
+ const readyLinks=node("div","ready-links");for(const n of candidates)readyLinks.append(anchor(noteNumber(n)+" "+n.title,qurl("N-"+n.number)));if(!candidates.length)readyLinks.append(node("span","muted","なし"));readyBox.append(readyLinks);
  search.addEventListener("input",update);const start=node("p","muted");start.append("新しい閲覧形式：",anchor("Web版を試す",webUrl("note",1)),"（旧版PDFも閲覧できます）");main.replaceChildren(h,intro,start,search,filters,readyBox,list);update()
 }
 async function destination(doc,d){
@@ -505,10 +511,10 @@ function showWeb(info,restore){
  let previous=null;
  for(const n of members){
   const t=data.treatises.find(t=>t.id===n.treatise);
-  if(t?.id!==previous){previous=t?.id;article.append(node("h2","web-treatise",t?.title??""));side.append(node("h3","web-toc-group",t?.title??""))}
+  if(t?.id!==previous){previous=t?.id;article.append(node("h2","web-treatise",t?t.id+"　"+t.title:""));side.append(node("h3","web-toc-group",t?t.id+"　"+t.title:""))}
   const chapter=node("section","web-chapter");chapter.id="N-"+n.number;
-  side.append(anchor(n.title,"#"+chapter.id,"web-toc-note"));
-  chapter.append(node("h3","web-note-title",n.title),node("p","meta","N-"+n.number));
+  side.append(anchor(noteNumber(n)+"　"+n.title,"#"+chapter.id,"web-toc-note"));
+  chapter.append(node("h3","web-note-title",noteNumber(n)+"　"+n.title));
   if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
   const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");if(!notes.get(n.number)?.web_only)chapter.append(anchor("旧版PDFを閲覧",legacy.href,"web-legacy"));
   const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);
@@ -517,10 +523,10 @@ function showWeb(info,restore){
    const sectionTitle=e.webProof?.sectionTitle;
    if(sectionTitle&&sectionTitle!==lastSection){chapter.append(node("h4","web-section-title",sectionTitle));lastSection=sectionTitle}
    const section=node("section","web-entry");section.id=e.id;
-   const number=e.position.slice(-2).join(".");
+   const number=entryNumber(e);
    const heading=node("h4","web-statement-title",(types[e.kind]??e.kind)+" "+number+"（"+e.title+"）");
    section.append(heading);
-   const link=anchor(e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
+   const link=anchor(entryNumber(e)+"　"+e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
    if(e.webProof?.content)renderSourceEntry(section,e);
    else{
     if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,jpPunctuation(e.assumptions.join("；")));section.append(p)}
