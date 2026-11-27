@@ -1,0 +1,81 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{完全可約性}
+% genron:begin K-001402
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001299
+% genron:use K-001301
+% genron:use K-001304
+\begin{defn}[完全可約表現]
+体 $k$ 上の有限次元群表現 $V$ が有限個の既約部分表現の直和であるとき完全可約という．零表現は空の直和として含める．
+\end{defn}
+% genron:end K-001402
+% genron:begin K-001403
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001402
+% genron:use K-001300
+% genron:use K-001303
+\begin{prop}[不変補空間と分裂]
+部分表現 $W\subseteq V$ が不変補空間を持つための必要十分条件は，$W$ への表現の準同型 $p:V\to W$ で $p|_W=\operatorname{id}_W$ となるものが存在することである．
+\end{prop}
+\begin{proof}
+不変な直和分解から得る射影は表現の準同型である．逆に $p$ が与えられれば，任意の $v$ は $v=p(v)+(v-p(v))$ と書け，第二項は核に属する．$W$ と核の共通部分は零である．核は準同型の核なので不変部分空間であり，所望の分解を与える．
+\end{proof}
+% genron:end K-001403
+% genron:begin K-001404
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001403
+% genron:use K-000313
+% genron:use K-001299
+% genron:use K-000601
+\begin{prop}[Maschkeの定理]
+有限群 $G$ と体 $k$ に対し，$|G|$ が $k$ において非零であるとする．このとき任意の有限次元 $k$ 表現の任意の部分表現は不変補空間を持ち，従って表現は完全可約である．
+\end{prop}
+\begin{proof}
+部分表現 $W$ の基底を $V$ の基底に延長して線形射影 $q:V\to W$ を取る．表現作用を $\rho(g)$ と書き，
+\[
+p(v)=|G|^{-1}\sum_{g\in G}\rho(g)q(\rho(g^{-1})v)
+\]
+とおく．各項は $W$ に属し，$w\in W$ に対しては各項が $w$ となるから $p(w)=w$ である．$h\in G$ に対して和の添字を $g=ht$ と置き換えれば $p(\rho(h)v)=\rho(h)p(v)$ である．従って $p$ は表現の準同型であり，前命題によって不変補空間を得る．完全可約性は次元についての帰納法から従う．零表現又は既約表現でない場合は零でも全体でもない部分表現を選び，これと補空間に帰納法を適用する．
+\end{proof}
+% genron:end K-001404
+% genron:begin K-001405
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001402
+% genron:use K-000316
+% genron:use K-001299
+% genron:use K-000443
+\begin{example}[標数条件が必要となる例]
+標数二の体 $k$ 上で，位数二の巡回群の生成元 $g$ を行列 $\begin{pmatrix}1&1\\0&1\end{pmatrix}$ に移す二次元表現は完全可約ではない．
+\end{example}
+\begin{proof}
+行列の平方は単位行列であるから群表現を定める．第一標準ベクトルの張る直線は不変である．不変な一次元部分空間上で $g$ はある $\lambda$ 倍として作用し，$\lambda^2=1$ である．標数二では $(\lambda-1)^2=0$ であり，体なので $\lambda=1$ である．従って不変直線は行列から単位行列を引いた写像の核に含まれ，その核は第一標準ベクトルの張る直線である．不変直線はただ一つなので二つの既約直線への直和分解は存在しない．
+\end{proof}
+% genron:end K-001405

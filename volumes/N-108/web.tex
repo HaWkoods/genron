@@ -1,0 +1,115 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{PID上の有限生成加群}
+% genron:begin K-001387
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001119
+% genron:use K-000580
+% genron:use K-000337
+% genron:use K-000339
+% genron:use K-000444
+\begin{prop}[自由加群の部分加群]
+単項イデアル整域 $R$ 上の自由加群 $R^n$ の部分加群 $L$ は，階数が $n$ 以下の有限階数自由加群である．
+\end{prop}
+\begin{proof}
+$n=0$ では明らかである．第一座標への射影の像はイデアル $(a)$ である．$a=0$ ならば $L\subseteq 0\times R^{n-1}$ なので帰納法を用いる．$a\ne0$ ならば第一座標が $a$ である $v\in L$ を選ぶ．任意の $w\in L$ の第一座標は $ca$ と一意に表され，$w-cv$ は射影の核に属する．従って $L=Rv\oplus(L\cap(0\times R^{n-1}))$ である．$Rv$ は整域の簡約律から $R$ と同型であり，後者には帰納法を適用する．
+\end{proof}
+% genron:end K-001387
+% genron:begin K-001388
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001122
+% genron:use K-000444
+% genron:use K-000657
+% genron:use K-000658
+% genron:use K-000662
+\begin{prop}[Bezout変形]
+$R$ を単項イデアル整域とし，$a,b\in R$ がともに零ではないとする．$(a,b)=(d)$ とすれば，可逆な二次正方行列 $P$ が存在し，$P(a,b)^{\mathrm t}=(d,0)^{\mathrm t}$ となる．
+\end{prop}
+\begin{proof}
+$a=da',b=db'$ とし，$ua+vb=d$ を満たす $u,v$ を取る．簡約律によって $ua'+vb'=1$ である．
+\[
+P=\begin{pmatrix}u&v\\-b'&a'\end{pmatrix},\qquad
+Q=\begin{pmatrix}a'&-v\\b'&u\end{pmatrix}
+\]
+とおけば直接計算により $PQ=QP=I$ であり，$P(a,b)^{\mathrm t}=(d,0)^{\mathrm t}$ である．転置すれば行ベクトルに対する右からの変形も得られる．
+\end{proof}
+% genron:end K-001388
+% genron:begin K-001389
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001388
+% genron:use K-001123
+% genron:use K-000572
+% genron:use K-000658
+% genron:use K-000662
+\begin{prop}[Smith標準形]
+$R$ を単項イデアル整域とし，$A$ を $m\times n$ 行列とする．可逆行列 $P,Q$ が存在して $PAQ$ は対角形となり，その非零対角成分を $d_1,\ldots,d_r$ とすると $d_i\mid d_{i+1}$ である．
+\end{prop}
+\begin{proof}
+零行列の場合は明らかである．可逆な左右変形で得られる行列の非零成分の生成する単項イデアルの集合を考える．PIDの昇鎖条件によってその中に極大なもの $(d)$ がある．行列を取り替え，行列の行及び列を交換して $d$ を左上に置く．第一列の元 $b$ に対して $d\nmid b$ ならば前命題の変形で $(d)$ を真に含む $(d,b)$ を生成する成分が得られ，極大性に反する．第一行についても同様である．従って第一列の他の元は第一行の倍を引いて零にでき，第一行の他の元も第一列の倍を引いて零にできる．
+残りのブロックの元 $b$ が $d$ で割り切れないならば，その元の行を第一行に加える．左上の $d$ は変わらず，第一行に $b$ が現れるので，列のBezout変形で $(d,b)$ を得て再び矛盾する．従って残りの全成分は $d$ の倍元である．残りのブロックについて行数と列数の最小値に関する帰納法を用いる．ブロック内の線形変形は $d$ の倍元であるという性質を保つため，次の非零対角成分も $d$ で割り切れる．帰納法で主張を得る．
+\end{proof}
+% genron:end K-001389
+% genron:begin K-001390
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001387
+% genron:use K-001389
+% genron:use K-000584
+% genron:use K-000341
+% genron:use K-000340
+\begin{prop}[有限生成加群の構造]
+単項イデアル整域 $R$ 上の有限生成加群 $M$ は
+\[
+M\simeq R^s\oplus R/(d_1)\oplus\cdots\oplus R/(d_r)
+\]
+と表される．ここで $d_i$ は非零非単元で $d_i\mid d_{i+1}$ である．
+\end{prop}
+\begin{proof}
+有限生成系により全射 $R^n\to M$ を取る．その核は前命題により有限階数の自由加群である．核の基底を列とする行列 $A$ を用いれば $M\simeq R^n/\operatorname{im} A$ である．左右の可逆変形はそれぞれ終域及び始域の同型に対応するため余核の同型型を変えない．Smith標準形の対角成分に対応する各座標の商は $R/(d_i)$ となり，残りの座標は $R$ となる．単元に対応する零加群を除去すればよい．
+\end{proof}
+% genron:end K-001390
+% genron:begin K-001391
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001389
+% genron:use K-001390
+% genron:use K-000445
+\begin{example}[二生成加群の表示]
+整数行列 $A=\begin{pmatrix}2&4\\6&8\end{pmatrix}$ に対して $\mathbb Z^2/\operatorname{im}A\simeq\mathbb Z/2\mathbb Z\oplus\mathbb Z/4\mathbb Z$ である．
+\end{example}
+\begin{proof}
+第二行から第一行の三倍を引くと $\begin{pmatrix}2&4\\0&-4\end{pmatrix}$ となる．第二列から第一列の二倍を引き，第二行の符号を変えると $\operatorname{diag}(2,4)$ を得る．各操作は整数上可逆である．従って余核は表示された直和に同型である．
+\end{proof}
+% genron:end K-001391

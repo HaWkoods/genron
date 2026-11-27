@@ -1,0 +1,95 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{対称代数}
+% genron:begin K-001392
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001289
+% genron:use K-000328
+% genron:use K-000330
+\begin{defn}[対称代数]
+可換環 $R$ の加群 $M$ に対し，テンソル代数 $T_R(M)$ の両側イデアル $I$ を $x\otimes y-y\otimes x$ ($x,y\in M$) によって生成されるものとする．商代数 $S_R(M)=T_R(M)/I$ を対称代数という．$M$ の元の像の積を $x_1\cdots x_n$ と書く．
+\end{defn}
+% genron:end K-001392
+% genron:begin K-001393
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001392
+% genron:use K-001288
+% genron:use K-001289
+\begin{prop}[対称代数の次数構造]
+$S_R(M)$ は可換な非負整数次数付き $R$ 代数である．次数零は $R$，次数一は $M$ と標準的に同型である．
+\end{prop}
+\begin{proof}
+イデアル $I$ の元は生成元の左右にテンソル代数の元を掛けた有限和である．左右の元を斉次成分に分解すれば $I$ の各斉次成分も $I$ に属する．各項の次数は少なくとも二であり，次数零及び一との共通部分は零である．従って商は次数付きとなり，低次数成分は変わらない．次数一の元同士は定義により可換であり，それらと係数環が代数全体を生成するので任意の二元が可換となる．
+\end{proof}
+% genron:end K-001393
+% genron:begin K-001394
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001392
+% genron:use K-001290
+% genron:use K-000331
+\begin{prop}[対称代数の普遍性]
+任意の可換な単位的 $R$ 代数 $A$ と $R$ 線形写像 $f:M\to A$ に対して，$f$ を延長する $R$ 代数準同型 $S_R(M)\to A$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+テンソル代数の普遍性により一意な準同型 $T_R(M)\to A$ が得られる．各生成元 $x\otimes y-y\otimes x$ の像は $f(x)f(y)-f(y)f(x)=0$ である．従ってその核は $I$ を含み，商の普遍性により一意に因子化する．
+\end{proof}
+% genron:end K-001394
+% genron:begin K-001395
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001393
+% genron:use K-001287
+% genron:use K-000340
+\begin{prop}[対称冪の普遍性]
+次数 $n$ の成分 $S_R^n(M)$ は，$n$ 重線形で引数の置換によって値が変わらない写像を表現する．すなわち任意のそのような写像 $M^n\to N$ は $S_R^n(M)\to N$ なる線形写像を通じて一意に因子化する．
+\end{prop}
+\begin{proof}
+テンソル冪の普遍性で得た線形写像は隣接二因子の交換差を零に移す．$I$ の次数 $n$ 成分はこのような交換差の線形結合で生成される．従って商を通じて因子化する．逆に積の写像 $M^n\to S_R^n(M)$ は線形性と可換性から対称多重線形である．純テンソルが生成することから一意性を得る．$n=0$ の場合は $S_R^0(M)=R$ とし，空積の値に関する通常の対応を用いる．
+\end{proof}
+% genron:end K-001395
+% genron:begin K-001396
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001394
+% genron:use K-000580
+% genron:use K-000581
+% genron:use K-000582
+\begin{prop}[自由加群の対称冪の基底]
+$M$ が有限基底 $e_1,\ldots,e_r$ を持つならば，$S_R^n(M)$ の基底は $e_1^{a_1}\cdots e_r^{a_r}$ ($a_i\geq0,\ \sum a_i=n$) である．
+\end{prop}
+\begin{proof}
+可換性と多重線形性からこれらが生成する．独立性のため，$\mathbb N^r$ を基底添字とする自由加群 $B$ に，基底元 $u_a u_b=u_{a+b}$ を双線形に延長した積を入れる．これは可換な単位的代数で，単位元は $u_0$ である．$e_i\mapsto u_{\delta_i}$ なる線形写像を対称代数に延長すると，各表示単項式を相異なる基底元 $u_a$ に移す．従って任意の有限線形関係の係数はすべて零である．
+\end{proof}
+% genron:end K-001396

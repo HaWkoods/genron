@@ -1,0 +1,120 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{ZFとZFC}
+% genron:begin K-001374
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001173
+% genron:use K-001175
+% genron:use K-001176
+\begin{defn}[集合論の一階言語]
+集合論の言語を，等号及び二項関係記号 $\in$ のみを非論理記号（等号は論理記号としてもよい）とする一階言語とする．従って項は変数のみである．$\forall x\in a\,\varphi$ は $\forall x(x\in a\Rightarrow\varphi)$ の略記とする．
+\end{defn}
+% genron:end K-001374
+% genron:begin K-001375
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001374
+\begin{axiom}[ZFの集合存在公理]
+以下の文を採用する．外延性：$\forall a\forall b((\forall x(x\in a\Leftrightarrow x\in b))\Rightarrow a=b)$．空集合：$\exists a\forall x(x\notin a)$．対：$\forall a\forall b\exists c\forall x(x\in c\Leftrightarrow(x=a\lor x=b))$．合併：$\forall a\exists b\forall x(x\in b\Leftrightarrow\exists y(y\in a\land x\in y))$．冪集合：$\forall a\exists b\forall x(x\in b\Leftrightarrow\forall y(y\in x\Rightarrow y\in a))$．無限：空集合を含み，$x$ を含めば $x\cup\{x\}$ を含む集合が存在する．正則性：空でない集合 $a$ には $a$ と共通元を持たない元 $b\in a$ が存在する．後二者の集合記法は前の公理によって存在と一意性が保証される対象の略記である．
+\end{axiom}
+% genron:end K-001375
+% genron:begin K-001376
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001374
+% genron:use K-001176
+% genron:use K-001179
+% genron:use K-001180
+\begin{axiom}[分出及び置換の公理図式]
+任意の集合論の式 $\varphi(x,\boldsymbol p)$ に対し，その自由変数を表示したものに限り，$\forall a\exists b\forall x(x\in b\Leftrightarrow(x\in a\land\varphi(x,\boldsymbol p)))$ のパラメータに関する全称閉包を分出公理とする．任意の式 $\psi(x,y,\boldsymbol p)$ に対し，$\forall x\in a\,\exists!y\,\psi(x,y,\boldsymbol p)$ ならば $\exists b\forall y(y\in b\Leftrightarrow\exists x\in a\,\psi(x,y,\boldsymbol p))$ となる文の全称閉包を置換公理とする．新たに量化する $a,b$ は式のパラメータに含めず，必要に応じて束縛変数を改名する．
+\end{axiom}
+% genron:end K-001376
+% genron:begin K-001377
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001375
+% genron:use K-001376
+% genron:use K-000060
+% genron:use K-000032
+% genron:use K-000034
+\begin{defn}[ZF及びZFC]
+前二公理項目に列挙した文及び図式を非論理公理とする古典一階理論を ZF とする．さらに任意の空でない集合からなる集合族に選択函数が存在するという文を加えた理論を ZFC とする．函数・順序対は集合によって表現する．この選択公理は，空集合を含まない任意の集合 $A$ に対し，定義域が $A$ で $f(a)\in a$ を満たす函数 $f$ が存在するという形で述べてもよい．
+\end{defn}
+% genron:end K-001377
+% genron:begin K-001378
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001376
+% genron:use K-001349
+\begin{prop}[無制限内包の否定]
+ZFでは，すべての集合を元として含む集合は存在しない．
+\end{prop}
+\begin{proof}
+そのような集合 $U$ が存在すると仮定する．分出公理を式 $x\notin x$ に適用すると，集合 $B$ が存在して $x\in B\Leftrightarrow(x\in U\land x\notin x)$ となる．$B\in U$ であるから，$x=B$ とすれば $B\in B\Leftrightarrow B\notin B$ を得る．古典論理においてこれは矛盾である．
+\end{proof}
+% genron:end K-001378
+% genron:begin K-001379
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001375
+\begin{prop}[正則性の帰結]
+ZFでは $x\in x$ を満たす集合は存在せず，$x\in y\in x$ を満たす二集合も存在しない．
+\end{prop}
+\begin{proof}
+前者については $a=\{x\}$ に正則性を適用する．その唯一の元 $x$ は $x\in a\cap x$ を満たすので矛盾する．後者については $a=\{x,y\}$ とおく．$x,y$ のいずれも $a$ と共通元を持つので正則性に反する．
+\end{proof}
+% genron:end K-001379
+% genron:begin K-001380
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001377
+% genron:use K-001350
+\begin{prop}[形式理論と背景推論の区別]
+ZFの公理をすべて充足する一階構造 $\mathcal M$ は，ZFから導出できる任意の文を充足する．
+\end{prop}
+\begin{proof}
+導出は有限であり，その未解除の仮定はZFの公理である．仮定によりそれらは $\mathcal M$ で充足される．\GenronRef{K-001350} を適用すれば結論も充足される．この命題はそのような構造が存在することも，原論の背景推論が既にZFの形式的導出へ翻訳されていることも主張しない．
+\end{proof}
+% genron:end K-001380

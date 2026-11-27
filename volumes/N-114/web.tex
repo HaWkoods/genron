@@ -1,0 +1,98 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{外積代数}
+% genron:begin K-001397
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001289
+% genron:use K-000328
+% genron:use K-000330
+\begin{defn}[外積代数]
+可換環 $R$ の加群 $M$ に対し，テンソル代数の両側イデアル $J$ を $x\otimes x$ ($x\in M$) によって生成されるものとする．$\bigwedge_R M=T_R(M)/J$ を外積代数といい，その積を $\wedge$ と書く．
+\end{defn}
+% genron:end K-001397
+% genron:begin K-001398
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001397
+% genron:use K-001288
+% genron:use K-001289
+\begin{prop}[外積代数の次数構造]
+外積代数は次数付き代数であり，次数零と一はそれぞれ $R,M$ に同型である．$x,y\in M$ について $x\wedge x=0$，$x\wedge y=-y\wedge x$ である．次数 $p,q$ の斉次元 $a,b$ について $a\wedge b=(-1)^{pq}b\wedge a$ である．
+\end{prop}
+\begin{proof}
+生成元は次数二の斉次元なので，イデアルの各元を次数ごとに分解しても各成分はイデアルに属する．また次数零及び一の成分は零である．従って商の次数構造が従う．$(x+y)\wedge(x+y)=0$ を展開し，両者の平方が零であることを使えば交換の公式を得る．純外積の二つのブロックを交換するには $pq$ 回の隣接交換を行えばよい．斉次成分は純外積の有限和で生成されるので一般の場合にも成立する．標数二でも平方が零という条件は別途必要である．
+\end{proof}
+% genron:end K-001398
+% genron:begin K-001399
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001397
+% genron:use K-001290
+% genron:use K-000331
+\begin{prop}[外積代数の普遍性]
+単位的 $R$ 代数 $A$ と線形写像 $f:M\to A$ が $f(x)^2=0$ をすべての $x$ について満たすならば，$f$ を延長する単位的 $R$ 代数準同型 $\bigwedge_R M\to A$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+テンソル代数への延長の核は $x\otimes x$ をすべて含むから，それらで生成される両側イデアルを含む．商の普遍性によって結論を得る．
+\end{proof}
+% genron:end K-001399
+% genron:begin K-001400
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001398
+% genron:use K-001287
+% genron:use K-000340
+\begin{prop}[外冪の普遍性]
+次数 $n$ の成分 $\bigwedge_R^n M$ は，二つの引数が等しいとき零となる $n$ 重線形写像を表現する．
+\end{prop}
+\begin{proof}
+交代多重線形写像の二引数をともに $u+v$ と置いて展開すれば交換で符号を変えることが分かる．テンソル冪の普遍性による線形写像は，隣接する同一因子を持つ純テンソルを零に移す．これらが $J$ の次数 $n$ 成分を生成するので商を通じて因子化する．逆に純外積は多重線形であり，同一の二引数を隣接位置に移して積を零にできる．生成性から一意性を得る．$n=0,1$ では交代条件は空であり，既述の次数零及び一の記述が対応する．
+\end{proof}
+% genron:end K-001400
+% genron:begin K-001401
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001400
+% genron:use K-000580
+% genron:use K-000582
+\begin{prop}[自由加群の外冪の基底]
+$M$ が有限基底 $e_1,\ldots,e_r$ を持つとき，$\bigwedge_R^n M$ の基底は $e_{i_1}\wedge\cdots\wedge e_{i_n}$ ($1\leq i_1<\cdots<i_n\leq r$) である．特に $n>r$ ならば $\bigwedge_R^n M=0$ である．
+\end{prop}
+\begin{proof}
+生成性は多重線形性，隣接交換及び平方零から従う．独立性を示すため，固定した増加列 $I=(i_1,\ldots,i_n)$ に対し，$x_j=\sum_k a_{kj}e_k$ と書いて
+\[
+F_I(x_1,\ldots,x_n)=\sum_{\sigma}(-1)^{\operatorname{inv}(\sigma)}\prod_{j=1}^n a_{i_{\sigma(j)},j}
+\]
+と定める．和は $n$ 個の添字の置換を走り，逆転数は順序が反転した対の個数とする．各引数に関する線形性は明らかである．二引数が等しければ，対応する二位置を交換した置換を対にすることで項が相殺される．二位置の交換は奇数回の隣接交換であり，各隣接交換で逆転数の偶奇は反転する．従って $F_I$ は交代的である．外冪の普遍性から線形函数を得る．この函数は増加列 $I$ の外積に対し $1$，他の増加列に対し $0$ を取る．従って任意の線形関係の各係数は零である．
+\end{proof}
+% genron:end K-001401

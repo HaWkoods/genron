@@ -42591,6 +42591,987 @@
       "status": "draft",
       "source": "volumes/N-351/web.tex",
       "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001374",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "集合論の一階言語",
+      "statement": "集合論の言語を，等号及び二項関係記号 $\\in$ のみを非論理記号（等号は論理記号としてもよい）とする一階言語とする．従って項は変数のみである．$\\forall x\\in a\\,\\varphi$ は $\\forall x(x\\in a\\Rightarrow\\varphi)$ の略記とする．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001173",
+        "K-001175",
+        "K-001176"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001375",
+      "kind": "axiom",
+      "heading_kind": "axiom",
+      "title": "ZFの集合存在公理",
+      "statement": "以下の文を採用する．外延性：$\\forall a\\forall b((\\forall x(x\\in a\\Leftrightarrow x\\in b))\\Rightarrow a=b)$．空集合：$\\exists a\\forall x(x\\notin a)$．対：$\\forall a\\forall b\\exists c\\forall x(x\\in c\\Leftrightarrow(x=a\\lor x=b))$．合併：$\\forall a\\exists b\\forall x(x\\in b\\Leftrightarrow\\exists y(y\\in a\\land x\\in y))$．冪集合：$\\forall a\\exists b\\forall x(x\\in b\\Leftrightarrow\\forall y(y\\in x\\Rightarrow y\\in a))$．無限：空集合を含み，$x$ を含めば $x\\cup\\{x\\}$ を含む集合が存在する．正則性：空でない集合 $a$ には $a$ と共通元を持たない元 $b\\in a$ が存在する．後二者の集合記法は前の公理によって存在と一意性が保証される対象の略記である．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001374"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001376",
+      "kind": "axiom",
+      "heading_kind": "axiom",
+      "title": "分出及び置換の公理図式",
+      "statement": "任意の集合論の式 $\\varphi(x,\\boldsymbol p)$ に対し，その自由変数を表示したものに限り，$\\forall a\\exists b\\forall x(x\\in b\\Leftrightarrow(x\\in a\\land\\varphi(x,\\boldsymbol p)))$ のパラメータに関する全称閉包を分出公理とする．任意の式 $\\psi(x,y,\\boldsymbol p)$ に対し，$\\forall x\\in a\\,\\exists!y\\,\\psi(x,y,\\boldsymbol p)$ ならば $\\exists b\\forall y(y\\in b\\Leftrightarrow\\exists x\\in a\\,\\psi(x,y,\\boldsymbol p))$ となる文の全称閉包を置換公理とする．新たに量化する $a,b$ は式のパラメータに含めず，必要に応じて束縛変数を改名する．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001374",
+        "K-001176",
+        "K-001179",
+        "K-001180"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001377",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "ZF及びZFC",
+      "statement": "前二公理項目に列挙した文及び図式を非論理公理とする古典一階理論を ZF とする．さらに任意の空でない集合からなる集合族に選択函数が存在するという文を加えた理論を ZFC とする．函数・順序対は集合によって表現する．この選択公理は，空集合を含まない任意の集合 $A$ に対し，定義域が $A$ で $f(a)\\in a$ を満たす函数 $f$ が存在するという形で述べてもよい．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001375",
+        "K-001376",
+        "K-000060",
+        "K-000032",
+        "K-000034"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001378",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "無制限内包の否定",
+      "statement": "ZFでは，すべての集合を元として含む集合は存在しない．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001376",
+        "K-001349"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001379",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正則性の帰結",
+      "statement": "ZFでは $x\\in x$ を満たす集合は存在せず，$x\\in y\\in x$ を満たす二集合も存在しない．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001375"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001380",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "形式理論と背景推論の区別",
+      "statement": "ZFの公理をすべて充足する一階構造 $\\mathcal M$ は，ZFから導出できる任意の文を充足する．",
+      "assumptions": [],
+      "position": [
+        49,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001377",
+        "K-001350"
+      ],
+      "status": "draft",
+      "source": "volumes/N-49/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001381",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Abel群の層と加群の層",
+      "statement": "位相空間 $X$ 上の群の層 $F$ が各開集合 $U$ について可換群 $F(U)$ を持つとき，Abel群の層という．環の層 $\\mathcal R$ に対し，各 $F(U)$ が左 $\\mathcal R(U)$ 加群で，制限写像が $r s$ を $r|_V s|_V$ に移すAbel群の層を $\\mathcal R$ 加群の層という．射は各開集合で加群準同型となる層の射とする．",
+      "assumptions": [],
+      "position": [
+        52,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001366",
+        "K-001367",
+        "K-000335",
+        "K-000338"
+      ],
+      "status": "draft",
+      "source": "volumes/N-52/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001382",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加群の層の茎",
+      "statement": "$\\mathcal R$ 加群の層 $F$ の茎 $F_x$ は $\\mathcal R_x$ 加群であり，層の射は各茎に加群準同型を誘導する．",
+      "assumptions": [],
+      "position": [
+        52,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001381",
+        "K-001368",
+        "K-001182",
+        "K-001185"
+      ],
+      "status": "draft",
+      "source": "volumes/N-52/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001383",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層の核",
+      "statement": "加群の層の射 $f:F\\to G$ に対し，$K(U)=\\ker f_U$ とおけば $K$ は加群の層であり，包含 $K\\to F$ は圏における核である．また $K_x=\\ker f_x$ と標準的に同一視できる．",
+      "assumptions": [],
+      "position": [
+        52,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001382",
+        "K-000339",
+        "K-001249",
+        "K-001182"
+      ],
+      "status": "draft",
+      "source": "volumes/N-52/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001384",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加群前層の層化",
+      "statement": "$\\mathcal R$ 加群の前層 $P$ の集合値層化 $P^+$ には標準的な $\\mathcal R$ 加群の層の構造が入り，その標準射は加群準同型である．また $P_x\\to P_x^+$ は同型である．",
+      "assumptions": [],
+      "position": [
+        52,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001382",
+        "K-001264",
+        "K-001265",
+        "K-001266",
+        "K-001267",
+        "K-001268"
+      ],
+      "status": "draft",
+      "source": "volumes/N-52/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001385",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層の余核及び像",
+      "statement": "$f:F\\to G$ の余核は前層 $U\\mapsto G(U)/f_U(F(U))$ の層化である．その茎は $\\operatorname{coker} f_x$ と同型である．像の層は余核射の核であり，その茎は $\\operatorname{im}f_x$ である．",
+      "assumptions": [],
+      "position": [
+        52,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001383",
+        "K-001384",
+        "K-000340",
+        "K-000341",
+        "K-001249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-52/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001386",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "茎における完全性",
+      "statement": "$\\mathcal R$ 加群の層の圏はAbel圏である．列 $F\\to G\\to H$ が完全であるための必要十分条件は，各 $x\\in X$ において $F_x\\to G_x\\to H_x$ が完全であることである．",
+      "assumptions": [],
+      "position": [
+        52,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001383",
+        "K-001385",
+        "K-001247",
+        "K-001248",
+        "K-001251",
+        "K-001253",
+        "K-001369",
+        "K-000341"
+      ],
+      "status": "draft",
+      "source": "volumes/N-52/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001387",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の部分加群",
+      "statement": "単項イデアル整域 $R$ 上の自由加群 $R^n$ の部分加群 $L$ は，階数が $n$ 以下の有限階数自由加群である．",
+      "assumptions": [],
+      "position": [
+        108,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001119",
+        "K-000580",
+        "K-000337",
+        "K-000339",
+        "K-000444"
+      ],
+      "status": "draft",
+      "source": "volumes/N-108/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001388",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Bezout変形",
+      "statement": "$R$ を単項イデアル整域とし，$a,b\\in R$ がともに零ではないとする．$(a,b)=(d)$ とすれば，可逆な二次正方行列 $P$ が存在し，$P(a,b)^{\\mathrm t}=(d,0)^{\\mathrm t}$ となる．",
+      "assumptions": [],
+      "position": [
+        108,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001122",
+        "K-000444",
+        "K-000657",
+        "K-000658",
+        "K-000662"
+      ],
+      "status": "draft",
+      "source": "volumes/N-108/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001389",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Smith標準形",
+      "statement": "$R$ を単項イデアル整域とし，$A$ を $m\\times n$ 行列とする．可逆行列 $P,Q$ が存在して $PAQ$ は対角形となり，その非零対角成分を $d_1,\\ldots,d_r$ とすると $d_i\\mid d_{i+1}$ である．",
+      "assumptions": [],
+      "position": [
+        108,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001388",
+        "K-001123",
+        "K-000572",
+        "K-000658",
+        "K-000662"
+      ],
+      "status": "draft",
+      "source": "volumes/N-108/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001390",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限生成加群の構造",
+      "statement": "単項イデアル整域 $R$ 上の有限生成加群 $M$ は\n\\[\nM\\simeq R^s\\oplus R/(d_1)\\oplus\\cdots\\oplus R/(d_r)\n\\]\nと表される．ここで $d_i$ は非零非単元で $d_i\\mid d_{i+1}$ である．",
+      "assumptions": [],
+      "position": [
+        108,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001387",
+        "K-001389",
+        "K-000584",
+        "K-000341",
+        "K-000340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-108/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001391",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "二生成加群の表示",
+      "statement": "整数行列 $A=\\begin{pmatrix}2&4\\\\6&8\\end{pmatrix}$ に対して $\\mathbb Z^2/\\operatorname{im}A\\simeq\\mathbb Z/2\\mathbb Z\\oplus\\mathbb Z/4\\mathbb Z$ である．",
+      "assumptions": [],
+      "position": [
+        108,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001389",
+        "K-001390",
+        "K-000445"
+      ],
+      "status": "draft",
+      "source": "volumes/N-108/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001392",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "対称代数",
+      "statement": "可換環 $R$ の加群 $M$ に対し，テンソル代数 $T_R(M)$ の両側イデアル $I$ を $x\\otimes y-y\\otimes x$ ($x,y\\in M$) によって生成されるものとする．商代数 $S_R(M)=T_R(M)/I$ を対称代数という．$M$ の元の像の積を $x_1\\cdots x_n$ と書く．",
+      "assumptions": [],
+      "position": [
+        113,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001289",
+        "K-000328",
+        "K-000330"
+      ],
+      "status": "draft",
+      "source": "volumes/N-113/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001393",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称代数の次数構造",
+      "statement": "$S_R(M)$ は可換な非負整数次数付き $R$ 代数である．次数零は $R$，次数一は $M$ と標準的に同型である．",
+      "assumptions": [],
+      "position": [
+        113,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001392",
+        "K-001288",
+        "K-001289"
+      ],
+      "status": "draft",
+      "source": "volumes/N-113/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001394",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称代数の普遍性",
+      "statement": "任意の可換な単位的 $R$ 代数 $A$ と $R$ 線形写像 $f:M\\to A$ に対して，$f$ を延長する $R$ 代数準同型 $S_R(M)\\to A$ がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        113,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001392",
+        "K-001290",
+        "K-000331"
+      ],
+      "status": "draft",
+      "source": "volumes/N-113/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001395",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称冪の普遍性",
+      "statement": "次数 $n$ の成分 $S_R^n(M)$ は，$n$ 重線形で引数の置換によって値が変わらない写像を表現する．すなわち任意のそのような写像 $M^n\\to N$ は $S_R^n(M)\\to N$ なる線形写像を通じて一意に因子化する．",
+      "assumptions": [],
+      "position": [
+        113,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001393",
+        "K-001287",
+        "K-000340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-113/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001396",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の対称冪の基底",
+      "statement": "$M$ が有限基底 $e_1,\\ldots,e_r$ を持つならば，$S_R^n(M)$ の基底は $e_1^{a_1}\\cdots e_r^{a_r}$ ($a_i\\geq0,\\ \\sum a_i=n$) である．",
+      "assumptions": [],
+      "position": [
+        113,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001394",
+        "K-000580",
+        "K-000581",
+        "K-000582"
+      ],
+      "status": "draft",
+      "source": "volumes/N-113/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001397",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "外積代数",
+      "statement": "可換環 $R$ の加群 $M$ に対し，テンソル代数の両側イデアル $J$ を $x\\otimes x$ ($x\\in M$) によって生成されるものとする．$\\bigwedge_R M=T_R(M)/J$ を外積代数といい，その積を $\\wedge$ と書く．",
+      "assumptions": [],
+      "position": [
+        114,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001289",
+        "K-000328",
+        "K-000330"
+      ],
+      "status": "draft",
+      "source": "volumes/N-114/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001398",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "外積代数の次数構造",
+      "statement": "外積代数は次数付き代数であり，次数零と一はそれぞれ $R,M$ に同型である．$x,y\\in M$ について $x\\wedge x=0$，$x\\wedge y=-y\\wedge x$ である．次数 $p,q$ の斉次元 $a,b$ について $a\\wedge b=(-1)^{pq}b\\wedge a$ である．",
+      "assumptions": [],
+      "position": [
+        114,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001397",
+        "K-001288",
+        "K-001289"
+      ],
+      "status": "draft",
+      "source": "volumes/N-114/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001399",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "外積代数の普遍性",
+      "statement": "単位的 $R$ 代数 $A$ と線形写像 $f:M\\to A$ が $f(x)^2=0$ をすべての $x$ について満たすならば，$f$ を延長する単位的 $R$ 代数準同型 $\\bigwedge_R M\\to A$ がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        114,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001397",
+        "K-001290",
+        "K-000331"
+      ],
+      "status": "draft",
+      "source": "volumes/N-114/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001400",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "外冪の普遍性",
+      "statement": "次数 $n$ の成分 $\\bigwedge_R^n M$ は，二つの引数が等しいとき零となる $n$ 重線形写像を表現する．",
+      "assumptions": [],
+      "position": [
+        114,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001398",
+        "K-001287",
+        "K-000340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-114/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001401",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群の外冪の基底",
+      "statement": "$M$ が有限基底 $e_1,\\ldots,e_r$ を持つとき，$\\bigwedge_R^n M$ の基底は $e_{i_1}\\wedge\\cdots\\wedge e_{i_n}$ ($1\\leq i_1<\\cdots<i_n\\leq r$) である．特に $n>r$ ならば $\\bigwedge_R^n M=0$ である．",
+      "assumptions": [],
+      "position": [
+        114,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001400",
+        "K-000580",
+        "K-000582"
+      ],
+      "status": "draft",
+      "source": "volumes/N-114/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001402",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "完全可約表現",
+      "statement": "体 $k$ 上の有限次元群表現 $V$ が有限個の既約部分表現の直和であるとき完全可約という．零表現は空の直和として含める．",
+      "assumptions": [],
+      "position": [
+        126,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001299",
+        "K-001301",
+        "K-001304"
+      ],
+      "status": "draft",
+      "source": "volumes/N-126/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001403",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "不変補空間と分裂",
+      "statement": "部分表現 $W\\subseteq V$ が不変補空間を持つための必要十分条件は，$W$ への表現の準同型 $p:V\\to W$ で $p|_W=\\operatorname{id}_W$ となるものが存在することである．",
+      "assumptions": [],
+      "position": [
+        126,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001402",
+        "K-001300",
+        "K-001303"
+      ],
+      "status": "draft",
+      "source": "volumes/N-126/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001404",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Maschkeの定理",
+      "statement": "有限群 $G$ と体 $k$ に対し，$|G|$ が $k$ において非零であるとする．このとき任意の有限次元 $k$ 表現の任意の部分表現は不変補空間を持ち，従って表現は完全可約である．",
+      "assumptions": [],
+      "position": [
+        126,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001403",
+        "K-000313",
+        "K-001299",
+        "K-000601"
+      ],
+      "status": "draft",
+      "source": "volumes/N-126/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001405",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "標数条件が必要となる例",
+      "statement": "標数二の体 $k$ 上で，位数二の巡回群の生成元 $g$ を行列 $\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$ に移す二次元表現は完全可約ではない．",
+      "assumptions": [],
+      "position": [
+        126,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001402",
+        "K-000316",
+        "K-001299",
+        "K-000443"
+      ],
+      "status": "draft",
+      "source": "volumes/N-126/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -43385,7 +44366,7 @@
       "number": 49,
       "title": "ZFとZFC",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         328,
         6
@@ -43394,7 +44375,8 @@
         "集合論の形式言語・公理・初期体系との区別"
       ],
       "treatise": "T-49",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 50,
@@ -43434,7 +44416,7 @@
       "number": 52,
       "title": "Abel群の層と加群の層",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         351,
         211
@@ -43443,7 +44425,8 @@
         "層の圏・核余核・茎での完全性"
       ],
       "treatise": "T-52",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 53,
@@ -44325,7 +45308,7 @@
       "number": 108,
       "title": "PID上の有限生成加群",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         105,
         107,
@@ -44336,7 +45319,8 @@
         "部分加群・Smith標準形・構造定理"
       ],
       "treatise": "T-16",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 109,
@@ -44405,7 +45389,7 @@
       "number": 113,
       "title": "対称代数",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         112
       ],
@@ -44413,13 +45397,14 @@
         "対称積・普遍性"
       ],
       "treatise": "T-17",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 114,
       "title": "外積代数",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         112
       ],
@@ -44427,7 +45412,8 @@
         "外積・外冪・交代写像"
       ],
       "treatise": "T-17",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 115,
@@ -44606,7 +45592,7 @@
       "number": 126,
       "title": "完全可約性",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         125,
         19
@@ -44615,7 +45601,8 @@
         "Maschkeの定理・標数条件"
       ],
       "treatise": "T-19",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 127,

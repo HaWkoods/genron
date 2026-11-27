@@ -1,0 +1,126 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Abel群の層と加群の層}
+% genron:begin K-001381
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001366
+% genron:use K-001367
+% genron:use K-000335
+% genron:use K-000338
+\begin{defn}[Abel群の層と加群の層]
+位相空間 $X$ 上の群の層 $F$ が各開集合 $U$ について可換群 $F(U)$ を持つとき，Abel群の層という．環の層 $\mathcal R$ に対し，各 $F(U)$ が左 $\mathcal R(U)$ 加群で，制限写像が $r s$ を $r|_V s|_V$ に移すAbel群の層を $\mathcal R$ 加群の層という．射は各開集合で加群準同型となる層の射とする．
+\end{defn}
+% genron:end K-001381
+% genron:begin K-001382
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001381
+% genron:use K-001368
+% genron:use K-001182
+% genron:use K-001185
+\begin{prop}[加群の層の茎]
+$\mathcal R$ 加群の層 $F$ の茎 $F_x$ は $\mathcal R_x$ 加群であり，層の射は各茎に加群準同型を誘導する．
+\end{prop}
+\begin{proof}
+代表元 $r\in\mathcal R(U),s\in F(V)$ に対し，共通近傍 $U\cap V$ に制限して積を取り，その芽を $r_xs_x$ とする．代表を変更しても，有限個の一致近傍の共通部分に制限すれば結果が一致する．加群公理は各開集合上の公理を共通近傍で用いることで成立する．射の線形性も同じ操作によって従う．
+\end{proof}
+% genron:end K-001382
+% genron:begin K-001383
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001382
+% genron:use K-000339
+% genron:use K-001249
+% genron:use K-001182
+\begin{prop}[層の核]
+加群の層の射 $f:F\to G$ に対し，$K(U)=\ker f_U$ とおけば $K$ は加群の層であり，包含 $K\to F$ は圏における核である．また $K_x=\ker f_x$ と標準的に同一視できる．
+\end{prop}
+\begin{proof}
+制限は核を核に移す．核に属する両立する切断を $F$ で貼り合わせると，その像は各被覆開集合上で零であるから $G$ の分離性によって零となる．従って貼り合わせは核に属する．核の普遍性は各開集合における核の普遍性から従う．茎で核に属する芽 $s_x$ は $f(s)$ の芽が零なので，ある近傍で $f(s)=0$ となる．そこで制限した $s$ は核の切断である．包含の茎写像が単射であることは芽の同値関係から従う．
+\end{proof}
+% genron:end K-001383
+% genron:begin K-001384
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001382
+% genron:use K-001264
+% genron:use K-001265
+% genron:use K-001266
+% genron:use K-001267
+% genron:use K-001268
+\begin{prop}[加群前層の層化]
+$\mathcal R$ 加群の前層 $P$ の集合値層化 $P^+$ には標準的な $\mathcal R$ 加群の層の構造が入り，その標準射は加群準同型である．また $P_x\to P_x^+$ は同型である．
+\end{prop}
+\begin{proof}
+層化の切断を局所的に代表される芽の族として実現する．加法は芽ごとの加法，$r\in\mathcal R(U)$ の作用は各 $x\in U$ における芽 $r_x$ の作用とする．局所代表を共通近傍に制限して計算すれば，結果も局所代表を持つ．従って演算は閉じており，公理は芽ごとに成立する．標準射は演算を保つ．任意の層化の切断の芽は局所代表から生じるので全射である．二つの前層切断の層化の芽が一致すれば，特に当該点における元の芽が一致するので単射である．層への前層射の延長は芽ごとの演算を保つため加群の射となる．
+\end{proof}
+% genron:end K-001384
+% genron:begin K-001385
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001383
+% genron:use K-001384
+% genron:use K-000340
+% genron:use K-000341
+% genron:use K-001249
+\begin{prop}[層の余核及び像]
+$f:F\to G$ の余核は前層 $U\mapsto G(U)/f_U(F(U))$ の層化である．その茎は $\operatorname{coker} f_x$ と同型である．像の層は余核射の核であり，その茎は $\operatorname{im}f_x$ である．
+\end{prop}
+\begin{proof}
+制限は像を像に移すから商は前層となる．$f$ を零に移す層の射は各開集合で商を通じて一意に因子化し，これらは制限と可換である．層化の普遍性を適用して余核の普遍性を得る．商前層の茎への自然写像 $G_x\to Q_x$ は全射である．その核に属する芽は，ある近傍で代表切断の商類が零となるから，その近傍で $f$ の像である．逆包含も成立する．層化は茎を変えないから余核の茎の記述を得る．像については核の茎の記述を適用する．
+\end{proof}
+% genron:end K-001385
+% genron:begin K-001386
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001383
+% genron:use K-001385
+% genron:use K-001247
+% genron:use K-001248
+% genron:use K-001251
+% genron:use K-001253
+% genron:use K-001369
+% genron:use K-000341
+\begin{prop}[茎における完全性]
+$\mathcal R$ 加群の層の圏はAbel圏である．列 $F\to G\to H$ が完全であるための必要十分条件は，各 $x\in X$ において $F_x\to G_x\to H_x$ が完全であることである．
+\end{prop}
+\begin{proof}
+射の加法を切断ごとに定め，零層及び有限直和を切断ごとに取ると加法圏となる．核・余核は既に構成した．余像から像への標準射は，各茎で加群の第一同型定理による同型を誘導する．芽による同型判定を適用すれば標準射は同型である．従ってAbel圏の条件を満たす．完全性は像から核への標準射が同型であるという条件である．合成が零であることは茎ごとの零性と同値であり，核と像の茎の記述及び茎による同型判定から所望の同値を得る．
+\end{proof}
+% genron:end K-001386
