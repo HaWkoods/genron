@@ -1,0 +1,125 @@
+% Web専用原稿．
+% 構成案：開集合の圏・前層・射・函数の前層・空集合の例．
+% 文献確認：Mac Lane, Categories for the Working Mathematician, Ch. III（開集合の圏と制限写像としての前層に関する本文を確認）．貼り合わせ公理は後続に分離する．
+\section{開集合の圏と制限}
+% genron:begin K-000416
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000146
+% genron:use K-000241
+% genron:use K-000068
+% genron:use K-000020
+\begin{prop}[開集合の圏]
+位相空間 $X$ の開集合を対象とし，$U\subseteq V$ のときに限りただ一つの射 $U\to V$ を置く．合成は包含の推移性によって定め，$U\subseteq U$ に対応する射を恒等射とする．これによって小圏 $\operatorname{Open}(X)$ が定まる．
+\end{prop}
+\begin{proof}
+開集合全体は集合であり，射集合は空集合又は一元集合である．合成は包含の推移性により定まり，合成の両辺は同じ始域と終域のただ一つの射であるから結合律が成立する．恒等射の条件も同じ理由による．
+\end{proof}
+% genron:end K-000416
+% genron:begin K-000417
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000416
+% genron:use K-000401
+% genron:use K-000245
+% genron:use K-000242
+\begin{defn}[集合値前層]
+位相空間 $X$ 上の集合値前層とは，反対圏 $\operatorname{Open}(X)^{\mathrm{op}}$ から集合の圏への函手 $\mathcal F$ をいう．すなわち，各開集合 $U$ に集合 $\mathcal F(U)$，各 $V\subseteq U$ に制限写像 $\rho^U_V:\mathcal F(U)\to\mathcal F(V)$ を指定し，
+\[
+ \rho^U_U=\mathrm{id}_{\mathcal F(U)},\qquad
+ \rho^V_W\circ\rho^U_V=\rho^U_W\quad(W\subseteq V\subseteq U)
+\]
+を要求する．$\mathcal F(U)$ の元を $U$ 上の切断という．
+\end{defn}
+% genron:end K-000417
+% genron:begin K-000418
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000417
+% genron:use K-000403
+% genron:use K-000278
+\begin{defn}[前層の射]
+前層 $\mathcal F,\mathcal G$ の射とは，各開集合 $U$ に写像 $\alpha_U:\mathcal F(U)\to\mathcal G(U)$ が指定され，$V\subseteq U$ のとき $\rho^{U,\mathcal G}_V\circ\alpha_U=\alpha_V\circ\rho^{U,\mathcal F}_V$ となるものをいう．恒等射と合成は成分ごとに定まる．前層全体は圏をなす（対象全体の集合性は仮定しない）．
+\end{defn}
+% genron:end K-000418
+\section{具体例}
+% genron:begin K-000419
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000417
+% genron:use K-000047
+% genron:use K-000042
+% genron:use K-000036
+\begin{prop}[函数の前層]
+集合 $A$ を固定し $\mathcal F(U)=A^U$ と定める．$V\subseteq U$ に対し制限写像を $f\mapsto f|_V$ とすれば，恒等制限と二度の制限の条件を満たす．従ってこれは前層である．空集合上の切断は唯一の空写像である．
+\end{prop}
+% genron:end K-000419
+% genron:begin K-000420
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000417
+% genron:use K-000217
+% genron:use K-000218
+% genron:use K-000255
+% genron:use K-000047
+\begin{prop}[連続函数の前層]
+位相空間 $Y$ を固定する．各開集合 $U$ に部分位相を入れ，$\mathcal C_Y(U)$ を $U\to Y$ の連続写像全体とする．包含写像 $V\to U$ は連続なので連続写像の制限は連続である．制限の二条件は函数の制限に関する条件から従い，$\mathcal C_Y$ は前層となる．
+\end{prop}
+% genron:end K-000420
+% genron:begin K-000421
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000417
+% genron:use K-000036
+\begin{prop}[定値前層]
+任意の集合 $A$ に対して各開集合 $U$ に $A$ を対応させ，すべての制限を $\mathrm{id}_A$ とする．これは定値前層である．特に前層の定義だけでは空集合上の切断集合が一元集合となるとは限らない．貼り合わせの条件を持つ層は後に導入する．
+\end{prop}
+% genron:end K-000421
+% genron:begin K-000422
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000417
+% genron:use K-000255
+% genron:use K-000147
+\begin{prop}[開集合への前層の制限]
+開集合 $V\subseteq X$ に対し，$V$ 上の開集合 $U$ に $\mathcal F(U)$ を対応させると，$V$ 上の前層 $\mathcal F|_V$ が定まる．
+\end{prop}
+\begin{proof}
+$V$ が $X$ の開集合であるから，$V$ の相対開集合は $X$ の開集合でもある．従って $\mathcal F(U)$ は定義され，包含に対する制限も $\mathcal F$ の制限を用いればよい．前層の二条件は元の前層から従う．
+\end{proof}
+% genron:end K-000422

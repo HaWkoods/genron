@@ -12391,6 +12391,1240 @@
       "status": "verified",
       "source": "volumes/N-92/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000401",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所小圏と反対圏",
+      "statement": "各 Hom_C(X,Y) が集合である圏を局所小圏という．反対圏は射の向きと合成順序を逆にした圏．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000241",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000402",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hom函手",
+      "statement": "局所小圏 C の対象 A に対し Hom_C(A,−):C→Set と Hom_C(−,A):C^op→Set が函手となる．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000401",
+        "K-000245",
+        "K-000242",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000403",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "集合値函手の自然変換",
+      "statement": "局所小圏 C 上の集合値函手 F,G の自然変換は各対象 X の写像 η_X:F(X)→G(X) で自然性を満たす対応．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000401",
+        "K-000245",
+        "K-000277"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000404",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "普遍元",
+      "statement": "F:C→Set の普遍元は (A,u∈F(A)) で，各 x∈F(X) に F(f)(u)=x となる f:A→X が一意に存在するもの．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000401",
+        "K-000403",
+        "K-000402"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000405",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "表現可能函手",
+      "statement": "F が Hom_C(A,−) と自然同型であるとき共変表現可能という．反変の場合は Hom_C(−,A) と自然同型．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000402",
+        "K-000403",
+        "K-000279"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000406",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "普遍元と表現可能性",
+      "statement": "共変集合値函手 F が表現可能 ⇔ 普遍元を持つ．普遍元 u は自然同型 f↦F(f)(u) を与える．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000404",
+        "K-000405",
+        "K-000402",
+        "K-000403",
+        "K-000280"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000407",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "普遍元の一意性",
+      "statement": "二つの普遍元 (A,u),(B,v) の間に F(h)(u)=v となる同型射 h:A→B が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000404",
+        "K-000243",
+        "K-000245"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000408",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "商集合の普遍元",
+      "statement": "同値関係 ∼ を持つ集合 S について，X への類上一定な写像の函手は商集合 S/∼ により表現される．",
+      "assumptions": [],
+      "position": [
+        117,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000404",
+        "K-000405",
+        "K-000055",
+        "K-000242"
+      ],
+      "status": "verified",
+      "source": "volumes/N-117/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000409",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Yonedaの補題（共変形）",
+      "statement": "局所小圏 C，集合値函手 F:C→Set と対象 A について，Nat(Hom_C(A,−),F) は F(A) と自然に一対一対応．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000401",
+        "K-000402",
+        "K-000403",
+        "K-000245"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000410",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Yonedaの補題（反変形）",
+      "statement": "F:C^op→Set に対し Nat(Hom_C(−,A),F) は F(A) と一対一対応．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000409",
+        "K-000401",
+        "K-000402"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000411",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Yoneda対応の自然性",
+      "statement": "共変形の対応は A と F に関して自然．F の自然変換は成分で u を移し，射 k:A→B は F(k) に対応．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000409",
+        "K-000403",
+        "K-000402"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000412",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "充満函手と忠実函手",
+      "statement": "函手が各射集合上で全射なら充満，単射なら忠実，両方なら充満忠実という．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000401",
+        "K-000245",
+        "K-000039"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000413",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Yoneda埋込み",
+      "statement": "小圏 C について A↦Hom_C(−,A) は C から反対圏上の集合値函手の圏への充満忠実函手．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000410",
+        "K-000412",
+        "K-000403",
+        "K-000278",
+        "K-000402",
+        "K-000047"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000414",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "充満忠実函手による同型の反映",
+      "statement": "充満忠実函手 F について F(f) が同型射なら f は同型射．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000412",
+        "K-000243",
+        "K-000245"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000415",
+      "kind": "worked_example",
+      "heading_kind": "worked_example",
+      "title": "表現函手間の自然変換の決定",
+      "statement": "自然変換 Hom_C(A,−)→Hom_C(B,−) は B→A の射 k により f↦f∘k と一意に表される．",
+      "assumptions": [],
+      "position": [
+        120,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000409",
+        "K-000402"
+      ],
+      "status": "verified",
+      "source": "volumes/N-120/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．",
+      "problem_tex": "局所小圏 $\\mathcal C$ の対象 $A,B$ に対し，$\\operatorname{Hom}_{\\mathcal C}(A,-)$ から $\\operatorname{Hom}_{\\mathcal C}(B,-)$ への自然変換をすべて記述せよ．"
+    },
+    {
+      "id": "K-000416",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開集合の圏",
+      "statement": "位相空間 X の開集合を対象とし U⊆V の場合だけ一つの射 U→V を置けば小圏となる．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000146",
+        "K-000241",
+        "K-000068",
+        "K-000020"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000417",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "集合値前層",
+      "statement": "X 上の集合値前層は Open(X)^op→Set の函手．開集合 U に F(U)，V⊆U に制限 ρ^U_V を対応させる．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000416",
+        "K-000401",
+        "K-000245",
+        "K-000242"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000418",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "前層の射",
+      "statement": "前層の射は各 U の写像 α_U:F(U)→G(U) で制限と可換なもの．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000417",
+        "K-000403",
+        "K-000278"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000419",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "函数の前層",
+      "statement": "集合 A を固定すると開集合 U 上の写像 U→A 全体は制限により前層をなす．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000417",
+        "K-000047",
+        "K-000042",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000420",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "連続函数の前層",
+      "statement": "位相空間 Y に値を取る連続写像 U→Y 全体は前層をなす．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000417",
+        "K-000217",
+        "K-000218",
+        "K-000255",
+        "K-000047"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000421",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "定値前層",
+      "statement": "集合 A を各開集合に対応させ全制限を id_A とすると前層．空集合で A が一元とは限らない．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000417",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000422",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開集合への前層の制限",
+      "statement": "開集合 V⊆X に前層 F を制限すると V 上の前層が得られる．",
+      "assumptions": [],
+      "position": [
+        51,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000417",
+        "K-000255",
+        "K-000147"
+      ],
+      "status": "verified",
+      "source": "volumes/N-51/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000423",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "語と自由モノイド",
+      "statement": "集合 S 上の語は S の元の有限列．連接により自由モノイド S* をなす．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000118",
+        "K-000165",
+        "K-000166",
+        "K-000163",
+        "K-000047",
+        "K-000026"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000424",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由モノイドの普遍性",
+      "statement": "任意の写像 S→M（M はモノイド）は一文字語の埋込みを経由する準同型 S*→M に一意に延長する．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000423",
+        "K-000165",
+        "K-000166",
+        "K-000170",
+        "K-000171"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000425",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "符号付き語と自由簡約",
+      "statement": "S±=S×{+,-} に逆文字の対合を入れ，隣接する a,a^{-1} の削除を簡約という．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000423",
+        "K-000033",
+        "K-000034",
+        "K-000102"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000426",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由簡約の一意性",
+      "statement": "任意の符号付き語は有限回の簡約で簡約語に達し，その簡約語は選ぶ順序によらない．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000425",
+        "K-000104",
+        "K-000100",
+        "K-000108"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000427",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "簡約語による同値関係",
+      "statement": "w∼v ⇔ r(w)=r(v) は連接と両立する同値関係．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000426",
+        "K-000423",
+        "K-000052"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000428",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由群",
+      "statement": "符号付き語を簡約語の一致で割った商集合は連接で群 F(S) をなし，各元は一意な簡約語を持つ．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000427",
+        "K-000426",
+        "K-000053",
+        "K-000225",
+        "K-000423",
+        "K-000226",
+        "K-000100"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000429",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由群の普遍性",
+      "statement": "任意の写像 S→G（G は群）は F(S)→G の群準同型に一意に延長する．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000428",
+        "K-000424",
+        "K-000425",
+        "K-000226",
+        "K-000282",
+        "K-000232"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000430",
+      "kind": "worked_example",
+      "heading_kind": "worked_example",
+      "title": "符号付き語の簡約",
+      "statement": "aba^{-1}ab^{-1} は a に簡約される．",
+      "assumptions": [],
+      "position": [
+        66,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000425",
+        "K-000426"
+      ],
+      "status": "verified",
+      "source": "volumes/N-66/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．",
+      "problem_tex": "相異なる二文字 $a,b$ に対し，符号付き語 $aba^{-1}ab^{-1}$ を簡約せよ．"
+    },
+    {
+      "id": "K-000431",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "単純群",
+      "statement": "非自明な群で正規部分群が自明群と自身のみであるものを単純群という．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000265",
+        "K-000267",
+        "K-000225"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000432",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "組成列",
+      "statement": "有限列 G=G_0⊋⋯⊋G_r={1} で各 G_{i+1} が G_i の正規部分群，G_i/G_{i+1} が単純群となるもの．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000431",
+        "K-000265",
+        "K-000267",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000433",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限群の組成列の存在",
+      "statement": "任意の有限群は組成列を持つ．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000432",
+        "K-000292",
+        "K-000313",
+        "K-000111",
+        "K-000113",
+        "K-000104"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000434",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Jordan–Hölderの定理（有限群）",
+      "statement": "有限群の任意の二つの組成列は同じ長さを持ち，組成因子の同型類は重複を込めて順序を除き一致する．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000432",
+        "K-000433",
+        "K-000290",
+        "K-000292",
+        "K-000113",
+        "K-000104",
+        "K-000315",
+        "K-000265"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000435",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "交換子と導来部分群",
+      "statement": "[x,y]=xyx^{-1}y^{-1} と定め，全交換子の生成部分群を [G,G] と書く．これは正規部分群．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000225",
+        "K-000231",
+        "K-000265",
+        "K-000232"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000436",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可換化",
+      "statement": "正規部分群 N⊆G に対し G/N が可換 ⇔ [G,G]⊆N．G/[G,G] は可換群への準同型に関する普遍性を持つ．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000435",
+        "K-000267",
+        "K-000288",
+        "K-000225",
+        "K-000283"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000437",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "可解群",
+      "statement": "G^(0)=G，G^(n+1)=[G^(n),G^(n)] とおき，ある n で G^(n)={1} なら可解群という．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000435",
+        "K-000105",
+        "K-000230"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000438",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可解性と可換商の列",
+      "statement": "G は可解 ⇔ 有限の降下列 G=H_0⊇⋯⊇H_r={1} で H_{i+1}◁H_i，H_i/H_{i+1} 可換となるものが存在する．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000437",
+        "K-000436",
+        "K-000435",
+        "K-000100",
+        "K-000231"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000439",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可解群の部分群と商群",
+      "statement": "可解群の部分群及び商群は可解．N が正規で N と G/N が可解なら G も可解．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000437",
+        "K-000435",
+        "K-000282",
+        "K-000268",
+        "K-000100",
+        "K-000231"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000440",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限可解群の組成因子",
+      "statement": "有限群が可解であることと，ある（従って任意の）組成列の組成因子が可換であることは同値．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000437",
+        "K-000432",
+        "K-000433",
+        "K-000436",
+        "K-000431",
+        "K-000435",
+        "K-000265"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000441",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "可換群の可解性",
+      "statement": "可換群 G の導来部分群は自明であり，可解である．",
+      "assumptions": [],
+      "position": [
+        124,
+        1,
+        2,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000435",
+        "K-000437"
+      ],
+      "status": "verified",
+      "source": "volumes/N-124/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -13168,16 +14402,20 @@
       "number": 51,
       "title": "前層",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         18,
-        8
+        8,
+        117,
+        55,
+        56
       ],
       "goals": [
         "開集合の圏・制限写像・前層"
       ],
       "treatise": "T-51",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 52,
@@ -13390,7 +14628,7 @@
       "number": 66,
       "title": "自由モノイドと自由群",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         64,
         5
@@ -13399,7 +14637,8 @@
         "語・簡約・自由構成・普遍性"
       ],
       "treatise": "T-09",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 67,
@@ -14137,7 +15376,7 @@
       "number": 117,
       "title": "普遍性と表現可能性",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         18
       ],
@@ -14145,7 +15384,8 @@
         "普遍元・表現可能函手"
       ],
       "treatise": "T-18",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 118,
@@ -14179,15 +15419,17 @@
       "number": 120,
       "title": "Yonedaの補題",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
-        18
+        18,
+        117
       ],
       "goals": [
         "局所小圏・Yoneda埋込み"
       ],
       "treatise": "T-18",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 121,
@@ -14239,7 +15481,7 @@
       "number": 124,
       "title": "組成列と可解群",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         19,
         64
@@ -14248,7 +15490,8 @@
         "組成列・Jordan–Hölder・可解性"
       ],
       "treatise": "T-19",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 125,

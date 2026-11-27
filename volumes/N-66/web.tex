@@ -1,0 +1,157 @@
+% Web専用原稿．
+% 構成案：語のモノイド・符号付き語・自由簡約・商群・自由群の普遍性．
+% 文献確認：Lang, Algebra, Ch. I §12（自由群と生成集合に関する本文を確認）．符号付き有限列の簡約による独自構成．
+\section{語と自由モノイド}
+% genron:begin K-000423
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000118
+% genron:use K-000165
+% genron:use K-000166
+% genron:use K-000163
+% genron:use K-000047
+% genron:use K-000026
+\begin{defn}[語と自由モノイド]
+集合 $S$ の元の有限列を $S$ 上の語という．すべての語からなる集合を $S^*$ と書く．これは各自然数 $n$ について集合 $S^n$ の非交和として構成できる．二つの語の連接を積，空語を単位元とするとモノイドとなる．これを $S$ 上の自由モノイドという．
+\end{defn}
+\begin{proof}
+連接は各列の長さの和を長さとし，元を順に並べる操作である．三語の連接は同じ順序で元を並べるので結合律を満たし，空語は左右の単位元となる．
+\end{proof}
+% genron:end K-000423
+% genron:begin K-000424
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000423
+% genron:use K-000165
+% genron:use K-000166
+% genron:use K-000170
+% genron:use K-000171
+\begin{prop}[自由モノイドの普遍性]
+一文字語による写像 $\iota:S\to S^*$ とする．任意のモノイド $M$ と写像 $f:S\to M$ に対して $f=\bar f\circ\iota$ を満たすモノイド準同型 $\bar f:S^*\to M$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+語 $(s_1,\ldots,s_n)$ を有限積 $f(s_1)\cdots f(s_n)$ に移し，空語を単位元に移す．\GenronRef{K-000166}$ によって連接と積の対応が成立するから準同型である．任意の語は一文字語の積であるので条件を満たす写像はこれに限る．
+\end{proof}
+% genron:end K-000424
+\section{符号付き語と簡約}
+% genron:begin K-000425
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000423
+% genron:use K-000033
+% genron:use K-000034
+% genron:use K-000102
+\begin{defn}[符号付き語と自由簡約]
+集合 $S$ の二つの写しからなる非交和を $S^\pm=S\times\{+,-\}$ とする．文字 $a=(s,+)$ と $(s,-)$ を互いに逆文字とし，$a^{-1}$ で他方を表す．ここで符号は相異なる二記号である．符号付き語から隣接する $aa^{-1}$ を削除する操作を一段の簡約という．そのような隣接対を持たない語を簡約語という．
+\end{defn}
+% genron:end K-000425
+% genron:begin K-000426
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000425
+% genron:use K-000104
+% genron:use K-000100
+% genron:use K-000108
+\begin{prop}[自由簡約の一意性]
+任意の符号付き語 $w$ は有限回の簡約で簡約語に達し，得られる簡約語は簡約の順序に依存しない．これを $r(w)$ と書く．
+\end{prop}
+\begin{proof}
+各簡約は長さを二つ減らすため，長さの帰納法で簡約語に達する．一意性も長さに関する強い帰納法で示す．簡約可能な語について，二つの最初の削除を比較する．同じ位置なら結果は同じである．削除する二対が互いに素なら双方を削除した共通の語に達する．二対が一文字を共有する場合，該当する三文字は $aa^{-1}a$ の形であり，どちらを削除しても一文字 $a$ が残る．いずれの場合にも最初の削除後の語は元より短く，帰納法の仮定によりその簡約語は一致する．元の語が既に簡約語なら削除はなく一意である．
+\end{proof}
+% genron:end K-000426
+% genron:begin K-000427
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000426
+% genron:use K-000423
+% genron:use K-000052
+\begin{prop}[簡約語による同値関係]
+符号付き語全体に $w\sim v$ を $r(w)=r(v)$ によって定める．これは同値関係であり，任意の語 $p,q$ に対して $w\sim v$ なら $pwq\sim pvq$ となる．
+\end{prop}
+\begin{proof}
+同値関係であることは等号の性質による．$pwq$ の中で $w$ を簡約して $pr(w)q$ に至るから，自由簡約の一意性により $r(pwq)=r(pr(w)q)$ である．$v$ についても同じ等式が成り立つので $r(w)=r(v)$ から結論を得る．
+\end{proof}
+% genron:end K-000427
+\section{自由群}
+% genron:begin K-000428
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000427
+% genron:use K-000426
+% genron:use K-000053
+% genron:use K-000225
+% genron:use K-000423
+% genron:use K-000226
+% genron:use K-000100
+\begin{prop}[自由群]
+同値関係 $\sim$ による商集合を $F(S)$ と書く．$[w][v]=[wv]$ と定めると群となる．各元はただ一つの簡約語で表される．写像 $\iota:S\to F(S)$，$s\mapsto[(s,+)]$ は単射であり，その像は $F(S)$ を生成する．
+\end{prop}
+\begin{proof}
+連接との両立性によって積は代表元に依存しない．結合律と空語の単位元性は連接のそれらから従う．語 $w=a_1\cdots a_n$ に対し $v=a_n^{-1}\cdots a_1^{-1}$ とおくと $wv,vw$ は隣接対の削除を繰り返すことで空語に達する．従って $[v]$ は $[w]$ の逆元である．簡約語の存在と一意性は前の命題による．相異なる一文字語は簡約語のまま相異なるので $\iota$ は単射である．各語は一文字語の積であり，負符号の文字は正符号の文字の逆元だから生成性も従う．
+\end{proof}
+% genron:end K-000428
+% genron:begin K-000429
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000428
+% genron:use K-000424
+% genron:use K-000425
+% genron:use K-000226
+% genron:use K-000282
+% genron:use K-000232
+\begin{prop}[自由群の普遍性]
+任意の群 $G$ と写像 $f:S\to G$ に対し $\bar f\circ\iota=f$ を満たす群準同型 $\bar f:F(S)\to G$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+正符号の文字 $(s,+)$ に $f(s)$，負符号の文字に $f(s)^{-1}$ を対応させる．自由モノイドの普遍性によって符号付き語全体から $G$ への準同型が定まる．隣接する逆文字の値の積は単位元であるため，簡約しても積の値は変わらない．従って同値類上で値が定まり，連接による積を保存する．自由群は $\iota(S)$ で生成されるので延長は一意である．
+\end{proof}
+% genron:end K-000429
+% genron:begin K-000430
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000425
+% genron:use K-000426
+\begin{prop}[符号付き語の簡約]
+まず中央の $a^{-1}a$ を削除して $abb^{-1}$ を得る．続いて $bb^{-1}$ を削除すれば $a$ となる．一文字語は簡約語であるから，自由簡約の一意性によりこれが答えである．
+\end{prop}
+% genron:end K-000430

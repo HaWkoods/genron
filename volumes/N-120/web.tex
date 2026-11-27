@@ -1,0 +1,136 @@
+% Web専用原稿．
+% 構成案：共変・反変Yonedaの補題，自然性，充満忠実性．
+% 文献確認：Mac Lane, Categories for the Working Mathematician, Ch. III §2（Yoneda補題の自然性・埋込み・小ささに関する本文を確認）．
+\section{Yonedaの補題}
+% genron:begin K-000409
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000401
+% genron:use K-000402
+% genron:use K-000403
+% genron:use K-000245
+\begin{prop}[Yonedaの補題（共変形）]
+局所小圏 $\mathcal C$，集合値函手 $F:\mathcal C\to\mathbf{Set}$ 及び対象 $A$ に対して
+\[
+ \eta\longmapsto\eta_A(1_A)
+\]
+は自然変換 $\operatorname{Hom}_{\mathcal C}(A,-)\to F$ と元 $u\in F(A)$ の間の一対一対応を与える．$\mathcal C$ が小圏なら自然変換全体は集合である．大圏の場合にもこの対応を個々の自然変換について述べることができる．
+\end{prop}
+\begin{proof}
+自然変換 $\eta$ と射 $f:A\to X$ に自然性を適用すると
+\[
+ \eta_X(f)=F(f)(\eta_A(1_A))
+\]
+である．従って $\eta$ は $u=\eta_A(1_A)$ により一意に定まる．逆に任意の $u\in F(A)$ に対し $\eta_X^u(f)=F(f)(u)$ とおく．$g:X\to Y$ について $F(g)(\eta_X^u(f))=\eta_Y^u(g\circ f)$ であるから自然変換であり，$\eta_A^u(1_A)=u$ である．小圏では対象が集合をなし，各成分の写像集合の直積から条件により自然変換を集められる．
+\end{proof}
+% genron:end K-000409
+% genron:begin K-000410
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000409
+% genron:use K-000401
+% genron:use K-000402
+\begin{prop}[Yonedaの補題（反変形）]
+反対圏上の集合値函手 $F:\mathcal C^{\mathrm{op}}\to\mathbf{Set}$ についても，自然変換 $\operatorname{Hom}_{\mathcal C}(-,A)\to F$ は $u=\eta_A(1_A)\in F(A)$ と一対一に対応する．
+\end{prop}
+\begin{proof}
+反対圏に共変形を適用する．射 $f:X\to A$ に対応する成分は $\eta_X(f)=F(f^{\mathrm{op}})(u)$ である．
+\end{proof}
+% genron:end K-000410
+% genron:begin K-000411
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000409
+% genron:use K-000403
+% genron:use K-000402
+\begin{prop}[Yoneda対応の自然性]
+共変形の対応は函手 $F$ と対象 $A$ に関して自然である．自然変換 $\alpha:F\to G$ は $u\in F(A)$ を $\alpha_A(u)$ に移す．射 $k:A\to B$ に関しては，$\operatorname{Hom}_{\mathcal C}(B,-)\to\operatorname{Hom}_{\mathcal C}(A,-)$ を $h\mapsto h\circ k$ で定めて前合成する操作が $u\mapsto F(k)(u)$ に対応する．
+\end{prop}
+\begin{proof}
+前者は $(\alpha\circ\eta)_A(1_A)=\alpha_A(\eta_A(1_A))$ による．後者では前合成した変換の $B$ 成分を $1_B$ に適用すると $\eta_B(k)=F(k)(u)$ となる．
+\end{proof}
+% genron:end K-000411
+\section{Yoneda埋込み}
+% genron:begin K-000412
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000401
+% genron:use K-000245
+% genron:use K-000039
+\begin{defn}[充満函手と忠実函手]
+局所小圏の間の函手 $F:\mathcal C\to\mathcal D$ について，任意の対象 $X,Y$ に対する射集合の写像 $\operatorname{Hom}_{\mathcal C}(X,Y)\to\operatorname{Hom}_{\mathcal D}(F(X),F(Y))$ が全射であるとき充満，単射であるとき忠実という．両方を満たすとき充満忠実という．
+\end{defn}
+% genron:end K-000412
+% genron:begin K-000413
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000410
+% genron:use K-000412
+% genron:use K-000403
+% genron:use K-000278
+% genron:use K-000402
+% genron:use K-000047
+\begin{prop}[Yoneda埋込み]
+小圏 $\mathcal C$ に対して，対象 $A$ を $\operatorname{Hom}_{\mathcal C}(-,A)$ に，射 $k:A\to B$ を後合成 $f\mapsto k\circ f$ による自然変換に移す対応は，反対圏上の集合値函手と自然変換の圏への充満忠実函手を定める．これを Yoneda 埋込みという．
+\end{prop}
+\begin{proof}
+函手の圏では対象全体の集合性を要求せず，二函手の自然変換は小圏の各対象における写像集合の直積の部分集合である．合成は成分ごとに定められる．後合成が自然変換となるのは結合律による．恒等射及び合成を保存することも同じ法則から従う．\GenronRef{K-000410}$ を $F=\operatorname{Hom}_{\mathcal C}(-,B)$ に適用すれば，二つの表現函手間の自然変換は $k\in\operatorname{Hom}_{\mathcal C}(A,B)$ と一意に対応し，その逆対応は後合成である．従って充満かつ忠実である．
+\end{proof}
+% genron:end K-000413
+% genron:begin K-000414
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000412
+% genron:use K-000243
+% genron:use K-000245
+\begin{prop}[充満忠実函手による同型の反映]
+充満忠実函手 $F$ において $F(f)$ が同型射なら $f$ も同型射である．また $F(X)$ と $F(Y)$ が同型なら $X$ と $Y$ も同型である．
+\end{prop}
+\begin{proof}
+$F(f)$ の逆射は充満性により $F(g)$ と書ける．$F(gf)=F(1_X)$，$F(fg)=F(1_Y)$ となり，忠実性により $gf=1_X$，$fg=1_Y$ である．第二の主張では充満性により与えられた同型射を $F(f)$ と書き，第一の主張を用いる．
+\end{proof}
+% genron:end K-000414
+% genron:begin K-000415
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000409
+% genron:use K-000402
+\begin{prop}[表現函手間の自然変換の決定]
+\GenronRef{K-000409}$ において $F(X)=\operatorname{Hom}_{\mathcal C}(B,X)$ とおく．対応する元は $k=\eta_A(1_A)\in\operatorname{Hom}_{\mathcal C}(B,A)$ であり，各成分は $\eta_X(f)=f\circ k$ である．この $k$ は一意である．
+\end{prop}
+% genron:end K-000415

@@ -1,0 +1,142 @@
+% Web専用原稿．
+% 構成案：局所小圏・反対圏・Hom函手・普遍元・表現可能性・一意性．
+% 文献確認：Mac Lane, Categories for the Working Mathematician, Ch. III §1–2（普遍射・普遍元の本文を確認）．集合の大きさを明記する．
+\section{反対圏とHom函手}
+% genron:begin K-000401
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+% genron:use K-000036
+\begin{defn}[局所小圏と反対圏]
+圏 $\mathcal C$ が局所小であるとは，任意の対象 $X,Y$ について $\operatorname{Hom}_{\mathcal C}(X,Y)$ が集合であることをいう．対象は同じとし，射 $f:X\to Y$ を逆向きの射 $f^{\mathrm{op}}:Y\to X$ に置き換え，$(g\circ f)^{\mathrm{op}}=f^{\mathrm{op}}\circ g^{\mathrm{op}}$ と定めた圏を反対圏 $\mathcal C^{\mathrm{op}}$ という．反対圏の結合律・単位律は元の圏の法則に帰着する．
+\end{defn}
+% genron:end K-000401
+% genron:begin K-000402
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000401
+% genron:use K-000245
+% genron:use K-000242
+% genron:use K-000036
+\begin{prop}[Hom函手]
+局所小圏 $\mathcal C$ と対象 $A$ を固定する．対象 $X$ に集合 $\operatorname{Hom}_{\mathcal C}(A,X)$ を，射 $f:X\to Y$ に $u\mapsto f\circ u$ を対応させると集合値函手 $\operatorname{Hom}_{\mathcal C}(A,-)$ を得る．同様に射 $f:X\to Y$ に $v\mapsto v\circ f$ を対応させると反対圏上の函手 $\operatorname{Hom}_{\mathcal C}(-,A)$ を得る．
+\end{prop}
+\begin{proof}
+いずれも射の合成により写像が定まり，結合律及び恒等射の性質により函手の二条件を満たす．反対圏上の場合には合成順序が逆になる．
+\end{proof}
+% genron:end K-000402
+% genron:begin K-000403
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000401
+% genron:use K-000245
+% genron:use K-000277
+\begin{defn}[集合値函手の自然変換]
+局所小圏 $\mathcal C$ から集合の圏 $\mathbf{Set}$ への函手 $F,G$ について，各対象 $X$ に写像 $\eta_X:F(X)\to G(X)$ が指定され，任意の射 $f:X\to Y$ に対して $G(f)\circ\eta_X=\eta_Y\circ F(f)$ が成り立つとき自然変換という．対象全体が集合でない場合は，この対応全体が集合であるとは仮定しない．合成と恒等変換は成分ごとに定める．
+\end{defn}
+% genron:end K-000403
+\section{普遍元と表現}
+% genron:begin K-000404
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000401
+% genron:use K-000403
+% genron:use K-000402
+\begin{defn}[普遍元]
+集合値函手 $F:\mathcal C\to\mathbf{Set}$ に対し，対象 $A$ と元 $u\in F(A)$ の組が，任意の対象 $X$ と元 $x\in F(X)$ について $F(f)(u)=x$ を満たす射 $f:A\to X$ をただ一つ持つとき，$(A,u)$ を $F$ の普遍元という．
+\end{defn}
+% genron:end K-000404
+% genron:begin K-000405
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000402
+% genron:use K-000403
+% genron:use K-000279
+\begin{defn}[表現可能函手]
+集合値函手 $F:\mathcal C\to\mathbf{Set}$ がある対象 $A$ に対して $\operatorname{Hom}_{\mathcal C}(A,-)$ と自然同型であるとき，表現可能であるという．反対圏上の集合値函手の場合は $\operatorname{Hom}_{\mathcal C}(-,A)$ との自然同型によって定める．
+\end{defn}
+% genron:end K-000405
+% genron:begin K-000406
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000404
+% genron:use K-000405
+% genron:use K-000402
+% genron:use K-000403
+% genron:use K-000280
+\begin{prop}[普遍元と表現可能性]
+共変集合値函手 $F$ が表現可能であることと普遍元を持つことは同値である．普遍元 $(A,u)$ から得られる表現は
+\[
+ \theta_X:\operatorname{Hom}_{\mathcal C}(A,X)\to F(X),
+ \quad f\mapsto F(f)(u)
+\]
+である．
+\end{prop}
+\begin{proof}
+普遍性により各 $\theta_X$ は全単射である．$g:X\to Y$ について $F(g)(F(f)(u))=F(g\circ f)(u)$ なので自然性が成立し，逆の全単射も自然性を満たす．逆に自然同型 $\theta$ が与えられれば $u=\theta_A(1_A)$ とおく．自然性から $\theta_X(f)=F(f)(u)$ であり，各成分の全単射性が普遍性を与える．
+\end{proof}
+% genron:end K-000406
+% genron:begin K-000407
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000404
+% genron:use K-000243
+% genron:use K-000245
+\begin{prop}[普遍元の一意性]
+同じ函手の普遍元 $(A,u)$ と $(B,v)$ の間には $F(h)(u)=v$ を満たす同型射 $h:A\to B$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+普遍性により $F(h)(u)=v$，$F(k)(v)=u$ となる射 $h:A\to B$，$k:B\to A$ が一意に存在する．$F(kh)(u)=u=F(1_A)(u)$ なので $kh=1_A$ であり，同様に $hk=1_B$ である．
+\end{proof}
+% genron:end K-000407
+% genron:begin K-000408
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000404
+% genron:use K-000405
+% genron:use K-000055
+% genron:use K-000242
+\begin{prop}[商集合の普遍元]
+集合 $S$ 上の同値関係 $\sim$ を固定する．集合 $X$ に対し $F(X)$ を同値類上で一定な $S\to X$ の写像全体とし，射には後合成を対応させる．標準全射 $\pi:S\to S/{\sim}$ は $F(S/{\sim})$ の元であり，\GenronRef{K-000055}$ によって普遍元 $(S/{\sim},\pi)$ を与える．従って商集合はこの函手を表現する．
+\end{prop}
+% genron:end K-000408

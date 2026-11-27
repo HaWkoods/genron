@@ -1,0 +1,220 @@
+% Web専用原稿．
+% 構成案：単純群・組成列の存在・Jordan–Hölderの定理・導来部分群・可解性．
+% 文献確認：Lang, Algebra, Ch. I §3（Jordan–Hölderに先行するZassenhausの補題の記述を確認）．有限群に限定し，第二同型定理と濃度の帰納法による別証明を採用．
+\section{組成列}
+% genron:begin K-000431
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000265
+% genron:use K-000267
+% genron:use K-000225
+\begin{defn}[単純群]
+自明群でない群 $G$ で，正規部分群が $\{1_G\}$ と $G$ に限られるものを単純群という．
+\end{defn}
+% genron:end K-000431
+% genron:begin K-000432
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000431
+% genron:use K-000265
+% genron:use K-000267
+% genron:use K-000118
+\begin{defn}[組成列]
+群 $G$ の部分群の有限列
+\[
+ G=G_0\supsetneq G_1\supsetneq\cdots\supsetneq G_r=\{1_G\}
+\]
+において，各 $G_{i+1}$ が $G_i$ の正規部分群であり $G_i/G_{i+1}$ が単純群であるとき組成列という．これらの商群を組成因子という．自明群の組成列は長さ $0$ とする．各 $G_i$ が $G$ 自身の正規部分群であることは要求しない．
+\end{defn}
+% genron:end K-000432
+% genron:begin K-000433
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000432
+% genron:use K-000292
+% genron:use K-000313
+% genron:use K-000111
+% genron:use K-000113
+% genron:use K-000104
+\begin{prop}[有限群の組成列の存在]
+任意の有限群 $G$ は組成列を持つ．
+\end{prop}
+\begin{proof}
+$|G|$ について強い帰納法を用いる．自明群では空の段階列を取る．非自明群では真の正規部分群全体は有限であり，$\{1_G\}$ を含むので，濃度が最大のもの $N$ を取れる．\GenronRef{K-000292}$ により $G/N$ は単純群である．$N$ は真部分群なので $|N|<|G|$ であり，帰納法により $N$ の組成列を得る．その前に $G$ を置けば所要の組成列となる．
+\end{proof}
+% genron:end K-000433
+% genron:begin K-000434
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000432
+% genron:use K-000433
+% genron:use K-000290
+% genron:use K-000292
+% genron:use K-000113
+% genron:use K-000104
+% genron:use K-000315
+% genron:use K-000265
+\begin{prop}[Jordan–Hölderの定理（有限群）]
+有限群 $G$ の任意の二つの組成列は同じ長さを持ち，順序を除いて組成因子は同型である（同一の同型類の重複も数える）．
+\end{prop}
+\begin{proof}
+$|G|$ について強い帰納法を用いる．自明群では明らかである．二つの組成列の第一の真部分群を $M,N$ とする．いずれも $G$ の極大真正規部分群である（商の単純性及び部分群対応による）．$M=N$ なら $M$ に帰納法を適用すればよい．
+$M\ne N$ なら $MN$ は両者を含む正規部分群であり，極大性により $MN=G$ となる．$D=M\cap N$ とおく．\GenronRef{K-000290}$ により
+\[
+ M/D\simeq G/N,\qquad N/D\simeq G/M
+\]
+である．従って両商は単純群である．$D$ の組成列を一つ取り，その前に $M$ を置いた組成列と，$N$ を置いた組成列を作る．$M,N$ はともに $G$ より小さいから，帰納法により元の二組成列の $M,N$ 以下の組成因子は，それぞれこれらの組成因子と順序を除いて一致する．従って $G$ の第一段階も含めると，いずれも $G/M$ と $G/N$ 及び $D$ の組成因子からなり，結論を得る．
+\end{proof}
+% genron:end K-000434
+\section{可解群}
+% genron:begin K-000435
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000231
+% genron:use K-000265
+% genron:use K-000232
+\begin{defn}[交換子と導来部分群]
+群 $G$ の二元の交換子を $[x,y]=xyx^{-1}y^{-1}$ と定める．全交換子の生成部分群を $[G,G]$ と書き導来部分群という．これは正規部分群である．
+\end{defn}
+\begin{proof}
+任意の $g\in G$ に対し $g[x,y]g^{-1}=[gxg^{-1},gyg^{-1}]$ である．共役は交換子全体を自身に移し，その逆も同じ性質を持つので生成部分群全体を保つ．
+\end{proof}
+% genron:end K-000435
+% genron:begin K-000436
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000435
+% genron:use K-000267
+% genron:use K-000288
+% genron:use K-000225
+% genron:use K-000283
+\begin{prop}[可換化]
+正規部分群 $N$ に対して $G/N$ が可換群であることと $[G,G]\subseteq N$ は同値である．従って $G/[G,G]$ は可換群であり，$G$ から可換群への任意の群準同型はこの商を一意に経由する．
+\end{prop}
+\begin{proof}
+商群の二元 $xN,yN$ が可換であることは $[x,y]\in N$ と同値である．任意の二元について成立することは生成部分群の包含と同値である．可換群への準同型は交換子を単位元へ移すから \GenronRef{K-000288}$ によって分解する．
+\end{proof}
+% genron:end K-000436
+% genron:begin K-000437
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000435
+% genron:use K-000105
+% genron:use K-000230
+\begin{defn}[可解群]
+$G^{(0)}=G$，$G^{(n+1)}=[G^{(n)},G^{(n)}]$ と帰納的に定める．この列を導来列という．ある自然数 $n$ について $G^{(n)}=\{1_G\}$ となる群 $G$ を可解群という．
+\end{defn}
+% genron:end K-000437
+% genron:begin K-000438
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000437
+% genron:use K-000436
+% genron:use K-000435
+% genron:use K-000100
+% genron:use K-000231
+\begin{prop}[可解性と可換商の列]
+群 $G$ が可解であることと，有限列 $G=H_0\supseteq\cdots\supseteq H_r=\{1_G\}$ で，各 $H_{i+1}$ が $H_i$ において正規であり商 $H_i/H_{i+1}$ が可換群となるものが存在することは同値である．
+\end{prop}
+\begin{proof}
+可解群では導来列が所要の列となる．逆にこのような列があるとする．$G^{(0)}=H_0$ である．$G^{(i)}\subseteq H_i$ なら $G^{(i+1)}\subseteq[H_i,H_i]\subseteq H_{i+1}$ である．最後の包含は \GenronRef{K-000436}$ による．帰納法から $G^{(r)}\subseteq H_r=\{1_G\}$ となる．
+\end{proof}
+% genron:end K-000438
+% genron:begin K-000439
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000437
+% genron:use K-000435
+% genron:use K-000282
+% genron:use K-000268
+% genron:use K-000100
+% genron:use K-000231
+\begin{prop}[可解群の部分群と商群]
+可解群の部分群及び商群は可解群である．逆に $N$ が $G$ の正規部分群であって $N$ と $G/N$ が可解なら，$G$ も可解である．
+\end{prop}
+\begin{proof}
+部分群 $H\subseteq G$ に対し $H^{(i)}\subseteq G^{(i)}$ が交換子の定義と帰納法から従う．全射準同型 $q:G\to G/N$ は任意の商群の交換子を元の群の交換子の像として表すので $q(G^{(i)})=(G/N)^{(i)}$ が帰納法で成り立つ．従って前二主張を得る．逆の主張では $(G/N)^{(r)}=\{1\}$ なら $G^{(r)}\subseteq N$ である．$N^{(s)}=\{1\}$ とすれば $G^{(r+s)}\subseteq N^{(s)}=\{1\}$ となる．
+\end{proof}
+% genron:end K-000439
+% genron:begin K-000440
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000437
+% genron:use K-000432
+% genron:use K-000433
+% genron:use K-000436
+% genron:use K-000431
+% genron:use K-000435
+% genron:use K-000265
+\begin{prop}[有限可解群の組成因子]
+有限群 $G$ が可解であることと，ある組成列の全組成因子が可換群であることは同値である．このとき任意の組成列の全組成因子が可換群である．
+\end{prop}
+\begin{proof}
+可換商を持つ列の判定により，ある組成列の全因子が可換なら $G$ は可解である．逆に $G$ が可解なら各組成因子は可解である（部分群と商群への保存）．非自明な可解単純群 $H$ は導来部分群が真部分群でなければならない．実際 $[H,H]=H$ なら全導来列が $H$ となり可解でない．単純性により $[H,H]=\{1\}$ なので $H$ は可換である．従って任意の組成列について結論が成立する．
+\end{proof}
+% genron:end K-000440
+% genron:begin K-000441
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000435
+% genron:use K-000437
+\begin{prop}[可換群の可解性]
+可換群 $G$ では任意の二元の交換子は単位元に等しい．従って $G^{(1)}=\{1_G\}$ となり，可解である．
+\end{prop}
+% genron:end K-000441

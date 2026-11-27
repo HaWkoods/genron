@@ -550,12 +550,12 @@
       {
         "tex": "[G,G]",
         "label": "導来部分群",
-        "id": null
+        "id": "K-000435"
       },
       {
         "tex": "[x,y]",
         "label": "交換子",
-        "id": null
+        "id": "K-000435"
       },
       {
         "tex": "\\operatorname{ord}(x)",
