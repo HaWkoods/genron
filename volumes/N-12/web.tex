@@ -1,0 +1,228 @@
+% Web専用原稿．実数体の演算は次ノートに委ね，ここでは有理数の順序だけから切断の順序完備性を示す．
+% 文献検索は実施したが該当頁を未確認のため出典引用なし．
+\section{切断の定義}
+% genron:begin K-000677
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000019
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000621
+% genron:use K-000624
+% genron:use K-000072
+\begin{defn}[Dedekind切断]
+有理数体 $\mathbb Q$ の部分集合 $A$ が次の三条件を満たすとき，$A$ を Dedekind 切断（以下，単に切断）という．
+
+(1) $\varnothing\ne A\ne\mathbb Q$．
+
+(2) $a\in A,\ b\in\mathbb Q,\ b<a$ ならば $b\in A$．
+
+(3) 任意の $a\in A$ に対し $a<a'$ なる $a'\in A$ が存在する．
+
+切断全体の集合を $\mathcal D$ と記す．これは $\mathbb Q$ の冪集合から三条件により指定された部分集合である．
+\end{defn}
+% genron:end K-000677
+% genron:begin K-000678
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000019
+% genron:use K-000031
+% genron:use K-000624
+\begin{prop}[切断とその補集合]
+$A\in\mathcal D$ とする．$a\in A,\ b\in\mathbb Q\setminus A$ ならば $a<b$ である．また，$b\notin A,\ c\geq b$ ならば $c\notin A$ である．
+\end{prop}
+\begin{proof}
+もし $b\leq a$ ならば，$b=a$ の場合は明らかに，$b<a$ の場合は切断の条件 (2) により $b\in A$ となる．従って $a<b$ である．第二の主張について，もし $c\in A$ ならば第一の主張によって $c<b$ となり，矛盾する．
+\end{proof}
+% genron:end K-000678
+% genron:begin K-000679
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000024
+% genron:use K-000625
+% genron:use K-000628
+\begin{prop}[有理数に対応する切断]
+$r\in\mathbb Q$ に対し
+\[
+ L_r=\{q\in\mathbb Q\mid q<r\}
+\]
+とおくと，$L_r\in\mathcal D$ である．
+\end{prop}
+\begin{proof}
+$r-1\in L_r,\ r\notin L_r$ である．順序の推移性から下方閉性が従う．任意の $q\in L_r$ に対して，有理数の順序の稠密性により $q<s<r$ なる有理数 $s$ が存在する．従って $L_r$ は最大元を持たない．
+\end{proof}
+% genron:end K-000679
+% genron:begin K-000680
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000678
+% genron:use K-000679
+% genron:use K-000072
+\begin{prop}[補集合が最小元を持つ切断]
+$A\in\mathcal D$ がある $r\in\mathbb Q$ に対して $A=L_r$ と表されるための必要十分条件は，$\mathbb Q\setminus A$ が最小元を持つことである．このとき $r=\min(\mathbb Q\setminus A)$ である．
+\end{prop}
+\begin{proof}
+$A=L_r$ の場合には $\mathbb Q\setminus A=\{q\in\mathbb Q\mid r\leq q\}$ である．逆に $r$ が補集合の最小元ならば，\GenronRef{K-000678}により $A\subseteq L_r$ である．$q<r$ なる有理数 $q$ は $r$ の最小性から補集合には属さない．従って $L_r\subseteq A$ となる．
+\end{proof}
+% genron:end K-000680
+\section{切断の順序}
+% genron:begin K-000681
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000018
+% genron:use K-000020
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000624
+\begin{prop}[切断の全順序]
+$\mathcal D$ において $A\leq B$ を $A\subseteq B$ によって定めると，これは全順序である．この順序に伴う狭義順序 $A<B$ は真の包含を意味する．
+\end{prop}
+\begin{proof}
+包含関係の反射性・推移性と外延性によって半順序を得る．$A\not\subseteq B$ と仮定し，$a\in A\setminus B$ を取る．任意の $b\in B$ に対し $b<a$ である．実際，$a\leq b$ ならば $B$ の下方閉性に反する．$A$ の下方閉性により $b\in A$ であるから，$B\subseteq A$ となる．これで全順序性が示された．
+\end{proof}
+% genron:end K-000681
+% genron:begin K-000682
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000679
+% genron:use K-000681
+% genron:use K-000035
+% genron:use K-000076
+% genron:use K-000624
+\begin{prop}[有理数体から切断全体への順序埋込み]
+写像 $L:\mathbb Q\to\mathcal D,\ r\mapsto L_r$ は順序埋込みである．
+\end{prop}
+\begin{proof}
+$r<s$ ならば $L_r\subseteq L_s$ かつ $r\in L_s\setminus L_r$ である．従って $L_r<L_s$ となる．逆に $L_r<L_s$ であれば，全順序性から $r=s$ 又は $s<r$ は成立し得ない．従って $r<s$ である．これらから単射性，順序の保存と反映が従う．
+\end{proof}
+% genron:end K-000682
+% genron:begin K-000683
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000678
+% genron:use K-000679
+% genron:use K-000681
+% genron:use K-000682
+\begin{prop}[切断間の有理数の稠密性]
+$A,B\in\mathcal D$ が $A<B$ を満たすならば，$A<L_r<B$ なる $r\in\mathbb Q$ が存在する．
+\end{prop}
+\begin{proof}
+$t\in B\setminus A$ を取る．$B$ は最大元を持たないので $t<r$ なる $r\in B$ が存在する．\GenronRef{K-000678}により $A\subseteq L_r$ である．$t\in L_r\setminus A$ から包含は真である．一方 $B$ の下方閉性から $L_r\subseteq B$ であり，$r\in B\setminus L_r$ である．従って $A<L_r<B$ となる．
+\end{proof}
+% genron:end K-000683
+\section{上限と下限}
+% genron:begin K-000684
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000681
+% genron:use K-000026
+% genron:use K-000045
+% genron:use K-000073
+\begin{prop}[切断の上限]
+$\mathcal S\subseteq\mathcal D$ を空でない上に有界な集合とする．このとき $\mathcal S$ は $\mathcal D$ において上限を持ち，
+\[
+ \sup\mathcal S=\bigcup_{A\in\mathcal S} A
+\]
+である．
+\end{prop}
+\begin{proof}
+右辺を $U$ とおく．$\mathcal S\ne\varnothing$ で各切断は空でないから $U\ne\varnothing$ である．$\mathcal S$ の上界 $B\in\mathcal D$ を取ると，すべての $A\in\mathcal S$ に対し $A\subseteq B$ であるから $U\subseteq B\ne\mathbb Q$ である．$u\in U$ ならばある $A\in\mathcal S$ に対して $u\in A$ である．従って $v<u$ ならば $v\in A\subseteq U$ であり，また $u<u'$ なる $u'\in A\subseteq U$ が存在する．これで $U\in\mathcal D$ が示された．各 $A\in\mathcal S$ に対し $A\subseteq U$ であり，任意の上界 $C\in\mathcal D$ に対し $U\subseteq C$ であるから，$U$ は最小上界である．
+\end{proof}
+% genron:end K-000684
+% genron:begin K-000685
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000681
+% genron:use K-000684
+% genron:use K-000024
+% genron:use K-000073
+% genron:use K-000045
+% genron:use K-000646
+% genron:use K-000625
+% genron:use K-000679
+\begin{prop}[切断の下限]
+$\mathcal S\subseteq\mathcal D$ を空でない下に有界な集合とする．このとき $\mathcal S$ は $\mathcal D$ において下限を持つ．
+\end{prop}
+\begin{proof}
+$\mathcal B=\{B\in\mathcal D\mid \forall A\in\mathcal S,\ B\subseteq A\}$ とおく．仮定から $\mathcal B\ne\varnothing$ であり，$\mathcal S$ の任意の元は $\mathcal B$ の上界である．\GenronRef{K-000684}により $I=\sup\mathcal B$ が存在する．すべての $A\in\mathcal S$ は $\mathcal B$ の上界なので $I\subseteq A$ である．また，任意の $\mathcal S$ の下界は $\mathcal B$ の元であり $I$ 以下である．従って $I=\inf\mathcal S$ である．一般に集合としての共通部分が切断になるとは限らない．例えば $L_{1/n}$（正整数 $n$）の共通部分は $0$ を最大元として持つため，切断ではない．
+\end{proof}
+% genron:end K-000685
+% genron:begin K-000686
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000677
+% genron:use K-000678
+% genron:use K-000625
+% genron:use K-000646
+% genron:use K-000627
+% genron:use K-000104
+% genron:use K-000626
+% genron:use K-000641
+\begin{prop}[切断を挟む有理数]
+任意の $A\in\mathcal D$ 及び $\varepsilon\in\mathbb Q,\ \varepsilon>0$ に対して，
+\[
+ a\in A,\quad b\in\mathbb Q\setminus A,\quad 0<b-a<\varepsilon
+\]
+を満たす有理数 $a,b$ が存在する．
+\end{prop}
+\begin{proof}
+$0<h<\varepsilon$ なる有理数 $h$ を取る（例えば $h=\varepsilon/2$）．$a_0\in A,\ b_0\notin A$ を取り，$a_0<b_0$ に注意する．有理数体の Archimedes 性により $Nh>b_0-a_0$ なる正整数 $N$ が存在する．従って $a_0+Nh>b_0$ であり，\GenronRef{K-000678}により $a_0+Nh\notin A$ である．自然数の整列性から $a_0+kh\notin A$ なる最小の正整数 $k$ が存在する．その最小性と $a_0\in A$ から $a=a_0+(k-1)h\in A$，$b=a_0+kh\notin A$ である．$b-a=h$ であるから主張が従う．
+\end{proof}
+% genron:end K-000686

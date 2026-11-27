@@ -20777,6 +20777,322 @@
       "status": "verified",
       "source": "volumes/N-103/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000677",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Dedekind切断",
+      "statement": "有理数体の非空真部分集合 A で，下方閉かつ最大元を持たないものを Dedekind 切断という．その全体を D とする．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000019",
+        "K-000024",
+        "K-000027",
+        "K-000621",
+        "K-000624",
+        "K-000072"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000678",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断とその補集合",
+      "statement": "切断 A の任意の元 a と補集合の任意の元 b に対して a<b であり，補集合は上方閉である．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000019",
+        "K-000031",
+        "K-000624"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000679",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数に対応する切断",
+      "statement": "各 r∈Q に対し L_r={q∈Q:q<r} は Dedekind 切断である．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000024",
+        "K-000625",
+        "K-000628"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000680",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "補集合が最小元を持つ切断",
+      "statement": "切断 A がある r∈Q に対し A=L_r と表されるための必要十分条件は Q\\A が最小元を持つことである．このとき r はその最小元である．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000678",
+        "K-000679",
+        "K-000072"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000681",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断の全順序",
+      "statement": "包含関係 ⊆ は D 上の全順序を定める．狭義順序は真の包含で与えられる．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000018",
+        "K-000020",
+        "K-000068",
+        "K-000069",
+        "K-000624"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000682",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数体から切断全体への順序埋込み",
+      "statement": "写像 r↦L_r は Q から D への順序埋込みである．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000679",
+        "K-000681",
+        "K-000035",
+        "K-000076",
+        "K-000624"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000683",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断間の有理数の稠密性",
+      "statement": "A<B なる切断 A,B に対して A<L_r<B を満たす有理数 r が存在する．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000678",
+        "K-000679",
+        "K-000681",
+        "K-000682"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000684",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断の上限",
+      "statement": "D の非空な上に有界な部分集合 S は上限を持ち，sup S=⋃_{A∈S} A である．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000681",
+        "K-000026",
+        "K-000045",
+        "K-000073"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000685",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断の下限",
+      "statement": "D の非空な下に有界な部分集合 S は下限を持つ．下限は S の下界全体の上限である．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000681",
+        "K-000684",
+        "K-000024",
+        "K-000073",
+        "K-000045",
+        "K-000646",
+        "K-000625",
+        "K-000679"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000686",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断を挟む有理数",
+      "statement": "任意の切断 A と正有理数 ε に対し，a∈A,b∉A,0<b-a<ε なる有理数 a,b が存在する．",
+      "assumptions": [],
+      "position": [
+        12,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000677",
+        "K-000678",
+        "K-000625",
+        "K-000646",
+        "K-000627",
+        "K-000104",
+        "K-000626",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-12/web.tex",
+      "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
     }
   ],
   "notes": [
@@ -20958,7 +21274,7 @@
       "number": 12,
       "title": "Dedekind切断",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         79,
         4
@@ -20967,7 +21283,8 @@
         "切断の集合・順序・上限性"
       ],
       "treatise": "T-12",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 13,
