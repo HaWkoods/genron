@@ -1,0 +1,119 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 3.10.3 および積測度と完備化の区別を照合．本稿では完備化前の直積σ-加法族を採用する．
+\section{積測度}
+% genron:begin K-000862
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000182
+% genron:use K-000187
+% genron:use K-000748
+\begin{defn}[直積σ-加法族]
+可測空間 $(X,\mathcal A),(Y,\mathcal B)$ に対し，$\mathcal A\otimes\mathcal B=\sigma(\{A\times B\mid A\in\mathcal A,\ B\in\mathcal B\})$ を直積$\sigma$-加法族という．集合 $C\subseteq X\times Y$ の切断を $C_x=\{y\in Y\mid (x,y)\in C\}$，$C^y=\{x\in X\mid (x,y)\in C\}$ と記す．
+\end{defn}
+% genron:end K-000862
+% genron:begin K-000863
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000862
+% genron:use K-000182
+% genron:use K-000187
+\begin{prop}[可測集合の切断]
+$C\in\mathcal A\otimes\mathcal B$ ならば，任意の $x\in X,y\in Y$ に対し $C_x\in\mathcal B,C^y\in\mathcal A$ である．
+\end{prop}
+\begin{proof}
+$x$ を固定する．切断を取る操作は補集合及び可算合併と可換である．従って $C_x\in\mathcal B$ を満たす $C$ 全体は $X\times Y$ 上の$\sigma$-加法族である．長方形 $A\times B$ の切断は $x\in A$ なら $B$，それ以外なら $\varnothing$ であり，この族はすべての可測長方形を含む．生成の定義から結論を得る．もう一方も同様である．
+\end{proof}
+% genron:end K-000863
+% genron:begin K-000864
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000862
+% genron:use K-000863
+% genron:use K-000748
+% genron:use K-000751
+% genron:use K-000755
+% genron:use K-000758
+% genron:use K-000759
+% genron:use K-000819
+% genron:use K-000820
+% genron:use K-000822
+\begin{prop}[切断の測度の可測性]
+$\nu$ を $(Y,\mathcal B)$ 上の$\sigma$有限測度とする．任意の $C\in\mathcal A\otimes\mathcal B$ に対し，$x\mapsto \nu(C_x)$ は非負拡大実数値可測函数である．
+\end{prop}
+\begin{proof}
+まず $\nu(Y)<\infty$ とする．切断の測度が可測となる集合全体を $\mathcal D$ とおく．全体集合は $\mathcal D$ に属する．$C\subseteq D$ が $\mathcal D$ に属すれば，$\nu((D\setminus C)_x)=\nu(D_x)-\nu(C_x)$ であるから差集合も属する．互いに素な列については $\nu((\bigcup_j C_j)_x)=\sum_j\nu((C_j)_x)$ であり，非負可測函数の級数は可測である．従って $\mathcal D$ は Dynkin 族である．長方形の切断の測度は $\nu(B)1_A(x)$ である．可測長方形は有限交叉に閉じるので，\GenronRef{K-000820} によって $\mathcal A\otimes\mathcal B\subseteq\mathcal D$ である．一般の場合，$Y_n\uparrow Y$，$\nu(Y_n)<\infty$ となる可測集合列を取り，有限測度 $\nu_n(B)=\nu(B\cap Y_n)$ を用いる．下からの連続性によって $\nu(C_x)=\sup_n\nu_n(C_x)$ となり，この函数は可測である．
+\end{proof}
+% genron:end K-000864
+% genron:begin K-000865
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000862
+% genron:use K-000864
+% genron:use K-000748
+% genron:use K-000781
+% genron:use K-000783
+% genron:use K-000784
+% genron:use K-000787
+% genron:use K-000822
+\begin{prop}[σ有限積測度の存在]
+$\mu,\nu$ がそれぞれ $(X,\mathcal A),(Y,\mathcal B)$ 上の$\sigma$有限測度であるとする．$\mathcal A\otimes\mathcal B$ 上に，すべての可測長方形について $\lambda(A\times B)=\mu(A)\nu(B)$ を満たす$\sigma$有限測度 $\lambda$ が存在する．非負拡大実数の積では $0\cdot\infty=\infty\cdot0=0$ と約束する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000864} により $\lambda(C)=\int_X\nu(C_x)\,d\mu(x)$ と定められる．空集合での値は零である．互いに素な可測集合列 $(C_j)$ について切断も互いに素であり，\GenronRef{K-000787} によって
+\[
+\lambda(\bigcup_j C_j)=\int_X\sum_j\nu((C_j)_x)\,d\mu
+=\sum_j\lambda(C_j)
+\]
+である．長方形については切断が $B$ 又は空集合である．$\nu(B)$ が有限なら単函数積分の定義から等式を得る．無限なら $m1_A$ の増加列を用いて単調収束定理を適用すれば，$\mu(A)=0$ の場合は零，それ以外では無限となる．最後に有限測度を持つ集合列 $X_n\uparrow X,Y_n\uparrow Y$ を取ると $X_n\times Y_n\uparrow X\times Y$ であり，各長方形の測度は有限である．
+\end{proof}
+% genron:end K-000865
+% genron:begin K-000866
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000862
+% genron:use K-000865
+% genron:use K-000751
+% genron:use K-000821
+% genron:use K-000822
+% genron:use K-000754
+\begin{prop}[積測度の一意性と切断表示]
+前命題の測度はただ一つである．これを $\mu\otimes\nu$ と記す．すべての $C\in\mathcal A\otimes\mathcal B$ について
+\[
+(\mu\otimes\nu)(C)=\int_X\nu(C_x)\,d\mu=\int_Y\mu(C^y)\,d\nu
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+長方形上で一致する二測度を $\lambda,\lambda'$ とする．前命題の $F_n=X_n\times Y_n$ を用い，$\lambda_n(C)=\lambda(C\cap F_n)$，$\lambda'_n(C)=\lambda'(C\cap F_n)$ とおく．これらは有限測度であり，全体集合及びすべての長方形で一致する．\GenronRef{K-000821} を適用し，全可測集合で一致することを得る．$F_n\uparrow X\times Y$ だから下からの連続性によって $\lambda=\lambda'$ となる．また積の順を逆にして前命題と同じ切断積分を定めると，長方形上で同じ値を持つ測度が得られる．一意性が二つの切断表示を与える．なお，この構成は直積$\sigma$-加法族上のものであり，積測度の完備化を定義に含めない．
+\end{proof}
+% genron:end K-000866

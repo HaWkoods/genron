@@ -1,0 +1,142 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 2.6.1–2.6.2（Hahn分解・Jordan分解）を照合．拡大実数値の場合にも適用できるよう正集合の上限を用いて再構成．
+\section{符号付き測度}
+% genron:begin K-000867
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000714
+% genron:use K-000715
+% genron:use K-000748
+% genron:use K-000807
+% genron:use K-000811
+\begin{defn}[符号付き測度と正集合・負集合]
+可測空間 $(X,\mathcal A)$ 上の写像 $\eta:\mathcal A\to[-\infty,+\infty]$ が $\eta(\varnothing)=0$ を満たし，$+\infty,-\infty$ の両方を値に取ることがなく，互いに素な可測集合列について $\eta(\bigcup_n A_n)=\sum_n\eta(A_n)$ が成立するとき，これを符号付き測度という．右辺は正項和と負項和の差として定まり，不定形を許さない．可測集合 $P$ のすべての可測部分集合 $B$ について $\eta(B)\geq0$ なら $P$ を正集合といい，逆向きの不等号が成立する集合を負集合という．
+\end{defn}
+% genron:end K-000867
+% genron:begin K-000868
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000867
+% genron:use K-000706
+% genron:use K-000809
+% genron:use K-000132
+\begin{prop}[正集合の抽出]
+符号付き測度 $\eta$ が $+\infty$ を値に取らないとする．$\eta(A)>0$ を満たす可測集合 $A$ には，$\eta(P)>0$ を満たす正集合 $P\subseteq A$ が存在する．
+\end{prop}
+\begin{proof}
+$\eta(A)$ は有限である．$A$ の任意の可測部分集合 $B$ について $\eta(B)$ も有限である．実際，$\eta(B)=-\infty$ なら，$\eta(A\setminus B)\ne+\infty$ であることから有限加法性に反する．$A_0=A$ とする．$A_{n-1}$ が正集合なら操作を停止する．そうでなければ，$\eta(B)<-1/k$ となる可測部分集合 $B\subseteq A_{n-1}$ が存在するような最小の自然数 $k_n\geq1$ を取り，一つのそのような集合 $B_n$ を選び，$A_n=A_{n-1}\setminus B_n$ とする．停止すれば $\eta(A_n)\geq\eta(A)>0$ である．停止しない場合，$B_n$ は互いに素であり，$\bigcup_n B_n\subseteq A$ なので $\sum_n(-\eta(B_n))=-\eta(\bigcup_n B_n)<\infty$ である．従って $1/k_n\to0$ である．$P=A\setminus\bigcup_n B_n$ とおくと $\eta(P)\geq\eta(A)>0$ である．もし $P$ に負の測度を持つ可測部分集合 $D$ があれば，ある $k$ について $\eta(D)<-1/k$ となる．$D\subseteq A_{n-1}$ だから全ての $n$ で $k_n\leq k$ となり矛盾する．
+\end{proof}
+% genron:end K-000868
+% genron:begin K-000869
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000867
+% genron:use K-000868
+% genron:use K-000185
+% genron:use K-000715
+% genron:use K-000708
+% genron:use K-000132
+\begin{prop}[Hahn分解]
+任意の符号付き測度 $\eta$ に対し，互いに素な正集合 $P$ と負集合 $N$ であって $X=P\cup N$ となるものが存在する．
+\end{prop}
+\begin{proof}
+$\eta$ が $+\infty$ を値に取らない場合を示せばよい．そうでなければ $-\eta$ に適用して正負を交換する．正集合の可算合併は正集合である．実際，その任意の可測部分集合を各正集合に含まれる互いに素な集合に非交化して可算加法性を用いる．$\alpha=\sup\{\eta(P)\mid P\text{ は正集合}\}$ とおく．正集合 $P_j$ で $\eta(P_j)\to\alpha$ となるものを取る（$\alpha=+\infty$ なら発散する列を取る）．$P=\bigcup_j P_j$ は正集合で，$\eta(P)\geq\eta(P_j)$ が成立する．$+\infty$ を値に取らない仮定により $\alpha$ は有限であり，$\eta(P)=\alpha$ である．$N=X\setminus P$ が負集合でなければ，正の測度を持つ可測部分集合が存在する．\GenronRef{K-000868} によって $N$ に含まれる正集合 $D$ で $\eta(D)>0$ となるものが取れる．しかし $P\cup D$ は正集合で $\eta(P\cup D)=\alpha+\eta(D)>\alpha$ となり矛盾する．
+\end{proof}
+% genron:end K-000869
+% genron:begin K-000870
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000749
+\begin{defn}[互いに特異な測度]
+同じ可測空間上の二つの非負測度 $\mu,\nu$ について，ある可測集合 $P$ が存在して $\mu(X\setminus P)=0,\ \nu(P)=0$ となるとき，$\mu$ と $\nu$ は互いに特異であるといい，$\mu\perp\nu$ と記す．
+\end{defn}
+% genron:end K-000870
+% genron:begin K-000871
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000867
+% genron:use K-000869
+% genron:use K-000870
+% genron:use K-000748
+% genron:use K-000749
+\begin{prop}[Jordan分解]
+符号付き測度 $\eta$ は互いに特異な二つの非負測度 $\eta^+,\eta^-$ の差 $\eta=\eta^+-\eta^-$ として一意に表される．少なくとも一方は有限測度である．また任意の可測集合 $A$ に対し $\eta^+(A)=\sup_{B\subseteq A,\ B\in\mathcal A}\eta(B)$，$\eta^-(A)=\sup_{B\subseteq A,\ B\in\mathcal A}(-\eta(B))$ が成立する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000869} の分解 $X=P\cup N$ を用い $\eta^+(A)=\eta(A\cap P)$，$\eta^-(A)=-\eta(A\cap N)$ と定める．非負性と可算加法性は定義から従い，互いに特異である．一方が有限となることは $\eta$ の値の制限から従う．任意の $B\subseteq A$ について $\eta(B)\leq\eta^+(A)$ であり，$B=A\cap P$ が等号を与える．負部分も同様である．逆に互いに特異な非負測度 $\mu,\nu$ が差 $\eta$ を与えるとする．特異性の集合 $P'$ に対し，$\eta(B)\leq\mu(A)$ が任意の $B\subseteq A$ で成立し，$B=A\cap P'$ が等号を与える．従って $\mu=\eta^+$ であり，同様に $\nu=\eta^-$ である．
+\end{proof}
+% genron:end K-000871
+% genron:begin K-000872
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000869
+% genron:use K-000871
+% genron:use K-000748
+% genron:use K-000749
+\begin{prop}[全変動測度]
+$\lvert\eta\rvert=\eta^++\eta^-$ を符号付き測度の全変動測度という．任意の可測集合 $A$ に対して $\lvert\eta\rvert(A)$ は $A$ のすべての有限可測分割 $(A_j)_{j=1}^m$ にわたる $\sum_{j=1}^m|\eta(A_j)|$ の上限に等しい．
+\end{prop}
+\begin{proof}
+任意の分割に対し $|\eta(A_j)|\leq\eta^+(A_j)+\eta^-(A_j)$ であるから，有限加法性によって和は $\lvert\eta\rvert(A)$ 以下である．Hahn分解 $X=P\cup N$ に従う二分割 $A=(A\cap P)\cup(A\cap N)$ では和が $\eta^+(A)+\eta^-(A)$ に等しい．従って上限が実現される．特に実数値符号付き測度の全変動は有限である．
+\end{proof}
+% genron:end K-000872
+% genron:begin K-000873
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000867
+% genron:use K-000871
+% genron:use K-000872
+% genron:use K-000758
+% genron:use K-000787
+% genron:use K-000826
+% genron:use K-000827
+\begin{example}[可積分函数が定める符号付き測度]
+実可積分函数 $f$ に対し $\eta(A)=\int_A f\,d\mu$ と定めると有限符号付き測度となり，$\eta^\pm(A)=\int_A f^\pm\,d\mu$，$|\eta|(A)=\int_A|f|\,d\mu$ である．
+\end{example}
+\begin{proof}
+$f^\pm=\max(\pm f,0)$ とする．非負積分の可算加法性は指示函数の級数と \GenronRef{K-000787} に従う．両積分は有限であり，差は符号付き測度となる．$P=\{f\geq0\}$ と $N=\{f<0\}$ は Hahn分解を与えるから Jordan分解の一意性を用いる．
+\end{proof}
+% genron:end K-000873

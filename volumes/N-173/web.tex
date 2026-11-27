@@ -1,0 +1,166 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 5.4（直交系・射影）の目次を確認．証明は独自に構成．
+\section{内積空間とHilbert空間}
+% genron:begin K-000874
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000669
+% genron:use K-000717
+% genron:use K-000718
+% genron:use K-000788
+\begin{defn}[内積空間]
+$\mathbb K=\mathbb R$ 又は $\mathbb C$ とする．$\mathbb K$ 上の線形空間 $E$ において，第一変数に線形，第二変数に共役線形で，$\langle x,y\rangle=\overline{\langle y,x\rangle}$，$\langle x,x\rangle\geq0$，及び $\langle x,x\rangle=0\Leftrightarrow x=0$ を満たす写像 $\langle\cdot,\cdot\rangle:E\times E\to\mathbb K$ を内積という．実数体の場合，共役は恒等写像とする．
+\end{defn}
+% genron:end K-000874
+% genron:begin K-000875
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000874
+% genron:use K-000718
+% genron:use K-000719
+% genron:use K-000720
+\begin{prop}[Cauchy–Schwarzの不等式]
+内積空間の任意の $x,y$ について $|\langle x,y\rangle|^2\leq\langle x,x\rangle\langle y,y\rangle$ が成立する．等号が成立するのは $x,y$ が線形従属であるとき，かつそのときに限る．
+\end{prop}
+\begin{proof}
+$y=0$ なら明らかである．$y\ne0$ とし $a=\langle x,y\rangle/\langle y,y\rangle$ とおく．内積の諸性質から
+\[
+0\leq\langle x-ay,x-ay\rangle=\langle x,x\rangle-\frac{|\langle x,y\rangle|^2}{\langle y,y\rangle}
+\]
+となる．等号は正定値性によって $x=ay$ と同値である．
+\end{proof}
+% genron:end K-000875
+% genron:begin K-000876
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000874
+% genron:use K-000875
+% genron:use K-000709
+% genron:use K-000788
+% genron:use K-000789
+% genron:use K-000736
+\begin{prop}[内積から導かれるノルム]
+内積空間では $\|x\|=\sqrt{\langle x,x\rangle}$ がノルムを定める．内積はこのノルムに関して連続であり，平行四辺形等式 $\|x+y\|^2+\|x-y\|^2=2\|x\|^2+2\|y\|^2$ が成立する．
+\end{prop}
+\begin{proof}
+正定値性と斉次性は内積の定義から従う．\GenronRef{K-000875} によって
+\[
+\|x+y\|^2=\|x\|^2+2\operatorname{Re}\langle x,y\rangle+\|y\|^2\leq(\|x\|+\|y\|)^2
+\]
+である．連続性について，$(x',y')\to(x,y)$ のとき
+\[
+|\langle x',y'\rangle-\langle x,y\rangle|\leq\|x'-x\|\|y'\|+\|x\|\|y'-y\|
+\]
+であり，$\|y'\|$ は局所有界であるから右辺は零に収束する．平行四辺形等式は二つの平方を展開して得られる．
+\end{proof}
+% genron:end K-000876
+% genron:begin K-000877
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000874
+% genron:use K-000876
+% genron:use K-000794
+\begin{defn}[Hilbert空間と直交補空間]
+内積が定めるノルムに関して完備な内積空間を Hilbert 空間という．$\langle x,y\rangle=0$ のとき $x$ と $y$ は直交するといい，集合 $M\subseteq E$ に対し $M^\perp=\{x\in E\mid\forall y\in M,\ \langle x,y\rangle=0\}$ を直交補空間という．
+\end{defn}
+% genron:end K-000877
+% genron:begin K-000878
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000874
+% genron:use K-000876
+% genron:use K-000877
+% genron:use K-000629
+% genron:use K-000219
+\begin{prop}[直交補空間の閉性とPythagorasの等式]
+$M^\perp$ は閉線形部分空間である．直交する $x,y$ に対して $\|x+y\|^2=\|x\|^2+\|y\|^2$ が成立する．
+\end{prop}
+\begin{proof}
+固定した $y\in M$ に対し $x\mapsto\langle x,y\rangle$ は連続線形写像である．従ってその核は閉線形部分空間である．$M^\perp$ はこれらの核の共通部分である．第二の主張は内積の展開により交叉項が消えることから従う．
+\end{proof}
+% genron:end K-000878
+% genron:begin K-000879
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000876
+% genron:use K-000877
+% genron:use K-000878
+% genron:use K-000708
+% genron:use K-000738
+% genron:use K-000769
+% genron:use K-000771
+% genron:use K-000132
+\begin{prop}[閉部分空間への直交射影]
+Hilbert 空間 $H$ の閉線形部分空間 $M$ に対し，任意の $x\in H$ は一意に $x=m+z$，$m\in M,z\in M^\perp$ と表される．この $m$ は $\|x-u\|$ を $u\in M$ 上で最小にする唯一の点である．
+\end{prop}
+\begin{proof}
+$d=\inf_{u\in M}\|x-u\|$ とおき，$\|x-m_n\|\to d$ となる列を $M$ から取る．平行四辺形等式により
+\[
+\|m_n-m_j\|^2=2\|x-m_n\|^2+2\|x-m_j\|^2-4\|x-(m_n+m_j)/2\|^2
+\leq 2\|x-m_n\|^2+2\|x-m_j\|^2-4d^2 .
+\]
+従って $(m_n)$ は Cauchy 列であり，$H$ の完備性と $M$ の閉性からある $m\in M$ に収束する．$z=x-m$ とすると $\|z\|=d$ である．$v\in M\setminus\{0\}$ に対し $a=\langle z,v\rangle/\|v\|^2$ とおくと $m+av\in M$ である．最小性より
+\[
+d^2\leq\|z-av\|^2=d^2-\frac{|\langle z,v\rangle|^2}{\|v\|^2}
+\]
+であるから $\langle z,v\rangle=0$ である．従って $z\in M^\perp$ である．任意の $u\in M$ について $x-u=z+(m-u)$ は直交分解であり，\GenronRef{K-000878} により $\|x-u\|^2=d^2+\|m-u\|^2$ となる．これが最小点の一意性を示し，同じ等式を任意の直交分解に適用すると分解も一意である．
+\end{proof}
+% genron:end K-000879
+% genron:begin K-000880
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000876
+% genron:use K-000877
+% genron:use K-000878
+% genron:use K-000879
+% genron:use K-000790
+% genron:use K-000792
+\begin{prop}[直交射影の線形性と二重直交補]
+前命題の対応 $P_M:x\mapsto m$ は有界線形写像であり，$P_M^2=P_M$，$\|P_M x\|\leq\|x\|$ が成立する．任意の線形部分空間 $L\subseteq H$ に対し $(L^\perp)^\perp=\overline L$ である．
+\end{prop}
+\begin{proof}
+分解の一意性によって加法とスカラー倍が保存される．$x\in M$ のとき $P_Mx=x$ なので冪等である．\GenronRef{K-000878} によってノルムの評価を得る．$\overline L$ は線形演算の連続性により閉線形部分空間であり，内積の連続性により $L^\perp=(\overline L)^\perp$ である．$x\in (L^\perp)^\perp$ を $m+z$，$m\in\overline L,z\in L^\perp$ と分解すると $0=\langle x,z\rangle=\|z\|^2$ なので $x=m$ である．逆の包含は直交性の対称性から従う．
+\end{proof}
+% genron:end K-000880

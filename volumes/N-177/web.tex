@@ -1,0 +1,121 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 8.1.6 のHausdorff条件・連続演算・平衡近傍を照合．
+\section{位相線形空間}
+% genron:begin K-000881
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000293
+% genron:use K-000217
+% genron:use K-000788
+% genron:use K-000790
+\begin{defn}[位相線形空間]
+$\mathbb K$ を通常の位相を備えた $\mathbb R$ 又は $\mathbb C$ とする．$\mathbb K$ 上の線形空間 $E$ に Hausdorff 位相が与えられ，加法 $E\times E\to E$ 及びスカラー倍 $\mathbb K\times E\to E$ が連続であるとき，$E$ を位相線形空間という．積には積位相を用いる．
+\end{defn}
+% genron:end K-000881
+% genron:begin K-000882
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000881
+% genron:use K-000223
+% genron:use K-000385
+\begin{prop}[零元近傍と平行移動]
+位相線形空間では任意の平行移動及び零でないスカラーによる乗法は同相写像である．任意の零元近傍 $U$ に対して，開零元近傍 $V$ で $V=-V$ かつ $V+V\subseteq U$ となるものが存在する．
+\end{prop}
+\begin{proof}
+$x\mapsto a+x$ とその逆写像 $x\mapsto -a+x$ は加法の連続性から連続である．零でない $\lambda$ について $\lambda$ 倍と $\lambda^{-1}$ 倍も連続である．加法の $(0,0)$ における連続性によって開零元近傍 $V_1,V_2$ で $V_1+V_2\subseteq U$ となるものを取る．$V=V_1\cap V_2\cap(-V_1)\cap(-V_2)$ とすればよい．
+\end{proof}
+% genron:end K-000882
+% genron:begin K-000883
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000881
+% genron:use K-000719
+\begin{defn}[平衡集合と吸収集合]
+部分集合 $U\subseteq E$ が $|\lambda|\leq1$ なる任意の $\lambda\in\mathbb K$ に対して $\lambda U\subseteq U$ を満たすとき，$U$ を平衡集合という．任意の $x\in E$ についてある $r>0$ が存在し，$|\lambda|<r$ ならば $\lambda x\in U$ となるとき，$U$ を吸収集合という．
+\end{defn}
+% genron:end K-000883
+% genron:begin K-000884
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000881
+% genron:use K-000882
+% genron:use K-000883
+% genron:use K-000217
+\begin{prop}[平衡近傍の存在]
+位相線形空間の零元近傍は吸収集合であり，任意の零元近傍は平衡な開零元近傍を含む．
+\end{prop}
+\begin{proof}
+固定した $x$ に対し $\lambda\mapsto\lambda x$ は連続であり，零を零に移すので吸収性が従う．$U$ を零元近傍とすると，スカラー倍の連続性により $\varepsilon>0$ と開零元近傍 $V$ で $|\lambda|<\varepsilon$ なら $\lambda V\subseteq U$ となるものが存在する．
+\[
+W=\bigcup_{|\lambda|\leq1}\lambda(\varepsilon V/2)
+\]
+とおく．これは平衡で $U$ に含まれ，$\lambda=1$ の項により零元近傍である．$\lambda=0$ の項は他の項に含まれ，$\lambda\ne0$ の項は開集合なので $W$ は開集合である．
+\end{proof}
+% genron:end K-000884
+% genron:begin K-000885
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000881
+% genron:use K-000882
+% genron:use K-000630
+% genron:use K-000390
+% genron:use K-000293
+\begin{prop}[閉部分空間による商位相線形空間]
+位相線形空間 $E$ の閉線形部分空間 $M$ に対し，商線形空間 $E/M$ に商位相を入れると位相線形空間となる．標準射影 $q:E\to E/M$ は開写像である．
+\end{prop}
+\begin{proof}
+開集合 $V\subseteq E$ に対し $q^{-1}(q(V))=V+M=\bigcup_{m\in M}(V+m)$ は開であり，$q$ は開写像である．加法とスカラー倍は商上で代数的に定まる．例えば $q(x)+q(y)\in O$ で $O$ が開なら，$x+y\in q^{-1}(O)$ である．加法の連続性によって $x,y$ の開近傍 $U,V$ で $U+V\subseteq q^{-1}(O)$ となるものを取ると，$q(U),q(V)$ が商での開近傍となる．スカラー倍についても同じ方法を用いる．$a\notin M$ なら $a+W$ が $M$ と交わらない開零元近傍 $W$ を取れる．\GenronRef{K-000882} によって $V=-V,\ V+V\subseteq W$ と取れば，$q(a+V)$ と $q(V)$ は交わらない．実際，交われば $a\in M+(V-V)$ となり $(a+W)\cap M\ne\varnothing$ となる．平行移動によって異なる任意の二点を分離できる．
+\end{proof}
+% genron:end K-000885
+% genron:begin K-000886
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000881
+% genron:use K-000882
+% genron:use K-000392
+% genron:use K-000394
+% genron:use K-000395
+% genron:use K-000396
+\begin{prop}[位相線形空間の標準一様構造]
+位相線形空間 $E$ では，零元近傍 $U$ に対し $D_U=\{(x,y)\in E\times E\mid y-x\in U\}$ と定めると，$D_U$ 全体は分離一様構造の基をなし，その誘導位相はもとの位相と一致する．
+\end{prop}
+\begin{proof}
+$D_U$ は対角集合を含み，$D_U\cap D_V=D_{U\cap V}$ である．$D_U^{-1}=D_{-U}$ であり，\GenronRef{K-000882} により $V+V\subseteq U$ となる近傍 $V$ を取れば $D_V\circ D_V\subseteq D_U$ となる．従ってこれらを含む集合族は \GenronRef{K-000392} の公理を満たす．$D_U[x]=x+U$ なので近傍系は元の位相のものと一致する．Hausdorff性によって零元近傍全体の共通部分は $\{0\}$ であり，近縁全体の共通部分は対角集合となる．
+\end{proof}
+% genron:end K-000886

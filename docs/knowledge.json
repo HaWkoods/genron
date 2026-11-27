@@ -26766,6 +26766,804 @@
       "status": "draft",
       "source": "volumes/N-168/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000862",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "直積σ-加法族",
+      "statement": "可測空間 $(X,\\mathcal A),(Y,\\mathcal B)$ に対し，$\\mathcal A\\otimes\\mathcal B=\\sigma(\\{A\\times B\\mid A\\in\\mathcal A,\\ B\\in\\mathcal B\\})$ を直積$\\sigma$-加法族という．集合 $C\\subseteq X\\times Y$ の切断を $C_x=\\{y\\in Y\\mid (x,y)\\in C\\}$，$C^y=\\{x\\in X\\mid (x,y)\\in C\\}$ と記す．",
+      "assumptions": [],
+      "position": [
+        169,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000182",
+        "K-000187",
+        "K-000748"
+      ],
+      "status": "draft",
+      "source": "volumes/N-169/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000863",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可測集合の切断",
+      "statement": "$C\\in\\mathcal A\\otimes\\mathcal B$ ならば，任意の $x\\in X,y\\in Y$ に対し $C_x\\in\\mathcal B,C^y\\in\\mathcal A$ である．",
+      "assumptions": [],
+      "position": [
+        169,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000862",
+        "K-000182",
+        "K-000187"
+      ],
+      "status": "draft",
+      "source": "volumes/N-169/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000864",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断の測度の可測性",
+      "statement": "$\\nu$ を $(Y,\\mathcal B)$ 上の$\\sigma$有限測度とする．任意の $C\\in\\mathcal A\\otimes\\mathcal B$ に対し，$x\\mapsto \\nu(C_x)$ は非負拡大実数値可測函数である．",
+      "assumptions": [],
+      "position": [
+        169,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000862",
+        "K-000863",
+        "K-000748",
+        "K-000751",
+        "K-000755",
+        "K-000758",
+        "K-000759",
+        "K-000819",
+        "K-000820",
+        "K-000822"
+      ],
+      "status": "draft",
+      "source": "volumes/N-169/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000865",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "σ有限積測度の存在",
+      "statement": "$\\mu,\\nu$ がそれぞれ $(X,\\mathcal A),(Y,\\mathcal B)$ 上の$\\sigma$有限測度であるとする．$\\mathcal A\\otimes\\mathcal B$ 上に，すべての可測長方形について $\\lambda(A\\times B)=\\mu(A)\\nu(B)$ を満たす$\\sigma$有限測度 $\\lambda$ が存在する．非負拡大実数の積では $0\\cdot\\infty=\\infty\\cdot0=0$ と約束する．",
+      "assumptions": [],
+      "position": [
+        169,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000862",
+        "K-000864",
+        "K-000748",
+        "K-000781",
+        "K-000783",
+        "K-000784",
+        "K-000787",
+        "K-000822"
+      ],
+      "status": "draft",
+      "source": "volumes/N-169/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000866",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積測度の一意性と切断表示",
+      "statement": "前命題の測度はただ一つである．これを $\\mu\\otimes\\nu$ と記す．すべての $C\\in\\mathcal A\\otimes\\mathcal B$ について\n\\[\n(\\mu\\otimes\\nu)(C)=\\int_X\\nu(C_x)\\,d\\mu=\\int_Y\\mu(C^y)\\,d\\nu\n\\]\nが成立する．",
+      "assumptions": [],
+      "position": [
+        169,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000862",
+        "K-000865",
+        "K-000751",
+        "K-000821",
+        "K-000822",
+        "K-000754"
+      ],
+      "status": "draft",
+      "source": "volumes/N-169/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000867",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "符号付き測度と正集合・負集合",
+      "statement": "可測空間 $(X,\\mathcal A)$ 上の写像 $\\eta:\\mathcal A\\to[-\\infty,+\\infty]$ が $\\eta(\\varnothing)=0$ を満たし，$+\\infty,-\\infty$ の両方を値に取ることがなく，互いに素な可測集合列について $\\eta(\\bigcup_n A_n)=\\sum_n\\eta(A_n)$ が成立するとき，これを符号付き測度という．右辺は正項和と負項和の差として定まり，不定形を許さない．可測集合 $P$ のすべての可測部分集合 $B$ について $\\eta(B)\\geq0$ なら $P$ を正集合といい，逆向きの不等号が成立する集合を負集合という．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000714",
+        "K-000715",
+        "K-000748",
+        "K-000807",
+        "K-000811"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000868",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正集合の抽出",
+      "statement": "符号付き測度 $\\eta$ が $+\\infty$ を値に取らないとする．$\\eta(A)>0$ を満たす可測集合 $A$ には，$\\eta(P)>0$ を満たす正集合 $P\\subseteq A$ が存在する．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000867",
+        "K-000706",
+        "K-000809",
+        "K-000132"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000869",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hahn分解",
+      "statement": "任意の符号付き測度 $\\eta$ に対し，互いに素な正集合 $P$ と負集合 $N$ であって $X=P\\cup N$ となるものが存在する．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000867",
+        "K-000868",
+        "K-000185",
+        "K-000715",
+        "K-000708",
+        "K-000132"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000870",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "互いに特異な測度",
+      "statement": "同じ可測空間上の二つの非負測度 $\\mu,\\nu$ について，ある可測集合 $P$ が存在して $\\mu(X\\setminus P)=0,\\ \\nu(P)=0$ となるとき，$\\mu$ と $\\nu$ は互いに特異であるといい，$\\mu\\perp\\nu$ と記す．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000748",
+        "K-000749"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000871",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Jordan分解",
+      "statement": "符号付き測度 $\\eta$ は互いに特異な二つの非負測度 $\\eta^+,\\eta^-$ の差 $\\eta=\\eta^+-\\eta^-$ として一意に表される．少なくとも一方は有限測度である．また任意の可測集合 $A$ に対し $\\eta^+(A)=\\sup_{B\\subseteq A,\\ B\\in\\mathcal A}\\eta(B)$，$\\eta^-(A)=\\sup_{B\\subseteq A,\\ B\\in\\mathcal A}(-\\eta(B))$ が成立する．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000867",
+        "K-000869",
+        "K-000870",
+        "K-000748",
+        "K-000749"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000872",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全変動測度",
+      "statement": "$\\lvert\\eta\\rvert=\\eta^++\\eta^-$ を符号付き測度の全変動測度という．任意の可測集合 $A$ に対して $\\lvert\\eta\\rvert(A)$ は $A$ のすべての有限可測分割 $(A_j)_{j=1}^m$ にわたる $\\sum_{j=1}^m|\\eta(A_j)|$ の上限に等しい．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000869",
+        "K-000871",
+        "K-000748",
+        "K-000749"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000873",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "可積分函数が定める符号付き測度",
+      "statement": "実可積分函数 $f$ に対し $\\eta(A)=\\int_A f\\,d\\mu$ と定めると有限符号付き測度となり，$\\eta^\\pm(A)=\\int_A f^\\pm\\,d\\mu$，$|\\eta|(A)=\\int_A|f|\\,d\\mu$ である．",
+      "assumptions": [],
+      "position": [
+        171,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000867",
+        "K-000871",
+        "K-000872",
+        "K-000758",
+        "K-000787",
+        "K-000826",
+        "K-000827"
+      ],
+      "status": "draft",
+      "source": "volumes/N-171/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000874",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "内積空間",
+      "statement": "$\\mathbb K=\\mathbb R$ 又は $\\mathbb C$ とする．$\\mathbb K$ 上の線形空間 $E$ において，第一変数に線形，第二変数に共役線形で，$\\langle x,y\\rangle=\\overline{\\langle y,x\\rangle}$，$\\langle x,x\\rangle\\geq0$，及び $\\langle x,x\\rangle=0\\Leftrightarrow x=0$ を満たす写像 $\\langle\\cdot,\\cdot\\rangle:E\\times E\\to\\mathbb K$ を内積という．実数体の場合，共役は恒等写像とする．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000669",
+        "K-000717",
+        "K-000718",
+        "K-000788"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000875",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchy–Schwarzの不等式",
+      "statement": "内積空間の任意の $x,y$ について $|\\langle x,y\\rangle|^2\\leq\\langle x,x\\rangle\\langle y,y\\rangle$ が成立する．等号が成立するのは $x,y$ が線形従属であるとき，かつそのときに限る．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000874",
+        "K-000718",
+        "K-000719",
+        "K-000720"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000876",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "内積から導かれるノルム",
+      "statement": "内積空間では $\\|x\\|=\\sqrt{\\langle x,x\\rangle}$ がノルムを定める．内積はこのノルムに関して連続であり，平行四辺形等式 $\\|x+y\\|^2+\\|x-y\\|^2=2\\|x\\|^2+2\\|y\\|^2$ が成立する．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000874",
+        "K-000875",
+        "K-000709",
+        "K-000788",
+        "K-000789",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000877",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Hilbert空間と直交補空間",
+      "statement": "内積が定めるノルムに関して完備な内積空間を Hilbert 空間という．$\\langle x,y\\rangle=0$ のとき $x$ と $y$ は直交するといい，集合 $M\\subseteq E$ に対し $M^\\perp=\\{x\\in E\\mid\\forall y\\in M,\\ \\langle x,y\\rangle=0\\}$ を直交補空間という．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000874",
+        "K-000876",
+        "K-000794"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000878",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "直交補空間の閉性とPythagorasの等式",
+      "statement": "$M^\\perp$ は閉線形部分空間である．直交する $x,y$ に対して $\\|x+y\\|^2=\\|x\\|^2+\\|y\\|^2$ が成立する．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000874",
+        "K-000876",
+        "K-000877",
+        "K-000629",
+        "K-000219"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000879",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分空間への直交射影",
+      "statement": "Hilbert 空間 $H$ の閉線形部分空間 $M$ に対し，任意の $x\\in H$ は一意に $x=m+z$，$m\\in M,z\\in M^\\perp$ と表される．この $m$ は $\\|x-u\\|$ を $u\\in M$ 上で最小にする唯一の点である．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000876",
+        "K-000877",
+        "K-000878",
+        "K-000708",
+        "K-000738",
+        "K-000769",
+        "K-000771",
+        "K-000132"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000880",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "直交射影の線形性と二重直交補",
+      "statement": "前命題の対応 $P_M:x\\mapsto m$ は有界線形写像であり，$P_M^2=P_M$，$\\|P_M x\\|\\leq\\|x\\|$ が成立する．任意の線形部分空間 $L\\subseteq H$ に対し $(L^\\perp)^\\perp=\\overline L$ である．",
+      "assumptions": [],
+      "position": [
+        173,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000876",
+        "K-000877",
+        "K-000878",
+        "K-000879",
+        "K-000790",
+        "K-000792"
+      ],
+      "status": "draft",
+      "source": "volumes/N-173/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000881",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "位相線形空間",
+      "statement": "$\\mathbb K$ を通常の位相を備えた $\\mathbb R$ 又は $\\mathbb C$ とする．$\\mathbb K$ 上の線形空間 $E$ に Hausdorff 位相が与えられ，加法 $E\\times E\\to E$ 及びスカラー倍 $\\mathbb K\\times E\\to E$ が連続であるとき，$E$ を位相線形空間という．積には積位相を用いる．",
+      "assumptions": [],
+      "position": [
+        177,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000293",
+        "K-000217",
+        "K-000788",
+        "K-000790"
+      ],
+      "status": "draft",
+      "source": "volumes/N-177/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000882",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "零元近傍と平行移動",
+      "statement": "位相線形空間では任意の平行移動及び零でないスカラーによる乗法は同相写像である．任意の零元近傍 $U$ に対して，開零元近傍 $V$ で $V=-V$ かつ $V+V\\subseteq U$ となるものが存在する．",
+      "assumptions": [],
+      "position": [
+        177,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000881",
+        "K-000223",
+        "K-000385"
+      ],
+      "status": "draft",
+      "source": "volumes/N-177/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000883",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "平衡集合と吸収集合",
+      "statement": "部分集合 $U\\subseteq E$ が $|\\lambda|\\leq1$ なる任意の $\\lambda\\in\\mathbb K$ に対して $\\lambda U\\subseteq U$ を満たすとき，$U$ を平衡集合という．任意の $x\\in E$ についてある $r>0$ が存在し，$|\\lambda|<r$ ならば $\\lambda x\\in U$ となるとき，$U$ を吸収集合という．",
+      "assumptions": [],
+      "position": [
+        177,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000881",
+        "K-000719"
+      ],
+      "status": "draft",
+      "source": "volumes/N-177/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000884",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "平衡近傍の存在",
+      "statement": "位相線形空間の零元近傍は吸収集合であり，任意の零元近傍は平衡な開零元近傍を含む．",
+      "assumptions": [],
+      "position": [
+        177,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000881",
+        "K-000882",
+        "K-000883",
+        "K-000217"
+      ],
+      "status": "draft",
+      "source": "volumes/N-177/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000885",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分空間による商位相線形空間",
+      "statement": "位相線形空間 $E$ の閉線形部分空間 $M$ に対し，商線形空間 $E/M$ に商位相を入れると位相線形空間となる．標準射影 $q:E\\to E/M$ は開写像である．",
+      "assumptions": [],
+      "position": [
+        177,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000881",
+        "K-000882",
+        "K-000630",
+        "K-000390",
+        "K-000293"
+      ],
+      "status": "draft",
+      "source": "volumes/N-177/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000886",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "位相線形空間の標準一様構造",
+      "statement": "位相線形空間 $E$ では，零元近傍 $U$ に対し $D_U=\\{(x,y)\\in E\\times E\\mid y-x\\in U\\}$ と定めると，$D_U$ 全体は分離一様構造の基をなし，その誘導位相はもとの位相と一致する．",
+      "assumptions": [],
+      "position": [
+        177,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000881",
+        "K-000882",
+        "K-000392",
+        "K-000394",
+        "K-000395",
+        "K-000396"
+      ],
+      "status": "draft",
+      "source": "volumes/N-177/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -29404,7 +30202,7 @@
       "number": 169,
       "title": "積測度",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         163,
         166
@@ -29413,7 +30211,8 @@
         "直積σ-加法族・σ有限積測度"
       ],
       "treatise": "T-24",
-      "display_index": 10
+      "display_index": 10,
+      "web_only": true
     },
     {
       "number": 170,
@@ -29434,15 +30233,17 @@
       "number": 171,
       "title": "符号付き測度",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        167
+        167,
+        144
       ],
       "goals": [
         "Hahn分解・Jordan分解・全変動"
       ],
       "treatise": "T-24",
-      "display_index": 12
+      "display_index": 12,
+      "web_only": true
     },
     {
       "number": 172,
@@ -29463,7 +30264,7 @@
       "number": 173,
       "title": "内積空間とHilbert空間",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         23,
         103
@@ -29472,7 +30273,8 @@
         "直交性・射影定理・Hilbert空間"
       ],
       "treatise": "T-25",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 174,
@@ -29524,16 +30326,19 @@
       "number": 177,
       "title": "位相線形空間",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         92,
-        23
+        23,
+        27,
+        97
       ],
       "goals": [
         "連続演算・近傍・商・一様性"
       ],
       "treatise": "T-25",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 178,
