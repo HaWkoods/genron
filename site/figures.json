@@ -226,8 +226,8 @@
   {
     "id": "K-000948",
     "src": "figures/chart-transition.svg",
-    "alt": "U∩W から二つの座標像への写像が ψ∘φ⁻¹ により結ばれる．",
-    "caption": "図：座標近傍の共通部分上の座標変換．",
+    "alt": "球面の重なる開近傍 U,W と，それぞれの平面座標像の斜線部分を結ぶ座標変換．",
+    "caption": "図：球面の二つの座標近傍 U,W の共通部分（斜線）とその座標像．座標変換は斜線部分間の写像である．",
     "figure_id": "chart-transition",
     "title": "座標変換の図式"
   },
@@ -286,5 +286,37 @@
     "caption": "図：実二変数の場合の座標方向の増分．",
     "figure_id": "partial-derivatives-directions",
     "title": "偏微分の方向の図"
+  },
+  {
+    "id": "K-000947",
+    "src": "figures/sphere-local-chart.svg",
+    "figure_id": "sphere-local-chart",
+    "title": "球面上の局所座標写像",
+    "caption": "図：球面上の開近傍 U の座標曲線と平面上の座標像．格子線は同一の座標値に対応する．",
+    "alt": "球面の曲がった座標網が同相写像 φ により平面内の直交格子へ移り，点 p は φ(p) に対応する．"
+  },
+  {
+    "id": "K-000726",
+    "src": "figures/metric-open-neighborhood.svg",
+    "figure_id": "metric-open-neighborhood",
+    "title": "開集合と近傍の図",
+    "caption": "図：Euclid 平面の開集合 U の点 x に対し，十分小さい開球 B(x,r) が U に含まれる．",
+    "alt": "斜線の開領域 U の内部に，異なる向きの斜線で示した開球 B(x,r) が含まれる．"
+  },
+  {
+    "id": "K-000722",
+    "src": "figures/euclidean-distance.svg",
+    "figure_id": "euclidean-distance",
+    "title": "Euclid 距離の図",
+    "caption": "図：実平面における二点の距離の例．",
+    "alt": "座標軸に二点の各成分を射影し，二点間の線分を太線で示す．"
+  },
+  {
+    "id": "K-000788",
+    "src": "figures/norm-unit-balls.svg",
+    "figure_id": "norm-unit-balls",
+    "title": "ノルムによる単位球の相違",
+    "caption": "図：実二次元空間の三つのノルムの閉単位球（ℓ¹，Euclid，最大値）．",
+    "alt": "同じ座標平面における菱形，円，正方形の三つの閉単位球．"
   }
 ]
