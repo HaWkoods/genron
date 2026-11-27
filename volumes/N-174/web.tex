@@ -1,0 +1,114 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 5.4 の目次及び Riesz表現定理の利用箇所を確認．表現・随伴の論証は独自記述．
+\section{Hilbert空間の双対性}
+% genron:begin K-000904
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000793
+% genron:use K-000795
+% genron:use K-000852
+% genron:use K-000855
+\begin{defn}[連続双対空間]
+ノルム空間 $E$ 上の連続線形汎函数全体 $\mathcal L(E,\mathbb K)$ を $E^*$ と記し，連続双対空間という．作用素ノルムを備えた $E^*$ は Banach 空間である．
+\end{defn}
+\begin{proof}
+連続線形汎函数と有界線形汎函数は一致する．$\mathbb K$ は完備だから \GenronRef{K-000855} が適用できる．
+\end{proof}
+% genron:end K-000904
+% genron:begin K-000905
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000904
+% genron:use K-000629
+% genron:use K-000219
+% genron:use K-000875
+% genron:use K-000877
+% genron:use K-000879
+% genron:use K-000880
+% genron:use K-000852
+% genron:use K-000853
+\begin{prop}[Rieszの表現定理]
+内積を第一変数に線形とする Hilbert 空間 $H$ に対し，任意の $\ell\in H^*$ は一意の $y\in H$ によって $\ell(x)=\langle x,y\rangle$ と表される．また $\|\ell\|=\|y\|$ である．
+\end{prop}
+\begin{proof}
+$\ell=0$ の場合は $y=0$ とする．$\ell\ne0$ の場合，$M=\ker\ell$ は閉線形部分空間である．$\ell(v)\ne0$ となる $v$ を選び，\GenronRef{K-000879} により $z=v-P_Mv$ とおく．$z\in M^\perp$ かつ $\ell(z)=\ell(v)\ne0$ である．任意の $x\in H$ に対し $x-\ell(x)z/\ell(z)\in M$ であるから
+\[
+\langle x,z\rangle=\frac{\ell(x)}{\ell(z)}\|z\|^2 .
+\]
+従って $y=\overline{\ell(z)}z/\|z\|^2$ が表現を与える．二つの表現の差を $w$ とすれば $\langle x,w\rangle=0$ が任意の $x$ について成り立つ．$x=w$ として $w=0$ を得る．\GenronRef{K-000875} から $\|\ell\|\leq\|y\|$ であり，$y\ne0$ の場合 $x=y/\|y\|$ で等号となる．
+\end{proof}
+% genron:end K-000905
+% genron:begin K-000906
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000905
+% genron:use K-000874
+\begin{prop}[Hilbert空間とその双対の等長対応]
+$J:H\to H^*$ を $J(y)(x)=\langle x,y\rangle$ と定めると，これは実の場合には線形，複素の場合には共役線形な全単射であり，$\|J(y)\|=\|y\|$ を満たす．
+\end{prop}
+\begin{proof}
+内積の第二変数に関する共役線形性によって $J(\alpha y+\beta z)=\overline\alpha J(y)+\overline\beta J(z)$ である．全単射性とノルムの保存は \GenronRef{K-000905} による．
+\end{proof}
+% genron:end K-000906
+% genron:begin K-000907
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000905
+% genron:use K-000874
+% genron:use K-000875
+% genron:use K-000852
+% genron:use K-000853
+\begin{prop}[随伴作用素の存在と一意性]
+Hilbert 空間 $H,K$ の間の有界線形作用素 $T:H\to K$ に対し，一意の有界線形作用素 $T^*:K\to H$ が存在し，すべての $x\in H,y\in K$ について $\langle Tx,y\rangle_K=\langle x,T^*y\rangle_H$ を満たす．また $\|T^*\|=\|T\|$ である．
+\end{prop}
+\begin{proof}
+$y$ を固定すると $x\mapsto\langle Tx,y\rangle_K$ は線形汎函数であり，その絶対値は $\|T\|\|x\|\|y\|$ 以下である．\GenronRef{K-000905} によって一意の $T^*y$ を得て，$\|T^*y\|\leq\|T\|\|y\|$ となる．内積の第二変数の共役線形性と表現の一意性により $T^*$ は線形である．逆のノルム不等式は，$Tx\ne0$ のとき $y=Tx/\|Tx\|$ として
+\[
+\|Tx\|=|\langle Tx,y\rangle|\leq\|x\|\|T^*\|
+\]
+を得ることから従う．$Tx=0$ の場合も不等式は成立する．
+\end{proof}
+% genron:end K-000907
+% genron:begin K-000908
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000907
+% genron:use K-000874
+% genron:use K-000880
+\begin{prop}[随伴の演算法則と直交性]
+合成可能な有界線形作用素について $(ST)^*=T^*S^*$，$(\alpha T+\beta U)^*=\overline\alpha T^*+\overline\beta U^*$，$(T^*)^*=T$ が成立する．また $(\operatorname{Im}T)^\perp=\ker T^*$，$\overline{\operatorname{Im}T}=(\ker T^*)^\perp$ である．
+\end{prop}
+\begin{proof}
+合成と線形結合の公式は随伴の定義式に代入してその一意性を用いれば得られる．二重随伴については定義式の共役を取る．$y\in(\operatorname{Im}T)^\perp$ は任意の $x$ について $\langle Tx,y\rangle=0$ となることと同値であり，これは $\langle x,T^*y\rangle=0$ が任意の $x$ に対して成立すること，従って $T^*y=0$ と同値である．第二の空間の等式は \GenronRef{K-000880} を適用する．
+\end{proof}
+% genron:end K-000908

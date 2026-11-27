@@ -27564,6 +27564,873 @@
       "status": "draft",
       "source": "volumes/N-177/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000887",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "実区間と実変数連続函数",
+      "statement": "実数の部分集合 $I$ が，任意の $a,b\\in I$ と $a\\leq x\\leq b$ を満たす実数 $x$ について $x\\in I$ を満たすとき，$I$ を区間という．$D\\subseteq\\mathbb R$ に定義された函数 $f:D\\to\\mathbb R$ が各 $a\\in D$ において，任意の $\\varepsilon>0$ に対しある $\\delta>0$ が存在し，$x\\in D,\\ |x-a|<\\delta$ ならば $|f(x)-f(a)|<\\varepsilon$ となるとき，連続であるという．",
+      "assumptions": [],
+      "position": [
+        145,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-145/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000888",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉有界区間のコンパクト性",
+      "statement": "$a,b\\in\\mathbb R,\\ a\\leq b$ に対し，閉区間 $[a,b]$ はコンパクトである．",
+      "assumptions": [],
+      "position": [
+        145,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000887",
+        "K-000762",
+        "K-000768",
+        "K-000797",
+        "K-000802"
+      ],
+      "status": "draft",
+      "source": "volumes/N-145/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000889",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "最大値・最小値の定理",
+      "statement": "空でないコンパクト集合 $K\\subseteq\\mathbb R$ 上の連続函数 $f:K\\to\\mathbb R$ は有界であり，最大値及び最小値を取る．",
+      "assumptions": [],
+      "position": [
+        145,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000887",
+        "K-000708",
+        "K-000736",
+        "K-000737",
+        "K-000800",
+        "K-000706",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-145/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000890",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "中間値の定理",
+      "statement": "区間 $I$ 上の連続函数 $f:I\\to\\mathbb R$ に対し，$f(I)$ も区間である．",
+      "assumptions": [],
+      "position": [
+        145,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000887",
+        "K-000705",
+        "K-000708",
+        "K-000736",
+        "K-000737",
+        "K-000762",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-145/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000891",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "狭義単調連続函数の逆函数",
+      "statement": "区間 $I$ 上の狭義単調連続函数 $f:I\\to\\mathbb R$ は，像 $f(I)$ への同相写像である．",
+      "assumptions": [],
+      "position": [
+        145,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000887",
+        "K-000890",
+        "K-000223",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-145/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000892",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉区間上の一様連続性",
+      "statement": "閉有界区間上の連続実函数は一様連続である．",
+      "assumptions": [],
+      "position": [
+        145,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000887",
+        "K-000888",
+        "K-000844"
+      ],
+      "status": "draft",
+      "source": "volumes/N-145/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000893",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Fréchet微分",
+      "statement": "同じ体 $\\mathbb K=\\mathbb R$ 又は $\\mathbb C$ 上のノルム空間 $E,F$，開集合 $U\\subseteq E$，写像 $f:U\\to F$，点 $a\\in U$ を取る．ある $A\\in\\mathcal L(E,F)$ が存在し，\n\\[\n f(a+h)-f(a)=Ah+r(h),\\qquad \\lim_{h\\to0,\\ h\\ne0}\\frac{\\|r(h)\\|}{\\|h\\|}=0\n\\]\nとなるとき，$f$ は $a$ において Fréchet 微分可能であるという．ここで $h$ は $a+h\\in U$ を満たすものに限る．",
+      "assumptions": [],
+      "position": [
+        155,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000792",
+        "K-000852",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-155/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000894",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微分の一意性と連続性",
+      "statement": "Fréchet微分可能な写像の上の $A$ は一意であり，$Df(a)$ と記す．また $f$ は $a$ において連続である．",
+      "assumptions": [],
+      "position": [
+        155,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000893",
+        "K-000853",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-155/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000895",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微分の線形性",
+      "statement": "$f,g:U\\to F$ が $a$ において Fréchet 微分可能なら，$\\alpha,\\beta\\in\\mathbb K$ に対し $\\alpha f+\\beta g$ も微分可能であり，$D(\\alpha f+\\beta g)(a)=\\alpha Df(a)+\\beta Dg(a)$ である．有界線形写像 $T:E\\to F$ の微分は各点で $T$ に等しい．",
+      "assumptions": [],
+      "position": [
+        155,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000893",
+        "K-000894",
+        "K-000854"
+      ],
+      "status": "draft",
+      "source": "volumes/N-155/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000896",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連鎖律",
+      "statement": "開集合 $U\\subseteq E,V\\subseteq F$ と写像 $f:U\\to V,\\ g:V\\to G$ を取る．$f$ が $a$ で，$g$ が $b=f(a)$ で Fréchet 微分可能ならば $g\\circ f$ も $a$ で微分可能であり，$D(g\\circ f)(a)=Dg(b)Df(a)$ である．",
+      "assumptions": [],
+      "position": [
+        155,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000893",
+        "K-000894",
+        "K-000853",
+        "K-000854"
+      ],
+      "status": "draft",
+      "source": "volumes/N-155/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000897",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微分と連続微分可能性",
+      "statement": "各点で Fréchet 微分可能な写像 $f:U\\to F$ について，$a\\mapsto Df(a)$ が作用素ノルムに関して連続であるとき，$f$ を $C^1$ 級という．$C^1$ 級写像の合成は $C^1$ 級である．",
+      "assumptions": [],
+      "position": [
+        155,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000894",
+        "K-000896",
+        "K-000852",
+        "K-000854"
+      ],
+      "status": "draft",
+      "source": "volumes/N-155/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000898",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "連続双線形写像の微分",
+      "statement": "ノルム空間間の双線形写像 $B:E\\times F\\to G$ が $\\|B(x,y)\\|\\leq C\\|x\\|\\|y\\|$ を満たすなら，$B$ は $C^1$ 級で，$DB(x,y)(h,k)=B(h,y)+B(x,k)$ である．",
+      "assumptions": [],
+      "position": [
+        155,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000893",
+        "K-000894",
+        "K-000897",
+        "K-000607",
+        "K-000791",
+        "K-000853"
+      ],
+      "status": "draft",
+      "source": "volumes/N-155/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000899",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可測函数の切断",
+      "statement": "$\\mathcal A\\otimes\\mathcal B$ に関して可測な実数値・拡大実数値又は複素数値函数 $f$ の切断 $f_x(y)=f(x,y)$ と $f^y(x)=f(x,y)$ はすべての $x,y$ に対し可測である．",
+      "assumptions": [],
+      "position": [
+        170,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000862",
+        "K-000863",
+        "K-000755",
+        "K-000756",
+        "K-000829"
+      ],
+      "status": "draft",
+      "source": "volumes/N-170/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000900",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Tonelliの定理",
+      "statement": "$\\mu,\\nu$ を$\\sigma$有限測度とする．非負拡大実数値の直積可測函数 $f$ について，$x\\mapsto\\int_Y f_x\\,d\\nu$ と $y\\mapsto\\int_X f^y\\,d\\mu$ は可測であり，\n\\[\n\\int_{X\\times Y}f\\,d(\\mu\\otimes\\nu)=\\int_X\\left(\\int_Y f_x\\,d\\nu\\right)d\\mu=\\int_Y\\left(\\int_X f^y\\,d\\mu\\right)d\\nu\n\\]\nが成立する．",
+      "assumptions": [],
+      "position": [
+        170,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000899",
+        "K-000864",
+        "K-000866",
+        "K-000761",
+        "K-000759",
+        "K-000781",
+        "K-000784",
+        "K-000785",
+        "K-000822"
+      ],
+      "status": "draft",
+      "source": "volumes/N-170/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000901",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Fubiniの定理",
+      "statement": "$\\mu,\\nu$ を$\\sigma$有限測度とし，$f$ を直積測度に関する実又は複素可積分函数とする．$\\mu$ ほとんど至る所で $f_x$ は $\\nu$ 可積分であり，$\\nu$ ほとんど至る所で $f^y$ は $\\mu$ 可積分である．切断積分を例外集合で零と定めた函数は可積分であり，\n\\[\n\\int_{X\\times Y}f\\,d(\\mu\\otimes\\nu)=\\int_X\\left(\\int_Y f_x\\,d\\nu\\right)d\\mu=\\int_Y\\left(\\int_X f^y\\,d\\mu\\right)d\\nu\n\\]\nが成立する．",
+      "assumptions": [],
+      "position": [
+        170,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000899",
+        "K-000900",
+        "K-000824",
+        "K-000825",
+        "K-000826",
+        "K-000827",
+        "K-000828",
+        "K-000829",
+        "K-000830",
+        "K-000831"
+      ],
+      "status": "draft",
+      "source": "volumes/N-170/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000902",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積分可能性の切断判定",
+      "statement": "直積可測な実又は複素数値函数 $f$ が可積分であるための必要十分条件は，$\\int_X(\\int_Y|f_x|\\,d\\nu)d\\mu<\\infty$ である．ここでは両測度を$\\sigma$有限とする．",
+      "assumptions": [],
+      "position": [
+        170,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000900",
+        "K-000826",
+        "K-000829"
+      ],
+      "status": "draft",
+      "source": "volumes/N-170/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000903",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "絶対可積分性がない反復積分",
+      "statement": "$\\mathbb N=\\{1,2,\\ldots\\}$ の数え上げ測度の積上で $f(m,n)=1_{\\{m=n\\}}-1_{\\{m=n+1\\}}$ とする．各行，各列の和は有限であるが，$\\sum_m\\sum_n f(m,n)=1$，$\\sum_n\\sum_m f(m,n)=0$ である．",
+      "assumptions": [],
+      "position": [
+        170,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000901",
+        "K-000902",
+        "K-000750",
+        "K-000866"
+      ],
+      "status": "draft",
+      "source": "volumes/N-170/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000904",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "連続双対空間",
+      "statement": "ノルム空間 $E$ 上の連続線形汎函数全体 $\\mathcal L(E,\\mathbb K)$ を $E^*$ と記し，連続双対空間という．作用素ノルムを備えた $E^*$ は Banach 空間である．",
+      "assumptions": [],
+      "position": [
+        174,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000793",
+        "K-000795",
+        "K-000852",
+        "K-000855"
+      ],
+      "status": "draft",
+      "source": "volumes/N-174/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000905",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Rieszの表現定理",
+      "statement": "内積を第一変数に線形とする Hilbert 空間 $H$ に対し，任意の $\\ell\\in H^*$ は一意の $y\\in H$ によって $\\ell(x)=\\langle x,y\\rangle$ と表される．また $\\|\\ell\\|=\\|y\\|$ である．",
+      "assumptions": [],
+      "position": [
+        174,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000904",
+        "K-000629",
+        "K-000219",
+        "K-000875",
+        "K-000877",
+        "K-000879",
+        "K-000880",
+        "K-000852",
+        "K-000853"
+      ],
+      "status": "draft",
+      "source": "volumes/N-174/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000906",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hilbert空間とその双対の等長対応",
+      "statement": "$J:H\\to H^*$ を $J(y)(x)=\\langle x,y\\rangle$ と定めると，これは実の場合には線形，複素の場合には共役線形な全単射であり，$\\|J(y)\\|=\\|y\\|$ を満たす．",
+      "assumptions": [],
+      "position": [
+        174,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000905",
+        "K-000874"
+      ],
+      "status": "draft",
+      "source": "volumes/N-174/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000907",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "随伴作用素の存在と一意性",
+      "statement": "Hilbert 空間 $H,K$ の間の有界線形作用素 $T:H\\to K$ に対し，一意の有界線形作用素 $T^*:K\\to H$ が存在し，すべての $x\\in H,y\\in K$ について $\\langle Tx,y\\rangle_K=\\langle x,T^*y\\rangle_H$ を満たす．また $\\|T^*\\|=\\|T\\|$ である．",
+      "assumptions": [],
+      "position": [
+        174,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000905",
+        "K-000874",
+        "K-000875",
+        "K-000852",
+        "K-000853"
+      ],
+      "status": "draft",
+      "source": "volumes/N-174/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000908",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "随伴の演算法則と直交性",
+      "statement": "合成可能な有界線形作用素について $(ST)^*=T^*S^*$，$(\\alpha T+\\beta U)^*=\\overline\\alpha T^*+\\overline\\beta U^*$，$(T^*)^*=T$ が成立する．また $(\\operatorname{Im}T)^\\perp=\\ker T^*$，$\\overline{\\operatorname{Im}T}=(\\ker T^*)^\\perp$ である．",
+      "assumptions": [],
+      "position": [
+        174,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000907",
+        "K-000874",
+        "K-000880"
+      ],
+      "status": "draft",
+      "source": "volumes/N-174/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000909",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様有界性の原理（Banach–Steinhausの定理）",
+      "statement": "Banach 空間 $E$ とノルム空間 $F$ に対し，$\\mathcal T\\subseteq\\mathcal L(E,F)$ が各 $x\\in E$ で $\\sup_{T\\in\\mathcal T}\\|Tx\\|<\\infty$ を満たすなら，$\\sup_{T\\in\\mathcal T}\\|T\\|<\\infty$ である（空族の場合は自明とする）．",
+      "assumptions": [],
+      "position": [
+        176,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000794",
+        "K-000793",
+        "K-000835",
+        "K-000836",
+        "K-000852",
+        "K-000853"
+      ],
+      "status": "draft",
+      "source": "volumes/N-176/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000910",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界線形作用素の各点極限",
+      "statement": "Banach 空間 $E$ からノルム空間 $F$ への有界線形写像列 $(T_n)$ が各点で収束するとき，その各点極限 $T$ は有界線形写像である．",
+      "assumptions": [],
+      "position": [
+        176,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000909",
+        "K-000790",
+        "K-000792",
+        "K-000853",
+        "K-000739"
+      ],
+      "status": "draft",
+      "source": "volumes/N-176/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000911",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開写像定理",
+      "statement": "Banach 空間 $E,F$ の間の全射な有界線形写像 $T:E\\to F$ は開写像である．",
+      "assumptions": [],
+      "position": [
+        176,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000794",
+        "K-000793",
+        "K-000835",
+        "K-000836",
+        "K-000735",
+        "K-000738",
+        "K-000769",
+        "K-000853",
+        "K-000060",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-176/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000912",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界逆写像定理",
+      "statement": "Banach 空間の間の全単射有界線形写像の逆写像は有界線形である．",
+      "assumptions": [],
+      "position": [
+        176,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000911",
+        "K-000793",
+        "K-000794"
+      ],
+      "status": "draft",
+      "source": "volumes/N-176/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000913",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉グラフ定理",
+      "statement": "Banach 空間 $E,F$ の間の線形写像 $T:E\\to F$ が有界であるための必要十分条件は，グラフ $\\Gamma(T)=\\{(x,Tx)\\mid x\\in E\\}$ が $E\\times F$ の閉集合であることである．",
+      "assumptions": [],
+      "position": [
+        176,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000912",
+        "K-000791",
+        "K-000794",
+        "K-000796",
+        "K-000735",
+        "K-000739",
+        "K-000793",
+        "K-000854"
+      ],
+      "status": "draft",
+      "source": "volumes/N-176/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -29821,16 +30688,18 @@
       "number": 145,
       "title": "実変数連続函数",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         88,
-        82
+        82,
+        22
       ],
       "goals": [
         "中間値・最大最小・連続函数"
       ],
       "treatise": "T-22",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 146,
@@ -29974,15 +30843,17 @@
       "number": 155,
       "title": "Fréchet微分",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        154
+        154,
+        110
       ],
       "goals": [
         "微分可能性・連鎖律"
       ],
       "treatise": "T-23",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 156,
@@ -30218,7 +31089,7 @@
       "number": 170,
       "title": "TonelliとFubini",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         169,
         168
@@ -30227,7 +31098,8 @@
         "切断・反復積分・定理"
       ],
       "treatise": "T-24",
-      "display_index": 11
+      "display_index": 11,
+      "web_only": true
     },
     {
       "number": 171,
@@ -30280,15 +31152,17 @@
       "number": 174,
       "title": "Hilbert空間の双対性",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        173
+        173,
+        154
       ],
       "goals": [
         "Riesz表現・随伴作用素"
       ],
       "treatise": "T-25",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 175,
@@ -30311,7 +31185,7 @@
       "number": 176,
       "title": "一様有界性と開写像",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         175,
         154
@@ -30320,7 +31194,8 @@
         "Banach–Steinhaus・開写像・閉グラフ"
       ],
       "treatise": "T-25",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 177,

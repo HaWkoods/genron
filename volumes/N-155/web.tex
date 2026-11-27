@@ -1,0 +1,132 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：所蔵 Bogachev–Smolyanov の微分関連目次を確認したが Fréchet微分の定義・証明の個別照合は未了．以下は作用素ノルムからの独自論証．
+\section{Fréchet微分}
+% genron:begin K-000893
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000792
+% genron:use K-000852
+% genron:use K-000736
+\begin{defn}[Fréchet微分]
+同じ体 $\mathbb K=\mathbb R$ 又は $\mathbb C$ 上のノルム空間 $E,F$，開集合 $U\subseteq E$，写像 $f:U\to F$，点 $a\in U$ を取る．ある $A\in\mathcal L(E,F)$ が存在し，
+\[
+ f(a+h)-f(a)=Ah+r(h),\qquad \lim_{h\to0,\ h\ne0}\frac{\|r(h)\|}{\|h\|}=0
+\]
+となるとき，$f$ は $a$ において Fréchet 微分可能であるという．ここで $h$ は $a+h\in U$ を満たすものに限る．
+\end{defn}
+% genron:end K-000893
+% genron:begin K-000894
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000893
+% genron:use K-000853
+% genron:use K-000736
+\begin{prop}[微分の一意性と連続性]
+Fréchet微分可能な写像の上の $A$ は一意であり，$Df(a)$ と記す．また $f$ は $a$ において連続である．
+\end{prop}
+\begin{proof}
+二つの候補 $A,B$ があれば $(A-B)h=o(\|h\|)$ である．$v\ne0$ を固定し，正の実数 $t\to0$ に対して $h=tv$ と取ると $\|(A-B)v\|/\|v\|\to0$ となるが左辺は $t$ によらない．従って $A=B$ である．$E=\{0\}$ の場合も線形写像は一つしかない．連続性は $\|f(a+h)-f(a)\|\leq\|A\|\|h\|+\|r(h)\|$ から従う．
+\end{proof}
+% genron:end K-000894
+% genron:begin K-000895
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000854
+\begin{prop}[微分の線形性]
+$f,g:U\to F$ が $a$ において Fréchet 微分可能なら，$\alpha,\beta\in\mathbb K$ に対し $\alpha f+\beta g$ も微分可能であり，$D(\alpha f+\beta g)(a)=\alpha Df(a)+\beta Dg(a)$ である．有界線形写像 $T:E\to F$ の微分は各点で $T$ に等しい．
+\end{prop}
+\begin{proof}
+定義の展開をそれぞれ足し合わせると剰余は $\alpha r_f(h)+\beta r_g(h)$ となる．ノルムの三角不等式によってそのノルムを $\|h\|$ で除した値は零に収束する．有界線形写像については $T(a+h)-T(a)=Th$ であって剰余は恒等的に零である．
+\end{proof}
+% genron:end K-000895
+% genron:begin K-000896
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000853
+% genron:use K-000854
+\begin{prop}[連鎖律]
+開集合 $U\subseteq E,V\subseteq F$ と写像 $f:U\to V,\ g:V\to G$ を取る．$f$ が $a$ で，$g$ が $b=f(a)$ で Fréchet 微分可能ならば $g\circ f$ も $a$ で微分可能であり，$D(g\circ f)(a)=Dg(b)Df(a)$ である．
+\end{prop}
+\begin{proof}
+$A=Df(a), B=Dg(b)$ とし，$k=f(a+h)-b=Ah+r(h)$ とおく．十分小さい $h$ に対し $\|k\|\leq(\|A\|+1)\|h\|$ である．$g(b+k)-g(b)=Bk+s(k)$ と書けば
+\[
+(g\circ f)(a+h)-(g\circ f)(a)-BAh=Br(h)+s(k)
+\]
+となる．第一項のノルムを $\|h\|$ で除せば零に収束する．第二項は $k\ne0$ のとき $\|s(k)\|/\|h\|\leq(\|A\|+1)\|s(k)\|/\|k\|$ と評価でき，$k=0$ のとき $s(0)=0$ である．従って全剰余は $o(\|h\|)$ であり，有界線形写像の合成 $BA$ が微分を与える．
+\end{proof}
+% genron:end K-000896
+% genron:begin K-000897
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000894
+% genron:use K-000896
+% genron:use K-000852
+% genron:use K-000854
+\begin{prop}[微分と連続微分可能性]
+各点で Fréchet 微分可能な写像 $f:U\to F$ について，$a\mapsto Df(a)$ が作用素ノルムに関して連続であるとき，$f$ を $C^1$ 級という．$C^1$ 級写像の合成は $C^1$ 級である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000896} から微分は $Dg(f(a))Df(a)$ である．作用素の積について
+\[
+\|ST-S_0T_0\|\leq\|S-S_0\|\|T\|+\|S_0\|\|T-T_0\|
+\]
+が成立するから合成演算は連続である．$f$ 自身の連続性と $Df,Dg$ の連続性を合わせれば結論を得る．
+\end{proof}
+% genron:end K-000897
+% genron:begin K-000898
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000897
+% genron:use K-000607
+% genron:use K-000791
+% genron:use K-000853
+\begin{example}[連続双線形写像の微分]
+ノルム空間間の双線形写像 $B:E\times F\to G$ が $\|B(x,y)\|\leq C\|x\|\|y\|$ を満たすなら，$B$ は $C^1$ 級で，$DB(x,y)(h,k)=B(h,y)+B(x,k)$ である．
+\end{example}
+\begin{proof}
+直積には最大値ノルムを入れる．双線形性から増分は $B(h,y)+B(x,k)+B(h,k)$ であり，最後の項は $C\max(\|h\|,\|k\|)^2$ 以下である．候補の微分は有界線形である．二点での微分の差の作用素ノルムは $C(\|x-x'\|+\|y-y'\|)$ 以下だから連続性も従う．
+\end{proof}
+% genron:end K-000898

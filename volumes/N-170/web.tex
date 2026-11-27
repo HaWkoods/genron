@@ -1,0 +1,122 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 3.11.1 の切断公式と完備化の区別を照合．本稿は未完備化の直積σ-加法族を扱う．
+\section{TonelliとFubini}
+% genron:begin K-000899
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000862
+% genron:use K-000863
+% genron:use K-000755
+% genron:use K-000756
+% genron:use K-000829
+\begin{prop}[可測函数の切断]
+$\mathcal A\otimes\mathcal B$ に関して可測な実数値・拡大実数値又は複素数値函数 $f$ の切断 $f_x(y)=f(x,y)$ と $f^y(x)=f(x,y)$ はすべての $x,y$ に対し可測である．
+\end{prop}
+\begin{proof}
+値域の任意の Borel 集合 $D$ について $(f_x)^{-1}(D)=(f^{-1}(D))_x$ が成立する．\GenronRef{K-000863} を適用する．もう一方も同様である．
+\end{proof}
+% genron:end K-000899
+% genron:begin K-000900
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000899
+% genron:use K-000864
+% genron:use K-000866
+% genron:use K-000761
+% genron:use K-000759
+% genron:use K-000781
+% genron:use K-000784
+% genron:use K-000785
+% genron:use K-000822
+\begin{prop}[Tonelliの定理]
+$\mu,\nu$ を$\sigma$有限測度とする．非負拡大実数値の直積可測函数 $f$ について，$x\mapsto\int_Y f_x\,d\nu$ と $y\mapsto\int_X f^y\,d\mu$ は可測であり，
+\[
+\int_{X\times Y}f\,d(\mu\otimes\nu)=\int_X\left(\int_Y f_x\,d\nu\right)d\mu=\int_Y\left(\int_X f^y\,d\mu\right)d\nu
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+まず $f=1_C$ の場合は \GenronRef{K-000864} と \GenronRef{K-000866} にほかならない．非負単函数については有限線形結合と積分の加法性から従う．一般に $0\leq s_n\uparrow f$ となる可測単函数列を取る．各切断でも単調増加するため，単調収束定理によって切断積分は可測函数列 $\int(s_n)_x\,d\nu$ の上限であり，可測である．もう一度単調収束定理を直積及び外側の積分に適用して等式を得る．
+\end{proof}
+% genron:end K-000900
+% genron:begin K-000901
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000899
+% genron:use K-000900
+% genron:use K-000824
+% genron:use K-000825
+% genron:use K-000826
+% genron:use K-000827
+% genron:use K-000828
+% genron:use K-000829
+% genron:use K-000830
+% genron:use K-000831
+\begin{prop}[Fubiniの定理]
+$\mu,\nu$ を$\sigma$有限測度とし，$f$ を直積測度に関する実又は複素可積分函数とする．$\mu$ ほとんど至る所で $f_x$ は $\nu$ 可積分であり，$\nu$ ほとんど至る所で $f^y$ は $\mu$ 可積分である．切断積分を例外集合で零と定めた函数は可積分であり，
+\[
+\int_{X\times Y}f\,d(\mu\otimes\nu)=\int_X\left(\int_Y f_x\,d\nu\right)d\mu=\int_Y\left(\int_X f^y\,d\mu\right)d\nu
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000900} を $|f|$ に適用すると $g(x)=\int_Y |f_x|\,d\nu$ は可測で，$\int_X g\,d\mu<\infty$ である．従って $g<\infty$ はほとんど至る所で成立する．$g=\infty$ となる可測零集合の外で $f_x$ は可積分である．実数値の場合，正負部分に \GenronRef{K-000900} を適用してそれらの切断積分の差が例外集合外で可測となることを得る．例外集合で零にすれば可測性が保たれ，絶対値は $g$ 以下なので可積分である．全体の等式は正負部分の積分を引けば得られる．複素数値の場合は実部と虚部に同じ論証を適用する．もう一方の反復積分も同様である．
+\end{proof}
+% genron:end K-000901
+% genron:begin K-000902
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000900
+% genron:use K-000826
+% genron:use K-000829
+\begin{prop}[積分可能性の切断判定]
+直積可測な実又は複素数値函数 $f$ が可積分であるための必要十分条件は，$\int_X(\int_Y|f_x|\,d\nu)d\mu<\infty$ である．ここでは両測度を$\sigma$有限とする．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000900} を非負函数 $|f|$ に適用すれば，左辺の有限性は $\int|f|\,d(\mu\otimes\nu)<\infty$ と同値になる．これは可積分性の定義にほかならない．
+\end{proof}
+% genron:end K-000902
+% genron:begin K-000903
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000901
+% genron:use K-000902
+% genron:use K-000750
+% genron:use K-000866
+\begin{example}[絶対可積分性がない反復積分]
+$\mathbb N=\{1,2,\ldots\}$ の数え上げ測度の積上で $f(m,n)=1_{\{m=n\}}-1_{\{m=n+1\}}$ とする．各行，各列の和は有限であるが，$\sum_m\sum_n f(m,n)=1$，$\sum_n\sum_m f(m,n)=0$ である．
+\end{example}
+\begin{proof}
+$m=1$ の行の和は $1$ であり，$m\geq2$ の各行には $1,-1$ が一つずつ現れる．各列にも $1,-1$ が一つずつ現れる．従って反復和は記述の通りである．他方 $\sum_{m,n}|f(m,n)|=\infty$ であるため，Fubiniの定理の可積分性の仮定を満たさない．
+\end{proof}
+% genron:end K-000903

@@ -1,0 +1,124 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：所蔵 Bogachev–Smolyanov の連続性関連章を前回確認済み．本稿の中間値・極値の論証は独自記述であり，個別文献との照合は未了．
+\section{実変数連続函数}
+% genron:begin K-000887
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000736
+\begin{defn}[実区間と実変数連続函数]
+実数の部分集合 $I$ が，任意の $a,b\in I$ と $a\leq x\leq b$ を満たす実数 $x$ について $x\in I$ を満たすとき，$I$ を区間という．$D\subseteq\mathbb R$ に定義された函数 $f:D\to\mathbb R$ が各 $a\in D$ において，任意の $\varepsilon>0$ に対しある $\delta>0$ が存在し，$x\in D,\ |x-a|<\delta$ ならば $|f(x)-f(a)|<\varepsilon$ となるとき，連続であるという．
+\end{defn}
+% genron:end K-000887
+% genron:begin K-000888
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000887
+% genron:use K-000762
+% genron:use K-000768
+% genron:use K-000797
+% genron:use K-000802
+\begin{prop}[閉有界区間のコンパクト性]
+$a,b\in\mathbb R,\ a\leq b$ に対し，閉区間 $[a,b]$ はコンパクトである．
+\end{prop}
+\begin{proof}
+任意の $[a,b]$ 内の数列は有界であるから，\GenronRef{K-000768} によって収束部分列を持つ．順序と極限の両立によってその極限も $[a,b]$ に属する．従って点列コンパクトであり，\GenronRef{K-000802} によってコンパクトである．
+\end{proof}
+% genron:end K-000888
+% genron:begin K-000889
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000887
+% genron:use K-000708
+% genron:use K-000736
+% genron:use K-000737
+% genron:use K-000800
+% genron:use K-000706
+% genron:use K-000060
+\begin{prop}[最大値・最小値の定理]
+空でないコンパクト集合 $K\subseteq\mathbb R$ 上の連続函数 $f:K\to\mathbb R$ は有界であり，最大値及び最小値を取る．
+\end{prop}
+\begin{proof}
+もし $f$ が有界でなければ，$|f(x_n)|>n$ となる $x_n\in K$ を取れる．点列コンパクト性によりある部分列が $x\in K$ に収束するが，連続性からその函数値は $f(x)$ に収束し矛盾する．$M=\sup f(K)$ とおくと $f(x_n)>M-1/n$ となる $x_n\in K$ を選べる．収束部分列 $x_{n_j}\to x$ を取れば $f(x)=M$ である．最小値については $-f$ に同じ論証を適用する．
+\end{proof}
+% genron:end K-000889
+% genron:begin K-000890
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000887
+% genron:use K-000705
+% genron:use K-000708
+% genron:use K-000736
+% genron:use K-000737
+% genron:use K-000762
+% genron:use K-000060
+\begin{prop}[中間値の定理]
+区間 $I$ 上の連続函数 $f:I\to\mathbb R$ に対し，$f(I)$ も区間である．
+\end{prop}
+\begin{proof}
+$a,b\in I,\ a<b$ とし，$f(a)<c<f(b)$ とする．$S=\{x\in[a,b]\mid f(x)\leq c\}$ は空でなく上に有界なので $s=\sup S\in[a,b]$ が存在する．上限の近似によって $S$ 内の列 $s_n\to s$ を取れるから，連続性により $f(s)\leq c$ である．もし $f(s)<c$ なら $s<b$ であり，連続性によって $s<t\leq b$ で $f(t)<c$ となる $t$ が存在する．これは $s$ が上界であることに反する．従って $f(s)=c$ である．$f(a)>f(b)$ の場合は $-f$ に適用し，端点値の場合は自明である．
+\end{proof}
+% genron:end K-000890
+% genron:begin K-000891
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000887
+% genron:use K-000890
+% genron:use K-000223
+% genron:use K-000736
+\begin{prop}[狭義単調連続函数の逆函数]
+区間 $I$ 上の狭義単調連続函数 $f:I\to\mathbb R$ は，像 $f(I)$ への同相写像である．
+\end{prop}
+\begin{proof}
+狭義増加の場合を示す．単調性によって全単射 $I\to f(I)$ である．$a\in I,\ \varepsilon>0$ とする．$I\cap(-\infty,a-\varepsilon]$ が空でなければ $a-\varepsilon\in I$ であり，$f(a)-f(a-\varepsilon)>0$ となる．右側 $I\cap[a+\varepsilon,\infty)$ が空でなければ同様に $f(a+\varepsilon)-f(a)>0$ である．存在するこれらの正数以下の $\delta>0$ を取る（両側が空なら任意）．$y=f(x)\in f(I)$ について $|y-f(a)|<\delta$ なら単調性から $|x-a|<\varepsilon$ である．従って逆函数は連続である．狭義減少の場合は $-f$ に帰着する．
+\end{proof}
+% genron:end K-000891
+% genron:begin K-000892
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000887
+% genron:use K-000888
+% genron:use K-000844
+\begin{prop}[閉区間上の一様連続性]
+閉有界区間上の連続実函数は一様連続である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000888} によって閉有界区間はコンパクト距離空間である．\GenronRef{K-000844} を適用すればよい．
+\end{proof}
+% genron:end K-000892

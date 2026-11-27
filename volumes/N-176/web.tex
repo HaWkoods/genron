@@ -1,0 +1,116 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 6.2.3 の開写像定理・6.2.7 の閉グラフ定理を照合．一様有界性はBaire性から独自に記述．
+\section{一様有界性と開写像}
+% genron:begin K-000909
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000794
+% genron:use K-000793
+% genron:use K-000835
+% genron:use K-000836
+% genron:use K-000852
+% genron:use K-000853
+\begin{prop}[一様有界性の原理（Banach–Steinhausの定理）]
+Banach 空間 $E$ とノルム空間 $F$ に対し，$\mathcal T\subseteq\mathcal L(E,F)$ が各 $x\in E$ で $\sup_{T\in\mathcal T}\|Tx\|<\infty$ を満たすなら，$\sup_{T\in\mathcal T}\|T\|<\infty$ である（空族の場合は自明とする）．
+\end{prop}
+\begin{proof}
+$A_n=\bigcap_{T\in\mathcal T}\{x\in E\mid\|Tx\|\leq n\}$ は閉集合であり，$E=\bigcup_{n\geq1} A_n$ である．\GenronRef{K-000835} 及び \GenronRef{K-000836} によって，ある $A_N$ は開球 $B(a,r)$ を含む．$\|h\|<r$ なら $a+h,a\in A_N$ であるから任意の $T$ について $\|Th\|\leq2N$ である．$\|x\|\leq1$ に対し $h=rx/2$ と取れば $\|Tx\|\leq4N/r$ を得る．
+\end{proof}
+% genron:end K-000909
+% genron:begin K-000910
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000909
+% genron:use K-000790
+% genron:use K-000792
+% genron:use K-000853
+% genron:use K-000739
+\begin{prop}[有界線形作用素の各点極限]
+Banach 空間 $E$ からノルム空間 $F$ への有界線形写像列 $(T_n)$ が各点で収束するとき，その各点極限 $T$ は有界線形写像である．
+\end{prop}
+\begin{proof}
+線形性は線形演算の連続性から極限を取って従う．各 $x$ について $(T_nx)$ は有界なので \GenronRef{K-000909} により一様な定数 $C$ で $\|T_nx\|\leq C\|x\|$ となる．極限を取ると $\|Tx\|\leq C\|x\|$ である．
+\end{proof}
+% genron:end K-000910
+% genron:begin K-000911
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000794
+% genron:use K-000793
+% genron:use K-000835
+% genron:use K-000836
+% genron:use K-000735
+% genron:use K-000738
+% genron:use K-000769
+% genron:use K-000853
+% genron:use K-000060
+% genron:use K-000100
+\begin{prop}[開写像定理]
+Banach 空間 $E,F$ の間の全射な有界線形写像 $T:E\to F$ は開写像である．
+\end{prop}
+\begin{proof}
+$B_E,B_F$ をそれぞれの開単位球とする．全射性により $F=\bigcup_{n\geq1}T(nB_E)$ である．Baireのカテゴリー定理によって，ある $n$ と $y_0,r>0$（ただし $y_0\in F$，$r$ は正数）が存在し，$B(y_0,r)\subseteq\overline{T(nB_E)}$ となる．$y\in rB_F$ に対し $y_0+y,y_0$ をそれぞれ $T(nB_E)$ 内の列で近似して差を取れば，$y\in\overline{T(2nB_E)}$ である．従って $c=r/(2n)>0$ とおくと $cB_F\subseteq\overline{T(B_E)}$ となる．
+任意の $y\in(c/2)B_F$ を取る．$y\in\overline{T(2^{-1}B_E)}$ だから $\|x_1\|<2^{-1}$ かつ $\|y-Tx_1\|<c2^{-2}$ となる $x_1$ が存在する．帰納的に $\|x_j\|<2^{-j}$ と $\|y-\sum_{i=1}^j Tx_i\|<c2^{-j-1}$ を満たす列を取れる．部分和は $E$ の完備性により $x\in E$ に収束し，$\|x\|\leq\sum_j\|x_j\|<1$ である．$T$ の連続性から $Tx=y$ である．従って $(c/2)B_F\subseteq T(B_E)$ である．任意の開集合 $U\subseteq E$ と $x\in U$ に対し，$x+\varepsilon B_E\subseteq U$ となる $\varepsilon>0$ を取れば $T(U)$ は $Tx+\varepsilon(c/2)B_F$ を含む．故に開写像である．
+\end{proof}
+% genron:end K-000911
+% genron:begin K-000912
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000911
+% genron:use K-000793
+% genron:use K-000794
+\begin{prop}[有界逆写像定理]
+Banach 空間の間の全単射有界線形写像の逆写像は有界線形である．
+\end{prop}
+\begin{proof}
+逆写像は代数的に線形である．\GenronRef{K-000911} により元の写像は開写像なので逆写像は連続であり，\GenronRef{K-000793} によって有界である．
+\end{proof}
+% genron:end K-000912
+% genron:begin K-000913
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000912
+% genron:use K-000791
+% genron:use K-000794
+% genron:use K-000796
+% genron:use K-000735
+% genron:use K-000739
+% genron:use K-000793
+% genron:use K-000854
+\begin{prop}[閉グラフ定理]
+Banach 空間 $E,F$ の間の線形写像 $T:E\to F$ が有界であるための必要十分条件は，グラフ $\Gamma(T)=\{(x,Tx)\mid x\in E\}$ が $E\times F$ の閉集合であることである．
+\end{prop}
+\begin{proof}
+有界ならば連続であり，$(x_n,Tx_n)\to(x,y)$ なら $Tx_n\to Tx$ であるから $y=Tx$ である．従ってグラフは閉である．逆に閉であれば，最大値ノルムを備えた $E\times F$ の閉線形部分空間である $\Gamma(T)$ は Banach 空間である．第一射影 $p:\Gamma(T)\to E$ は全単射有界線形である．\GenronRef{K-000912} によって $p^{-1}$ は有界である．第二射影 $q:\Gamma(T)\to F$ も有界であり，$T=q\circ p^{-1}$ なので $T$ は有界となる．
+\end{proof}
+% genron:end K-000913
