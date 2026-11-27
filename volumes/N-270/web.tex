@@ -1,0 +1,80 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{有限群作用による数え上げ}
+% genron:begin K-001343
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000304
+% genron:use K-000307
+% genron:use K-000308
+\begin{defn}[元の固定点集合]
+有限群 $G$ の有限集合 $X$ への作用に対し $X^g=\{x\in X\mid gx=x\}$ と書く．軌道の集合を $X/G$ と書く．
+\end{defn}
+% genron:end K-001343
+% genron:begin K-001344
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001343
+% genron:use K-000359
+% genron:use K-000360
+% genron:use K-001204
+% genron:use K-000310
+\begin{prop}[Burnsideの補題]
+有限群 $G$ が有限集合 $X$ に作用するとき
+\[
+|X/G|=\frac{1}{|G|}\sum_{g\in G}|X^g|
+\]
+である．
+\end{prop}
+\begin{proof}
+集合 $S=\{(g,x)\in G\times X\mid gx=x\}$ を二通りに数える．$g$ で分割すれば $\sum_g|X^g|$ であり，$x$ で分割すれば $\sum_x|G_x|$ である．一つの軌道 $C$ に属する全点の安定化群の濃度は等しく，軌道・安定化部分群定理により $|C||G_x|=|G|$ である．従って後者の和は $|G|\cdot|X/G|$ となる．
+\end{proof}
+% genron:end K-001344
+% genron:begin K-001345
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001344
+% genron:use K-000316
+% genron:use K-001205
+\begin{prop}[彩色の軌道数]
+有限集合 $S$ に有限群 $G$ が作用し，$q$ 色による彩色の集合に $(g\cdot c)(s)=c(g^{-1}s)$ と作用させる．$g$ の置換が持つ巡回軌道数を $c(g)$ とすれば，彩色の軌道数は $|G|^{-1}\sum_g q^{c(g)}$ である．
+\end{prop}
+\begin{proof}
+彩色が $g$ に固定されることは，$g$ が生成する巡回部分群の各軌道上で彩色が一定であることに等しい．各巡回軌道に対し独立に色を選べるので固定彩色は $q^{c(g)}$ 個である．Burnside の補題を適用する．
+\end{proof}
+% genron:end K-001345
+% genron:begin K-001346
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001345
+\begin{prop}[三角形の回転と彩色]
+三角形の三頂点を $q$ 色で彩色し，回転で移り合うものを同一視すると，彩色の種類は $(q^3+2q)/3$ である．
+\end{prop}
+\begin{proof}
+回転群の恒等元は三つの一元軌道を持ち，他の二元はそれぞれ一つの三元軌道を持つ．前命題へ代入する．反射による同一視はここでは行わない．
+\end{proof}
+% genron:end K-001346

@@ -1,0 +1,103 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{グラフと連結成分}
+% genron:begin K-001337
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000110
+\begin{defn}[無向単純グラフ]
+集合 $V$ とその二元部分集合からなる集合 $E$ の組 $G=(V,E)$ を無向単純グラフという．$\{u,v\}\in E$ のとき二頂点は隣接するという．頂点集合が有限なら有限グラフという．
+\end{defn}
+% genron:end K-001337
+% genron:begin K-001338
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001337
+% genron:use K-000118
+\begin{defn}[歩道と道]
+頂点の有限列 $(v_0,\ldots,v_n)$ で各連続する二元が隣接するものを歩道といい，$n$ を長さという．頂点の重複のない歩道を道という．始点と終点が同じで長さ三以上，始終点以外の重複がない歩道を閉路という．
+\end{defn}
+% genron:end K-001338
+% genron:begin K-001339
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001338
+% genron:use K-000104
+\begin{prop}[歩道から道への簡約]
+二頂点の間に歩道が存在すれば道が存在する．
+\end{prop}
+\begin{proof}
+歩道の長さのうち最小のものを取る．同じ頂点が $v_i=v_j$（$i<j$）として二度現れれば，その間を除いても隣接条件を保つより短い歩道が得られる．従って最短歩道には重複がない．始終点が等しいときは長さ零の道を用いる．
+\end{proof}
+% genron:end K-001339
+% genron:begin K-001340
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001338
+% genron:use K-000052
+% genron:use K-000054
+\begin{prop}[連結成分による分割]
+頂点 $u,v$ の間に歩道があるという関係は同値関係である．その同値類を連結成分という．グラフが空でなく連結成分が一つであるとき連結という．
+\end{prop}
+\begin{proof}
+長さ零の歩道で反射性，逆順により対称性，二歩道の連結により推移性を得る．従って同値関係の同値類による分割が得られる．異なる連結成分の間に辺は存在しない．
+\end{proof}
+% genron:end K-001340
+% genron:begin K-001341
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001338
+% genron:use K-001340
+\begin{defn}[木]
+閉路を持たない連結グラフを木という．閉路を持たないグラフを森という．
+\end{defn}
+% genron:end K-001341
+% genron:begin K-001342
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001341
+% genron:use K-001339
+\begin{prop}[木における道の一意性]
+連結グラフが木であることと，任意の相異なる二頂点間に道がただ一つ存在することは同値である．
+\end{prop}
+\begin{proof}
+閉路があればその二頂点間に閉路の両方向の道がある．逆に異なる二道があれば，共通の始点から進んで最初に分岐する頂点を取り，一方の分枝が他方に再び到達する最初の頂点までを取る．二道のその間の部分は内部で交わらず，連結すると閉路を得る．道の存在は連結性と歩道の簡約による．
+\end{proof}
+% genron:end K-001342

@@ -1,0 +1,162 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Rotman, An Introduction to Homological Algebra, Ch. 6 §6.2 の導入及び比較定理の記述を確認した．以下では加群の圏に限定して証明する．
+\section{分解と導来函手}
+% genron:begin K-001313
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000533
+% genron:use K-000534
+\begin{defn}[鎖ホモトピー]
+鎖写像 $f,g:P_\bullet\to Q_\bullet$ が鎖ホモトピックであるとは，準同型 $s_n:P_n\to Q_{n+1}$ が存在し $f_n-g_n=d_Qs_n+s_{n-1}d_P$ を満たすことをいう．非負次数の複体では $s_{-1}=0$ とする．
+\end{defn}
+% genron:end K-001313
+% genron:begin K-001314
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001313
+% genron:use K-000538
+% genron:use K-000539
+\begin{prop}[鎖ホモトピー不変性]
+鎖ホモトピックな鎖写像はホモロジー上で同じ写像を誘導する．
+\end{prop}
+\begin{proof}
+サイクル $z$ に対し $f(z)-g(z)=d_Qs(z)$ は境界である．従ってホモロジー類の像は一致する．
+\end{proof}
+% genron:end K-001314
+% genron:begin K-001315
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001313
+% genron:use K-001147
+% genron:use K-001152
+% genron:use K-001153
+% genron:use K-000535
+\begin{prop}[射影分解の比較定理]
+準同型 $u:M\to N$ と射影分解 $P_\bullet\to M,Q_\bullet\to N$ に対し $u$ を延長する鎖写像 $P_\bullet\to Q_\bullet$ が存在し，二つの延長は鎖ホモトピックである．
+\end{prop}
+\begin{proof}
+まず $u\varepsilon_P$ を全射 $\varepsilon_Q:Q_0\to N$ に沿って持ち上げる．$f_{n-1}$ まで定まったとき $f_{n-1}d_P$ は $Q_{n-1}$ のサイクル（$n=1$ では増大写像の核）に値を持つ．完全性により $d_Q:Q_n\to\ker d_Q$（ここで右辺は次数 $n-1$ の核）は全射なので，射影性によって $f_n$ を取れる．二延長の差を $h$ とする．$h_0$ は増大写像の核に値を持つので $s_0$ を $d_Qs_0=h_0$ となるよう選ぶ．$s_{n-1}$ まで構成したとき $h_n-s_{n-1}d_P$ に $d_Q$ を施せば，鎖写像性と前段の等式により零である．完全性と射影性でこれを $d_Q$ に沿って持ち上げたものを $s_n$ とする．帰納的に所要の等式を得る．
+\end{proof}
+% genron:end K-001315
+% genron:begin K-001316
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001315
+% genron:use K-001254
+% genron:use K-000538
+\begin{defn}[左導来函手]
+加群の圏の間の右完全な加法函手 $F$（$A\to B\to C\to0$ が完全ならその像も完全）に対し，$M$ の射影分解 $P_\bullet\to M$ を用いて $L_nF(M)=H_n(FP_\bullet)$ と定める．ここで増大写像は除いてホモロジーを取る．
+\end{defn}
+% genron:end K-001316
+% genron:begin K-001317
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001316
+% genron:use K-001315
+% genron:use K-001314
+% genron:use K-001254
+\begin{prop}[導来函手の分解独立性]
+$L_nF$ は分解の選択に依存しない標準同型を除いて定まり，準同型に対して函手的である．$L_0F\simeq F$ である．
+\end{prop}
+\begin{proof}
+比較定理で準同型を鎖写像へ延長する．加法函手は鎖ホモトピーの等式を保存するので，誘導ホモロジー写像は延長の選択によらない．恒等写像と合成を保存することも延長の一意性（ホモトピーを除く）による．特に恒等写像の二方向の延長が逆同型を誘導する．$P_1\to P_0\to M\to0$ の右完全性を適用すると $H_0(FP)=\operatorname{coker}(FP_1\to FP_0)\simeq F(M)$ である．
+\end{proof}
+% genron:end K-001317
+% genron:begin K-001318
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001315
+% genron:use K-001151
+% genron:use K-001152
+% genron:use K-000535
+% genron:use K-000536
+\begin{prop}[馬蹄形補題]
+短完全列 $0\to A\to B\to C\to0$ と $A,C$ の射影分解 $P_\bullet,Q_\bullet$ に対し，$B$ の射影分解 $T_\bullet$ があり $T_n=P_n\oplus Q_n$，包含及び射影が鎖写像となる．
+\end{prop}
+\begin{proof}
+$Q_0\to C$ を $B$ へ持ち上げ，$P_0\to A\to B$ と合わせて $T_0=P_0\oplus Q_0\to B$ を定める．この写像は全射である．実際，$B$ の元の $C$ における像を $Q_0$ から持ち上げ，差を $A$ から持ち上げられる．三つの増大写像の核の間には短完全列がある．中央の核から右の核への全射性は，右の核の元の中央での像を $A$ 側の持上げで打ち消せば従う．左での単射性と中央での完全性は直和の包含・射影の性質による．この核の短完全列に対して $P_1,Q_1$ の全射を用い同じ操作を行う．以下反復すれば各次数で核への全射を得て，複体は完全となる．各 $T_n$ は射影加群の直和なので射影的である．
+\end{proof}
+% genron:end K-001318
+% genron:begin K-001319
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001318
+% genron:use K-001317
+% genron:use K-001144
+% genron:use K-001247
+% genron:use K-001248
+\begin{prop}[左導来函手の長完全列]
+短完全列 $0\to A\to B\to C\to0$ は
+\[
+\cdots\to L_nF(A)\to L_nF(B)\to L_nF(C)\to L_{n-1}F(A)\to\cdots\to F(C)\to0
+\]
+を誘導する．
+\end{prop}
+\begin{proof}
+馬蹄形補題で次数ごとに分裂する短完全列の分解を作る．加法函手は双積の包含・射影の等式を保存するので，各次数で分裂した短完全列を短完全列に移す．従って像の複体にホモロジーの長完全列を適用できる．次数零は $L_0F\simeq F$ と同一視し，高次の写像は比較定理により分解独立な写像である．
+\end{proof}
+% genron:end K-001319
+% genron:begin K-001320
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001315
+% genron:use K-001319
+% genron:use K-000548
+% genron:use K-000558
+% genron:use K-000401
+% genron:use K-001254
+\begin{prop}[右導来函手]
+左完全な共変加法函手 $G$ について，入射分解 $0\to M\to I^0\to I^1\to\cdots$ によって $R^nG(M)=H^n(GI^\bullet)$ が定まり，$R^0G\simeq G$ である．短完全列から右導来函手の長完全列が得られる．
+\end{prop}
+\begin{proof}
+入射加群への埋込みを取り，その余核に同じ操作を反復すれば入射分解が得られる．反対圏では入射性は射影性となり，単射と全射，核と余核，左完全と右完全は交換される．比較定理及び馬蹄形補題の証明で持上げを延長に，核を余核に，鎖次数を余鎖次数に置換した論証が成立する．従って加法函手によるホモトピー不変性と長完全列の証明も双対化できる．$H^0(GI)$ は $GI^0\to GI^1$ の核なので左完全性により $G(M)$ に同型となる．
+\end{proof}
+% genron:end K-001320

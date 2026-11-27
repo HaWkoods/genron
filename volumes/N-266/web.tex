@@ -1,0 +1,90 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{包除原理と全射の数}
+% genron:begin K-001327
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001204
+% genron:use K-001206
+% genron:use K-001210
+\begin{prop}[包除原理]
+有限集合 $X$ の部分集合 $A_1,\ldots,A_n$ について
+\[
+|\bigcup_i A_i|=\sum_{\varnothing\ne J\subseteq\{1,\ldots,n\}}(-1)^{|J|+1}|\bigcap_{j\in J}A_j|
+\]
+である．
+\end{prop}
+\begin{proof}
+各 $x\in X$ が右辺に寄与する係数を調べる．$x$ がちょうど $r$ 個の $A_i$ に属するとき係数は $\sum_{k=1}^r(-1)^{k+1}\binom rk$ である．$r=0$ なら零，$r>0$ なら二項定理で $(1-1)^r=0$ を用いて一である．有限和の順序を交換すれば左辺に一致する．
+\end{proof}
+% genron:end K-001327
+% genron:begin K-001328
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001327
+% genron:use K-001204
+\begin{prop}[補集合形の包除原理]
+$X\setminus\bigcup_i A_i$ の濃度は
+\[
+\sum_{J\subseteq\{1,\ldots,n\}}(-1)^{|J|}|\bigcap_{j\in J}A_j|
+\]
+であり，空添字の共通部分を $X$ とする．
+\end{prop}
+\begin{proof}
+$|X|-|\bigcup_i A_i|$ に前命題を代入する．
+\end{proof}
+% genron:end K-001328
+% genron:begin K-001329
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001328
+% genron:use K-001205
+% genron:use K-001206
+\begin{prop}[全射の数え上げ]
+$m$ 元集合から $n$ 元集合への全射の個数は $\sum_{k=0}^n(-1)^k\binom nk(n-k)^m$ である．空の定義域から空集合への写像は一つなので $0^0=1$ とする．
+\end{prop}
+\begin{proof}
+全写像の集合 $X$ を取り，終域の第 $i$ 元を値として取らない写像の集合を $A_i$ とする．$k$ 個の指定された元を避ける写像の個数は乗法原理により $(n-k)^m$ である．全射は全ての $A_i$ を避けるものなので補集合形を適用し，$k$ 元添字集合の数でまとめればよい．
+\end{proof}
+% genron:end K-001329
+% genron:begin K-001330
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001328
+% genron:use K-001207
+% genron:use K-001208
+\begin{prop}[完全順列]
+$n$ 元集合の固定点を持たない置換の個数は
+\[
+n!\sum_{k=0}^n\frac{(-1)^k}{k!}
+\]
+である．
+\end{prop}
+\begin{proof}
+$A_i$ を第 $i$ 元を固定する置換全体とすれば，指定した $k$ 点を固定する置換の数は $(n-k)!$ である．包除原理により $\sum_k(-1)^k\binom nk(n-k)!$ となり，二項係数の積表示から所望の式となる．
+\end{proof}
+% genron:end K-001330

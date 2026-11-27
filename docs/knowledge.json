@@ -40735,6 +40735,1034 @@
       "status": "draft",
       "source": "volumes/N-129/web.tex",
       "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001313",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "鎖ホモトピー",
+      "statement": "鎖写像 $f,g:P_\\bullet\\to Q_\\bullet$ が鎖ホモトピックであるとは，準同型 $s_n:P_n\\to Q_{n+1}$ が存在し $f_n-g_n=d_Qs_n+s_{n-1}d_P$ を満たすことをいう．非負次数の複体では $s_{-1}=0$ とする．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000533",
+        "K-000534"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001314",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "鎖ホモトピー不変性",
+      "statement": "鎖ホモトピックな鎖写像はホモロジー上で同じ写像を誘導する．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001313",
+        "K-000538",
+        "K-000539"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001315",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "射影分解の比較定理",
+      "statement": "準同型 $u:M\\to N$ と射影分解 $P_\\bullet\\to M,Q_\\bullet\\to N$ に対し $u$ を延長する鎖写像 $P_\\bullet\\to Q_\\bullet$ が存在し，二つの延長は鎖ホモトピックである．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001313",
+        "K-001147",
+        "K-001152",
+        "K-001153",
+        "K-000535"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001316",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "左導来函手",
+      "statement": "加群の圏の間の右完全な加法函手 $F$（$A\\to B\\to C\\to0$ が完全ならその像も完全）に対し，$M$ の射影分解 $P_\\bullet\\to M$ を用いて $L_nF(M)=H_n(FP_\\bullet)$ と定める．ここで増大写像は除いてホモロジーを取る．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001315",
+        "K-001254",
+        "K-000538"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001317",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "導来函手の分解独立性",
+      "statement": "$L_nF$ は分解の選択に依存しない標準同型を除いて定まり，準同型に対して函手的である．$L_0F\\simeq F$ である．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001316",
+        "K-001315",
+        "K-001314",
+        "K-001254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001318",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "馬蹄形補題",
+      "statement": "短完全列 $0\\to A\\to B\\to C\\to0$ と $A,C$ の射影分解 $P_\\bullet,Q_\\bullet$ に対し，$B$ の射影分解 $T_\\bullet$ があり $T_n=P_n\\oplus Q_n$，包含及び射影が鎖写像となる．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001315",
+        "K-001151",
+        "K-001152",
+        "K-000535",
+        "K-000536"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001319",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "左導来函手の長完全列",
+      "statement": "短完全列 $0\\to A\\to B\\to C\\to0$ は\n\\[\n\\cdots\\to L_nF(A)\\to L_nF(B)\\to L_nF(C)\\to L_{n-1}F(A)\\to\\cdots\\to F(C)\\to0\n\\]\nを誘導する．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001318",
+        "K-001317",
+        "K-001144",
+        "K-001247",
+        "K-001248"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001320",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "右導来函手",
+      "statement": "左完全な共変加法函手 $G$ について，入射分解 $0\\to M\\to I^0\\to I^1\\to\\cdots$ によって $R^nG(M)=H^n(GI^\\bullet)$ が定まり，$R^0G\\simeq G$ である．短完全列から右導来函手の長完全列が得られる．",
+      "assumptions": [],
+      "position": [
+        212,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001315",
+        "K-001319",
+        "K-000548",
+        "K-000558",
+        "K-000401",
+        "K-001254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-212/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001321",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所分数による切断",
+      "statement": "可換環 $A$ と $X=\\operatorname{Spec}A$ に対し，開集合 $U$ 上の族 $(s_{\\mathfrak p})_{\\mathfrak p\\in U}$，$s_{\\mathfrak p}\\in A_{\\mathfrak p}$ が局所分数で表されるとは，各 $\\mathfrak p\\in U$ の開近傍 $V\\subseteq U$ と $a,b\\in A$ があり，全ての $\\mathfrak q\\in V$ に対して $b\\notin\\mathfrak q$ かつ $s_{\\mathfrak q}=a/b$ が成立することをいう．このような族の集合を $\\mathcal O_X(U)$ と書く．",
+      "assumptions": [],
+      "position": [
+        251,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001197",
+        "K-001198",
+        "K-001139",
+        "K-000451"
+      ],
+      "status": "draft",
+      "source": "volumes/N-251/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001322",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "構造層の環演算",
+      "statement": "$\\mathcal O_X(U)$ は成分ごとの環演算により可換環となり，族の制限は単位元を保つ環準同型となる．",
+      "assumptions": [],
+      "position": [
+        251,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001321",
+        "K-000451",
+        "K-000249",
+        "K-000251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-251/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001323",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "構造層の層性",
+      "statement": "$\\mathcal O_X$ は集合値層であり，その各切断集合は前命題の環構造を持つ．これを $X$ の構造層という．",
+      "assumptions": [],
+      "position": [
+        251,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001322",
+        "K-000526",
+        "K-000527"
+      ],
+      "status": "draft",
+      "source": "volumes/N-251/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001324",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "構造層の茎",
+      "statement": "各 $\\mathfrak p\\in X$ で評価による標準環同型 $(\\mathcal O_X)_{\\mathfrak p}\\simeq A_{\\mathfrak p}$ が存在する．茎の環演算は共通近傍上で切断を演算して定める．",
+      "assumptions": [],
+      "position": [
+        251,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001323",
+        "K-001182",
+        "K-001183",
+        "K-000450",
+        "K-001199"
+      ],
+      "status": "draft",
+      "source": "volumes/N-251/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001325",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基本開集合への局所化準同型",
+      "statement": "各 $f\\in A$ について標準準同型 $A_f\\to\\mathcal O_X(D(f))$ があり，$a/f^n$ を各点での同じ分数に移す．この準同型は単射である．",
+      "assumptions": [],
+      "position": [
+        251,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001323",
+        "K-001324",
+        "K-000453",
+        "K-001141",
+        "K-001199"
+      ],
+      "status": "draft",
+      "source": "volumes/N-251/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001326",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基本開集合の切断環",
+      "statement": "標準準同型 $A_f\\to\\mathcal O_X(D(f))$ は同型である．特に $\\mathcal O_X(X)\\simeq A$ である．",
+      "assumptions": [],
+      "position": [
+        251,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001325",
+        "K-001202",
+        "K-001136",
+        "K-001141",
+        "K-000453",
+        "K-001199"
+      ],
+      "status": "draft",
+      "source": "volumes/N-251/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001327",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "包除原理",
+      "statement": "有限集合 $X$ の部分集合 $A_1,\\ldots,A_n$ について\n\\[\n|\\bigcup_i A_i|=\\sum_{\\varnothing\\ne J\\subseteq\\{1,\\ldots,n\\}}(-1)^{|J|+1}|\\bigcap_{j\\in J}A_j|\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        266,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001204",
+        "K-001206",
+        "K-001210"
+      ],
+      "status": "draft",
+      "source": "volumes/N-266/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001328",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "補集合形の包除原理",
+      "statement": "$X\\setminus\\bigcup_i A_i$ の濃度は\n\\[\n\\sum_{J\\subseteq\\{1,\\ldots,n\\}}(-1)^{|J|}|\\bigcap_{j\\in J}A_j|\n\\]\nであり，空添字の共通部分を $X$ とする．",
+      "assumptions": [],
+      "position": [
+        266,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001327",
+        "K-001204"
+      ],
+      "status": "draft",
+      "source": "volumes/N-266/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001329",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全射の数え上げ",
+      "statement": "$m$ 元集合から $n$ 元集合への全射の個数は $\\sum_{k=0}^n(-1)^k\\binom nk(n-k)^m$ である．空の定義域から空集合への写像は一つなので $0^0=1$ とする．",
+      "assumptions": [],
+      "position": [
+        266,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001328",
+        "K-001205",
+        "K-001206"
+      ],
+      "status": "draft",
+      "source": "volumes/N-266/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001330",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "完全順列",
+      "statement": "$n$ 元集合の固定点を持たない置換の個数は\n\\[\nn!\\sum_{k=0}^n\\frac{(-1)^k}{k!}\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        266,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001328",
+        "K-001207",
+        "K-001208"
+      ],
+      "status": "draft",
+      "source": "volumes/N-266/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001331",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "形式冪級数",
+      "statement": "可換環 $R$ 上の形式冪級数とは列 $(a_n)_{n\\geq0}$ であり，$\\sum_{n\\geq0}a_nX^n$ と書く．これは解析的な収束を意味しない．",
+      "assumptions": [],
+      "position": [
+        267,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000249",
+        "K-000350",
+        "K-000047"
+      ],
+      "status": "draft",
+      "source": "volumes/N-267/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001332",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "形式冪級数環",
+      "statement": "係数ごとの加法と積の係数 $(fg)_n=\\sum_{i+j=n}a_i b_j$ によって形式冪級数全体は可換環 $R[[X]]$ となり，$R[X]$ を部分環として含む．",
+      "assumptions": [],
+      "position": [
+        267,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001331",
+        "K-000351",
+        "K-000249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-267/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001333",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "形式冪級数の単元判定",
+      "statement": "$f=\\sum a_nX^n$ が単元であることと $a_0$ が $R$ の単元であることは同値である．",
+      "assumptions": [],
+      "position": [
+        267,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001332",
+        "K-000442",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-267/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001334",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "通常母函数",
+      "statement": "数列 $(a_n)_{n\\geq0}$ の通常母函数を $A(X)=\\sum_{n\\geq0}a_nX^n$ と定める．積の係数は二つの数列の畳込みを表す．",
+      "assumptions": [],
+      "position": [
+        267,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001331",
+        "K-001332"
+      ],
+      "status": "draft",
+      "source": "volumes/N-267/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001335",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形漸化式の母函数",
+      "statement": "$a_n=c_1a_{n-1}+\\cdots+c_da_{n-d}$ が $n\\geq d$ で成り立つなら\n\\[\n(1-c_1X-\\cdots-c_dX^d)A(X)=\\sum_{n=0}^{d-1}(a_n-\\sum_{i=1}^{n}c_i a_{n-i})X^n .\n\\]\nこの式は初期値から母函数を一意に定める．",
+      "assumptions": [],
+      "position": [
+        267,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001334",
+        "K-001333"
+      ],
+      "status": "draft",
+      "source": "volumes/N-267/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001336",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "Fibonacci数の母函数",
+      "statement": "$a_0=0,a_1=1,a_{n+2}=a_{n+1}+a_n$ なら母函数は $X/(1-X-X^2)$ である．",
+      "assumptions": [],
+      "position": [
+        267,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001335"
+      ],
+      "status": "draft",
+      "source": "volumes/N-267/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001337",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "無向単純グラフ",
+      "statement": "集合 $V$ とその二元部分集合からなる集合 $E$ の組 $G=(V,E)$ を無向単純グラフという．$\\{u,v\\}\\in E$ のとき二頂点は隣接するという．頂点集合が有限なら有限グラフという．",
+      "assumptions": [],
+      "position": [
+        268,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000027",
+        "K-000110"
+      ],
+      "status": "draft",
+      "source": "volumes/N-268/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001338",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "歩道と道",
+      "statement": "頂点の有限列 $(v_0,\\ldots,v_n)$ で各連続する二元が隣接するものを歩道といい，$n$ を長さという．頂点の重複のない歩道を道という．始点と終点が同じで長さ三以上，始終点以外の重複がない歩道を閉路という．",
+      "assumptions": [],
+      "position": [
+        268,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001337",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-268/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001339",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "歩道から道への簡約",
+      "statement": "二頂点の間に歩道が存在すれば道が存在する．",
+      "assumptions": [],
+      "position": [
+        268,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001338",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-268/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001340",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連結成分による分割",
+      "statement": "頂点 $u,v$ の間に歩道があるという関係は同値関係である．その同値類を連結成分という．グラフが空でなく連結成分が一つであるとき連結という．",
+      "assumptions": [],
+      "position": [
+        268,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001338",
+        "K-000052",
+        "K-000054"
+      ],
+      "status": "draft",
+      "source": "volumes/N-268/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001341",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "木",
+      "statement": "閉路を持たない連結グラフを木という．閉路を持たないグラフを森という．",
+      "assumptions": [],
+      "position": [
+        268,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001338",
+        "K-001340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-268/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001342",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "木における道の一意性",
+      "statement": "連結グラフが木であることと，任意の相異なる二頂点間に道がただ一つ存在することは同値である．",
+      "assumptions": [],
+      "position": [
+        268,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001341",
+        "K-001339"
+      ],
+      "status": "draft",
+      "source": "volumes/N-268/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001343",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "元の固定点集合",
+      "statement": "有限群 $G$ の有限集合 $X$ への作用に対し $X^g=\\{x\\in X\\mid gx=x\\}$ と書く．軌道の集合を $X/G$ と書く．",
+      "assumptions": [],
+      "position": [
+        270,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000304",
+        "K-000307",
+        "K-000308"
+      ],
+      "status": "draft",
+      "source": "volumes/N-270/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001344",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Burnsideの補題",
+      "statement": "有限群 $G$ が有限集合 $X$ に作用するとき\n\\[\n|X/G|=\\frac{1}{|G|}\\sum_{g\\in G}|X^g|\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        270,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001343",
+        "K-000359",
+        "K-000360",
+        "K-001204",
+        "K-000310"
+      ],
+      "status": "draft",
+      "source": "volumes/N-270/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001345",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "彩色の軌道数",
+      "statement": "有限集合 $S$ に有限群 $G$ が作用し，$q$ 色による彩色の集合に $(g\\cdot c)(s)=c(g^{-1}s)$ と作用させる．$g$ の置換が持つ巡回軌道数を $c(g)$ とすれば，彩色の軌道数は $|G|^{-1}\\sum_g q^{c(g)}$ である．",
+      "assumptions": [],
+      "position": [
+        270,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001344",
+        "K-000316",
+        "K-001205"
+      ],
+      "status": "draft",
+      "source": "volumes/N-270/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001346",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "三角形の回転と彩色",
+      "statement": "三角形の三頂点を $q$ 色で彩色し，回転で移り合うものを同一視すると，彩色の種類は $(q^3+2q)/3$ である．",
+      "assumptions": [],
+      "position": [
+        270,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001345"
+      ],
+      "status": "draft",
+      "source": "volumes/N-270/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -44149,7 +45177,7 @@
       "number": 212,
       "title": "導来函手",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         209,
         210,
@@ -44159,7 +45187,8 @@
         "分解・比較定理・長完全列"
       ],
       "treatise": "T-30",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 213,
@@ -44746,7 +45775,7 @@
       "number": 251,
       "title": "構造層",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         36,
         347,
@@ -44756,7 +45785,8 @@
         "局所化による構造層・茎"
       ],
       "treatise": "T-36",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 252,
@@ -44979,7 +46009,7 @@
       "number": 266,
       "title": "包除原理",
       "area": "離散",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         38
       ],
@@ -44987,13 +46017,14 @@
         "包除・全射の数え上げ"
       ],
       "treatise": "T-38",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 267,
       "title": "母函数",
       "area": "離散",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         38,
         72
@@ -45002,13 +46033,14 @@
         "形式冪級数・漸化式"
       ],
       "treatise": "T-38",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 268,
       "title": "グラフと連結性",
       "area": "離散",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         38
       ],
@@ -45016,7 +46048,8 @@
         "グラフ・道・連結成分"
       ],
       "treatise": "T-38",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 269,
@@ -45036,7 +46069,7 @@
       "number": 270,
       "title": "群作用による数え上げ",
       "area": "離散",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         122,
         38
@@ -45045,7 +46078,8 @@
         "Burnside補題・軌道の計数"
       ],
       "treatise": "T-38",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 271,
