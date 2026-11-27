@@ -1,0 +1,130 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{整拡大}
+% genron:begin K-001426
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000251
+% genron:use K-000350
+% genron:use K-000351
+\begin{defn}[整元と整拡大]
+単位元を共有する可換環 $A\subseteq B$ に対し，$b\in B$ が $A$ 上整であるとは，$b^n+a_{n-1}b^{n-1}+\cdots+a_0=0$ となる $n\geq1$ と $a_i\in A$ が存在することをいう．$B$ の各元が整であるとき $B/A$ を整拡大という．
+\end{defn}
+% genron:end K-001426
+% genron:begin K-001427
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001426
+% genron:use K-000342
+\begin{prop}[単元添加の有限性]
+$b\in B$ が $A$ 上整ならば，$A[b]$ は有限生成 $A$ 加群である．
+\end{prop}
+\begin{proof}
+整関係の次数を $n$ とする．$b^n$ は $1,b,\ldots,b^{n-1}$ の線形結合である．その関係式に $b$ を掛けて帰納すれば全ての高次冪が同じ元で生成される．$A[b]$ の元はこれらの冪の有限線形結合なので結論を得る．
+\end{proof}
+% genron:end K-001427
+% genron:begin K-001428
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000335
+% genron:use K-000338
+% genron:use K-000342
+% genron:use K-000351
+\begin{prop}[行列式技巧]
+$A$ を可換環，$M$ を有限生成 $A$ 加群，$u:M\to M$ を準同型とする．$u$ を零にするモニック多項式 $f\in A[X]$ が存在する．
+\end{prop}
+\begin{proof}
+生成系 $m_1,\ldots,m_n$ を取り $u(m_i)=\sum_j a_{ij}m_j$ と書く．$M$ において $X$ を $u$ として作用させると $(XI-C)m=0$ である．ここで $C=(a_{ij})$，$m$ は生成元の列である．可換環 $A[X]$ 上で，行列 $D=XI-C$ の余因子を置換和
+\[
+\det D=\sum_{\sigma}\operatorname{sgn}(\sigma)\prod_i d_{i,\sigma(i)}
+\]
+によって定める．余因子の転置からなる行列を $\operatorname{adj}D$ とすると $\operatorname{adj}D\,D=(\det D)I$ である．実際，対角成分は列についての余因子展開（置換和を当該列の選択によって分類したもの）であり，非対角成分は同一列を二つ含む行列の展開であるから列交換による項の相殺で零となる．従って $\det(XI-C)m=0$ である．置換和の最高次項は恒等置換の項からのみ生じ，係数は $1$ である．このモニック多項式は全生成元を零にするので $M$ 全体を零にする．$M=0$ なら $f=X$ としてよい．
+\end{proof}
+% genron:end K-001428
+% genron:begin K-001429
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001427
+% genron:use K-001428
+\begin{prop}[整元の有限加群による特徴]
+$b$ が $A$ 上整であることと，$1,b$ を含む部分環 $C\subseteq B$ で $A$ を含み有限生成 $A$ 加群であるものが存在することは同値である．
+\end{prop}
+\begin{proof}
+順方向は $C=A[b]$ とすればよい．逆に $C$ の上で $b$ 倍写像を考えると，前命題によりモニック多項式 $f$ がこの写像を零にする．$1$ に作用させれば $f(b)=0$ である．
+\end{proof}
+% genron:end K-001429
+% genron:begin K-001430
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001429
+% genron:use K-000342
+\begin{prop}[有限個の整元による添加]
+$b_1,\ldots,b_r$ が $A$ 上整ならば $A[b_1,\ldots,b_r]$ は有限生成 $A$ 加群であり，そのすべての元は $A$ 上整である．
+\end{prop}
+\begin{proof}
+各 $b_i$ について次数 $n_i$ の整関係を選ぶ．環が可換であるため，任意の単項式は各指数が $n_i$ 未満である単項式の線形結合に書き直せる．従って有限生成である．この部分環の任意の元に有限加群による特徴を適用すれば整性を得る．
+\end{proof}
+% genron:end K-001430
+% genron:begin K-001431
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001427
+% genron:use K-001429
+% genron:use K-001430
+\begin{prop}[整閉包と整性の推移性]
+$B$ の $A$ 上整な元全体は $A$ を含む部分環である．これを $B$ における $A$ の整閉包という．$A\subseteq B\subseteq C$ が可換環の包含で $B/A$ と $C/B$ が整ならば $C/A$ も整である．
+\end{prop}
+\begin{proof}
+整元 $x,y$ に対し $x+y,-x,xy$ は有限生成加群 $A[x,y]$ に属するので整である．また $A$ の元は一次の整関係を満たす．推移性について $c\in C$ を取り，$B$ 上のモニック整関係の係数 $b_1,\ldots,b_r$ を選ぶ．$D=A[b_1,\ldots,b_r]$ は有限生成 $A$ 加群で，$D[c]$ は有限生成 $D$ 加群である．二つの有限生成系の積が $D[c]$ を $A$ 上生成するので，$D[c]$ は有限生成 $A$ 加群となる．従って $c$ は $A$ 上整である．
+\end{proof}
+% genron:end K-001431
+% genron:begin K-001432
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001431
+% genron:use K-000454
+\begin{defn}[整閉整域]
+整域 $A$ の分数体における整閉包が $A$ 自身に等しいとき，$A$ を整閉整域という．
+\end{defn}
+% genron:end K-001432

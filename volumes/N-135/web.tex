@@ -1,0 +1,127 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{超越拡大}
+% genron:begin K-001419
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000350
+% genron:use K-000351
+% genron:use K-000353
+% genron:use K-001306
+\begin{defn}[代数独立]
+体の拡大 $L/K$ において部分集合 $S\subseteq L$ が $K$ 上代数独立であるとは，相異なる有限個の元 $s_1,\ldots,s_n$ と任意の非零多項式 $P\in K[X_1,\ldots,X_n]$ に対し $P(s_1,\ldots,s_n)\ne0$ となることをいう．多変数多項式は一変数多項式環の反復として定める．
+\end{defn}
+% genron:end K-001419
+% genron:begin K-001420
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001419
+% genron:use K-001195
+% genron:use K-001306
+% genron:use K-000454
+\begin{prop}[代数独立と超越元]
+$S$ が $K$ 上代数独立で $x\notin S$ であるとする．$S\cup\{x\}$ が代数独立であることと，$x$ が $K(S)$ 上超越的であることは同値である．
+\end{prop}
+\begin{proof}
+代数的な関係があれば，$x$ の冪について整理して係数を $K[S]$ に持つ多項式を得る．$S$ の独立性によって非零係数は消えない．逆に $K(S)$ 上の非零多項式関係があれば，係数を有限個の $S$ の元の有理式として書き分母を払う．$S$ の独立性により分母は非零であり，得られる多項式も非零なので代数独立性に反する．
+\end{proof}
+% genron:end K-001420
+% genron:begin K-001421
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001419
+% genron:use K-001195
+% genron:use K-001312
+\begin{defn}[超越基底]
+$S\subseteq L$ が $K$ 上代数独立であり，$L/K(S)$ が代数拡大であるとき，$S$ を $L/K$ の超越基底という．
+\end{defn}
+% genron:end K-001421
+% genron:begin K-001422
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001420
+% genron:use K-001421
+% genron:use K-000131
+\begin{prop}[超越基底の存在]
+任意の拡大体 $L/K$ は超越基底を持ち，任意の代数独立集合は超越基底に含まれる．
+\end{prop}
+\begin{proof}
+所与の独立集合を含む独立集合全体を包含で順序付ける．鎖の合併は独立である．実際，多項式関係は有限個の元しか含まず，それらは鎖の一つの集合に属する．Zornの補題により極大独立集合 $S$ が得られる．$L/K(S)$ が代数的でなければ，超越的な元 $x$ を一つ選ぶことで前命題により $S\cup\{x\}$ が独立となり極大性に反する．
+\end{proof}
+% genron:end K-001422
+% genron:begin K-001423
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001420
+% genron:use K-001306
+\begin{prop}[超越元の交換]
+中間体 $F$ と元 $x,y\in L$ に対し，$y$ が $F(x)$ 上代数的で $F$ 上超越的であるならば，$x$ は $F(y)$ 上代数的である．
+\end{prop}
+\begin{proof}
+$y$ の非零多項式関係の係数の分母を払えば，非零 $P(X,Y)\in F[X,Y]$ で $P(x,y)=0$ となるものを得る．$y$ は $F$ 上超越的なので，$X$ の多項式と見た $P(X,y)$ は非零である．従って $x$ は $F(y)$ 上代数的である．
+\end{proof}
+% genron:end K-001423
+% genron:begin K-001424
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001422
+% genron:use K-001423
+% genron:use K-001196
+% genron:use K-001311
+% genron:use K-001312
+\begin{prop}[有限超越基底の長さ]
+$L/K$ が $n$ 元からなる超越基底を持つならば，任意の代数独立集合の元の個数は $n$ 以下であり，任意の超越基底の元の個数は $n$ である．
+\end{prop}
+\begin{proof}
+$L$ が $K(t_1,\ldots,t_n)$ 上代数的であるとする．独立な元 $x_1,\ldots,x_m$ を順に $t_i$ と交換する．$x_1$ は $K$ 上超越的であるが全ての $t_i$ を加えると代数的である．$x_1$ を代数的にするのに必要な包含極小の部分集合を選び，その中の一元 $t_j$ を交換命題で取り除く．すると $L$ は $x_1$ と残りの $t_i$ で生成される体上代数的である（代数拡大の推移性は有限個の係数を含む有限次拡大を取って示せる）．次に $x_2$ は $K(x_1)$ 上超越的なので同じ操作が可能である．各回で $t_i$ が一つ減るから $m\leq n$ である．従って任意の独立集合は有限で長さが $n$ 以下となる．それが超越基底なら逆の比較も成立する．
+\end{proof}
+% genron:end K-001424
+% genron:begin K-001425
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001424
+\begin{defn}[有限超越次数]
+有限超越基底を持つ拡大 $L/K$ について，超越基底の元の個数を超越次数 $\operatorname{trdeg}_K L$ と定める．一般の無限基底の濃度の一意性は別途濃度論を用いて扱う．
+\end{defn}
+% genron:end K-001425

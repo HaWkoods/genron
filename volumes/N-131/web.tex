@@ -1,0 +1,118 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{分離拡大}
+% genron:begin K-001413
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000350
+% genron:use K-000354
+% genron:use K-001307
+% genron:use K-001237
+\begin{defn}[形式微分と分離多項式]
+$f=\sum_{i=0}^n a_iX^i\in K[X]$ に対し $f'=\sum_{i=1}^n ia_i X^{i-1}$ とおく．正次数多項式が一次式に分解する拡大体において重根を持たないとき分離的という．$K$ 上の代数元が分離的であるとは最小多項式が分離的であることをいう．
+\end{defn}
+% genron:end K-001413
+% genron:begin K-001414
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001413
+% genron:use K-001234
+% genron:use K-001236
+% genron:use K-001237
+% genron:use K-001310
+% genron:use K-001122
+\begin{prop}[重根と形式微分]
+$f\in K[X]$ が分離的であるための必要十分条件は $\gcd(f,f')=1$ である．特に標数零の体上の既約多項式は分離的である．
+\end{prop}
+\begin{proof}
+形式微分の積法則は単項式の積から線形性によって従う．$f=(X-\alpha)g$ ならば $f'(\alpha)=g(\alpha)$ となるので，$\alpha$ が重根であることと $f(\alpha)=f'(\alpha)=0$ は同値である．一次式への分解が可能な拡大体は，既約因子の根を剰余体で添加して次数を順次下げれば有限回で得られる．$\gcd(f,f')=1$ ならBézout等式により共通根はない．逆に最大公約元が正次数なら $f$ の分解体で一次因子を持ち共通根がある．従って分離性は分解する体の選択に依存しない．標数零では既約な $f$ の形式微分は非零で次数が小さいので最大公約元は $1$ となる．
+\end{proof}
+% genron:end K-001414
+% genron:begin K-001415
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001413
+% genron:use K-001306
+\begin{defn}[分離拡大]
+代数拡大 $L/K$ の全ての元が $K$ 上分離的であるとき，$L/K$ を分離拡大という．
+\end{defn}
+% genron:end K-001415
+% genron:begin K-001416
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001414
+% genron:use K-001415
+% genron:use K-001191
+% genron:use K-001196
+% genron:use K-001308
+\begin{prop}[有限次拡大の埋込み数]
+$L/K$ を有限次拡大とし，$E$ を $K$ を含む代数閉体とする．$K$ を固定する埋込み $L\to E$ の個数は $[L:K]$ 以下である．等号が成立することと $L/K$ が分離的であることは同値である．
+\end{prop}
+\begin{proof}
+$L=K(\alpha_1,\ldots,\alpha_r)$ と書く．一つの中間体の埋込みは，次の最小多項式の像の相異なる根の個数だけ延長できる．実際，根への評価写像は最小多項式で割った剰余体からの埋込みを与え，逆に埋込みは根の像で定まる．個数は各段階の次数以下であり，塔の公式により全体の個数は $[L:K]$ 以下となる．
+分離拡大であれば，各段階の最小多項式は $K$ 上の分離最小多項式を割るため分離的である．従って毎段階で次数に等しい個数の延長がある．逆に分離的でない元 $\alpha\in L$ を第一の生成元に選べば，第一段階の個数はその次数より真に小さい．以後の個数を次数で評価すると全体も $[L:K]$ より小さい．
+\end{proof}
+% genron:end K-001416
+% genron:begin K-001417
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001416
+% genron:use K-001191
+% genron:use K-001307
+% genron:use K-001308
+\begin{prop}[無限体上の原始元の存在]
+$K$ を無限体とし，$L/K$ を有限分離拡大とする．$K$ を含む代数閉体に $L$ が埋め込まれているならば，ある $\theta\in L$ が存在して $L=K(\theta)$ となる．
+\end{prop}
+\begin{proof}
+埋込みの個数を $d=[L:K]$ とする．二元 $\alpha,\beta$ が $L$ を生成する場合を考える．異なる埋込み $\sigma,\tau$ に対し，$\sigma(\alpha+c\beta)=\tau(\alpha+c\beta)$ となる $c\in K$ は高々一つである．実際，$\beta$ の像が等しい場合は $\alpha$ の像が異なるので解はない．有限個の組について禁止される値を除外して $c$ を選ぶ．$\theta=\alpha+c\beta$ の像は $d$ 個相異なるので，最小多項式の次数は $d$ 以上である．塔の公式によって次数は $d$ 以下であり，従って $K(\theta)=L$ となる．一般の有限生成系に対して二元の場合を繰り返す．各中間体は分離拡大であり，同じ代数閉体に含まれている．
+\end{proof}
+% genron:end K-001417
+% genron:begin K-001418
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001414
+% genron:use K-000355
+% genron:use K-001237
+% genron:use K-001310
+\begin{example}[非分離多項式]
+素数 $p$ に対し $K=\mathbb F_p(t)$ とすると，$X^p-t$ は $K[X]$ で既約であるが分離的でない．
+\end{example}
+\begin{proof}
+$t$ は $K$ において $p$ 乗でない．実際 $(a(t)/b(t))^p=t$ ならば，両辺の分子分母を払った等式 $a(t)^p=t b(t)^p$ の次数を比較して $p\deg a=1+p\deg b$ となり矛盾する．根 $\alpha$ を持つ拡大体では $X^p-t=(X-\alpha)^p$ である．もし $K$ 上で次数 $m$ ($1\leq m<p$) のモニック因子があれば，その因子は $(X-\alpha)^m$ に等しく，$X^{m-1}$ の係数 $-m\alpha$ が $K$ に属する．$m$ は $K$ で非零なので $\alpha\in K$ となり矛盾する．従って既約である．形式微分は零であり分離的でない．
+\end{proof}
+% genron:end K-001418

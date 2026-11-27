@@ -1,0 +1,120 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Artin環と分解}
+% genron:begin K-001433
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000337
+% genron:use K-000343
+% genron:use K-000462
+\begin{defn}[Artin加群及びArtin環]
+加群 $M$ の部分加群の任意の降鎖が有限段階で停留するとき $M$ をArtin加群という．可換環 $A$ が自身の加群としてArtin加群であるときArtin環という．
+\end{defn}
+% genron:end K-001433
+% genron:begin K-001434
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001433
+% genron:use K-000333
+% genron:use K-000444
+% genron:use K-000447
+\begin{prop}[Artin環の素イデアル]
+可換Artin環の任意の素イデアルは極大イデアルである．
+\end{prop}
+\begin{proof}
+商環はイデアル対応によりArtin環である．従ってArtin整域が体であることを示せばよい．非零元 $a$ に対し降鎖 $(a)\supseteq(a^2)\supseteq\cdots$ は停留するから，ある $n$ で $a^n=a^{n+1}b$ となる．整域の簡約律により $ab=1$ である．全ての非零元が可逆となり体である．
+\end{proof}
+% genron:end K-001434
+% genron:begin K-001435
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001433
+% genron:use K-001434
+% genron:use K-000446
+% genron:use K-000060
+\begin{prop}[極大イデアルの有限性]
+非零可換Artin環には有限個の極大イデアルしか存在しない．
+\end{prop}
+\begin{proof}
+無限個存在すると仮定し，相異なる極大イデアル $\mathfrak m_1,\mathfrak m_2,\ldots$ を選ぶ．$I_n=\bigcap_{i=1}^n\mathfrak m_i$ とおく．各 $i\leq n$ について $\mathfrak m_i$ は $\mathfrak m_{n+1}$ に含まれないので $a_i\in\mathfrak m_i\setminus\mathfrak m_{n+1}$ を取れる．積 $\prod_i a_i$ は $I_n$ に属し，$\mathfrak m_{n+1}$ は素であるためそこには属さない．従って $I_{n+1}\subsetneq I_n$ となり降鎖条件に反する．
+\end{proof}
+% genron:end K-001435
+% genron:begin K-001436
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001433
+% genron:use K-000448
+% genron:use K-000060
+\begin{prop}[Artin環の根基の冪零性]
+$A$ を非零可換Artin環，$J$ を全極大イデアルの共通部分とする．ある $n$ に対し $J^n=0$ となる．
+\end{prop}
+\begin{proof}
+降鎖条件より $J^n=J^{n+1}$ となる $n\geq1$ が存在する．$J^n\ne0$ と仮定し，$J^nI\ne0$ を満たすイデアル $I$ の中から極小なものを取る．この集合は $A$ を含むので空でない．$J^nI\ne0$ だから $J^nx\ne0$ となる $x\in I$ が存在し，極小性によって $I=(x)$ となる．さらに $J^n(JI)=J^{n+1}I=J^nI\ne0$ なので $JI=I$ である．従って $x=jx$ を満たす $j\in J$ が存在する．$1-j$ はいずれの極大イデアルにも属さず，もし非単元ならその生成イデアルを含む極大イデアルが存在するので矛盾する．従って $1-j$ は単元であり $x=0$ となるが，これは $J^nx\ne0$ に反する．
+\end{proof}
+% genron:end K-001436
+% genron:begin K-001437
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001434
+% genron:use K-001435
+% genron:use K-001436
+% genron:use K-001137
+% genron:use K-000333
+\begin{prop}[Artin環の局所環分解]
+非零可換Artin環は有限個の可換局所Artin環の直積に同型である．
+\end{prop}
+\begin{proof}
+極大イデアルを $\mathfrak m_1,\ldots,\mathfrak m_r$ とする．相異なる極大イデアルの和は $A$ である．二つのイデアル $I,J$ が $I+J=A$ を満たすとき $a+b=1$ ($a\in I,b\in J$) と書き，$(a+b)^{2n-1}$ を展開すると $I^n+J^n=A$ であることが分かる．互いに素なイデアルの積と共通部分は等しい（$x\in I\cap J$ なら $x=xa+xb$）．有限個にも帰納的に拡張できる．従って前命題の $n$ に対して $\bigcap_i\mathfrak m_i^n=\prod_i\mathfrak m_i^n=J^n=0$ である．
+自然写像 $A\to\prod_i A/\mathfrak m_i^n$ の核はこの共通部分であり，互いに素であることから全射でもある．実際，各 $i$ に対して他の全イデアルの積と $\mathfrak m_i^n$ の和は $A$ なので，他の成分で零，第 $i$ 成分で $1$ となる元を選べる．それらの線形結合で任意の組を持ち上げる．各商の極大イデアルは $\mathfrak m_i^n$ を含む極大イデアルに対応するが，素性からそのような極大イデアルは $\mathfrak m_i$ に限る．従って各商は局所環であり，降鎖条件も保たれる．
+\end{proof}
+% genron:end K-001437
+% genron:begin K-001438
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001436
+% genron:use K-001437
+% genron:use K-000464
+% genron:use K-000465
+% genron:use K-000060
+\begin{prop}[可換Artin環のNoether性]
+可換Artin環はNoether環である．
+\end{prop}
+\begin{proof}
+零環は明らかである．前命題の分解により局所Artin環の場合を示せばよい．極大イデアルを $\mathfrak m$ とすると $\mathfrak m^n=0$ であり，各 $\mathfrak m^i/\mathfrak m^{i+1}$ は剰余体 $A/\mathfrak m$ 上の線形空間である．降鎖条件を満たす線形空間は有限次元である．実際，無限次元なら線形独立列を帰納的に取り，その末尾の張る部分空間によって真の無限降鎖が得られる．従って各商は有限次元でありNoether加群である（部分加群の昇鎖で次元が真に増加する回数は有限）．短完全列に関するNoether性の拡大判定を冪の列に繰り返し用いて $A$ のNoether性を得る．有限直積については有限直和のNoether性から従う．
+\end{proof}
+% genron:end K-001438
