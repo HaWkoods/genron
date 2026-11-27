@@ -1,0 +1,122 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{有限オートマトン}
+% genron:begin K-001472
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000541
+% genron:use K-000110
+% genron:use K-000034
+\begin{defn}[決定性有限オートマトン]
+有限アルファベット $\Sigma$，空でない有限状態集合 $Q$，遷移函数 $\delta:Q\times\Sigma\to Q$，初期状態 $q_0\in Q$，受理状態集合 $F\subseteq Q$ の組を決定性有限オートマトンという．
+\end{defn}
+% genron:end K-001472
+% genron:begin K-001473
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001472
+% genron:use K-000542
+% genron:use K-000105
+\begin{defn}[語による遷移と受理]
+決定性有限オートマトンの遷移を $\delta^*(q,\varepsilon)=q$，$\delta^*(q,wa)=\delta(\delta^*(q,w),a)$ により $\Sigma^*$ 上に延長する．$\delta^*(q_0,w)\in F$ となる語を受理語といい，受理語全体をこのオートマトンの受理言語とする．
+\end{defn}
+% genron:end K-001473
+% genron:begin K-001474
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001473
+% genron:use K-000542
+\begin{prop}[連接に関する遷移]
+任意の語 $u,v$ と状態 $q$ について $\delta^*(q,uv)=\delta^*(\delta^*(q,u),v)$ である．
+\end{prop}
+\begin{proof}
+$v$ の長さに関して帰納する．空語の場合は定義により成立する．$v=wa$ の場合，左辺を $\delta(\delta^*(q,uw),a)$ と書く．帰納法の仮定を内側に適用すると $\delta(\delta^*(\delta^*(q,u),w),a)$ となり，これは右辺に等しい．
+\end{proof}
+% genron:end K-001474
+% genron:begin K-001475
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001472
+% genron:use K-000027
+% genron:use K-000118
+\begin{defn}[非決定性有限オートマトン]
+有限アルファベット $\Sigma$，有限状態集合 $Q$，遷移函数 $\Delta:Q\times\Sigma\to\mathcal P(Q)$，初期状態集合 $I\subseteq Q$，受理状態集合 $F\subseteq Q$ の組を非決定性有限オートマトンという．語 $a_1\cdots a_n$ が受理されるとは $q_0\in I,q_n\in F$ かつ $q_i\in\Delta(q_{i-1},a_i)$ となる状態列が存在することをいう．空語の受理条件は $I\cap F\ne\varnothing$ である．
+\end{defn}
+% genron:end K-001475
+% genron:begin K-001476
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001473
+% genron:use K-001475
+% genron:use K-000117
+\begin{prop}[部分集合による決定化]
+非決定性有限オートマトンの受理言語は決定性有限オートマトンの受理言語でもある．
+\end{prop}
+\begin{proof}
+状態集合を $\mathcal P(Q)$，初期状態を $I$ とし，遷移を $D(S,a)=\bigcup_{q\in S}\Delta(q,a)$ と定める．受理状態集合は $F$ と共通元を持つ部分集合全体とする．冪集合は有限である．語の長さに関して帰納すれば，$D^*(I,w)$ は初期状態集合から $w$ を読んで到達可能な状態全体に等しい．帰納段階は到達可能な各状態から最後の文字による遷移の合併を取る操作である．従って受理条件は一致する．
+\end{proof}
+% genron:end K-001476
+% genron:begin K-001477
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001473
+% genron:use K-000116
+\begin{prop}[受理言語のBoolean演算]
+同一アルファベット上の決定性有限オートマトンで受理される言語全体は，補集合，有限合併及び有限共通部分を取る操作に関して閉じている．
+\end{prop}
+\begin{proof}
+補集合は受理状態集合 $F$ を $Q\setminus F$ に取り替えればよい．二つのオートマトンの共通部分と合併については状態集合を $Q_1\times Q_2$，初期状態を $(q_1,q_2)$ とし，遷移を成分ごとに行う．語による遷移も帰納法によって成分ごとである．共通部分の場合の受理状態集合を $F_1\times F_2$ とし，合併の場合は $(F_1\times Q_2)\cup(Q_1\times F_2)$ とすれば，それぞれの受理条件に一致する．有限回の演算は帰納的に得られる．
+\end{proof}
+% genron:end K-001477
+% genron:begin K-001478
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001473
+\begin{example}[偶数個の文字の認識]
+$\Sigma=\{a,b\}$ 上で $a$ の出現回数が偶数である語全体は二状態の決定性有限オートマトンによって受理される．
+\end{example}
+\begin{proof}
+状態を $0,1$ とし，初期状態及び唯一の受理状態を $0$ とする．$a$ を読むごとに状態を交換し，$b$ を読んでも状態を変えない．帰納法により任意の語を読んだ後の状態は $a$ の出現回数の偶奇を表す．従って受理条件は主張と一致する．
+\end{proof}
+% genron:end K-001478

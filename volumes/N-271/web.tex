@@ -1,0 +1,102 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{グラフ上の流れ}
+% genron:begin K-001466
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001337
+% genron:use K-000321
+% genron:use K-000592
+% genron:use K-000118
+\begin{defn}[整数容量ネットワーク]
+有限集合 $V$，相異なる二頂点 $s,t\in V$，非負整数値函数 $c:V\times V\to\mathbb Z$ で $c(v,v)=0$ を満たすものの組を整数容量ネットワークという．$c(u,v)$ を有向辺の容量とする．流れとは整数値函数 $f:V\times V\to\mathbb Z$ で $f(u,v)=-f(v,u)$，$f(u,v)\leq c(u,v)$ を満たし，$v\notin\{s,t\}$ で $\sum_{w\in V} f(v,w)=0$ となるものをいう．その流量を $|f|=\sum_{w\in V}f(s,w)$ と定める．
+\end{defn}
+% genron:end K-001466
+% genron:begin K-001467
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001466
+\begin{defn}[カットと容量]
+整数容量ネットワークにおいて $s\in S\subseteq V$，$t\notin S$ なる部分集合 $S$ をカットとし，その容量を $c(S)=\sum_{u\in S,v\notin S}c(u,v)$ と定める．
+\end{defn}
+% genron:end K-001467
+% genron:begin K-001468
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001466
+% genron:use K-001467
+\begin{prop}[流量のカットによる上界]
+任意の流れ $f$ とカット $S$ について $|f|=\sum_{u\in S,v\notin S}f(u,v)\leq c(S)$ である．
+\end{prop}
+\begin{proof}
+$S$ の各頂点について流出量を加えると，流れの保存条件によりその和は $s$ の流出量に等しい．また $S$ 内部の各組の寄与は反対称性により相殺される．従って残るのは $S$ の外へ向かう項のみであり，容量条件によって不等式が従う．
+\end{proof}
+% genron:end K-001468
+% genron:begin K-001469
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001466
+% genron:use K-001338
+\begin{defn}[残余容量と増加道]
+流れ $f$ に対して $c_f(u,v)=c(u,v)-f(u,v)$ を残余容量とする．$s=v_0,\ldots,v_k=t$ が相異なる頂点からなり，各 $c_f(v_i,v_{i+1})>0$ であるとき増加道という．
+\end{defn}
+% genron:end K-001469
+% genron:begin K-001470
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001469
+\begin{prop}[増加道による流れの更新]
+増加道が存在するとき，流量を少なくとも $1$ 増やす整数値の流れが存在する．
+\end{prop}
+\begin{proof}
+$\delta=\min_{0\leq i<k}c_f(v_i,v_{i+1})$ とする．各道の有向辺に $\delta$ を加え，その逆向きの辺から $\delta$ を引き，他の値は変えない．道の頂点は相異なるため変更は衝突しない．残余容量の定義から順方向の容量条件は保たれ，逆方向では値が減るのでこれも保たれる．反対称性も保たれる．道の内部頂点では入る変更と出る変更が相殺されるため保存条件は変わらない．$s$ の流出量は $\delta$ 増え，$\delta$ は正整数である．
+\end{proof}
+% genron:end K-001470
+% genron:begin K-001471
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001468
+% genron:use K-001470
+% genron:use K-001339
+\begin{prop}[最大流最小カットの定理]
+整数容量ネットワークについて流量の最大値とカット容量の最小値は等しい．零流から増加道による更新を繰り返せば有限回で最大流を得る．
+\end{prop}
+\begin{proof}
+更新ごとに流量が正整数だけ増え，一方 $S=\{s\}$ のカット容量を越えないので有限回で停止する．停止時の流れを $f$ とする．残余容量が正の辺だけを通って $s$ から到達できる頂点の集合を $S$ とする．もし $t\in S$ なら，重複頂点を除くことで増加道を得るため停止条件に反する．従って $S$ はカットである．$u\in S,v\notin S$ なら $c_f(u,v)=0$ である（正なら $v$ に到達できる）．従ってそのような組では $f(u,v)=c(u,v)$ となり，カットの等式から $|f|=c(S)$ である．任意の流れと任意のカットに対する上界と合わせれば，この流れ及びカットが最適である．
+\end{proof}
+% genron:end K-001471

@@ -1,0 +1,142 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Gödelの完全性定理}
+% genron:begin K-001479
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001167
+% genron:use K-001347
+% genron:use K-001262
+\begin{defn}[無矛盾な文集合]
+一階言語の文集合 $T$ に対し $T\not\vdash\bot$ であるとき，$T$ は無矛盾であるという．各文 $A$ について $A\in T$ 又は $\neg A\in T$ が成立するとき，$T$ を完全な文集合という．ここでの完全性は推論体系の意味論的完全性とは異なる．
+\end{defn}
+% genron:end K-001479
+% genron:begin K-001480
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001479
+% genron:use K-000131
+% genron:use K-001167
+\begin{prop}[極大無矛盾拡張]
+無矛盾な文集合 $T$ は，演繹的に閉じた完全無矛盾文集合に含まれる．
+\end{prop}
+\begin{proof}
+$T$ を含む無矛盾文集合を包含で順序付ける．鎖の合併が矛盾を導くなら有限個の前提のみが用いられ，それらは鎖の一つの集合に入るため矛盾する．従ってZornの補題により極大な集合 $T^*$ が存在する．もし $T^*\vdash A$ なら $T^*\cup\{A\}$ からの導出で $A$ の使用箇所にその導出を代入できるので，拡張は無矛盾である．極大性により $A\in T^*$ となる．$A\notin T^*$ なら $T^*\cup\{A\}$ は矛盾を導くので否定導入により $T^*\vdash\neg A$ であり $\neg A\in T^*$ となる．両方が属することは無矛盾性から排除される．
+\end{proof}
+% genron:end K-001480
+% genron:begin K-001481
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001479
+% genron:use K-001347
+% genron:use K-001179
+% genron:use K-001167
+\begin{prop}[Henkin定数の導入]
+無矛盾な文集合 $T$ を持つ言語に新しい定数記号 $c$ を加え，旧言語の存在文 $\exists x A$ に対して $\exists x A\Rightarrow A[c/x]$ を加えても無矛盾性は保たれる．ここで $A$ の自由変数は高々 $x$ である．
+\end{prop}
+\begin{proof}
+新しい定数の追加だけでは矛盾は生じない．実際，矛盾の導出に現れる新定数を導出中に現れない相異なる新変数に一様に置き換えると，旧言語の導出を得る．変数が新しいため量化の固有変数条件及び代入条件は保たれる．
+証人公理を加えると矛盾すると仮定する．否定導入により $T\vdash\neg(\exists x A\Rightarrow A[c/x])$ であり，古典推論により $T\vdash\exists x A$ かつ $T\vdash\neg A[c/x]$ である．後者の導出における $c$ を新しい変数 $y$ に置き換えれば，$T\vdash\neg A[y/x]$ を得る．前者と存在除去を用いると $\bot$ が導かれる．この導出では $y$ は旧前提に現れず，存在除去の条件を満たす．従って旧言語での無矛盾性に反する．
+\end{proof}
+% genron:end K-001481
+% genron:begin K-001482
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001480
+% genron:use K-001481
+% genron:use K-000129
+% genron:use K-000124
+% genron:use K-000105
+\begin{prop}[証人を備えた無矛盾拡張]
+無矛盾な文集合 $T$ は，言語を定数記号によって拡張することにより，完全無矛盾かつ演繹的に閉じ，すべての存在文 $\exists x A$ が属するとき $A[c/x]$ も属する定数 $c$ が存在する文集合 $H$ に拡張できる．
+\end{prop}
+\begin{proof}
+まず新定数を少なくとも一つ加えて閉項の存在を保証する．現在の言語の全存在文を整列し，各々に相異なる新定数を割り当て，前命題による証人公理を順次追加する．極限段階では合併を取る．導出が有限であることから無矛盾性は保たれる．これにより現在の言語のすべての存在文に証人公理が加わった新言語と無矛盾な文集合が得られる．この操作を自然数回反復して言語と文集合の合併を取る．任意の式は有限個の記号しか含まないから合併言語の存在文はどこかの段階の言語に属し，その証人公理は次の段階に含まれる．最後に極大無矛盾拡張を取れば，演繹閉性と含意除去によって証人条件が成立する．
+\end{proof}
+% genron:end K-001482
+% genron:begin K-001483
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001482
+% genron:use K-001348
+% genron:use K-001351
+% genron:use K-001352
+% genron:use K-001256
+% genron:use K-001258
+% genron:use K-001261
+\begin{prop}[項モデル]
+前命題の文集合 $H$ はモデルを持つ．
+\end{prop}
+\begin{proof}
+閉項の集合に $s\sim t\Leftrightarrow(s=t)\in H$ と定める．等号の推論規則及び演繹閉性によって同値関係であり，函数記号の各引数及び関係記号に関して合同性を持つ．実際，等しい項を一引数ずつ置換することで，函数値の等号及び関係式の同値性を得る．商集合を台集合とし，函数記号を $([t_1],\ldots,[t_n])\mapsto[f(t_1,\ldots,t_n)]$，関係記号を $R([t_1],\ldots,[t_n])$ が成り立つことと $R(t_1,\ldots,t_n)\in H$ が同値になるように解釈する．合同性により良定義であり，定数があるため台集合は空でない．
+式に閉項を自由変数の代わりに代入した文について，モデルで真であることと $H$ に属することが同値であると構文に関して帰納する．原子式は構成による．結合子の場合は完全無矛盾性，演繹閉性及び古典命題論理の規則から，例えば $\neg A\in H$ と $A\notin H$ が同値であること，$A\land B\in H$ と $A,B\in H$ が同値であることが従う．存在文が $H$ に属すれば証人条件により閉項の代入例が $H$ に属し，帰納法によって真である．逆にモデルで真なら台集合の元は閉項で表されるので，ある代入例が真であり帰納法で $H$ に属する．存在導入によって存在文も $H$ に属する．全称量化は量化子の双対性によって存在量化と否定に帰着する．従ってすべての $H$ の文がモデルで真となる．
+\end{proof}
+% genron:end K-001483
+% genron:begin K-001484
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001482
+% genron:use K-001483
+% genron:use K-001350
+% genron:use K-001167
+\begin{prop}[Gödelの完全性定理]
+一階言語の文集合 $\Gamma$ と文 $A$ に対し $\Gamma\models A$ であるための必要十分条件は $\Gamma\vdash A$ である．
+\end{prop}
+\begin{proof}
+健全性により導出可能なら意味論的帰結である．逆に $\Gamma\not\vdash A$ と仮定する．$\Gamma\cup\{\neg A\}$ から矛盾を導ければ古典的背理法により $\Gamma\vdash A$ となるため，これは無矛盾である．証人を備えた拡張を取り，項モデルを構成する．その旧言語への制限は $\Gamma$ の全ての文と $\neg A$ を充足する．従って $\Gamma\not\models A$ である．対偶により完全性が従う．
+\end{proof}
+% genron:end K-001484
+% genron:begin K-001485
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001482
+% genron:use K-001483
+% genron:use K-001350
+\begin{prop}[一階論理のコンパクト性]
+文集合 $T$ がモデルを持つための必要十分条件は，$T$ の任意の有限部分集合がモデルを持つことである．
+\end{prop}
+\begin{proof}
+必要性は自明である．任意の有限部分集合がモデルを持つと仮定する．もし $T\vdash\bot$ なら有限個の前提 $T_0\subseteq T$ から矛盾が導出される．健全性により $T_0$ はモデルを持たないことになり矛盾する．従って $T$ は無矛盾であり，証人付き拡張及び項モデルの構成によってモデルを持つ．
+\end{proof}
+% genron:end K-001485

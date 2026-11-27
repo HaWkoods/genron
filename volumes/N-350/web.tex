@@ -1,0 +1,112 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{定数層と局所定数層}
+% genron:begin K-001493
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001271
+% genron:use K-001268
+\begin{defn}[定数層]
+位相空間 $X$ と集合 $A$ に対し，開集合 $U$ を $A$ に移しすべての制限写像を恒等写像とする前層の層化を定数層といい，$\underline A_X$ と書く．すなわち $\underline A_X(U)$ は局所定値函数 $U\to A$ の集合であり，ここで局所定値とは各点が函数の値が一定である開近傍を持つことをいう．
+\end{defn}
+% genron:end K-001493
+% genron:begin K-001494
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001493
+% genron:use K-001353
+% genron:use K-001354
+% genron:use K-001182
+\begin{prop}[定数層と離散ファイバー]
+$A$ に離散位相を入れると，$\underline A_X$ は射影 $X\times A\to X$ の連続切断の層と標準的に同型である．特に任意の点 $x\in X$ で $(\underline A_X)_x\simeq A$ である．
+\end{prop}
+\begin{proof}
+射影の切断は $x\mapsto(x,f(x))$ と一意に表される．これが連続であることは $f$ が離散位相への連続写像であること，すなわち局所定値であることと同値である．この対応は制限と可換である．茎に対しては切断の芽を当該点での値に移す．任意の値は定値切断で実現できる．同じ値を持つ局所定値函数は当該点の共通近傍で一致するので，対応は単射である．
+\end{proof}
+% genron:end K-001494
+% genron:begin K-001495
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001493
+\begin{defn}[局所定数層]
+集合値層 $F$ が局所定数層であるとは，各点 $x$ が開近傍 $U$ を持ち，ある集合 $A$ に対して制限層 $F|_U$ が $\underline A_U$ と同型であることをいう．集合 $A$ は近傍ごとに異なってよい．
+\end{defn}
+% genron:end K-001495
+% genron:begin K-001496
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001494
+% genron:use K-001495
+% genron:use K-001358
+% genron:use K-001355
+\begin{prop}[エタール空間による局所定数性]
+集合値層 $F$ が局所定数であることと，対応するエタール空間 $p:E\to X$ が各点のある開近傍 $U$ 上で $U\times A\to U$ と同型であることは同値である．
+\end{prop}
+\begin{proof}
+定数層に対応するエタール空間は，連続切断の層とエタール空間の圏同値及び前命題によって $U\times A$ に同型である．芽の空間を開集合 $U$ に制限する操作は層の制限と可換である．実際，$U$ が開なので $x\in U$ の近傍を $U$ 内に縮小して茎を計算でき，局所切断の芽で定める開基も一致する．従って局所層同型はエタール空間の局所積表示に対応し，逆に局所積表示から切断層を取れば局所層同型を得る．
+\end{proof}
+% genron:end K-001496
+% genron:begin K-001497
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001494
+% genron:use K-001495
+% genron:use K-001361
+% genron:use K-001363
+% genron:use K-001364
+% genron:use K-001267
+% genron:use K-001187
+\begin{prop}[逆像による局所定数性の保存]
+連続写像 $f:X\to Y$ に対し $f^{-1}\underline A_Y\simeq\underline A_X$ である．また局所定数層の逆像は局所定数層である．
+\end{prop}
+\begin{proof}
+逆像前層の代表切断を $f$ と合成することによって $\underline A_X$ への前層射を得る．合成は局所定値性を保ち，代表の変更と制限に関しても両立するので，層化の普遍性によって層の射を得る．各点の茎では逆像層の茎の標準同型及び定数層の値による同型を通じて，この射は $A$ の恒等写像となる．従って茎による同型判定から層の同型である．局所定数層の場合，$f(x)$ の定数層としての表示を持つ開近傍 $U$ を取り，$f^{-1}(U)$ に制限する．逆像と開集合への制限の両立は，逆像前層の代表を $U$ に含まれる開集合へ縮小することで従う．従ってこの近傍では定数層となる．
+\end{proof}
+% genron:end K-001497
+% genron:begin K-001498
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001495
+% genron:use K-001183
+\begin{example}[茎の濃度だけでは局所定数性は従わない]
+すべての茎が二元集合と同型であるが局所定数でない集合値層が存在する．
+\end{example}
+\begin{proof}
+$X=\{0,1\}$ に開集合が $\varnothing,\{1\},X$ の三つだけである位相を入れる．$F(X)=F(\{1\})=\{a,b\}$，$F(\varnothing)$ を一点集合とし，$X$ から $\{1\}$ への制限を定値写像 $a,b\mapsto a$ とする．非空開集合の任意の開被覆にはその開集合自身が含まれるので層条件が成立する．点 $0$ の茎は $F(X)$，点 $1$ の茎は $F(\{1\})$ に同型である．しかし点 $0$ の唯一の開近傍は $X$ である．定数層の局所定値函数 $X\to A$ は点 $0$ の近傍で一定となる必要があるので全体で一定である．従って定数層の $X$ から $\{1\}$ への制限は全単射である．$F$ の対応する制限は全単射でないため，$F$ はいかなる定数層とも同型でなく，点 $0$ で局所定数ではない．
+\end{proof}
+% genron:end K-001498

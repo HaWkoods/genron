@@ -1,0 +1,147 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{算術の形式化}
+% genron:begin K-001486
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001173
+% genron:use K-001174
+% genron:use K-000105
+\begin{defn}[一階算術の言語]
+一階算術の言語を定数記号 $0$，単項函数記号 $S$，二項函数記号 $+$ 及び $\cdot$，並びに等号を備えた一階言語とする．各自然数 $n$ に対して閉項 $\overline n=S^n0$ をその数の数項という．
+\end{defn}
+% genron:end K-001486
+% genron:begin K-001487
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001486
+% genron:use K-001175
+% genron:use K-001179
+% genron:use K-001180
+\begin{axiom}[Peano算術]
+一階算術の言語に次の公理を置く（表示した自由変数はすべて全称量化する）．
+\[
+Sx\ne0,\qquad Sx=Sy\Rightarrow x=y,
+\]
+\[
+x+0=x,\quad x+Sy=S(x+y),
+\]
+\[
+x\cdot0=0,\quad x\cdot Sy=x\cdot y+x.
+\]
+さらに任意の式 $\varphi(x,\boldsymbol y)$ に対して
+\[
+(\varphi(0,\boldsymbol y)\land\forall x(\varphi(x,\boldsymbol y)\Rightarrow\varphi(Sx,\boldsymbol y)))\Rightarrow\forall x\,\varphi(x,\boldsymbol y)
+\]
+の全称閉包を帰納法の公理図式とする．代入に際しては変数捕獲を避ける．これらの非論理公理からなる理論をPAと書く．
+\end{axiom}
+% genron:end K-001487
+% genron:begin K-001488
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001487
+% genron:use K-000100
+% genron:use K-000102
+% genron:use K-000107
+% genron:use K-001256
+% genron:use K-001258
+% genron:use K-001350
+\begin{prop}[標準自然数構造]
+通常の自然数集合に零，後者函数，加法及び乗法を解釈した一階構造 $\mathbb N$ はPAのモデルである．特にPAは無矛盾である．
+\end{prop}
+\begin{proof}
+最初の公理は自然数の後者の性質により成立し，加法と乗法の公理はそれらの再帰的定義により成立する．帰納法図式について，パラメータの値を任意に固定する．$\varphi$ を充足する自然数全体を部分集合として取る．帰納法公理の前件が真ならこの集合は零を含み後者に関して閉じるので，自然数の数学的帰納法により全自然数を含む．従って図式の任意の事例を充足する．PAから矛盾が導かれるなら健全性によってこの構造でも矛盾が真となるが，これは不可能である．この無矛盾性は原論の外部の自然数に関する推論における主張であって，PA内部の無矛盾性証明ではない．
+\end{proof}
+% genron:end K-001488
+% genron:begin K-001489
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001487
+% genron:use K-001348
+% genron:use K-001351
+% genron:use K-000100
+\begin{prop}[数項の演算]
+任意の自然数 $m,n$ についてPAは $\overline m+\overline n=\overline{m+n}$ 及び $\overline m\cdot\overline n=\overline{mn}$ を導出する．$m\ne n$ ならPAは $\overline m\ne\overline n$ を導出する．
+\end{prop}
+\begin{proof}
+外部の自然数 $n$ について帰納する．加法の零の場合は公理であり，後者の場合は $x+Sy=S(x+y)$ と帰納法で得た等号に対する置換を用いる．乗法も同様に零の場合を公理から得て，後者の場合に $x\cdot Sy=x\cdot y+x$ と既に得た加法の数項計算を用いる．相異なる数項が等しいと仮定すると，後者の単射性を有限回適用して $0$ と正の後者を等しいとする式を導く．$Sx\ne0$ と等号の対称性に反するので否定導入により結論を得る．
+\end{proof}
+% genron:end K-001489
+% genron:begin K-001490
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001486
+% genron:use K-000118
+% genron:use K-000105
+\begin{defn}[算術式のGödel符号]
+変数を $x_0,x_1,\ldots$ と番号付け，算術言語の他の構文記号と合わせて各記号に相異なる自然数番号を割り当てる．有限語 $(a_1,\ldots,a_k)$ の記号番号を同じ文字で書き，$p(a,b)=(a+b)(a+b+1)/2+b$ とおく．空語の符号を $0$，語の末尾への記号番号 $b$ の追加を $C(wb)=1+p(C(w),b)$ により定める．固定した括弧付き記法で表した項，式及び有限列の符号をGödel符号と呼ぶ．
+\end{defn}
+% genron:end K-001490
+% genron:begin K-001491
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001490
+% genron:use K-000104
+% genron:use K-000107
+\begin{prop}[Gödel符号の単射性と復号]
+前項の語の符号化は単射であり，自然数として与えられた符号から有限語を一意に復号できる．
+\end{prop}
+\begin{proof}
+$p(a,b)$ は $n=a+b$ とおけば $n(n+1)/2$ 以上 $(n+1)(n+2)/2$ 未満である．これらの整数区間は互いに素で全自然数を覆う．従って $p(a,b)$ から $n$ が一意に定まり，$b=p(a,b)-n(n+1)/2$，$a=n-b$ と復元される．正の符号 $z$ から $z-1$ にこの逆操作を施すと，末尾の番号と先行する語の符号を得る．$1+p(a,b)>a$ であるから先行符号は元より真に小さい．従って繰返しは有限回で零に至る．逆操作が一意なので語の符号化は単射である．番号を割り当てていない記号番号が出現する場合は当該言語の語の符号ではない．
+\end{proof}
+% genron:end K-001491
+% genron:begin K-001492
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001491
+% genron:use K-001154
+% genron:use K-001155
+% genron:use K-001157
+\begin{prop}[語の符号の原始再帰的操作]
+記号番号の末尾追加，正の符号からの末尾番号及び先行符号の抽出は原始再帰函数として実現できる（零に対する抽出値は零とする）．
+\end{prop}
+\begin{proof}
+三角数 $T(n)=n(n+1)/2$ は $T(0)=0,T(n+1)=T(n)+n+1$ によって原始再帰的であり，$p(a,b)=T(a+b)+b$ もそうである．正の符号 $z$ に対して $w=z\mathbin{\dot-}1$ とおく．$T(n)\leq w<T(n+1)$ を満たす $n$ は $w$ 以下である．有界探索は原始再帰によって実現できる．具体的に零か否かの判定函数を $Z(0)=1,Z(k+1)=0$ とし，$T(i)\leq w$ の指示値を $Z(T(i)\mathbin{\dot-}w)$ で得る．$i=1,\ldots,w$ の指示値を原始再帰によって加えると，条件を満たす最大の $n$ が得られる．従って $b=w\mathbin{\dot-}T(n)$ と $a=n\mathbin{\dot-}b$ も原始再帰的である．$z=0$ の場合だけ零を返す条件分岐も $Z$ と算術演算によって実現できる．ここでは符号の基本操作を扱い，構文全体及び証明関係の算術内での表現可能性は後続の課題とする．
+\end{proof}
+% genron:end K-001492
