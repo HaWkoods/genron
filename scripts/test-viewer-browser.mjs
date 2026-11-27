@@ -55,6 +55,38 @@ try{
  await page.goto(origin+"?view=map");await page.locator(".map-stage canvas").first().waitFor();
  assert.deepEqual(errors,[],"Map JavaScript errors");
 
+
+ // Native catalogues are the default; explicit PDF routes are tested below.
+ await page.goto(origin+"?note=statements");
+ await page.locator(".web-catalogue").waitFor();
+ assert.equal(await page.locator(".catalogue-entry").count(),planData.entries.filter(e=>e.kind!=="exercise").length);
+ assert.equal(await page.locator(".pdf-shell").count(),0);
+ const statementRef=page.locator("#catalogue-K-000060 .catalogue-reference");
+ assert.equal(await statementRef.innerText(),"選択公理");
+ assert.match(await statementRef.getAttribute("href"),/view=web/);
+ await page.locator(".catalogue-search").fill("K-000060");
+ assert.equal(await page.locator(".catalogue-entry:visible").count(),1);
+ await statementRef.click();
+ await page.locator("#K-000060.web-entry").waitFor();
+ await page.goto(origin+"?note=notation");
+ await page.locator(".notation-table").first().waitFor();
+ assert.equal(await page.locator(".notation-table tbody tr").count(),planData.notation.flatMap(g=>g.rows).length);
+ assert.equal(await page.locator(".notation-symbol a").count(),0);
+ assert.equal(await page.locator(".notation-reference").count(),planData.notation.flatMap(g=>g.rows).filter(r=>r.id!==null).length);
+ const webNotationRef=page.locator(".notation-reference").filter({hasText:/^全称量化$/});
+ await webNotationRef.hover();
+ await page.locator("#preview:not([hidden])").waitFor();
+ assert.match(await page.locator("#preview .foot a").getAttribute("href"),/view=web/);
+ await webNotationRef.click();
+ await page.locator("#K-000002.web-entry").waitFor();
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(origin+"?note=notation");
+ await page.locator(".notation-table").first().waitFor();
+ assert.ok(await page.locator(".web-catalogue").evaluate(el=>el.scrollWidth<=el.clientWidth+1),"Native notation must not overflow horizontally");
+ await page.locator(".catalogue-search").fill("全称量化");
+ assert.ok(await page.locator(".notation-table tbody tr:visible").count()>0);
+ await page.setViewportSize({width:1440,height:1000});
+ assert.deepEqual(errors,[],"Native catalogue JavaScript errors");
  // Native Web reader prototype: direct HTML, stable IDs and legacy escape hatch.
  await page.goto(origin+"?note=1&view=web");
  await page.locator(".web-article").waitFor();
@@ -172,7 +204,7 @@ try{
  await page.getByRole("button",{name:"次のページ →",exact:true}).click();await waitPage(4);
  await page.reload();await waitPage(4);assert.equal(await mode.inputValue(),"single");assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
  await page.goto(origin+"?id=K-000060");await page.locator(".page:has(.target) .annotations").waitFor();assert.equal(await mode.inputValue(),"single");assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
- await page.goto(origin+"?note=statements");await waitPage(1);assert.equal(await mode.inputValue(),"single");await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(2);
+ await page.goto(origin+"?note=statements&view=pdf&page=1");await waitPage(1);assert.equal(await mode.inputValue(),"single");await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(2);
  await mode.selectOption("continuous");await waitPage(2);assert.ok(await page.locator(".pdf-shell .page:visible").count()>1);
  await page.reload();await waitPage(2);assert.equal(await mode.inputValue(),"continuous");
  await page.goto(origin+"?id=K-000001");await page.locator(".target").waitFor();await page.getByRole("link",{name:"次の知識項目 →",exact:true}).click();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000002/);
@@ -202,8 +234,8 @@ try{
   }
  }
  assert.ok(found,"Cross-note PDF link must work");
- await page.goto(origin+"?note=statements");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-30));await waitPage(2);
- await page.goto(origin+"?note=notation");await rendered(1).waitFor();
+ await page.goto(origin+"?note=statements&view=pdf&page=1");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-30));await waitPage(2);
+ await page.goto(origin+"?note=notation&view=pdf&page=1");await rendered(1).waitFor();
  const notationLinks=sheet(1).locator(".annotation[href*='id=K-000002']");
  const notationLink=notationLinks.first();
  await notationLink.waitFor();

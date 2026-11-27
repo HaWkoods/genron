@@ -65,3 +65,19 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .web-article .proof-display{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .web-article .katex-display{margin:.65em 0}
 @media(max-width:900px){.web-reader{display:block}.web-toc{position:static;max-height:200px;margin-bottom:16px}.web-article{padding:22px 18px}}
+
+/* Native reference catalogues */
+.web-catalogue{overflow-wrap:anywhere}
+.catalogue-search{font:14px/1.6 system-ui,sans-serif;padding:10px 12px;margin:20px 0 8px}
+.catalogue-count{font:12px/1.6 system-ui,sans-serif;margin-bottom:18px}
+.catalogue-group,.catalogue-note,.catalogue-entry{scroll-margin-top:20px;min-width:0}
+.catalogue-note{margin:1.5em 0 2.5em}
+.catalogue-entry{margin:1em 0 1.4em;padding-bottom:.8em;border-bottom:1px solid var(--line)}
+.catalogue-entry p{margin:.35em 0}
+.catalogue-entry h5{overflow-wrap:anywhere}
+.notation-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:1em 0 2em}
+.notation-table th,.notation-table td{border-bottom:1px solid var(--line);padding:.7em .6em;text-align:left;vertical-align:middle}
+.notation-table th:first-child,.notation-symbol{width:43%;text-align:center}
+.notation-symbol .math{max-width:none;white-space:nowrap;overflow:visible}
+.notation-meaning{overflow-wrap:anywhere}
+@media(max-width:480px){.notation-table th,.notation-table td{padding:.6em .35em}.notation-table th:first-child,.notation-symbol{width:42%}.catalogue-entry h5{font-size:.95em}}

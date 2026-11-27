@@ -47,8 +47,9 @@ function fitMath(box){
  if(!box||!box.isConnected||!box.clientWidth)return;
  for(const span of box.querySelectorAll(".math")){
   span.style.fontSize="";
-  const paragraph=span.closest("p")??box;
-  const available=paragraph.clientWidth;
+  const paragraph=span.closest("td,p")??box;
+  const style=getComputedStyle(paragraph);
+  const available=paragraph.clientWidth-parseFloat(style.paddingLeft||0)-parseFloat(style.paddingRight||0);
   const natural=span.getBoundingClientRect().width;
   if(available>0&&natural>available-2){
    const base=parseFloat(getComputedStyle(span).fontSize);
@@ -63,7 +64,7 @@ function fillPreview(box,e,withClose=true){
  box.append(node("h3","",(types[e.kind]??e.kind)+" "+entryNumber(e)+"（"+e.title+"）"));
  if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
  const p=node("p");renderParts(p,e.preview?.statement,e.statement);box.append(p);
- const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",new URL(location.href).searchParams.get("view")==="web"?webUrl("id",e.id):url("id",e.id)));box.append(foot)
+ const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",(new URL(location.href).searchParams.get("view")==="web"||isNativeCatalogue(new URL(location.href).searchParams))?webUrl("id",e.id):url("id",e.id)));box.append(foot)
 }
 function positionPreview(el){
  if(!el?.isConnected)return hidePreview();
@@ -542,11 +543,80 @@ function showWeb(info,restore){
  requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore);else document.getElementById(info.id??"N-"+info.n)?.scrollIntoView()});
 }
 
+
+function isNativeCatalogue(p){
+ return ["statements","notation"].includes(p.get("note"))&&!p.has("page")&&p.get("view")!=="pdf";
+}
+function catalogueText(target,parts,raw){
+ renderParts(target,parts?.map(p=>p.tex?p:{...p,text:jpPunctuation(p.text??p.raw??"")}),jpPunctuation(raw));
+}
+function showCatalogue(info,restore){
+ const isNotation=info.n==="notation",title=isNotation?"記号・記法一覧":"定義・命題一覧";
+ const layout=node("div","reader web-reader catalogue-reader"),side=node("aside","sidebar web-toc"),article=node("article","web-article web-catalogue");
+ const search=node("input","search catalogue-search");search.type="search";search.placeholder=isNotation?"記号・名称を検索":"名称・本文・分野・番号を検索";search.setAttribute("aria-label",search.placeholder);
+ const count=node("p","meta catalogue-count"),body=node("div","catalogue-body");
+ const old=new URL(url("note",info.n));old.searchParams.set("view","pdf");old.searchParams.set("page","1");
+ side.append(node("h2","","一覧の目次"),anchor("← 検索・総目次",root.href));
+ article.append(node("p","web-running","数学原論　｜　索引"),node("h1","web-part-title",title),node("p","muted",isNotation?"記号とその意味を対照する．名称から対応する本文を参照できる．":"知識台帳に基づく復習・参照用の一覧．証明及び詳細な解説は本文を参照されたい．"),anchor("旧版PDFを閲覧",old.href,"web-legacy"),search,count,body);
+ const groups=[];
+ if(isNotation){
+  for(const [i,g] of (data.notation??[]).entries()){
+   const section=node("section","catalogue-group"),id="notation-group-"+(i+1);section.id=id;
+   section.append(node("h2","web-treatise",g.title));side.append(anchor(g.title,"#"+id));
+   const table=node("table","notation-table"),head=node("thead"),hr=node("tr");
+   for(const label of ["記号","対象・意味"]){const th=node("th","",label);th.scope="col";hr.append(th)}
+   head.append(hr);const tbody=node("tbody");table.append(head,tbody);section.append(table);body.append(section);
+   const items=[];
+   for(const r of g.rows){
+    const tr=node("tr"),symbol=node("td","notation-symbol"),meaning=node("td","notation-meaning"),span=node("span","math");
+    try{katex.render(r.tex,span,{throwOnError:true,trust:false,strict:"ignore",output:"htmlAndMathml"})}catch{span.textContent=r.tex;span.title="未変換の数式"}
+    symbol.append(span);const e=entries.get(r.id);
+    if(e){const a=anchor(r.label,webUrl("id",e.id),"notation-reference");bindPreview(a,e);meaning.append(a)}else meaning.textContent=r.label;
+    tr.append(symbol,meaning);tbody.append(tr);items.push({el:tr,text:[g.title,r.tex,r.label,e?.title??""].join(" ")});
+   }
+   groups.push({el:section,items});
+  }
+ }else{
+  const all=data.entries.filter(e=>e.kind!=="exercise");
+  for(const p of data.parts){
+   const section=node("section","catalogue-group");section.id="catalogue-"+p.id;
+   section.append(node("h2","web-treatise",p.id+"　"+p.title));
+   const subgroups=[];
+   for(const t of data.treatises.filter(t=>t.part===p.id)){
+    const treatise=node("section","catalogue-treatise");treatise.append(node("h3","web-section-title",t.id+"　"+t.title));const items=[];
+    for(const n of data.notes.filter(n=>n.treatise===t.id).sort((a,b)=>noteNumber(a).localeCompare(noteNumber(b),undefined,{numeric:true}))){
+     const chapter=node("section","catalogue-note");chapter.id="catalogue-N-"+n.number;chapter.append(node("h4","web-note-title",noteNumber(n)+"　"+n.title));
+     const rows=all.filter(e=>e.position[0]===n.number).sort((a,b)=>{for(let i=0;i<4;i++){const d=a.position[i]-b.position[i];if(d)return d}return 0});
+     const noteItems=[];
+     for(const e of rows){
+      const block=node("section","catalogue-entry");block.id="catalogue-"+e.id;
+      const heading=node("h5","web-statement-title");heading.append((types[e.kind]??e.kind)+" "+entryNumber(e)+"（");const link=anchor(e.title,webUrl("id",e.id),"catalogue-reference");bindPreview(link,e);heading.append(link,"）");block.append(heading);
+      if(e.assumptions.length){const a=node("p");a.append("仮定：");catalogueText(a,e.preview?.assumptions,e.assumptions.join("；"));block.append(a)}
+      const statement=node("p","catalogue-statement");catalogueText(statement,e.preview?.statement,e.statement);block.append(statement);chapter.append(block);
+      noteItems.push({el:block,text:[p.title,t.title,n.title,noteNumber(n),entryNumber(e),e.id,types[e.kind],e.title,e.statement,...e.assumptions].join(" ")});
+     }
+     if(noteItems.length){treatise.append(chapter);items.push({el:chapter,items:noteItems})}
+    }
+    if(items.length){section.append(treatise);subgroups.push({el:treatise,items})}
+   }
+   if(subgroups.length){body.append(section);side.append(anchor(p.title,"#"+section.id));groups.push({el:section,items:subgroups})}
+  }
+ }
+ const normalize=s=>String(s).normalize("NFKC").toLowerCase();
+ function filter(){
+  hidePreview();const terms=normalize(search.value.trim()).split(/\s+/).filter(Boolean);
+  const visit=g=>{const n=g.items?g.items.reduce((sum,x)=>sum+visit(x),0):Number(terms.every(q=>normalize(g.text).includes(q)));g.el.hidden=!n;return n};
+  const n=groups.reduce((sum,g)=>sum+visit(g),0);count.textContent=n+"項目";fitMath(article);
+ }
+ search.addEventListener("input",filter);layout.append(side,article);main.replaceChildren(layout);filter();
+ requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore)});
+}
+
 function showError(e){main.replaceChildren(node("p","error",String(e.message??e)),anchor("検索・総目次へ戻る",root.href))}
 async function render(restore=null){
  const t=++ticket;hidePreview();disposeReader?.();disposeReader=null;
  const oldJob=job;job=null;state=null;if(oldJob){try{await oldJob.destroy()}catch{}}if(t!==ticket)return;
- try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info){const p=new URL(location.href).searchParams;if(typeof info.n==='number'&&!info.archive&&(notes.get(info.n)?.web_only||!p.has('page')&&p.get('view')==='web'))showWeb(info,restore);else await loadReader(info,t,restore)}else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
+ try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info){const p=new URL(location.href).searchParams;if(isNativeCatalogue(p))showCatalogue(info,restore);else if(typeof info.n==='number'&&!info.archive&&(notes.get(info.n)?.web_only||!p.has('page')&&p.get('view')==='web'))showWeb(info,restore);else await loadReader(info,t,restore)}else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
 }
 document.addEventListener("click",ev=>{
  if(ev.defaultPrevented||ev.button!==0||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
