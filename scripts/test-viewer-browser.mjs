@@ -385,7 +385,8 @@ try{
  await page.setViewportSize({width:390,height:844});
  await page.goto(origin+"?view=knowledge-path&target="+citedFigure.id+"&scope=direct");
  await figLink.waitFor();
- await figLink.focus();await figLink.press("Tab");await figLink.press("Shift+Tab");
+ // Enter keyboard navigation mode, then focus the actual prose reference.
+ await page.keyboard.press("Tab");await figLink.focus();
  await figurePreview.waitFor({state:"visible"});
  assert.ok(await figurePreview.evaluate(async el=>{await el.decode();return el.getBoundingClientRect().width<=el.closest("#preview").clientWidth&&el.naturalWidth>0}),"Mobile figure preview fits");
  await page.keyboard.press("Escape");
