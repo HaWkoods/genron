@@ -1,5 +1,3 @@
-import * as pdfjs from "./vendor/pdfjs/build/pdf.mjs";
-pdfjs.GlobalWorkerOptions.workerSrc=new URL("./vendor/pdfjs/build/pdf.worker.mjs",import.meta.url).href;
 const $=s=>document.querySelector(s);
 const main=$("#app"), preview=$("#preview"), dialog=$("#settings");
 const types={axiom:"公理",definition:"定義",proposition:"命題",example:"例",worked_example:"例題"};
@@ -11,13 +9,12 @@ const url=(key,val)=>{const u=new URL(root);u.searchParams.set(key,val);return u
 const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
 const anchor=(txt,href,cls)=>{const a=node("a",cls,txt);a.href=href;return a};
 const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
-let data, entries, notes, state=null, ticket=0, job=null, disposeReader=null, closeTimer=0, active=null, pinned=false;
+let data, entries, notes, disposeReader=null, closeTimer=0, active=null, pinned=false;
 const noteNumber=n=>n?.display_number??("N-"+(n?.number??""));
 const noteByNumber=n=>notes.get(n)??data.plan?.find(x=>x.number===n);
 const entryNumber=e=>e.display_number??[noteNumber(noteByNumber(e.position[0])),...e.position.slice(1)].join(".");
 const isTouch=()=>matchMedia("(hover: none)").matches;
 const defaults={width:580,padding:28};
-let readingMode="continuous";try{if(localStorage.getItem("genron-reading-mode")==="single")readingMode="single"}catch{}
 let prefs={...defaults};
 try{const saved=JSON.parse(localStorage.getItem("genron-preview-v1")||"{}");for(const k of ["width","padding"]){if(Number.isFinite(saved[k]))prefs[k]=clamp(saved[k],k==="width"?300:12,k==="width"?760:40)}}catch{}
 function applySettings(){
@@ -93,7 +90,7 @@ document.fonts?.ready.then(()=>{if(active)positionPreview(active);fitMath($("#se
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
-function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias){if(p.has("page"))return {n:Number(n),page:parseInt(p.get("page"),10)||1,archive:alias};return {n:alias.number,id:alias.first,page:null}}if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
+function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias)return {n:alias.number,id:alias.first,page:null};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 
 function showMap(){
  const plan=data.plan??[], by=new Map(plan.map(n=>[n.number,n])), parts=data.parts??[], ts=data.treatises??[];
@@ -177,7 +174,7 @@ function showHome(){
   const meta=node("div","result-head"),label=node("span","meta",noteNumber(n)+(context&&t?"　"+t.id+" "+t.title:""));
   meta.append(label,node("span","status"+(notes.has(n.number)?" published":ready(n)?" ready":""),status(n)));
   d.append(meta);
-  if(notes.has(n.number)){d.append(anchor(n.title,url("note",n.number)));if(!notes.get(n.number)?.web_only){const web=anchor("Web本文",webUrl("note",n.number));web.style.marginLeft="1em";d.append(web)}}else d.append(node("strong","planned-title",n.title));
+  if(notes.has(n.number)){d.append(anchor(n.title,webUrl("note",n.number)))}else d.append(node("strong","planned-title",n.title));
   d.append(node("span","summary",n.goals.join("；")));
   const pre=node("div","preconditions");if(Number.isInteger(n.depth))pre.append("依存層 "+n.depth+"　");
   pre.append("直接前提：");if(!n.depends_on.length)pre.append("なし");else n.depends_on.forEach((id,i)=>{if(i)pre.append("・");const target=byNumber.get(id);pre.append(anchor(noteNumber(target),notes.has(id)?url("note",id):qurl("N-"+id),"dep-link"));if(target)pre.lastChild.title=target.title});
@@ -229,166 +226,8 @@ function showHome(){
  const readyBox=node("section","ready-box");readyBox.append(node("h2","","現在着手可能なノート"));
  const candidates=plan.filter(ready).sort((a,b)=>(a.depth??0)-(b.depth??0)||a.number-b.number);
  const readyLinks=node("div","ready-links");for(const n of candidates)readyLinks.append(anchor(noteNumber(n)+" "+n.title,qurl("N-"+n.number)));if(!candidates.length)readyLinks.append(node("span","muted","なし"));readyBox.append(readyLinks);
- search.addEventListener("input",update);const start=node("p","muted");start.append("新しい閲覧形式：",anchor("Web版を試す",webUrl("note",1)),"（旧版PDFも閲覧できます）");main.replaceChildren(h,intro,start,search,filters,readyBox,list);update()
+ search.addEventListener("input",update);main.replaceChildren(h,intro,search,filters,readyBox,list);update()
 }
-async function destination(doc,d){
- if(typeof d==="string")d=await doc.getDestination(d);
- if(!Array.isArray(d))return null;
- const index=Number.isInteger(d[0])?d[0]:await doc.getPageIndex(d[0]);return {page:index+1,y:d[1]?.name==="XYZ"?d[3]:d[1]?.name==="FitH"?d[2]:null}
-}
-function readRef(a){
- const raw=a.url??a.unsafeUrl;
- if(!raw)return null;
- try{const u=new URL(raw);const id=u.searchParams.get("id");if(u.origin===data.referenceOrigin&&u.pathname===data.referencePath&&entries.has(id))return entries.get(id)}catch{}
- return null
-}
-async function loadReader(info,token,scroll){
- const docName=info.n==="notation"?"記号・記法一覧":info.n==="statements"?"定義・命題一覧":"N-"+info.n+"　"+(info.archive?.title??notes.get(info.n)?.title);
- const file=info.n==="notation"?"pdf/notation.pdf":info.n==="statements"?"pdf/statements.pdf":"pdf/N-"+info.n+".pdf";
- const heading=node("h1","reader-title",docName),side=node("aside","sidebar"),content=node("section"),layout=node("div","reader");
- side.append(node("h2","","ノート・知識索引"),anchor("← 検索・総目次",root.href));
- if(info.n==="notation"){side.append(anchor("定義・命題一覧",url("note","statements")))}else if(info.n==="statements"){for(const n of notes.values())side.append(anchor("N-"+n.number+"　"+n.title,url("note",n.number)))}else{
-  const items=[...entries.values()].filter(e=>(info.archive?info.archive.ids.includes(e.id):e.position[0]===info.n)).sort((a,b)=>{for(let i=0;i<4;i++){if(a.position[i]!==b.position[i])return a.position[i]-b.position[i]}return 0});
-  if(info.id){const idx=items.findIndex(e=>e.id===info.id),nav=node("div","item-nav");if(idx>0)nav.append(anchor("← 前の知識項目",url("id",items[idx-1].id)));if(idx>=0&&idx+1<items.length)nav.append(anchor("次の知識項目 →",url("id",items[idx+1].id)));side.append(nav)}
-  for(const e of items){const a=anchor(e.id+"　"+e.title,url("id",e.id),e.id===info.id?"active":"");bindPreview(a,e);side.append(a)}
- }
- const controls=node("div","toolbar"),shell=node("div","pdf-shell "+readingMode),status=node("p","loading","PDFを読み込んでいます。");
- controls.setAttribute("aria-label","ページ操作");shell.append(status);shell.setAttribute("aria-busy","true");
- let jump=()=>{};
- const previous=button("← 前頁",()=>jump(-1,true)),next=button("次頁 →",()=>jump(1,true)),pnum=node("input");pnum.type="number";pnum.min=1;pnum.setAttribute("aria-label","ページ番号");
- const pageCount=node("span","meta","/ …"),z=node("select");z.setAttribute("aria-label","表示倍率");
- for(const [v,t] of [["fit","幅に合わせる"],["0.9","90%"],["1.1","110%"],["1.4","140%"],["1.8","180%"]]){const o=node("option","",t);o.value=v;z.append(o)}
- const mode=node("select");mode.setAttribute("aria-label","表示方式");for(const [v,t] of [["continuous","連続スクロール"],["single","1ページずつ"]]){const o=node("option","",t);o.value=v;mode.append(o)}mode.value=readingMode;
- const download=anchor("PDFを開く ↗",new URL(file,root).href);download.target="_blank";download.rel="noopener";
- const footer=node("div","page-footer"),prevBottom=button("← 前のページ",()=>jump(-1,true)),nextBottom=button("次のページ →",()=>jump(1,true)),footerCount=node("span","meta");footer.append(prevBottom,footerCount,nextBottom);footer.hidden=readingMode!=="single";
- const noteNav=node("div","note-nav"),published=[...notes.keys()].sort((a,b)=>a-b);
- if(info.archive){noteNav.append(anchor("統合後のノートを開く",url("id",info.archive.first)))}else if(typeof info.n==="number"){const idx=published.indexOf(info.n);if(idx>0)noteNav.append(anchor("← 前のノート：N-"+published[idx-1],url("note",published[idx-1])));if(idx+1<published.length)noteNav.append(anchor("次のノート：N-"+published[idx+1]+" →",url("note",published[idx+1])))}
- for(const b of [previous,next,pnum,z,mode,prevBottom,nextBottom])b.disabled=true;
- controls.addEventListener("pointerenter",hidePreview);
- controls.append(previous,pnum,pageCount,next,mode,z,download);content.append(heading,controls,shell,footer,noteNav);layout.append(side,content);main.replaceChildren(layout);
- const loading=pdfjs.getDocument({url:new URL(file,root).href,isEvalSupported:false,cMapUrl:new URL("./vendor/pdfjs/cmaps/",root).href,cMapPacked:true,standardFontDataUrl:new URL("./vendor/pdfjs/standard_fonts/",root).href});job=loading;
- try{
-  const doc=await loading.promise;if(token!==ticket)return;
-  const dest=info.id?await destination(doc,info.id):null;if(token!==ticket)return;if(info.id&&!dest)throw Error("PDF内の参照先が見つかりません："+info.id);
-  const first=clamp(dest?.page??info.page??1,1,doc.numPages);
-  const s={doc,n:info.n,page:first,zoom:"fit",id:info.id,mode:readingMode};state=s;
-  const pages=[];let generation=0,frame=0,rendering=false,disposed=false,ready=false,resizeTimer=0,lastWidth=0;
-  const current=()=>!disposed&&token===ticket&&state===s;
-  const topOffset=()=>Math.max(0,controls.getBoundingClientRect().height)+16;
-  function setPageUrl(){const u=new URL(url("note",s.n));u.searchParams.set("page",s.page);history.replaceState(history.state,"",u);s.id=null}
-  function sync(p,updateUrl=true){
-   if(!current())return;const old=s.page;s.page=p;
-   if(document.activeElement!==pnum)pnum.value=String(p);
-   previous.disabled=prevBottom.disabled=p<=1;next.disabled=nextBottom.disabled=p>=doc.numPages;footerCount.textContent=p+" / "+doc.numPages+" 頁";
-   if(updateUrl&&old!==p)setPageUrl()
-  }
-  function showPages(){
-   shell.classList.toggle("continuous",s.mode==="continuous");shell.classList.toggle("single",s.mode==="single");footer.hidden=s.mode!=="single";
-   for(const item of pages)item.wrap.hidden=s.mode==="single"&&item.number!==s.page;
-  }
-  function scrollToPage(n,y=null){
-   if(!current())return;const item=pages[n-1];if(!item)return;
-   showPages();
-   let top=item.wrap.getBoundingClientRect().top+scrollY-topOffset();
-   if(Number.isFinite(y)){
-    const offset=clamp(item.view.convertToViewportPoint(0,y)[1],0,item.view.height);
-    for(const old of shell.querySelectorAll(".target"))old.remove();
-    const mark=node("div","target");mark.style.top=offset+"px";item.wrap.append(mark);
-    top+=offset-Math.max(30,(innerHeight-topOffset())*.24)
-   }
-   window.scrollTo({top:Math.max(0,top),behavior:"instant"});schedule()
-  }
-  function clear(item){
-   item.task?.cancel();item.task=null;
-   for(const child of [...item.wrap.children])if(!child.classList.contains("target"))child.remove();
-   item.rendered=false;item.failed=false;item.wrap.removeAttribute("data-rendered");
-  }
-  function sizePages(){
-   lastWidth=shell.clientWidth;generation++;
-   for(const item of pages){
-    clear(item);const base=item.page.getViewport({scale:1});
-    const scale=s.zoom==="fit"?clamp((shell.clientWidth-34)/base.width,.3,2):Number(s.zoom);
-    item.view=item.page.getViewport({scale});item.wrap.style.width=item.view.width+"px";item.wrap.style.height=item.view.height+"px";item.wrap.style.setProperty("--scale-factor",String(scale));
-   }
-  }
-  function visiblePage(){
-   if(s.mode==="single")return s.page;
-   const line=topOffset()+24;
-   if(scrollY>0&&innerHeight+scrollY>=document.documentElement.scrollHeight-3)return pages.length;
-   let p=1;
-   for(const item of pages){if(item.wrap.getBoundingClientRect().top<=line)p=item.number;else break}
-   return p
-  }
-  function schedule(){if(!ready||!current()||frame)return;frame=requestAnimationFrame(()=>{frame=0;if(!current())return;sync(visiblePage());void renderNearby()})}
-  async function renderPage(item,g){
-   const valid=()=>current()&&g===generation;
-   const {page,view,wrap}=item;
-   const canvas=node("canvas"),dpr=Math.min(devicePixelRatio||1,2);
-   canvas.width=Math.ceil(view.width*dpr);canvas.height=Math.ceil(view.height*dpr);canvas.style.width=view.width+"px";canvas.style.height=view.height+"px";
-   wrap.prepend(canvas);
-   const task=page.render({canvasContext:canvas.getContext("2d"),viewport:view,transform:dpr===1?null:[dpr,0,0,dpr,0,0]});item.task=task;
-   try{await task.promise}catch(e){if(e.name==="RenderingCancelledException"||!valid())return;throw e}
-   if(!valid())return;item.task=null;
-   const textLayer=node("div","textLayer");wrap.append(textLayer);
-   if(pdfjs.TextLayer)try{await new pdfjs.TextLayer({textContentSource:page.streamTextContent(),container:textLayer,viewport:view}).render()}catch{}
-   if(!valid())return;
-   const list=await page.getAnnotations({intent:"display"});if(!valid())return;
-   const annotations=node("div","annotations");
-   for(const a of list){
-    if(a.subtype!=="Link"||!a.rect)continue;const e=readRef(a);let href=null;
-    if(e)href=url("id",e.id);else if(a.dest)href="#pdf-destination";else{try{const u=new URL(a.url);if(u.protocol==="https:"||u.protocol==="http:")href=u.href}catch{}}
-    if(!href)continue;
-    const box=anchor("",href,"annotation");const [x1,y1,x2,y2]=view.convertToViewportRectangle(a.rect);
-    Object.assign(box.style,{left:Math.min(x1,x2)+"px",top:Math.min(y1,y2)+"px",width:Math.abs(x1-x2)+"px",height:Math.abs(y1-y2)+"px"});
-    box.setAttribute("aria-label",e?headingLabel(e)+"："+e.title+" "+e.id:"PDF内リンク");
-    if(e)bindPreview(box,e);
-    else if(a.dest)box.addEventListener("click",async ev=>{ev.preventDefault();try{const d=await destination(doc,a.dest);if(d&&current()){hidePreview();sync(d.page);scrollToPage(d.page,d.y)}}catch(err){console.error(err)}});
-    else{box.target="_blank";box.rel="noopener"}annotations.append(box)
-   }
-   wrap.append(annotations);item.rendered=true;wrap.dataset.rendered="true";
-  }
-  async function renderNearby(){
-   if(rendering||!current())return;rendering=true;
-   try{
-    while(current()){
-     const items=pages.map(item=>{if(item.wrap.hidden)return {item,distance:Infinity};const r=item.wrap.getBoundingClientRect();return {item,distance:r.bottom<0?-r.bottom:r.top>innerHeight?r.top-innerHeight:0}});
-     for(const {item,distance} of items)if(distance>innerHeight*3&&item.rendered)clear(item);
-     const next=items.filter(x=>x.distance<=innerHeight*1.25&&!x.item.rendered&&!x.item.failed).sort((a,b)=>a.distance-b.distance||Math.abs(a.item.number-s.page)-Math.abs(b.item.number-s.page))[0];
-     if(!next)break;
-     const g=generation;try{await renderPage(next.item,g)}catch(err){if(current()&&g===generation){clear(next.item);next.item.failed=true;next.item.wrap.append(node("p","error","ページの描画に失敗しました。PDFを直接開いてください。"));console.error(err)}}
-    }
-   }finally{rendering=false}
-  }
-  function reflow(){
-   if(!current()||!ready)return;hidePreview();const p=s.page,item=pages[p-1];const oldY=clamp((topOffset()-item.wrap.getBoundingClientRect().top)/item.view.height,0,1);
-   sizePages();const newTop=item.wrap.getBoundingClientRect().top+scrollY+oldY*item.view.height-topOffset();window.scrollTo({top:Math.max(0,newTop),behavior:"instant"});schedule()
-  }
-  const resize=()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(current()&&s.zoom==="fit"&&shell.clientWidth!==lastWidth)reflow();else schedule()},100)};
-  const dispose=()=>{disposed=true;cancelAnimationFrame(frame);clearTimeout(resizeTimer);removeEventListener("scroll",schedule);removeEventListener("resize",resize);for(const item of pages)item.task?.cancel()};
-  disposeReader=dispose;
-  // Create stable page boxes before jumping; render only visible and nearby pages.
-  for(let n=1;n<=doc.numPages;n++){
-   const page=await doc.getPage(n);if(!current())return;
-   const wrap=node("div","page");wrap.dataset.page=String(n);wrap.setAttribute("aria-label",n+" ページ");pages.push({number:n,page,wrap,view:null,task:null,rendered:false,failed:false});
-  }
-  shell.replaceChildren(...pages.map(p=>p.wrap));showPages();sizePages();
-  pageCount.textContent="/ "+doc.numPages;pnum.max=doc.numPages;pnum.disabled=false;z.disabled=false;mode.disabled=false;shell.setAttribute("aria-busy","false");
-  sync(first,false);pnum.value=String(first);
-  jump=(value,relative=false)=>{if(!current())return;hidePreview();const n=clamp(relative?s.page+value:value,1,doc.numPages);sync(n);pnum.value=String(n);scrollToPage(n)};
-  pnum.onchange=()=>jump(parseInt(pnum.value,10)||1);pnum.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();jump(parseInt(pnum.value,10)||1);pnum.blur()}};
-  z.onchange=()=>{s.zoom=z.value;reflow()};
-  mode.onchange=()=>{
-   if(!current()||!ready)return;hidePreview();
-   const item=pages[s.page-1],offset=clamp((topOffset()-item.wrap.getBoundingClientRect().top)/item.view.height,0,1);
-   s.mode=readingMode=mode.value==="single"?"single":"continuous";try{localStorage.setItem("genron-reading-mode",readingMode)}catch{}
-   showPages();const top=item.wrap.getBoundingClientRect().top+scrollY+offset*item.view.height-topOffset();window.scrollTo({top:Math.max(0,top),behavior:"instant"});schedule();
-  };
-  ready=true;addEventListener("scroll",schedule,{passive:true});addEventListener("resize",resize);
-  if(scroll!==null)window.scrollTo(0,scroll);else if(dest||first!==1)scrollToPage(first,dest?.y);else window.scrollTo(0,0);
-  schedule();
- }catch(e){if(token===ticket){disposeReader?.();disposeReader=null;shell.replaceChildren(node("p","error","PDFを表示できませんでした："+e.message),download.cloneNode(true))}}
-}
-
 function webUrl(key,val){const u=new URL(url(key,val));u.searchParams.set("view","web");return u.href}
 
 
@@ -548,7 +387,7 @@ function showWeb(info,restore){
   side.append(anchor(noteNumber(n)+"　"+n.title,"#"+chapter.id,"web-toc-note"));
   chapter.append(node("h3","web-note-title",noteNumber(n)+"　"+n.title));
   if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
-  const legacy=new URL(url("note",n.number));legacy.searchParams.set("page","1");if(!notes.get(n.number)?.web_only)chapter.append(anchor("旧版PDFを閲覧",legacy.href,"web-legacy"));
+
   const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);
   let lastSection="";
   for(const e of items){
@@ -571,7 +410,7 @@ function showWeb(info,restore){
 
 
 function isNativeCatalogue(p){
- return p.get("note")==="examples"||["statements","notation"].includes(p.get("note"))&&!p.has("page")&&p.get("view")!=="pdf";
+ return ["examples","statements","notation"].includes(p.get("note"));
 }
 function catalogueText(target,parts,raw){
  renderParts(target,parts?.map(p=>p.tex?p:{...p,text:jpPunctuation(p.text??p.raw??"")}),jpPunctuation(raw));
@@ -581,10 +420,10 @@ function showCatalogue(info,restore){
  const layout=node("div","reader web-reader catalogue-reader"),side=node("aside","sidebar web-toc"),article=node("article","web-article web-catalogue");
  const search=node("input","search catalogue-search");search.type="search";search.placeholder=isNotation?"記号・名称を検索":"名称・本文・分野・番号を検索";search.setAttribute("aria-label",search.placeholder);
  const count=node("p","meta catalogue-count"),body=node("div","catalogue-body");
- const old=new URL(url("note",info.n));old.searchParams.set("view","pdf");old.searchParams.set("page","1");
+
  side.append(node("h2","","一覧の目次"),anchor("← 検索・総目次",root.href),anchor("定義・命題・公理一覧",url("note","statements")),anchor("例・例題一覧",url("note","examples")));
  article.append(node("p","web-running","数学原論　｜　索引"),node("h1","web-part-title",title),node("p","muted",isNotation?"記号とその意味を対照する．名称から対応する本文を参照できる．":examplesOnly?"具体例・反例と，問題及び解答を掲載する．例題の解答は初期状態で閉じている．":"数学的知識の参照用一覧．定義・命題・公理のみを掲載する．証明及び詳細な解説は本文を参照されたい．"));
- if(!examplesOnly)article.append(anchor("旧版PDFを閲覧",old.href,"web-legacy"));
+
  article.append(search,count,body);
  const groups=[];
  if(isNotation){
@@ -644,9 +483,18 @@ function showCatalogue(info,restore){
 
 function showError(e){main.replaceChildren(node("p","error",String(e.message??e)),anchor("検索・総目次へ戻る",root.href))}
 async function render(restore=null){
- const t=++ticket;hidePreview();disposeReader?.();disposeReader=null;
- const oldJob=job;job=null;state=null;if(oldJob){try{await oldJob.destroy()}catch{}}if(t!==ticket)return;
- try{if(new URL(location.href).searchParams.get('view')==='map'){showMap();return}const info=routeInfo();if(info){const p=new URL(location.href).searchParams;if(isNativeCatalogue(p))showCatalogue(info,restore);else if(typeof info.n==='number'&&!info.archive&&(notes.get(info.n)?.web_only||!p.has('page')&&p.get('view')==='web'))showWeb(info,restore);else await loadReader(info,t,restore)}else{showHome();if(restore!==null)window.scrollTo(0,restore)}}catch(e){showError(e)}
+ hidePreview();disposeReader?.();disposeReader=null;
+ try{
+  const p=new URL(location.href);
+  if(p.searchParams.has("page")||p.searchParams.get("view")==="pdf"){
+   p.searchParams.delete("page");if(p.searchParams.get("view")==="pdf")p.searchParams.set("view","web");
+   history.replaceState(history.state,"",p);
+  }
+  if(p.searchParams.get("view")==="map"){showMap();return}
+  const info=routeInfo();
+  if(info){if(typeof info.n==="string")showCatalogue(info,restore);else showWeb(info,restore)}
+  else{showHome();if(restore!==null)window.scrollTo(0,restore)}
+ }catch(e){showError(e)}
 }
 document.addEventListener("click",ev=>{
  if(ev.defaultPrevented||ev.button!==0||ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;

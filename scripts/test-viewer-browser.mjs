@@ -26,7 +26,7 @@ try{
  assert.equal(await page.locator(".part-group").count(),planData.parts.length);
  assert.equal(await page.locator(".treatise-group").count(),planData.treatises.length);
  assert.equal(await page.locator(".note-result").count(),planData.plan.length);
- assert.equal(await page.locator('.note-result[data-status="planned"] a[href*="note="]').count()>0,true,"Published prerequisites may link to PDFs");
+ assert.equal(await page.locator('.note-result[data-status="planned"] a[href*="note="]').count()>0,true,"Published prerequisites may link to Web notes");
  assert.equal(await page.locator('.note-result[data-status="planned"] > a[href*="note="]').count(),0);
  await page.getByRole("searchbox").fill("Radon–Nikodym");
  const planned=page.locator(".note-result").filter({hasText:"Radon–Nikodymの定理"});await planned.waitFor();assert.equal(await planned.getAttribute("data-status"),"planned");assert.equal(await planned.locator("strong.planned-title").count(),1);
@@ -143,8 +143,7 @@ try{
  await page.goto(origin+"?id=K-000002&view=web");
  await page.locator(".web-entry[id='K-000002']").waitFor();
  assert.ok(await page.locator(".web-article .katex").count()>0,"Web math must be rendered");
- await page.locator("#N-1 .web-legacy").click();
- await page.locator(".pdf-shell").waitFor();
+ assert.equal(await page.locator(".web-legacy").count(),0);
  assert.deepEqual(errors,[],"Web reader JavaScript errors");
 
  // Original proof content is rendered in the native reader.
@@ -190,49 +189,29 @@ try{
   assert.equal(await chapter.locator(".web-legacy").count(),0);
   assert.equal(await page.locator(".pdf-shell").count(),0);
  }
- // Merged-away note numbers retain their section and archived page URLs.
+ // Legacy URLs resolve to native content, never a PDF.
  for(const [old,a] of Object.entries(planData.aliases??{})){
-  await page.goto(origin+"?note="+old);
-  await page.locator(".target").waitFor();
-  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+"\\s"));
-  await page.goto(origin+"?note="+old+"&page=1");
-  await page.locator(".page[data-page='1'] .annotations").waitFor();
-  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+old+"\\s"));
-  await page.goto(origin+"?id="+a.first);
-  await page.locator(".target").waitFor();
-  assert.match(await page.locator(".reader-title").innerText(),new RegExp("N-"+a.number+"\\s"));
+  for(const suffix of ["","&page=1","&view=pdf&page=2"]){
+   await page.goto(origin+"?note="+old+suffix);
+   await page.locator("#"+a.first+".web-entry").waitFor();
+   assert.equal(await page.locator(".pdf-shell").count(),0);
+  }
  }
- // Scroll through the actual N-3 document without pressing a page button.
- const currentPage=page.getByRole("spinbutton",{name:"ページ番号"});
- const sheet=n=>page.locator('.page[data-page="'+n+'"]');
- const rendered=n=>sheet(n).locator(".annotations");
- const waitPage=async n=>{await page.waitForFunction(n=>document.querySelector('input[aria-label="ページ番号"]')?.value===String(n),n);await rendered(n).waitFor()};
- await page.goto(origin+"?note=3");await rendered(1).waitFor();
- assert.equal(await page.locator(".pdf-shell .page").count(),6);
- const y1=(await sheet(1).boundingBox()).y,y2=(await sheet(2).boundingBox()).y;
- assert.ok(y2>y1+(await sheet(1).boundingBox()).height,"Pages must be vertically stacked");
- await page.mouse.move(950,700);await page.mouse.wheel(0,Math.ceil(y2-30));await waitPage(2);
- assert.match(page.url(),/note=3&page=2/);
- await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(3);
- await page.getByRole("button",{name:"← 前頁",exact:true}).click();await waitPage(2);
- await currentPage.fill("6");await currentPage.press("Enter");await waitPage(6);
- assert.ok(await page.getByRole("button",{name:"次頁 →",exact:true}).isDisabled());
- await page.getByRole("link",{name:"次のノート：N-4 →",exact:true}).click();await rendered(1).waitFor();assert.match(page.url(),/note=4/);
- await page.goto(origin+"?note=3&page=3");await waitPage(3);
- // Both modes use identical PDF destinations and preserve the current page.
- const mode=page.getByRole("combobox",{name:"表示方式"});
- await mode.selectOption("single");await waitPage(3);
- assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
- assert.ok(await sheet(3).isVisible());
- await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(4);
- await page.getByRole("button",{name:"← 前のページ",exact:true}).click();await waitPage(3);
- await page.getByRole("button",{name:"次のページ →",exact:true}).click();await waitPage(4);
- await page.reload();await waitPage(4);assert.equal(await mode.inputValue(),"single");assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
- await page.goto(origin+"?id=K-000060");await page.locator(".page:has(.target) .annotations").waitFor();assert.equal(await mode.inputValue(),"single");assert.equal(await page.locator(".pdf-shell .page:visible").count(),1);
- await page.goto(origin+"?note=statements&view=pdf&page=1");await waitPage(1);assert.equal(await mode.inputValue(),"single");await page.getByRole("button",{name:"次頁 →",exact:true}).click();await waitPage(2);
- await mode.selectOption("continuous");await waitPage(2);assert.ok(await page.locator(".pdf-shell .page:visible").count()>1);
- await page.reload();await waitPage(2);assert.equal(await mode.inputValue(),"continuous");
- await page.goto(origin+"?id=K-000001");await page.locator(".target").waitFor();await page.getByRole("link",{name:"次の知識項目 →",exact:true}).click();await page.locator(".target").waitFor();assert.match(page.url(),/id=K-000002/);
+ for(const n of planData.notes){
+  await page.goto(origin+"?note="+n.number+"&view=pdf&page=1");
+  await page.locator("#N-"+n.number+" .web-entry").first().waitFor();
+  assert.equal(await page.locator(".pdf-shell,.web-legacy").count(),0);
+ }
+ for(const name of ["statements","notation","examples"]){
+  await page.goto(origin+"?note="+name+"&view=pdf&page=1");
+  await page.locator(".web-catalogue").waitFor();
+  assert.equal(await page.locator(".pdf-shell,.web-legacy").count(),0);
+ }
+ assert.equal((await page.request.get(origin+"pdf/N-1.pdf")).status(),404);
+ assert.equal((await page.request.get(origin+"pdf/statements.pdf")).status(),404);
+ assert.equal((await page.request.get(origin+"pdf/notation.pdf")).status(),404);
+ assert.equal(fs.existsSync(path.join(base,"pdf")),false);
+ assert.equal(fs.existsSync(path.join(base,"vendor/pdfjs")),false);
  await page.goto(origin);await page.getByRole("searchbox").fill("選択公理");
  const searchResult=page.locator(".result a[href*='id=K-000060']");await searchResult.waitFor();
  await searchResult.hover();await page.locator("#preview:not([hidden])").waitFor();
@@ -241,39 +220,12 @@ try{
  assert.equal(await page.locator("#preview").evaluate(el=>getComputedStyle(el).paddingLeft),"28px");
  await page.getByRole("button",{name:"閲覧設定"}).click();await page.locator("#width").fill("700");await page.locator("#padding").fill("36");await page.getByRole("button",{name:"閉じる",exact:true}).last().click();
  await page.reload();await searchResult.waitFor();await searchResult.hover();assert.equal(Math.round((await page.locator("#preview").boundingBox()).width),700);
- await searchResult.click();await page.locator(".target").waitFor();await page.locator(".page:has(.target) .annotations").waitFor();assert.match(page.url(),/id=K-000060/);
+ await searchResult.click();await page.locator("#K-000060.web-entry").waitFor();assert.match(page.url(),/id=K-000060/);
  await page.goBack();await searchResult.waitFor();
- await page.goto(origin+"?id=K-000129");await page.locator(".target").waitFor();
- // Navigate to each page through ordinary scroll and inspect real PDF annotations.
- let found=false;
- for(let i=1;i<=7;i++){
-  await sheet(i).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-100));
-  await rendered(i).waitFor();
-  const link=sheet(i).locator(".annotation[href*='id=K-000060']").first();
-  if(await link.count()){
-   await link.scrollIntoViewIfNeeded();await link.hover();await page.locator("#preview:not([hidden])").waitFor();assert.match(await page.locator("#preview").innerText(),/選択公理/);
-   const originalY=await page.evaluate(()=>scrollY);
-   await link.click();await page.waitForURL(/id=K-000060/);await page.locator(".page:has(.target) .annotations").waitFor();
-   await page.goBack();await page.waitForURL(/note=6|id=K-000129/);await rendered(i).waitFor();
-   assert.ok(Math.abs(await page.evaluate(()=>scrollY)-originalY)<100,"Back should restore reading position");found=true;break
-  }
- }
- assert.ok(found,"Cross-note PDF link must work");
- await page.goto(origin+"?note=statements&view=pdf&page=1");await rendered(1).waitFor();assert.ok(await page.locator(".pdf-shell .page").count()>1);await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-30));await waitPage(2);
- await page.goto(origin+"?note=notation&view=pdf&page=1");await rendered(1).waitFor();
- const notationLinks=sheet(1).locator(".annotation[href*='id=K-000002']");
- const notationLink=notationLinks.first();
- await notationLink.waitFor();
- for(const link of await notationLinks.all()){const box=await link.boundingBox(), paper=await sheet(1).boundingBox();assert.ok(box.x>paper.x+paper.width*.40,"Notation links belong to the right column");}
- await notationLink.waitFor();await notationLink.hover();await page.locator("#preview:not([hidden])").waitFor();
- assert.match(await page.locator("#preview").innerText(),/量化/);
- await notationLink.click();await page.waitForURL(/id=K-000002/);await page.locator(".target").waitFor();
- await page.goBack();await page.waitForURL(/note=notation/);await rendered(1).waitFor();
- await page.setViewportSize({width:390,height:844});await page.goto(origin+"?note=3");await rendered(1).waitFor();await sheet(2).evaluate(el=>window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-150));await rendered(2).waitFor();assert.equal(await page.locator(".pdf-shell .page").count(),6);
  await page.setViewportSize({width:390,height:844});await page.goto(origin);await page.getByRole("searchbox").fill("K-000060");await searchResult.waitFor();await searchResult.hover();const b=await page.locator("#preview").boundingBox();assert.ok(b.x>=0&&b.x+b.width<=391);
  assert.equal(await page.locator("#preview").evaluate(el=>getComputedStyle(el).overflowX),"hidden");
  assert.ok(await page.locator("#preview").evaluate(el=>el.scrollWidth<=el.clientWidth+1),"Preview must not overflow horizontally");
  assert.ok(await page.locator("#preview").evaluate(el=>[...el.querySelectorAll(".math")].every(s=>getComputedStyle(s).overflowX==="visible"&&s.getBoundingClientRect().width<=s.closest("p").clientWidth+1)),"Inline math must fit without internal scrollbars");
  assert.deepEqual(errors,[],"Unexpected browser JavaScript errors");
- console.log("Browser smoke test passed: search, hover, settings persistence, PDF destination, cross-note link, history, catalogue, mobile bounds, continuous scrolling, single-page mode, mode persistence, direct page links, next note, next knowledge item.");
+ console.log("Browser smoke test passed: Web-only routes, legacy URLs, absence of PDF assets, catalogues, search, proof/answer expansion, preview, settings, history and mobile layout.");
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve))}
