@@ -57,7 +57,7 @@
 - $x^c$：Boolean束の補元 — [K-000090](https://hawkoods.github.io/genron/?id=K-000090)
 - $\aleph_0$：可算無限濃度
 - $\operatorname{card}X$：一般の濃度
-- $\omega$：最小無限順序数
+- $\omega$：最小無限順序数 — [K-001576](https://hawkoods.github.io/genron/?id=K-001576)
 
 ## 位相・収束
 
@@ -147,8 +147,8 @@
 - $A[[X]]$：形式冪級数環
 - $\deg f$：多項式の次数
 - $\operatorname{char}K$：体の標数
-- $\operatorname{Gal}(L/K)$：Galois群
-- $\overline K$：代数閉包
+- $\operatorname{Gal}(L/K)$：Galois群 — [K-001515](https://hawkoods.github.io/genron/?id=K-001515)
+- $\overline K$：代数閉包 — [K-001410](https://hawkoods.github.io/genron/?id=K-001410)
 - $\mathcal O_K$：代数体の整数環
 - $\operatorname{Tr}_{L/K}$：体のトレース
 - $N_{L/K}$：体のノルム
@@ -201,8 +201,8 @@
 - $\mathrm{SL}_n(K)$：特殊線形群
 - $\mathrm O(n)$：直交群
 - $\mathrm U(n)$：ユニタリ群
-- $\bigwedge^k V$：外冪
-- $\operatorname{Sym}^k V$：対称冪
+- $\bigwedge^k V$：外冪 — [K-001400](https://hawkoods.github.io/genron/?id=K-001400)
+- $\operatorname{Sym}^k V$：対称冪 — [K-001395](https://hawkoods.github.io/genron/?id=K-001395)
 - $T(V)$：テンソル代数
 
 ## 微分積分・解析
@@ -334,8 +334,8 @@
 - $B_n(X)$：境界群
 - $H_n(X;A)$：ホモロジー群
 - $H^n(X;A)$：コホモロジー群
-- $\operatorname{Ext}_A^n(M,N)$：Ext函手
-- $\operatorname{Tor}_n^A(M,N)$：Tor函手
+- $\operatorname{Ext}_A^n(M,N)$：Ext函手 — [K-001444](https://hawkoods.github.io/genron/?id=K-001444)
+- $\operatorname{Tor}_n^A(M,N)$：Tor函手 — [K-001449](https://hawkoods.github.io/genron/?id=K-001449)
 - $(X,\mathcal O_X)$：環付き空間
 - $\mathcal F(U)$：層の切断集合
 - $\mathcal F_x$：層の茎

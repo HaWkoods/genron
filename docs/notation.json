@@ -270,7 +270,7 @@
       {
         "tex": "\\omega",
         "label": "最小無限順序数",
-        "id": null
+        "id": "K-001576"
       }
     ]
   },
@@ -700,12 +700,12 @@
       {
         "tex": "\\operatorname{Gal}(L/K)",
         "label": "Galois群",
-        "id": null
+        "id": "K-001515"
       },
       {
         "tex": "\\overline K",
         "label": "代数閉包",
-        "id": null
+        "id": "K-001410"
       },
       {
         "tex": "\\mathcal O_K",
@@ -960,12 +960,12 @@
       {
         "tex": "\\bigwedge^k V",
         "label": "外冪",
-        "id": null
+        "id": "K-001400"
       },
       {
         "tex": "\\operatorname{Sym}^k V",
         "label": "対称冪",
-        "id": null
+        "id": "K-001395"
       },
       {
         "tex": "T(V)",
@@ -1595,12 +1595,12 @@
       {
         "tex": "\\operatorname{Ext}_A^n(M,N)",
         "label": "Ext函手",
-        "id": null
+        "id": "K-001444"
       },
       {
         "tex": "\\operatorname{Tor}_n^A(M,N)",
         "label": "Tor函手",
-        "id": null
+        "id": "K-001449"
       },
       {
         "tex": "(X,\\mathcal O_X)",
