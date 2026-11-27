@@ -1,0 +1,196 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. IV §1 の除法の存在・一意性の論証を比較．整数については既出の自然数の最小元原理を使う独自の証明．
+\section{順序環}
+% genron:begin K-000591
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000068
+\begin{defn}[順序環]
+可換環 $A$ に全順序 $\leq$ が与えられ，任意の $a,b,c\in A$ に対して
+\[
+ a\leq b\Longrightarrow a+c\leq b+c,\qquad
+ 0\leq a,\ 0\leq b\Longrightarrow 0\leq ab
+\]
+が成り立つとき，$A$ を順序環という．
+\end{defn}
+% genron:end K-000591
+% genron:begin K-000592
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000591
+% genron:use K-000324
+% genron:use K-000323
+% genron:use K-000103
+% genron:use K-000108
+\begin{prop}[整数の順序環としての性質]
+整数環 $\mathbb Z$ は \GenronRef{K-000324}で定めた順序に関して順序環である．その正元は零でない自然数であり，任意の正元 $a$ について $1\leq a$ が成り立つ．
+\end{prop}
+\begin{proof}
+前半は同命題から従う．順序の定義により $0\leq a$ は $a\in\mathbb N$ と同値である．零でない自然数は $0$ の後者 $1$ 以上である（\GenronRef{K-000103}）．
+\end{proof}
+% genron:end K-000592
+% genron:begin K-000593
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000591
+% genron:use K-000250
+% genron:use K-000443
+% genron:use K-000069
+\begin{prop}[順序環の不等式と符号]
+順序環において $a\leq b$ と $0\leq c$ から $ac\leq bc$ が従う．また $a\leq b$ と $-b\leq-a$ は同値である．順序環が整域なら正元の積は正元である．零環でない順序環では $0<1$ である．
+\end{prop}
+\begin{proof}
+$0\leq b-a$ なので $0\leq c(b-a)=bc-ac$ である．加法による移動で第一の主張を得る．第二の主張は両辺に $-a-b$ を加えて得られ，逆も同様である．整域では正元の積は零でないから正元である．最後に $1<0$ と仮定すると $-1>0$ であり，$(-1)^2=1\geq0$ となって矛盾する．$1\ne0$ なので $0<1$ である．
+\end{proof}
+% genron:end K-000593
+% genron:begin K-000594
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000592
+% genron:use K-000593
+\begin{defn}[整数の絶対値]
+整数 $a$ の絶対値 $|a|$ を $a\geq0$ なら $a$，$a<0$ なら $-a$ と定める．従って $|a|\in\mathbb N$ である．
+\end{defn}
+% genron:end K-000594
+% genron:begin K-000595
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000594
+% genron:use K-000593
+% genron:use K-000250
+\begin{prop}[整数の絶対値の性質]
+任意の整数 $a,b$ に対して $|a|=0$ と $a=0$ は同値であり，
+\[
+ |ab|=|a||b|,\qquad |a+b|\leq|a|+|b|
+\]
+が成り立つ．
+\end{prop}
+\begin{proof}
+第一の主張は定義から従う．$a,b$ の符号の四場合に分け，積の符号と $(-a)b=-(ab)$ 及び $(-a)(-b)=ab$ を用いれば乗法性を得る．$-|a|\leq a\leq|a|$ と $-|b|\leq b\leq|b|$ を加えると $-(|a|+|b|)\leq a+b\leq|a|+|b|$ となる．$a+b$ の符号に応じてこの不等式の右側又は左側を用いると三角不等式を得る．
+\end{proof}
+% genron:end K-000595
+\section{除法と互除法}
+% genron:begin K-000596
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000592
+% genron:use K-000594
+% genron:use K-000595
+% genron:use K-000593
+% genron:use K-000104
+% genron:use K-000444
+% genron:use K-000250
+% genron:use K-000323
+\begin{prop}[整数の除法算法]
+整数 $a,b$ において $b\ne0$ とする．このとき
+\[
+ a=bq+r,\qquad 0\leq r<|b|
+\]
+を満たす整数 $q,r$ がただ一組存在する．
+\end{prop}
+\begin{proof}
+まず $b>0$ とする．集合 $S=\{a-bk\mid k\in\mathbb Z,\ 0\leq a-bk\}$ は自然数の部分集合である．$a\geq0$ なら $k=0$ により非空であり，$a<0$ なら $k=a$ とすると $a-ba=(-a)(b-1)\geq0$ なのでやはり非空である．\GenronRef{K-000104}により最小元 $r=a-bq$ を取る．$r\geq b$ なら $r-b=a-b(q+1)$ は $S$ のより小さい元となるので $r<b$ である．$b<0$ の場合は $-b$ に対する商の符号を変えればよい．
+
+一意性を示す．二表示 $a=bq+r=bq'+r'$ があれば $b(q-q')=r'-r$ となる．$q\ne q'$ なら $|q-q'|\geq1$ なので $|b(q-q')|\geq|b|$ である．一方 $0\leq r,r'<|b|$ より $|r'-r|<|b|$ であり矛盾する．従って $q=q'$ かつ $r=r'$ である．
+\end{proof}
+% genron:end K-000596
+% genron:begin K-000597
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000596
+% genron:use K-000594
+% genron:use K-000572
+% genron:use K-000577
+% genron:use K-000578
+% genron:use K-000573
+% genron:use K-000104
+% genron:use K-000250
+\begin{prop}[Euclidの互除法]
+任意の整数 $a,b$ は非負の最大公約元 $d$ をただ一つ持つ．これは次に述べる除法の反復で求められる．
+\end{prop}
+\begin{proof}
+$r_0=|a|,\ r_1=|b|$ とおく．$r_1=0$ なら $d=r_0$ とする．そうでなければ $r_i>0$ である限り \GenronRef{K-000596}により
+\[
+ r_{i-1}=q_i r_i+r_{i+1},\qquad 0\leq r_{i+1}<r_i
+\]
+と定める．零でない余りが無限に続けば，その値の集合の最小元の直後にさらに小さい値が現れ，\GenronRef{K-000104}に反する．従って有限段で零となる．最後の非零余りを $d$ とする．各段の等式から $r_{i-1},r_i$ の公約元全体と $r_i,r_{i+1}$ の公約元全体は一致する．従って最終段の $d,0$ の公約元全体は $a,b$ の公約元全体と等しく，これは $d$ の約元全体である．ゆえに $d$ は最大公約元である．$a=b=0$ の場合も $d=0$ が条件を満たす．非負の二つの最大公約元 $d,d'$ が正なら，相互に整除することから $d\leq d'$ かつ $d'\leq d$ となる（正の整数の商は $1$ 以上）．一方が零なら双方が零である．従って一意である．
+\end{proof}
+% genron:end K-000597
+% genron:begin K-000598
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000597
+% genron:use K-000579
+% genron:use K-000572
+% genron:use K-000250
+% genron:use K-000100
+\begin{prop}[整数の最大公約元の一次結合表示（Bézout等式）]
+整数 $a,b$ の非負の最大公約元 $d$ に対し，整数 $u,v$ であって
+\[
+ d=ua+vb
+\]
+となるものが存在する．
+\end{prop}
+\begin{proof}
+互除法の初項 $|a|,|b|$ は $a,b$ の整数係数一次結合である．各段で $r_{i+1}=r_{i-1}-q_i r_i$ であるから，前二項がそのような一次結合なら次項もそうである．帰納法により最後の非零余り $d$ もそうである．$a=b=0$ の場合は $u=v=0$ とすればよい．
+\end{proof}
+% genron:end K-000598
+% genron:begin K-000599
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000598
+% genron:use K-000572
+% genron:use K-000249
+\begin{prop}[互いに素な整数の整除]
+整数 $a,b$ の非負の最大公約元が $1$ であるとき，$a,b$ は互いに素であるという．互いに素な $a,b$ と任意の整数 $c$ に対して $a\mid bc$ ならば $a\mid c$ である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000598}により $ua+vb=1$ となる整数 $u,v$ を取る．$c=uac+vbc$ であり，右辺の両項は $a$ によって整除されるから $a\mid c$ である．
+\end{proof}
+% genron:end K-000599

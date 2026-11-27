@@ -1,0 +1,149 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. III §5, Th.5.1–5.2 (pp.139–140)：基底の拡張・基底の濃度の論証を確認．有限次元では交換の直接証明を採用し，選択公理なしで次元を確定する．
+\section{基底}
+% genron:begin K-000600
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000563
+% genron:use K-000565
+% genron:use K-000110
+\begin{defn}[線形空間の基底]
+体 $K$ 上の線形空間 $V$ の部分集合 $B$ が線形独立であって $V$ を生成するとき，$B$ を $V$ の基底という．有限集合によって生成される線形空間を有限次元線形空間という．
+\end{defn}
+% genron:end K-000600
+% genron:begin K-000601
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000600
+% genron:use K-000566
+% genron:use K-000563
+% genron:use K-000113
+% genron:use K-000104
+% genron:use K-000117
+\begin{prop}[有限生成集合からの基底の抽出]
+線形空間 $V$ を生成する有限集合 $S$ は $V$ の基底を部分集合として含む．さらに $S$ の任意の線形独立な部分集合をその基底に含めることができる．
+\end{prop}
+\begin{proof}
+$T\subseteq S$ を線形独立集合とする．$T$ を含む $S$ の線形独立部分集合のうち，元の個数が最大のもの $B$ を取る．この族は $T$ を含むので非空であり，各濃度は $|S|$ 以下であるから最大値が存在する．$B$ が $V$ を生成しないならば $S$ の元 $x$ で $\operatorname{span}_K B$ に属さないものがある．なければ $S$ の線形包が $B$ の線形包に含まれ矛盾する．\GenronRef{K-000566}により $B\cup\{x\}$ は線形独立であり，最大性に反する．従って $B$ は基底である．
+\end{proof}
+% genron:end K-000601
+% genron:begin K-000602
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000600
+% genron:use K-000566
+% genron:use K-000563
+% genron:use K-000131
+% genron:use K-000113
+% genron:use K-000120
+\begin{prop}[基底の拡張]
+$S$ を線形空間 $V$ の生成集合，$T$ をその線形独立部分集合とする．$T\subseteq B\subseteq S$ となる $V$ の基底 $B$ が存在する．特に任意の線形空間は基底を持つ．
+\end{prop}
+\begin{proof}
+$T$ を含む $S$ の線形独立部分集合全体を包含で順序づける．空の鎖には $T$ が上界となる．非空の鎖の合併は線形独立である．実際，合併の有限個の元は鎖の有限個の要素のうち最大のものに同時に属し，その中で線形独立である．従って \GenronRef{K-000131}によって極大元 $B$ が存在する．$B$ が $V$ を生成しなければ前命題と同様に $x\in S\setminus\operatorname{span}_K B$ が存在し，\GenronRef{K-000566}によって極大性に反する．任意の $V$ に対し $S=V,\ T=\varnothing$ と取れる．
+\end{proof}
+% genron:end K-000602
+\section{交換と次元}
+% genron:begin K-000603
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000600
+% genron:use K-000563
+% genron:use K-000565
+% genron:use K-000444
+% genron:use K-000118
+% genron:use K-000100
+\begin{prop}[交換補題]
+線形空間 $V$ を生成する有限族 $(y_1,\ldots,y_n)$ と線形独立な有限族 $(x_1,\ldots,x_m)$ を考える．ここで族の線形独立性とは添字の異なる成分を別々に扱った線形関係が自明であることをいう．このとき $m\leq n$ であり，$y_i$ のうち適切な $m$ 個を $x_1,\ldots,x_m$ で置き換えた族はなお $V$ を生成する．
+\end{prop}
+\begin{proof}
+$x_1,\ldots,x_k$ と残された $n-k$ 個の $y_i$ が $V$ を生成する段階を考える．$k=0$ では仮定による．$k<m$ とすると $x_{k+1}$ をこの生成族の線形結合に表示できる．残された $y_i$ の係数が全て零ならば $x_{k+1}$ は先行する $x_i$ の線形包に属し，独立性に反する．従って少なくとも一つの $y_i$ の係数が非零である．その係数の逆元を用いて当該 $y_i$ を $x_{k+1}$ とその他の生成元の線形結合に表示できる．従ってこの $y_i$ を $x_{k+1}$ に置き換えても $V$ を生成する．もし $m>n$ なら $k=n$ において残された $y_i$ がないのに非零係数が必要となり矛盾する．よって $m\leq n$ であり，有限回の置換で主張の族を得る．
+\end{proof}
+% genron:end K-000603
+% genron:begin K-000604
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000600
+% genron:use K-000601
+% genron:use K-000603
+% genron:use K-000110
+% genron:use K-000111
+% genron:use K-000113
+\begin{prop}[有限次元線形空間の次元]
+有限次元線形空間 $V$ の全ての基底は有限であり，その元の個数は等しい．この共通の自然数を $V$ の次元といい，$\dim_K V$ と書く．
+\end{prop}
+\begin{proof}
+有限生成性と \GenronRef{K-000601}により有限基底 $B$ が存在する．$n=|B|$ とする．任意の線形独立集合は $n+1$ 個の相異なる元を含めば \GenronRef{K-000603}に反するから，高々 $n$ 個の元からなる．従って任意の基底 $C$ は有限で $|C|\leq n$ である．$C$ を生成集合，$B$ を線形独立集合として同じ命題を適用すると $n\leq|C|$ となり等しい．
+\end{proof}
+% genron:end K-000604
+% genron:begin K-000605
+% genron:use K-000566
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000604
+% genron:use K-000603
+% genron:use K-000602
+% genron:use K-000600
+% genron:use K-000564
+\begin{prop}[部分空間の次元]
+有限次元線形空間 $V$ の部分空間 $U$ は有限次元であり，
+\[
+ \dim_K U\leq\dim_K V
+\]
+である．等号は $U=V$ のときに限って成立する．
+\end{prop}
+\begin{proof}
+$U$ の線形独立集合は $V$ においても線形独立であり，交換補題により元の個数が $\dim_K V$ 以下である．従って $U$ 内で元の個数が最大の線形独立集合 $C$ を取れる（空集合も候補である）．\GenronRef{K-000566}によって $C$ は $U$ を生成する．従って $U$ は有限次元である．もし $U\ne V$ なら $x\in V\setminus U$ を取れば $C\cup\{x\}$ は線形独立なので $|C|+1\leq\dim_K V$ である．逆に $U=V$ なら次元は等しい．
+\end{proof}
+% genron:end K-000605
+% genron:begin K-000606
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000604
+% genron:use K-000603
+% genron:use K-000601
+% genron:use K-000566
+% genron:use K-000118
+\begin{prop}[基底の次元による判定]
+$\dim_K V=n$ とする．$n$ 個のベクトルからなる族は，線形独立ならば基底であり，また $V$ を生成するならば基底である．
+\end{prop}
+\begin{proof}
+線形独立で生成しなければ線形包外の一元を添加して $n+1$ 個の線形独立元を得るので矛盾する．生成する場合は成分の集合から \GenronRef{K-000601}により基底を抽出できる．基底の元の個数は $n$ だから元の族に重複はなく，その全成分が基底である．
+\end{proof}
+% genron:end K-000606

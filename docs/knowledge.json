@@ -18144,6 +18144,933 @@
       "status": "verified",
       "source": "volumes/N-136/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000591",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序環",
+      "statement": "可換環 A の全順序が加法による移動で保たれ，非負元の積が非負であるとき順序環という．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000249",
+        "K-000068"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000592",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数の順序環としての性質",
+      "statement": "ℤ は通常の順序で順序環である．整数 a>0 は自然数であり，1≤a である．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000591",
+        "K-000324",
+        "K-000323",
+        "K-000103",
+        "K-000108"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000593",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序環の不等式と符号",
+      "statement": "順序環で a≤b,c≥0 なら ac≤bc．a≤b ⇔ −b≤−a．整域なら a,b>0⇒ab>0．非零順序環では 0<1．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000591",
+        "K-000250",
+        "K-000443",
+        "K-000069"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000594",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "整数の絶対値",
+      "statement": "整数 a の絶対値 |a| は a≥0 なら a，a<0 なら −a とする．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000592",
+        "K-000593"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000595",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数の絶対値の性質",
+      "statement": "|a|=0⇔a=0，|ab|=|a||b|，|a+b|≤|a|+|b|．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000594",
+        "K-000593",
+        "K-000250"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000596",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数の除法算法",
+      "statement": "a∈ℤ,b∈ℤ∖{0} に対し a=bq+r, 0≤r<|b| となる整数 q,r が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000592",
+        "K-000594",
+        "K-000595",
+        "K-000593",
+        "K-000104",
+        "K-000444",
+        "K-000250",
+        "K-000323"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000597",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Euclidの互除法",
+      "statement": "任意の整数 a,b は非負の最大公約元 d を一意に持ち，除法算法の反復によって求められる．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000596",
+        "K-000594",
+        "K-000572",
+        "K-000577",
+        "K-000578",
+        "K-000573",
+        "K-000104",
+        "K-000250"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000598",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数の最大公約元の一次結合表示（Bézout等式）",
+      "statement": "最大公約元 d≥0 に対し整数 u,v で d=ua+vb とできる．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000597",
+        "K-000579",
+        "K-000572",
+        "K-000250",
+        "K-000100"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000599",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "互いに素な整数の整除",
+      "statement": "gcd(a,b)=1 かつ a∣bc なら a∣c．",
+      "assumptions": [],
+      "position": [
+        75,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000598",
+        "K-000572",
+        "K-000249"
+      ],
+      "status": "verified",
+      "source": "volumes/N-75/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000600",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "線形空間の基底",
+      "statement": "V の部分集合 B が線形独立で V を生成するとき基底という．有限生成な線形空間を有限次元という．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000563",
+        "K-000565",
+        "K-000110"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000601",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限生成集合からの基底の抽出",
+      "statement": "有限集合 S が V を生成するなら S の部分集合で V の基底となるものが存在する．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000600",
+        "K-000566",
+        "K-000563",
+        "K-000113",
+        "K-000104",
+        "K-000117"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000602",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底の拡張",
+      "statement": "任意の生成集合 S とその線形独立部分集合 T に対し T⊆B⊆S となる基底 B が存在する（選択公理を使用）．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000600",
+        "K-000566",
+        "K-000563",
+        "K-000131",
+        "K-000113",
+        "K-000120"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000603",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "交換補題",
+      "statement": "有限生成族 y₁,…,y_n と線形独立族 x₁,…,x_m に対して m≤n であり，生成族の m 個を x_i で置換しても生成族となる．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000600",
+        "K-000563",
+        "K-000565",
+        "K-000444",
+        "K-000118",
+        "K-000100"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000604",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元線形空間の次元",
+      "statement": "有限次元線形空間 V の全ての基底は同じ有限濃度を持つ．この数を dim_K V とする．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000600",
+        "K-000601",
+        "K-000603",
+        "K-000110",
+        "K-000111",
+        "K-000113"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000605",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分空間の次元",
+      "statement": "有限次元 V の部分空間 U は有限次元で dim U≤dim V．等号は U=V のときに限る．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000604",
+        "K-000603",
+        "K-000602",
+        "K-000600",
+        "K-000564",
+        "K-000566"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000606",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底の次元による判定",
+      "statement": "n 次元空間の n 個のベクトルの族は線形独立なら基底，生成すれば基底である．",
+      "assumptions": [],
+      "position": [
+        96,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000604",
+        "K-000603",
+        "K-000601",
+        "K-000566",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-96/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000607",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "多重線形写像",
+      "statement": "K 線形空間 V₁,…,V_r,W の積から W への写像で各変数について線形なものを多重線形写像という．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000561",
+        "K-000118",
+        "K-000033"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000608",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多重線形写像の線形空間",
+      "statement": "一定の始域・終域を持つ多重線形写像の全体は各点の和・スカラー倍で線形空間をなす．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000607",
+        "K-000562",
+        "K-000335",
+        "K-000047",
+        "K-000336"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000609",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多重線形写像の零成分と展開",
+      "statement": "多重線形写像は一つでも変数が零なら零である．各変数の有限和に対して全添字の積にわたる展開が成り立つ．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000607",
+        "K-000336",
+        "K-000118",
+        "K-000100",
+        "K-000120"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000610",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "生成集合上での多重線形写像の決定",
+      "statement": "各 V_i の生成集合 S_i 上の積で一致する二つの多重線形写像は等しい．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000609",
+        "K-000563",
+        "K-000034"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000611",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "交代多重線形写像と反対称性",
+      "statement": "V^r→W の多重線形写像が二つの変数が等しいとき零なら交代的，任意の二変数の交換で符号が反転するなら反対称的という．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000607"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000612",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "交代性と反対称性の関係",
+      "statement": "交代多重線形写像は反対称的である．1+1≠0 の体上では逆も成り立つ．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000611",
+        "K-000607",
+        "K-000443",
+        "K-000250",
+        "K-000336"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000613",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "交代写像と線形従属族",
+      "statement": "交代多重線形写像は線形従属な有限族において零となる．",
+      "assumptions": [],
+      "position": [
+        110,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000611",
+        "K-000607",
+        "K-000565",
+        "K-000443",
+        "K-000336"
+      ],
+      "status": "verified",
+      "source": "volumes/N-110/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000614",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所コンパクト群",
+      "statement": "局所コンパクトな Hausdorff 位相群を局所コンパクト群という．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000480",
+        "K-000293"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000615",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所コンパクト群の単位元による判定",
+      "statement": "Hausdorff 位相群 G が局所コンパクト ⇔ 単位元がコンパクト近傍を持つ．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000614",
+        "K-000383",
+        "K-000376",
+        "K-000480"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000616",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称なコンパクト近傍の縮小",
+      "statement": "局所コンパクト群の単位元の任意の近傍 U に対し対称開近傍 V で cl(V) がコンパクトかつ cl(V)cl(V)⊆U となるものが存在する．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000614",
+        "K-000385",
+        "K-000481",
+        "K-000383",
+        "K-000375",
+        "K-000377"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000617",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分群と開部分群の局所コンパクト性",
+      "statement": "局所コンパクト群の閉部分群及び開部分群は局所コンパクト群である．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000614",
+        "K-000387",
+        "K-000482",
+        "K-000293",
+        "K-000499"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000618",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所コンパクト群の商",
+      "statement": "局所コンパクト群 G の閉正規部分群 N に対し商位相群 G/N は局所コンパクト群である．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000614",
+        "K-000615",
+        "K-000390",
+        "K-000501",
+        "K-000376",
+        "K-000480"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000619",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所コンパクト群の有限積",
+      "statement": "有限個の局所コンパクト群の積群は積位相に関して局所コンパクト群である．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000614",
+        "K-000615",
+        "K-000380",
+        "K-000382",
+        "K-000344",
+        "K-000383",
+        "K-000293"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000620",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト集合で生成される開部分群",
+      "statement": "局所コンパクト群の単位元の対称コンパクト近傍 C に対し ⋃_{n≥1}C^n は開かつ閉の部分群であり，コンパクト集合の可算合併である．",
+      "assumptions": [],
+      "position": [
+        195,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000616",
+        "K-000499",
+        "K-000376",
+        "K-000380",
+        "K-000383",
+        "K-000382",
+        "K-000225",
+        "K-000104",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-195/web.tex",
+      "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -19303,7 +20230,7 @@
       "number": 75,
       "title": "整数の順序と整除",
       "area": "数体系",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         11,
         4,
@@ -19313,7 +20240,8 @@
         "順序環・除法算法・Euclid算法"
       ],
       "treatise": "T-11",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 76,
@@ -19615,7 +20543,7 @@
       "number": 96,
       "title": "有限次元と基底",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         15,
         5
@@ -19624,7 +20552,8 @@
         "基底・交換補題・次元"
       ],
       "treatise": "T-15",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 97,
@@ -19826,7 +20755,7 @@
       "number": 110,
       "title": "多重線形写像",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         15
       ],
@@ -19834,7 +20763,8 @@
         "多重線形性・交代性"
       ],
       "treatise": "T-17",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 111,
@@ -21101,16 +22031,18 @@
       "number": 195,
       "title": "局所コンパクト群",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         191,
-        61
+        61,
+        65
       ],
       "goals": [
         "コンパクト近傍・商と局所コンパクト性"
       ],
       "treatise": "T-27",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 196,

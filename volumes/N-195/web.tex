@@ -1,0 +1,154 @@
+% Web専用原稿．
+% Bredon, Topology and Geometry, Ch. I §15, pp.51–53：平行移動，対称近傍，閉部分群の商空間の記述を確認．本書では既出の局所コンパクトHausdorff空間の縮小命題を用いる．
+\section{単位元近傍と局所コンパクト性}
+% genron:begin K-000614
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000480
+% genron:use K-000293
+\begin{defn}[局所コンパクト群]
+Hausdorff 位相群 $G$ が位相空間として局所コンパクトであるとき，$G$ を局所コンパクト群という．以下，単位元を $1$ と書く．
+\end{defn}
+% genron:end K-000614
+% genron:begin K-000615
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000614
+% genron:use K-000383
+% genron:use K-000376
+% genron:use K-000480
+\begin{prop}[局所コンパクト群の単位元による判定]
+Hausdorff 位相群 $G$ が局所コンパクトであることと，単位元 $1$ がコンパクトな近傍を持つことは同値である．
+\end{prop}
+\begin{proof}
+必要性は定義による．逆に $1$ のコンパクト近傍を $C$ とする．任意の $g\in G$ に対し左平行移動は同相写像であるから $gC$ は $g$ のコンパクト近傍である．よって $G$ は局所コンパクトである．
+\end{proof}
+% genron:end K-000615
+% genron:begin K-000616
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000614
+% genron:use K-000385
+% genron:use K-000481
+% genron:use K-000383
+% genron:use K-000375
+% genron:use K-000377
+\begin{prop}[対称なコンパクト近傍の縮小]
+局所コンパクト群 $G$ の単位元の任意の近傍 $U$ に対し，対称開近傍 $V$ が存在して，その閉包 $\overline V$ はコンパクトであり
+\[
+ \overline V\,\overline V\subseteq U
+\]
+となる．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000385}により対称開近傍 $W$ で $WW\subseteq U$ となるものを取る．\GenronRef{K-000481}により開近傍 $O$ で $\overline O$ がコンパクトかつ $\overline O\subseteq W$ となるものを取る．$V=O\cap O^{-1}$ とおくと対称開近傍である．$\overline V$ は $\overline O$ の閉部分集合だからコンパクトであり，$\overline V\subseteq W$ から積の包含を得る．
+\end{proof}
+% genron:end K-000616
+\section{部分群と商群}
+% genron:begin K-000617
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000614
+% genron:use K-000387
+% genron:use K-000482
+% genron:use K-000293
+% genron:use K-000499
+\begin{prop}[閉部分群と開部分群の局所コンパクト性]
+局所コンパクト群の閉部分群及び開部分群は，部分位相に関して局所コンパクト群である．
+\end{prop}
+\begin{proof}
+部分群は \GenronRef{K-000387}により位相群であり，Hausdorff 性は部分空間に受け継がれる．閉部分空間及び開部分空間の局所コンパクト性は \GenronRef{K-000482}による．なお開部分群は \GenronRef{K-000499}により閉でもある．
+\end{proof}
+% genron:end K-000617
+% genron:begin K-000618
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000614
+% genron:use K-000615
+% genron:use K-000390
+% genron:use K-000501
+% genron:use K-000376
+% genron:use K-000480
+\begin{prop}[局所コンパクト群の商]
+局所コンパクト群 $G$ の閉正規部分群 $N$ に対し，商位相群 $G/N$ は局所コンパクト群である．
+\end{prop}
+\begin{proof}
+標準全射 $q:G\to G/N$ は連続開写像であり，$G/N$ は \GenronRef{K-000501}により Hausdorff である．$1$ のコンパクト近傍 $C$ を取る．$1$ を含む開集合 $O$ で $O\subseteq C$ となるものがあり，$q(O)$ は $N$ の開近傍で $q(C)$ に含まれる．$q(C)$ は連続像なのでコンパクトである．従って \GenronRef{K-000615}により局所コンパクトである．
+\end{proof}
+% genron:end K-000618
+% genron:begin K-000619
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000614
+% genron:use K-000615
+% genron:use K-000380
+% genron:use K-000382
+% genron:use K-000344
+% genron:use K-000383
+% genron:use K-000293
+\begin{prop}[局所コンパクト群の有限積]
+有限個の局所コンパクト群の積群は，積位相に関して局所コンパクト群である．
+\end{prop}
+\begin{proof}
+積群の積及び逆元写像の各成分は因子の対応する連続写像と射影の合成であり，積位相の性質から連続である．積は Hausdorff である．各因子で単位元のコンパクト近傍を取ると，それらの積は単位元の近傍であり \GenronRef{K-000380}によりコンパクトである．従って \GenronRef{K-000615}により結論を得る．空積は一元群である．
+\end{proof}
+% genron:end K-000619
+% genron:begin K-000620
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000616
+% genron:use K-000499
+% genron:use K-000376
+% genron:use K-000380
+% genron:use K-000383
+% genron:use K-000382
+% genron:use K-000225
+% genron:use K-000104
+% genron:use K-000118
+\begin{prop}[コンパクト集合で生成される開部分群]
+局所コンパクト群 $G$ の単位元の対称コンパクト近傍 $C$ を取る．$C^n$ を $C$ の元 $n$ 個の積の全体とすると
+\[
+ H=\bigcup_{n\geq1}C^n
+\]
+は $C$ によって生成される部分群であり，開かつ閉である．また $H$ はコンパクト集合の可算合併である．
+\end{prop}
+\begin{proof}
+$1\in C$ 及び $C^{-1}=C$ により $H$ は単位元を含み，積及び逆元で閉じる．$C$ を含む任意の部分群は全ての $C^n$ を含むので生成部分群である．$H$ は単位元の近傍を含むから \GenronRef{K-000499}により開かつ閉である．各 $C^n$ は $C$ の $n$ 個の直積から積写像による連続像として得られる．有限積のコンパクト性及び連続像のコンパクト性により各 $C^n$ はコンパクトである．
+\end{proof}
+% genron:end K-000620

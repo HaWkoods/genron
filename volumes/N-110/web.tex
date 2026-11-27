@@ -1,0 +1,141 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. XIII §4, Prop.4.1 (pp.511–512)：多重線形性，交代性と符号変化を確認．任意標数で交代性と反対称性を区別する．
+\section{多重線形性}
+% genron:begin K-000607
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000561
+% genron:use K-000118
+% genron:use K-000033
+\begin{defn}[多重線形写像]
+体 $K$ 上の線形空間 $V_1,\ldots,V_r,W$（$r\geq1$）を考える．写像 $f:V_1\times\cdots\times V_r\to W$ が，各 $i$ について第 $i$ 変数以外を固定したとき線形写像 $V_i\to W$ となるなら，$f$ を多重線形写像又は $r$ 重線形写像という．$r=2$ の場合を双線形写像という．
+\end{defn}
+% genron:end K-000607
+% genron:begin K-000608
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000607
+% genron:use K-000562
+% genron:use K-000335
+% genron:use K-000047
+% genron:use K-000336
+\begin{prop}[多重線形写像の線形空間]
+$V_1,\ldots,V_r,W$ を固定する．多重線形写像 $V_1\times\cdots\times V_r\to W$ の全体は，函数の各点における和及びスカラー倍に関して線形空間をなす．
+\end{prop}
+\begin{proof}
+任意の函数全体は各点の演算により線形空間をなす．実際，線形空間の公理は各点で $W$ の公理に帰着する．零写像は多重線形である．$f,g$ が多重線形で $a,b\in K$ なら，任意の変数を一つ固定せずにおいたとき，$af+bg$ はその変数に関して線形である．これは $W$ の加法とスカラー作用の分配律及び $K$ の可換性から従う．\GenronRef{K-000562}により部分空間となる．
+\end{proof}
+% genron:end K-000608
+% genron:begin K-000609
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000607
+% genron:use K-000336
+% genron:use K-000118
+% genron:use K-000100
+% genron:use K-000120
+\begin{prop}[多重線形写像の零成分と展開]
+多重線形写像 $f$ は，少なくとも一変数が零なら値が零である．さらに各 $x_i=\sum_{j\in J_i}a_{ij}v_{ij}$ を有限線形結合とすると
+\[
+ f(x_1,\ldots,x_r)=
+ \sum_{(j_1,\ldots,j_r)\in J_1\times\cdots\times J_r}
+ a_{1j_1}\cdots a_{rj_r} f(v_{1j_1},\ldots,v_{rj_r})
+\]
+である．
+\end{prop}
+\begin{proof}
+零成分に関する線形写像は零元を零元に移す．展開式は第1変数の線形性によって第1添字に関する和に展開し，次いで第2変数の線形性を用いる操作を第 $r$ 変数まで反復すれば得られる．$r$ に関する帰納法と有限和の分配律により正当化される．いずれかの添字集合が空なら双方とも零である．
+\end{proof}
+% genron:end K-000609
+% genron:begin K-000610
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000609
+% genron:use K-000563
+% genron:use K-000034
+\begin{prop}[生成集合上での多重線形写像の決定]
+各 $V_i$ の生成集合 $S_i$ を取る．二つの多重線形写像が $S_1\times\cdots\times S_r$ 上で一致するならば，両者は全域で一致する．
+\end{prop}
+\begin{proof}
+任意の $(x_1,\ldots,x_r)$ を取り，各 $x_i$ を $S_i$ の元の有限線形結合に表示する．\GenronRef{K-000609}の展開式により両者の値は等しい．
+\end{proof}
+% genron:end K-000610
+\section{交代性}
+% genron:begin K-000611
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000607
+\begin{defn}[交代多重線形写像と反対称性]
+同一の線形空間 $V$ を $r$ 個並べた積 $V^r$ から $W$ への多重線形写像 $f$ が，任意の相異なる添字 $i,j$ について $x_i=x_j$ なら $f(x_1,\ldots,x_r)=0$ を満たすとき交代的であるという．任意の二変数を交換すると値がその加法逆元に移るとき反対称的であるという．$r=1$ の場合にはいずれの条件も空虚に成立する．
+\end{defn}
+% genron:end K-000611
+% genron:begin K-000612
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000611
+% genron:use K-000607
+% genron:use K-000443
+% genron:use K-000250
+% genron:use K-000336
+\begin{prop}[交代性と反対称性の関係]
+交代多重線形写像は反対称的である．体 $K$ において $1+1\ne0$ なら，反対称的な多重線形写像は交代的である．
+\end{prop}
+\begin{proof}
+二変数以外を固定して得る双線形写像を $g$ とする．交代性から
+\[
+ 0=g(x+y,x+y)=g(x,x)+g(x,y)+g(y,x)+g(y,y)
+\]
+であり，最初と最後の項は零である．従って $g(y,x)=-g(x,y)$ となる．逆に反対称性から $g(x,x)=-g(x,x)$ である．$1+1\ne0$ ならこれが体の単元なので $(1+1)g(x,x)=0$ から $g(x,x)=0$ を得る．$1+1=0$ の場合にはこの逆の推論は一般に成立しない．
+\end{proof}
+% genron:end K-000612
+% genron:begin K-000613
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000611
+% genron:use K-000607
+% genron:use K-000565
+% genron:use K-000443
+% genron:use K-000336
+\begin{prop}[交代写像と線形従属族]
+交代多重線形写像 $f:V^r\to W$ は線形従属な族 $(x_1,\ldots,x_r)$ において零となる．
+\end{prop}
+\begin{proof}
+非自明な線形関係 $\sum_i a_i x_i=0$ を取り，$a_j\ne0$ とする．$x_j=-\sum_{i\ne j}a_j^{-1}a_i x_i$ を第 $j$ 変数へ代入して線形性により展開すると，各項には同じベクトル $x_i$ が二変数に現れる．従って交代性から各項は零となる．$r=1$ の場合には従属性から $x_1=0$ であり線形性により零となる．
+\end{proof}
+% genron:end K-000613
