@@ -1,0 +1,123 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{複素数体}
+% genron:begin K-000716
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000699
+% genron:use K-000443
+% genron:use K-000249
+% genron:use K-000033
+\begin{prop}[複素数体の構成]
+$\mathbb C=\mathbb R\times\mathbb R$ において
+\[
+ (a,b)+(c,d)=(a+c,b+d),\quad
+ (a,b)(c,d)=(ac-bd,ad+bc)
+\]
+と定める．これらの演算によって $\mathbb C$ は体となる．
+\end{prop}
+\begin{proof}
+加法について可換群であり，零元は $(0,0)$ である．積の交換律と分配律は実数の演算法則から従う．結合律について，三元 $(a,b),(c,d),(e,f)$ の積をどちらから計算しても第一成分は $ace-bde-adf-bcf$，第二成分は $acf-bdf+ade+bce$ である．単位元は $(1,0)$ である．$(a,b)\ne(0,0)$ ならば $a^2+b^2>0$ なので
+\[
+ (a,b)^{-1}=\left(\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2}\right)
+\]
+が存在する．単位元と零元は異なるから体である．$a\mapsto(a,0)$ は単射な体準同型である．
+\end{proof}
+% genron:end K-000716
+% genron:begin K-000717
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000716
+\begin{defn}[実部・虚部と共役]
+$i=(0,1)$ とおくと $i^2=-1$ である．各 $z=(a,b)$ は一意に $z=a+ib$ と書ける．$a$ を実部，$b$ を虚部といい，それぞれ $\operatorname{Re}z,\operatorname{Im}z$ と記す．また $\overline z=a-ib$ を $z$ の共役という．
+\end{defn}
+% genron:end K-000717
+% genron:begin K-000718
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000717
+% genron:use K-000716
+\begin{prop}[複素共役の性質]
+共役は体の自己同型であり，$\overline{\overline z}=z$ である．その固定元全体は $\mathbb R$ に一致し，$z\overline z=a^2+b^2$ である．
+\end{prop}
+\begin{proof}
+加法・乗法の保存は成分表示で計算すれば直ちに得られる．共役を二度適用すると恒等写像になるので全単射である．$a-ib=a+ib$ であることは $2b=0$，従って $b=0$ であることと同値である．積の公式から $z\overline z=a^2+b^2$ を得る．
+\end{proof}
+% genron:end K-000718
+\section{絶対値}
+% genron:begin K-000719
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000718
+% genron:use K-000709
+\begin{defn}[複素数の絶対値]
+$z=a+ib$ に対し $|z|=\sqrt{a^2+b^2}$ と定め，これを複素数の絶対値という．
+\end{defn}
+% genron:end K-000719
+% genron:begin K-000720
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000719
+% genron:use K-000718
+% genron:use K-000709
+% genron:use K-000641
+\begin{prop}[複素絶対値の基本性質]
+複素絶対値は正値性，乗法性及び三角不等式を満たす．また $|\overline z|=|z|$ である．
+\end{prop}
+\begin{proof}
+正値性と共役による不変性は定義から従う．$(zw)\overline{zw}=(z\overline z)(w\overline w)$ であるから，非負平方根の一意性によって $|zw|=|z||w|$ である．任意の $u$ について $(\operatorname{Re}u)^2\leq |u|^2$ なので $\operatorname{Re}u\leq |u|$ である．従って
+\[
+ |z+w|^2=|z|^2+2\operatorname{Re}(z\overline w)+|w|^2
+ \leq (|z|+|w|)^2.
+\]
+両辺は非負なので三角不等式が従う．
+\end{proof}
+% genron:end K-000720
+% genron:begin K-000721
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000716
+% genron:use K-000639
+% genron:use K-000641
+\begin{prop}[複素数体の非順序化可能性]
+複素数体に順序体の構造を与える全順序は存在しない．
+\end{prop}
+\begin{proof}
+順序体において非零元の平方は正である．ところが $i^2=-1$ であるから $-1>0$ となる．他方 $1=1^2>0$ であるため $-1<0$ であり，矛盾する．
+\end{proof}
+% genron:end K-000721

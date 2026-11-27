@@ -1,0 +1,131 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{完備順序体の同型}
+% genron:begin K-000710
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000706
+% genron:use K-000708
+% genron:use K-000677
+% genron:use K-000679
+% genron:use K-000681
+% genron:use K-000642
+\begin{prop}[完備順序体の切断表示]
+$F$ を完備順序体とする．有理数体を標準埋込みによって $F$ の部分体とみなし，
+\[
+ \Phi(x)=\{q\in\mathbb Q\mid q<x\}
+\]
+と定める．$\Phi$ は $F$ から $\mathcal D$ への順序同型である．
+\end{prop}
+\begin{proof}
+Archimedes性から $x$ より小さい有理数及び大きい有理数が存在する．下方閉性は明らかであり，稠密性によって $q<x$ の間に別の有理数を取れるので $\Phi(x)$ は切断である．$x<y$ ならば $x<q<y$ なる有理数が存在するので $\Phi(x)\subsetneq\Phi(y)$ である．
+
+任意の切断 $A$ を $F$ の部分集合とみると，補集合の有理数によって上から押さえられ，空でない．従って $s=\sup_F A$ が存在する．$a\in A$ ならば $a<a'\in A$ があるので $a<s$ である．逆に $q<s$ なる有理数 $q$ は $A$ の上界ではないから $q<a$ なる $a\in A$ があり，$q\in A$ となる．従って $\Phi(s)=A$ である．
+\end{proof}
+% genron:end K-000710
+% genron:begin K-000711
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000710
+% genron:use K-000692
+% genron:use K-000694
+% genron:use K-000695
+% genron:use K-000697
+% genron:use K-000699
+% genron:use K-000706
+\begin{prop}[実数体の一意性]
+任意の二つの完備順序体の間には順序を保存する体同型がただ一つ存在する．
+\end{prop}
+\begin{proof}
+まず $\Phi$ が加法を保存することを示す．$a<x,b<y$ なる有理数に対し $a+b<x+y$ である．逆に $q<x+y$ ならば稠密性により $q-y<a<x$ なる有理数 $a$ を取り $b=q-a<y$ とおける．従って $\Phi(x+y)=\Phi(x)+\Phi(y)$ である．
+
+$x,y>0$ のとき $0<a<x,0<b<y$ ならば $ab<xy$ である．逆に $0\leq q<xy$ のとき $q/y<a<x$ なる正有理数 $a$ を取り，$q/a<b<y$ なる正有理数 $b$ を取れば $q<ab$ である．負の有理数は双方の切断に属するので，非負元に対する乗法保存が従う．零の場合も明らかである．任意の元は非負元の差であり，加法と非負元の積を保存するので，全体で乗法を保存する．また $\Phi(1)=L_1$ である．従って $\Phi$ は順序体同型である．
+
+二つの完備順序体をこの同型によって $\mathcal D$ と結び付ければ存在が従う．任意の順序体同型は $1$ を保存するため有理数部分体の元を固定する．従って $x$ より小さい有理数の全体も保存する．切断表示の単射性によって同型は一意である．
+\end{proof}
+% genron:end K-000711
+\section{単調収束}
+% genron:begin K-000712
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000643
+% genron:use K-000099
+% genron:use K-000034
+% genron:use K-000705
+\begin{defn}[順序体における数列の収束]
+順序体 $F$ における数列とは正整数全体から $F$ への写像である．数列 $(x_n)$ が $x$ に収束するとは，任意の $\varepsilon\in F,\ \varepsilon>0$ に対し，ある正整数 $N$ が存在して $n\geq N$ ならば $|x_n-x|<\varepsilon$ となることをいう．
+\end{defn}
+% genron:end K-000712
+% genron:begin K-000713
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000712
+% genron:use K-000708
+% genron:use K-000707
+\begin{prop}[単調有界数列の収束]
+完備順序体における広義単調増加で上に有界な数列 $(x_n)$ は $s=\sup\{x_n\mid n\geq1\}$ に収束する．広義単調減少で下に有界な数列はその値域の下限に収束する．
+\end{prop}
+\begin{proof}
+$\varepsilon>0$ を任意に取る．上限の近似性により $s-\varepsilon<x_N\leq s$ なる $N$ がある．$n\geq N$ ならば $s-\varepsilon<x_N\leq x_n\leq s$ なので $|x_n-s|<\varepsilon$ である．減少数列については $(-x_n)$ に適用すればよい．
+\end{proof}
+% genron:end K-000713
+% genron:begin K-000714
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000699
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000073
+\begin{defn}[拡大実数]
+$\mathbb R$ にそれと互いに異なる二つの元 $-\infty,+\infty$ を付加し，すべての実数 $x$ に対して $-\infty<x<+\infty$ と定める．これを拡大実数の集合 $\overline{\mathbb R}$ という．これは順序集合であって体ではない．空集合の上限を $-\infty$，下限を $+\infty$ と約束する．
+\end{defn}
+% genron:end K-000714
+% genron:begin K-000715
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000714
+% genron:use K-000705
+% genron:use K-000707
+\begin{prop}[拡大実数の順序完備性]
+任意の $S\subseteq\overline{\mathbb R}$ に対し $\sup S$ と $\inf S$ が存在する．
+\end{prop}
+\begin{proof}
+$S=\varnothing$ の場合は約束による．$+\infty\in S$ 又は $S\cap\mathbb R$ が上に非有界なら上限は $+\infty$ である．$S=\{-\infty\}$ なら上限は $-\infty$ である．残りの場合は $S\cap\mathbb R$ が空でなく上に有界であるから，その実数における上限が $S$ の上限である．下限については順序を反転して同じ議論を行う．
+\end{proof}
+% genron:end K-000715

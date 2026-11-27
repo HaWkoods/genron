@@ -1,0 +1,180 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{距離空間}
+% genron:begin K-000722
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000699
+% genron:use K-000639
+% genron:use K-000033
+% genron:use K-000034
+\begin{defn}[距離空間]
+集合 $X$ 上の実数値函数 $d:X\times X\to\mathbb R$ が任意の $x,y,z\in X$ に対し
+\[
+\begin{gathered}
+ d(x,y)\geq0,\quad d(x,y)=0\Leftrightarrow x=y,\\
+ d(x,y)=d(y,x),\quad d(x,z)\leq d(x,y)+d(y,z)
+\end{gathered}
+\]
+を満たすとき $d$ を $X$ 上の距離といい，$(X,d)$ を距離空間という．
+\end{defn}
+% genron:end K-000722
+% genron:begin K-000723
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000644
+\begin{example}[実数の距離と離散距離]
+実数体における $d(x,y)=|x-y|$ は距離である．また任意の集合 $X$ において $x=y$ のとき $d(x,y)=0$，$x\ne y$ のとき $d(x,y)=1$ とする函数は距離である．後者を離散距離という．
+\end{example}
+\begin{proof}
+実数の場合は絶対値の性質，特に $|x-z|=|(x-y)+(y-z)|\leq|x-y|+|y-z|$ から従う．離散距離の場合，$x=z$ ならば三角不等式は明らかであり，$x\ne z$ ならば $x\ne y$ 又は $y\ne z$ なので右辺は少なくとも $1$ である．その他の条件は直ちに確認できる．
+\end{proof}
+% genron:end K-000723
+% genron:begin K-000724
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000643
+\begin{prop}[距離の逆三角不等式]
+任意の $x,y,z\in X$ に対し $|d(x,z)-d(y,z)|\leq d(x,y)$ である．
+\end{prop}
+\begin{proof}
+三角不等式から $d(x,z)-d(y,z)\leq d(x,y)$ を得る．$x,y$ を交換すれば $d(y,z)-d(x,z)\leq d(x,y)$ を得る．これらを合わせると主張の不等式となる．
+\end{proof}
+% genron:end K-000724
+\section{距離位相}
+% genron:begin K-000725
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+\begin{defn}[開球と閉球]
+$x\in X$，$r>0$ に対し $B(x,r)=\{y\in X\mid d(x,y)<r\}$ を中心 $x$，半径 $r$ の開球という．$\overline B(x,r)=\{y\in X\mid d(x,y)\leq r\}$ を閉球という．この記号は開球の閉包と区別して用いる．
+\end{defn}
+% genron:end K-000725
+% genron:begin K-000726
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000725
+% genron:use K-000146
+% genron:use K-000208
+% genron:use K-000210
+\begin{prop}[距離位相]
+距離空間 $(X,d)$ に対し
+\[
+ \mathcal O_d=\{U\subseteq X\mid \forall x\in U,\ \exists r>0,\ B(x,r)\subseteq U\}
+\]
+とおくと，$\mathcal O_d$ は位相である．これを距離位相という．開球全体はその開基をなす．
+\end{prop}
+\begin{proof}
+$\varnothing,X$ はこの条件を満たす．任意合併の点は合併を構成するいずれかの集合に属するのでその点の開球を取れる．二集合の共通部分の点については，双方に含まれる開球の半径の小さい方を取ればよい．従って位相の公理を満たす．
+
+$y\in B(x,r)$ ならば $s=r-d(x,y)>0$ とおくと $z\in B(y,s)$ に対し $d(x,z)\leq d(x,y)+d(y,z)<r$ となる．従って開球自身が開集合である．開集合の定義から任意の開集合は開球の合併となる．
+\end{proof}
+% genron:end K-000726
+% genron:begin K-000727
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000726
+% genron:use K-000724
+% genron:use K-000148
+% genron:use K-000198
+\begin{prop}[閉球と開球の閉包]
+閉球 $\overline B(x,r)$ は閉集合であり，$B(x,r)$ の閉包を含む．しかし一般に両者は等しくない．
+\end{prop}
+\begin{proof}
+$y\notin\overline B(x,r)$ ならば $s=d(x,y)-r>0$ である．$d(y,z)<s$ ならば $d(x,z)\geq d(x,y)-d(y,z)>r$ なので $B(y,s)$ は補集合に含まれる．従って補集合は開である．閉包の最小性から開球の閉包は閉球に含まれる．二元集合の離散距離では $B(x,1)=\{x\}$ は閉であるが $\overline B(x,1)=X$ である．
+\end{proof}
+% genron:end K-000727
+% genron:begin K-000728
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000726
+% genron:use K-000722
+\begin{prop}[距離空間の分離性]
+距離空間における相異なる二点 $x,y$ は互いに素な開近傍を持つ．
+\end{prop}
+\begin{proof}
+$r=d(x,y)/2>0$ とおく．もし $z\in B(x,r)\cap B(y,r)$ ならば $d(x,y)\leq d(x,z)+d(z,y)<2r=d(x,y)$ となり矛盾する．両開球は開近傍なので主張を得る．
+\end{proof}
+% genron:end K-000728
+% genron:begin K-000729
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000726
+% genron:use K-000214
+% genron:use K-000706
+% genron:use K-000646
+\begin{prop}[距離空間の可算近傍基]
+各点 $x$ について $\{B(x,1/n)\mid n\geq1\}$ は近傍基である．
+\end{prop}
+\begin{proof}
+$x$ の任意の近傍は $x$ を含む開集合を含む．従ってある $r>0$ について $B(x,r)$ を含む．Archimedes性によって $1/n<r$ なる正整数 $n$ を取ると，$B(x,1/n)$ はその近傍に含まれる．
+\end{proof}
+% genron:end K-000729
+% genron:begin K-000730
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000726
+% genron:use K-000033
+\begin{prop}[部分集合に誘導される距離]
+$Y\subseteq X$ に対し $d_Y=d|_{Y\times Y}$ は距離である．その開集合は $U\cap Y$（$U$ は $X$ の開集合）と表される集合にちょうど一致する．
+\end{prop}
+\begin{proof}
+距離の各公理は制限によって保たれる．$y\in Y$ について $B_{d_Y}(y,r)=B_d(y,r)\cap Y$ である．$U$ が $X$ で開ならば各 $y\in U\cap Y$ に対して $U$ に含まれる開球を取れば $U\cap Y$ が $Y$ で開と分かる．逆に $V$ が $Y$ で開ならば $B_d(y,r)\cap Y\subseteq V$ を満たすすべての $y\in V,r>0$ にわたる開球の合併を $U$ とおく．$U$ は $X$ で開であり，$V=U\cap Y$ である．
+\end{proof}
+% genron:end K-000730

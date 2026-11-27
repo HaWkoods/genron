@@ -21800,6 +21800,643 @@
       "status": "draft",
       "source": "volumes/N-81/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000710",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備順序体の切断表示",
+      "statement": "任意の完備順序体 F における x↦{q∈Q | q<x} は切断全体への順序同型である．",
+      "assumptions": [],
+      "position": [
+        82,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000706",
+        "K-000708",
+        "K-000677",
+        "K-000679",
+        "K-000681",
+        "K-000642"
+      ],
+      "status": "draft",
+      "source": "volumes/N-82/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000711",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "実数体の一意性",
+      "statement": "任意の二つの完備順序体の間には順序を保存する体同型がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        82,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000710",
+        "K-000692",
+        "K-000694",
+        "K-000695",
+        "K-000697",
+        "K-000699",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-82/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000712",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序体における数列の収束",
+      "statement": "数列 x_n が x に収束するとは，任意の ε>0 に対してある N 以降 |x_n−x|<ε となることである．",
+      "assumptions": [],
+      "position": [
+        82,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000643",
+        "K-000099",
+        "K-000034",
+        "K-000705"
+      ],
+      "status": "draft",
+      "source": "volumes/N-82/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000713",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単調有界数列の収束",
+      "statement": "完備順序体の増加有界数列はその値域の上限へ，減少有界数列は下限へ収束する．",
+      "assumptions": [],
+      "position": [
+        82,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000712",
+        "K-000708",
+        "K-000707"
+      ],
+      "status": "draft",
+      "source": "volumes/N-82/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000714",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "拡大実数",
+      "statement": "R に −∞ と +∞ を付加し全順序を延長した集合を拡大実数という．",
+      "assumptions": [],
+      "position": [
+        82,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000699",
+        "K-000068",
+        "K-000069",
+        "K-000073"
+      ],
+      "status": "draft",
+      "source": "volumes/N-82/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000715",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "拡大実数の順序完備性",
+      "statement": "拡大実数の任意の部分集合は上限と下限を持つ．",
+      "assumptions": [],
+      "position": [
+        82,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000714",
+        "K-000705",
+        "K-000707"
+      ],
+      "status": "draft",
+      "source": "volumes/N-82/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000716",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "複素数体の構成",
+      "statement": "R×R は成分ごとの加法及び (a,b)(c,d)=(ac−bd,ad+bc) によって体となる．",
+      "assumptions": [],
+      "position": [
+        83,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000699",
+        "K-000443",
+        "K-000249",
+        "K-000033"
+      ],
+      "status": "draft",
+      "source": "volumes/N-83/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000717",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "実部・虚部と共役",
+      "statement": "z=(a,b)=a+ib に対し Re z=a，Im z=b，共役 z̄=a−ib と定める．",
+      "assumptions": [],
+      "position": [
+        83,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000716"
+      ],
+      "status": "draft",
+      "source": "volumes/N-83/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000718",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "複素共役の性質",
+      "statement": "共役は位数2の体自己同型であり，固定元は実数である．",
+      "assumptions": [],
+      "position": [
+        83,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000717",
+        "K-000716"
+      ],
+      "status": "draft",
+      "source": "volumes/N-83/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000719",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "複素数の絶対値",
+      "statement": "|z|=√(z z̄)=√(a²+b²)．",
+      "assumptions": [],
+      "position": [
+        83,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000718",
+        "K-000709"
+      ],
+      "status": "draft",
+      "source": "volumes/N-83/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000720",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "複素絶対値の基本性質",
+      "statement": "|z|≥0，|z|=0⇔z=0，|zw|=|z||w|，|z+w|≤|z|+|w|．",
+      "assumptions": [],
+      "position": [
+        83,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000719",
+        "K-000718",
+        "K-000709",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-83/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000721",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "複素数体の非順序化可能性",
+      "statement": "複素数体には体演算と整合する全順序を入れられない．",
+      "assumptions": [],
+      "position": [
+        83,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000716",
+        "K-000639",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-83/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000722",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "距離空間",
+      "statement": "d:X×X→R が非負性・分離性・対称性・三角不等式を満たすとき距離と呼ぶ．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000699",
+        "K-000639",
+        "K-000033",
+        "K-000034"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000723",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "実数の距離と離散距離",
+      "statement": "R 上の d(x,y)=|x−y| 及び任意の集合上の 0–1 距離は距離である．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000644"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000724",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "距離の逆三角不等式",
+      "statement": "|d(x,z)−d(y,z)|≤d(x,y)．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000643"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000725",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "開球と閉球",
+      "statement": "B(x,r)={y | d(x,y)<r}，B̄(x,r)={y | d(x,y)≤r}．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000726",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "距離位相",
+      "statement": "各点を中心とする開球を含む集合を開集合とすると位相を得る．全開球が開基をなす．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000725",
+        "K-000146",
+        "K-000208",
+        "K-000210"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000727",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉球と開球の閉包",
+      "statement": "閉球は距離位相で閉集合であり，開球の閉包を含む．等号は一般に成立しない．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000726",
+        "K-000724",
+        "K-000148",
+        "K-000198"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000728",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "距離空間の分離性",
+      "statement": "異なる二点は互いに交わらない開球で分離される．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000726",
+        "K-000722"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000729",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "距離空間の可算近傍基",
+      "statement": "各 x∈X について B(x,1/n) (n≥1) は近傍基である．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000726",
+        "K-000214",
+        "K-000706",
+        "K-000646"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000730",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分集合に誘導される距離",
+      "statement": "Y⊆X に対し d|Y×Y は距離であり，その位相は X の距離位相からの部分位相に一致する．",
+      "assumptions": [],
+      "position": [
+        13,
+        1,
+        2,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000726",
+        "K-000033"
+      ],
+      "status": "draft",
+      "source": "volumes/N-13/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
     }
   ],
   "notes": [
@@ -21997,7 +22634,7 @@
       "number": 13,
       "title": "距離と距離位相",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         54,
         81
@@ -22006,7 +22643,8 @@
         "距離・開球・距離位相"
       ],
       "treatise": "T-13",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 14,
@@ -23068,7 +23706,7 @@
       "number": 82,
       "title": "実数体の一意性",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         81
       ],
@@ -23076,13 +23714,14 @@
         "完備順序体の同型・下限・単調収束"
       ],
       "treatise": "T-12",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 83,
       "title": "複素数体",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         81,
         70
@@ -23091,7 +23730,8 @@
         "複素数の構成・共役・絶対値"
       ],
       "treatise": "T-12",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 84,
