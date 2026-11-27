@@ -10385,7 +10385,8 @@
         "K-000292",
         "K-000327",
         "K-000251",
-        "K-000286"
+        "K-000286",
+        "K-000329"
       ],
       "status": "verified",
       "source": "volumes/N-69/web.tex",
@@ -10393,8 +10394,8 @@
     },
     {
       "id": "K-000334",
-      "kind": "example",
-      "heading_kind": "example",
+      "kind": "proposition",
+      "heading_kind": "proposition",
       "title": "単位元を含むイデアル",
       "statement": "イデアル I が 1 を含めば I=A．",
       "assumptions": [],
@@ -10619,7 +10620,8 @@
         "K-000340",
         "K-000338",
         "K-000289",
-        "K-000288"
+        "K-000288",
+        "K-000339"
       ],
       "status": "verified",
       "source": "volumes/N-16/web.tex",
@@ -11099,7 +11101,8 @@
         "K-000228",
         "K-000229",
         "K-000306",
-        "K-000309"
+        "K-000309",
+        "K-000265"
       ],
       "status": "verified",
       "source": "volumes/N-122/web.tex",
@@ -11278,7 +11281,8 @@
         "K-000007",
         "K-000017",
         "K-000357",
-        "K-000358"
+        "K-000358",
+        "K-000361"
       ],
       "status": "verified",
       "source": "volumes/N-122/web.tex",
@@ -11485,7 +11489,8 @@
         "K-000257",
         "K-000224",
         "K-000217",
-        "K-000100"
+        "K-000100",
+        "K-000366"
       ],
       "status": "verified",
       "source": "volumes/N-59/web.tex",
@@ -11724,7 +11729,8 @@
         "K-000224",
         "K-000223",
         "K-000219",
-        "K-000372"
+        "K-000372",
+        "K-000375"
       ],
       "status": "verified",
       "source": "volumes/N-60/web.tex",
@@ -11785,7 +11791,8 @@
         "K-000379",
         "K-000257",
         "K-000100",
-        "K-000119"
+        "K-000119",
+        "K-000376"
       ],
       "status": "verified",
       "source": "volumes/N-60/web.tex",
@@ -11935,7 +11942,8 @@
         "K-000383",
         "K-000194",
         "K-000257",
-        "K-000147"
+        "K-000147",
+        "K-000208"
       ],
       "status": "verified",
       "source": "volumes/N-27/web.tex",
@@ -13592,7 +13600,9 @@
         "K-000436",
         "K-000431",
         "K-000435",
-        "K-000265"
+        "K-000265",
+        "K-000438",
+        "K-000439"
       ],
       "status": "verified",
       "source": "volumes/N-124/web.tex",

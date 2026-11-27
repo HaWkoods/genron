@@ -121,6 +121,7 @@ $x\in X\setminus K$ とする．$K$ を覆う開集合族として，$x$ のあ�
 \end{proof}
 % genron:end K-000377
 % genron:begin K-000378
+% genron:use K-000375
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -138,7 +139,7 @@ $x\in X\setminus K$ とする．$K$ を覆う開集合族として，$x$ のあ�
 コンパクト空間 $X$ から Hausdorff空間 $Y$ への連続全単射 $f$ は同相写像である．
 \end{prop}
 \begin{proof}
-閉部分集合 $F\subseteq X$ はコンパクトであり，$f(F)$ もコンパクトであるから $Y$ の閉集合となる．従って $f^{-1}$ は閉集合の逆像を閉集合に移す写像であり，\GenronRef{K-000219}$ により連続である．
+\GenronRef{K-000375} により閉部分集合 $F\subseteq X$ はコンパクトであり，$f(F)$ もコンパクトであるから $Y$ の閉集合となる．従って $f^{-1}$ は閉集合の逆像を閉集合に移す写像であり，\GenronRef{K-000219}$ により連続である．
 \end{proof}
 % genron:end K-000378
 % genron:begin K-000379
@@ -161,6 +162,7 @@ $Y=\varnothing$ なら $U=X$ でよい．そうでなければ，$x$ のある�
 \end{proof}
 % genron:end K-000379
 % genron:begin K-000380
+% genron:use K-000376
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -177,7 +179,7 @@ $Y=\varnothing$ なら $U=X$ でよい．そうでなければ，$x$ のある�
 コンパクト空間 $X,Y$ の積はコンパクトである．従ってコンパクト空間の有限積はコンパクトである．
 \end{prop}
 \begin{proof}
-空の因子がある場合は明らかである．積の開被覆 $\mathcal W$ を取る．各 $x\in X$ に対し $\{x\}\times Y$ は $Y$ と同相なのでコンパクトである．従って $\mathcal W$ の有限部分族の合併 $W_x$ で $\{x\}\times Y$ を含むものがある．管状近傍の命題によって $U\times Y\subseteq W_x$ となる $x$ の開近傍 $U$ がある．この性質を満たす開集合 $U$ 全体が $X$ を覆う．コンパクト性により有限個 $U_1,\ldots,U_k$ を選び，有限選択で各 $U_i$ に対応する $\mathcal W$ の有限部分族を選べば，それらの合併が積を覆う有限部分族である．有限積は帰納法で従う．
+空の因子がある場合は明らかである．積の開被覆 $\mathcal W$ を取る．各 $x\in X$ に対し $\{x\}\times Y$ は $Y$ と同相なのでコンパクトである．従って $\mathcal W$ の有限部分族の合併 $W_x$ で $\{x\}\times Y$ を含むものがある．\GenronRef{K-000379}によって $U\times Y\subseteq W_x$ となる $x$ の開近傍 $U$ がある．この性質を満たす開集合 $U$ 全体が $X$ を覆う．コンパクト性により有限個 $U_1,\ldots,U_k$ を選び，有限選択で各 $U_i$ に対応する $\mathcal W$ の有限部分族を選べば，それらの合併が積を覆う有限部分族である．有限積は帰納法で従う．
 \end{proof}
 % genron:end K-000380
 % genron:begin K-000381
