@@ -1,6 +1,9 @@
-% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+% Web専用原稿．独立査読は未了．下記の文献との部分的な照合を実施．
+% 参考確認（2026-11-27）：John M. Lee, Introduction to Topological Manifolds, 2nd ed., Springer, 2011, 定理4.68の完備距離空間の場合を確認；Bogachev and Smolyanov, Real and Functional Analysis, 定理1.5.1の閉球の記述を確認．
+% 原稿の論証は独自に再構成．書籍全体・全命題との照合は未了．
 \section{稠密集合とカテゴリー}
 % genron:begin K-000832
+% genron:use K-000201
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -18,6 +21,7 @@
 \end{defn}
 % genron:end K-000832
 % genron:begin K-000833
+% genron:use K-000201
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -35,6 +39,8 @@
 \end{defn}
 % genron:end K-000833
 % genron:begin K-000834
+% genron:use K-000146
+% genron:use K-000148
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -57,6 +63,10 @@
 % genron:end K-000834
 \section{完備距離空間のBaire性}
 % genron:begin K-000835
+% genron:use K-000735
+% genron:use K-000100
+% genron:use K-000169
+% genron:use K-000168
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -87,10 +97,12 @@ $x_n,r_n$ が選ばれたとき，$B(x_n,r_n)\cap U_{n+1}$ は空でない開集
  \overline B(x_{n+1},r_{n+1})
  \subseteq B(x_n,r_n)\cap U_{n+1}
 \]
-を満たすものが存在する．選択公理により可能な選択に対する選択函数を固定し，再帰によってこの操作を反復する．$m\geq n$ なら $x_m\in\overline B(x_n,r_n)$ であるから，$p,q\geq n$ なら $d(x_p,x_q)\leq2r_n<2^{1-n}$ である．従って $(x_n)$ は Cauchy 列となり，完備性により極限 $x$ を持つ．各閉球は閉集合であり，点列の尾部を含むため $x$ も含む．従って $x\in V\cap\bigcap_n U_n$ である．任意の空でない開集合 $V$ についてこのことが成立するから，共通部分は稠密である．
+を満たすものが存在する．選択公理により可能な選択に対する選択函数を固定し，再帰によってこの操作を反復する．$m\geq n$ なら $x_m\in\overline B(x_n,r_n)$ であるから，$p,q\geq n$ なら $d(x_p,x_q)\leq2r_n<2^{1-n}$ である．帰納法から $2^n\geq n+1$ であり，Archimedes性から $2^{1-n}$ は任意に小さくできる．従って $(x_n)$ は Cauchy 列となり，完備性により極限 $x$ を持つ．各閉球は閉集合であり，点列の尾部を含むため $x$ も含む．従って $x\in V\cap\bigcap_n U_n$ である．任意の空でない開集合 $V$ についてこのことが成立するから，共通部分は稠密である．
 \end{proof}
 % genron:end K-000835
 % genron:begin K-000836
+% genron:use K-000146
+% genron:use K-000148
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003

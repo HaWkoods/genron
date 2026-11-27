@@ -1,6 +1,9 @@
-% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+% Web専用原稿．独立査読は未了．下記の文献との部分的な照合を実施．
+% 参考確認（2026-11-27）：V. I. Bogachev, Measure Theory, Vol. I, Springer, 2007, §1.11, 定義1.11.1–1.11.2および定理1.11.4の記述を確認．本稿は外測度に限定して論証．
+% 原稿の論証は独自に再構成．書籍全体・全命題との照合は未了．
 \section{外測度}
 % genron:begin K-000775
+% genron:use K-000034
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -21,6 +24,11 @@
 \end{defn}
 % genron:end K-000775
 % genron:begin K-000776
+% genron:use K-000073
+% genron:use K-000706
+% genron:use K-000100
+% genron:use K-000169
+% genron:use K-000168
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -50,6 +58,7 @@ $\varnothing\in\mathcal C\subseteq\mathcal P(X)$ とし，$c:\mathcal C\to[0,+\i
 % genron:end K-000776
 \section{Carathéodory可測性}
 % genron:begin K-000777
+% genron:use K-000029
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -64,10 +73,12 @@ $\varnothing\in\mathcal C\subseteq\mathcal P(X)$ とし，$c:\mathcal C\to[0,+\i
 \[
  m^*(T)=m^*(T\cap A)+m^*(T\setminus A)
 \]
-を満たすとき $A$ を $m^*$ 可測という．外測度の劣加法性によって左辺以下の向きの不等式を示すだけで十分である．
+を満たすとき $A$ を $m^*$ 可測という．外測度の劣加法性によって常に $m^*(T)\leq m^*(T\cap A)+m^*(T\setminus A)$ であるから，可測性を示すには逆向きの不等式を示すだけで十分である．
 \end{defn}
 % genron:end K-000777
 % genron:begin K-000778
+% genron:use K-000100
+% genron:use K-000029
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -95,6 +106,8 @@ $\varnothing,X$ は可測であり，補集合によって条件は不変であ�
 \end{proof}
 % genron:end K-000778
 % genron:begin K-000779
+% genron:use K-000747
+% genron:use K-000715
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -119,7 +132,7 @@ $m^*$ 可測集合全体 $\mathcal M$ は $\sigma$-加法族であり，$m^*|_{\
 \[
  m^*(T)\geq\sum_{j=1}^n m^*(T\cap A_j)+m^*(T\setminus A)
 \]
-となる．$n$ に関する上限を取ると，非負拡大実数の加法の性質により
+となる．$c=m^*(T\setminus A)$ とおく．$c=+\infty$ ならば $m^*(T)=+\infty$ であり可測性の等式は直ちに成立する．$c<+\infty$ ならば有限部分和の上限と定数の加法が交換する（部分和が上に非有界又は無限大ならば両辺が無限大，有界ならば加法の順序保存性による）．従って $n$ に関する上限を取ると
 \[
  m^*(T)\geq\sum_{j=1}^\infty m^*(T\cap A_j)+m^*(T\setminus A)
  \geq m^*(T\cap A)+m^*(T\setminus A)
@@ -130,6 +143,8 @@ $m^*(N)=0$ とし $E\subseteq N$ ならば単調性により $m^*(T\cap E)=0$ �
 \end{proof}
 % genron:end K-000779
 % genron:begin K-000780
+% genron:use K-000715
+% genron:use K-000747
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003

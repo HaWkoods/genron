@@ -1,6 +1,9 @@
-% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+% Web専用原稿．独立査読は未了．下記の文献との部分的な照合を実施．
+% 参考確認（2026-11-27）：V. I. Bogachev and O. G. Smolyanov, Real and Functional Analysis, §1.2, 命題1.2.12と補題1.2.9の記述を確認．同書の埋込みによる存在証明とは異なり，本稿はCauchy列の商を採用．
+% 原稿の論証は独自に再構成．書籍全体・全命題との照合は未了．
 \section{完備性}
 % genron:begin K-000769
+% genron:use K-000730
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -16,6 +19,10 @@
 \end{defn}
 % genron:end K-000769
 % genron:begin K-000770
+% genron:use K-000731
+% genron:use K-000118
+% genron:use K-000110
+% genron:use K-000639
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -41,6 +48,8 @@ Cauchy 列 $(x_n)$ は有界である．実際，ある $N$ 以降の項は $x_N
 \end{proof}
 % genron:end K-000770
 % genron:begin K-000771
+% genron:use K-000148
+% genron:use K-000731
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -64,6 +73,7 @@ Cauchy 列 $(x_n)$ は有界である．実際，ある $N$ 以降の項は $x_N
 % genron:end K-000771
 \section{距離空間の完備化}
 % genron:begin K-000772
+% genron:use K-000735
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -80,6 +90,13 @@ Cauchy 列 $(x_n)$ は有界である．実際，ある $N$ 以降の項は $x_N
 \end{defn}
 % genron:end K-000772
 % genron:begin K-000773
+% genron:use K-000105
+% genron:use K-000731
+% genron:use K-000643
+% genron:use K-000733
+% genron:use K-000722
+% genron:use K-000047
+% genron:use K-000034
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -116,7 +133,7 @@ $C$ は正整数から $X$ への写像全体の部分集合である．三角�
 \[
  |d(x_n,y_n)-d(x_m,y_m)|\leq d(x_n,x_m)+d(y_n,y_m)
 \]
-なので右辺の定義に用いる実数列は Cauchy 列であり，実数の完備性によって極限を持つ．代表列を $(x'_n),(y'_n)$ に変えたとき，距離の差の絶対値は $d(x_n,x'_n)+d(y_n,y'_n)$ 以下なので極限は不変である．非負性・対称性・三角不等式は各項の対応する性質を極限に移すことによって従い，距離が零であることは類が一致することに等しい．定数列から得る写像 $i$ は等長である．
+なので右辺の定義に用いる実数列は Cauchy 列であり，実数の完備性によって極限を持つ．代表列を $(x'_n),(y'_n)$ に変えたとき，距離の差の絶対値は $d(x_n,x'_n)+d(y_n,y'_n)$ 以下なので極限は不変である．非負性・対称性は各項の性質から従う．三角不等式について，三つの距離列の極限をそれぞれ $\alpha,\beta,\gamma$ とし，各項で第一の距離が他の二距離の和以下であるとする．$\varepsilon>0$ に対し十分後には三つの距離列の誤差がいずれも $\varepsilon$ 未満であるから $\alpha-\varepsilon<\beta+\gamma+2\varepsilon$ であり，$\varepsilon$ は任意なので $\alpha\leq\beta+\gamma$ となる．非負性の極限への移行も同じ誤差評価で従う．距離が零であることは類が一致することに等しい．定数列から得る写像 $i$ は等長である．
 
 $z=[(x_n)]$ とすると $i(x_m)\to z$ である．実際，任意の $\varepsilon>0$ に対し $m,n\geq N$ ならば $d(x_m,x_n)<\varepsilon/2$ となる $N$ を選べば，$m\geq N$ で $\widehat d(i(x_m),z)\leq\varepsilon/2$ である．従って $i(X)$ は稠密である．
 
@@ -128,6 +145,9 @@ $z=[(x_n)]$ とすると $i(x_m)\to z$ である．実際，任意の $\varepsil
 \end{proof}
 % genron:end K-000773
 % genron:begin K-000774
+% genron:use K-000722
+% genron:use K-000738
+% genron:use K-000731
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003

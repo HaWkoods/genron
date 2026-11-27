@@ -1,6 +1,10 @@
-% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+% Web専用原稿．独立査読は未了．下記の文献との部分的な照合を実施．
+% 参考確認（2026-11-27）：V. I. Bogachev, Measure Theory, Vol. I, Springer, 2007, §1.5の代数上の拡張に関する記述および§1.11の可測性を確認．本稿は集合環上の前測度とπ-λ定理を用いる．
+% 原稿の論証は独自に再構成．書籍全体・全命題との照合は未了．
 \section{前測度と拡張}
 % genron:begin K-000816
+% genron:use K-000748
+% genron:use K-000715
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -21,6 +25,7 @@
 \end{defn}
 % genron:end K-000816
 % genron:begin K-000817
+% genron:use K-000185
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -41,6 +46,7 @@
 \end{proof}
 % genron:end K-000817
 % genron:begin K-000818
+% genron:use K-000780
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -72,6 +78,7 @@ $A\in\mathcal R$ と任意の $T\subseteq X$ を固定する．$T$ の任意の 
 % genron:end K-000818
 \section{拡張の一意性}
 % genron:begin K-000819
+% genron:use K-000178
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -89,6 +96,8 @@ $A\in\mathcal R$ と任意の $T\subseteq X$ を固定する．$T$ の任意の 
 \end{defn}
 % genron:end K-000819
 % genron:begin K-000820
+% genron:use K-000186
+% genron:use K-000183
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -115,6 +124,7 @@ $\mathcal P$ を含むすべての Dynkin 族の共通部分を $\mathcal D_0$ �
 \end{proof}
 % genron:end K-000820
 % genron:begin K-000821
+% genron:use K-000179
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -127,13 +137,14 @@ $\mathcal P$ を含むすべての Dynkin 族の共通部分を $\mathcal D_0$ �
 % genron:use K-000748
 % genron:use K-000749
 \begin{prop}[有限測度の一致判定]
-同じ可測空間 $(X,\mathcal A)$ 上の有限測度 $\mu,\nu$ が $\mu(X)=\nu(X)$ を満たし，$\pi$-集合族 $\mathcal P\subseteq\mathcal A$ 上で一致するとする．このとき $\mu,\nu$ は $\sigma(\mathcal P)$ 上で一致する．
+同じ集合 $X$ とその上の $\sigma$-加法族 $\mathcal A$ に定義された有限測度 $\mu,\nu$ が $\mu(X)=\nu(X)$ を満たし，$\pi$-集合族 $\mathcal P\subseteq\mathcal A$ 上で一致するとする．このとき $\mu,\nu$ は $\sigma(\mathcal P)$ 上で一致する．
 \end{prop}
 \begin{proof}
 $\mathcal D=\{A\in\mathcal A\mid\mu(A)=\nu(A)\}$ は仮定によって $X$ を含む．$A\subseteq B$ がともに $\mathcal D$ に属するとき有限性によって $\mu(B\setminus A)=\mu(B)-\mu(A)=\nu(B)-\nu(A)=\nu(B\setminus A)$ となる．互いに素な可算合併については可算加法性によって閉じている．従って $\mathcal D$ は $\mathcal P$ を含む Dynkin 族であり，$\pi$-$\lambda$ 定理を適用できる．
 \end{proof}
 % genron:end K-000821
 % genron:begin K-000822
+% genron:use K-000178
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -149,6 +160,8 @@ $\mathcal D=\{A\in\mathcal A\mid\mu(A)=\nu(A)\}$ は仮定によって $X$ を�
 \end{defn}
 % genron:end K-000822
 % genron:begin K-000823
+% genron:use K-000187
+% genron:use K-000749
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003

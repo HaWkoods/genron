@@ -17,6 +17,14 @@
 \end{defn}
 % genron:end K-000797
 % genron:begin K-000798
+% genron:use K-000725
+% genron:use K-000120
+% genron:use K-000113
+% genron:use K-000110
+% genron:use K-000706
+% genron:use K-000100
+% genron:use K-000169
+% genron:use K-000168
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -37,7 +45,7 @@
 距離空間が全有界であるための必要十分条件は，任意の点列が Cauchy 部分列を持つことである．
 \end{prop}
 \begin{proof}
-全有界とする．各正整数 $k$ について半径 $2^{-k}$ の有限開球被覆を選択公理によって固定し，その球を有限列として順序付ける．点列 $(x_n)$ に対し $I_0$ を正整数全体とする．無限集合 $I_{k-1}$ が得られているとき，有限被覆の中には $I_{k-1}$ に属する添字の項を無限個含む球がある．そのような最初の球に属する添字全体を $I_k$ とする．これにより $I_k\subseteq I_{k-1}$ なる無限集合列が定まる．$n_0=0$ とし，$I_k$ の元で $n_{k-1}$ より大きい最小のものを $n_k$ とする．$p,q\geq k$ なら $n_p,n_q\in I_k$ なので $d(x_{n_p},x_{n_q})<2^{1-k}$ であり，Cauchy 部分列を得る．
+全有界とする．各正整数 $k$ について半径 $2^{-k}$ の有限開球被覆を選択公理によって固定し，その球を有限列として順序付ける．点列 $(x_n)$ に対し $I_0$ を正整数全体とする．無限集合 $I_{k-1}$ が得られているとき，有限被覆の中には $I_{k-1}$ に属する添字の項を無限個含む球がある．そのような最初の球に属する添字全体を $I_k$ とする．これにより $I_k\subseteq I_{k-1}$ なる無限集合列が定まる．$n_0=0$ とし，$I_k$ の元で $n_{k-1}$ より大きい最小のものを $n_k$ とする．$p,q\geq k$ なら $n_p,n_q\in I_k$ なので $d(x_{n_p},x_{n_q})<2^{1-k}$ である．帰納法で $2^k\geq k+1$ であり，Archimedes性から $2^{1-k}$ は任意に小さくできる．従って Cauchy 部分列を得る．
 
 逆に全有界でないならば，ある $\varepsilon>0$ について有限個の半径 $\varepsilon$ の開球では空間を覆えない．選択函数を固定し，既に選んだ点を中心とする球の外から次の点を取る操作を反復すると，$m\ne n$ なら $d(x_m,x_n)\geq\varepsilon$ となる点列を得る．これは Cauchy 部分列を持たない．
 \end{proof}
@@ -64,6 +72,10 @@
 % genron:end K-000799
 \section{開被覆によるコンパクト性}
 % genron:begin K-000800
+% genron:use K-000148
+% genron:use K-000725
+% genron:use K-000734
+% genron:use K-000706
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -88,6 +100,8 @@
 \end{proof}
 % genron:end K-000800
 % genron:begin K-000801
+% genron:use K-000731
+% genron:use K-000706
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
@@ -109,6 +123,7 @@
 \end{proof}
 % genron:end K-000801
 % genron:begin K-000802
+% genron:use K-000744
 % genron:use K-000001
 % genron:use K-000002
 % genron:use K-000003
