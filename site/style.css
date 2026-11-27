@@ -98,3 +98,17 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .path-entry{padding:.2em .6em}
 .knowledge-path-link{display:block;font:12px/1.7 system-ui,sans-serif;margin-top:.5em;text-decoration:underline}
 @media(max-width:600px){.path-tools{grid-template-columns:1fr}}
+
+/* Related-note reader: continuous full text, ordered by the note DAG. */
+.path-index{border-bottom:1px solid var(--line);padding:.5em 0 1em;margin:1em 0 1.5em}
+.path-index summary{cursor:pointer;font-weight:600}
+.path-index-list{padding-left:1.7em;margin:.6em 0 0;line-height:1.9}
+.path-notes.web-article{min-width:0;padding:clamp(20px,3.8vw,52px)}
+.path-note.web-chapter{margin:1em 0 3.5em;min-width:0}
+.path-note.web-chapter+.path-note.web-chapter{border-top:1px solid var(--line);padding-top:2em}
+.path-note .web-note-title{font-size:1.35em}
+.path-note .path-entry{padding:0}
+.path-note .path-selected-entry{border-left:3px solid #4778a5;padding-left:.8em;scroll-margin-top:24px}
+.path-target-marker{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-left:.6em}
+.path-note-meta{font:12px/1.6 system-ui,sans-serif}
+@media(max-width:600px){.path-notes.web-article{padding:20px 16px}}

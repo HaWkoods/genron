@@ -70,6 +70,16 @@ try{
   assert.deepEqual(await page.locator(".path-note").evaluateAll(els=>els.map(e=>Number(e.dataset.note)).sort((a,b)=>a-b)),expectedNotes);
   assert.deepEqual(await page.locator(".path-entry").evaluateAll(els=>els.map(e=>e.dataset.knowledge).sort()),[...ids].sort());
   assert.equal(await page.locator(".path-note[data-note='"+pathById.get(id).position[0]+"']").count(),1);
+  const planByNo=new Map(planData.plan.map(n=>[n.number,n]));
+  const orderedNotes=expectedNotes.slice().sort((a,b)=>planByNo.get(a).depth-planByNo.get(b).depth||a-b);
+  assert.deepEqual(await page.locator(".path-note").evaluateAll(els=>els.map(e=>Number(e.dataset.note))),orderedNotes,"Note layer ordering");
+  const mode=await page.getByRole("combobox",{name:"ノートの表示内容"}).inputValue();
+  const expectedFull=mode==="full"?planData.entries.filter(e=>expectedNotes.includes(e.position[0])).map(e=>e.id):[...ids];
+  assert.deepEqual(await page.locator(".path-note .web-entry").evaluateAll(els=>els.map(e=>e.id).sort()),expectedFull.sort(),"Full note bodies or relevant entries");
+  assert.equal(await page.locator(".path-selected-entry").count(),1);
+  assert.equal(await page.locator(".path-note .web-proof[open]").count(),0,"Proofs initially closed");
+  assert.ok(await page.locator(".path-note .web-entry p,.path-note .web-entry .web-paragraph").count()>0,"Source text rendered");
+
  }
  await page.goto(origin+"?view=knowledge-path");
  await page.locator(".knowledge-path").waitFor();
@@ -82,6 +92,10 @@ try{
  await page.getByRole("combobox",{name:"知識の依存範囲"}).selectOption("direct");
  await checkPath("K-000315","both",true);
  await page.reload();await page.locator(".path-target").waitFor();
+ await checkPath("K-000315","both",true);
+ await page.getByRole("combobox",{name:"ノートの表示内容"}).selectOption("related");
+ await checkPath("K-000315","both",true);
+ await page.getByRole("combobox",{name:"ノートの表示内容"}).selectOption("full");
  await checkPath("K-000315","both",true);
  await page.goto(origin+"?view=knowledge-path&target=K-000131");
  await page.locator(".path-target").waitFor();await checkPath("K-000131","up",false);

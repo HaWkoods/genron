@@ -176,11 +176,13 @@ function showKnowledgePath(){
  const choice=node("select","path-choice");choice.setAttribute("aria-label","対象の知識");
  const direction=node("select");direction.setAttribute("aria-label","知識の依存方向");
  const scope=node("select");scope.setAttribute("aria-label","知識の依存範囲");
+ const display=node("select");display.setAttribute("aria-label","ノートの表示内容");
  const option=(value,label)=>{const o=node("option","",label);o.value=value;return o};
  for(const [v,t] of [["up","前提（この知識に至る）"],["down","後続（この知識を用いる）"],["both","前提と後続"]])direction.append(option(v,t));
  for(const [v,t] of [["all","推移的な依存も含む"],["direct","直接依存のみ"]])scope.append(option(v,t));
  direction.value=["up","down","both"].includes(params.get("direction"))?params.get("direction"):"up";
  scope.value=params.get("scope")==="direct"?"direct":"all";
+ display.append(option("full","ノート全文"),option("related","関連知識のみ"));display.value=params.get("content")==="related"?"related":"full";
  let selected=entries.has(params.get("target"))?params.get("target"):null;
  search.value=params.get("q")??(selected?entries.get(selected).title:"");
  const resultCount=node("p","muted path-match-count");
@@ -188,14 +190,16 @@ function showKnowledgePath(){
  const choiceLabel=node("label","path-field");choiceLabel.append(node("span","","検索結果から選択"),choice);
  const dirLabel=node("label","path-field");dirLabel.append(node("span","","依存方向"),direction);
  const scopeLabel=node("label","path-field");scopeLabel.append(node("span","","依存範囲"),scope);
- tools.append(searchLabel,choiceLabel,dirLabel,scopeLabel);
- page.append(node("h1","","知識からたどるノート"),node("p","muted","定理・命題・定義などを選択すると，知識台帳の依存関係に沿って関係するノートだけを表示します．前提の一覧は学習順の目安です．"),tools,resultCount,output);
+ const displayLabel=node("label","path-field");displayLabel.append(node("span","","表示内容"),display);
+ tools.append(searchLabel,choiceLabel,dirLabel,scopeLabel,displayLabel);
+ page.append(node("h1","","知識からたどるノート"),node("p","muted","定理・命題・定義などを選択すると，知識台帳の依存関係に沿って関係するノートだけを表示します．ノート本文を依存階層の浅い順に続けて読み進められます．"),tools,resultCount,output);
  main.replaceChildren(page);
  const sorted=(a,b)=>(a.knowledge_depth??0)-(b.knowledge_depth??0)||a.id.localeCompare(b.id);
  function updateUrl(){
   const u=new URL(knowledgeRouteUrl(selected));if(search.value)u.searchParams.set("q",search.value);
   if(direction.value!=="up")u.searchParams.set("direction",direction.value);
   if(scope.value!=="all")u.searchParams.set("scope",scope.value);
+  if(display.value!=="full")u.searchParams.set("content",display.value);
   history.replaceState(history.state,"",u);
  }
  function searchUpdate(keep=false){
@@ -228,30 +232,38 @@ function showKnowledgePath(){
   for(const id of related){const e=entries.get(id),no=e.position[0];if(!notes.has(no))continue;if(!groups.has(no))groups.set(no,[]);groups.get(no).push(e)}
   const byPlan=new Map((data.plan??data.notes).map(n=>[n.number,n]));
   const ordered=[...groups].sort(([a],[b])=>(byPlan.get(a)?.depth??0)-(byPlan.get(b)?.depth??0)||a-b);
-  const counts=node("p","meta path-summary",groups.size+"冊・"+related.size+"知識項目（対象を含む）");
+  const counts=node("p","meta path-summary",groups.size+"冊・"+related.size+"関連知識項目（対象を含む）");
   output.append(counts);
-  const list=node("div","path-notes");
+  const index=node("details","path-index");index.append(node("summary","","関連ノート目次"));index.open=true;
+  const indexList=node("ol","path-index-list");index.append(indexList);output.append(index);
+  const list=node("div","path-notes web-article");
   for(const [no,items] of ordered){
-   const n=notes.get(no),card=node("article","result path-note");card.dataset.note=String(no);
+   const n=notes.get(no),rank=byPlan.get(no)?.depth??0,card=node("section","path-note web-chapter");card.dataset.note=String(no);card.dataset.depth=String(rank);card.id="N-"+no;
    const t=data.treatises.find(t=>t.id===n.treatise),p=data.parts.find(p=>p.id===t?.part);
-   card.append(node("span","meta",[noteNumber(n),p?.title,t?.title].filter(Boolean).join("　")));
-   const title=node("h3");title.append(anchor(n.title,webUrl("note",no)));card.append(title);
+   const li=node("li");li.append(anchor(noteNumber(n)+"　"+n.title,"#"+card.id),node("span","meta","　依存層 "+rank));indexList.append(li);
+   card.append(node("p","web-running",[p?.title,t?.title,"依存層 "+rank].filter(Boolean).join("　｜　")));
+   const title=node("h3","web-note-title");title.append(anchor(noteNumber(n)+"　"+n.title,webUrl("note",no)));card.append(title);
    const roles=[];if(items.some(e=>e.id===selected))roles.push("対象のノート");if(items.some(e=>e.id!==selected&&up.has(e.id)))roles.push("前提");if(items.some(e=>e.id!==selected&&down.has(e.id)))roles.push("後続");
-   card.append(node("p","meta",roles.join("・")+"　｜　関連知識 "+items.length+"項目"));
-   const details=node("details","path-note-entries");details.append(node("summary","","関連する知識"));details.open=items.some(e=>e.id===selected);
-   for(const e of items.sort(sorted)){
-    const row=node("div","path-entry");row.dataset.knowledge=e.id;
-    const a=anchor(e.title,webUrl("id",e.id));bindPreview(a,e);row.append(a);
-    if(e.id===selected)row.append(node("span","meta","（対象）"));
-    details.append(row);
+   const bodyItems=(display.value==="full"?all.filter(e=>e.position[0]===no):items.slice()).sort(compareEntryPosition);
+   card.append(node("p","meta path-note-meta",roles.join("・")+"　｜　関連知識 "+items.length+"項目　｜　本文 "+bodyItems.length+"項目"));
+   let lastSection="";
+   for(const e of bodyItems){
+    const sectionTitle=e.webProof?.sectionTitle;
+    if(sectionTitle&&sectionTitle!==lastSection){card.append(node("h4","web-section-title",sectionTitle));lastSection=sectionTitle}
+    const section=node("section","web-entry");section.id=e.id;
+    if(related.has(e.id)){section.classList.add("path-entry");section.dataset.knowledge=e.id}
+    if(e.id===selected)section.classList.add("path-selected-entry");
+    const heading=node("h4","web-statement-title",headingLabel(e)+" "+entryNumber(e)+"（"+e.title+"）");
+    if(e.id===selected)heading.append(node("span","path-target-marker"," 対象の知識"));
+    section.append(heading);renderEntryContent(section,e);appendKnowledgeDependencies(section,e);card.append(section);
    }
-   card.append(details);list.append(card);
+   list.append(card);
   }
-  output.append(list);fitMath(targetBox);
+  output.append(list);fitMath(targetBox);fitMath(list);
  }
  search.oninput=()=>{searchUpdate();refresh()};
  choice.onchange=()=>{selected=choice.value||null;refresh()};
- direction.onchange=scope.onchange=refresh;
+ direction.onchange=scope.onchange=display.onchange=refresh;
  searchUpdate(true);refresh();
 }
 
@@ -468,6 +480,21 @@ function renderEntryContent(section,e){
    }
 }
 
+
+function appendKnowledgeDependencies(section,e){
+ // Restrict only the reference panel, not the knowledge graph or inline citations.
+ const visibleDependencies=(e.depends_on??[]).filter(id=>{
+  const ref=entries.get(id);
+  if(!ref||!Number.isInteger(e.knowledge_depth)||!Number.isInteger(ref.knowledge_depth))return false;
+  const gap=e.knowledge_depth-ref.knowledge_depth;
+  return gap>=1&&gap<=2;
+ });
+ if(visibleDependencies.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of visibleDependencies){const ref=entries.get(id);const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
+}
+function compareEntryPosition(a,b){
+ for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0;
+}
+
 function showWeb(info,restore){
  const selected=notes.get(info.n);
  const treatise=data.treatises.find(t=>t.id===selected.treatise);
@@ -478,7 +505,7 @@ function showWeb(info,restore){
  const layout=node("div","reader web-reader"),side=node("aside","sidebar web-toc"),article=node("article","web-article");
  side.append(node("h2","","部内目次"),anchor("← 検索・総目次",root.href));
  article.append(node("p","web-running","数学原論　｜　"+(part?.id??"")),node("h1","web-part-title",part?.title??selected.title),node("p","muted","Web版試作・旧原稿から移行中"));
- const order=(a,b)=>{for(let i=0;i<Math.max(a.position.length,b.position.length);i++){const d=(a.position[i]??0)-(b.position[i]??0);if(d)return d}return 0};
+ const order=compareEntryPosition;
  let previous=null;
  for(const n of members){
   const t=data.treatises.find(t=>t.id===n.treatise);
@@ -499,14 +526,7 @@ function showWeb(info,restore){
    section.append(heading);
    const link=anchor(entryNumber(e)+"　"+e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
    renderEntryContent(section,e);
-   // Restrict only the reference panel, not the knowledge graph or inline citations.
-   const visibleDependencies=(e.depends_on??[]).filter(id=>{
-    const ref=entries.get(id);
-    if(!ref||!Number.isInteger(e.knowledge_depth)||!Number.isInteger(ref.knowledge_depth))return false;
-    const gap=e.knowledge_depth-ref.knowledge_depth;
-    return gap>=1&&gap<=2;
-   });
-   if(visibleDependencies.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of visibleDependencies){const ref=entries.get(id);const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
+   appendKnowledgeDependencies(section,e);
    chapter.append(section);
   }
   article.append(chapter);
