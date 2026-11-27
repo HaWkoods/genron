@@ -495,6 +495,9 @@ function renderEntryContent(section,e){
   const figure=node("figure","web-figure"),img=node("img");
   img.setAttribute("src",f.src);img.alt=f.alt;img.loading="lazy";img.decoding="async";
   figure.append(img,node("figcaption","",f.caption));
+  // A lazy image in a closed details has no layout box yet. Start loading
+  // explicitly on disclosure so the first opening also works offscreen.
+  block.addEventListener("toggle",()=>{if(block.open)img.loading="eager"});
   block.append(summary,figure);section.append(block);
  }
 }

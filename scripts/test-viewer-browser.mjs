@@ -323,9 +323,11 @@ try{
    assert.equal(await img.isVisible(),false);
    await summary.click();
    assert.equal(await first.getAttribute("open"),"");
+   // Opening details is synchronous, but lazy image decoding and layout are not.
+   await img.waitFor({state:"visible"});
+   assert.ok(await img.evaluate(async el=>{await el.decode();return el.naturalWidth>0}),"Expanded image decodes");
    assert.equal(await img.isVisible(),true);
    assert.equal(await page.locator(".web-entry .web-figure-toggle[open]").count(),1,"Independent figure disclosure");
-   assert.ok(await img.evaluate(async el=>{await el.decode();return el.naturalWidth>0}),"Expanded image decodes");
    await summary.click();
    assert.equal(await first.getAttribute("open"),null);
    assert.equal(await img.isVisible(),false);
@@ -351,7 +353,9 @@ try{
   const summary=disclosure.locator("summary");
   await summary.focus();await summary.press("Enter");
   assert.equal(await disclosure.getAttribute("open"),"");
-  assert.ok(await disclosure.locator("img").evaluate(el=>el.getBoundingClientRect().width<=el.closest(".web-entry").clientWidth+1),"Expanded diagram fits mobile article");
+  const mobileImage=disclosure.locator("img");
+  await mobileImage.waitFor({state:"visible"});
+  assert.ok(await mobileImage.evaluate(async el=>{await el.decode();const rect=el.getBoundingClientRect();return el.naturalWidth>0&&rect.width>0&&rect.width<=el.closest(".web-entry").clientWidth+1}),"Expanded diagram fits mobile article");
   await summary.press("Enter");
   assert.equal(await disclosure.getAttribute("open"),null);
   await page.setViewportSize({width:1440,height:1000});
