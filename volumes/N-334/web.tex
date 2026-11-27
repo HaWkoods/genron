@@ -1,0 +1,140 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{超限再帰と順序数演算}
+% genron:begin K-001569
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000123
+% genron:use K-001538
+% genron:use K-001540
+% genron:use K-001541
+% genron:use K-001376
+\begin{prop}[集合値に限定しない超限再帰]
+順序数 $\alpha$ を取り，各 $\beta\in\alpha$ と定義域 $\beta$ の函数 $h$ に対して集合 $F(\beta,h)$ が一定の集合論の式で一意に指定されるとする．このとき定義域 $\alpha$ の函数 $f$ で $f(\beta)=F(\beta,f|_\beta)$ を満たすものがただ一つ存在する．
+\end{prop}
+\begin{proof}
+任意の二つの解は共通定義域上で一致する．異なる最小の添字があればそれ以前の制限が一致し，規則の一意性に反するからである．各 $\gamma\subseteq\alpha$ 上に解が存在することを順序数の帰納によって示す．零では空函数，後続 $\gamma=\delta+1$ では $\delta$ 上の解に $(\delta,F(\delta,f))$ を追加する．極限の場合は，各 $\delta<\gamma$ の一意な解を置換公理で集合として集める．それらは共通定義域上で一致するため合併が函数となり，定義域は $\gamma$ である．各添字はある $\delta<\gamma$ に属するから再帰式も成立する．この議論は $\alpha$ 自身まで適用できる．
+\end{proof}
+% genron:end K-001569
+% genron:begin K-001570
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001541
+\begin{defn}[零順序数，後続及び極限]
+空集合を $0$，$\alpha\cup\{\alpha\}$ を $\alpha+1$ とする．零でなくいかなる順序数の後続でもない順序数を極限順序数という．
+\end{defn}
+% genron:end K-001570
+% genron:begin K-001571
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001569
+% genron:use K-001570
+% genron:use K-001541
+\begin{defn}[順序数の加法]
+順序数 $\alpha,\beta$ の和を右変数について $\alpha+0=\alpha$，$\alpha+(\gamma+1)=(\alpha+\gamma)+1$，極限 $\lambda$ では $\alpha+\lambda=\bigcup_{\gamma<\lambda}(\alpha+\gamma)$ と再帰的に定める．ここで $\gamma<\lambda$ は $\gamma\in\lambda$ の意味である．
+\end{defn}
+% genron:end K-001571
+% genron:begin K-001572
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001571
+% genron:use K-001542
+% genron:use K-001540
+\begin{prop}[順序数の加法と整列和]
+$\alpha+\beta$ は $\alpha$ の後に $\beta$ を置いた非交和の整列型である．従って加法は結合的であり，右変数について厳密増加である．
+\end{prop}
+\begin{proof}
+非交和の各成分内を元の順序で整列し，第一成分の全元を第二成分の全元より前に置く．その順序型は $\beta=0$ なら $\alpha$，後続の場合は直前の整列和に最大元を一つ加えた型である．極限の場合，それ以前の整列和は真の始切片として増加し，合併が全体に等しい．順序型もそれらの合併である．従って再帰の一意性によって和の定義と一致する．三成分の連接は括り方を変えても順序同型であり結合性を得る．$\beta<\gamma$ なら第一の整列和は第二の真の始切片なので型も厳密に小さい．
+\end{proof}
+% genron:end K-001572
+% genron:begin K-001573
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001569
+% genron:use K-001571
+\begin{defn}[順序数の乗法]
+$\alpha\cdot0=0$，$\alpha\cdot(\gamma+1)=\alpha\cdot\gamma+\alpha$，極限 $\lambda$ では $\alpha\cdot\lambda=\bigcup_{\gamma<\lambda}\alpha\cdot\gamma$ と定める．
+\end{defn}
+% genron:end K-001573
+% genron:begin K-001574
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001572
+% genron:use K-001573
+% genron:use K-001542
+\begin{prop}[順序数の乗法の整列型]
+$\alpha\cdot\beta$ は $\beta$ で添字付けた $\alpha$ のコピーを添字順に並べた整列集合の順序型である．乗法は結合的であり $\alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma$ である．
+\end{prop}
+\begin{proof}
+$\beta$ の零，後続，極限におけるコピーの順序型を調べると乗法の再帰式と一致する．三重のコピーを順に並べた場合，括り方の相違は順序同型を与えるので結合性が従う．添字集合を $\beta$ と $\gamma$ の整列和に分けると左からの分配法則を得る．
+\end{proof}
+% genron:end K-001574
+% genron:begin K-001575
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001569
+% genron:use K-001573
+\begin{defn}[順序数の累乗]
+$\alpha>0$ に対して $\alpha^0=1$，$\alpha^{\gamma+1}=\alpha^\gamma\cdot\alpha$，極限 $\lambda$ では $\alpha^\lambda=\bigcup_{\gamma<\lambda}\alpha^\gamma$ と定める．ただし $1=0+1$ とする．
+\end{defn}
+% genron:end K-001575
+% genron:begin K-001576
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001572
+% genron:use K-001574
+% genron:use K-001542
+\begin{example}[順序数演算の非可換性]
+$\omega$ を自然数の通常の順序型とすると $1+\omega=\omega$，$\omega+1>\omega$，$2\cdot\omega=\omega$，$\omega\cdot2>\omega$ である．
+\end{example}
+\begin{proof}
+有限順序数は自然数と順序を保って対応する．$\omega$ はそれらの合併であり極限順序数である．$1+n$ と $2\cdot n$ はいずれも有限順序数の範囲で上に非有界なので極限での再帰式から $1+\omega=2\cdot\omega=\omega$ である．$\omega+1$ は後続であり $\omega\cdot2=\omega+\omega$ は $\omega+1$ 以上である．
+\end{proof}
+% genron:end K-001576

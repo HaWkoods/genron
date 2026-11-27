@@ -1,0 +1,113 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Krull次元}
+% genron:begin K-001556
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000446
+\begin{defn}[Krull次元と高さ]
+可換環 $A$ の相異なる素イデアルの厳密増加鎖 $\mathfrak p_0\subsetneq\cdots\subsetneq\mathfrak p_n$ の長さを $n$ とする．その長さの上限を $\dim A$ と書く．任意の長さの鎖がある場合は $+\infty$，素イデアルが存在しない場合は $-\infty$ と約束する．素イデアル $\mathfrak p$ で終わる鎖の長さの上限を $\operatorname{ht}\mathfrak p$ という．
+\end{defn}
+% genron:end K-001556
+% genron:begin K-001557
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001556
+% genron:use K-001136
+% genron:use K-001139
+\begin{prop}[局所化と高さ]
+$\operatorname{ht}\mathfrak p=\dim A_{\mathfrak p}$ であり，任意の積閉集合 $S$ について $\dim S^{-1}A\le\dim A$ である．
+\end{prop}
+\begin{proof}
+局所化の素イデアル対応は $S$ と交わらない素イデアルと局所化の素イデアルとの包含順序を保存する全単射である．従って局所化の鎖は $A$ の同じ長さの鎖に対応する．$S=A\setminus\mathfrak p$ の場合，対象となる素イデアルは $\mathfrak p$ に含まれるものすべてである．任意の鎖は末尾に $\mathfrak p$ を追加できる（既に末尾ならそのまま）ので上限は高さに等しい．
+\end{proof}
+% genron:end K-001557
+% genron:begin K-001558
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001556
+% genron:use K-000333
+% genron:use K-000447
+\begin{prop}[商環の次元]
+イデアル $I$ に対し $\dim A/I$ は $I$ を含む素イデアルの鎖の長さの上限である．特に $\dim A/I\le\dim A$ である．
+\end{prop}
+\begin{proof}
+商写像に関するイデアル対応は包含を保ち，商環が整域となるという素性の判定も保つ．従って厳密鎖が長さを保って対応する．
+\end{proof}
+% genron:end K-001558
+% genron:begin K-001559
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001556
+% genron:use K-001520
+% genron:use K-001521
+% genron:use K-001522
+\begin{prop}[整拡大における次元の保存]
+単位元を共有する整拡大 $A\subseteq B$ に対して $\dim A=\dim B$ である．
+\end{prop}
+\begin{proof}
+$B$ の厳密な素イデアル鎖を $A$ に縮小すると非比較性によって隣接する素イデアルは相異なり，鎖の長さは保たれる．従って $\dim B\le\dim A$ である．逆に $A$ の任意の有限鎖の最初の素イデアルを lying over で持ち上げ，going up を反復して鎖全体を持ち上げる．縮小が相異なるので持ち上げた鎖は厳密である．従って $\dim A\le\dim B$ となる．空スペクトルの場合も lying over と縮小によって両方が空となる．
+\end{proof}
+% genron:end K-001559
+% genron:begin K-001560
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001556
+% genron:use K-000448
+\begin{prop}[次元零の判定]
+零環でない可換環 $A$ について $\dim A=0$ であることは全素イデアルが極大であることと同値である．
+\end{prop}
+\begin{proof}
+極大イデアルの存在によって長さ零の鎖は存在する．極大でない素イデアルがあればその上に極大イデアルを取れるので長さ一の鎖が生じる．逆に全素イデアルが極大なら長さ一以上の鎖は存在しない．
+\end{proof}
+% genron:end K-001560
+% genron:begin K-001561
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001556
+% genron:use K-001119
+% genron:use K-000575
+% genron:use K-000576
+% genron:use K-000448
+\begin{example}[単項イデアル整域の次元]
+体でない単項イデアル整域のKrull次元は $1$ である．体の次元は $0$ である．
+\end{example}
+\begin{proof}
+整域の零イデアルは素である．非零素イデアル $(p)$ の生成元 $p$ は素元であるから既約元である．$(p)\subseteq(a)\subsetneq A$ なら $a$ は非単元で $p=ab$ と書けるので $b$ は単元となり $(p)=(a)$ である．従って非零素イデアルは極大である．体でなければ零イデアルは極大でないから非零極大イデアルが存在し長さ一の鎖を与える．体では零イデアルだけが素である．
+\end{proof}
+% genron:end K-001561

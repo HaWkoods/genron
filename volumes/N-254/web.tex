@@ -1,0 +1,140 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{スキーム}
+% genron:begin K-001562
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001457
+% genron:use K-000422
+\begin{defn}[開部分局所環付き空間]
+局所環付き空間 $(X,\mathcal O_X)$ の開集合 $U$ に対して，$(U,\mathcal O_X|_U)$ を開部分局所環付き空間という．射が開埋込みであるとは，ある開部分局所環付き空間への同型とその包含の合成であることをいう．
+\end{defn}
+% genron:end K-001562
+% genron:begin K-001563
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001562
+% genron:use K-001136
+% genron:use K-001199
+% genron:use K-001324
+% genron:use K-001525
+% genron:use K-001369
+% genron:use K-000453
+\begin{prop}[基本開集合のアフィン性]
+$X=\operatorname{Spec}A$ と $a\in A$ に対して $D(a)$ は $\operatorname{Spec}A_a$ と局所環付き空間として同型である．
+\end{prop}
+\begin{proof}
+環準同型 $A\to A_a$ の誘導射は局所化の素イデアル対応によって $D(a)$ への全単射である．基本開集合 $D(b/a^n)$ は $D(a)\cap D(b)$ に対応するから同相である．対応する点 $\mathfrak p$ の茎写像は $A_{\mathfrak p}\to(A_a)_{\mathfrak p A_a}$ である．両側とも $A\setminus\mathfrak p$ の元を可逆にする普遍性を持つから同型である．茎による層の同型判定で構造層の写像も同型となる．
+\end{proof}
+% genron:end K-001563
+% genron:begin K-001564
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001562
+% genron:use K-001523
+% genron:use K-001457
+\begin{defn}[スキーム]
+局所環付き空間 $X$ がスキームであるとは，各点がアフィンスキームと同型な開近傍を持つことをいう．そのような開集合をアフィン開集合という．スキームの射は局所環付き空間の射とする．
+\end{defn}
+% genron:end K-001564
+% genron:begin K-001565
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001563
+% genron:use K-001564
+% genron:use K-001199
+% genron:use K-000209
+\begin{prop}[アフィン開集合による開基]
+スキームのアフィン開集合は開基をなす．従ってスキームの任意の開部分局所環付き空間はスキームである．
+\end{prop}
+\begin{proof}
+点 $x$ を含む開集合 $W$ と $x$ のアフィン開近傍 $V$ を取る．$V\simeq\operatorname{Spec}A$ の同型によって $W\cap V$ に含まれ $x$ を含む基本開集合を選ぶ．基本開集合のアフィン性によりそれはアフィン開集合である．従って開基の条件が成立する．この議論を任意の開部分に適用すれば後半も従う．
+\end{proof}
+% genron:end K-001565
+% genron:begin K-001566
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001562
+% genron:use K-000049
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000259
+% genron:use K-000261
+% genron:use K-000527
+% genron:use K-001457
+\begin{prop}[局所環付き空間の貼り合わせ]
+局所環付き空間 $X_i$ の集合族を取り，各 $i,j$ について開部分 $U_{ij}\subseteq X_i$ と同型 $\varphi_{ij}:U_{ij}\to U_{ji}$ があるとする．$U_{ii}=X_i$，$\varphi_{ii}=\mathrm{id}$，$\varphi_{ji}=\varphi_{ij}^{-1}$ とし，$\varphi_{ij}(U_{ij}\cap U_{ik})=U_{ji}\cap U_{jk}$ かつ $\varphi_{jk}\varphi_{ij}=\varphi_{ik}$ が共通部分で成立すると仮定する．このとき $X_i$ を開部分として含み，指定された重なりと同型によって貼り合わされた局所環付き空間 $X$ が存在し，このデータを保つ一意な同型を除いて定まる．
+\end{prop}
+\begin{proof}
+非交和 $\coprod_i X_i$ 上で $x\in X_i$ と $y\in X_j$ が同値であるとは $x\in U_{ij}$ かつ $y=\varphi_{ij}(x)$ であることとする．仮定は反射性，対称性，推移性を保証する．商集合 $X$ に商位相を入れる．各 $X_i$ からの写像 $u_i$ は単射で，開集合 $V\subseteq X_i$ の像の逆像は $X_j$ 上で $\varphi_{ij}(V\cap U_{ij})$ となり開である．従って各 $u_i$ は開埋込みとなる．
+開集合 $W\subseteq X$ について $\mathcal O_X(W)$ を，各 $u_i^{-1}(W)$ 上の切断の族で，指定した同型によって重なり上で一致するもの全体とする．成分ごとの環演算と制限で環の前層となり，各 $X_i$ の層の貼り合わせを成分ごとに適用すれば層性を得る．$W\subseteq u_i(X_i)$ ならその $i$ 成分は他成分を一意に定めるので制限は元の構造層に同型である．特に各点の茎は対応する $X_i$ の茎に同型で局所環である．
+別の貼り合わせに対しては，点の写像を各開部分で指定すれば一意であり，切断写像も各成分で一意に決まる．これらは局所的に同型なので大域的にも同型である．
+\end{proof}
+% genron:end K-001566
+% genron:begin K-001567
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001564
+% genron:use K-001566
+\begin{prop}[スキームの貼り合わせ]
+前命題の各 $X_i$ がスキームであるなら貼り合わせた局所環付き空間はスキームである．
+\end{prop}
+\begin{proof}
+貼り合わせた空間の任意の点はある開部分 $u_i(X_i)$ に属し，その中でアフィン開近傍を持つ．開部分の開集合は全空間でも開である．従ってスキームの定義を満たす．
+\end{proof}
+% genron:end K-001567
+% genron:begin K-001568
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001563
+% genron:use K-001567
+% genron:use K-001527
+% genron:use K-000453
+\begin{example}[二つのアフィン直線の貼り合わせ]
+体 $k$ 上の二つの $\operatorname{Spec}k[t]$ と $\operatorname{Spec}k[s]$ を $D(t),D(s)$ 上で $s=t^{-1}$ によって貼り合わせたスキームを得る．
+\end{example}
+\begin{proof}
+局所化環 $k[t]_t$ と $k[s]_s$ は $s\mapsto t^{-1}$，$t\mapsto s^{-1}$ で互いに逆な同型を持つ．基本開集合のアフィン性と反変対応によって開部分間の同型を得る．二枚の場合の貼り合わせ条件は同型とその逆があることから満たされる．このスキームは射影直線の標準的なモデルであるが，一般の射影スキームの定義はここでは行わない．
+\end{proof}
+% genron:end K-001568

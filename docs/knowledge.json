@@ -47986,6 +47986,1228 @@
       "status": "draft",
       "source": "volumes/N-352/web.tex",
       "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001551",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "固定体",
+      "statement": "体 $L$ の自己同型群の部分群 $H$ に対し，$L^H=\\{x\\in L:\\sigma(x)=x\\ (\\forall\\sigma\\in H)\\}$ を固定体という．",
+      "assumptions": [],
+      "position": [
+        133,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001515",
+        "K-000228"
+      ],
+      "status": "draft",
+      "source": "volumes/N-133/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001552",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "相異なる体準同型の一次独立性",
+      "statement": "体 $L,E$ と相異なる体準同型 $\\sigma_1,\\ldots,\\sigma_m:L\\to E$ に対し，函数としての $\\sigma_i$ は $E$ 上一次独立である．",
+      "assumptions": [],
+      "position": [
+        133,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000443",
+        "K-001307"
+      ],
+      "status": "draft",
+      "source": "volumes/N-133/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001553",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Artinの固定体定理",
+      "statement": "体 $L$ の自己同型の有限部分群 $H$ に対し $[L:L^H]=|H|$ であり，$L/L^H$ は有限Galois拡大で $\\operatorname{Gal}(L/L^H)=H$ である．",
+      "assumptions": [],
+      "position": [
+        133,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001551",
+        "K-000604",
+        "K-000601",
+        "K-001416",
+        "K-001516"
+      ],
+      "status": "draft",
+      "source": "volumes/N-133/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001554",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Galois対応の基本定理",
+      "statement": "有限Galois拡大 $L/K$ の中間体 $E$ と $G=\\operatorname{Gal}(L/K)$ の部分群 $H$ の間に\n\\[\n E\\longmapsto\\operatorname{Gal}(L/E),\\qquad H\\longmapsto L^H\n\\]\nという互いに逆な包含反転全単射がある．また $[L:E]=|\\operatorname{Gal}(L/E)|$，$[E:K]=[G:\\operatorname{Gal}(L/E)]$ である．",
+      "assumptions": [],
+      "position": [
+        133,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001553",
+        "K-001413",
+        "K-001415",
+        "K-001512",
+        "K-001516",
+        "K-001191",
+        "K-000315"
+      ],
+      "status": "draft",
+      "source": "volumes/N-133/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001555",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正規部分群と中間体のGalois性",
+      "statement": "上の対応において $E/K$ がGaloisであることは $H=\\operatorname{Gal}(L/E)$ が $G$ の正規部分群であることと同値である．その場合 $\\operatorname{Gal}(E/K)\\simeq G/H$ である．",
+      "assumptions": [],
+      "position": [
+        133,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001554",
+        "K-001412",
+        "K-001512",
+        "K-000265",
+        "K-000267",
+        "K-000290"
+      ],
+      "status": "draft",
+      "source": "volumes/N-133/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001556",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Krull次元と高さ",
+      "statement": "可換環 $A$ の相異なる素イデアルの厳密増加鎖 $\\mathfrak p_0\\subsetneq\\cdots\\subsetneq\\mathfrak p_n$ の長さを $n$ とする．その長さの上限を $\\dim A$ と書く．任意の長さの鎖がある場合は $+\\infty$，素イデアルが存在しない場合は $-\\infty$ と約束する．素イデアル $\\mathfrak p$ で終わる鎖の長さの上限を $\\operatorname{ht}\\mathfrak p$ という．",
+      "assumptions": [],
+      "position": [
+        141,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-141/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001557",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化と高さ",
+      "statement": "$\\operatorname{ht}\\mathfrak p=\\dim A_{\\mathfrak p}$ であり，任意の積閉集合 $S$ について $\\dim S^{-1}A\\le\\dim A$ である．",
+      "assumptions": [],
+      "position": [
+        141,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001556",
+        "K-001136",
+        "K-001139"
+      ],
+      "status": "draft",
+      "source": "volumes/N-141/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001558",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商環の次元",
+      "statement": "イデアル $I$ に対し $\\dim A/I$ は $I$ を含む素イデアルの鎖の長さの上限である．特に $\\dim A/I\\le\\dim A$ である．",
+      "assumptions": [],
+      "position": [
+        141,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001556",
+        "K-000333",
+        "K-000447"
+      ],
+      "status": "draft",
+      "source": "volumes/N-141/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001559",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整拡大における次元の保存",
+      "statement": "単位元を共有する整拡大 $A\\subseteq B$ に対して $\\dim A=\\dim B$ である．",
+      "assumptions": [],
+      "position": [
+        141,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001556",
+        "K-001520",
+        "K-001521",
+        "K-001522"
+      ],
+      "status": "draft",
+      "source": "volumes/N-141/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001560",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "次元零の判定",
+      "statement": "零環でない可換環 $A$ について $\\dim A=0$ であることは全素イデアルが極大であることと同値である．",
+      "assumptions": [],
+      "position": [
+        141,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001556",
+        "K-000448"
+      ],
+      "status": "draft",
+      "source": "volumes/N-141/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001561",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "単項イデアル整域の次元",
+      "statement": "体でない単項イデアル整域のKrull次元は $1$ である．体の次元は $0$ である．",
+      "assumptions": [],
+      "position": [
+        141,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001556",
+        "K-001119",
+        "K-000575",
+        "K-000576",
+        "K-000448"
+      ],
+      "status": "draft",
+      "source": "volumes/N-141/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001562",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "開部分局所環付き空間",
+      "statement": "局所環付き空間 $(X,\\mathcal O_X)$ の開集合 $U$ に対して，$(U,\\mathcal O_X|_U)$ を開部分局所環付き空間という．射が開埋込みであるとは，ある開部分局所環付き空間への同型とその包含の合成であることをいう．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001457",
+        "K-000422"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001563",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基本開集合のアフィン性",
+      "statement": "$X=\\operatorname{Spec}A$ と $a\\in A$ に対して $D(a)$ は $\\operatorname{Spec}A_a$ と局所環付き空間として同型である．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001562",
+        "K-001136",
+        "K-001199",
+        "K-001324",
+        "K-001525",
+        "K-001369",
+        "K-000453"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001564",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "スキーム",
+      "statement": "局所環付き空間 $X$ がスキームであるとは，各点がアフィンスキームと同型な開近傍を持つことをいう．そのような開集合をアフィン開集合という．スキームの射は局所環付き空間の射とする．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001562",
+        "K-001523",
+        "K-001457"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001565",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "アフィン開集合による開基",
+      "statement": "スキームのアフィン開集合は開基をなす．従ってスキームの任意の開部分局所環付き空間はスキームである．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001563",
+        "K-001564",
+        "K-001199",
+        "K-000209"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001566",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所環付き空間の貼り合わせ",
+      "statement": "局所環付き空間 $X_i$ の集合族を取り，各 $i,j$ について開部分 $U_{ij}\\subseteq X_i$ と同型 $\\varphi_{ij}:U_{ij}\\to U_{ji}$ があるとする．$U_{ii}=X_i$，$\\varphi_{ii}=\\mathrm{id}$，$\\varphi_{ji}=\\varphi_{ij}^{-1}$ とし，$\\varphi_{ij}(U_{ij}\\cap U_{ik})=U_{ji}\\cap U_{jk}$ かつ $\\varphi_{jk}\\varphi_{ij}=\\varphi_{ik}$ が共通部分で成立すると仮定する．このとき $X_i$ を開部分として含み，指定された重なりと同型によって貼り合わされた局所環付き空間 $X$ が存在し，このデータを保つ一意な同型を除いて定まる．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001562",
+        "K-000049",
+        "K-000052",
+        "K-000053",
+        "K-000259",
+        "K-000261",
+        "K-000527",
+        "K-001457"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001567",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "スキームの貼り合わせ",
+      "statement": "前命題の各 $X_i$ がスキームであるなら貼り合わせた局所環付き空間はスキームである．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001564",
+        "K-001566"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001568",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "二つのアフィン直線の貼り合わせ",
+      "statement": "体 $k$ 上の二つの $\\operatorname{Spec}k[t]$ と $\\operatorname{Spec}k[s]$ を $D(t),D(s)$ 上で $s=t^{-1}$ によって貼り合わせたスキームを得る．",
+      "assumptions": [],
+      "position": [
+        254,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001563",
+        "K-001567",
+        "K-001527",
+        "K-000453"
+      ],
+      "status": "draft",
+      "source": "volumes/N-254/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001569",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "集合値に限定しない超限再帰",
+      "statement": "順序数 $\\alpha$ を取り，各 $\\beta\\in\\alpha$ と定義域 $\\beta$ の函数 $h$ に対して集合 $F(\\beta,h)$ が一定の集合論の式で一意に指定されるとする．このとき定義域 $\\alpha$ の函数 $f$ で $f(\\beta)=F(\\beta,f|_\\beta)$ を満たすものがただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000123",
+        "K-001538",
+        "K-001540",
+        "K-001541",
+        "K-001376"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001570",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "零順序数，後続及び極限",
+      "statement": "空集合を $0$，$\\alpha\\cup\\{\\alpha\\}$ を $\\alpha+1$ とする．零でなくいかなる順序数の後続でもない順序数を極限順序数という．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001541"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001571",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序数の加法",
+      "statement": "順序数 $\\alpha,\\beta$ の和を右変数について $\\alpha+0=\\alpha$，$\\alpha+(\\gamma+1)=(\\alpha+\\gamma)+1$，極限 $\\lambda$ では $\\alpha+\\lambda=\\bigcup_{\\gamma<\\lambda}(\\alpha+\\gamma)$ と再帰的に定める．ここで $\\gamma<\\lambda$ は $\\gamma\\in\\lambda$ の意味である．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001569",
+        "K-001570",
+        "K-001541"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001572",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序数の加法と整列和",
+      "statement": "$\\alpha+\\beta$ は $\\alpha$ の後に $\\beta$ を置いた非交和の整列型である．従って加法は結合的であり，右変数について厳密増加である．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001571",
+        "K-001542",
+        "K-001540"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001573",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序数の乗法",
+      "statement": "$\\alpha\\cdot0=0$，$\\alpha\\cdot(\\gamma+1)=\\alpha\\cdot\\gamma+\\alpha$，極限 $\\lambda$ では $\\alpha\\cdot\\lambda=\\bigcup_{\\gamma<\\lambda}\\alpha\\cdot\\gamma$ と定める．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001569",
+        "K-001571"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001574",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序数の乗法の整列型",
+      "statement": "$\\alpha\\cdot\\beta$ は $\\beta$ で添字付けた $\\alpha$ のコピーを添字順に並べた整列集合の順序型である．乗法は結合的であり $\\alpha(\\beta+\\gamma)=\\alpha\\beta+\\alpha\\gamma$ である．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001572",
+        "K-001573",
+        "K-001542"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001575",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序数の累乗",
+      "statement": "$\\alpha>0$ に対して $\\alpha^0=1$，$\\alpha^{\\gamma+1}=\\alpha^\\gamma\\cdot\\alpha$，極限 $\\lambda$ では $\\alpha^\\lambda=\\bigcup_{\\gamma<\\lambda}\\alpha^\\gamma$ と定める．ただし $1=0+1$ とする．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001569",
+        "K-001573"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001576",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "順序数演算の非可換性",
+      "statement": "$\\omega$ を自然数の通常の順序型とすると $1+\\omega=\\omega$，$\\omega+1>\\omega$，$2\\cdot\\omega=\\omega$，$\\omega\\cdot2>\\omega$ である．",
+      "assumptions": [],
+      "position": [
+        334,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001572",
+        "K-001574",
+        "K-001542"
+      ],
+      "status": "draft",
+      "source": "volumes/N-334/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001577",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "基数",
+      "statement": "順序数 $\\kappa$ がそれより小さいいかなる順序数とも全単射を持たないとき始順序数（基数）という．選択公理の下で集合 $X$ と全単射を持つ最小の順序数を $|X|$ と書く．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001540",
+        "K-001542",
+        "K-000129",
+        "K-000133"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001578",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基数の存在と比較",
+      "statement": "選択公理の下で任意の集合 $X$ に対して $|X|$ が存在し一意である．基数 $\\kappa,\\lambda$ について $\\kappa\\le\\lambda$ は $\\kappa$ から $\\lambda$ への単射の存在と同値である．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001577",
+        "K-000135",
+        "K-001541"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001579",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "基数の加法，乗法及び累乗",
+      "statement": "基数 $\\kappa,\\lambda$ に対し $\\kappa+\\lambda=|\\kappa\\sqcup\\lambda|$，$\\kappa\\lambda=|\\kappa\\times\\lambda|$，$\\kappa^\\lambda=|\\{f:\\lambda\\to\\kappa\\}|$ と定める．これらは順序数演算とは区別する．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001578",
+        "K-000033",
+        "K-000047",
+        "K-000049"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001580",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基数演算の基本法則",
+      "statement": "基数の加法と乗法は可換かつ結合的で，乗法は加法に分配する．また $\\kappa^{\\lambda+\\mu}=\\kappa^\\lambda\\kappa^\\mu$，$(\\kappa^\\lambda)^\\mu=\\kappa^{\\lambda\\mu}$ である．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001579",
+        "K-000043",
+        "K-000049"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001581",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "無限基数の平方",
+      "statement": "任意の無限基数 $\\kappa$ に対し $\\kappa\\cdot\\kappa=\\kappa$ である．選択公理を用いる．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001578",
+        "K-001579",
+        "K-000138",
+        "K-000139",
+        "K-001542",
+        "K-000123"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001582",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "無限基数の和と積",
+      "statement": "$\\kappa,\\lambda$ の少なくとも一方が無限であるとき $\\kappa+\\lambda=\\max(\\kappa,\\lambda)$ である．さらに両者が非零なら $\\kappa\\lambda=\\max(\\kappa,\\lambda)$ である．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001581",
+        "K-001579"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001583",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "冪集合と後続基数",
+      "statement": "$2^\\kappa>\\kappa$ である．また各基数 $\\kappa$ より大きい最小の基数 $\\kappa^+$ が存在する．",
+      "assumptions": [],
+      "position": [
+        335,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001578",
+        "K-001579",
+        "K-000137",
+        "K-001541"
+      ],
+      "status": "draft",
+      "source": "volumes/N-335/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001584",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "大域切断函手",
+      "statement": "環の層 $\\mathcal R$ を備えた空間 $X$ に対して，$\\mathcal R$ 加群の層 $F$ を $\\Gamma(X,F)=F(X)$ に移す函手を大域切断函手という．値は $\\mathcal R(X)$ 加群であり，射にはその大域切断上の成分を対応させる．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001381",
+        "K-001254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001585",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "大域切断の左完全性",
+      "statement": "大域切断函手は加法的かつ左完全である．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001584",
+        "K-001383",
+        "K-001386"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001586",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "層係数コホモロジー",
+      "statement": "$\\mathcal R$ 加群の層 $F$ の入射分解 $0\\to F\\to I^0\\to I^1\\to\\cdots$ に対し\n\\[\n H^q(X,F)=\\ker(\\Gamma(X,I^q)\\to\\Gamma(X,I^{q+1}))/\\operatorname{im}(\\Gamma(X,I^{q-1})\\to\\Gamma(X,I^q))\n\\]\nと定める．$q=0$ では分母を零とする．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001584",
+        "K-001550",
+        "K-001320"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001587",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分解独立性と函手性",
+      "statement": "$H^q(X,F)$ は入射分解の選択に依存しない標準同型を除いて定まり，$F$ に関して共変函手をなす．$H^0(X,F)\\simeq\\Gamma(X,F)$ である．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001585",
+        "K-001586",
+        "K-001386",
+        "K-001549",
+        "K-001314",
+        "K-001320"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001588",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層係数コホモロジーの長完全列",
+      "statement": "層の短完全列 $0\\to F'\\to F\\to F''\\to0$ は\n\\[\n0\\to H^0(X,F')\\to H^0(X,F)\\to H^0(X,F'')\n\\to H^1(X,F')\\to\\cdots\n\\]\nなる長完全列を誘導する．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001587",
+        "K-001386",
+        "K-001548",
+        "K-001550",
+        "K-001144",
+        "K-001320"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001589",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "入射層の高次コホモロジー",
+      "statement": "入射層 $I$ について $q>0$ なら $H^q(X,I)=0$ である．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001587",
+        "K-001544"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001590",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "一点空間のコホモロジー",
+      "statement": "一点空間 $X=\\{x\\}$ 上の任意の加群の層 $F$ に対して $H^q(X,F)=0$ ($q>0$) である．",
+      "assumptions": [],
+      "position": [
+        353,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001586",
+        "K-001386"
+      ],
+      "status": "draft",
+      "source": "volumes/N-353/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -50122,7 +51344,7 @@
       "number": 133,
       "title": "Galois対応",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         132,
         19
@@ -50131,7 +51353,8 @@
         "固定体・有限Galois拡大・対応"
       ],
       "treatise": "T-20",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 134,
@@ -50252,7 +51475,7 @@
       "number": 141,
       "title": "Krull次元",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         138,
         140
@@ -50261,7 +51484,8 @@
         "素イデアル鎖・次元・高さ"
       ],
       "treatise": "T-21",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 142,
@@ -52096,7 +53320,7 @@
       "number": 254,
       "title": "スキーム",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         253,
         349
@@ -52105,7 +53329,8 @@
         "アフィン開被覆・貼り合わせ"
       ],
       "treatise": "T-36",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 255,
@@ -53343,7 +54568,7 @@
       "number": 334,
       "title": "超限再帰と順序数演算",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         333
       ],
@@ -53351,13 +54576,14 @@
         "超限再帰・加法乗法・累乗"
       ],
       "treatise": "T-49",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 335,
       "title": "基数と基数演算",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         333,
         7
@@ -53366,7 +54592,8 @@
         "始順序数・基数演算・選択公理"
       ],
       "treatise": "T-49",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 336,
@@ -53642,7 +54869,7 @@
       "number": 353,
       "title": "層係数コホモロジー",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         352,
         212
@@ -53651,7 +54878,8 @@
         "大域切断の右導来函手・長完全列"
       ],
       "treatise": "T-52",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 354,

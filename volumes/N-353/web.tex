@@ -1,0 +1,141 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{層係数コホモロジー}
+% genron:begin K-001584
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001381
+% genron:use K-001254
+\begin{defn}[大域切断函手]
+環の層 $\mathcal R$ を備えた空間 $X$ に対して，$\mathcal R$ 加群の層 $F$ を $\Gamma(X,F)=F(X)$ に移す函手を大域切断函手という．値は $\mathcal R(X)$ 加群であり，射にはその大域切断上の成分を対応させる．
+\end{defn}
+% genron:end K-001584
+% genron:begin K-001585
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001584
+% genron:use K-001383
+% genron:use K-001386
+\begin{prop}[大域切断の左完全性]
+大域切断函手は加法的かつ左完全である．
+\end{prop}
+\begin{proof}
+射の加法は開集合ごとに定められ，零層及び有限直和の大域切断もそれぞれ零加群と直和である．核の層は各開集合上で核を取ったものなので，短完全列 $0\to F'\to F\to F''\to0$ に対し $0\to F'(X)\to F(X)\to F''(X)$ は完全である．ただし最後の写像の全射性は主張しない．
+\end{proof}
+% genron:end K-001585
+% genron:begin K-001586
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001584
+% genron:use K-001550
+% genron:use K-001320
+\begin{defn}[層係数コホモロジー]
+$\mathcal R$ 加群の層 $F$ の入射分解 $0\to F\to I^0\to I^1\to\cdots$ に対し
+\[
+ H^q(X,F)=\ker(\Gamma(X,I^q)\to\Gamma(X,I^{q+1}))/\operatorname{im}(\Gamma(X,I^{q-1})\to\Gamma(X,I^q))
+\]
+と定める．$q=0$ では分母を零とする．
+\end{defn}
+% genron:end K-001586
+% genron:begin K-001587
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001585
+% genron:use K-001586
+% genron:use K-001386
+% genron:use K-001549
+% genron:use K-001314
+% genron:use K-001320
+\begin{prop}[分解独立性と函手性]
+$H^q(X,F)$ は入射分解の選択に依存しない標準同型を除いて定まり，$F$ に関して共変函手をなす．$H^0(X,F)\simeq\Gamma(X,F)$ である．
+\end{prop}
+\begin{proof}
+層の圏はAbel圏で十分な入射対象を持つ．射 $u:F\to G$ に対し $F\to G\to J^0$ を単射 $F\to I^0$ に沿って延長する．その延長は余核の間の射を誘導するので，次の入射対象への延長を反復して余鎖写像を得る．二つの延長の差は $F$ 上で零であるから $I^0/F$ を通じて因子化し，その射を $I^1$ に延長する．次の次数の差からこのホモトピーの寄与を引くと直前の像上で零となり，再び余核を通じて延長できる．反復すると二つの余鎖写像は余鎖ホモトピックである．加法函手はホモトピーの等式を保つから誘導コホモロジー写像は一致する．恒等射の二方向の比較は互いに逆な写像を誘導し，合成についても同じ議論を適用する．次数零は大域切断の左完全性によって $F(X)$ に一致する．
+\end{proof}
+% genron:end K-001587
+% genron:begin K-001588
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001587
+% genron:use K-001386
+% genron:use K-001548
+% genron:use K-001550
+% genron:use K-001144
+% genron:use K-001320
+\begin{prop}[層係数コホモロジーの長完全列]
+層の短完全列 $0\to F'\to F\to F''\to0$ は
+\[
+0\to H^0(X,F')\to H^0(X,F)\to H^0(X,F'')
+\to H^1(X,F')\to\cdots
+\]
+なる長完全列を誘導する．
+\end{prop}
+\begin{proof}
+$F'$ と $F''$ の入射分解を取る．$F'\to I'^0$ を $F$ に延長し，$F\to F''\to I''^0$ と合わせて $F\to I'^0\oplus I''^0$ を定める．これは単射である．実際茎で両成分が零なら第二成分から元が $F'_x$ に属し第一成分の単射性によって零となる．三つの余核の間に短完全列が成立することも茎上で確かめられる．具体的には中央から右への全射性は直和射影から，左から中央への単射性は第二成分の単射性から従い，中央の核は右側成分を $F''_x$ から持ち上げて差を左成分に移すことで得られる．この余核の短完全列に同じ操作を反復すれば中央の入射分解を構成できる．各次数で分裂した短完全列の複体を得るので加法的な大域切断は各次数の完全性を保つ．余鎖複体のコホモロジー長完全列（鎖複体の命題で次数を反転したもの）を適用し，分解比較によって各項を同一視する．
+\end{proof}
+% genron:end K-001588
+% genron:begin K-001589
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001587
+% genron:use K-001544
+\begin{prop}[入射層の高次コホモロジー]
+入射層 $I$ について $q>0$ なら $H^q(X,I)=0$ である．
+\end{prop}
+\begin{proof}
+$I$ の入射分解として次数零に $I$ 自身を置き正次数をすべて零としたものを取れる．大域切断を施しても正次数は零なのでそのコホモロジーも零である．分解独立性から任意の入射分解について同じ結論を得る．
+\end{proof}
+% genron:end K-001589
+% genron:begin K-001590
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001586
+% genron:use K-001386
+\begin{example}[一点空間のコホモロジー]
+一点空間 $X=\{x\}$ 上の任意の加群の層 $F$ に対して $H^q(X,F)=0$ ($q>0$) である．
+\end{example}
+\begin{proof}
+一点空間では大域切断は茎そのものである．茎による完全性から大域切断函手は完全であり，入射分解に大域切断を施しても正次数で完全となる．従って正次数のコホモロジーは零である．
+\end{proof}
+% genron:end K-001590

@@ -1,0 +1,134 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{基数と基数演算}
+% genron:begin K-001577
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001540
+% genron:use K-001542
+% genron:use K-000129
+% genron:use K-000133
+\begin{defn}[基数]
+順序数 $\kappa$ がそれより小さいいかなる順序数とも全単射を持たないとき始順序数（基数）という．選択公理の下で集合 $X$ と全単射を持つ最小の順序数を $|X|$ と書く．
+\end{defn}
+% genron:end K-001577
+% genron:begin K-001578
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001577
+% genron:use K-000135
+% genron:use K-001541
+\begin{prop}[基数の存在と比較]
+選択公理の下で任意の集合 $X$ に対して $|X|$ が存在し一意である．基数 $\kappa,\lambda$ について $\kappa\le\lambda$ は $\kappa$ から $\lambda$ への単射の存在と同値である．
+\end{prop}
+\begin{proof}
+整列定理と順序型の存在によって $X$ と全単射を持つ順序数 $\alpha$ が存在する．$\alpha+1$ の部分集合として全単射を持つ順序数を集め，最小元を取る．これより小さい順序数とは全単射を持たないので基数であり，最小性から一意である．$\kappa\le\lambda$ なら包含が単射である．逆に $\lambda<\kappa$ として単射 $\kappa\to\lambda$ が存在すると包含による逆向きの単射とCantor–Bernsteinの定理から全単射を得るが，始順序数性に反する．
+\end{proof}
+% genron:end K-001578
+% genron:begin K-001579
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001578
+% genron:use K-000033
+% genron:use K-000047
+% genron:use K-000049
+\begin{defn}[基数の加法，乗法及び累乗]
+基数 $\kappa,\lambda$ に対し $\kappa+\lambda=|\kappa\sqcup\lambda|$，$\kappa\lambda=|\kappa\times\lambda|$，$\kappa^\lambda=|\{f:\lambda\to\kappa\}|$ と定める．これらは順序数演算とは区別する．
+\end{defn}
+% genron:end K-001579
+% genron:begin K-001580
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001579
+% genron:use K-000043
+% genron:use K-000049
+\begin{prop}[基数演算の基本法則]
+基数の加法と乗法は可換かつ結合的で，乗法は加法に分配する．また $\kappa^{\lambda+\mu}=\kappa^\lambda\kappa^\mu$，$(\kappa^\lambda)^\mu=\kappa^{\lambda\mu}$ である．
+\end{prop}
+\begin{proof}
+非交和と直積の成分の交換，括り方の変更は明示的な全単射を与える．$X\times(Y\sqcup Z)$ は $(X\times Y)\sqcup(X\times Z)$ と全単射を持つ．非交和からの写像は各成分への制限の対と一対一に対応する．また $Z$ から $Y\to X$ なる写像の集合への写像は $(z,y)\mapsto f(z)(y)$ によって $Z\times Y\to X$ と一対一に対応する．これらは逆操作を持つので基数の等式を得る．
+\end{proof}
+% genron:end K-001580
+% genron:begin K-001581
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001578
+% genron:use K-001579
+% genron:use K-000138
+% genron:use K-000139
+% genron:use K-001542
+% genron:use K-000123
+\begin{prop}[無限基数の平方]
+任意の無限基数 $\kappa$ に対し $\kappa\cdot\kappa=\kappa$ である．選択公理を用いる．
+\end{prop}
+\begin{proof}
+無限基数について小さいものに対して既に成立すると仮定し，$\kappa\times\kappa$ を各対 $(a,b)$ の $\max(a,b)$ の昇順で並べ，同値の場合は第一，第二座標の辞書式順序で整列する．これは整列順序である．任意の対の真の始切片は $(c+1)\times(c+1)$ に含まれる（$c=\max(a,b)$）．無限初始順序数 $\kappa$ は極限である．実際無限順序数 $\delta$ に一元を加えても，その中の可算無限部分集合の元を一つずつずらせば濃度は変わらないので，無限の後続順序数は始順序数でない．従って $c+1<\kappa$ であり，その基数 $\nu$ は $\kappa$ より小さい．$\nu$ が有限なら平方は有限であり，無限なら帰納法から平方は $\nu$ である．従ってすべての真の始切片の濃度は $\kappa$ より小さい．この整列集合の順序型 $\theta$ が $\kappa$ より大きければ $\kappa$ における真の始切片の濃度が $\kappa$ となり矛盾する．従って $\theta\le\kappa$ であり，逆向きの単射 $a\mapsto(a,0)$ とCantor–Bernsteinの定理で等号を得る．この帰納は最小反例があれば同じ議論が適用できることによって正当化される．
+\end{proof}
+% genron:end K-001581
+% genron:begin K-001582
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001581
+% genron:use K-001579
+\begin{prop}[無限基数の和と積]
+$\kappa,\lambda$ の少なくとも一方が無限であるとき $\kappa+\lambda=\max(\kappa,\lambda)$ である．さらに両者が非零なら $\kappa\lambda=\max(\kappa,\lambda)$ である．
+\end{prop}
+\begin{proof}
+$\nu=\max(\kappa,\lambda)$ とおく．二つの非交和は $\nu\times\nu$ へ単射を持つ（第二座標に異なる二元を用いる）．積も $\nu\times\nu$ へ単射を持つ．逆向きには和の大きい成分を包含し，積の場合は他成分の一元を固定する．前命題と基数比較によって結論を得る．
+\end{proof}
+% genron:end K-001582
+% genron:begin K-001583
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001578
+% genron:use K-001579
+% genron:use K-000137
+% genron:use K-001541
+\begin{prop}[冪集合と後続基数]
+$2^\kappa>\kappa$ である．また各基数 $\kappa$ より大きい最小の基数 $\kappa^+$ が存在する．
+\end{prop}
+\begin{proof}
+部分集合を特性函数に対応させると冪集合の基数は $2^\kappa$ である．Cantorの定理によってこれは $\kappa$ より大きい．$2^\kappa+1$ の順序数の集合のうち $\kappa$ より大きい基数を集めれば非空であり，最小元が後続基数である．ここで $2^\kappa+1$ は後続順序数を指す．
+\end{proof}
+% genron:end K-001583

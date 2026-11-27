@@ -1,0 +1,109 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Galois対応}
+% genron:begin K-001551
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001515
+% genron:use K-000228
+\begin{defn}[固定体]
+体 $L$ の自己同型群の部分群 $H$ に対し，$L^H=\{x\in L:\sigma(x)=x\ (\forall\sigma\in H)\}$ を固定体という．
+\end{defn}
+% genron:end K-001551
+% genron:begin K-001552
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000443
+% genron:use K-001307
+\begin{prop}[相異なる体準同型の一次独立性]
+体 $L,E$ と相異なる体準同型 $\sigma_1,\ldots,\sigma_m:L\to E$ に対し，函数としての $\sigma_i$ は $E$ 上一次独立である．
+\end{prop}
+\begin{proof}
+非自明な関係 $\sum_i a_i\sigma_i(x)=0$ ($x\in L$) のうち非零係数の個数が最小のものを取る．一項だけなら $x=1$ で矛盾する．従って番号を付け替え，$a_1,a_m\ne0$ とする．$\sigma_1(y)\ne\sigma_m(y)$ となる $y$ を選ぶ．関係式の $x$ を $yx$ に置き換え，元の式の $\sigma_m(y)$ 倍を引けば
+\[
+\sum_{i<m}a_i(\sigma_i(y)-\sigma_m(y))\sigma_i(x)=0
+\]
+となる．第一係数は非零で項数が減少するので矛盾する．
+\end{proof}
+% genron:end K-001552
+% genron:begin K-001553
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001551
+% genron:use K-000604
+% genron:use K-000601
+% genron:use K-001416
+% genron:use K-001516
+\begin{prop}[Artinの固定体定理]
+体 $L$ の自己同型の有限部分群 $H$ に対し $[L:L^H]=|H|$ であり，$L/L^H$ は有限Galois拡大で $\operatorname{Gal}(L/L^H)=H$ である．
+\end{prop}
+\begin{proof}
+$F=L^H$，$m=|H|$ とする．任意の $m+1$ 個の元 $x_j\in L$ に対し $m$ 行 $m+1$ 列の行列 $(\sigma(x_j))_{\sigma\in H,j}$ の列は $L$ 上一次従属である．非零の係数ベクトルのうち非零成分の個数が最小のもの $(c_j)$ を取り，一つの非零成分を $1$ に正規化する．任意の $\tau\in H$ を関係式 $\sum_j c_j\sigma(x_j)=0$ に適用すると $\tau\sigma$ は $H$ を走るので $(\tau(c_j))$ も同じ斉次方程式の解である．差は正規化した位置で零となり，元の台の外でも零である．最小性によって差は零である．従って全係数が $F$ に属する．恒等自己同型の行を見れば $x_j$ は $F$ 上一次従属であり，$[L:F]\le m$ となる．他方 $H$ の各元は $F$ 埋込みであり，埋込み数は拡大次数以下なので $m\le[L:F]$ である．等号により自己同型数の判定を適用すればGalois性と $H$ が全自己同型群であることを得る．
+\end{proof}
+% genron:end K-001553
+% genron:begin K-001554
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001553
+% genron:use K-001413
+% genron:use K-001415
+% genron:use K-001512
+% genron:use K-001516
+% genron:use K-001191
+% genron:use K-000315
+\begin{prop}[Galois対応の基本定理]
+有限Galois拡大 $L/K$ の中間体 $E$ と $G=\operatorname{Gal}(L/K)$ の部分群 $H$ の間に
+\[
+ E\longmapsto\operatorname{Gal}(L/E),\qquad H\longmapsto L^H
+\]
+という互いに逆な包含反転全単射がある．また $[L:E]=|\operatorname{Gal}(L/E)|$，$[E:K]=[G:\operatorname{Gal}(L/E)]$ である．
+\end{prop}
+\begin{proof}
+中間体 $E$ について $L/E$ は分離的である．実際，各元の $E$ 上の最小多項式は $K$ 上の分離的最小多項式を割る．また任意の $E$ 埋込みは $K$ 埋込みなので像は $L$ である．従って $L/E$ はGaloisであり $|\operatorname{Gal}(L/E)|=[L:E]$ となる．$E\subseteq L^{\operatorname{Gal}(L/E)}$ であるが固定体定理と塔の公式から等しい．逆向きの合成も固定体定理により恒等的である．包含反転は定義から従い，指数の等式は塔の公式とLagrangeの定理による．
+\end{proof}
+% genron:end K-001554
+% genron:begin K-001555
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001554
+% genron:use K-001412
+% genron:use K-001512
+% genron:use K-000265
+% genron:use K-000267
+% genron:use K-000290
+\begin{prop}[正規部分群と中間体のGalois性]
+上の対応において $E/K$ がGaloisであることは $H=\operatorname{Gal}(L/E)$ が $G$ の正規部分群であることと同値である．その場合 $\operatorname{Gal}(E/K)\simeq G/H$ である．
+\end{prop}
+\begin{proof}
+任意の $\sigma\in G$ について $L^{\sigma H\sigma^{-1}}=\sigma(E)$ が定義から従う．従って $H$ の正規性は $\sigma(E)=E$ がすべての $\sigma$ について成り立つことと同値である．$E$ の任意の $K$ 埋込みは $L$ の代数閉包への埋込みに延長でき，正規性によって $G$ の元となる．従って上の条件は $E/K$ の正規性と同値である．分離性は $L/K$ から継承される．この場合制限写像 $G\to\operatorname{Gal}(E/K)$ は群準同型であり，延長定理により全射である．核は $H$ だから群の第一同型定理を適用する．
+\end{proof}
+% genron:end K-001555
