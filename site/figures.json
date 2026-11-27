@@ -318,5 +318,21 @@
     "title": "ノルムによる単位球の相違",
     "caption": "図：実二次元空間の三つのノルムの閉単位球（ℓ¹，Euclid，最大値）．",
     "alt": "同じ座標平面における菱形，円，正方形の三つの閉単位球．"
+  },
+  {
+    "id": "K-001067",
+    "src": "figures/complex-square-contour.svg",
+    "alt": "原点から右，上，左，下へ順に進む正方形の閉曲線．",
+    "caption": "図：正の向きに一周する単位正方形の閉曲線．",
+    "figure_id": "complex-square-contour",
+    "title": "正方形の積分経路"
+  },
+  {
+    "id": "K-001074",
+    "src": "figures/ode-waiting-solutions.svg",
+    "alt": "三つの解は零のまま待機する時間が異なり，その後放物線として立ち上がる．",
+    "caption": "図：待機時刻 c=0,1,2 に対応する解曲線．",
+    "figure_id": "ode-waiting-solutions",
+    "title": "非一意な初期値問題の解曲線"
   }
 ]

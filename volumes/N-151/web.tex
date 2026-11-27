@@ -1,0 +1,177 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：J. B. Conway, Functions of One Complex Variable I, 第III章§1（収束半径の証明）を確認．実変数の項別微積分は既出の定理から独自論証．
+\section{函数級数と冪級数}
+% genron:begin K-001044
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000953
+\begin{defn}[函数級数]
+集合 $X$ 上の実函数列 $(u_n)_{n\geq0}$ に対し $S_N(x)=\sum_{n=0}^Nu_n(x)$ と定める．部分和列が各点収束又は一様収束するとき函数級数 $\sum_{n=0}^\infty u_n$ が各点収束又は一様収束するという．各点極限をその和という．
+\end{defn}
+% genron:end K-001044
+% genron:begin K-001045
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001044
+% genron:use K-000954
+% genron:use K-000957
+% genron:use K-000808
+\begin{prop}[函数級数の一様収束判定]
+函数級数が一様収束するための必要十分条件は，任意の $\varepsilon>0$ に対しある整数 $N$ が存在し，全ての $m\geq n\geq N$ と $x\in X$ について $|\sum_{k=n}^mu_k(x)|<\varepsilon$ となることである．特に $|u_n(x)|\leq M_n$，$\sum M_n<\infty$ なら一様収束する．
+\end{prop}
+\begin{proof}
+部分和の差は有限個の項の和であるから \GenronRef{K-000954} を適用すれば同値性を得る．後半ではその絶対値を $\sum_{k=n}^m M_k$ で評価し，\GenronRef{K-000808} を用いる．
+\end{proof}
+% genron:end K-001045
+% genron:begin K-001046
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001044
+% genron:use K-001009
+% genron:use K-000969
+\begin{prop}[函数級数の項別積分]
+閉有界区間 $[a,b]$ 上のRiemann可積分函数 $u_n$ の級数が一様収束するなら，和 $S$ は可積分で $\int_a^b S=\sum_{n=0}^\infty\int_a^b u_n$ である．
+\end{prop}
+\begin{proof}
+有限和 $S_N$ は可積分で $\int_a^b S_N=\sum_{n=0}^N\int_a^b u_n$ である．\GenronRef{K-001009} により極限を取ればよい．
+\end{proof}
+% genron:end K-001046
+% genron:begin K-001047
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001044
+% genron:use K-001010
+% genron:use K-001006
+% genron:use K-000955
+% genron:use K-000969
+% genron:use K-001005
+\begin{prop}[函数級数の項別微分]
+閉有界区間 $[a,b]$ を含む開区間上の $C^1$ 級実函数 $u_n$ を取る．一点 $x_0\in[a,b]$ で $\sum u_n(x_0)$ が収束し，$\sum u_n'$ が $[a,b]$ 上一様収束するなら，$\sum u_n$ は $[a,b]$ 上一様収束し，その和 $S$ は $(a,b)$ 上 $S'=\sum u_n'$ を満たす．
+\end{prop}
+\begin{proof}
+$S_N=\sum_{n=0}^Nu_n$，$g=\sum u_n'$ とおく．$g$ は連続である．$S_N(x)=S_N(x_0)+\int_{x_0}^xS_N'(t)\,dt$ であるから $S(x)=\sum u_n(x_0)+\int_{x_0}^xg(t)\,dt$ と定めると
+\[
+|S_N(x)-S(x)|\leq |S_N(x_0)-S(x_0)|+(b-a)\sup_{[a,b]}|S_N'-g|.
+\]
+右辺は零に収束する．\GenronRef{K-001005} により $S'=g$ である．
+\end{proof}
+% genron:end K-001047
+% genron:begin K-001048
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000807
+% genron:use K-000811
+% genron:use K-000765
+\begin{defn}[冪級数と収束半径]
+実数 $a$ と実数列 $(c_n)_{n\geq0}$ に対し $\sum_{n=0}^\infty c_n(x-a)^n$ を中心 $a$ の冪級数という．その収束半径を
+\[
+R=\sup\{r\geq0:\sum_{n=0}^\infty|c_n|r^n<\infty\}
+\]
+と定める．集合が上に有界でない場合は $R=+\infty$ とし，$r=0$ では定数項のみを残す．
+\end{defn}
+% genron:end K-001048
+% genron:begin K-001049
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001048
+% genron:use K-001045
+% genron:use K-000765
+% genron:use K-000809
+% genron:use K-000810
+% genron:use K-000812
+% genron:use K-000927
+\begin{prop}[冪級数の収束半径（Cauchy–Hadamardの公式）]
+$L=\limsup_{n\to\infty}|c_n|^{1/n}$（$n\geq1$，拡張非負実数における上極限）とする．$R=1/L$ である（$1/0=+\infty,\ 1/(+\infty)=0$）．$|x-a|<R$ で絶対収束し，$|x-a|>R$ で発散する．$0\leq r<R$ に対し $[a-r,a+r]$ 上絶対値の級数は一様収束する．
+\end{prop}
+\begin{proof}
+$s=|x-a|>0$ とする．$sL<1$ なら $sL<q<1$ を取ると十分大きい $n$ で $|c_n|^{1/n}s\leq q$，従って $|c_n|s^n\leq q^n$ となる．比較判定で絶対収束する．$sL>1$ なら $1<q<sL$ として無限個の $n$ で $|c_n|^{1/n}s>q$ となるので項は零に収束せず発散する．$L=0,+\infty$ の場合も対応する不等式で同じ議論が成立する．$s=0$ では常に収束する．上限の定義から $R=1/L$ となる．$r<R$ なら $|c_n(x-a)^n|\leq|c_n|r^n$ と比較すれば一様収束を得る．
+\end{proof}
+% genron:end K-001049
+% genron:begin K-001050
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001049
+% genron:use K-001046
+% genron:use K-001047
+% genron:use K-000999
+% genron:use K-000814
+% genron:use K-000927
+\begin{prop}[冪級数の項別微積分]
+$R>0$ とし $S(x)=\sum_{n=0}^\infty c_n(x-a)^n$ とする．$|x-a|<R$ 上で $S$ は $C^\infty$ 級であり，各 $k\geq1$ について
+\[
+S^{(k)}(x)=\sum_{n=k}^\infty\frac{n!}{(n-k)!}c_n(x-a)^{n-k},\qquad
+\int_a^xS(t)\,dt=\sum_{n=0}^\infty\frac{c_n}{n+1}(x-a)^{n+1}
+\]
+が成立する．微分級数及び積分級数の収束半径も $R$ である．特に $c_k=S^{(k)}(a)/k!$ である．
+\end{prop}
+\begin{proof}
+$0<r<\rho<R$ を取る．$\sum|c_n|\rho^n$ が収束するので $|c_n|\rho^n\leq C$ とできる．$n\geq k$ で
+\[
+\frac{n!}{(n-k)!}|c_n|r^{n-k}\leq Cr^{-k}n^k(r/\rho)^n.
+\]
+右辺の級数は連続する正項の比が $r/\rho<1$ に収束するから収束する．従って各階の微分級数は $[a-r,a+r]$ 上一様収束する．項別微分を帰納的に適用し，項別積分も適用する．$n^{1/n}\to1$ は任意の $s>1$ に対し $n/s^n\to0$（比の判定）から従う．従って $|nc_n|^{1/n}$ と $|c_n/(n+1)|^{1/n}$ の上極限は共に $L$ である．添字の移動は非零の変数における級数をその変数の定数倍で比較すれば収束半径を変えない．これを反復して主張を得る．$x=a$ を代入すれば係数の式を得る．
+\end{proof}
+% genron:end K-001050
+% genron:begin K-001051
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001049
+% genron:use K-000809
+% genron:use K-000810
+% genron:use K-000815
+\begin{example}[収束半径の境界での相違]
+$\sum_{n=0}^\infty x^n$，$\sum_{n=1}^\infty x^n/n$，$\sum_{n=1}^\infty x^n/n^2$ は全て収束半径 $1$ を持つ．第一は両端 $x=\pm1$ で発散し，第二は $x=-1$ で収束し $x=1$ で発散し，第三は両端で絶対収束する．
+\end{example}
+\begin{proof}
+各係数の $n$ 乗根の極限が $1$ であることから半径を得る．第一は端点で項が零に収束しない．第二の負の端点は交代級数判定による．正の端点では $2^k\leq n<2^{k+1}$ の項の和が少なくとも $1/2$ なので発散する．第三では同じ区間の和を $2^{-k}$ 以下で評価できるので収束する．
+\end{proof}
+% genron:end K-001051

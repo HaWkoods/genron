@@ -1,0 +1,136 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：所蔵 Warner, Foundations of Differentiable Manifolds and Lie Groups を検索したが今回階数定理の該当箇所を抽出できなかった．既出の線形代数・逆写像定理に基づく独自論証．
+\section{有限次元の階数定理}
+% genron:begin K-001052
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000636
+% genron:use K-000893
+% genron:use K-000897
+\begin{defn}[微分の階数と定階数]
+開集合 $U\subseteq\mathbb R^m$ 上の $C^1$ 級写像 $f:U\to\mathbb R^n$ に対し $\operatorname{rank}Df(x)$ を $x$ における階数という．$a\in U$ のある開近傍で階数が一定であるとき，$f$ は $a$ の近傍で定階数であるという．
+\end{defn}
+% genron:end K-001052
+% genron:begin K-001053
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001052
+% genron:use K-000600
+% genron:use K-000633
+% genron:use K-000636
+% genron:use K-000897
+% genron:use K-000847
+\begin{prop}[階数の局所下半連続性]
+$f:U\to\mathbb R^n$ が $C^1$ 級で $r=\operatorname{rank}Df(a)$ なら，$a$ のある開近傍上で $\operatorname{rank}Df(x)\geq r$ である．
+\end{prop}
+\begin{proof}
+$r=0$ なら明らかである．$r>0$ なら $Df(a)$ の像の基底をなす $r$ 個の像を持つ方向 $v_1,\ldots,v_r$ を取る．像の基底を終域の基底に延長し，最初の $r$ 成分への線形射影を $P$ とする．$A(x)t=P Df(x)(\sum_jt_jv_j)$ と定めると $A(a):\mathbb R^r\to\mathbb R^r$ は同型である．$A(x)$ は連続であり十分近い $x$ では $\|I-A(a)^{-1}A(x)\|<1$ となる．従って $A(x)t=0$ なら $\|t\|<\|t\|$ 又は $t=0$ となり，結局 $t=0$ である．よって $Df(x)v_j$ は線形独立である．
+\end{proof}
+% genron:end K-001053
+% genron:begin K-001054
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001052
+% genron:use K-001053
+% genron:use K-000600
+% genron:use K-000633
+% genron:use K-000635
+% genron:use K-000636
+% genron:use K-000638
+% genron:use K-000896
+% genron:use K-000897
+% genron:use K-000978
+% genron:use K-000979
+% genron:use K-000847
+% genron:use K-001012
+% genron:use K-000976
+\begin{prop}[階数定理]
+$f:U\subseteq\mathbb R^m\to\mathbb R^n$ が $C^1$ 級で，$a$ の近傍で階数が一定値 $r$ であるとする．$a$ と $f(a)$ の開近傍における $C^1$ 級座標変換 $\phi,\psi$（それぞれ $C^1$ 級の逆写像を持つ）を適当に取れば，$\phi(a)=0,\ \psi(f(a))=0$ となり，$\phi(a)$ の近傍で
+\[
+(\psi\circ f\circ\phi^{-1})(u,v)=(u,0),\qquad (u,v)\in\mathbb R^r\times\mathbb R^{m-r}
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+平行移動と線形同型による座標変換により $a=0,\ f(a)=0$ とし，$Df(0)(u,v)=(u,0)$ とできる．実際，核の基底を始域の基底に延長し，追加した基底ベクトルの像を終域の基底に延長して，追加したベクトルを最初に並べればよい．$f=(f_1,f_2)$ を $\mathbb R^r\times\mathbb R^{n-r}$ に従って分解する．$H(u,v)=(f_1(u,v),v)$ とおけば $DH(0)=I$ である．\GenronRef{K-000978} によって $H$ は局所的な $C^1$ 級座標変換である．像を原点の積近傍 $A\times B$（$A,B$ は開球）に縮小する．
+\[
+f\circ H^{-1}(s,t)=(s,g(s,t)).
+\]
+この写像の微分の階数は $r$ である．その $s$ 方向の $r$ 個の標準基底の像は第一成分が標準基底となるので独立である．一方 $t$ 方向の像は第一成分が零である．従って $D_tg(s,t)\ne0$ なら階数が $r$ より大きくなる．よって $D_tg=0$ である．$B$ は凸なので \GenronRef{K-000976} により $g(s,t)=g(s,0)$ となる．$G(s,w)=(s,w-g(s,0))$ は $A\times\mathbb R^{n-r}$ 上の $C^1$ 級座標変換であり逆は $(s,z)\mapsto(s,z+g(s,0))$ である．従って $G\circ f\circ H^{-1}(s,t)=(s,0)$ となる．$r=0$ 又は $r=m,n$ の場合も零次元空間を一点と解釈すれば同じ議論が成立する．
+\end{proof}
+% genron:end K-001054
+% genron:begin K-001055
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001053
+% genron:use K-001054
+% genron:use K-000629
+% genron:use K-000637
+\begin{prop}[全射微分・単射微分の局所標準形]
+$f:U\subseteq\mathbb R^m\to\mathbb R^n$ を $C^1$ 級とする．$Df(a)$ が全射なら $m\geq n$ であり局所座標で $f(u,v)=u$ と表される．$Df(a)$ が単射なら $m\leq n$ であり局所座標で $f(u)=(u,0)$ と表される．
+\end{prop}
+\begin{proof}
+いずれも $r=\min(m,n)$ であるから階数の局所下半連続性により近傍で同じ階数を持つ．階数定理を適用して零次元の成分を除けばよい．
+\end{proof}
+% genron:end K-001055
+% genron:begin K-001056
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001054
+\begin{prop}[定階数写像の等位集合]
+階数定理の仮定の下で，ある開近傍 $V$ における $f^{-1}(\{f(a)\})\cap V$ は座標変換 $\phi$ により $\{0\}\times B$ に移る．ここで $B$ は $\mathbb R^{m-r}$ の原点近傍である．
+\end{prop}
+\begin{proof}
+階数定理の座標で等式 $f(x)=f(a)$ は $(u,0)=(0,0)$ と同値である．始域の座標近傍を積近傍に縮小すれば主張を得る．
+\end{proof}
+% genron:end K-001056
+% genron:begin K-001057
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001052
+% genron:use K-001054
+% genron:use K-000893
+% genron:use K-000898
+\begin{example}[階数が一定でない場合]
+$f:\mathbb R\to\mathbb R,\ f(x)=x^2$ は $0$ で階数 $0$ を持つが，その近傍で定階数でない．従って $0$ の近傍で階数 $0$ の標準形を持たない．
+\end{example}
+\begin{proof}
+差分 $f(x+h)-f(x)=2xh+h^2$ により $Df(x)$ は $2x$ による乗法であり，$x\ne0$ で階数 $1$ である．もし局所座標で定数写像になれば元の函数も近傍で定数となるが，$x^2$ はそのような近傍を持たない．
+\end{proof}
+% genron:end K-001057
