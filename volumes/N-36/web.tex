@@ -1,0 +1,134 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Atiyah–Macdonald, Introduction to Commutative Algebra, Ch. 1, Exercises 15–17；Shafarevich, Basic Algebraic Geometry 2, §1.3 の本文を確認．
+\section{素スペクトルの位相}
+% genron:begin K-001197
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000446
+% genron:use K-000327
+% genron:use K-000328
+\begin{defn}[素スペクトルと零点集合]
+可換環 $A$ の素イデアル全体の集合を $\operatorname{Spec}A$ と書く．$E\subseteq A$ に対し $V(E)=\{\mathfrak p\in\operatorname{Spec}A\mid E\subseteq\mathfrak p\}$ とする．$E$ の生成するイデアルを $I$ とすれば $V(E)=V(I)$ である．
+\end{defn}
+% genron:end K-001197
+% genron:begin K-001198
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001197
+% genron:use K-000149
+% genron:use K-000446
+\begin{prop}[Zariski位相]
+$V(I)$（$I$ はイデアル）を閉集合とする位相が $\operatorname{Spec}A$ 上に定まる．
+\end{prop}
+\begin{proof}
+$V(0)=\operatorname{Spec}A$，$V(A)=\varnothing$ である．任意のイデアル族について $\bigcap_\lambda V(I_\lambda)=V(\bigcup_\lambda I_\lambda)$ が成立し，右辺は生成イデアルの零点集合である．また $V(I)\cup V(J)=V(I\cap J)$ である．逆包含を示すには $I,J$ のいずれも含まない素イデアル $\mathfrak p$ を取る．$a\in I\setminus\mathfrak p,b\in J\setminus\mathfrak p$ とすると $ab\in I\cap J$ であるが $ab\notin\mathfrak p$ である．閉集合系の特徴づけを適用する．
+\end{proof}
+% genron:end K-001198
+% genron:begin K-001199
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001198
+% genron:use K-000208
+% genron:use K-000446
+\begin{prop}[基本開集合]
+$D(f)=\operatorname{Spec}A\setminus V(\{f\})$ とおく．$D(1)=\operatorname{Spec}A$，$D(0)=\varnothing$，$D(fg)=D(f)\cap D(g)$ であり，$D(f)$ 全体は Zariski 位相の開基である．
+\end{prop}
+\begin{proof}
+積の等式は素性による．任意の閉集合 $V(I)$ の補集合は $\bigcup_{f\in I}D(f)$ に一致するので開基となる．
+\end{proof}
+% genron:end K-001199
+% genron:begin K-001200
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001198
+% genron:use K-001141
+\begin{prop}[閉集合と根基イデアル]
+イデアル $I,J$ に対し $V(I)\supseteq V(J)$ と $\sqrt I\subseteq\sqrt J$ は同値である．従って根基イデアルと Zariski 閉集合の間に包含を反転する全単射がある．
+\end{prop}
+\begin{proof}
+根基の素イデアル表示により $\sqrt I=\bigcap_{\mathfrak p\in V(I)}\mathfrak p$ である．閉集合の包含は根基の逆向きの包含を与える．逆に $I\subseteq\sqrt I\subseteq\sqrt J\subseteq\mathfrak p$ が任意の $\mathfrak p\in V(J)$ で成立する．また $V(\sqrt I)=V(I)$ であり，$\sqrt{\sqrt I}=\sqrt I$ も同じ共通部分表示による．
+\end{proof}
+% genron:end K-001200
+% genron:begin K-001201
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001198
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000448
+% genron:use K-000446
+\begin{prop}[素イデアルの一点閉包]
+$\overline{\{\mathfrak p\}}=V(\mathfrak p)$ である．従って一点集合 $\{\mathfrak p\}$ が閉であることは $\mathfrak p$ が極大イデアルであることと同値である．また異なる二点は同じ閉包を持たない．
+\end{prop}
+\begin{proof}
+$V(I)$ が $\mathfrak p$ を含むことは $I\subseteq\mathfrak p$ と同値なので，そのような閉集合のうち $V(\mathfrak p)$ が最小である．極大ならそれを含む素イデアルは自身だけである．逆に極大でなければそれを真に含む極大イデアルが存在し，これは素である．二つの閉包が等しければ双方の素イデアルが互いを含む．
+\end{proof}
+% genron:end K-001201
+% genron:begin K-001202
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001199
+% genron:use K-000328
+% genron:use K-000448
+\begin{prop}[素スペクトルの有限被覆性]
+$\operatorname{Spec}A$ の任意の開被覆は有限部分被覆を持つ．
+\end{prop}
+\begin{proof}
+基本開集合によって各開集合を細分すれば，基本開集合による被覆の場合を示せばよい．$\operatorname{Spec}A=\bigcup_{\lambda}D(f_\lambda)$ とする．$f_\lambda$ 全体が生成するイデアルが真ならそれを含む極大イデアルがあり，被覆に属さない．よって生成イデアルは $A$ である．従って有限個の $f_\lambda$ の一次結合で $1$ が表される．これらすべてを含む素イデアルは存在しないから対応する有限個の基本開集合が被覆する．各基本開を含む元の開集合を有限個選べばよい．
+\end{proof}
+% genron:end K-001202
+% genron:begin K-001203
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001199
+% genron:use K-000446
+% genron:use K-000251
+\begin{prop}[環準同型が誘導する連続写像]
+単位元を保つ可換環準同型 $h:A\to B$ は逆像によって連続写像 $\operatorname{Spec}B\to\operatorname{Spec}A$ を誘導する．
+\end{prop}
+\begin{proof}
+素イデアルの逆像は真であり，積に関する素性を保つ．$D(f)$ の逆像は $D(h(f))$ であるから，開基に関して連続性が成立する．
+\end{proof}
+% genron:end K-001203

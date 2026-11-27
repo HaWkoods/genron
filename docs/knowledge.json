@@ -36995,6 +36995,1310 @@
       "status": "draft",
       "source": "volumes/N-325/web.tex",
       "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001190",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "拡大体と次数",
+      "statement": "体 $K$ が体 $L$ の部分体であるとき $L/K$ を体の拡大という．$L$ を $K$ 上の線形空間とみなす．これが有限次元なら有限次拡大といい，その次元を $[L:K]$ と書く．有限次元でない場合にはここでは $[L:K]=\\infty$ と書く．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000443",
+        "K-000560",
+        "K-000604"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001191",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "拡大次数の塔の公式",
+      "statement": "$K\\subseteq M\\subseteq L$ とする．$L/K$ が有限次であることは $M/K,L/M$ がともに有限次であることと同値であり，このとき\n\\[\n[L:K]=[L:M][M:K]\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001190",
+        "K-000600",
+        "K-000601",
+        "K-000605"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001192",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元部分代数の体性",
+      "statement": "拡大体 $L/K$ の中の $K$ を含む部分環 $A$ が $K$ 上有限次元なら $A$ は体である．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001190",
+        "K-000444",
+        "K-000600",
+        "K-000604",
+        "K-000606"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001193",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "合成体",
+      "statement": "同一の体 $\\Omega$ の部分体 $L_1,L_2$ に対し，両者を含む $\\Omega$ の部分体の共通部分を合成体といい $L_1L_2$ と書く．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000443",
+        "K-000045"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001194",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次拡大との合成体",
+      "statement": "$L_1,L_2$ が共通の体 $\\Omega$ の部分体で $K\\subseteq L_1\\cap L_2$，$[L_1:K]=r<\\infty$ とする．このとき $L_1L_2/L_2$ は有限次で，$[L_1L_2:L_2]\\leq r$ である．さらに $L_1$ の $K$ 基底 $(a_i)$ に対し\n\\[\nL_1L_2=\\sum_{i=1}^r L_2a_i\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001193",
+        "K-001192",
+        "K-000601"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001195",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "生成される部分体",
+      "statement": "拡大 $L/K$ と部分集合 $S\\subseteq L$ に対し，$K$ と $S$ を含む最小の部分体を $K(S)$ と書く．一元集合の場合を $K(a)$ と書く．$K$ と $S$ を含む最小の部分環は $K[S]$ と書く．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001193",
+        "K-000045",
+        "K-000443"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001196",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "有限生成部分体の有限性",
+      "statement": "$a_1,\\ldots,a_n\\in L$ の各 $K(a_i)/K$ が有限次なら $K(a_1,\\ldots,a_n)/K$ は有限次で，その次数は $\\prod_i[K(a_i):K]$ 以下である．",
+      "assumptions": [],
+      "position": [
+        20,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001195",
+        "K-001194",
+        "K-001191",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-20/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001197",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "素スペクトルと零点集合",
+      "statement": "可換環 $A$ の素イデアル全体の集合を $\\operatorname{Spec}A$ と書く．$E\\subseteq A$ に対し $V(E)=\\{\\mathfrak p\\in\\operatorname{Spec}A\\mid E\\subseteq\\mathfrak p\\}$ とする．$E$ の生成するイデアルを $I$ とすれば $V(E)=V(I)$ である．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000446",
+        "K-000327",
+        "K-000328"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001198",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Zariski位相",
+      "statement": "$V(I)$（$I$ はイデアル）を閉集合とする位相が $\\operatorname{Spec}A$ 上に定まる．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001197",
+        "K-000149",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001199",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基本開集合",
+      "statement": "$D(f)=\\operatorname{Spec}A\\setminus V(\\{f\\})$ とおく．$D(1)=\\operatorname{Spec}A$，$D(0)=\\varnothing$，$D(fg)=D(f)\\cap D(g)$ であり，$D(f)$ 全体は Zariski 位相の開基である．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001198",
+        "K-000208",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001200",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉集合と根基イデアル",
+      "statement": "イデアル $I,J$ に対し $V(I)\\supseteq V(J)$ と $\\sqrt I\\subseteq\\sqrt J$ は同値である．従って根基イデアルと Zariski 閉集合の間に包含を反転する全単射がある．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001198",
+        "K-001141"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001201",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素イデアルの一点閉包",
+      "statement": "$\\overline{\\{\\mathfrak p\\}}=V(\\mathfrak p)$ である．従って一点集合 $\\{\\mathfrak p\\}$ が閉であることは $\\mathfrak p$ が極大イデアルであることと同値である．また異なる二点は同じ閉包を持たない．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001198",
+        "K-000198",
+        "K-000199",
+        "K-000448",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001202",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素スペクトルの有限被覆性",
+      "statement": "$\\operatorname{Spec}A$ の任意の開被覆は有限部分被覆を持つ．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001199",
+        "K-000328",
+        "K-000448"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001203",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "環準同型が誘導する連続写像",
+      "statement": "単位元を保つ可換環準同型 $h:A\\to B$ は逆像によって連続写像 $\\operatorname{Spec}B\\to\\operatorname{Spec}A$ を誘導する．",
+      "assumptions": [],
+      "position": [
+        36,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001199",
+        "K-000446",
+        "K-000251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-36/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001204",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加法原理",
+      "statement": "互いに素な有限集合 $A_1,\\ldots,A_k$ に対し $\\left|\\bigcup_{i=1}^kA_i\\right|=\\sum_{i=1}^k|A_i|$ である．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000110",
+        "K-000115",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001205",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "乗法原理",
+      "statement": "有限集合 $A_1,\\ldots,A_k$ に対し $\\left|\\prod_{i=1}^kA_i\\right|=\\prod_{i=1}^k|A_i|$ である．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001204",
+        "K-000116",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001206",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "階乗と二項係数",
+      "statement": "$0!=1$，$(n+1)!=(n+1)n!$ と定める．$n$ 元集合の $k$ 元部分集合の個数を $\\binom nk$ と書き，$k>n$ では零とする．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000105",
+        "K-000110",
+        "K-000117"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001207",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順列の個数",
+      "statement": "$n$ 元集合から異なる $k$ 個を順序付きで選ぶ方法の数は，$0\\leq k\\leq n$ のとき $n(n-1)\\cdots(n-k+1)$ である．特に $n$ 元集合の全順列の個数は $n!$ である．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001204",
+        "K-001206",
+        "K-000112",
+        "K-000118",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001208",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "二項係数の積表示",
+      "statement": "$0\\leq k\\leq n$ に対して\n\\[\nk!\\binom nk=n(n-1)\\cdots(n-k+1),\\qquad\nk!(n-k)!\\binom nk=n!\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001207",
+        "K-001206",
+        "K-001204"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001209",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Pascalの関係式",
+      "statement": "$n\\geq1$，$1\\leq k\\leq n$ について $\\binom nk=\\binom{n-1}{k}+\\binom{n-1}{k-1}$ である．また $\\binom n0=\\binom nn=1$ である．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001206",
+        "K-001204"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001210",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "二項定理",
+      "statement": "可換環の元 $a,b$ と自然数 $n$ に対して $(a+b)^n=\\sum_{k=0}^n\\binom nk a^{n-k}b^k$ である．",
+      "assumptions": [],
+      "position": [
+        38,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001209",
+        "K-000249",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-38/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001211",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "素数",
+      "statement": "整数 $p>1$ が正の約数として $1,p$ しか持たないとき素数という．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000596",
+        "K-000572"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001212",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素数の積の整除",
+      "statement": "素数 $p$ について $p\\mid ab$ なら $p\\mid a$ 又は $p\\mid b$ である．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001211",
+        "K-000598",
+        "K-000599"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001213",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素因数分解の存在",
+      "statement": "任意の整数 $n>1$ は有限個の素数の積である．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001211",
+        "K-000104",
+        "K-000592",
+        "K-000593"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001214",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素因数分解の一意性",
+      "statement": "整数 $n>1$ の素因数分解は因子の順序を除いて一意である．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001212",
+        "K-001213",
+        "K-000444",
+        "K-000593"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001215",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素数の無限性",
+      "statement": "素数全体は有限集合ではない．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001213",
+        "K-001211",
+        "K-000593"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001216",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "素数に関する指数",
+      "statement": "非零整数 $a$ と素数 $p$ に対し，$|a|$ の素因数分解における $p$ の個数を $v_p(a)$ と書く．$|a|=1$ なら零とする．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001214",
+        "K-000594"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001217",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "指数と整除",
+      "statement": "非零整数 $a,b$ について $v_p(ab)=v_p(a)+v_p(b)$ である．また $a\\mid b$ であることはすべての素数 $p$ について $v_p(a)\\leq v_p(b)$ であることと同値である．",
+      "assumptions": [],
+      "position": [
+        76,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001216",
+        "K-000595",
+        "K-001214"
+      ],
+      "status": "draft",
+      "source": "volumes/N-76/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001218",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形独立集合の基底への拡張",
+      "statement": "体 $K$ 上の線形空間 $E$ の線形独立部分集合 $S$ はある基底に含まれる．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000565",
+        "K-000566",
+        "K-000600",
+        "K-000131"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001219",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "生成集合からの基底の抽出",
+      "statement": "任意の生成集合 $S\\subseteq E$ は基底を含む．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001218",
+        "K-000563",
+        "K-000566",
+        "K-000131"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001220",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "無限整列集合の有限部分集合の濃度",
+      "statement": "無限整列可能集合 $I$ に対し，その有限部分集合の集合及び有限列の集合の濃度は $|I|$ に等しい．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000060",
+        "K-000121",
+        "K-000123",
+        "K-000127",
+        "K-000129",
+        "K-000133",
+        "K-000135",
+        "K-000139",
+        "K-000143"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001221",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "独立集合と生成集合の濃度比較",
+      "statement": "独立集合 $B$ と無限生成集合 $S$ について $|B|\\leq |S|$ である．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001220",
+        "K-000060",
+        "K-000563",
+        "K-000603",
+        "K-000604"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001222",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底の濃度の不変性",
+      "statement": "同一線形空間の任意の二基底は同じ濃度を持つ．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001221",
+        "K-000603",
+        "K-000604",
+        "K-000135"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001223",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "線形空間の次元",
+      "statement": "線形空間の任意の基底の濃度をその次元といい $\\dim_K E$ と書く．有限次元の場合の定義と一致する．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001218",
+        "K-001222"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001224",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分空間の代数的補空間",
+      "statement": "任意の部分空間 $F\\subseteq E$ に対し，$E=F\\oplus G$ を満たす部分空間 $G$ が存在する．",
+      "assumptions": [],
+      "position": [
+        106,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001218",
+        "K-000567",
+        "K-000461"
+      ],
+      "status": "draft",
+      "source": "volumes/N-106/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001225",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "加群の双線形写像",
+      "statement": "可換環 $R$ の加群 $M,N,P$ について写像 $b:M\\times N\\to P$ が各変数に関して $R$ 線形であるとき双線形という．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000335",
+        "K-000338",
+        "K-000607"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001226",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "テンソル積の普遍性",
+      "statement": "加群 $T$ と双線形写像 $\\tau:M\\times N\\to T$ の組が，任意の加群 $P$ と双線形写像 $b:M\\times N\\to P$ に対し $b=u\\circ\\tau$ を満たす線形写像 $u:T\\to P$ がただ一つ存在するという性質を持つとき，これをテンソル積という．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001225",
+        "K-000338"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001227",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積の存在",
+      "statement": "任意の二加群 $M,N$ に対しテンソル積が存在する．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001226",
+        "K-000581",
+        "K-000582",
+        "K-000342",
+        "K-000340",
+        "K-000341"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001228",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積の一意性",
+      "statement": "二つのテンソル積 $(T,\\tau),(T',\\tau')$ の間に $\\phi\\tau=\\tau'$ を満たす同型写像 $\\phi:T\\to T'$ がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001226"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001229",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積の函手性",
+      "statement": "線形写像 $f:M\\to M',g:N\\to N'$ は一意の線形写像 $f\\otimes g:M\\otimes_R N\\to M'\\otimes_R N'$ を誘導し，$(f\\otimes g)(m\\otimes n)=f(m)\\otimes g(n)$ を満たす．恒等写像及び合成を保存する．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001227",
+        "K-001226"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001230",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積と係数環",
+      "statement": "標準同型 $R\\otimes_R M\\simeq M$ が存在し，$r\\otimes m\\mapsto rm$ で与えられる．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001227",
+        "K-001226",
+        "K-000335"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001231",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積の交換同型",
+      "statement": "$M\\otimes_R N\\simeq N\\otimes_R M$ であり，標準同型は $m\\otimes n\\mapsto n\\otimes m$ で与えられる．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001227",
+        "K-001226"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001232",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群のテンソル積の基底",
+      "statement": "$M,N$ が基底 $(e_i)_{i\\in I},(f_j)_{j\\in J}$ を持つ自由加群なら，$M\\otimes_R N$ は $(e_i\\otimes f_j)_{(i,j)\\in I\\times J}$ を基底とする自由加群である．",
+      "assumptions": [],
+      "position": [
+        111,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001227",
+        "K-001226",
+        "K-000580",
+        "K-000581"
+      ],
+      "status": "draft",
+      "source": "volumes/N-111/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -37306,7 +38610,7 @@
       "number": 20,
       "title": "体の拡大と次数",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         70,
         96
@@ -37315,7 +38619,8 @@
         "拡大体・塔の公式・合成体"
       ],
       "treatise": "T-20",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 21,
@@ -37582,7 +38887,7 @@
       "number": 36,
       "title": "素スペクトルとZariski位相",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         138,
         54
@@ -37591,7 +38896,8 @@
         "Spec・基本開集合・閉集合"
       ],
       "treatise": "T-36",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 37,
@@ -37613,7 +38919,7 @@
       "number": 38,
       "title": "有限集合の数え上げ",
       "area": "離散",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         5,
         75
@@ -37622,7 +38928,8 @@
         "加法原理・乗法原理・二項係数"
       ],
       "treatise": "T-38",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 39,
@@ -38200,7 +39507,7 @@
       "number": 76,
       "title": "素数と一意分解",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         75
       ],
@@ -38208,7 +39515,8 @@
         "Bézout等式・素因数分解"
       ],
       "treatise": "T-11",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 77,
@@ -38679,17 +39987,19 @@
       "number": 106,
       "title": "任意次元線形空間",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         105,
         6,
-        96
+        96,
+        7
       ],
       "goals": [
         "Zornの補題による基底存在・次元"
       ],
       "treatise": "T-16",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 107,
@@ -38758,7 +40068,7 @@
       "number": 111,
       "title": "テンソル積",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         105,
         110
@@ -38767,7 +40077,8 @@
         "自由加群の商・普遍性・函手性"
       ],
       "treatise": "T-17",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 112,

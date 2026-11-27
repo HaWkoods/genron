@@ -1,0 +1,155 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Atiyah–Macdonald, Introduction to Commutative Algebra, Ch. 2 のテンソル積の導入部を確認．以下は自由加群からの独立した構成．
+\section{テンソル積の構成と普遍性}
+% genron:begin K-001225
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000335
+% genron:use K-000338
+% genron:use K-000607
+\begin{defn}[加群の双線形写像]
+可換環 $R$ の加群 $M,N,P$ について写像 $b:M\times N\to P$ が各変数に関して $R$ 線形であるとき双線形という．
+\end{defn}
+% genron:end K-001225
+% genron:begin K-001226
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001225
+% genron:use K-000338
+\begin{defn}[テンソル積の普遍性]
+加群 $T$ と双線形写像 $\tau:M\times N\to T$ の組が，任意の加群 $P$ と双線形写像 $b:M\times N\to P$ に対し $b=u\circ\tau$ を満たす線形写像 $u:T\to P$ がただ一つ存在するという性質を持つとき，これをテンソル積という．
+\end{defn}
+% genron:end K-001226
+% genron:begin K-001227
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001226
+% genron:use K-000581
+% genron:use K-000582
+% genron:use K-000342
+% genron:use K-000340
+% genron:use K-000341
+\begin{prop}[テンソル積の存在]
+任意の二加群 $M,N$ に対しテンソル積が存在する．
+\end{prop}
+\begin{proof}
+集合 $M\times N$ を基底とする自由加群 $F$ を取り，基底元を $[m,n]$ と記す．
+\[
+[m+m',n]-[m,n]-[m',n],\quad [m,n+n']-[m,n]-[m,n'],
+\]
+\[
+[rm,n]-r[m,n],\quad [m,rn]-r[m,n]
+\]
+のすべてによって生成される部分加群を $Q$ とする．$T=F/Q$ とし，$\tau(m,n)=[m,n]+Q$ とすれば四種の関係から双線形性が従う．双線形写像 $b$ は自由加群の普遍性によって $F$ 上の線形写像へ一意に延長され，その写像は四種の元を零に移すため $Q$ を零に移す．商加群の普遍性で $T$ 上の線形写像を得る．$\tau(m,n)$ 全体が $T$ を生成するので一意である．
+\end{proof}
+% genron:end K-001227
+% genron:begin K-001228
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001226
+\begin{prop}[テンソル積の一意性]
+二つのテンソル積 $(T,\tau),(T',\tau')$ の間に $\phi\tau=\tau'$ を満たす同型写像 $\phi:T\to T'$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+双方の普遍性で $\phi:T\to T'$ と $\psi:T'\to T$ を得る．$\psi\phi\tau=\tau$ 及び $\phi\psi\tau'=\tau'$ から一意性を適用すれば両合成は恒等写像である．
+\end{proof}
+% genron:end K-001228
+% genron:begin K-001229
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001227
+% genron:use K-001226
+\begin{prop}[テンソル積の函手性]
+線形写像 $f:M\to M',g:N\to N'$ は一意の線形写像 $f\otimes g:M\otimes_R N\to M'\otimes_R N'$ を誘導し，$(f\otimes g)(m\otimes n)=f(m)\otimes g(n)$ を満たす．恒等写像及び合成を保存する．
+\end{prop}
+\begin{proof}
+右辺は $m,n$ に関して双線形なので普遍性を適用する．ここで $m\otimes n$ は $\tau(m,n)$ の略記である．恒等写像及び合成については生成元 $m\otimes n$ 上で一致を確認する．
+\end{proof}
+% genron:end K-001229
+% genron:begin K-001230
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001227
+% genron:use K-001226
+% genron:use K-000335
+\begin{prop}[テンソル積と係数環]
+標準同型 $R\otimes_R M\simeq M$ が存在し，$r\otimes m\mapsto rm$ で与えられる．
+\end{prop}
+\begin{proof}
+スカラー作用は双線形なので普遍性により写像を得る．逆写像は $m\mapsto1\otimes m$ である．合成の一つは明らかに恒等写像であり，他方も $1\otimes rm=r\otimes m$ により生成元で恒等写像となる．
+\end{proof}
+% genron:end K-001230
+% genron:begin K-001231
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001227
+% genron:use K-001226
+\begin{prop}[テンソル積の交換同型]
+$M\otimes_R N\simeq N\otimes_R M$ であり，標準同型は $m\otimes n\mapsto n\otimes m$ で与えられる．
+\end{prop}
+\begin{proof}
+右辺の双線形性により写像を得る．逆順の写像を同様に得ると，両合成は生成元上で恒等である．
+\end{proof}
+% genron:end K-001231
+% genron:begin K-001232
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001227
+% genron:use K-001226
+% genron:use K-000580
+% genron:use K-000581
+\begin{prop}[自由加群のテンソル積の基底]
+$M,N$ が基底 $(e_i)_{i\in I},(f_j)_{j\in J}$ を持つ自由加群なら，$M\otimes_R N$ は $(e_i\otimes f_j)_{(i,j)\in I\times J}$ を基底とする自由加群である．
+\end{prop}
+\begin{proof}
+双線形性により任意の純テンソルはこの族の有限線形結合になる．独立性を示すため $I\times J$ 上の標準自由加群 $G$ の基底を $g_{ij}$ と書く．$m=\sum_i a_ie_i,n=\sum_j b_jf_j$ に対し $(m,n)\mapsto\sum_{i,j}a_i b_j g_{ij}$ は双線形である．従ってテンソル積から $G$ への線形写像があり，$e_i\otimes f_j$ を $g_{ij}$ に移す．線形関係にこれを適用すれば係数がすべて零である．
+\end{proof}
+% genron:end K-001232
