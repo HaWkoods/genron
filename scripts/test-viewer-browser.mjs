@@ -56,6 +56,41 @@ try{
  assert.deepEqual(errors,[],"Map JavaScript errors");
 
 
+
+ // Knowledge paths are computed at entry level and projected onto notes only afterwards.
+ const pathById=new Map(planData.entries.map(e=>[e.id,e]));
+ const pathReverse=new Map(planData.entries.map(e=>[e.id,[]]));
+ for(const e of planData.entries)for(const d of e.depends_on)pathReverse.get(d).push(e.id);
+ const pathExpected=(id,dir,direct)=>{
+  const walk=forward=>{const seen=new Set([id]),queue=[id];for(let i=0;i<queue.length;i++){if(direct&&i>0)break;for(const x of (forward?pathReverse.get(queue[i]):pathById.get(queue[i]).depends_on))if(!seen.has(x)){seen.add(x);queue.push(x)}}return seen};
+  return new Set([...(dir==="down"?[]:walk(false)),...(dir==="up"?[]:walk(true)),id]);
+ };
+ async function checkPath(id,dir,direct){
+  const ids=pathExpected(id,dir,direct),expectedNotes=[...new Set([...ids].map(x=>pathById.get(x).position[0]))].sort((a,b)=>a-b);
+  assert.deepEqual(await page.locator(".path-note").evaluateAll(els=>els.map(e=>Number(e.dataset.note)).sort((a,b)=>a-b)),expectedNotes);
+  assert.deepEqual(await page.locator(".path-entry").evaluateAll(els=>els.map(e=>e.dataset.knowledge).sort()),[...ids].sort());
+  assert.equal(await page.locator(".path-note[data-note='"+pathById.get(id).position[0]+"']").count(),1);
+ }
+ await page.goto(origin+"?view=knowledge-path");
+ await page.locator(".knowledge-path").waitFor();
+ await page.getByRole("searchbox",{name:"知識の検索"}).fill("Lagrangeの定理");
+ await page.getByRole("combobox",{name:"対象の知識"}).selectOption("K-000315");
+ await checkPath("K-000315","up",false);
+ await page.getByRole("combobox",{name:"知識の依存方向"}).selectOption("down");
+ await checkPath("K-000315","down",false);
+ await page.getByRole("combobox",{name:"知識の依存方向"}).selectOption("both");
+ await page.getByRole("combobox",{name:"知識の依存範囲"}).selectOption("direct");
+ await checkPath("K-000315","both",true);
+ await page.reload();await page.locator(".path-target").waitFor();
+ await checkPath("K-000315","both",true);
+ await page.goto(origin+"?view=knowledge-path&target=K-000131");
+ await page.locator(".path-target").waitFor();await checkPath("K-000131","up",false);
+ await page.setViewportSize({width:390,height:844});
+ assert.ok(await page.locator(".knowledge-path").evaluate(el=>el.scrollWidth<=el.clientWidth+1),"Knowledge paths should fit mobile widths");
+ await page.getByRole("searchbox",{name:"知識の検索"}).fill("ZZZ無該当ZZZ");assert.equal(await page.locator(".path-note").count(),0);
+ await page.setViewportSize({width:1440,height:1000});
+ assert.deepEqual(errors,[],"Knowledge path errors");
+
  // Separate example catalogue: no theorem entries, and worked solutions are closed.
  await page.goto(origin+"?note=examples");
  await page.locator(".web-catalogue").waitFor();

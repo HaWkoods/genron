@@ -81,3 +81,20 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .notation-symbol .math{max-width:none;white-space:nowrap;overflow:visible}
 .notation-meaning{overflow-wrap:anywhere}
 @media(max-width:480px){.notation-table th,.notation-table td{padding:.6em .35em}.notation-table th:first-child,.notation-symbol{width:42%}.catalogue-entry h5{font-size:.95em}}
+
+
+/* Knowledge-centred note paths: only notes containing connected entries. */
+.knowledge-path{max-width:960px;margin:0 auto;min-width:0;overflow-wrap:anywhere}
+.path-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.3rem 0 .5rem}
+.path-field{display:flex;flex-direction:column;gap:5px;font:14px/1.6 system-ui,sans-serif;min-width:0}
+.path-field input,.path-field select{width:100%;min-width:0;max-width:100%;box-sizing:border-box;font:inherit;padding:10px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink);margin:0}
+.path-target{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:18px 0}
+.path-target h2{font-size:1.2rem;margin:.35em 0}
+.path-target p{margin:.4em 0}
+.path-note{margin:.5em 0}
+.path-note h3{font-size:1.05em;margin:.3em 0}
+.path-note-entries{font-size:14px;margin-top:.6em}
+.path-note-entries summary{cursor:pointer;color:var(--muted)}
+.path-entry{padding:.2em .6em}
+.knowledge-path-link{display:block;font:12px/1.7 system-ui,sans-serif;margin-top:.5em;text-decoration:underline}
+@media(max-width:600px){.path-tools{grid-template-columns:1fr}}
