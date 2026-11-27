@@ -44,6 +44,15 @@ function collectProofs(source){
 for(const n of verified){
  const dir=path.join(root,"volumes","N-"+n.number);
  const source=fs.readFileSync(path.join(dir,n.web_only?"web.tex":"main.tex"),"utf8");
+ // Knowledge references are prose, never followed by an orphan math delimiter.
+ const badRef=source.match(/\\GenronRef\{K-\d+\}\$/);
+ if(badRef)throw Error("N-"+n.number+": stray math delimiter after "+badRef[0]);
+ // Check each proof independently so one malformed proof cannot mask another.
+ for(const p of source.matchAll(/\\begin\{proof\}(?:\[[^\]]*\])?([\s\S]*?)\\end\{proof\}/g)){
+  const body=p[1].replace(/^%[^\n]*$/gm,"");
+  if((body.match(/(?<!\\)\$/g)??[]).length%2!==0)
+   throw Error("N-"+n.number+": unbalanced dollar delimiters near source line "+(source.slice(0,p.index).split("\n").length));
+ }
  collectProofs(source);
 }
  const webNotation=JSON.parse(fs.readFileSync(path.join(root,"docs/notation.json"),"utf8"));
