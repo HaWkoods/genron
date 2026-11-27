@@ -32263,7 +32263,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限被覆数とその正規化",
-      "statement": "単位元を $e$ とし，コンパクト集合 $K$ と開単位元近傍 $V$ に対し $(K:V)$ を $K$ を覆う $V$ の左平行移動の最小個数とする．$(\\varnothing:V)=0$ とする．内部が空でないコンパクト集合 $K_0$ を固定し，$c_V(K)=(K:V)/(K_0:V)$ と定める．各 $K$ について $0\\leq c_V(K)\\leq(K:\\operatorname{int}K_0)$ であり，左不変性，単調性，有限劣加法性を満たす．",
+      "statement": "単位元を $e$ とし，コンパクト集合 $K$ と空でない開集合 $V$ に対し $(K:V)$ を $K$ を覆う $V$ の左平行移動の最小個数とする．$(\\varnothing:V)=0$ とする．内部が空でないコンパクト集合 $K_0$ を固定し，$c_V(K)=(K:V)/(K_0:V)$ と定める．各 $K$ について $0\\leq c_V(K)\\leq(K:\\operatorname{int}K_0)$ であり，左不変性，単調性，有限劣加法性を満たす．",
       "assumptions": [],
       "position": [
         202,
