@@ -1,0 +1,88 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{位相群の完備化}
+% genron:begin K-001439
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000490
+% genron:use K-000504
+% genron:use K-000506
+\begin{defn}[両側Cauchyフィルター]
+位相群 $G$ 上のフィルター $\mathcal F$ が両側Cauchyであるとは，任意の単位元近傍 $U$ に対し $A\in\mathcal F$ が存在し $A^{-1}A\subseteq U$ かつ $AA^{-1}\subseteq U$ となることをいう．これは両側一様構造に関するCauchy性である．
+\end{defn}
+% genron:end K-001439
+% genron:begin K-001440
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001439
+% genron:use K-000235
+% genron:use K-000236
+% genron:use K-001280
+\begin{prop}[Cauchyフィルターの積]
+両側Cauchyフィルター $\mathcal F,\mathcal G$ に対し，集合積 $AB$ ($A\in\mathcal F,B\in\mathcal G$) を基とするフィルターは両側Cauchyである．同値なCauchyフィルターに取り替えても積の同値類は変わらない．
+\end{prop}
+\begin{proof}
+単位元の対称近傍 $U$ を与え，$V^4\subseteq U$ となる対称近傍 $V$ を取る．Cauchy性により $A_0\in\mathcal F,B_0\in\mathcal G$ と $a_0\in A_0,b_0\in B_0$ を取り，$A_0\subseteq Va_0$，$B_0\subseteq b_0V$ とできる．$a_0 W a_0^{-1}\subseteq V$，$b_0^{-1}Wb_0\subseteq V$ を満たす対称近傍 $W\subseteq V$ を取る．さらに $A\subseteq A_0,B\subseteq B_0$ をフィルター内で縮小し，両側の差を $W$ に入れる．$a,a'\in A,b,b'\in B$ に対し
+\[
+(ab)^{-1}(a'b')=b^{-1}(a^{-1}a')b\,(b^{-1}b'),\qquad
+ab(a'b')^{-1}=a(bb'^{-1})a^{-1}\,(aa'^{-1})
+\]
+である．$b\in b_0V,a\in Va_0$ なので第一因子はいずれも $V^3$ に属し，第二因子は $W$ に属する．従って両者は $U$ に属する．
+同値なフィルターに対しては任意の近縁内に両フィルターの集合の直積を取れる．これを上の $A_0,B_0$ の選択にも用いると，二つのフィルターを合わせた集合がそれぞれ $Va_0,b_0V$ 内に収まる．さらに交差する差が $W$ に入るように縮小して同じ二式を適用すれば，二つの積の間の両側差が $U$ に入る．従って積の同値類が一致する．
+\end{proof}
+% genron:end K-001440
+% genron:begin K-001441
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001440
+% genron:use K-000508
+% genron:use K-001281
+% genron:use K-001282
+% genron:use K-001284
+\begin{prop}[完備化の群構造]
+分離位相群 $G$ の両側一様構造の完備化 $\widehat G$ は位相群の構造を持ち，標準写像 $j:G\to\widehat G$ は稠密な群の埋込みとなる．
+\end{prop}
+\begin{proof}
+点をCauchyフィルターの同値類で表し，積を前命題の集合積，逆元を逆元写像による像フィルターで定める．集合積の結合律から積の結合律が従う．$A$ の両側差が任意に小さく取れるので，$\mathcal F$ とその逆元フィルターとの積は単位元の近傍フィルターと同値である．主フィルターの積は元の積を与えるため $j$ は群準同型である．稠密性と埋込み性は一様完備化から従う．
+逆元は両側一様構造に関して一様連続であるから，その延長は連続である．積の連続性を示すため，前命題の $A_0,B_0,V,W$ を固定する．完備化の近縁 $W_T$ を，代表フィルターの集合の直積が両側 $T$ 近縁に含まれることによって定める．$T$ を十分小さく取り，近い二点の代表集合を $A_0,B_0$ と交差する差が $T$ に入るように選ぶ．例えば第一因子については $a'a^{-1}\in T$ と $a\in A_0$ から $a'\in TVa_0$ となる．初めから $A_0,B_0$ を $V$ より小さい近傍で選び，$T$ も縮小すればこの集合を $Va_0,b_0V$ に収められる．同時に交差する左右の差を $W$ に入れる．すると前命題の二式により積の代表集合の交差する両側差は $U$ に入る．これは積の連続性を表す．
+\end{proof}
+% genron:end K-001441
+% genron:begin K-001442
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001441
+% genron:use K-000507
+% genron:use K-001281
+% genron:use K-001283
+% genron:use K-001284
+\begin{prop}[完備群としての普遍性]
+$\widehat G$ の両側一様構造は完備化の一様構造と一致する．分離完備位相群 $H$ への連続準同型 $f:G\to H$ は，一意の連続準同型 $\widehat G\to H$ に延長される．ここで完備性は両側一様構造についていう．
+\end{prop}
+\begin{proof}
+完備化の任意の単位元近傍 $O$ に対し，$G$ の十分小さい単位元近傍 $V$ を選び $\overline{j(V)}\subseteq O$ とできる．これは分離一様空間における近縁の縮小と稠密性から従う．完備化の二点が近縁 $W_V$ に属するとき，それらを表すフィルターから選んだ集合の全ての交差する左右差は $V$ に属する．代表フィルターの $j$ による像はそれぞれの点に収束するので，群演算の連続性によって両差は $\overline{j(V)}$ に属する．逆に $G$ の単位元近傍 $U$ に対し，$O\cap j(G)\subseteq j(U)$ なる完備化の単位元近傍 $O$ を取る．二点の左右差が $O$ に属すれば，連続性により十分小さい両点の近傍の任意の二点も左右差が $O$ に属する．代表フィルターの集合をこれらの近傍に取ると交差する差は $U$ に属する．従って二点は $W_U$ に属する．この二つの包含が一様構造の一致を与える．
+連続準同型は両側一様構造に関して一様連続なので，一様完備化の普遍性から延長を得る．二変数の連続写像 $(x,y)\mapsto\widehat f(xy)$ と $(x,y)\mapsto\widehat f(x)\widehat f(y)$ は稠密集合 $j(G)\times j(G)$ 上で一致する．$H$ の分離性から全体で一致するので延長は準同型である．一意性も同じ稠密性から従う．
+\end{proof}
+% genron:end K-001442

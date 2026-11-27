@@ -1,0 +1,109 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{局所環付き空間}
+% genron:begin K-001454
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001137
+% genron:use K-000251
+\begin{defn}[局所環準同型]
+単位元を持つ可換局所環 $(A,\mathfrak m_A),(B,\mathfrak m_B)$ の準同型 $\varphi:A\to B$ が局所準同型であるとは，$\varphi^{-1}(\mathfrak m_B)=\mathfrak m_A$ となることをいう．
+\end{defn}
+% genron:end K-001454
+% genron:begin K-001455
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001454
+% genron:use K-001138
+\begin{prop}[局所準同型の判定]
+局所環の準同型 $\varphi:A\to B$ が局所準同型であることは，$\varphi(\mathfrak m_A)\subseteq\mathfrak m_B$ と同値である．またそれは非単元を非単元に移すことと同値である．
+\end{prop}
+\begin{proof}
+単位元を保つ環準同型は単元を単元に移す．局所環の非単元全体はその極大イデアルであるから $\varphi^{-1}(\mathfrak m_B)\subseteq\mathfrak m_A$ は常に成立する．逆包含はちょうど表示された包含条件である．非単元による記述も同じ事実から従う．
+\end{proof}
+% genron:end K-001455
+% genron:begin K-001456
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001455
+% genron:use K-000331
+% genron:use K-000447
+\begin{prop}[剰余体への誘導写像]
+局所準同型 $\varphi:(A,\mathfrak m_A)\to(B,\mathfrak m_B)$ は剰余体の埋込み $A/\mathfrak m_A\to B/\mathfrak m_B$ を誘導する．局所準同型の合成は局所準同型である．
+\end{prop}
+\begin{proof}
+極大イデアルの像の包含により商への準同型が良定義である．その核は $\varphi^{-1}(\mathfrak m_B)/\mathfrak m_A=0$ なので単射である．合成については逆像を順に取ればよい．
+\end{proof}
+% genron:end K-001456
+% genron:begin K-001457
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001454
+% genron:use K-001371
+% genron:use K-001372
+% genron:use K-001368
+\begin{defn}[局所環付き空間]
+環付き空間 $(X,\mathcal O_X)$ で各点 $x$ の茎 $\mathcal O_{X,x}$ が可換局所環であるものを局所環付き空間という．その極大イデアルを $\mathfrak m_x$，剰余体を $\kappa(x)=\mathcal O_{X,x}/\mathfrak m_x$ と書く．射は環付き空間の射で，各茎で誘導される準同型が局所準同型となるものとする．
+\end{defn}
+% genron:end K-001457
+% genron:begin K-001458
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001456
+% genron:use K-001457
+% genron:use K-001373
+\begin{prop}[局所環付き空間の射と剰余体]
+局所環付き空間の射 $f:(X,\mathcal O_X)\to(Y,\mathcal O_Y)$ と点 $x\in X$ に対し，標準的な体の埋込み $\kappa(f(x))\to\kappa(x)$ が存在する．この埋込みは射の合成と可換である．
+\end{prop}
+\begin{proof}
+茎の準同型 $\mathcal O_{Y,f(x)}\to\mathcal O_{X,x}$ は局所準同型なので剰余体への誘導写像を適用できる．射を合成したときの茎準同型は茎準同型の合成であり，商への誘導写像も合成を保存する．
+\end{proof}
+% genron:end K-001458
+% genron:begin K-001459
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001457
+% genron:use K-001367
+% genron:use K-001372
+\begin{example}[局所環の一点空間]
+局所環 $A$ を一点空間の唯一の非空開集合上の切断とする層を置けば局所環付き空間となる．このような一点空間の間の射は，向きを逆にした局所環準同型と対応する．
+\end{example}
+\begin{proof}
+空集合上の切断を零環とし，空集合への制限を唯一の準同型とする．一点空間の層条件は自明に成立し，唯一の茎は $A$ である．一点空間間の連続写像は唯一であり，環付き空間の射の残りのデータは非空開集合上の環準同型のみである．局所条件はその準同型が局所準同型であることと一致する．
+\end{proof}
+% genron:end K-001459

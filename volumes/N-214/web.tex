@@ -1,0 +1,118 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Tor函手と平坦性}
+% genron:begin K-001448
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001226
+% genron:use K-001229
+% genron:use K-000535
+% genron:use K-000340
+\begin{prop}[テンソル積の右完全性]
+可換環 $R$ と $R$ 加群 $N$ を固定すると，$-\otimes_R N$ は右完全な加法函手である．
+\end{prop}
+\begin{proof}
+完全列 $A\xrightarrow{f}B\xrightarrow{g}C\to0$ を取る．$g$ の全射性から純テンソルの各元が持ち上がるので $g\otimes1$ は全射である．$D=(B\otimes_R N)/\operatorname{im}(f\otimes1)$ とおく．$C\times N\to D$ を $(g(b),n)\mapsto b\otimes n+\operatorname{im}(f\otimes1)$ により定める．$b$ の変更による差は $f(A)$ に属するので良定義であり，双線形である．普遍性によって $C\otimes_R N\to D$ を得る．自然な逆向きの写像と純テンソル上で合成が恒等となるため同型である．これが完全性を示す．
+\end{proof}
+% genron:end K-001448
+% genron:begin K-001449
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001448
+% genron:use K-001316
+% genron:use K-001317
+\begin{defn}[Tor函手]
+$\operatorname{Tor}_n^R(M,N)$ を $-\otimes_R N$ の第 $n$ 左導来函手の $M$ における値とする．射影分解 $P_\bullet\to M$ を用いれば $\operatorname{Tor}_n^R(M,N)=H_n(P_\bullet\otimes_R N)$ である．
+\end{defn}
+% genron:end K-001449
+% genron:begin K-001450
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001448
+% genron:use K-001254
+\begin{defn}[平坦加群]
+可換環 $R$ 上の加群 $N$ が平坦であるとは，$-\otimes_R N$ が完全であることをいう．右完全性により，任意の単射を単射に移すことと同値である．
+\end{defn}
+% genron:end K-001450
+% genron:begin K-001451
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001449
+% genron:use K-001450
+% genron:use K-001319
+% genron:use K-000536
+\begin{prop}[平坦性のTorによる判定]
+$R$ 加群 $N$ に対し，平坦性，任意の $M$ に対する $\operatorname{Tor}_1^R(M,N)=0$，任意の $M$ と $n>0$ に対する $\operatorname{Tor}_n^R(M,N)=0$ は同値である．
+\end{prop}
+\begin{proof}
+平坦なら射影分解の完全性をテンソル積が保つので正次数のホモロジーは零である．第三条件は第二条件を含む．第二条件を仮定し，任意の短完全列 $0\to A\to B\to C\to0$ に対する長完全列の一部
+\[
+\operatorname{Tor}_1^R(C,N)\to A\otimes_R N\to B\otimes_R N
+\]
+を考える．左端は零なので後の写像は単射である．任意の単射を短完全列の最初の射に取れるから平坦性が従う．
+\end{proof}
+% genron:end K-001451
+% genron:begin K-001452
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001450
+% genron:use K-000581
+% genron:use K-001226
+% genron:use K-001150
+\begin{prop}[自由加群と射影加群の平坦性]
+任意の自由加群及び任意の射影加群は平坦である．
+\end{prop}
+\begin{proof}
+自由加群 $R^{(I)}$ に対して $M\otimes_R R^{(I)}\simeq M^{(I)}$ である．実際，純テンソル $m\otimes(r_i)_i$ を $(r_im)_i$ に移す写像と，有限台の族 $(m_i)_i$ を $\sum_i m_i\otimes e_i$ に移す写像が互いに逆である．直和は成分ごとの写像の単射性を保つので自由加群は平坦である．射影加群は自由加群の直和因子である．テンソル積は二つの直和を保つ（両射影と両包含により互いに逆な写像を構成できる）ので，自由加群について得られる単射を一方の直和因子に制限して単射性を得る．
+\end{proof}
+% genron:end K-001452
+% genron:begin K-001453
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001449
+% genron:use K-001451
+% genron:use K-000444
+% genron:use K-001226
+% genron:use K-001152
+\begin{example}[剰余加群のTor]
+整域 $R$ の非零非単元 $a$ に対し $\operatorname{Tor}_1^R(R/(a),R/(a))\simeq R/(a)$ である．従って $R/(a)$ は平坦でない．
+\end{example}
+\begin{proof}
+整域の簡約律から $0\to R\xrightarrow{a\cdot}R\to R/(a)\to0$ は自由分解である．$R/(a)$ をテンソル積に取ると二つの自由加群の項はいずれも $R/(a)$ と同型であり，間の写像は $a$ 倍，従って零である．次数一のホモロジーは $R/(a)$ であり，非単元の仮定から非零である．平坦性の判定を適用する．
+\end{proof}
+% genron:end K-001453

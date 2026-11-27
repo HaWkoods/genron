@@ -1,0 +1,101 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{Ext函手}
+% genron:begin K-001443
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000402
+% genron:use K-000338
+% genron:use K-000535
+% genron:use K-001254
+\begin{prop}[Hom函手の左完全性]
+環 $R$ と左 $R$ 加群 $M$ を固定する．共変函手 $\operatorname{Hom}_R(M,-)$ はAbel群の圏に値を持つ左完全な加法函手である．
+\end{prop}
+\begin{proof}
+各準同型に対し後合成を取る操作は加法及び合成を保つ．短完全列 $0\to A\xrightarrow{i}B\xrightarrow{q}C\to0$ において，$i$ が単射なら $i\circ f=i\circ g$ から $f=g$ である．また $q\circ f=0$ なら $f$ の値は $\ker q=i(A)$ に入るので $f=i\circ h$ なる準同型 $h:M\to A$ が一意に存在する．これが左完全性である．
+\end{proof}
+% genron:end K-001443
+% genron:begin K-001444
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001443
+% genron:use K-001320
+% genron:use K-000558
+\begin{defn}[Ext函手]
+$\operatorname{Ext}_R^n(M,N)$ を $\operatorname{Hom}_R(M,-)$ の第 $n$ 右導来函手の $N$ における値とする．すなわち $N$ の入射分解 $I^\bullet$ に対し $\operatorname{Ext}_R^n(M,N)=H^n(\operatorname{Hom}_R(M,I^\bullet))$ である．
+\end{defn}
+% genron:end K-001444
+% genron:begin K-001445
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001444
+% genron:use K-001320
+% genron:use K-000548
+% genron:use K-001152
+\begin{prop}[Extの基本性質]
+$\operatorname{Ext}_R^0(M,N)\simeq\operatorname{Hom}_R(M,N)$ である．第二変数の短完全列からExtの長完全列が得られる．$N$ が入射的，又は $M$ が射影的なら $n>0$ に対して $\operatorname{Ext}_R^n(M,N)=0$ である．
+\end{prop}
+\begin{proof}
+最初の二主張は右導来函手の性質である．$N$ が入射的なら $I^0=N,I^n=0$ ($n>0$) と取れる．$M$ が射影的なら任意の全射に沿って $M$ からの写像を持ち上げられるため Hom函手は完全となる．従って入射分解の正次数の完全性は保存され，正次数のコホモロジーは零である．
+\end{proof}
+% genron:end K-001445
+% genron:begin K-001446
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000535
+% genron:use K-000536
+\begin{defn}[拡大の同値]
+加群 $M,N$ の拡大とは短完全列 $0\to N\xrightarrow{i}E\xrightarrow{q}M\to0$ をいう．二つの拡大が同値であるとは，中間加群の同型で両端の恒等写像と可換なものが存在することをいう．
+\end{defn}
+% genron:end K-001446
+% genron:begin K-001447
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001445
+% genron:use K-001446
+% genron:use K-000548
+% genron:use K-000558
+% genron:use K-000340
+% genron:use K-000537
+\begin{prop}[Ext一次と拡大の分類]
+$\operatorname{Ext}_R^1(M,N)$ の元は $M$ の $N$ による拡大の同値類と標準的に一対一に対応し，零元は分裂拡大に対応する．
+\end{prop}
+\begin{proof}
+入射加群 $I$ への埋込み $N\to I$ を取り $Q=I/N$ とおく．長完全列及び $I$ の入射性から
+\[
+\operatorname{Ext}_R^1(M,N)\simeq
+\operatorname{Hom}_R(M,Q)/\operatorname{im}(\operatorname{Hom}_R(M,I)\to\operatorname{Hom}_R(M,Q))
+\]
+を得る．$h:M\to Q$ に対して $E_h=\{(a,m)\in I\oplus M\mid a+N=h(m)\}$ とおくと，$n\mapsto(n,0)$ と $(a,m)\mapsto m$ は短完全列を与える．$h$ に $M\to I$ の像を加えても，第一成分にその写像を加えることで拡大の同型が得られる．
+逆に任意の拡大 $E$ に対して，$I$ の入射性により $N\to I$ を $t:E\to I$ に延長する．$e\mapsto t(e)+N$ は $M$ を経由して $h$ を定める．$e\mapsto(t(e),q(e))$ は $E_h$ への同型である．核が零であることは $N$ 上で $t$ が埋込みであることから従う．任意の $(a,m)$ に対し $q(e)=m$ となる $e$ を選び，$a-t(e)\in N$ によって補正すれば全射性が従う．別の延長との差は $N$ 上で零なので $M\to I$ を経由する．従って上の商類は拡大のみに依存する．これらの操作は互いに逆である．$h$ が $M\to I$ に持ち上がる場合はその持上げによって分裂し，分裂拡大からは同様に商類零を得る．
+\end{proof}
+% genron:end K-001447

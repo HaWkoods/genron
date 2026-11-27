@@ -44584,6 +44584,826 @@
       "status": "draft",
       "source": "volumes/N-143/web.tex",
       "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001439",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "両側Cauchyフィルター",
+      "statement": "位相群 $G$ 上のフィルター $\\mathcal F$ が両側Cauchyであるとは，任意の単位元近傍 $U$ に対し $A\\in\\mathcal F$ が存在し $A^{-1}A\\subseteq U$ かつ $AA^{-1}\\subseteq U$ となることをいう．これは両側一様構造に関するCauchy性である．",
+      "assumptions": [],
+      "position": [
+        193,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000490",
+        "K-000504",
+        "K-000506"
+      ],
+      "status": "draft",
+      "source": "volumes/N-193/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001440",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchyフィルターの積",
+      "statement": "両側Cauchyフィルター $\\mathcal F,\\mathcal G$ に対し，集合積 $AB$ ($A\\in\\mathcal F,B\\in\\mathcal G$) を基とするフィルターは両側Cauchyである．同値なCauchyフィルターに取り替えても積の同値類は変わらない．",
+      "assumptions": [],
+      "position": [
+        193,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001439",
+        "K-000235",
+        "K-000236",
+        "K-001280"
+      ],
+      "status": "draft",
+      "source": "volumes/N-193/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001441",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備化の群構造",
+      "statement": "分離位相群 $G$ の両側一様構造の完備化 $\\widehat G$ は位相群の構造を持ち，標準写像 $j:G\\to\\widehat G$ は稠密な群の埋込みとなる．",
+      "assumptions": [],
+      "position": [
+        193,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001440",
+        "K-000508",
+        "K-001281",
+        "K-001282",
+        "K-001284"
+      ],
+      "status": "draft",
+      "source": "volumes/N-193/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001442",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備群としての普遍性",
+      "statement": "$\\widehat G$ の両側一様構造は完備化の一様構造と一致する．分離完備位相群 $H$ への連続準同型 $f:G\\to H$ は，一意の連続準同型 $\\widehat G\\to H$ に延長される．ここで完備性は両側一様構造についていう．",
+      "assumptions": [],
+      "position": [
+        193,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001441",
+        "K-000507",
+        "K-001281",
+        "K-001283",
+        "K-001284"
+      ],
+      "status": "draft",
+      "source": "volumes/N-193/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001443",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hom函手の左完全性",
+      "statement": "環 $R$ と左 $R$ 加群 $M$ を固定する．共変函手 $\\operatorname{Hom}_R(M,-)$ はAbel群の圏に値を持つ左完全な加法函手である．",
+      "assumptions": [],
+      "position": [
+        213,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000402",
+        "K-000338",
+        "K-000535",
+        "K-001254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-213/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001444",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Ext函手",
+      "statement": "$\\operatorname{Ext}_R^n(M,N)$ を $\\operatorname{Hom}_R(M,-)$ の第 $n$ 右導来函手の $N$ における値とする．すなわち $N$ の入射分解 $I^\\bullet$ に対し $\\operatorname{Ext}_R^n(M,N)=H^n(\\operatorname{Hom}_R(M,I^\\bullet))$ である．",
+      "assumptions": [],
+      "position": [
+        213,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001443",
+        "K-001320",
+        "K-000558"
+      ],
+      "status": "draft",
+      "source": "volumes/N-213/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001445",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Extの基本性質",
+      "statement": "$\\operatorname{Ext}_R^0(M,N)\\simeq\\operatorname{Hom}_R(M,N)$ である．第二変数の短完全列からExtの長完全列が得られる．$N$ が入射的，又は $M$ が射影的なら $n>0$ に対して $\\operatorname{Ext}_R^n(M,N)=0$ である．",
+      "assumptions": [],
+      "position": [
+        213,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001444",
+        "K-001320",
+        "K-000548",
+        "K-001152"
+      ],
+      "status": "draft",
+      "source": "volumes/N-213/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001446",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "拡大の同値",
+      "statement": "加群 $M,N$ の拡大とは短完全列 $0\\to N\\xrightarrow{i}E\\xrightarrow{q}M\\to0$ をいう．二つの拡大が同値であるとは，中間加群の同型で両端の恒等写像と可換なものが存在することをいう．",
+      "assumptions": [],
+      "position": [
+        213,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000535",
+        "K-000536"
+      ],
+      "status": "draft",
+      "source": "volumes/N-213/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001447",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Ext一次と拡大の分類",
+      "statement": "$\\operatorname{Ext}_R^1(M,N)$ の元は $M$ の $N$ による拡大の同値類と標準的に一対一に対応し，零元は分裂拡大に対応する．",
+      "assumptions": [],
+      "position": [
+        213,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001445",
+        "K-001446",
+        "K-000548",
+        "K-000558",
+        "K-000340",
+        "K-000537"
+      ],
+      "status": "draft",
+      "source": "volumes/N-213/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001448",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積の右完全性",
+      "statement": "可換環 $R$ と $R$ 加群 $N$ を固定すると，$-\\otimes_R N$ は右完全な加法函手である．",
+      "assumptions": [],
+      "position": [
+        214,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001226",
+        "K-001229",
+        "K-000535",
+        "K-000340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-214/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001449",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Tor函手",
+      "statement": "$\\operatorname{Tor}_n^R(M,N)$ を $-\\otimes_R N$ の第 $n$ 左導来函手の $M$ における値とする．射影分解 $P_\\bullet\\to M$ を用いれば $\\operatorname{Tor}_n^R(M,N)=H_n(P_\\bullet\\otimes_R N)$ である．",
+      "assumptions": [],
+      "position": [
+        214,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001448",
+        "K-001316",
+        "K-001317"
+      ],
+      "status": "draft",
+      "source": "volumes/N-214/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001450",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "平坦加群",
+      "statement": "可換環 $R$ 上の加群 $N$ が平坦であるとは，$-\\otimes_R N$ が完全であることをいう．右完全性により，任意の単射を単射に移すことと同値である．",
+      "assumptions": [],
+      "position": [
+        214,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001448",
+        "K-001254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-214/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001451",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "平坦性のTorによる判定",
+      "statement": "$R$ 加群 $N$ に対し，平坦性，任意の $M$ に対する $\\operatorname{Tor}_1^R(M,N)=0$，任意の $M$ と $n>0$ に対する $\\operatorname{Tor}_n^R(M,N)=0$ は同値である．",
+      "assumptions": [],
+      "position": [
+        214,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001449",
+        "K-001450",
+        "K-001319",
+        "K-000536"
+      ],
+      "status": "draft",
+      "source": "volumes/N-214/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001452",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由加群と射影加群の平坦性",
+      "statement": "任意の自由加群及び任意の射影加群は平坦である．",
+      "assumptions": [],
+      "position": [
+        214,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001450",
+        "K-000581",
+        "K-001226",
+        "K-001150"
+      ],
+      "status": "draft",
+      "source": "volumes/N-214/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001453",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "剰余加群のTor",
+      "statement": "整域 $R$ の非零非単元 $a$ に対し $\\operatorname{Tor}_1^R(R/(a),R/(a))\\simeq R/(a)$ である．従って $R/(a)$ は平坦でない．",
+      "assumptions": [],
+      "position": [
+        214,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001449",
+        "K-001451",
+        "K-000444",
+        "K-001226",
+        "K-001152"
+      ],
+      "status": "draft",
+      "source": "volumes/N-214/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001454",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所環準同型",
+      "statement": "単位元を持つ可換局所環 $(A,\\mathfrak m_A),(B,\\mathfrak m_B)$ の準同型 $\\varphi:A\\to B$ が局所準同型であるとは，$\\varphi^{-1}(\\mathfrak m_B)=\\mathfrak m_A$ となることをいう．",
+      "assumptions": [],
+      "position": [
+        252,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001137",
+        "K-000251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-252/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001455",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所準同型の判定",
+      "statement": "局所環の準同型 $\\varphi:A\\to B$ が局所準同型であることは，$\\varphi(\\mathfrak m_A)\\subseteq\\mathfrak m_B$ と同値である．またそれは非単元を非単元に移すことと同値である．",
+      "assumptions": [],
+      "position": [
+        252,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001454",
+        "K-001138"
+      ],
+      "status": "draft",
+      "source": "volumes/N-252/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001456",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "剰余体への誘導写像",
+      "statement": "局所準同型 $\\varphi:(A,\\mathfrak m_A)\\to(B,\\mathfrak m_B)$ は剰余体の埋込み $A/\\mathfrak m_A\\to B/\\mathfrak m_B$ を誘導する．局所準同型の合成は局所準同型である．",
+      "assumptions": [],
+      "position": [
+        252,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001455",
+        "K-000331",
+        "K-000447"
+      ],
+      "status": "draft",
+      "source": "volumes/N-252/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001457",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所環付き空間",
+      "statement": "環付き空間 $(X,\\mathcal O_X)$ で各点 $x$ の茎 $\\mathcal O_{X,x}$ が可換局所環であるものを局所環付き空間という．その極大イデアルを $\\mathfrak m_x$，剰余体を $\\kappa(x)=\\mathcal O_{X,x}/\\mathfrak m_x$ と書く．射は環付き空間の射で，各茎で誘導される準同型が局所準同型となるものとする．",
+      "assumptions": [],
+      "position": [
+        252,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001454",
+        "K-001371",
+        "K-001372",
+        "K-001368"
+      ],
+      "status": "draft",
+      "source": "volumes/N-252/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001458",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所環付き空間の射と剰余体",
+      "statement": "局所環付き空間の射 $f:(X,\\mathcal O_X)\\to(Y,\\mathcal O_Y)$ と点 $x\\in X$ に対し，標準的な体の埋込み $\\kappa(f(x))\\to\\kappa(x)$ が存在する．この埋込みは射の合成と可換である．",
+      "assumptions": [],
+      "position": [
+        252,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001456",
+        "K-001457",
+        "K-001373"
+      ],
+      "status": "draft",
+      "source": "volumes/N-252/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001459",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "局所環の一点空間",
+      "statement": "局所環 $A$ を一点空間の唯一の非空開集合上の切断とする層を置けば局所環付き空間となる．このような一点空間の間の射は，向きを逆にした局所環準同型と対応する．",
+      "assumptions": [],
+      "position": [
+        252,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001457",
+        "K-001367",
+        "K-001372"
+      ],
+      "status": "draft",
+      "source": "volumes/N-252/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001460",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "木の葉の存在",
+      "statement": "二頂点以上を持つ有限木には次数一の頂点が少なくとも二つ存在する．ここで頂点の次数はそれに隣接する頂点の個数である．",
+      "assumptions": [],
+      "position": [
+        269,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001337",
+        "K-001338",
+        "K-001341"
+      ],
+      "status": "draft",
+      "source": "volumes/N-269/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001461",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限木の辺数",
+      "statement": "有限木の頂点数を $n$，辺数を $m$ とすると $m=n-1$ である．",
+      "assumptions": [],
+      "position": [
+        269,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001460",
+        "K-001342"
+      ],
+      "status": "draft",
+      "source": "volumes/N-269/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001462",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "全域木",
+      "statement": "グラフ $G=(V,E)$ の部分グラフ $(V,T)$ ($T\\subseteq E$) が木となるとき，これを $G$ の全域木という．",
+      "assumptions": [],
+      "position": [
+        269,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001337",
+        "K-001341"
+      ],
+      "status": "draft",
+      "source": "volumes/N-269/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001463",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全域木の存在",
+      "statement": "任意の非空有限連結グラフは全域木を持つ．",
+      "assumptions": [],
+      "position": [
+        269,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001462",
+        "K-001338",
+        "K-001339",
+        "K-001340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-269/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001464",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限木の特徴付け",
+      "statement": "頂点数 $n\\geq1$ の有限単純グラフについて，木であること，連結で辺数が $n-1$ であること，閉路を持たず辺数が $n-1$ であることは同値である．",
+      "assumptions": [],
+      "position": [
+        269,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001461",
+        "K-001463",
+        "K-001340"
+      ],
+      "status": "draft",
+      "source": "volumes/N-269/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001465",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "木の辺の削除と追加",
+      "statement": "木から一辺を除くと連結成分はちょうど二つとなる．木の相異なる非隣接頂点を一辺で結ぶと閉路がちょうど一つ生じる．",
+      "assumptions": [],
+      "position": [
+        269,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001341",
+        "K-001342"
+      ],
+      "status": "draft",
+      "source": "volumes/N-269/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -47731,7 +48551,7 @@
       "number": 193,
       "title": "位相群の完備化",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         192,
         94
@@ -47740,7 +48560,8 @@
         "群演算の延長・分離完備化"
       ],
       "treatise": "T-27",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 194,
@@ -48055,7 +48876,7 @@
       "number": 213,
       "title": "Ext函手",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         212,
         17
@@ -48064,13 +48885,14 @@
         "Ext・拡大の分類"
       ],
       "treatise": "T-30",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 214,
       "title": "Tor函手と平坦性",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         212,
         111
@@ -48079,7 +48901,8 @@
         "Tor・平坦加群・完全性"
       ],
       "treatise": "T-30",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 215,
@@ -48654,7 +49477,7 @@
       "number": 252,
       "title": "局所環付き空間",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         351,
         138
@@ -48663,7 +49486,8 @@
         "局所準同型・局所環付き空間の射"
       ],
       "treatise": "T-36",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 253,
@@ -48920,7 +49744,7 @@
       "number": 269,
       "title": "木と全域木",
       "area": "離散",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         268
       ],
@@ -48928,7 +49752,8 @@
         "木の特徴・全域木"
       ],
       "treatise": "T-38",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 270,

@@ -1,0 +1,111 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{木と全域木}
+% genron:begin K-001460
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001337
+% genron:use K-001338
+% genron:use K-001341
+\begin{prop}[木の葉の存在]
+二頂点以上を持つ有限木には次数一の頂点が少なくとも二つ存在する．ここで頂点の次数はそれに隣接する頂点の個数である．
+\end{prop}
+\begin{proof}
+有限木の道の中で長さが最大のもの $(v_0,\ldots,v_n)$ を取る．端点 $v_0$ の隣接頂点が $v_1$ 以外にもあれば，道の外にある場合は道を延長できる．道の中にある場合は当該辺と道の始部分とで閉路を作る．いずれも矛盾である．従って $v_0$ の次数は一である．$v_n$ についても同様である．
+\end{proof}
+% genron:end K-001460
+% genron:begin K-001461
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001460
+% genron:use K-001342
+\begin{prop}[有限木の辺数]
+有限木の頂点数を $n$，辺数を $m$ とすると $m=n-1$ である．
+\end{prop}
+\begin{proof}
+$n=1$ では辺は存在しない．$n\geq2$ のとき前命題により次数一の頂点を取って，それと唯一の接続辺を除去する．残ったグラフには閉路がなく，残った二頂点間の元の道が除去した頂点を内部に含むことはできないので連結性も保たれる．従って残りは木であり，帰納法から $m-1=(n-1)-1$ となる．
+\end{proof}
+% genron:end K-001461
+% genron:begin K-001462
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001337
+% genron:use K-001341
+\begin{defn}[全域木]
+グラフ $G=(V,E)$ の部分グラフ $(V,T)$ ($T\subseteq E$) が木となるとき，これを $G$ の全域木という．
+\end{defn}
+% genron:end K-001462
+% genron:begin K-001463
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001462
+% genron:use K-001338
+% genron:use K-001339
+% genron:use K-001340
+\begin{prop}[全域木の存在]
+任意の非空有限連結グラフは全域木を持つ．
+\end{prop}
+\begin{proof}
+全頂点を持つ連結部分グラフの中で辺数が最小のものを取る．もし閉路が存在すればその閉路の一辺を除去する．除去した辺の両端は閉路の残りの辺で結ばれるので，元の任意の歩道におけるその辺をこの歩道で置き換えられる．従って除去後も連結であり極小性に反する．よってこの部分グラフは木である．
+\end{proof}
+% genron:end K-001463
+% genron:begin K-001464
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001461
+% genron:use K-001463
+% genron:use K-001340
+\begin{prop}[有限木の特徴付け]
+頂点数 $n\geq1$ の有限単純グラフについて，木であること，連結で辺数が $n-1$ であること，閉路を持たず辺数が $n-1$ であることは同値である．
+\end{prop}
+\begin{proof}
+木なら辺数の公式が成立する．連結なら全域木を含み，その辺数は $n-1$ である．元のグラフも同じ辺数なら全域木と一致する．閉路を持たない場合，各連結成分は木である．連結成分の個数を $c$ とすれば各成分の辺数の公式を加えることで総辺数は $n-c$ となる．従って辺数が $n-1$ なら $c=1$ であり木となる．
+\end{proof}
+% genron:end K-001464
+% genron:begin K-001465
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001341
+% genron:use K-001342
+\begin{prop}[木の辺の削除と追加]
+木から一辺を除くと連結成分はちょうど二つとなる．木の相異なる非隣接頂点を一辺で結ぶと閉路がちょうど一つ生じる．
+\end{prop}
+\begin{proof}
+削除した辺の両端が除去後も連結なら，元の木でその辺以外の道が存在することになり道の一意性に反する．任意の頂点から一方の端点への道を考えると，その辺を含むか否かによっていずれかの端点と除去後も連結である．従って成分はちょうど二つである．追加した辺を含まない閉路は元の木に存在しない．追加した辺を含む閉路は，元の木における両端点間の道とその辺からなり，その道は一意である．
+\end{proof}
+% genron:end K-001465
