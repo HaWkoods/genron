@@ -1,0 +1,101 @@
+% Web専用原稿．独立査読・正式CLI検証未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 6.1 の作用素ノルムの定義を照合．
+\section{有界線形作用素の空間}
+% genron:begin K-000852
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000792
+% genron:use K-000788
+% genron:use K-000708
+\begin{defn}[作用素ノルム]
+$E,F$ を同じ実数体または複素数体上のノルム空間とする．有界線形写像全体を $\mathcal L(E,F)$ と記し，$T\in\mathcal L(E,F)$ に対し $\|T\|=\sup_{\|x\|\leq1}\|Tx\|$ を作用素ノルムという．
+\end{defn}
+% genron:end K-000852
+% genron:begin K-000853
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000792
+% genron:use K-000852
+\begin{prop}[作用素ノルムの評価]
+$\|T\|$ は $\|Tx\|\leq C\|x\|$ を全ての $x\in E$ について満たす非負定数 $C$ の最小値である．
+\end{prop}
+\begin{proof}
+有界性によって上限は有限である．$x\ne0$ なら $x/\|x\|$ が閉単位球に属するから $\|Tx\|\leq\|T\|\|x\|$ である．$x=0$ でも成立する．逆に条件を満たす $C$ に対し閉単位球上で $\|Tx\|\leq C$ だから上限も $C$ 以下である．零空間の場合も定義は零を与える．
+\end{proof}
+% genron:end K-000853
+% genron:begin K-000854
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000561
+% genron:use K-000852
+% genron:use K-000853
+\begin{prop}[有界線形写像のノルム空間]
+$\mathcal L(E,F)$ は各点での加法・スカラー倍と作用素ノルムに関してノルム空間である．また $S\in\mathcal L(F,G)$ と $T\in\mathcal L(E,F)$ について $\|ST\|\leq\|S\|\|T\|$ が成立する．
+\end{prop}
+\begin{proof}
+各点で演算を定めれば線形写像の和とスカラー倍は線形である．前命題の評価と $F$ の三角不等式から $\|(T+U)x\|\leq(\|T\|+\|U\|)\|x\|$ であり，有界性とノルムの三角不等式が従う．斉次性は上限の定義から従い，$\|T\|=0$ なら全ての $x$ に $Tx=0$ である．合成について $\|STx\|\leq\|S\|\|Tx\|\leq\|S\|\|T\|\|x\|$ を用いる．
+\end{proof}
+% genron:end K-000854
+% genron:begin K-000855
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000790
+% genron:use K-000794
+% genron:use K-000738
+% genron:use K-000789
+% genron:use K-000853
+% genron:use K-000854
+\begin{prop}[有界線形作用素空間の完備性]
+$F$ が Banach空間ならば，$E$ が完備であるか否かによらず $\mathcal L(E,F)$ は Banach空間である．
+\end{prop}
+\begin{proof}
+$(T_n)$ を作用素ノルムに関する Cauchy列とする．各 $x\in E$ に対し $\|T_nx-T_mx\|\leq\|T_n-T_m\|\|x\|$ であるから，$F$ の完備性により $Tx=\lim_n T_nx$ が存在する．極限と線形演算の整合性から $T$ は線形である．任意の $\varepsilon>0$ に対し，ある $N$ が存在して $m,n\geq N$ のとき $\|T_n-T_m\|<\varepsilon$ となる．各 $x$ を固定し $m\to\infty$ とすればノルムの連続性より $\|(T_n-T)x\|\leq\varepsilon\|x\|$ である．従って $T-T_N$ は有界であり $T$ も有界である．さらに $n\geq N$ のとき $\|T_n-T\|\leq\varepsilon$ なので作用素ノルム収束を得る．
+\end{proof}
+% genron:end K-000855
+% genron:begin K-000856
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000100
+% genron:use K-000706
+% genron:use K-000794
+% genron:use K-000854
+% genron:use K-000855
+\begin{prop}[作用素ノルムによる逆写像の存在]
+$E$ が Banach空間で $A\in\mathcal L(E,E)$，$\|A\|<1$ ならば $I-A$ は有界な逆写像を持ち，そのノルムは $(1-\|A\|)^{-1}$ 以下である．
+\end{prop}
+\begin{proof}
+$q=\|A\|<1$ とする．$S_n=\sum_{k=0}^n A^k$ とおけば合成の評価により $m>n$ に対し $\|S_m-S_n\|\leq\sum_{k=n+1}^m q^k\leq q^{n+1}/(1-q)$ である．$0<q<1$ なら $q^{-1}=1+h$，$h>0$ とおき帰納法で $(1+h)^n\geq1+nh$ を得るから $q^n\to0$ である．$q=0$ の場合も成立する．従って完備性によって $S_n\to S$ となる．$(I-A)S_n=S_n(I-A)=I-A^{n+1}$ の両辺の極限を取り，合成の評価を用いれば $(I-A)S=S(I-A)=I$ を得る．また $\|S_n\|\leq1/(1-q)$ なので極限でもこの評価が成立する．
+\end{proof}
+% genron:end K-000856

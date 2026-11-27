@@ -1,0 +1,107 @@
+% Web専用原稿．独立査読・正式CLI検証未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, Springer 2020, 1.3.2 の定義を照合．延長の論証は独自に記述．
+\section{一様連続写像と延長}
+% genron:begin K-000842
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000736
+\begin{defn}[距離空間の一様連続写像]
+距離空間 $(X,d_X),(Y,d_Y)$ の間の写像 $f:X\to Y$ が一様連続であるとは，任意の $\varepsilon>0$ に対して $\delta>0$ が存在し，任意の $x,x'\in X$ について $d_X(x,x')<\delta$ ならば $d_Y(f(x),f(x'))<\varepsilon$ となることをいう．
+\end{defn}
+% genron:end K-000842
+% genron:begin K-000843
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000736
+% genron:use K-000738
+% genron:use K-000730
+% genron:use K-000842
+\begin{prop}[一様連続性の基本性質]
+一様連続写像は連続であり，Cauchy列を Cauchy列に移す．一様連続写像の合成および部分空間への制限は一様連続である．
+\end{prop}
+\begin{proof}
+一様連続性の $\delta$ を任意の一点における連続性に用いればよい．Cauchy列 $(x_n)$ に対しては，十分大きい $m,n$ で $d_X(x_m,x_n)<\delta$ となるから像の列も Cauchy列である．合成については後の写像の $\varepsilon$ に対応する正数を先の写像の許容誤差に取り，制限については同じ $\delta$ を用いればよい．
+\end{proof}
+% genron:end K-000843
+% genron:begin K-000844
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000800
+% genron:use K-000731
+% genron:use K-000737
+% genron:use K-000706
+% genron:use K-000060
+% genron:use K-000842
+\begin{prop}[Heine–Cantorの定理]
+コンパクト距離空間 $X$ から距離空間 $Y$ への連続写像は一様連続である．
+\end{prop}
+\begin{proof}
+一様連続でないと仮定すると，ある $\varepsilon>0$ について各 $n\geq1$ に $d_X(x_n,y_n)<1/n$ かつ $d_Y(f(x_n),f(y_n))\geq\varepsilon$ となる点対が存在する．選択公理によりこれらを選ぶ．コンパクト性から $(x_n)$ の収束部分列 $(x_{n_k})$ があり，極限を $x$ とすると三角不等式から $y_{n_k}\to x$ である．連続性により両像列は $f(x)$ に収束し，その距離は零に収束する．矛盾である．
+\end{proof}
+% genron:end K-000844
+% genron:begin K-000845
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000060
+% genron:use K-000706
+% genron:use K-000735
+% genron:use K-000738
+% genron:use K-000739
+% genron:use K-000769
+% genron:use K-000733
+% genron:use K-000737
+% genron:use K-000842
+% genron:use K-000843
+\begin{prop}[稠密部分空間からの一様連続延長]
+$A$ を距離空間 $X$ の稠密部分集合，$Y$ を完備距離空間とする．任意の一様連続写像 $f:A\to Y$ はただ一つの一様連続写像 $F:X\to Y$ に延長される．
+\end{prop}
+\begin{proof}
+$X$ が空なら結論は自明である．各 $x\in X$ に対し $a_n\in A$，$d_X(a_n,x)<1/n$ となる列を選ぶ．これは Cauchy列なので $(f(a_n))$ は $Y$ で収束する．その極限を $F(x)$ とする．別の選択 $(b_n)$ について $d_X(a_n,b_n)\to0$ であるから一様連続性により $d_Y(f(a_n),f(b_n))\to0$ となり，極限は一致する．$x\in A$ では定数列を用いれば $F(x)=f(x)$ である．
+$\varepsilon>0$ に対し，像の距離を $\varepsilon/3$ 未満にする一様連続性の $\delta>0$ を取る．$d_X(x,y)<\delta/3$ のとき，$x,y$ に収束する $A$ 内の列を用い，十分大きい添字で対応する点間の距離を $\delta$ 未満，それぞれの像とその極限の距離を $\varepsilon/3$ 未満にできる．三角不等式で $d_Y(F(x),F(y))<\varepsilon$ を得る．連続な延長は稠密集合上からの列に沿う極限によって決まるから一意である．
+\end{proof}
+% genron:end K-000845
+% genron:begin K-000846
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000644
+% genron:use K-000706
+% genron:use K-000736
+% genron:use K-000842
+\begin{example}[連続だが一様連続でない函数]
+通常の距離を入れた $\mathbb R$ 上の $f(x)=x^2$ は連続であるが一様連続ではない．
+\end{example}
+\begin{proof}
+$|x^2-y^2|=|x-y||x+y|$ より各点で連続である．一方 $x_n=n$，$y_n=n+1/n$ とすると $|x_n-y_n|=1/n$ であるが $|x_n^2-y_n^2|=2+1/n^2\geq2$ であり，一様連続性に反する．
+\end{proof}
+% genron:end K-000846

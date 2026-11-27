@@ -25951,6 +25951,821 @@
       "status": "draft",
       "source": "volumes/N-175/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000837",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "消去多項式",
+      "statement": "体 $K$ 上の有限次元線形空間 $V$ と線形自己写像 $T$ に対し，$p(T)=0$ となる $p\\in K[t]$ を $T$ の消去多項式という．ここで $p(t)=\\sum_{i=0}^m a_it^i$ に対し $p(T)=\\sum_{i=0}^m a_i T^i$ とし，$T^0=\\operatorname{id}_V$ とする．",
+      "assumptions": [],
+      "position": [
+        101,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000350",
+        "K-000351",
+        "K-000561",
+        "K-000658"
+      ],
+      "status": "draft",
+      "source": "volumes/N-101/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000838",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式の自己写像への代入",
+      "statement": "写像 $K[t]\\to\\operatorname{End}_K(V)$，$p\\mapsto p(T)$ は単位元を保つ環準同型であり，消去多項式全体は $K[t]$ のイデアルである．",
+      "assumptions": [],
+      "position": [
+        101,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000350",
+        "K-000351",
+        "K-000561",
+        "K-000658",
+        "K-000837"
+      ],
+      "status": "draft",
+      "source": "volumes/N-101/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000839",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cayley–Hamiltonの定理",
+      "statement": "有限次元線形空間 $V$ の線形自己写像 $T$ の特性多項式を $\\chi_T$ とすれば $\\chi_T(T)=0$ である．",
+      "assumptions": [],
+      "position": [
+        101,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000687",
+        "K-000688",
+        "K-000701",
+        "K-000660",
+        "K-000661",
+        "K-000837",
+        "K-000838"
+      ],
+      "status": "draft",
+      "source": "volumes/N-101/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000840",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "最小多項式",
+      "statement": "消去多項式のイデアルはただ一つのモニック多項式 $m_T$ によって生成される．これを最小多項式といい，$m_T$ は $\\chi_T$ を割る．",
+      "assumptions": [],
+      "position": [
+        101,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000354",
+        "K-000355",
+        "K-000838",
+        "K-000839",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-101/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000841",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "最小多項式と固有値",
+      "statement": "$\\lambda\\in K$ が $T$ の固有値であるための必要十分条件は $m_T(\\lambda)=0$ である．",
+      "assumptions": [],
+      "position": [
+        101,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000700",
+        "K-000354",
+        "K-000840"
+      ],
+      "status": "draft",
+      "source": "volumes/N-101/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000842",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "距離空間の一様連続写像",
+      "statement": "距離空間 $(X,d_X),(Y,d_Y)$ の間の写像 $f:X\\to Y$ が一様連続であるとは，任意の $\\varepsilon>0$ に対して $\\delta>0$ が存在し，任意の $x,x'\\in X$ について $d_X(x,x')<\\delta$ ならば $d_Y(f(x),f(x'))<\\varepsilon$ となることをいう．",
+      "assumptions": [],
+      "position": [
+        88,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-88/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000843",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様連続性の基本性質",
+      "statement": "一様連続写像は連続であり，Cauchy列を Cauchy列に移す．一様連続写像の合成および部分空間への制限は一様連続である．",
+      "assumptions": [],
+      "position": [
+        88,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000736",
+        "K-000738",
+        "K-000730",
+        "K-000842"
+      ],
+      "status": "draft",
+      "source": "volumes/N-88/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000844",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Heine–Cantorの定理",
+      "statement": "コンパクト距離空間 $X$ から距離空間 $Y$ への連続写像は一様連続である．",
+      "assumptions": [],
+      "position": [
+        88,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000800",
+        "K-000731",
+        "K-000737",
+        "K-000706",
+        "K-000060",
+        "K-000842"
+      ],
+      "status": "draft",
+      "source": "volumes/N-88/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000845",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "稠密部分空間からの一様連続延長",
+      "statement": "$A$ を距離空間 $X$ の稠密部分集合，$Y$ を完備距離空間とする．任意の一様連続写像 $f:A\\to Y$ はただ一つの一様連続写像 $F:X\\to Y$ に延長される．",
+      "assumptions": [],
+      "position": [
+        88,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000060",
+        "K-000706",
+        "K-000735",
+        "K-000738",
+        "K-000739",
+        "K-000769",
+        "K-000733",
+        "K-000737",
+        "K-000842",
+        "K-000843"
+      ],
+      "status": "draft",
+      "source": "volumes/N-88/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000846",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "連続だが一様連続でない函数",
+      "statement": "通常の距離を入れた $\\mathbb R$ 上の $f(x)=x^2$ は連続であるが一様連続ではない．",
+      "assumptions": [],
+      "position": [
+        88,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000644",
+        "K-000706",
+        "K-000736",
+        "K-000842"
+      ],
+      "status": "draft",
+      "source": "volumes/N-88/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000847",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元ノルム空間の座標評価",
+      "statement": "$K=\\mathbb R$ または $\\mathbb C$ とし，$V$ を正の有限次元を持つ $K$ 上のノルム空間とする．基底 $(e_1,\\ldots,e_n)$ に対し正数 $c,C$ が存在し，任意の $a=(a_1,\\ldots,a_n)\\in K^n$ について $c\\max_i|a_i|\\leq\\|\\sum_i a_ie_i\\|\\leq C\\max_i|a_i|$ が成り立つ．",
+      "assumptions": [],
+      "position": [
+        153,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000600",
+        "K-000565",
+        "K-000788",
+        "K-000791",
+        "K-000795",
+        "K-000771",
+        "K-000802",
+        "K-000375",
+        "K-000376",
+        "K-000377",
+        "K-000708",
+        "K-000644",
+        "K-000719",
+        "K-000720",
+        "K-000706",
+        "K-000119"
+      ],
+      "status": "draft",
+      "source": "volumes/N-153/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000848",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元空間上のノルムの同値性",
+      "statement": "実数体または複素数体上の有限次元線形空間の任意の二つのノルム $\\|\\cdot\\|_1,\\|\\cdot\\|_2$ に対し，ある正数 $a,b$ が存在して $a\\|x\\|_1\\leq\\|x\\|_2\\leq b\\|x\\|_1$ がすべての $x$ について成立する．従って両ノルムは同じ位相と同じ Cauchy列を定める．",
+      "assumptions": [],
+      "position": [
+        153,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000738",
+        "K-000726",
+        "K-000847"
+      ],
+      "status": "draft",
+      "source": "volumes/N-153/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000849",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元ノルム空間の完備性",
+      "statement": "実数体または複素数体上の有限次元ノルム空間は Banach空間である．",
+      "assumptions": [],
+      "position": [
+        153,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000795",
+        "K-000794",
+        "K-000738",
+        "K-000847"
+      ],
+      "status": "draft",
+      "source": "volumes/N-153/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000850",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元ノルム空間のコンパクト集合",
+      "statement": "有限次元実または複素ノルム空間の部分集合がコンパクトであるための必要十分条件は，閉かつ有界であることである．",
+      "assumptions": [],
+      "position": [
+        153,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000377",
+        "K-000372",
+        "K-000706",
+        "K-000771",
+        "K-000802",
+        "K-000847",
+        "K-000849"
+      ],
+      "status": "draft",
+      "source": "volumes/N-153/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000851",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元部分空間の閉性",
+      "statement": "任意の実または複素ノルム空間の有限次元部分空間は閉である．",
+      "assumptions": [],
+      "position": [
+        153,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000735",
+        "K-000739",
+        "K-000733",
+        "K-000849"
+      ],
+      "status": "draft",
+      "source": "volumes/N-153/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000852",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "作用素ノルム",
+      "statement": "$E,F$ を同じ実数体または複素数体上のノルム空間とする．有界線形写像全体を $\\mathcal L(E,F)$ と記し，$T\\in\\mathcal L(E,F)$ に対し $\\|T\\|=\\sup_{\\|x\\|\\leq1}\\|Tx\\|$ を作用素ノルムという．",
+      "assumptions": [],
+      "position": [
+        154,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000792",
+        "K-000788",
+        "K-000708"
+      ],
+      "status": "draft",
+      "source": "volumes/N-154/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000853",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "作用素ノルムの評価",
+      "statement": "$\\|T\\|$ は $\\|Tx\\|\\leq C\\|x\\|$ を全ての $x\\in E$ について満たす非負定数 $C$ の最小値である．",
+      "assumptions": [],
+      "position": [
+        154,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000792",
+        "K-000852"
+      ],
+      "status": "draft",
+      "source": "volumes/N-154/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000854",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界線形写像のノルム空間",
+      "statement": "$\\mathcal L(E,F)$ は各点での加法・スカラー倍と作用素ノルムに関してノルム空間である．また $S\\in\\mathcal L(F,G)$ と $T\\in\\mathcal L(E,F)$ について $\\|ST\\|\\leq\\|S\\|\\|T\\|$ が成立する．",
+      "assumptions": [],
+      "position": [
+        154,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000788",
+        "K-000561",
+        "K-000852",
+        "K-000853"
+      ],
+      "status": "draft",
+      "source": "volumes/N-154/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000855",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界線形作用素空間の完備性",
+      "statement": "$F$ が Banach空間ならば，$E$ が完備であるか否かによらず $\\mathcal L(E,F)$ は Banach空間である．",
+      "assumptions": [],
+      "position": [
+        154,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000790",
+        "K-000794",
+        "K-000738",
+        "K-000789",
+        "K-000853",
+        "K-000854"
+      ],
+      "status": "draft",
+      "source": "volumes/N-154/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000856",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "作用素ノルムによる逆写像の存在",
+      "statement": "$E$ が Banach空間で $A\\in\\mathcal L(E,E)$，$\\|A\\|<1$ ならば $I-A$ は有界な逆写像を持ち，そのノルムは $(1-\\|A\\|)^{-1}$ 以下である．",
+      "assumptions": [],
+      "position": [
+        154,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000100",
+        "K-000706",
+        "K-000794",
+        "K-000854",
+        "K-000855"
+      ],
+      "status": "draft",
+      "source": "volumes/N-154/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000857",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Fatouの補題",
+      "statement": "測度空間 $(X,\\mathcal A,\\mu)$ 上の非負拡大実数値可測函数列 $(f_n)$ に対し，$\\int_X\\liminf_n f_n\\,d\\mu\\leq\\liminf_n\\int_X f_n\\,d\\mu$ が成り立つ．",
+      "assumptions": [],
+      "position": [
+        168,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000759",
+        "K-000783",
+        "K-000784",
+        "K-000715"
+      ],
+      "status": "draft",
+      "source": "volumes/N-168/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000858",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Lebesgueの優収束定理",
+      "statement": "測度空間上の実または複素数値可測函数列 $(f_n)$ がほとんど至る所可測函数 $f$ に収束し，非負可積分函数 $g$ が存在して各 $n$ について $|f_n|\\leq g$ がほとんど至る所成立するとする．このとき $f_n,f$ は可積分であり，$\\int |f_n-f|\\,d\\mu\\to0$，従って $\\int f_n\\,d\\mu\\to\\int f\\,d\\mu$ である．",
+      "assumptions": [],
+      "position": [
+        168,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000749",
+        "K-000758",
+        "K-000759",
+        "K-000783",
+        "K-000785",
+        "K-000824",
+        "K-000825",
+        "K-000826",
+        "K-000828",
+        "K-000829",
+        "K-000830",
+        "K-000831",
+        "K-000857"
+      ],
+      "status": "draft",
+      "source": "volumes/N-168/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000859",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限測度空間の有界収束定理",
+      "statement": "$\\mu(X)<\\infty$ とする．可測函数列 $(f_n)$ がほとんど至る所 $f$ に収束し，ある有限定数 $M\\geq0$ によって各 $n$ について $|f_n|\\leq M$ がほとんど至る所成立するならば $\\int|f_n-f|\\,d\\mu\\to0$ である．ここで $f$ は可測な実または複素数値函数とする．",
+      "assumptions": [],
+      "position": [
+        168,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000781",
+        "K-000826",
+        "K-000858"
+      ],
+      "status": "draft",
+      "source": "volumes/N-168/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000860",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "絶対可積分な級数の項別積分",
+      "statement": "可積分函数列 $(f_n)$ が $\\sum_{n=1}^\\infty\\int|f_n|\\,d\\mu<\\infty$ を満たすなら，$\\sum_n f_n$ はほとんど至る所絶対収束する．その和を零集合上で零と定めた可測函数 $f$ は可積分であり，$\\int f\\,d\\mu=\\sum_n\\int f_n\\,d\\mu$ が成立する．",
+      "assumptions": [],
+      "position": [
+        168,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000759",
+        "K-000787",
+        "K-000831",
+        "K-000769",
+        "K-000770",
+        "K-000720",
+        "K-000828",
+        "K-000830",
+        "K-000858"
+      ],
+      "status": "draft",
+      "source": "volumes/N-168/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000861",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "優函数が存在しない場合の積分と極限",
+      "statement": "自然数の集合に数え上げ測度を入れ，$f_n(k)=1$ （$k=n$ のとき），$f_n(k)=0$ （$k\\ne n$ のとき）とする．このとき $f_n\\to0$ は各点で成立するが $\\int f_n=1$ である．",
+      "assumptions": [],
+      "position": [
+        168,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000750",
+        "K-000781",
+        "K-000783",
+        "K-000858"
+      ],
+      "status": "draft",
+      "source": "volumes/N-168/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・正式CLI検証未了．文献照合範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -27319,7 +28134,7 @@
       "number": 88,
       "title": "一様連続性",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         84,
         87
@@ -27328,7 +28143,8 @@
         "一様連続・連続延長・コンパクト性"
       ],
       "treatise": "T-13",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 89,
@@ -27519,7 +28335,7 @@
       "number": 101,
       "title": "Cayley–Hamiltonの定理",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         99,
         100
@@ -27528,7 +28344,8 @@
         "消去多項式・最小多項式"
       ],
       "treatise": "T-15",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 102,
@@ -28307,7 +29124,7 @@
       "number": 153,
       "title": "有限次元ノルム空間",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         23,
         96,
@@ -28317,13 +29134,14 @@
         "ノルムの同値・コンパクト性"
       ],
       "treatise": "T-23",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 154,
       "title": "線形作用素のノルム",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         23
       ],
@@ -28331,7 +29149,8 @@
         "作用素ノルム・完備性"
       ],
       "treatise": "T-23",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 155,
@@ -28542,15 +29361,17 @@
       "number": 168,
       "title": "積分と極限",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        167
+        167,
+        85
       ],
       "goals": [
         "Fatou補題・優収束・積分の連続性"
       ],
       "treatise": "T-24",
-      "display_index": 9
+      "display_index": 9,
+      "web_only": true
     },
     {
       "number": 169,

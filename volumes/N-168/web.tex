@@ -1,0 +1,122 @@
+% Web専用原稿．独立査読・正式CLI検証未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 3.4.2 Fatouの定理の記述を照合．
+\section{積分と極限}
+% genron:begin K-000857
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000759
+% genron:use K-000783
+% genron:use K-000784
+% genron:use K-000715
+\begin{prop}[Fatouの補題]
+測度空間 $(X,\mathcal A,\mu)$ 上の非負拡大実数値可測函数列 $(f_n)$ に対し，$\int_X\liminf_n f_n\,d\mu\leq\liminf_n\int_X f_n\,d\mu$ が成り立つ．
+\end{prop}
+\begin{proof}
+$g_n=\inf_{k\geq n}f_k$ とおく．可測函数列の下限の可測性から各 $g_n$ は可測であり，$g_n$ は単調増加して $\liminf_n f_n$ に収束する．各 $k\geq n$ について $g_n\leq f_k$ であるから積分の単調性により $\int g_n\,d\mu\leq\inf_{k\geq n}\int f_k\,d\mu$ である．単調収束定理によって両辺の上限を取れば結論を得る．
+\end{proof}
+% genron:end K-000857
+% genron:begin K-000858
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000749
+% genron:use K-000758
+% genron:use K-000759
+% genron:use K-000783
+% genron:use K-000785
+% genron:use K-000824
+% genron:use K-000825
+% genron:use K-000826
+% genron:use K-000828
+% genron:use K-000829
+% genron:use K-000830
+% genron:use K-000831
+% genron:use K-000857
+\begin{prop}[Lebesgueの優収束定理]
+測度空間上の実または複素数値可測函数列 $(f_n)$ がほとんど至る所可測函数 $f$ に収束し，非負可積分函数 $g$ が存在して各 $n$ について $|f_n|\leq g$ がほとんど至る所成立するとする．このとき $f_n,f$ は可積分であり，$\int |f_n-f|\,d\mu\to0$，従って $\int f_n\,d\mu\to\int f\,d\mu$ である．
+\end{prop}
+\begin{proof}
+可算個の例外を合併した可測零集合 $N$ を取り，全函数を $N$ 上で零に変更する．零集合上の変更は可測性・積分に影響しない．従って点ごとの収束と $|f_n|\leq g$ を全点で仮定できる．可積分な $g$ はほとんど至る所有限なので必要ならその例外も $N$ に含める．極限を取って $|f|\leq g$ が従い，積分の単調性により $f,f_n$ は可積分である．
+非負可測函数 $h_n=2g-|f_n-f|$ に Fatouの補題を適用する．$h_n\to2g$ であり，加法性と $\int g<\infty$ から
+\[
+2\int g\leq\liminf_n\left(2\int g-\int |f_n-f|\right)
+=2\int g-\limsup_n\int|f_n-f|.
+\]
+従って非負数列 $\int|f_n-f|$ は零に収束する．積分の線形性と絶対値評価により $|\int f_n-\int f|\leq\int|f_n-f|$ であり，結論を得る．
+\end{proof}
+% genron:end K-000858
+% genron:begin K-000859
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000781
+% genron:use K-000826
+% genron:use K-000858
+\begin{prop}[有限測度空間の有界収束定理]
+$\mu(X)<\infty$ とする．可測函数列 $(f_n)$ がほとんど至る所 $f$ に収束し，ある有限定数 $M\geq0$ によって各 $n$ について $|f_n|\leq M$ がほとんど至る所成立するならば $\int|f_n-f|\,d\mu\to0$ である．ここで $f$ は可測な実または複素数値函数とする．
+\end{prop}
+\begin{proof}
+定数函数 $g=M$ は非負単函数であり，その積分 $M\mu(X)$ は有限である．優収束定理を適用すればよい．
+\end{proof}
+% genron:end K-000859
+% genron:begin K-000860
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000759
+% genron:use K-000787
+% genron:use K-000831
+% genron:use K-000769
+% genron:use K-000770
+% genron:use K-000720
+% genron:use K-000828
+% genron:use K-000830
+% genron:use K-000858
+\begin{prop}[絶対可積分な級数の項別積分]
+可積分函数列 $(f_n)$ が $\sum_{n=1}^\infty\int|f_n|\,d\mu<\infty$ を満たすなら，$\sum_n f_n$ はほとんど至る所絶対収束する．その和を零集合上で零と定めた可測函数 $f$ は可積分であり，$\int f\,d\mu=\sum_n\int f_n\,d\mu$ が成立する．
+\end{prop}
+\begin{proof}
+$g=\sum_n|f_n|$ は可測であり，非負函数の級数と積分に関する命題により $\int g=\sum_n\int|f_n|<\infty$ である．従って $g$ が無限大となる集合は零集合である．その補集合では部分和が Cauchy列となり，実数体または複素数体の完備性から収束する．零集合上で部分和を零に変更すれば点ごとの極限 $f$ は可測であり，部分和の絶対値は $g$ 以下である．優収束定理と積分の線形性によって結論を得る．
+\end{proof}
+% genron:end K-000860
+% genron:begin K-000861
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000750
+% genron:use K-000781
+% genron:use K-000783
+% genron:use K-000858
+\begin{example}[優函数が存在しない場合の積分と極限]
+自然数の集合に数え上げ測度を入れ，$f_n(k)=1$ （$k=n$ のとき），$f_n(k)=0$ （$k\ne n$ のとき）とする．このとき $f_n\to0$ は各点で成立するが $\int f_n=1$ である．
+\end{example}
+\begin{proof}
+固定された $k$ では $n>k$ なら $f_n(k)=0$ である．単函数の積分から $\int f_n=1$ を得る．すべての $f_n$ を支配する非負函数 $g$ は各 $k$ で $g(k)\geq1$ であり，任意の有限部分集合上の指示函数を支配するので $\int g=\infty$ となる．従って優収束定理の仮定は満たされない．
+\end{proof}
+% genron:end K-000861

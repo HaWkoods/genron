@@ -1,0 +1,105 @@
+% Web専用原稿．独立査読・正式CLI検証未了．
+% 参考確認（2026-11-27）：行列式・特性多項式の既出原稿を基に独自に論証．外部文献の該当箇所照合は未了．
+\section{消去多項式と行列式}
+% genron:begin K-000837
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000350
+% genron:use K-000351
+% genron:use K-000561
+% genron:use K-000658
+\begin{defn}[消去多項式]
+体 $K$ 上の有限次元線形空間 $V$ と線形自己写像 $T$ に対し，$p(T)=0$ となる $p\in K[t]$ を $T$ の消去多項式という．ここで $p(t)=\sum_{i=0}^m a_it^i$ に対し $p(T)=\sum_{i=0}^m a_i T^i$ とし，$T^0=\operatorname{id}_V$ とする．
+\end{defn}
+% genron:end K-000837
+% genron:begin K-000838
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000350
+% genron:use K-000351
+% genron:use K-000561
+% genron:use K-000658
+% genron:use K-000837
+\begin{prop}[多項式の自己写像への代入]
+写像 $K[t]\to\operatorname{End}_K(V)$，$p\mapsto p(T)$ は単位元を保つ環準同型であり，消去多項式全体は $K[t]$ のイデアルである．
+\end{prop}
+\begin{proof}
+$T^iT^j=T^{i+j}$ であり，スカラー倍はすべての線形自己写像と可換である．有限和を展開すれば $(p+q)(T)=p(T)+q(T)$，$(pq)(T)=p(T)q(T)$，$1(T)=\operatorname{id}_V$ が得られる．従って核はイデアルである．
+\end{proof}
+% genron:end K-000838
+% genron:begin K-000839
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000687
+% genron:use K-000688
+% genron:use K-000701
+% genron:use K-000660
+% genron:use K-000661
+% genron:use K-000837
+% genron:use K-000838
+\begin{prop}[Cayley–Hamiltonの定理]
+有限次元線形空間 $V$ の線形自己写像 $T$ の特性多項式を $\chi_T$ とすれば $\chi_T(T)=0$ である．
+\end{prop}
+\begin{proof}
+$\dim V=0$ なら恒等写像も零写像であり，結論は成立する．以下 $n=\dim V>0$ とする．基底を固定し $T$ の表示行列を $A$ とする．$M=tI-A$ とおき，余因子を転置して並べた行列を $B(t)$ とする．行列式の順列表示を一行に関する項に分けると余因子展開を得る．従って $MB=\det(M)I$ である．実際，積の対角成分は余因子展開であり，非対角成分は一行を他の行で置き換えた行列の行列式であるから零である．この論証は可換環 $K[t]$ 上で成り立つ．
+$B(t)=\sum_{i=0}^{n-1}t^i B_i$，$\chi_T(t)=\sum_{i=0}^n c_it^i$ と書き，$B_{-1}=B_n=0$ と定める．係数を比較して $B_{i-1}-AB_i=c_iI$ を得る．これに左から $A^i$ を掛けて $i=0,\ldots,n$ について加えると，左辺は隣接項が相殺して零となり，右辺は $\sum_{i=0}^n c_iA^i$ となる．従って $\chi_T(A)=0$ であり，表示行列と合成の整合性から結論を得る．
+\end{proof}
+% genron:end K-000839
+% genron:begin K-000840
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000354
+% genron:use K-000355
+% genron:use K-000838
+% genron:use K-000839
+% genron:use K-000104
+\begin{prop}[最小多項式]
+消去多項式のイデアルはただ一つのモニック多項式 $m_T$ によって生成される．これを最小多項式といい，$m_T$ は $\chi_T$ を割る．
+\end{prop}
+\begin{proof}
+Cayley–Hamiltonの定理により消去イデアルには非零元がある．そのうち次数が最小のものを選び，最高次係数で割って $m$ とする．任意の消去多項式 $p$ に対し，最高次項を $m$ の単項式倍で順次打ち消す操作は次数を真に下げるから，有限回で $p=qm+r$，$r=0$ または $\deg r<\deg m$ を得る．代入準同型から $r(T)=0$ であり，最小性により $r=0$ となる．従って消去イデアルは $(m)$ である．別のモニックな最小次数元 $m'$ は $m$ と相互に割り合い，次数と最高次係数を比較すると $m=m'$ である．特性多項式もこのイデアルに属する．
+\end{proof}
+% genron:end K-000840
+% genron:begin K-000841
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000700
+% genron:use K-000354
+% genron:use K-000840
+\begin{prop}[最小多項式と固有値]
+$\lambda\in K$ が $T$ の固有値であるための必要十分条件は $m_T(\lambda)=0$ である．
+\end{prop}
+\begin{proof}
+固有ベクトル $v\ne0$ に対して $m_T(T)v=m_T(\lambda)v=0$ であるから必要性が従う．逆に $m_T(\lambda)=0$ とする．上と同じ多項式の除法を $t-\lambda$ に適用すれば $m_T=(t-\lambda)q$ となる．$T-\lambda I$ が単射なら $(T-\lambda I)q(T)=0$ から $q(T)=0$ が従い，次数の最小性に反する．従って核に非零元があり，$\lambda$ は固有値である．
+\end{proof}
+% genron:end K-000841

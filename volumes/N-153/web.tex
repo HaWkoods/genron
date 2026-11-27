@@ -1,0 +1,120 @@
+% Web専用原稿．独立査読・正式CLI検証未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 有限次元ノルム空間の完備性に関する記述を確認．以下の証明は独自に構成．
+\section{有限次元空間の位相}
+% genron:begin K-000847
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000600
+% genron:use K-000565
+% genron:use K-000788
+% genron:use K-000791
+% genron:use K-000795
+% genron:use K-000771
+% genron:use K-000802
+% genron:use K-000375
+% genron:use K-000376
+% genron:use K-000377
+% genron:use K-000708
+% genron:use K-000644
+% genron:use K-000719
+% genron:use K-000720
+% genron:use K-000706
+% genron:use K-000119
+\begin{prop}[有限次元ノルム空間の座標評価]
+$K=\mathbb R$ または $\mathbb C$ とし，$V$ を正の有限次元を持つ $K$ 上のノルム空間とする．基底 $(e_1,\ldots,e_n)$ に対し正数 $c,C$ が存在し，任意の $a=(a_1,\ldots,a_n)\in K^n$ について $c\max_i|a_i|\leq\|\sum_i a_ie_i\|\leq C\max_i|a_i|$ が成り立つ．
+\end{prop}
+\begin{proof}
+上からの評価は三角不等式により $C=\sum_i\|e_i\|$ と取れる．$K^n$ に最大値ノルムを入れる．閉単位球は完備空間の閉集合であり完備である．また有限個の小区間に $[-1,1]$ を分割し，各実座標（複素数の場合は実部と虚部）でその分割を用いれば，任意に小さい直径の有限個の集合で閉単位球を覆える．各空でない集合から一点ずつ選べば，全有界性を得る．従って閉単位球はコンパクトであり，単位球面 $S=\{a:\max_i|a_i|=1\}$ もその閉部分集合としてコンパクトである．
+$g(a)=\|\sum_i a_ie_i\|$ は上の評価とノルムの逆三角不等式により連続である．$g(S)$ は空でないコンパクトな実数集合であり，基底の線形独立性から零を含まない．その下限 $c$ は近似列を用いれば閉集合 $g(S)$ に属し，従って正である．非零の $a$ を最大値ノルムで割って球面上に移すと下からの評価を得る．$a=0$ の場合は明らかである．
+\end{proof}
+% genron:end K-000847
+% genron:begin K-000848
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000738
+% genron:use K-000726
+% genron:use K-000847
+\begin{prop}[有限次元空間上のノルムの同値性]
+実数体または複素数体上の有限次元線形空間の任意の二つのノルム $\|\cdot\|_1,\|\cdot\|_2$ に対し，ある正数 $a,b$ が存在して $a\|x\|_1\leq\|x\|_2\leq b\|x\|_1$ がすべての $x$ について成立する．従って両ノルムは同じ位相と同じ Cauchy列を定める．
+\end{prop}
+\begin{proof}
+零次元では任意の正定数で成立する．正次元なら共通の基底に関する座標評価を両ノルムに適用し，最大値ノルムを消去する．得られた不等式により一方の任意の開球が他方の同心の十分小さい開球を含む．また差 $x_m-x_n$ に適用すれば Cauchy条件の同値性が従う．
+\end{proof}
+% genron:end K-000848
+% genron:begin K-000849
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000795
+% genron:use K-000794
+% genron:use K-000738
+% genron:use K-000847
+\begin{prop}[有限次元ノルム空間の完備性]
+実数体または複素数体上の有限次元ノルム空間は Banach空間である．
+\end{prop}
+\begin{proof}
+零次元の場合は明らかである．正次元の場合，Cauchy列の各座標は座標評価の下からの不等式によって Cauchy列となる．各座標の極限は体の完備性によって存在し，それらから定まるベクトルに元の列が上からの評価によって収束する．
+\end{proof}
+% genron:end K-000849
+% genron:begin K-000850
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000377
+% genron:use K-000372
+% genron:use K-000706
+% genron:use K-000771
+% genron:use K-000802
+% genron:use K-000847
+% genron:use K-000849
+\begin{prop}[有限次元ノルム空間のコンパクト集合]
+有限次元実または複素ノルム空間の部分集合がコンパクトであるための必要十分条件は，閉かつ有界であることである．
+\end{prop}
+\begin{proof}
+コンパクト集合は Hausdorff空間のコンパクト部分集合として閉である．また原点中心の正整数半径の開球が空間を覆うから，有限部分被覆によって有界となる．逆に閉有界集合は座標評価の下からの不等式によって有界な座標集合に対応する．有限格子による被覆と上からの不等式により全有界である．さらに閉部分空間なので完備であり，完備かつ全有界な距離空間はコンパクトである．零次元でも結論は成立する．
+\end{proof}
+% genron:end K-000850
+% genron:begin K-000851
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000735
+% genron:use K-000739
+% genron:use K-000733
+% genron:use K-000849
+\begin{prop}[有限次元部分空間の閉性]
+任意の実または複素ノルム空間の有限次元部分空間は閉である．
+\end{prop}
+\begin{proof}
+誘導ノルムに関してこの部分空間は完備である．その閉包に属する点は部分空間の点列の極限となる．この列は Cauchy列であるから部分空間内に極限が存在し，極限の一意性から元の点も部分空間に属する．
+\end{proof}
+% genron:end K-000851
