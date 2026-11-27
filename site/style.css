@@ -114,6 +114,6 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 @media(max-width:600px){.path-notes.web-article{padding:20px 16px}}
 
 /* Mathematical illustrations, subordinate to the printed-book style. */
-.web-figure{margin:1.3em auto 1.6em;max-width:600px;text-align:center;break-inside:avoid}
-.web-figure img{display:block;width:100%;height:auto;margin:0 auto;background:#fff;border:1px solid #d9dee4;border-radius:2px;box-sizing:border-box}
-.web-figure figcaption{font-size:.88em;line-height:1.65;color:var(--muted);margin:.55em 0 0;text-align:center;overflow-wrap:anywhere}
+.web-figure{margin:1.6em auto 1.8em;max-width:480px;text-align:center;break-inside:avoid}
+.web-figure img{display:block;width:100%;height:auto;margin:0 auto;background:#fff;border:0;border-radius:0;box-sizing:border-box}
+.web-figure figcaption{font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif CJK JP",serif;font-size:.88em;line-height:1.65;color:#444;margin:.4em 0 0;text-align:center;overflow-wrap:anywhere}
