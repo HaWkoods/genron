@@ -166,5 +166,125 @@
     "caption": "図：A=(0,1)，xₙ=1/(n+1) の例（n≥1）．",
     "figure_id": "sequence-in-closure",
     "title": "閉包と点列の図"
+  },
+  {
+    "id": "K-000761",
+    "src": "figures/simple-function-approximation.svg",
+    "alt": "対角線 y=x の下側を四段の単函数で近似し，各段の開閉端点を示す．",
+    "caption": "図：f(x)=x に対する s₂(x)=2⁻²⌊2²x⌋（0≤x≤1）．",
+    "figure_id": "simple-function-approximation",
+    "title": "単函数近似の図"
+  },
+  {
+    "id": "K-000784",
+    "src": "figures/monotone-convergence.svg",
+    "alt": "下から順に増加する非負曲線と極限曲線の下の領域を示す．",
+    "caption": "図：fₙ(x)=(1−2⁻ⁿ)x² ↑ f(x)=x²（0≤x≤1）の例．",
+    "figure_id": "monotone-convergence",
+    "title": "単調収束の模式図"
+  },
+  {
+    "id": "K-000805",
+    "src": "figures/banach-fixed-point.svg",
+    "alt": "直線 y=T(x) と y=x の交点 x*=1/2 に階段状の反復が近づく．",
+    "caption": "図：T(x)=1/4+x/2 の不動点反復（実数上の例）．",
+    "figure_id": "banach-fixed-point",
+    "title": "縮小写像の反復の図"
+  },
+  {
+    "id": "K-000827",
+    "src": "figures/signed-integral.svg",
+    "alt": "軸の上の領域は正部分の積分，下の領域の面積は負部分の積分に対応する．",
+    "caption": "図：実函数 f の正部分と負部分の積分の差（Lebesgue測度と連続函数の例）．",
+    "figure_id": "signed-integral",
+    "title": "符号付き面積の図"
+  },
+  {
+    "id": "K-000863",
+    "src": "figures/measurable-section.svg",
+    "alt": "平面の斜線領域を固定した x 座標の垂直線で切り，その切断を太線で示す．",
+    "caption": "図：ℝ² 内の閉楕円 C と x=x₀ における縦切断の例．",
+    "figure_id": "measurable-section",
+    "title": "可測集合の切断の図"
+  },
+  {
+    "id": "K-000920",
+    "src": "figures/convex-set.svg",
+    "alt": "凸な楕円領域の内部の x と y を結ぶ線分全体が領域内にある．",
+    "caption": "図：凸集合 C における二点を結ぶ線分．",
+    "figure_id": "convex-set",
+    "title": "凸集合の図"
+  },
+  {
+    "id": "K-000946",
+    "src": "figures/star-shaped-contraction.svg",
+    "alt": "凹みをもつ星形領域の各点と中心 a を結ぶ線分が領域内にある．",
+    "caption": "図：星形集合における中心 a への線分による収縮．",
+    "figure_id": "star-shaped-contraction",
+    "title": "星形集合の図"
+  },
+  {
+    "id": "K-000948",
+    "src": "figures/chart-transition.svg",
+    "alt": "U∩W から二つの座標像への写像が ψ∘φ⁻¹ により結ばれる．",
+    "caption": "図：座標近傍の共通部分上の座標変換．",
+    "figure_id": "chart-transition",
+    "title": "座標変換の図式"
+  },
+  {
+    "id": "K-000952",
+    "src": "figures/sphere-stereographic.svg",
+    "alt": "円で表した球面の断面上の点 p と北極 N を結ぶ直線が赤道平面と q で交わる．",
+    "caption": "図：S² の北極 N から赤道平面への立体射影の断面．",
+    "figure_id": "sphere-stereographic",
+    "title": "球面の立体射影の模式図"
+  },
+  {
+    "id": "K-000959",
+    "src": "figures/derivative-tangent.svg",
+    "alt": "曲線上の二点 a と a+h を通る割線と，a における接線．",
+    "caption": "図：函数 y=x² の割線と接線の例．",
+    "figure_id": "derivative-tangent",
+    "title": "微分係数と接線の図"
+  },
+  {
+    "id": "K-000963",
+    "src": "figures/mean-value-theorem.svg",
+    "alt": "放物線の二端点を通る割線と中点 c における接線が平行である．",
+    "caption": "図：g(x)=x，f(x)=x² の場合の割線と平行な接線（c=(a+b)/2）．",
+    "figure_id": "mean-value-theorem",
+    "title": "平均値定理の図"
+  },
+  {
+    "id": "K-000972",
+    "src": "figures/complex-linear-map.svg",
+    "alt": "左の円と半径方向のベクトル h が，乗法 c により右の大きさの異なる円と回転したベクトル ch に写る．",
+    "caption": "図：複素数 c による乗法は拡大縮小と回転の合成（c≠0）．",
+    "figure_id": "complex-linear-map",
+    "title": "複素線形近似の図"
+  },
+  {
+    "id": "K-000985",
+    "src": "figures/convex-separation.svg",
+    "alt": "開凸集合 C の右側に点 a があり，直線 L(x)=L(a) が全ての C を反対側に置く．",
+    "caption": "図：実平面における開凸集合と外部の点の分離．",
+    "figure_id": "convex-separation",
+    "title": "凸集合の分離の図"
+  },
+  {
+    "id": "K-001005",
+    "src": "figures/integral-function-increment.svg",
+    "alt": "曲線の下で x と x+h の間の縦長領域を斜線で示す．",
+    "caption": "図：h>0 の場合の F(x+h)−F(x) と区間 [x,x+h] 上の積分．",
+    "figure_id": "integral-function-increment",
+    "title": "積分函数の増分の図"
+  },
+  {
+    "id": "K-001011",
+    "src": "figures/partial-derivatives-directions.svg",
+    "alt": "点 (x,y) から x 方向への増分 (h,0) と y 方向への増分 (0,k) を矢印で示す．",
+    "caption": "図：実二変数の場合の座標方向の増分．",
+    "figure_id": "partial-derivatives-directions",
+    "title": "偏微分の方向の図"
   }
 ]
