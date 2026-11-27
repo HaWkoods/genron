@@ -33539,6 +33539,313 @@
       "status": "draft",
       "source": "volumes/N-39/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001075",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "有界多重線形写像のノルム",
+      "statement": "同じ体 $\\mathbb K=\\mathbb R$ 又は $\\mathbb C$ 上のノルム空間 $E,F$ と整数 $r\\geq1$ を取る．$r$ 重線形写像 $A:E^r\\to F$ が\n\\[\n\\|A(h_1,\\ldots,h_r)\\|\\leq C\\prod_{j=1}^r\\|h_j\\|\n\\]\nをある有限定数 $C\\geq0$ について満たすとき有界という．このような写像全体を $\\mathcal L^r(E;F)$ とし，$\\|A\\|=\\sup_{\\|h_j\\|\\leq1}\\|A(h_1,\\ldots,h_r)\\|$ と定める．また $\\mathcal L^0(E;F)=F$ とする．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000607",
+        "K-000788",
+        "K-000852"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001076",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多重線形写像と反復作用素空間",
+      "statement": "$\\mathcal L^r(E;F)$ は上のノルムに関してノルム空間であり，\n\\[\n\\mathcal L(E,\\mathcal L^r(E;F))\\cong\\mathcal L^{r+1}(E;F)\n\\]\nは $T\\mapsto((h_0,\\ldots,h_r)\\mapsto(Th_0)(h_1,\\ldots,h_r))$ による等長線形同型である．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001075",
+        "K-000608",
+        "K-000853",
+        "K-000854"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001077",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "高階Fréchet微分",
+      "statement": "開集合 $U\\subseteq E$ 上の写像 $f:U\\to F$ に対し $D^0f=f$ とする．$D^{r-1}f$ が $a$ の近傍で定義され，$\\mathcal L^{r-1}(E;F)$ に値を取る写像として $a$ でFréchet微分可能なら，その微分を $D^rf(a)$ と書き，多重線形写像と同一視する．$r$ 階までの微分が $U$ 上存在し全て連続な写像を $C^r$ 級という．全ての整数 $r$ について $C^r$ 級なら $C^\\infty$ 級という．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001076",
+        "K-000893",
+        "K-000897",
+        "K-000999"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001078",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "ノルム値曲線の微分評価",
+      "statement": "ノルム空間 $F$ に値を取る連続曲線 $g:[a,b]\\to F$ が内部で微分可能であり，$g'$ のノルムが非減少な実 $C^1$ 級函数 $H$ の導函数 $H'$ 以下であるとする．このとき\n\\[\n\\|g(b)-g(a)\\|\\leq H(b)-H(a).\n\\]\n",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000893",
+        "K-000894",
+        "K-000959",
+        "K-000964",
+        "K-000888"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001079",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "高階微分の対称性",
+      "statement": "$f$ が $a$ において $r$ 階Fréchet微分可能であるならば，多重線形写像 $D^rf(a)$ は対称である．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001077",
+        "K-001078",
+        "K-000896",
+        "K-000894"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001080",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線分に沿う高階微分",
+      "statement": "$f:U\\to F$ が $C^r$ 級であり線分 $[a,a+h]$ が $U$ に含まれるとする．$g(t)=f(a+th)$ とおけば $0\\leq t\\leq1$ で\n\\[\ng^{(j)}(t)=D^jf(a+th)(h,\\ldots,h)\\qquad(1\\leq j\\leq r)\n\\]\nが成立する（$t$ は実変数）．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001077",
+        "K-001076",
+        "K-000896",
+        "K-000895"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001081",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "高階微分によるTaylor剰余評価",
+      "statement": "$f:U\\to F$ が $C^r$ 級（$r\\geq1$）で線分 $[a,a+h]\\subseteq U$ とする．線分上で $\\|D^rf\\|\\leq M$ なら\n\\[\n\\left\\|f(a+h)-\\sum_{j=0}^{r-1}\\frac1{j!}D^jf(a)(h,\\ldots,h)\\right\\|\\leq\\frac{M}{r!}\\|h\\|^r\n\\]\nである．$j=0$ の項は $f(a)$ と解する．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001080",
+        "K-001078",
+        "K-001075",
+        "K-000999"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001082",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "高階Fréchet微分によるTaylor公式",
+      "statement": "$f:U\\to F$ が $a$ の近傍で $C^r$ 級なら\n\\[\nf(a+h)=\\sum_{j=0}^r\\frac1{j!}D^jf(a)(h,\\ldots,h)+o(\\|h\\|^r)\n\\]\nが成立する．さらに $f$ が $C^{r+1}$ 級で線分上 $\\|D^{r+1}f\\|\\leq M$ なら上の $r$ 次多項式との差はノルムで $M\\|h\\|^{r+1}/(r+1)!$ 以下である．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001081",
+        "K-001080",
+        "K-001078"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001083",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "二次多項式の高階微分",
+      "statement": "有界双線形写像 $B:E\\times E\\to F$ に対し $f(x)=B(x,x)$ とおくと\n\\[\nDf(x)h=B(h,x)+B(x,h),\\quad D^2f(x)(h,k)=B(h,k)+B(k,h),\\quad D^jf(x)=0\\ (j\\geq3)\n\\]\nとなる．$B$ が対称なら $D^2f(x)=2B$ である．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        9
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001075",
+        "K-001076",
+        "K-001077",
+        "K-001079",
+        "K-000898"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001084",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正定値な第二微分と狭義局所最小",
+      "statement": "実ノルム空間の開集合 $U$ 上の実函数 $f$ が $a$ の近傍で $C^2$ 級であり，$Df(a)=0$ とする．ある $c>0$ が存在して全ての $h$ について $D^2f(a)(h,h)\\geq c\\|h\\|^2$ ならば $a$ は狭義局所最小点である．負の向きに同じ評価が成立すれば狭義局所最大点である．",
+      "assumptions": [],
+      "position": [
+        156,
+        1,
+        1,
+        10
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001082"
+      ],
+      "status": "draft",
+      "source": "volumes/N-156/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -36001,7 +36308,7 @@
       "number": 156,
       "title": "高階微分とTaylor公式",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         155,
         148,
@@ -36011,7 +36318,8 @@
         "高階微分・対称性・剰余"
       ],
       "treatise": "T-23",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 157,

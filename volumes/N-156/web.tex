@@ -1,0 +1,244 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：V. I. Bogachev, O. G. Smolyanov, Real and Functional Analysis (2020), §12.4, pp.527–529 の高階微分・対称性・Taylor公式を確認．Hahn–Banach及びベクトル積分を前提とせず，ノルム評価による独自論証を採用．
+\section{高階微分とTaylor公式}
+% genron:begin K-001075
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000607
+% genron:use K-000788
+% genron:use K-000852
+\begin{defn}[有界多重線形写像のノルム]
+同じ体 $\mathbb K=\mathbb R$ 又は $\mathbb C$ 上のノルム空間 $E,F$ と整数 $r\geq1$ を取る．$r$ 重線形写像 $A:E^r\to F$ が
+\[
+\|A(h_1,\ldots,h_r)\|\leq C\prod_{j=1}^r\|h_j\|
+\]
+をある有限定数 $C\geq0$ について満たすとき有界という．このような写像全体を $\mathcal L^r(E;F)$ とし，$\|A\|=\sup_{\|h_j\|\leq1}\|A(h_1,\ldots,h_r)\|$ と定める．また $\mathcal L^0(E;F)=F$ とする．
+\end{defn}
+% genron:end K-001075
+% genron:begin K-001076
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001075
+% genron:use K-000608
+% genron:use K-000853
+% genron:use K-000854
+\begin{prop}[多重線形写像と反復作用素空間]
+$\mathcal L^r(E;F)$ は上のノルムに関してノルム空間であり，
+\[
+\mathcal L(E,\mathcal L^r(E;F))\cong\mathcal L^{r+1}(E;F)
+\]
+は $T\mapsto((h_0,\ldots,h_r)\mapsto(Th_0)(h_1,\ldots,h_r))$ による等長線形同型である．
+\end{prop}
+\begin{proof}
+加法・スカラー倍に対する有界性とノルムの劣加法性及び斉次性は各点の評価と上限の性質から従う．$\|A\|=0$ なら任意の非零ベクトルをノルムで除して評価することで $A=0$ を得る．零の成分がある場合は多重線形性により値が零である．同じ操作により $\|A(h_1,\ldots,h_r)\|\leq\|A\|\prod_j\|h_j\|$ も得る．$T$ を上式により評価すれば有界な多重線形写像が得られ，そのノルムは各単位球上で順に上限を取ると $\|T\|$ に一致する．逆に $A\in\mathcal L^{r+1}(E;F)$ から $(Th_0)(h_1,\ldots,h_r)=A(h_0,\ldots,h_r)$ と置けば線形な $T$ が得られ，$\|Th_0\|\leq\|A\|\|h_0\|$ なので有界である．双方の操作は互いに逆である．$r=0$ の場合は定義そのものである．
+\end{proof}
+% genron:end K-001076
+% genron:begin K-001077
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001076
+% genron:use K-000893
+% genron:use K-000897
+% genron:use K-000999
+\begin{defn}[高階Fréchet微分]
+開集合 $U\subseteq E$ 上の写像 $f:U\to F$ に対し $D^0f=f$ とする．$D^{r-1}f$ が $a$ の近傍で定義され，$\mathcal L^{r-1}(E;F)$ に値を取る写像として $a$ でFréchet微分可能なら，その微分を $D^rf(a)$ と書き，多重線形写像と同一視する．$r$ 階までの微分が $U$ 上存在し全て連続な写像を $C^r$ 級という．全ての整数 $r$ について $C^r$ 級なら $C^\infty$ 級という．
+\end{defn}
+% genron:end K-001077
+% genron:begin K-001078
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000959
+% genron:use K-000964
+% genron:use K-000888
+\begin{prop}[ノルム値曲線の微分評価]
+ノルム空間 $F$ に値を取る連続曲線 $g:[a,b]\to F$ が内部で微分可能であり，$g'$ のノルムが非減少な実 $C^1$ 級函数 $H$ の導函数 $H'$ 以下であるとする．このとき
+\[
+\|g(b)-g(a)\|\leq H(b)-H(a).
+\]
+
+\end{prop}
+\begin{proof}
+まず $a<c<d<b$ を固定する．$\varepsilon>0$ とし $P(t)=H(t)+\varepsilon t$ と置く．$S=\{t\in[c,d]:\|g(t)-g(c)\|\leq P(t)-P(c)\}$ は閉集合で $c$ を含むので最大元 $s$ を持つ．もし $s<d$ なら微分の定義から十分小さい $\delta>0$ で
+\[
+\|g(s+\delta)-g(s)\|\leq(H'(s)+\varepsilon/3)\delta,\quad
+P(s+\delta)-P(s)\geq(H'(s)+2\varepsilon/3)\delta
+\]
+となる．三角不等式を用いると $s+\delta\in S$ であり最大性に反する．よって $d\in S$ である．$\varepsilon\to0$，次いで $c\to a,\ d\to b$ として連続性を用いる．$a=b$ は自明である．特に $H(t)=Mt$ とすれば一様な導函数のノルム評価から増分の評価を得る．
+\end{proof}
+% genron:end K-001078
+% genron:begin K-001079
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001077
+% genron:use K-001078
+% genron:use K-000896
+% genron:use K-000894
+\begin{prop}[高階微分の対称性]
+$f$ が $a$ において $r$ 階Fréchet微分可能であるならば，多重線形写像 $D^rf(a)$ は対称である．
+\end{prop}
+\begin{proof}
+まず $r=2$ とする．$A=D^2f(a)$ と置く．$Df(a+z)=Df(a)+A(z,\cdot)+R(z)$ と表せて $\|R(z)\|/\|z\|\to0$ である．任意の $h,k\in E$ と十分小さい $t>0$ に対し
+\[
+\Delta_t=f(a+th+tk)-f(a+th)-f(a+tk)+f(a)
+\]
+とする．$0\leq s\leq t$ 上の函数 $q(s)=f(a+sh+tk)-f(a+sh)$ について連鎖律と上の展開から
+\[
+q'(s)=tA(k,h)+(R(sh+tk)-R(sh))h
+\]
+となる．剰余項は $0\leq s\leq t$ で一様に $o(t)$ である．実際，$\|sh+tk\|,\|sh\|\leq t(\|h\|+\|k\|)$ である．$q(s)-stA(k,h)$ に前命題の定数評価を適用すると $\Delta_t=t^2A(k,h)+o(t^2)$ を得る．$h,k$ の役割を交換しても $\Delta_t$ は不変なので $A(k,h)=A(h,k)$ である．
+$r\geq3$ について帰納法を用いる．$D^{r-1}f$ の各点での対称性を差商の極限に移せば $D^rf(a)$ は第2変数から第 $r$ 変数までの置換に対して不変である．また $D^{r-2}f$ を $\mathcal L^{r-2}(E;F)$ 値の写像として二階微分の対称性を適用すれば最初の二変数の交換にも不変である．隣接交換が全ての置換を生成するため結論を得る．
+\end{proof}
+% genron:end K-001079
+% genron:begin K-001080
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001077
+% genron:use K-001076
+% genron:use K-000896
+% genron:use K-000895
+\begin{prop}[線分に沿う高階微分]
+$f:U\to F$ が $C^r$ 級であり線分 $[a,a+h]$ が $U$ に含まれるとする．$g(t)=f(a+th)$ とおけば $0\leq t\leq1$ で
+\[
+g^{(j)}(t)=D^jf(a+th)(h,\ldots,h)\qquad(1\leq j\leq r)
+\]
+が成立する（$t$ は実変数）．
+\end{prop}
+\begin{proof}
+$j=1$ は微分の定義により従う．$j$ において成立すると仮定する．固定された $h$ に関する評価写像 $A\mapsto A(h,\ldots,h)$ は線形でノルムは $\|h\|^j$ 以下である．従って微分の定義から $g^{(j)}$ の微分は $D^{j+1}f(a+th)$ の全ての成分に $h$ を入れたものとなる．帰納法により示された．端点についても近傍からの微分又は片側極限を用いれば同じ式になる．
+\end{proof}
+% genron:end K-001080
+% genron:begin K-001081
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001080
+% genron:use K-001078
+% genron:use K-001075
+% genron:use K-000999
+\begin{prop}[高階微分によるTaylor剰余評価]
+$f:U\to F$ が $C^r$ 級（$r\geq1$）で線分 $[a,a+h]\subseteq U$ とする．線分上で $\|D^rf\|\leq M$ なら
+\[
+\left\|f(a+h)-\sum_{j=0}^{r-1}\frac1{j!}D^jf(a)(h,\ldots,h)\right\|\leq\frac{M}{r!}\|h\|^r
+\]
+である．$j=0$ の項は $f(a)$ と解する．
+\end{prop}
+\begin{proof}
+$g(t)=f(a+th)$ とし $q(t)=g(t)-\sum_{j=0}^{r-1}t^jg^{(j)}(0)/j!$ と置く．$q^{(j)}(0)=0$（$0\leq j<r$）かつ $\|q^{(r)}(t)\|\leq M\|h\|^r$ である．$C=M\|h\|^r$ と置き，$j=r-1,\ldots,0$ の順に
+\[
+\|q^{(j)}(t)\|\leq C\frac{t^{r-j}}{(r-j)!}
+\]
+を示す．$j=r-1$ では前述の曲線の評価で $H(t)=Ct$ を用いる．$j+1$ での評価が得られていれば $q^{(j)}$ の導函数のノルムは $Ct^{r-j-1}/(r-j-1)!$ 以下なので $H(t)=Ct^{r-j}/(r-j)!$ を用いればよい．$j=0,t=1$ を取れば主張を得る．
+\end{proof}
+% genron:end K-001081
+% genron:begin K-001082
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001081
+% genron:use K-001080
+% genron:use K-001078
+\begin{prop}[高階Fréchet微分によるTaylor公式]
+$f:U\to F$ が $a$ の近傍で $C^r$ 級なら
+\[
+f(a+h)=\sum_{j=0}^r\frac1{j!}D^jf(a)(h,\ldots,h)+o(\|h\|^r)
+\]
+が成立する．さらに $f$ が $C^{r+1}$ 級で線分上 $\|D^{r+1}f\|\leq M$ なら上の $r$ 次多項式との差はノルムで $M\|h\|^{r+1}/(r+1)!$ 以下である．
+\end{prop}
+\begin{proof}
+$g(t)=f(a+th)$ から $r$ 次の一変数Taylor多項式を引いた函数を $q(t)$ と置く．$q^{(j)}(0)=0$（$0\leq j<r$）であり，
+\[
+\sup_{0\leq t\leq1}\|q^{(r)}(t)\|\leq\sup_{0\leq t\leq1}\|D^rf(a+th)-D^rf(a)\|\,\|h\|^r.
+\]
+$D^rf$ の連続性から右辺は $o(\|h\|^r)$ である．前命題の論証と同じ帰納評価を $q$ に適用して $\|q(1)\|=o(\|h\|^r)$ を得る．後半は前命題を $r+1$ で適用すればよい．
+\end{proof}
+% genron:end K-001082
+% genron:begin K-001083
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001075
+% genron:use K-001076
+% genron:use K-001077
+% genron:use K-001079
+% genron:use K-000898
+\begin{example}[二次多項式の高階微分]
+有界双線形写像 $B:E\times E\to F$ に対し $f(x)=B(x,x)$ とおくと
+\[
+Df(x)h=B(h,x)+B(x,h),\quad D^2f(x)(h,k)=B(h,k)+B(k,h),\quad D^jf(x)=0\ (j\geq3)
+\]
+となる．$B$ が対称なら $D^2f(x)=2B$ である．
+\end{example}
+\begin{proof}
+差分は $B(h,x)+B(x,h)+B(h,h)$ であり，最後の項のノルムは $\|B\|\|h\|^2$ 以下である．従って第一式が従う．$x\mapsto Df(x)$ は有界線形写像であり，その微分はそれ自身であるから第二式が成立する．第二微分は定数写像なのでその微分は零であり，それ以降も同じである．
+\end{proof}
+% genron:end K-001083
+% genron:begin K-001084
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001082
+\begin{prop}[正定値な第二微分と狭義局所最小]
+実ノルム空間の開集合 $U$ 上の実函数 $f$ が $a$ の近傍で $C^2$ 級であり，$Df(a)=0$ とする．ある $c>0$ が存在して全ての $h$ について $D^2f(a)(h,h)\geq c\|h\|^2$ ならば $a$ は狭義局所最小点である．負の向きに同じ評価が成立すれば狭義局所最大点である．
+\end{prop}
+\begin{proof}
+Taylor公式から $f(a+h)-f(a)=D^2f(a)(h,h)/2+o(\|h\|^2)$ である．十分小さい零でない $h$ に対して剰余の絶対値は $c\|h\|^2/4$ 以下であり，差は $c\|h\|^2/4>0$ となる．最大の場合は $-f$ に適用する．
+\end{proof}
+% genron:end K-001084
