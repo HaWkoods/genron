@@ -1,0 +1,114 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵の層に関する文献を検索したが該当本文を確認できなかった．集合値前層・層の既出事項から独自に構成する．
+\section{芽と茎による局所的判定}
+% genron:begin K-001182
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000146
+% genron:use K-000147
+% genron:use K-000417
+\begin{defn}[芽の同値関係]
+位相空間 $X$ 上の集合値前層 $F$ と $x\in X$ に対し，$x\in U$ である開集合 $U$ と $s\in F(U)$ の対を考える．$(U,s)\sim(V,t)$ とは，$x\in W\subseteq U\cap V$ である開集合 $W$ が存在し $s|_W=t|_W$ となることをいう．
+\end{defn}
+% genron:end K-001182
+% genron:begin K-001183
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001182
+% genron:use K-000147
+% genron:use K-000417
+\begin{prop}[茎の構成]
+この関係は同値関係である．その商集合を $F_x$ と書き，$F$ の $x$ における茎，$(U,s)$ の類を $s_x$ と書き $s$ の $x$ における芽という．
+\end{prop}
+\begin{proof}
+反射性と対称性は制限の性質から従う．$(U,s)\sim(V,t)$ と $(V,t)\sim(W,r)$ の等号成立近傍をそれぞれ $A,B$ とすると，$x\in A\cap B$ であり，制限をさらに $A\cap B$ に取れば $s$ と $r$ は一致する．従って推移性が成立する．
+\end{proof}
+% genron:end K-001183
+% genron:begin K-001184
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001183
+% genron:use K-000511
+% genron:use K-000417
+\begin{prop}[茎の余極限としての表示]
+$x$ の開近傍を対象とし，$U\supseteq V$ のとき $U\to V$ という射を持つ小圏上の制限の図式の余極限は $F_x$ である．
+\end{prop}
+\begin{proof}
+各 $U$ について $F(U)\to F_x$，$s\mapsto s_x$ は制限と可換である．任意の余錐 $a_U:F(U)\to A$ に対し，$s_x\mapsto a_U(s)$ と定める．二つの代表元が同じなら共通の開近傍への制限で一致するので余錐条件から値は一致する．得られる写像は余錐を経由し，すべての芽に代表元が存在するから一意である．
+\end{proof}
+% genron:end K-001184
+% genron:begin K-001185
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001183
+% genron:use K-000418
+\begin{prop}[前層の射の茎写像]
+前層の射 $\varphi:F\to G$ は各 $x$ について写像 $\varphi_x:F_x\to G_x$，$s_x\mapsto(\varphi_U(s))_x$ を誘導する．恒等射と合成を保存する．
+\end{prop}
+\begin{proof}
+同じ芽を表す二つの切断が共通近傍で一致するとき，射の制限との可換性によりその像も同じ近傍で一致する．従って定義は代表元によらない．合成及び恒等射については代表元上で直接確認できる．
+\end{proof}
+% genron:end K-001185
+% genron:begin K-001186
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001183
+% genron:use K-000526
+\begin{prop}[芽による切断の一致判定]
+集合値層 $F$ と $s,t\in F(U)$ に対し，すべての $x\in U$ について $s_x=t_x$ なら $s=t$ である．
+\end{prop}
+\begin{proof}
+$s,t$ の制限が一致する開集合 $W\subseteq U$ をすべて集める．芽の一致によりこれらは $U$ を覆う．層の一意性条件から $s=t$ である．空集合の場合にも空被覆に関する層条件が一意性を保証する．
+\end{proof}
+% genron:end K-001186
+% genron:begin K-001187
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001185
+% genron:use K-001186
+% genron:use K-000526
+% genron:use K-000531
+% genron:use K-000532
+\begin{prop}[茎による層の同型判定]
+集合値層の射 $\varphi:F\to G$ が同型射である必要十分条件は，各点 $x$ で $\varphi_x$ が全単射であることである．
+\end{prop}
+\begin{proof}
+必要性は逆射の茎写像が逆写像になることによる．十分性を示す．任意の開集合 $U$ 上で $\varphi_U(s)=\varphi_U(t)$ なら，茎写像の単射性からすべての芽が一致し，$s=t$ である．従ってすべての開集合上で成分写像は単射である．$g\in G(U)$ を取る．各点 $x$ で茎写像の全射性を使えば，ある近傍 $V\subseteq U$ 上の切断 $f$ が $\varphi_V(f)=g|_V$ を満たすように近傍を縮小できる．この性質を持つすべての対 $(V,f)$ を集めると $V$ は $U$ を覆う．重なりで二つの切断の像はともに $g$ の制限であるから，成分写像の単射性で切断も一致する．層の貼合せ条件から $U$ 上の切断が得られ，その像は $g$ に一致する．従って各成分は全単射である．成分逆写像は自然性の等式から制限と可換になり，層の逆射を定める．
+\end{proof}
+% genron:end K-001187

@@ -35922,6 +35922,1016 @@
       "status": "draft",
       "source": "volumes/N-209/web.tex",
       "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001154",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "原始再帰函数の初期函数",
+      "statement": "自然数値函数の初期函数として零函数，後者函数 $s(n)=n+1$，各座標への射影 $\\pi_i^k:\\mathbb N^k\\to\\mathbb N$ を取る．零変数の函数も許し，$\\mathbb N^0$ は一元集合とする．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000097",
+        "K-000099",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001155",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "原始再帰函数",
+      "statement": "初期函数を含み，合成及び次の原始再帰操作について閉じる最小の函数族を原始再帰函数の族という．$g:\\mathbb N^k\\to\\mathbb N$，$h:\\mathbb N^{k+2}\\to\\mathbb N$ から\n\\[\n f(\\mathbf x,0)=g(\\mathbf x),\\qquad f(\\mathbf x,n+1)=h(\\mathbf x,n,f(\\mathbf x,n))\n\\]\nで定まる $f$ を得る操作が原始再帰である．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001154",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001156",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "原始再帰函数の全域性",
+      "statement": "原始再帰で定める函数は存在して一意であり，原始再帰函数はすべて全域函数である．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001155",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001157",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "初等算術の原始再帰表示",
+      "statement": "加法，乗法，冪函数，前者函数 $p(0)=0,\\ p(n+1)=n$，切断減法 $a\\mathbin{\\dot-}b=\\max(a-b,0)$ は原始再帰的である．最後の式は自然数上で $b$ 回の前者操作を意味する．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001155",
+        "K-000107",
+        "K-000108",
+        "K-000109"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001158",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "部分再帰函数",
+      "statement": "部分函数とは定義域が $\\mathbb N^k$ の部分集合である自然数値函数をいう．初期函数から，部分函数の合成，原始再帰（必要な値が存在しなければ未定義とする），及び最小化\n\\[\n(\\mu g)(\\mathbf x)=\\min\\{n\\mid g(\\mathbf x,n)=0,\\ \\forall m<n,\\ g(\\mathbf x,m)\\text{ が定義され非零}\\}\n\\]\nによって有限回で得られる部分函数を部分再帰函数という．該当する $n$ が存在しないとき未定義である．全域である部分再帰函数を全再帰函数という．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001155",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001159",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "最小化と未定義性",
+      "statement": "$g(a,n)=a$ とおくと $\\mu g$ は $a=0$ のとき値 $0$ を持ち，$a\\ne0$ のとき未定義である．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001158"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001160",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "原始再帰と最小化の手続き",
+      "statement": "原始再帰の式は有限回の反復による評価手続きを定める．部分再帰の最小化は $n=0,1,\\ldots$ の順に部分函数を評価し，初めて零を返した時点で停止する手続きを定める．途中で評価が停止しない場合には後続の試行に移らない．",
+      "assumptions": [],
+      "position": [
+        323,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001158",
+        "K-001156",
+        "K-001114"
+      ],
+      "status": "draft",
+      "source": "volumes/N-323/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001161",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "機械と入力の対の符号",
+      "statement": "機械の符号を二文字 $0,1$ 上の語とし，入力もこの二文字上の語とする．二語 $u,v$ の対を $1^{|u|}0uv$ で符号化する．先頭の一の個数から最初の語の長さを読み取り，残りを二語に分けられる．",
+      "assumptions": [],
+      "position": [
+        324,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001117",
+        "K-000542",
+        "K-000543"
+      ],
+      "status": "draft",
+      "source": "volumes/N-324/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001162",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "停止問題",
+      "statement": "二文字入力を持つ番号付き決定性Turing機械 $M$ の符号を $\\langle M\\rangle$ とする．停止言語 $H$ を，$\\langle M\\rangle,w$ の対の符号のうち $M$ が $w$ 上で有限時間で停止するもの全体とする．不正な機械符号又は対の符号は $H$ に属さない．",
+      "assumptions": [],
+      "position": [
+        324,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001161",
+        "K-001112",
+        "K-001114",
+        "K-001115"
+      ],
+      "status": "draft",
+      "source": "volumes/N-324/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001163",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対符号の自己複製と機械の合成",
+      "statement": "入力語 $x$ を対 $(x,x)$ の符号に変換した後，固定された機械 $D$ をその語上で実行し，その停止状態に応じて停止又は無限反復する決定性Turing機械を作れる．",
+      "assumptions": [],
+      "position": [
+        324,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001161",
+        "K-001112",
+        "K-001113"
+      ],
+      "status": "draft",
+      "source": "volumes/N-324/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001164",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "停止問題の決定不可能性",
+      "statement": "停止言語 $H$ は決定可能ではない．",
+      "assumptions": [],
+      "position": [
+        324,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001162",
+        "K-001163",
+        "K-001115",
+        "K-001117"
+      ],
+      "status": "draft",
+      "source": "volumes/N-324/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001165",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "写像還元",
+      "statement": "言語 $A,B$ に対して，すべての入力上で停止して出力語を与える機械で計算される写像 $f$ が存在し，$x\\in A$ と $f(x)\\in B$ が同値であるとき，$A$ は $B$ に写像還元可能という．出力は停止時の指定された有限語とする．",
+      "assumptions": [],
+      "position": [
+        324,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001112",
+        "K-001115"
+      ],
+      "status": "draft",
+      "source": "volumes/N-324/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001166",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "決定可能性の還元による保存",
+      "statement": "$A$ が $B$ に写像還元可能であり $B$ が決定可能なら $A$ も決定可能である．特に $H$ が $B$ に写像還元可能なら $B$ は決定不可能である．",
+      "assumptions": [],
+      "position": [
+        324,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001165",
+        "K-001164",
+        "K-001163"
+      ],
+      "status": "draft",
+      "source": "volumes/N-324/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001167",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "古典命題論理の自然演繹",
+      "statement": "有限の導出木を考え，葉は仮定である．規則として連言の導入及び二つの除去，選言の二つの導入及び場合分けによる除去，含意の導入（仮定を解除する）及び除去を用いる．さらに矛盾記号 $\\bot$ を加え，$A,\\neg A$ から $\\bot$，$\\bot$ から任意の式，仮定 $A$ から $\\bot$ が導けたときの $\\neg A$ の導入，仮定 $\\neg A$ から $\\bot$ が導けたときの $A$ の導入（古典的背理法）を許す．$\\bot$ の真理値は常に零である．未解除の仮定が $\\Gamma$ に属する導出木が存在することを $\\Gamma\\vdash A$ と書く．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001085",
+        "K-001086",
+        "K-001087",
+        "K-001088",
+        "K-001089"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001168",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自然演繹の健全性",
+      "statement": "$\\Gamma\\vdash A$ なら $\\Gamma\\models A$ である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001167",
+        "K-001087",
+        "K-001089"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001169",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "付値に対応する符号付き導出",
+      "statement": "有限の変数集合 $P_0$ 上の付値 $v$ について，真の変数 $p$ を $p$，偽の変数を $\\neg p$ とした仮定集合を $\\Delta_v$ とする．$P_0$ の変数のみを含む式 $A$ について，値が一なら $\\Delta_v\\vdash A$，零なら $\\Delta_v\\vdash\\neg A$ である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001167",
+        "K-001086",
+        "K-001088",
+        "K-001090"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001170",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "排中律と仮定の消去",
+      "statement": "任意の式 $A$ について $\\vdash A\\lor\\neg A$ である．また $\\Gamma\\cup\\{A\\}\\vdash B$ かつ $\\Gamma\\cup\\{\\neg A\\}\\vdash B$ なら $\\Gamma\\vdash B$ である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001167"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001171",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "恒真式に対する完全性",
+      "statement": "任意の恒真式 $A$ について $\\vdash A$ である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001169",
+        "K-001170",
+        "K-001090"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001172",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限前提に対する完全性",
+      "statement": "$\\Gamma$ が有限で $\\Gamma\\models B$ なら $\\Gamma\\vdash B$ である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001171",
+        "K-001167",
+        "K-001091"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001173",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一階言語の記号",
+      "statement": "変数の無限集合 $V$ と互いに素な函数記号集合及び関係記号集合を取り，各記号に有限のアリティを指定する．アリティ零の函数記号を定数記号という．等号を特別な二項関係記号として備える．これらと論理記号，括弧等の構文記号を区別する．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001085",
+        "K-001105",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001174",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "項",
+      "statement": "変数を項とし，アリティ $n$ の函数記号 $f$ と項 $t_1,\\ldots,t_n$ に対して $f(t_1,\\ldots,t_n)$ を項とする．この操作により有限回で得られる構文木全体を項の集合とする．$n=0$ の場合は定数記号自身である．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001173"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001175",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一階論理式",
+      "statement": "項 $s,t$ に対する $s=t$，及びアリティ $n$ の関係記号 $R$ に対する $R(t_1,\\ldots,t_n)$ を原子式という．原子式から命題論理の結合子，及び各変数 $x$ に対する $\\forall x,\\exists x$ によって有限回で生成される構文木を一階論理式とする．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001174",
+        "K-001085"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001176",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "自由変数と束縛変数",
+      "statement": "項の変数集合を構文木に現れる変数の集合とする．原子式の自由変数はその項に現れる変数であり，否定では子の自由変数集合，二項結合では二つの集合の和集合，量化式 $QxA$ では $A$ の自由変数集合から $x$ を除いたものとする．量化子の作用域にあり同じ変数を束縛する最内の量化子を持つ出現を束縛出現といい，それ以外を自由出現という．自由変数のない式を文という．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001175"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001177",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由変数集合の有限性",
+      "statement": "各項の変数集合と各論理式の自由変数集合は有限である．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001176",
+        "K-000104",
+        "K-000113",
+        "K-000120"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001178",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "項への代入",
+      "statement": "項 $t$ の変数 $x$ への項 $u$ の代入 $t[u/x]$ は，変数の場合は $x$ なら $u$，他の変数ならその変数とし，函数記号の場合は各引数に再帰的に同じ代入を施す操作とする．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001174",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001179",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "式への代入可能性",
+      "statement": "項 $u$ が式 $A$ において変数 $x$ に代入可能とは，$A$ における $x$ の各自由出現を $u$ で置き換えるとき，$u$ の変数のいずれもその出現を含む量化子によって新たに束縛されないことをいう．この条件の下で自由出現だけを置き換えた式を $A[u/x]$ と書く．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001176",
+        "K-001178"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001180",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "束縛変数の新しい記号への改名",
+      "statement": "量化式 $QxA$ に現れない変数 $z$ があるとき，$Qz(A[z/x])$ においては，元の量化子が束縛していた出現のみが $z$ に改名され，式全体の自由変数集合は変わらない．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001179",
+        "K-001177"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001181",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "変数捕獲",
+      "statement": "式 $\\forall y\\,R(x,y)$ では項 $y$ は変数 $x$ に代入可能でない．先に束縛変数を新しい $z$ へ改名すれば $\\forall z\\,R(x,z)$ となり，$x$ への $y$ の代入は $\\forall z\\,R(y,z)$ となる．",
+      "assumptions": [],
+      "position": [
+        326,
+        1,
+        1,
+        9
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001179",
+        "K-001180"
+      ],
+      "status": "draft",
+      "source": "volumes/N-326/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001182",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "芽の同値関係",
+      "statement": "位相空間 $X$ 上の集合値前層 $F$ と $x\\in X$ に対し，$x\\in U$ である開集合 $U$ と $s\\in F(U)$ の対を考える．$(U,s)\\sim(V,t)$ とは，$x\\in W\\subseteq U\\cap V$ である開集合 $W$ が存在し $s|_W=t|_W$ となることをいう．",
+      "assumptions": [],
+      "position": [
+        346,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000146",
+        "K-000147",
+        "K-000417"
+      ],
+      "status": "draft",
+      "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001183",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "茎の構成",
+      "statement": "この関係は同値関係である．その商集合を $F_x$ と書き，$F$ の $x$ における茎，$(U,s)$ の類を $s_x$ と書き $s$ の $x$ における芽という．",
+      "assumptions": [],
+      "position": [
+        346,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001182",
+        "K-000147",
+        "K-000417"
+      ],
+      "status": "draft",
+      "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001184",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "茎の余極限としての表示",
+      "statement": "$x$ の開近傍を対象とし，$U\\supseteq V$ のとき $U\\to V$ という射を持つ小圏上の制限の図式の余極限は $F_x$ である．",
+      "assumptions": [],
+      "position": [
+        346,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001183",
+        "K-000511",
+        "K-000417"
+      ],
+      "status": "draft",
+      "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001185",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "前層の射の茎写像",
+      "statement": "前層の射 $\\varphi:F\\to G$ は各 $x$ について写像 $\\varphi_x:F_x\\to G_x$，$s_x\\mapsto(\\varphi_U(s))_x$ を誘導する．恒等射と合成を保存する．",
+      "assumptions": [],
+      "position": [
+        346,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001183",
+        "K-000418"
+      ],
+      "status": "draft",
+      "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001186",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "芽による切断の一致判定",
+      "statement": "集合値層 $F$ と $s,t\\in F(U)$ に対し，すべての $x\\in U$ について $s_x=t_x$ なら $s=t$ である．",
+      "assumptions": [],
+      "position": [
+        346,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001183",
+        "K-000526"
+      ],
+      "status": "draft",
+      "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001187",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "茎による層の同型判定",
+      "statement": "集合値層の射 $\\varphi:F\\to G$ が同型射である必要十分条件は，各点 $x$ で $\\varphi_x$ が全単射であることである．",
+      "assumptions": [],
+      "position": [
+        346,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001185",
+        "K-001186",
+        "K-000526",
+        "K-000531",
+        "K-000532"
+      ],
+      "status": "draft",
+      "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -41011,7 +42021,7 @@
       "number": 323,
       "title": "再帰函数",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         322,
         5
@@ -41020,13 +42030,14 @@
         "原始再帰・μ再帰・計算可能性"
       ],
       "treatise": "T-47",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 324,
       "title": "決定可能性と停止問題",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         322,
         7
@@ -41035,13 +42046,14 @@
         "対角化・停止問題・還元"
       ],
       "treatise": "T-47",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 325,
       "title": "命題論理の証明体系",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         48
       ],
@@ -41049,13 +42061,14 @@
         "形式的導出・健全性・完全性"
       ],
       "treatise": "T-48",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 326,
       "title": "一階述語論理の構文",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         48,
         321
@@ -41064,7 +42077,8 @@
         "項・式・自由変数・代入"
       ],
       "treatise": "T-48",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 327,
@@ -41357,7 +42371,7 @@
       "number": 346,
       "title": "芽と茎",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         345,
         118,
@@ -41367,7 +42381,8 @@
         "芽・茎・茎による同型判定"
       ],
       "treatise": "T-51",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 347,

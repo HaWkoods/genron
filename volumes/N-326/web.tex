@@ -1,0 +1,148 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を主題名・著者名で検索したが該当本文を確認できなかった．以下は既出事項から独自に論証する．
+\section{一階述語論理の項と式}
+% genron:begin K-001173
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001085
+% genron:use K-001105
+% genron:use K-000118
+\begin{defn}[一階言語の記号]
+変数の無限集合 $V$ と互いに素な函数記号集合及び関係記号集合を取り，各記号に有限のアリティを指定する．アリティ零の函数記号を定数記号という．等号を特別な二項関係記号として備える．これらと論理記号，括弧等の構文記号を区別する．
+\end{defn}
+% genron:end K-001173
+% genron:begin K-001174
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001173
+\begin{defn}[項]
+変数を項とし，アリティ $n$ の函数記号 $f$ と項 $t_1,\ldots,t_n$ に対して $f(t_1,\ldots,t_n)$ を項とする．この操作により有限回で得られる構文木全体を項の集合とする．$n=0$ の場合は定数記号自身である．
+\end{defn}
+% genron:end K-001174
+% genron:begin K-001175
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001174
+% genron:use K-001085
+\begin{defn}[一階論理式]
+項 $s,t$ に対する $s=t$，及びアリティ $n$ の関係記号 $R$ に対する $R(t_1,\ldots,t_n)$ を原子式という．原子式から命題論理の結合子，及び各変数 $x$ に対する $\forall x,\exists x$ によって有限回で生成される構文木を一階論理式とする．
+\end{defn}
+% genron:end K-001175
+% genron:begin K-001176
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001175
+\begin{defn}[自由変数と束縛変数]
+項の変数集合を構文木に現れる変数の集合とする．原子式の自由変数はその項に現れる変数であり，否定では子の自由変数集合，二項結合では二つの集合の和集合，量化式 $QxA$ では $A$ の自由変数集合から $x$ を除いたものとする．量化子の作用域にあり同じ変数を束縛する最内の量化子を持つ出現を束縛出現といい，それ以外を自由出現という．自由変数のない式を文という．
+\end{defn}
+% genron:end K-001176
+% genron:begin K-001177
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001176
+% genron:use K-000104
+% genron:use K-000113
+% genron:use K-000120
+\begin{prop}[自由変数集合の有限性]
+各項の変数集合と各論理式の自由変数集合は有限である．
+\end{prop}
+\begin{proof}
+構文木の高さについて帰納法を用いる．変数の項は一元集合，定数記号では空集合である．函数及び関係記号のアリティは有限であり，有限個の有限集合の和集合は有限である．結合子及び量化子の場合も有限和と部分集合によって有限性を保つ．
+\end{proof}
+% genron:end K-001177
+% genron:begin K-001178
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001174
+% genron:use K-000105
+\begin{defn}[項への代入]
+項 $t$ の変数 $x$ への項 $u$ の代入 $t[u/x]$ は，変数の場合は $x$ なら $u$，他の変数ならその変数とし，函数記号の場合は各引数に再帰的に同じ代入を施す操作とする．
+\end{defn}
+% genron:end K-001178
+% genron:begin K-001179
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001176
+% genron:use K-001178
+\begin{defn}[式への代入可能性]
+項 $u$ が式 $A$ において変数 $x$ に代入可能とは，$A$ における $x$ の各自由出現を $u$ で置き換えるとき，$u$ の変数のいずれもその出現を含む量化子によって新たに束縛されないことをいう．この条件の下で自由出現だけを置き換えた式を $A[u/x]$ と書く．
+\end{defn}
+% genron:end K-001179
+% genron:begin K-001180
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001179
+% genron:use K-001177
+\begin{prop}[束縛変数の新しい記号への改名]
+量化式 $QxA$ に現れない変数 $z$ があるとき，$Qz(A[z/x])$ においては，元の量化子が束縛していた出現のみが $z$ に改名され，式全体の自由変数集合は変わらない．
+\end{prop}
+\begin{proof}
+$z$ が元の式に現れないので，$z$ は $A$ の $x$ への代入可能な項である．代入は $A$ 内の $x$ の自由出現に限る．これらは元の $Qx$ が束縛していた出現であり，改名後は $Qz$ が束縛する．従って外側の量化式に自由な変数は変わらない．変数集合が無限で式の出現記号が有限だから新しい $z$ は選べる．意味論的同値性は意味論導入後に扱う．
+\end{proof}
+% genron:end K-001180
+% genron:begin K-001181
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001179
+% genron:use K-001180
+\begin{prop}[変数捕獲]
+式 $\forall y\,R(x,y)$ では項 $y$ は変数 $x$ に代入可能でない．先に束縛変数を新しい $z$ へ改名すれば $\forall z\,R(x,z)$ となり，$x$ への $y$ の代入は $\forall z\,R(y,z)$ となる．
+\end{prop}
+\begin{proof}
+最初の式にそのまま代入すると自由であるはずの $y$ が $\forall y$ に束縛される．改名後には $y$ を束縛する量化子がない．
+\end{proof}
+% genron:end K-001181

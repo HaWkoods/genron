@@ -1,0 +1,109 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を主題名・著者名で検索したが該当本文を確認できなかった．以下は既出事項から独自に論証する．
+\section{決定可能性と停止問題}
+% genron:begin K-001161
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001117
+% genron:use K-000542
+% genron:use K-000543
+\begin{defn}[機械と入力の対の符号]
+機械の符号を二文字 $0,1$ 上の語とし，入力もこの二文字上の語とする．二語 $u,v$ の対を $1^{|u|}0uv$ で符号化する．先頭の一の個数から最初の語の長さを読み取り，残りを二語に分けられる．
+\end{defn}
+% genron:end K-001161
+% genron:begin K-001162
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001161
+% genron:use K-001112
+% genron:use K-001114
+% genron:use K-001115
+\begin{defn}[停止問題]
+二文字入力を持つ番号付き決定性Turing機械 $M$ の符号を $\langle M\rangle$ とする．停止言語 $H$ を，$\langle M\rangle,w$ の対の符号のうち $M$ が $w$ 上で有限時間で停止するもの全体とする．不正な機械符号又は対の符号は $H$ に属さない．
+\end{defn}
+% genron:end K-001162
+% genron:begin K-001163
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001161
+% genron:use K-001112
+% genron:use K-001113
+\begin{prop}[対符号の自己複製と機械の合成]
+入力語 $x$ を対 $(x,x)$ の符号に変換した後，固定された機械 $D$ をその語上で実行し，その停止状態に応じて停止又は無限反復する決定性Turing機械を作れる．
+\end{prop}
+\begin{proof}
+作業用の記号として区切りと各入力文字の印付き複製を追加する．入力語の左から未処理文字を一つずつ印付けし，右側の作業領域へ一個の一とその文字を順に追記すれば長さを表す語と複製を作れる．同じ走査を再度行って第二の複製を作り，区切りで分離された三領域を $1^{|x|}$，$x$，$x$ の順に連結し，一個の零を第一領域の後に置く．各領域の移動は区切りまでの走査，隣接位置への一文字移動，印の消去の反復で実現でき，有限個の状態と記号で記述される．有限語なので処理は停止する．作業領域を消去しヘッドを左端に戻して $D$ の初期状態に移る．$D$ の二停止状態を新たな状態で置き換え，一方で停止，他方で同じ位置に留まる自己遷移を行えばよい．
+\end{proof}
+% genron:end K-001163
+% genron:begin K-001164
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001162
+% genron:use K-001163
+% genron:use K-001115
+% genron:use K-001117
+\begin{prop}[停止問題の決定不可能性]
+停止言語 $H$ は決定可能ではない．
+\end{prop}
+\begin{proof}
+決定機械 $D$ が存在すると仮定する．前命題によって入力 $x$ に対し $D$ を対 $(x,x)$ 上で実行し，受理なら無限に反復し拒否なら停止する機械 $E$ を作る．$e=\langle E\rangle$ とおく．$D$ が $(e,e)$ を受理することは $E$ が $e$ 上で停止することと同値である．しかし $E$ の構成により，その受理は $E$ が停止しないことと同値であり矛盾する．
+\end{proof}
+% genron:end K-001164
+% genron:begin K-001165
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001112
+% genron:use K-001115
+\begin{defn}[写像還元]
+言語 $A,B$ に対して，すべての入力上で停止して出力語を与える機械で計算される写像 $f$ が存在し，$x\in A$ と $f(x)\in B$ が同値であるとき，$A$ は $B$ に写像還元可能という．出力は停止時の指定された有限語とする．
+\end{defn}
+% genron:end K-001165
+% genron:begin K-001166
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001165
+% genron:use K-001164
+% genron:use K-001163
+\begin{prop}[決定可能性の還元による保存]
+$A$ が $B$ に写像還元可能であり $B$ が決定可能なら $A$ も決定可能である．特に $H$ が $B$ に写像還元可能なら $B$ は決定不可能である．
+\end{prop}
+\begin{proof}
+入力から $f(x)$ を計算して停止し，作業記号を除去してヘッドを初期位置に戻し，状態集合を区別して $B$ の決定機械に接続する．両段階が停止し，受理条件は $f(x)\in B$，すなわち $x\in A$ である．第二の主張は第一と停止問題の決定不可能性から従う．
+\end{proof}
+% genron:end K-001166
