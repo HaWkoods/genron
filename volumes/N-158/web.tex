@@ -1,0 +1,104 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：K. Warner ではなく F. W. Warner, Foundations of Differentiable Manifolds and Lie Groups, 1.37 (Implicit Function Theorem) の有限次元定式化を確認．既出Banach逆写像定理を用いて一般化する．
+\section{陰函数定理}
+% genron:begin K-001011
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000791
+% genron:use K-000893
+% genron:use K-000894
+\begin{defn}[偏微分作用素]
+ノルム空間 $E,F,G$，開集合 $U\subseteq E\times F$ とFréchet微分可能写像 $\Phi:U\to G$ を取る．点 $(x,y)$ で $D_x\Phi(x,y)h=D\Phi(x,y)(h,0)$，$D_y\Phi(x,y)k=D\Phi(x,y)(0,k)$ と定める．積には最大値ノルムを用いる．
+\end{defn}
+% genron:end K-001011
+% genron:begin K-001012
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001011
+% genron:use K-000853
+% genron:use K-000897
+\begin{prop}[全微分の偏微分への分解]
+$D\Phi(x,y)(h,k)=D_x\Phi(x,y)h+D_y\Phi(x,y)k$ である．偏微分はそれぞれ固定した他方の変数に関するFréchet微分であり，$\Phi$ が $C^1$ 級なら両偏微分作用素は作用素ノルムに関して連続である．
+\end{prop}
+\begin{proof}
+線形性による分解は定義から従う．$k=0$ 又は $h=0$ を微分の剰余評価に代入すれば偏微分の主張を得る．標準包含 $h\mapsto(h,0)$，$k\mapsto(0,k)$ のノルムは一以下なので，$D\Phi$ の変化のノルムで各偏微分の変化を評価できる．
+\end{proof}
+% genron:end K-001012
+% genron:begin K-001013
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001011
+% genron:use K-001012
+% genron:use K-000791
+% genron:use K-000794
+% genron:use K-000853
+% genron:use K-000856
+% genron:use K-000896
+% genron:use K-000897
+% genron:use K-000978
+\begin{prop}[Banach空間の陰函数定理]
+Banach空間 $E,F,G$ の間の $C^1$ 級写像 $\Phi:U\subseteq E\times F\to G$ に対し $\Phi(a,b)=0$ とする．$B=D_y\Phi(a,b):F\to G$ が有界線形同型で有界逆写像を持つならば，ある開近傍 $V\subseteq E,W\subseteq F$（$a\in V,b\in W$，$V\times W\subseteq U$）と $C^1$ 級写像 $g:V\to W$ が存在し，$(x,y)\in V\times W$ において $\Phi(x,y)=0\Leftrightarrow y=g(x)$ である．$g(a)=b$ であり
+\[
+Dg(x)=-D_y\Phi(x,g(x))^{-1}D_x\Phi(x,g(x))
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+$\Psi(x,y)=(x,\Phi(x,y))$ とおく．$A=D_x\Phi(a,b)$ とすれば $D\Psi(a,b)(h,k)=(h,Ah+Bk)$ であり，逆写像は $(u,v)\mapsto(u,B^{-1}(v-Au))$ である．積ノルムに関して両者は有界である．\GenronRef{K-000978} により $(a,b)$ と $(a,0)$ の開近傍の間で $\Psi$ は $C^1$ 級同型である．その逆写像を $(x,z)\mapsto(x,h(x,z))$ と書ける．逆写像の定義域に $(x,0)$ が属する $x$ の開近傍を取り $g(x)=h(x,0)$ と定める．元の局所可逆領域内に積近傍 $V_0\times W$ を取り，$g$ の連続性により $V_0$ を更に縮小して $g(V)\subseteq W$ とする．零点の一意性は $\Psi$ の単射性から従う．$D_y\Phi$ は連続であるから，\GenronRef{K-000856} により近傍を縮小して常に可逆とできる．$\Phi(x,g(x))=0$ を連鎖律と \GenronRef{K-001012} で微分すると $D_x\Phi+D_y\Phi\,Dg=0$ を得る．
+\end{proof}
+% genron:end K-001013
+% genron:begin K-001014
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001013
+% genron:use K-000896
+\begin{prop}[方程式の右辺への依存]
+前命題と同じ仮定の下で，$z$ の零元近傍をも導入すれば，$\Phi(x,y)=z$ の局所解は $y=h(x,z)$ と書け，$h$ は $C^1$ 級である．$D_zh(x,z)=D_y\Phi(x,h(x,z))^{-1}$ となる．
+\end{prop}
+\begin{proof}
+\GenronRef{K-001013} の証明における $\Psi^{-1}(x,z)=(x,h(x,z))$ の定義域は開集合であるから $(a,0)$ の積近傍を含む．適切に縮小した積近傍で $\Phi(x,h(x,z))=z$ が成立する．$z$ に関して微分し $D_y\Phi\,D_zh=I$ を得る．逆作用素を左から掛ければよい．
+\end{proof}
+% genron:end K-001014
+% genron:begin K-001015
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001013
+% genron:use K-000898
+% genron:use K-000849
+\begin{example}[単位球面の局所的表示]
+$\Phi(x,y)=\|x\|_2^2+y^2-1$（$x\in\mathbb R^n,y\in\mathbb R$）とする．$\Phi(a,b)=0,b\ne0$ なら球面は $(a,b)$ の近傍で $y=g(x)$ なる $C^1$ 級函数のグラフであり，$Dg(a)h=-\sum_j a_jh_j/b$ である．
+\end{example}
+\begin{proof}
+積の微分法則又は連続双線形写像の微分から $D_x\Phi(a,b)h=2\sum_j a_jh_j$，$D_y\Phi(a,b)k=2bk$ である．後者は $b\ne0$ によって可逆であり，\GenronRef{K-001013} を適用すればよい．
+\end{proof}
+% genron:end K-001015

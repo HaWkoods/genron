@@ -1,0 +1,146 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 4.1 のNewton–Leibniz公式の適用範囲に関する記述を確認．連続函数とRiemann積分について基本公式を独自論証．
+\section{微積分の基本定理}
+% genron:begin K-001004
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000959
+% genron:use K-000967
+% genron:use K-000970
+\begin{defn}[原始函数と積分函数]
+開区間 $I$ 上の実函数 $f$ に対し，$F'=f$ を満たす微分可能函数 $F:I\to\mathbb R$ を原始函数という．$f$ が各閉有界部分区間でRiemann可積分であるとき，$a\in I$ を固定して $F(x)=\int_a^x f(t)\,dt$ と定めた函数を積分函数という．
+\end{defn}
+% genron:end K-001004
+% genron:begin K-001005
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001004
+% genron:use K-000969
+% genron:use K-000970
+% genron:use K-000887
+\begin{prop}[微積分の基本定理（積分函数の微分）]
+$f$ が各閉有界部分区間でRiemann可積分であるとする．積分函数 $F(x)=\int_a^x f(t)\,dt$ は連続であり，$f$ の連続点 $x$ で $F'(x)=f(x)$ となる．
+\end{prop}
+\begin{proof}
+任意の $x$ の十分小さい閉近傍上で $|f|\leq M$ とできる．積分の加法性と単調性から $|F(x+h)-F(x)|\leq M|h|$ であり連続性を得る．$f$ が $x$ で連続なら任意の $\varepsilon>0$ に対し十分小さい $|h|$ で $x$ と $x+h$ の間の全ての $t$ について $|f(t)-f(x)|\leq\varepsilon$ である．従って
+\[
+\left|\frac{F(x+h)-F(x)}h-f(x)\right|
+\leq\varepsilon
+\]
+である．$h<0$ のときも積分の向きを反転すれば同じ評価となる．
+\end{proof}
+% genron:end K-001005
+% genron:begin K-001006
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001004
+% genron:use K-001005
+% genron:use K-000968
+% genron:use K-000960
+% genron:use K-000964
+\begin{prop}[微積分の基本定理（Newton–Leibniz公式）]
+$f$ が開区間 $I$ 上連続であり $G$ がその原始函数なら，任意の $a,b\in I$ に対して $\int_a^b f=G(b)-G(a)$ である．原始函数は存在し，任意の二つの原始函数の差は定数である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000968} と \GenronRef{K-001005} により積分函数 $F(x)=\int_a^x f$ は原始函数である．$G-F$ の導函数は零であるから \GenronRef{K-000964} により定数である．$F(a)=0$ として式を得る．同じ論証は任意の二つの原始函数にも適用できる．
+\end{proof}
+% genron:end K-001006
+% genron:begin K-001007
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001006
+% genron:use K-000960
+% genron:use K-000968
+\begin{prop}[置換積分]
+$f:I\to\mathbb R$ が連続，$\varphi:J\to I$ が $C^1$ 級（$I,J$ は開区間）ならば，任意の $a,b\in J$ について
+\[
+\int_a^b f(\varphi(t))\varphi'(t)\,dt=\int_{\varphi(a)}^{\varphi(b)}f(u)\,du
+\]
+である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-001006} によって $f$ の原始函数 $G$ を取る．連鎖律により $(G\circ\varphi)'=(f\circ\varphi)\varphi'$ であり，右辺の函数は連続である．\GenronRef{K-001006} を再び適用すると左辺は $G(\varphi(b))-G(\varphi(a))$ となる．これは右辺に等しい．単調性を仮定する必要はない．
+\end{proof}
+% genron:end K-001007
+% genron:begin K-001008
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001006
+% genron:use K-000960
+% genron:use K-000969
+\begin{prop}[部分積分]
+$f,g$ が開区間 $I$ 上の $C^1$ 級実函数ならば $\int_a^b fg'=f(b)g(b)-f(a)g(a)-\int_a^b f'g$ である．
+\end{prop}
+\begin{proof}
+積の微分法則により $(fg)'=f'g+fg'$ である．両項は連続であり \GenronRef{K-001006} 及び積分の線形性を適用すればよい．
+\end{proof}
+% genron:end K-001008
+% genron:begin K-001009
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000967
+% genron:use K-000969
+% genron:use K-000953
+\begin{prop}[一様収束とRiemann積分]
+$[a,b]$ 上のRiemann可積分函数列 $f_n$ が一様に $f$ に収束するならば $f$ も可積分であり $\int_a^b f_n\to\int_a^b f$ となる．
+\end{prop}
+\begin{proof}
+十分大きい $N$ に対して $\sup|f-f_N|\leq\delta$ とできるから $f$ は有界であり，任意の分割 $P$ で $U(f,P)-L(f,P)\leq U(f_N,P)-L(f_N,P)+2\delta(b-a)$ である．$\delta$ と $f_N$ の上下和の差を任意に小さく取れるため \GenronRef{K-000967} から可積分性が従う．積分の絶対値評価により $|\int_a^b f-\int_a^b f_n|\leq(b-a)\sup|f-f_n|\to0$ である．
+\end{proof}
+% genron:end K-001009
+% genron:begin K-001010
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001005
+% genron:use K-001006
+% genron:use K-000969
+% genron:use K-000955
+\begin{prop}[導函数列の一様収束による項別微分]
+閉有界区間 $[a,b]$ を含む開区間上の $C^1$ 級函数列 $f_n$ について，$f_n(a)$ が収束し $f_n'$ が $[a,b]$ 上一様に $g$ に収束するならば，$f_n$ は $[a,b]$ 上一様にある $f$ に収束し，$(a,b)$ 上で $f'=g$ である．
+\end{prop}
+\begin{proof}
+一様極限の連続性から $g$ は連続である．$c=\lim_n f_n(a)$ とおき $f(x)=c+\int_a^x g$ と定める．\GenronRef{K-001006} から $f_n(x)=f_n(a)+\int_a^x f_n'$ なので $\sup_{[a,b]}|f_n-f|\leq|f_n(a)-c|+(b-a)\sup_{[a,b]}|f_n'-g|\to0$ である．\GenronRef{K-001005} により内点で $f'=g$ が成立する．
+\end{proof}
+% genron:end K-001010

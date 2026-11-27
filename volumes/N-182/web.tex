@@ -1,0 +1,153 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：H. Brezis, Functional Analysis, Sobolev Spaces and Partial Differential Equations, 2011, §6.1 のコンパクト作用素の定義と作用素ノルム閉性の命題を照合．スペクトル基礎は独自論証．
+\section{コンパクト作用素}
+% genron:begin K-001027
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000792
+% genron:use K-000852
+% genron:use K-000802
+\begin{defn}[コンパクト作用素]
+ノルム空間 $E,F$ の間の有界線形作用素 $T$ が，$E$ の閉単位球の像の閉包を $F$ のコンパクト集合とするならコンパクト作用素という．
+\end{defn}
+% genron:end K-001027
+% genron:begin K-001028
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001027
+% genron:use K-000802
+% genron:use K-000735
+% genron:use K-000060
+\begin{prop}[コンパクト作用素の点列判定]
+$T$ がコンパクトであることは，任意の有界列 $(x_n)$ に対して $(Tx_n)$ が $F$ 内に収束部分列を持つことと同値である．
+\end{prop}
+\begin{proof}
+単位球の定数倍に列が含まれるのでコンパクト性から必要性が従う．逆に単位球の像の閉包内の任意の列 $(y_n)$ に対し $\|y_n-Tx_n\|<1/n,\ \|x_n\|\leq1$ となる $x_n$ を選ぶ．仮定から $(Tx_n)$ の収束部分列を取り，対応する $(y_n)$ も同じ極限を持つ．閉包内での点列コンパクト性から \GenronRef{K-000802} によりコンパクト性を得る．
+\end{proof}
+% genron:end K-001028
+% genron:begin K-001029
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001027
+% genron:use K-001028
+% genron:use K-000793
+% genron:use K-000853
+% genron:use K-000802
+% genron:use K-000850
+% genron:use K-000851
+\begin{prop}[コンパクト作用素の線形性・合成・閉性]
+コンパクト作用素全体は有界線形作用素の線形部分空間をなす．有界線形作用素との合成（定義可能な両側）はコンパクトである．$F$ がBanach空間なら $\mathcal L(E,F)$ 内で作用素ノルムに関して閉である．有限階数の有界線形作用素はコンパクトである．
+\end{prop}
+\begin{proof}
+和の点列判定では一方の像が収束する部分列を取り，その部分列から他方の像が収束する部分列を取ればよい．スカラー倍も同様である．合成では有界作用素が有界列を有界列に移し収束列を収束列に移すことを用いる．$T_j$ がコンパクトで $\|T_j-T\|\to0$ とする．任意の $\varepsilon>0$ について $\|T_j-T\|<\varepsilon/2$ となる $j$ を選ぶ．$T_j$ の単位球像は有限個の半径 $\varepsilon/2$ の球で覆えるから，$T$ の単位球像は同じ中心の半径 $\varepsilon$ の球で覆える．従って像の閉包は全有界であり完備性と \GenronRef{K-000802} からコンパクトである．有限階数の場合，像の閉包は閉な有限次元部分空間内の有界閉集合であり \GenronRef{K-000850} によりコンパクトである．
+\end{proof}
+% genron:end K-001029
+% genron:begin K-001030
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000852
+% genron:use K-000856
+% genron:use K-000629
+\begin{defn}[スペクトルと固有値]
+複素Banach空間 $E$ 上の有界線形作用素 $T$ について，$\lambda I-T$ が有界逆写像を持つ全単射でない複素数 $\lambda$ 全体をスペクトル $\sigma(T)$ という．$\ker(\lambda I-T)\ne\{0\}$ のとき $\lambda$ を固有値といい，この核を固有空間という．
+\end{defn}
+% genron:end K-001030
+% genron:begin K-001031
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001028
+% genron:use K-001030
+% genron:use K-000879
+% genron:use K-000878
+% genron:use K-000851
+% genron:use K-000060
+\begin{prop}[非零固有値の有限重複性]
+Hilbert空間上のコンパクト作用素 $T$ の非零固有値 $\lambda$ の固有空間は有限次元である．
+\end{prop}
+\begin{proof}
+固有空間は閉線形部分空間である．無限次元とすれば，有限次元部分空間への直交射影を用い，その直交補から単位ベクトルを順次選んで正規直交列 $(e_n)$ を作れる．$Te_n=\lambda e_n$ であり $n\ne m$ なら $\|Te_n-Te_m\|=\sqrt2|\lambda|$ である．これは \GenronRef{K-001028} に反する．
+\end{proof}
+% genron:end K-001031
+% genron:begin K-001032
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001028
+% genron:use K-001030
+% genron:use K-001031
+% genron:use K-000987
+% genron:use K-000988
+% genron:use K-000878
+% genron:use K-000853
+% genron:use K-000060
+\begin{prop}[コンパクト自己随伴作用素の非零固有値]
+複素Hilbert空間の非零コンパクト自己随伴作用素 $T$ は $\|T\|$ 又は $-\|T\|$ を固有値として持つ．異なる固有値の固有空間は直交する．任意の $\varepsilon>0$ に対し $|\lambda|\geq\varepsilon$ となる固有値は有限個である．
+\end{prop}
+\begin{proof}
+$s=\|T\|>0$ とする．\GenronRef{K-000988} により単位ベクトル列 $x_n$ で $|\langle Tx_n,x_n\rangle|\to s$ となるものを取れる．自己随伴性からこの値は実数なので部分列と符号 $\eta\in\{1,-1\}$ を選び $\eta\langle Tx_n,x_n\rangle\to s$ とする．
+\[
+\|Tx_n-\eta s x_n\|^2
+\leq2s^2-2\eta s\langle Tx_n,x_n\rangle\to0 .
+\]
+コンパクト性によって $(Tx_n)$ の収束部分列を取り，式から対応する $x_n$ も単位ベクトル $x$ に収束する．連続性により $Tx=\eta s x$ となる．固有値は自己随伴性によって実数である．$Tx=\lambda x,Ty=\mu y$ なら $(\lambda-\mu)\langle x,y\rangle=0$ なので異なる固有値の固有空間は直交する．もし $|\lambda_n|\geq\varepsilon$ なる相異なる固有値が無限個あれば，各固有空間の単位ベクトル $e_n$ について $\|Te_n-Te_m\|^2=|\lambda_n|^2+|\lambda_m|^2\geq2\varepsilon^2$ となり \GenronRef{K-001028} に反する．
+\end{proof}
+% genron:end K-001032
+% genron:begin K-001033
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001028
+% genron:use K-001030
+% genron:use K-001032
+% genron:use K-000907
+% genron:use K-000908
+% genron:use K-000989
+% genron:use K-000879
+% genron:use K-000794
+\begin{prop}[コンパクト自己随伴作用素の非零スペクトル]
+複素Hilbert空間上のコンパクト自己随伴作用素 $T$ の非零スペクトル点は固有値である．
+\end{prop}
+\begin{proof}
+$\lambda\ne0$ で固有値でないとする．$S=\lambda I-T$ が下から有界でなければ，単位ベクトル列 $x_n$ で $Sx_n\to0$ となるものが取れる．コンパクト性による $Tx_n$ の収束部分列と $\lambda x_n=Tx_n+Sx_n$ から，対応する $x_n$ は単位ベクトル $x$ に収束し $Sx=0$ となる．矛盾である．従って $\|Sx\|\geq c\|x\|$ となる $c>0$ があり，完備性によって像は閉である．また \GenronRef{K-000989} によって像の直交補は $\ker S^*=\ker(\bar\lambda I-T)$ である．自己随伴作用素の固有値は実数であるため，$\lambda$ が固有値でないなら $\bar\lambda$ も固有値ではない．よって像の直交補は零であり，閉部分空間への直交分解から像は全空間である．下からの評価は逆写像の有界性も与える．
+\end{proof}
+% genron:end K-001033

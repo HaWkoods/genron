@@ -1,0 +1,96 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020 におけるTaylor級数への言及を確認したが一変数Taylor公式の個別証明との照合は未了．Rolleの定理から独自に論証する．
+\section{Taylorの定理}
+% genron:begin K-000999
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000959
+% genron:use K-000887
+\begin{defn}[高階導函数とTaylor多項式]
+開区間 $I$ 上の実函数 $f$ に対し $f^{(0)}=f$，$f^{(j+1)}=(f^{(j)})'$ と帰納的に定める．$n$ 階までの導函数が存在し全て連続なら $C^n$ 級という．$a\in I$ における $n$ 次Taylor多項式を $P_n(x)=\sum_{j=0}^n f^{(j)}(a)(x-a)^j/j!$ と定める．
+\end{defn}
+% genron:end K-000999
+% genron:begin K-001000
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000999
+% genron:use K-000960
+% genron:use K-000962
+\begin{prop}[Taylorの定理（Lagrange剰余）]
+$n\geq0$ とし，$f$ が開区間 $I$ 上で $n+1$ 回微分可能であるとする．異なる $a,x\in I$ の間の点 $\xi$ が存在して
+\[
+f(x)=P_n(x)+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}
+\]
+となる．
+\end{prop}
+\begin{proof}
+$R=(f(x)-P_n(x))/(x-a)^{n+1}$ とおき $F(t)=f(t)-P_n(t)-R(t-a)^{n+1}$ とする．$F(x)=F(a)=0$ であり $F^{(j)}(a)=0$（$1\leq j\leq n$）である．多項式の微分公式は積の微分法則の帰納的適用で得られる．$a,x$ の間で \GenronRef{K-000962} を適用し $F'(c_1)=0$ となる内点 $c_1$ を取る．次に $a,c_1$ の間で $F'$ に同じ定理を適用する．これを $n+1$ 回繰り返すと $F^{(n+1)}(\xi)=0$ を得る．$P_n^{(n+1)}=0$ なので $R=f^{(n+1)}(\xi)/(n+1)!$ である．各適用で必要な連続性は次の階の微分可能性から従う．
+\end{proof}
+% genron:end K-001000
+% genron:begin K-001001
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000999
+% genron:use K-000963
+% genron:use K-000959
+\begin{prop}[Taylorの定理（Peano剰余）]
+$n\geq1$ とし $f$ が $a$ の近傍で $n$ 回微分可能であれば，$f(a+h)=P_n(a+h)+o(|h|^n)$ が成立する．
+\end{prop}
+\begin{proof}
+$g=f-P_n$ とすれば $g^{(j)}(a)=0$（$0\leq j\leq n$）である．$g^{(n-1)}$ の $a$ における微分可能性から，任意の $\varepsilon>0$ に対し十分小さい $|t-a|$ では $|g^{(n-1)}(t)|\leq\varepsilon|t-a|$ となる．$j=n-2,n-3,\ldots,0$ の順に $g^{(j)}$ に平均値定理を適用すると，$|g^{(j)}(t)|\leq\varepsilon|t-a|^{n-j}$ を得る．実際 $g^{(j)}(a)=0$ であり，中間点での次の導函数の評価に $|t-a|$ を掛ければよい．$j=0$ の評価が結論である．
+\end{proof}
+% genron:end K-001001
+% genron:begin K-001002
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001000
+% genron:use K-000807
+\begin{prop}[Taylor剰余の一様評価]
+$[a,x]$ 又は $[x,a]$ 上で $|f^{(n+1)}|\leq M$ なら $|f(x)-P_n(x)|\leq M|x-a|^{n+1}/(n+1)!$ である．特に全ての $x\in I$ についてこの評価の右辺が $n\to\infty$ で零となるなら $f$ はTaylor級数に等しい．
+\end{prop}
+\begin{proof}
+\GenronRef{K-001000} の絶対値を取れば評価を得る．$a=x$ でも両辺は零である．級数との一致はその部分和 $P_n(x)$ が $f(x)$ に収束することに他ならない．
+\end{proof}
+% genron:end K-001002
+% genron:begin K-001003
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001001
+% genron:use K-000961
+\begin{prop}[高階微分による局所極値の判定]
+$f^{(1)}(a)=\cdots=f^{(n-1)}(a)=0$，$f^{(n)}(a)\ne0$ とする．$n$ が偶数なら $f^{(n)}(a)>0$ のとき狭義局所最小，負のとき狭義局所最大となる．$n$ が奇数なら局所極値ではない．
+\end{prop}
+\begin{proof}
+\GenronRef{K-001001} から $f(a+h)-f(a)=h^n(c+\varepsilon(h))$，$c=f^{(n)}(a)/n!\ne0$，$\varepsilon(h)\to0$ である．十分小さい非零 $h$ で括弧内の符号は $c$ と一致する．$h^n$ の符号を調べれば結論を得る．
+\end{proof}
+% genron:end K-001003

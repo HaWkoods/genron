@@ -1,0 +1,126 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：V. I. Bogachev, Measure Theory, 2007, Vol. I, §1.7 のLebesgue測度の章題を確認．区間環の前測度と完備化による独自構成．
+\section{Lebesgue測度}
+% genron:begin K-001016
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000178
+% genron:use K-000887
+% genron:use K-000705
+\begin{defn}[半開区間環と区間長]
+$\mathbb R$ の有界半開区間 $[a,b)$（$a\leq b$）の有限非交和全体を $\mathcal R$ とする．$A=\coprod_{i=1}^m[a_i,b_i)$ に対し $\ell(A)=\sum_{i=1}^m(b_i-a_i)$ と定める．空集合では零とする．
+\end{defn}
+% genron:end K-001016
+% genron:begin K-001017
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001016
+% genron:use K-000179
+\begin{prop}[区間長の整合性と有限加法性]
+$\mathcal R$ は集合環であり，$\ell$ は表示によらず定まり，非負かつ有限加法的である．
+\end{prop}
+\begin{proof}
+有限個の区間の全端点を昇順に並べて隣接端点間の半開区間へ細分する．各集合は細分区間のうちあるものの非交和であるから合併，差，共通部分も同じ形である．細分前後で長さの和は望遠和により一致する．二つの表示を同時に細分すれば，双方で選ばれる非空細分区間は一致するから表示独立性が従う．互いに素な集合の長さは同じ細分の異なる項の和であり有限加法性を得る．
+\end{proof}
+% genron:end K-001017
+% genron:begin K-001018
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001016
+% genron:use K-001017
+% genron:use K-000888
+% genron:use K-000817
+% genron:use K-000816
+% genron:use K-000822
+% genron:use K-000706
+\begin{prop}[区間長の前測度性]
+$\ell$ は $\mathcal R$ 上の$\sigma$有限前測度である．
+\end{prop}
+\begin{proof}
+$A,A_j\in\mathcal R$ とし $A\subseteq\bigcup_j A_j$ とする．各 $A_j$ の有限半開区間をわずかに広げた有界開区間の合併 $O_j$ を取り，それらの長さの総和が $\ell(A_j)+\varepsilon2^{-j}$ 以下となるようにする．一方 $A$ の各非空半開区間 $[a_i,b_i)$ の右端を少し左にずらした閉区間 $[a_i,b_i-\delta_i]$ の合併を $K$ とし，$\sum_i\delta_i<\varepsilon$ とする．$K$ はコンパクトだから $O_j$ から有限個を選んで覆える．その有限個の開区間の全端点と $K$ の端点を用いて細分し，各開小区間の長さを数えると，$K$ の閉区間長の和は被覆する開区間長の総和以下となる（端点自身は長さに寄与しない）．従って $\ell(A)-\varepsilon\leq\sum_j\ell(A_j)+\varepsilon$ である．$\varepsilon\downarrow0$ とすれば被覆不等式を得る．$A=\coprod_j A_j$ の場合は有限加法性と単調性により逆向きの不等式も得られ，可算加法性が成立する．$\mathbb R=\bigcup_{n\geq1}[-n,n)$ なので$\sigma$有限である．
+\end{proof}
+% genron:end K-001018
+% genron:begin K-001019
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001018
+% genron:use K-000818
+% genron:use K-000823
+% genron:use K-000648
+% genron:use K-000187
+% genron:use K-000993
+\begin{prop}[Borel Lebesgue測度の存在と一意性]
+$\mathcal B(\mathbb R)$ 上に全ての有界半開区間について $m([a,b))=b-a$ を満たす測度 $m$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000818} と \GenronRef{K-000823} により \GenronRef{K-001018} は $\sigma(\mathcal R)$ 上の測度に一意に延長される．半開区間はBorel集合である．逆に任意の開集合はそこに含まれる有理端点の半開区間の合併であり，その族は可算である．実際，各点の両側に有理端点を取れる．よって $\sigma(\mathcal R)=\mathcal B(\mathbb R)$ である．
+\end{proof}
+% genron:end K-001019
+% genron:begin K-001020
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001019
+% genron:use K-000754
+% genron:use K-000749
+% genron:use K-000223
+\begin{prop}[Lebesgue測度の完備化と平行移動不変性]
+Borel Lebesgue測度の完備化をLebesgue測度，その定義域をLebesgue可測集合族とする．Borel集合及びLebesgue可測集合について任意の $t\in\mathbb R$ に対し $A+t$ は同じ種類の可測集合であり，$m(A+t)=m(A)$ である．一点集合は測度零である．
+\end{prop}
+\begin{proof}
+平行移動は同相写像だからBorel集合を保つ．$A\mapsto m(A+t)$ はBorel測度であり半開区間上で長さに一致する．\GenronRef{K-001019} の一意性により $m(A+t)=m(A)$ である．点 $x$ を含む $[x,x+1/n)$ の測度は $1/n$ であるから一点の測度は零である．\GenronRef{K-000754} によって完備化の可測集合はBorel集合とBorel零集合の部分集合との差又は合併で表される．平行移動はBorel零集合をBorel零集合に移すため完備化でも主張が成立する．
+\end{proof}
+% genron:end K-001020
+% genron:begin K-001021
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001019
+% genron:use K-001020
+% genron:use K-000865
+% genron:use K-000866
+% genron:use K-000823
+% genron:use K-000754
+% genron:use K-000256
+% genron:use K-000257
+\begin{prop}[Euclid空間上のLebesgue測度]
+$n\geq1$ としBorel Lebesgue測度 $m$ の $n$ 重積測度を $m_n$ とする．これは $\mathbb R^n$ のBorel加法族上で定義され，半開直方体の測度は各辺長の積である．この性質はBorel測度を一意に定める．その完備化を $n$ 次元Lebesgue測度という．両測度は平行移動不変である．
+\end{prop}
+\begin{proof}
+積測度を帰納的に構成する．各座標射影の連続性から可測長方形はBorel集合である．逆に有理端点の開直方体は可算開基であり，その元は積加法族に属するので積加法族とBorel加法族は一致する．半開直方体の有限非交和の環を端点の格子によって細分すれば，測度は長方体の値から一意に定まる．この環は有理端点の半開直方体によって開集合を生成し，有限測度の直方体 $[-k,k)^n$ で全体を覆える．\GenronRef{K-000823} を用いれば一意性を得る．平行移動後も直方体の値は同じなので不変性が従い，完備化についても \GenronRef{K-001020} と同様である．
+\end{proof}
+% genron:end K-001021

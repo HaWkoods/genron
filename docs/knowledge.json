@@ -31130,6 +31130,1101 @@
       "status": "draft",
       "source": "volumes/N-29/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000999",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "高階導函数とTaylor多項式",
+      "statement": "開区間 $I$ 上の実函数 $f$ に対し $f^{(0)}=f$，$f^{(j+1)}=(f^{(j)})'$ と帰納的に定める．$n$ 階までの導函数が存在し全て連続なら $C^n$ 級という．$a\\in I$ における $n$ 次Taylor多項式を $P_n(x)=\\sum_{j=0}^n f^{(j)}(a)(x-a)^j/j!$ と定める．",
+      "assumptions": [],
+      "position": [
+        148,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000959",
+        "K-000887"
+      ],
+      "status": "draft",
+      "source": "volumes/N-148/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001000",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Taylorの定理（Lagrange剰余）",
+      "statement": "$n\\geq0$ とし，$f$ が開区間 $I$ 上で $n+1$ 回微分可能であるとする．異なる $a,x\\in I$ の間の点 $\\xi$ が存在して\n\\[\nf(x)=P_n(x)+\\frac{f^{(n+1)}(\\xi)}{(n+1)!}(x-a)^{n+1}\n\\]\nとなる．",
+      "assumptions": [],
+      "position": [
+        148,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000999",
+        "K-000960",
+        "K-000962"
+      ],
+      "status": "draft",
+      "source": "volumes/N-148/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001001",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Taylorの定理（Peano剰余）",
+      "statement": "$n\\geq1$ とし $f$ が $a$ の近傍で $n$ 回微分可能であれば，$f(a+h)=P_n(a+h)+o(|h|^n)$ が成立する．",
+      "assumptions": [],
+      "position": [
+        148,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000999",
+        "K-000963",
+        "K-000959"
+      ],
+      "status": "draft",
+      "source": "volumes/N-148/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001002",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Taylor剰余の一様評価",
+      "statement": "$[a,x]$ 又は $[x,a]$ 上で $|f^{(n+1)}|\\leq M$ なら $|f(x)-P_n(x)|\\leq M|x-a|^{n+1}/(n+1)!$ である．特に全ての $x\\in I$ についてこの評価の右辺が $n\\to\\infty$ で零となるなら $f$ はTaylor級数に等しい．",
+      "assumptions": [],
+      "position": [
+        148,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001000",
+        "K-000807"
+      ],
+      "status": "draft",
+      "source": "volumes/N-148/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001003",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "高階微分による局所極値の判定",
+      "statement": "$f^{(1)}(a)=\\cdots=f^{(n-1)}(a)=0$，$f^{(n)}(a)\\ne0$ とする．$n$ が偶数なら $f^{(n)}(a)>0$ のとき狭義局所最小，負のとき狭義局所最大となる．$n$ が奇数なら局所極値ではない．",
+      "assumptions": [],
+      "position": [
+        148,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001001",
+        "K-000961"
+      ],
+      "status": "draft",
+      "source": "volumes/N-148/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001004",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "原始函数と積分函数",
+      "statement": "開区間 $I$ 上の実函数 $f$ に対し，$F'=f$ を満たす微分可能函数 $F:I\\to\\mathbb R$ を原始函数という．$f$ が各閉有界部分区間でRiemann可積分であるとき，$a\\in I$ を固定して $F(x)=\\int_a^x f(t)\\,dt$ と定めた函数を積分函数という．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000959",
+        "K-000967",
+        "K-000970"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001005",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微積分の基本定理（積分函数の微分）",
+      "statement": "$f$ が各閉有界部分区間でRiemann可積分であるとする．積分函数 $F(x)=\\int_a^x f(t)\\,dt$ は連続であり，$f$ の連続点 $x$ で $F'(x)=f(x)$ となる．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001004",
+        "K-000969",
+        "K-000970",
+        "K-000887"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001006",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微積分の基本定理（Newton–Leibniz公式）",
+      "statement": "$f$ が開区間 $I$ 上連続であり $G$ がその原始函数なら，任意の $a,b\\in I$ に対して $\\int_a^b f=G(b)-G(a)$ である．原始函数は存在し，任意の二つの原始函数の差は定数である．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001004",
+        "K-001005",
+        "K-000968",
+        "K-000960",
+        "K-000964"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001007",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "置換積分",
+      "statement": "$f:I\\to\\mathbb R$ が連続，$\\varphi:J\\to I$ が $C^1$ 級（$I,J$ は開区間）ならば，任意の $a,b\\in J$ について\n\\[\n\\int_a^b f(\\varphi(t))\\varphi'(t)\\,dt=\\int_{\\varphi(a)}^{\\varphi(b)}f(u)\\,du\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001006",
+        "K-000960",
+        "K-000968"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001008",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分積分",
+      "statement": "$f,g$ が開区間 $I$ 上の $C^1$ 級実函数ならば $\\int_a^b fg'=f(b)g(b)-f(a)g(a)-\\int_a^b f'g$ である．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001006",
+        "K-000960",
+        "K-000969"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001009",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様収束とRiemann積分",
+      "statement": "$[a,b]$ 上のRiemann可積分函数列 $f_n$ が一様に $f$ に収束するならば $f$ も可積分であり $\\int_a^b f_n\\to\\int_a^b f$ となる．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000967",
+        "K-000969",
+        "K-000953"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001010",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "導函数列の一様収束による項別微分",
+      "statement": "閉有界区間 $[a,b]$ を含む開区間上の $C^1$ 級函数列 $f_n$ について，$f_n(a)$ が収束し $f_n'$ が $[a,b]$ 上一様に $g$ に収束するならば，$f_n$ は $[a,b]$ 上一様にある $f$ に収束し，$(a,b)$ 上で $f'=g$ である．",
+      "assumptions": [],
+      "position": [
+        150,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001005",
+        "K-001006",
+        "K-000969",
+        "K-000955"
+      ],
+      "status": "draft",
+      "source": "volumes/N-150/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001011",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "偏微分作用素",
+      "statement": "ノルム空間 $E,F,G$，開集合 $U\\subseteq E\\times F$ とFréchet微分可能写像 $\\Phi:U\\to G$ を取る．点 $(x,y)$ で $D_x\\Phi(x,y)h=D\\Phi(x,y)(h,0)$，$D_y\\Phi(x,y)k=D\\Phi(x,y)(0,k)$ と定める．積には最大値ノルムを用いる．",
+      "assumptions": [],
+      "position": [
+        158,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000791",
+        "K-000893",
+        "K-000894"
+      ],
+      "status": "draft",
+      "source": "volumes/N-158/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001012",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全微分の偏微分への分解",
+      "statement": "$D\\Phi(x,y)(h,k)=D_x\\Phi(x,y)h+D_y\\Phi(x,y)k$ である．偏微分はそれぞれ固定した他方の変数に関するFréchet微分であり，$\\Phi$ が $C^1$ 級なら両偏微分作用素は作用素ノルムに関して連続である．",
+      "assumptions": [],
+      "position": [
+        158,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001011",
+        "K-000853",
+        "K-000897"
+      ],
+      "status": "draft",
+      "source": "volumes/N-158/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001013",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Banach空間の陰函数定理",
+      "statement": "Banach空間 $E,F,G$ の間の $C^1$ 級写像 $\\Phi:U\\subseteq E\\times F\\to G$ に対し $\\Phi(a,b)=0$ とする．$B=D_y\\Phi(a,b):F\\to G$ が有界線形同型で有界逆写像を持つならば，ある開近傍 $V\\subseteq E,W\\subseteq F$（$a\\in V,b\\in W$，$V\\times W\\subseteq U$）と $C^1$ 級写像 $g:V\\to W$ が存在し，$(x,y)\\in V\\times W$ において $\\Phi(x,y)=0\\Leftrightarrow y=g(x)$ である．$g(a)=b$ であり\n\\[\nDg(x)=-D_y\\Phi(x,g(x))^{-1}D_x\\Phi(x,g(x))\n\\]\nが成立する．",
+      "assumptions": [],
+      "position": [
+        158,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001011",
+        "K-001012",
+        "K-000791",
+        "K-000794",
+        "K-000853",
+        "K-000856",
+        "K-000896",
+        "K-000897",
+        "K-000978"
+      ],
+      "status": "draft",
+      "source": "volumes/N-158/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001014",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "方程式の右辺への依存",
+      "statement": "前命題と同じ仮定の下で，$z$ の零元近傍をも導入すれば，$\\Phi(x,y)=z$ の局所解は $y=h(x,z)$ と書け，$h$ は $C^1$ 級である．$D_zh(x,z)=D_y\\Phi(x,h(x,z))^{-1}$ となる．",
+      "assumptions": [],
+      "position": [
+        158,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001013",
+        "K-000896"
+      ],
+      "status": "draft",
+      "source": "volumes/N-158/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001015",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "単位球面の局所的表示",
+      "statement": "$\\Phi(x,y)=\\|x\\|_2^2+y^2-1$（$x\\in\\mathbb R^n,y\\in\\mathbb R$）とする．$\\Phi(a,b)=0,b\\ne0$ なら球面は $(a,b)$ の近傍で $y=g(x)$ なる $C^1$ 級函数のグラフであり，$Dg(a)h=-\\sum_j a_jh_j/b$ である．",
+      "assumptions": [],
+      "position": [
+        158,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001013",
+        "K-000898",
+        "K-000849"
+      ],
+      "status": "draft",
+      "source": "volumes/N-158/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001016",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "半開区間環と区間長",
+      "statement": "$\\mathbb R$ の有界半開区間 $[a,b)$（$a\\leq b$）の有限非交和全体を $\\mathcal R$ とする．$A=\\coprod_{i=1}^m[a_i,b_i)$ に対し $\\ell(A)=\\sum_{i=1}^m(b_i-a_i)$ と定める．空集合では零とする．",
+      "assumptions": [],
+      "position": [
+        164,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000178",
+        "K-000887",
+        "K-000705"
+      ],
+      "status": "draft",
+      "source": "volumes/N-164/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001017",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "区間長の整合性と有限加法性",
+      "statement": "$\\mathcal R$ は集合環であり，$\\ell$ は表示によらず定まり，非負かつ有限加法的である．",
+      "assumptions": [],
+      "position": [
+        164,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001016",
+        "K-000179"
+      ],
+      "status": "draft",
+      "source": "volumes/N-164/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001018",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "区間長の前測度性",
+      "statement": "$\\ell$ は $\\mathcal R$ 上の$\\sigma$有限前測度である．",
+      "assumptions": [],
+      "position": [
+        164,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001016",
+        "K-001017",
+        "K-000888",
+        "K-000817",
+        "K-000816",
+        "K-000822",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-164/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001019",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Borel Lebesgue測度の存在と一意性",
+      "statement": "$\\mathcal B(\\mathbb R)$ 上に全ての有界半開区間について $m([a,b))=b-a$ を満たす測度 $m$ がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        164,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001018",
+        "K-000818",
+        "K-000823",
+        "K-000648",
+        "K-000187",
+        "K-000993"
+      ],
+      "status": "draft",
+      "source": "volumes/N-164/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001020",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Lebesgue測度の完備化と平行移動不変性",
+      "statement": "Borel Lebesgue測度の完備化をLebesgue測度，その定義域をLebesgue可測集合族とする．Borel集合及びLebesgue可測集合について任意の $t\\in\\mathbb R$ に対し $A+t$ は同じ種類の可測集合であり，$m(A+t)=m(A)$ である．一点集合は測度零である．",
+      "assumptions": [],
+      "position": [
+        164,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001019",
+        "K-000754",
+        "K-000749",
+        "K-000223"
+      ],
+      "status": "draft",
+      "source": "volumes/N-164/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001021",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Euclid空間上のLebesgue測度",
+      "statement": "$n\\geq1$ としBorel Lebesgue測度 $m$ の $n$ 重積測度を $m_n$ とする．これは $\\mathbb R^n$ のBorel加法族上で定義され，半開直方体の測度は各辺長の積である．この性質はBorel測度を一意に定める．その完備化を $n$ 次元Lebesgue測度という．両測度は平行移動不変である．",
+      "assumptions": [],
+      "position": [
+        164,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001019",
+        "K-001020",
+        "K-000865",
+        "K-000866",
+        "K-000823",
+        "K-000754",
+        "K-000256",
+        "K-000257"
+      ],
+      "status": "draft",
+      "source": "volumes/N-164/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001022",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "弱位相と弱*位相",
+      "statement": "ノルム空間 $E$ の連続双対を $E^*$ とする．$E$ に各 $\\varphi\\in E^*$ を連続にする最も粗い位相 $\\sigma(E,E^*)$ を入れ，これを弱位相という．$E^*$ に各 $x\\in E$ に対する評価写像 $\\varphi\\mapsto\\varphi(x)$ を連続にする最も粗い位相 $\\sigma(E^*,E)$ を入れ，これを弱*位相という．",
+      "assumptions": [],
+      "position": [
+        180,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000253",
+        "K-000904"
+      ],
+      "status": "draft",
+      "source": "volumes/N-180/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001023",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "弱位相の近傍と収束",
+      "statement": "弱位相の零元近傍基は有限個の $\\varphi_j\\in E^*$ と $\\varepsilon>0$ による $\\{x:|\\varphi_j(x)|<\\varepsilon\\ (1\\leq j\\leq m)\\}$ で与えられる．弱*位相も有限個の評価で同様に記述される．従ってネットの弱収束と弱*収束はそれぞれ全ての汎函数による値の収束，全ての点での値の収束と同値である．両位相はHausdorff局所凸位相である．",
+      "assumptions": [],
+      "position": [
+        180,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001022",
+        "K-000253",
+        "K-000273",
+        "K-000274",
+        "K-000923",
+        "K-000984"
+      ],
+      "status": "draft",
+      "source": "volumes/N-180/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001024",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "弱閉凸集合とノルム閉凸集合",
+      "statement": "ノルム空間の凸部分集合は弱閉であることとノルム閉であることが同値である．",
+      "assumptions": [],
+      "position": [
+        180,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001022",
+        "K-000986",
+        "K-000793"
+      ],
+      "status": "draft",
+      "source": "volumes/N-180/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001025",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Banach–Alaogluの定理",
+      "statement": "ノルム空間 $E$ の双対の閉単位球 $B_{E^*}$ は弱*位相に関してコンパクトである．$E$ の完備性は必要としない．",
+      "assumptions": [],
+      "position": [
+        180,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001022",
+        "K-000253",
+        "K-000257",
+        "K-000488",
+        "K-000850",
+        "K-000853",
+        "K-000792",
+        "K-000375"
+      ],
+      "status": "draft",
+      "source": "volumes/N-180/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001026",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "弱収束とノルム収束の相違",
+      "statement": "無限次元Hilbert空間の正規直交列 $(e_n)$ は弱く零に収束するがノルムでは零に収束しない．",
+      "assumptions": [],
+      "position": [
+        180,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001023",
+        "K-000874",
+        "K-000878",
+        "K-000905",
+        "K-000809"
+      ],
+      "status": "draft",
+      "source": "volumes/N-180/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001027",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "コンパクト作用素",
+      "statement": "ノルム空間 $E,F$ の間の有界線形作用素 $T$ が，$E$ の閉単位球の像の閉包を $F$ のコンパクト集合とするならコンパクト作用素という．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000792",
+        "K-000852",
+        "K-000802"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001028",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト作用素の点列判定",
+      "statement": "$T$ がコンパクトであることは，任意の有界列 $(x_n)$ に対して $(Tx_n)$ が $F$ 内に収束部分列を持つことと同値である．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001027",
+        "K-000802",
+        "K-000735",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001029",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト作用素の線形性・合成・閉性",
+      "statement": "コンパクト作用素全体は有界線形作用素の線形部分空間をなす．有界線形作用素との合成（定義可能な両側）はコンパクトである．$F$ がBanach空間なら $\\mathcal L(E,F)$ 内で作用素ノルムに関して閉である．有限階数の有界線形作用素はコンパクトである．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001027",
+        "K-001028",
+        "K-000793",
+        "K-000853",
+        "K-000802",
+        "K-000850",
+        "K-000851"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001030",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "スペクトルと固有値",
+      "statement": "複素Banach空間 $E$ 上の有界線形作用素 $T$ について，$\\lambda I-T$ が有界逆写像を持つ全単射でない複素数 $\\lambda$ 全体をスペクトル $\\sigma(T)$ という．$\\ker(\\lambda I-T)\\ne\\{0\\}$ のとき $\\lambda$ を固有値といい，この核を固有空間という．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000852",
+        "K-000856",
+        "K-000629"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001031",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非零固有値の有限重複性",
+      "statement": "Hilbert空間上のコンパクト作用素 $T$ の非零固有値 $\\lambda$ の固有空間は有限次元である．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001028",
+        "K-001030",
+        "K-000879",
+        "K-000878",
+        "K-000851",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001032",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト自己随伴作用素の非零固有値",
+      "statement": "複素Hilbert空間の非零コンパクト自己随伴作用素 $T$ は $\\|T\\|$ 又は $-\\|T\\|$ を固有値として持つ．異なる固有値の固有空間は直交する．任意の $\\varepsilon>0$ に対し $|\\lambda|\\geq\\varepsilon$ となる固有値は有限個である．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001028",
+        "K-001030",
+        "K-001031",
+        "K-000987",
+        "K-000988",
+        "K-000878",
+        "K-000853",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001033",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト自己随伴作用素の非零スペクトル",
+      "statement": "複素Hilbert空間上のコンパクト自己随伴作用素 $T$ の非零スペクトル点は固有値である．",
+      "assumptions": [],
+      "position": [
+        182,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001028",
+        "K-001030",
+        "K-001032",
+        "K-000907",
+        "K-000908",
+        "K-000989",
+        "K-000879",
+        "K-000794"
+      ],
+      "status": "draft",
+      "source": "volumes/N-182/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -33449,15 +34544,17 @@
       "number": 148,
       "title": "Taylorの定理",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        147
+        147,
+        144
       ],
       "goals": [
         "高階導函数・剰余項・Taylor展開"
       ],
       "treatise": "T-22",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 149,
@@ -33479,16 +34576,18 @@
       "number": 150,
       "title": "微積分の基本定理",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         147,
-        149
+        149,
+        146
       ],
       "goals": [
         "原始函数・基本定理・置換・部分積分"
       ],
       "treatise": "T-22",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 151,
@@ -33611,7 +34710,7 @@
       "number": 158,
       "title": "陰函数定理",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         157,
         97
@@ -33620,7 +34719,8 @@
         "陰函数・パラメータ依存"
       ],
       "treatise": "T-23",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 159,
@@ -33708,17 +34808,20 @@
       "number": 164,
       "title": "Lebesgue測度",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         163,
         13,
-        149
+        149,
+        29,
+        169
       ],
       "goals": [
         "区間長・Borel集合・完備化"
       ],
       "treatise": "T-24",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 165,
@@ -33976,16 +35079,20 @@
       "number": 180,
       "title": "弱位相と弱*位相",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         179,
-        56
+        56,
+        91,
+        153,
+        144
       ],
       "goals": [
         "双対対・弱収束・Banach–Alaoglu"
       ],
       "treatise": "T-25",
-      "display_index": 9
+      "display_index": 9,
+      "web_only": true
     },
     {
       "number": 181,
@@ -34006,16 +35113,18 @@
       "number": 182,
       "title": "コンパクト作用素",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         181,
-        87
+        87,
+        153
       ],
       "goals": [
         "コンパクト作用素・スペクトルの基礎"
       ],
       "treatise": "T-25",
-      "display_index": 11
+      "display_index": 11,
+      "web_only": true
     },
     {
       "number": 183,

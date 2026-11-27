@@ -1,0 +1,104 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：H. Brezis, Functional Analysis, Sobolev Spaces and Partial Differential Equations, 2011, Theorem 3.16 (Banach–Alaoglu–Bourbaki) の積空間による証明の導入を照合．一般の実・複素ノルム空間で再構成．
+\section{弱位相と弱*位相}
+% genron:begin K-001022
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000253
+% genron:use K-000904
+\begin{defn}[弱位相と弱*位相]
+ノルム空間 $E$ の連続双対を $E^*$ とする．$E$ に各 $\varphi\in E^*$ を連続にする最も粗い位相 $\sigma(E,E^*)$ を入れ，これを弱位相という．$E^*$ に各 $x\in E$ に対する評価写像 $\varphi\mapsto\varphi(x)$ を連続にする最も粗い位相 $\sigma(E^*,E)$ を入れ，これを弱*位相という．
+\end{defn}
+% genron:end K-001022
+% genron:begin K-001023
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001022
+% genron:use K-000253
+% genron:use K-000273
+% genron:use K-000274
+% genron:use K-000923
+% genron:use K-000984
+\begin{prop}[弱位相の近傍と収束]
+弱位相の零元近傍基は有限個の $\varphi_j\in E^*$ と $\varepsilon>0$ による $\{x:|\varphi_j(x)|<\varepsilon\ (1\leq j\leq m)\}$ で与えられる．弱*位相も有限個の評価で同様に記述される．従ってネットの弱収束と弱*収束はそれぞれ全ての汎函数による値の収束，全ての点での値の収束と同値である．両位相はHausdorff局所凸位相である．
+\end{prop}
+\begin{proof}
+初期位相の開基から有限個の逆像の共通部分が近傍基をなす．各絶対値は半ノルムであるから \GenronRef{K-000923} を適用できる．$E$ 上の半ノルム族は \GenronRef{K-000984} によって点を分離し，$E^*$ 上では異なる函数はある点で異なる値を持つ．収束の同値性は近傍基と有限個の終局条件を同時に満たせることから従う．
+\end{proof}
+% genron:end K-001023
+% genron:begin K-001024
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001022
+% genron:use K-000986
+% genron:use K-000793
+\begin{prop}[弱閉凸集合とノルム閉凸集合]
+ノルム空間の凸部分集合は弱閉であることとノルム閉であることが同値である．
+\end{prop}
+\begin{proof}
+ノルム位相は弱位相より細かいので弱閉ならノルム閉である．逆にノルム閉凸集合 $C$ と $x\notin C$ を取る．$C=\varnothing$ なら明らかである．\GenronRef{K-000986} をノルム空間に適用すれば連続線形汎函数（複素の場合は実部を用いる）で $x$ と $C$ を狭義に分離できる．従って $x$ は $C$ と交わらない弱開近傍を持つ．よって補集合が弱開である．
+\end{proof}
+% genron:end K-001024
+% genron:begin K-001025
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001022
+% genron:use K-000253
+% genron:use K-000257
+% genron:use K-000488
+% genron:use K-000850
+% genron:use K-000853
+% genron:use K-000792
+% genron:use K-000375
+\begin{prop}[Banach–Alaogluの定理]
+ノルム空間 $E$ の双対の閉単位球 $B_{E^*}$ は弱*位相に関してコンパクトである．$E$ の完備性は必要としない．
+\end{prop}
+\begin{proof}
+各 $x\in E$ に対し $D_x=\{z\in\mathbb K:|z|\leq\|x\|\}$ はコンパクトである．\GenronRef{K-000488} により $P=\prod_{x\in E}D_x$ はコンパクトである．$B_{E^*}$ を値の族 $(\varphi(x))_{x\in E}$ で $P$ に埋め込む．像は任意の $x,y\in E,\alpha\in\mathbb K$ について $z_{x+y}=z_x+z_y,\ z_{\alpha x}=\alpha z_x$ を満たす族全体に一致する．実際，これらは線形性を表し，$|z_x|\leq\|x\|$ は有界性を与える．各等式の成立集合は座標写像の連続性から閉であり，その共通部分も閉である．初期位相の定義により埋込みは像への同相写像である．従って閉部分集合のコンパクト性から結論を得る．
+\end{proof}
+% genron:end K-001025
+% genron:begin K-001026
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001023
+% genron:use K-000874
+% genron:use K-000878
+% genron:use K-000905
+% genron:use K-000809
+\begin{example}[弱収束とノルム収束の相違]
+無限次元Hilbert空間の正規直交列 $(e_n)$ は弱く零に収束するがノルムでは零に収束しない．
+\end{example}
+\begin{proof}
+任意の $y$ と $N$ に対し $p_N=\sum_{n=1}^N\langle y,e_n\rangle e_n$ とすると $y-p_N$ は $p_N$ と直交する．Pythagorasの等式により $\sum_{n=1}^N|\langle y,e_n\rangle|^2\leq\|y\|^2$ である．従って $\langle e_n,y\rangle\to0$ となる．\GenronRef{K-000905} によって全連続線形汎函数の値が零に収束し \GenronRef{K-001023} を適用できる．一方 $\|e_n\|=1$ である．
+\end{proof}
+% genron:end K-001026
