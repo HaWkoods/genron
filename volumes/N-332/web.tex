@@ -1,0 +1,96 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{不完全性定理}
+本ノートは条件付き初稿である．代入函数のPAにおける表示可能性，証明列の算術化，導出可能性条件の導出及びRosserの改良は未執筆である．一般の再帰的公理化可能な無矛盾理論に対する不完全性定理の証明を完了したものではない．
+% genron:begin K-001533
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001486
+% genron:use K-001487
+% genron:use K-001488
+% genron:use K-001490
+\begin{defn}[証明可能性述語]
+$T$ をPAを含む算術理論とする．算術式 $\operatorname{Pr}_T(x)$ が証明可能性を表示するとは，標準自然数 $n$ が $T$ で証明可能な文のGödel符号であることと $\mathbb N\models\operatorname{Pr}_T(\overline n)$ が同値であることをいう．この意味論的条件だけでは理論内部の導出可能性条件は従わない．
+\end{defn}
+% genron:end K-001533
+% genron:begin K-001534
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001490
+% genron:use K-001491
+% genron:use K-001492
+% genron:use K-001347
+% genron:use K-001348
+\begin{prop}[対角化補題（表示性を仮定）]
+$\operatorname{diag}(n)$ を一自由変数式の符号 $n$ に数項 $\overline n$ を代入した文の符号とする．他の入力の値は $0$ とする．各標準自然数 $n$ について $\mathrm{PA}\vdash\forall y(D(\overline n,y)\Leftrightarrow y=\overline{\operatorname{diag}(n)})$ となる式 $D$ が存在すると仮定する．任意の一自由変数式 $\theta$ に対して $\mathrm{PA}\vdash G\Leftrightarrow\theta(\overline{\ulcorner G\urcorner})$ となる文 $G$ が存在する．
+\end{prop}
+\begin{proof}
+変数捕獲を避け $\psi(x)=\exists y(D(x,y)\land\theta(y))$ とする．その符号を $e$，$G=\psi(\overline e)$ とすれば $\ulcorner G\urcorner=\operatorname{diag}(e)$ である．$D$ の仮定を $e$ について適用し，等号の代入及び量化の規則を使えば所望の同値式がPAで導ける．
+\end{proof}
+% genron:end K-001534
+% genron:begin K-001535
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001533
+% genron:use K-001534
+% genron:use K-001479
+% genron:use K-001488
+\begin{prop}[第一不完全性の論証（条件付き）]
+対角化補題の表示性を仮定する．無矛盾な $T\supseteq\mathrm{PA}$ について $T\vdash A$ なら $T\vdash\operatorname{Pr}_T(\overline{\ulcorner A\urcorner})$ と仮定する．このとき $T$ で証明できない文 $G$ が存在する．さらに $T$ が標準自然数構造で健全であり証明可能性述語が前述の意味論的条件を満たせば $T\not\vdash\neg G$ でもある．
+\end{prop}
+\begin{proof}
+$\theta(x)=\neg\operatorname{Pr}_T(x)$ に対角化を適用する．$T\vdash G$ なら固定点の同値式から $T\vdash\neg\operatorname{Pr}_T(\overline{\ulcorner G\urcorner})$ であるが仮定からその否定も証明され，無矛盾性に反する．従って $T\not\vdash G$ である．意味論的条件から標準自然数構造で $\operatorname{Pr}_T(\overline{\ulcorner G\urcorner})$ は偽であり，固定点の同値式はPAのモデルで真なので $G$ は真である．健全性から $\neg G$ は証明できない．
+\end{proof}
+% genron:end K-001535
+% genron:begin K-001536
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001533
+% genron:use K-001490
+\begin{defn}[導出可能性条件]
+$\Box A$ を $\operatorname{Pr}_T(\overline{\ulcorner A\urcorner})$ の略記とする．(i) $T\vdash A$ なら $T\vdash\Box A$，(ii) $T\vdash\Box(A\Rightarrow B)\Rightarrow(\Box A\Rightarrow\Box B)$，(iii) $T\vdash\Box A\Rightarrow\Box\Box A$ を導出可能性条件と呼ぶ．ここで $A,B$ は文である．
+\end{defn}
+% genron:end K-001536
+% genron:begin K-001537
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001534
+% genron:use K-001535
+% genron:use K-001536
+% genron:use K-001487
+\begin{prop}[第二不完全性の論証（条件付き）]
+対角化補題の表示性及び導出可能性条件を仮定する．PAを含む無矛盾な $T$ について $\bot$ を $0=S0$ とし $\operatorname{Con}(T)=\neg\Box\bot$ とおけば $T\not\vdash\operatorname{Con}(T)$ である．
+\end{prop}
+\begin{proof}
+固定点 $G\Leftrightarrow\neg\Box G$ を取る．条件(i),(ii)を $G\Rightarrow\neg\Box G$ に用いると $\Box G\Rightarrow\Box\neg\Box G$ が $T$ で導出される．条件(iii)から $\Box G\Rightarrow\Box\Box G$ でもある．恒真な推論 $\Box G\Rightarrow(\neg\Box G\Rightarrow\bot)$ に (i),(ii) を反復適用すると $T\vdash\Box G\Rightarrow\Box\bot$ を得る．従って $T\vdash\operatorname{Con}(T)\Rightarrow\neg\Box G$，さらに固定点の同値式から $T\vdash\operatorname{Con}(T)\Rightarrow G$ である．もし無矛盾性の文を証明すれば $G$ を証明するが，前命題の無矛盾性に関する部分に反する．
+\end{proof}
+% genron:end K-001537

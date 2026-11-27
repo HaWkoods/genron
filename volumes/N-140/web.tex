@@ -1,0 +1,121 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{整拡大の素イデアル}
+% genron:begin K-001517
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001426
+% genron:use K-000451
+% genron:use K-000452
+% genron:use K-000330
+\begin{prop}[整拡大と商及び局所化]
+整拡大 $A\subseteq B$ において，$J\subseteq B$ をイデアルとすれば $A/(J\cap A)\subseteq B/J$ は整である．積閉集合 $S\subseteq A$ に対して $S^{-1}A\subseteq S^{-1}B$ も整である．
+\end{prop}
+\begin{proof}
+モニック整方程式を商に移せば前半を得る．$a/s$ の像が零ならある $t\in S$ に対して $ta=0$ であり，これは $A$ でも成り立つので局所化の写像は単射である．$b$ のモニック整方程式を $s^n$ で割れば $b/s$ の整方程式となる．
+\end{proof}
+% genron:end K-001517
+% genron:begin K-001518
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001426
+% genron:use K-000443
+% genron:use K-000444
+\begin{prop}[整域の整拡大と体性]
+整域の整拡大 $A\subseteq B$ について，$A$ が体であることと $B$ が体であることは同値である．
+\end{prop}
+\begin{proof}
+$A$ が体なら $b\ne0$ の最小次数のモニック整方程式の定数項は非零である（零なら $b$ を簡約して次数を下げられる）．式を変形して $b^{-1}=-a_0^{-1}(b^{n-1}+\cdots+a_1)$ を得る．逆に $B$ が体なら $0\ne a\in A$ の逆元 $a^{-1}$ は整であり，そのモニック整方程式に $a^{n-1}$ を掛けると $a^{-1}$ が $A$ の元であることが従う．
+\end{proof}
+% genron:end K-001518
+% genron:begin K-001519
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001517
+% genron:use K-001518
+% genron:use K-000446
+% genron:use K-000447
+\begin{prop}[極大イデアルの縮小]
+整拡大 $A\subseteq B$ の素イデアル $\mathfrak q$ と $\mathfrak p=\mathfrak q\cap A$ について $\mathfrak q$ が極大であることと $\mathfrak p$ が極大であることは同値である．
+\end{prop}
+\begin{proof}
+$\mathfrak p$ は素イデアルである．整域の整拡大 $A/\mathfrak p\subseteq B/\mathfrak q$ に前命題を適用し，極大性を商の体性で判定する．
+\end{proof}
+% genron:end K-001519
+% genron:begin K-001520
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001517
+% genron:use K-001519
+% genron:use K-000448
+% genron:use K-001136
+% genron:use K-001139
+\begin{prop}[素イデアルの持上げ（lying over）]
+整拡大 $A\subseteq B$ の任意の素イデアル $\mathfrak p$ は $B$ のある素イデアルの縮小である．
+\end{prop}
+\begin{proof}
+$S=A\setminus\mathfrak p$ とする．$S^{-1}A$ は零環でない局所環であり，$S^{-1}B$ も単射性から零環でない．後者の極大イデアルを取るとその縮小は前者の唯一の極大イデアル $\mathfrak pA_{\mathfrak p}$ である．局所化の素イデアル対応で元に戻せば縮小が $\mathfrak p$ となる素イデアルを得る．
+\end{proof}
+% genron:end K-001520
+% genron:begin K-001521
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001517
+% genron:use K-001520
+% genron:use K-000333
+\begin{prop}[素イデアルの上昇（going up）]
+$\mathfrak p_1\subseteq\mathfrak p_2$ を $A$ の素イデアルとし，$B$ の素イデアル $\mathfrak q_1$ の縮小が $\mathfrak p_1$ なら，$\mathfrak q_1\subseteq\mathfrak q_2$ で縮小が $\mathfrak p_2$ となる素イデアル $\mathfrak q_2$ が存在する．
+\end{prop}
+\begin{proof}
+整拡大 $A/\mathfrak p_1\subseteq B/\mathfrak q_1$ で $\mathfrak p_2/\mathfrak p_1$ を持ち上げ，商写像による逆像を取る．
+\end{proof}
+% genron:end K-001521
+% genron:begin K-001522
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001517
+% genron:use K-001519
+% genron:use K-001136
+% genron:use K-001139
+\begin{prop}[素イデアルの非比較性]
+整拡大における二素イデアル $\mathfrak q_1\subseteq\mathfrak q_2$ の縮小が同じなら $\mathfrak q_1=\mathfrak q_2$ である．
+\end{prop}
+\begin{proof}
+共通の縮小 $\mathfrak p$ の補集合で局所化すると，両素イデアルの縮小は $A_{\mathfrak p}$ の極大イデアルである．従って両者は極大であり包含関係から等しい．局所化の素イデアル対応によって元の二イデアルも等しい．
+\end{proof}
+% genron:end K-001522

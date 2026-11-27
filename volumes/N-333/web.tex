@@ -1,0 +1,112 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{順序数}
+% genron:begin K-001538
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000121
+% genron:use K-001375
+\begin{defn}[推移的集合と順序数]
+集合 $a$ が推移的であるとは $x\in y\in a$ なら $x\in a$ となることをいう．推移的集合 $\alpha$ が所属関係 $\in$ によって厳密に整列されるとき順序数という．
+\end{defn}
+% genron:end K-001538
+% genron:begin K-001539
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001538
+% genron:use K-000122
+\begin{prop}[順序数の元と始切片]
+$\beta\in\alpha$ で $\alpha$ が順序数なら $\beta$ は順序数であり，$\alpha$ の $\beta$ における真の始切片に一致する．
+\end{prop}
+\begin{proof}
+推移性によって $\beta\subseteq\alpha$ であり，$\beta$ は $\alpha$ における $\beta$ より前の元全体に等しい．制限順序は整列順序であり，$x\in y\in\beta$ なら $\alpha$ 内の順序の推移性から $x\in\beta$ となる．
+\end{proof}
+% genron:end K-001539
+% genron:begin K-001540
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001539
+% genron:use K-000123
+% genron:use K-000127
+% genron:use K-001379
+\begin{prop}[順序数の比較]
+任意の順序数 $\alpha,\beta$ について $\alpha=\beta,\alpha\in\beta,\beta\in\alpha$ のうちただ一つが成り立つ．また $\alpha\subseteq\beta$ は $\alpha=\beta$ 又は $\alpha\in\beta$ と同値である．
+\end{prop}
+\begin{proof}
+順序数間の任意の順序同型 $f$ は各元の始切片を対応する始切片に移すので $f(x)=\{f(y):y\in x\}$ である．超限帰納法から $f(x)=x$ となる．整列集合の比較定理と前命題によれば一方が他方と等しいか，他方の元に等しい．$\alpha\in\beta$ なら推移性から包含される．逆に $\alpha\subseteq\beta$ かつ $\beta\in\alpha$ なら $\beta\in\beta$ となり矛盾する．
+\end{proof}
+% genron:end K-001540
+% genron:begin K-001541
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001540
+% genron:use K-001375
+\begin{prop}[後続順序数と上限]
+$\alpha+1=\alpha\cup\{\alpha\}$ は順序数である．順序数の集合 $A$ に対して $\bigcup A$ は順序数であり包含順序について $A$ の上限である．
+\end{prop}
+\begin{proof}
+後続は $\alpha$ の全ての元の後に $\alpha$ を加えたものであるから推移性と整列性を保つ．合併は推移的であり任意の二元は順序数なので比較できる．非空部分集合 $B$ の元 $b$ を取ると $B\cap(b+1)$ は非空で最小元を持つ．それ以外の元は $b$ より大きいのでこの最小元は $B$ の最小元でもある．従って合併は順序数である．合併はすべての $\gamma\in A$ を含み他の任意の上界に含まれる．
+\end{proof}
+% genron:end K-001541
+% genron:begin K-001542
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001539
+% genron:use K-001540
+% genron:use K-000123
+% genron:use K-000126
+% genron:use K-001376
+\begin{prop}[整列集合の順序型]
+任意の整列集合 $(W,<)$ はただ一つの順序数と順序同型である．
+\end{prop}
+\begin{proof}
+各 $a\in W$ の真の始切片が順序数と同型であることを超限帰納法で示す．全ての $b<a$ についてその順序数 $\beta_b$ と同型が存在すると仮定する．順序数間の同型の一意性から各 $\beta_b$ は一意であり置換公理により $B=\{\beta_b:b<a\}$ は集合である．$c<b<a$ なら $\beta_c$ は $\beta_b$ の真の始切片に一致する．逆に $\gamma\in\beta_b$ は $W_{<b}$ の同型の下である $c<b$ に対応しその始切片の順序型は $\gamma$ なので $\gamma=\beta_c$ である．従って $B$ は推移的で $b\mapsto\beta_b$ が順序同型 $W_{<a}\to B$ となる．ゆえに $B$ は順序数であり帰納が完了する．最後に置換公理を $W$ 全体に適用して $\{\beta_a:a\in W\}$ を作れば同じ議論により $W$ と同型な順序数を得る．一意性は順序数間の同型が恒等的であることから従う．
+\end{proof}
+% genron:end K-001542
+% genron:begin K-001543
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001541
+% genron:use K-001379
+\begin{prop}[全順序数からなる集合の不存在]
+すべての順序数を元とする集合は存在しない．
+\end{prop}
+\begin{proof}
+そのような集合 $A$ があれば $\gamma=\bigcup A$ と $\gamma+1$ は順序数である．従って $\gamma+1\in A$ なので上限性から $\gamma+1\subseteq\gamma$ となるが $\gamma\in\gamma+1$ かつ $\gamma\notin\gamma$ に反する．
+\end{proof}
+% genron:end K-001543

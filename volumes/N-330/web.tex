@@ -1,0 +1,100 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{モデル理論の初歩}
+ここでは可算言語についての下方定理とコンパクト性による初等拡大を扱う．一般の濃度についての定式化は今後の補足とする．
+% genron:begin K-001528
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001256
+% genron:use K-001258
+% genron:use K-001259
+\begin{defn}[部分構造と初等部分構造]
+一階言語の構造 $\mathcal M$ が $\mathcal N$ の部分構造であるとは台集合が包含され，定数，函数及び関係の解釈が制限に一致することをいう．任意の式 $\varphi(\boldsymbol x)$ と $M$ の有限組 $\boldsymbol a$ に対して $\mathcal M\models\varphi(\boldsymbol a)$ と $\mathcal N\models\varphi(\boldsymbol a)$ が同値なら初等部分構造といい $\mathcal M\preccurlyeq\mathcal N$ と書く．
+\end{defn}
+% genron:end K-001528
+% genron:begin K-001529
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001528
+% genron:use K-001257
+% genron:use K-001258
+\begin{prop}[Tarski–Vaughtの判定法]
+部分構造 $M\subseteq N$ が初等的であることは，$N\models\exists x\,\varphi(x,\boldsymbol a)$ なら $N\models\varphi(b,\boldsymbol a)$ となる $b\in M$ が存在することと同値である．ただしパラメータ $\boldsymbol a$ は $M$ に属する．
+\end{prop}
+\begin{proof}
+初等性から存在式は $M$ でも真となり，その証人は $N$ でも式を満たす．逆は式の構成についての帰納法による．原子式は部分構造の条件から一致し，結合子は帰納法から従う．存在量化は $M$ の証人が $N$ でも証人となり，逆向きは仮定で $M$ 内の証人を選んで帰納法を適用する．全称量化は否定と存在量化に帰着する．
+\end{proof}
+% genron:end K-001529
+% genron:begin K-001530
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001529
+% genron:use K-000060
+% genron:use K-000138
+% genron:use K-000143
+% genron:use K-000144
+% genron:use K-001173
+% genron:use K-001177
+\begin{prop}[下方Löwenheim–Skolemの定理（可算言語）]
+可算言語の構造 $N$ の任意の可算部分集合 $A$ は可算初等部分構造に含まれる．可算には有限も含め，選択公理を用いる．
+\end{prop}
+\begin{proof}
+$A$ と定数の値及び一元を含む可算集合 $A_0$ を取る．$A_n$ の有限組に対する全函数値と，$N$ で真となる存在式 $\exists x\,\varphi(x,\boldsymbol a)$（$\boldsymbol a$ は $A_n$ の有限組）の証人を一つずつ選び加えたものを $A_{n+1}$ とする．可算アルファベットの有限語は可算であり，可算集合の有限積と可算和も選択公理の下で可算だから各段階は可算である．$M=\bigcup_n A_n$ は可算であり，有限組はある段階に含まれるので函数値と存在式の証人について閉じている．従って部分構造であり前命題により初等的である．
+\end{proof}
+% genron:end K-001530
+% genron:begin K-001531
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001528
+% genron:use K-001485
+% genron:use K-001258
+% genron:use K-001259
+\begin{prop}[コンパクト性による初等拡大]
+無限構造 $M$ と任意の無限集合 $I$ に対し，$I$ からその台集合への単射を持つ初等拡大が存在する．
+\end{prop}
+\begin{proof}
+各 $a\in M$ に定数 $c_a$ を追加して $a$ と解釈し，この拡大言語の $M$ で真となる文全体を取る．さらに定数 $d_i$ ($i\in I$) を追加して $i\ne j$ に対する $d_i\ne d_j$ を加える．任意の有限部分は $M$ 内で有限個の相異なる元を選べば充足できる．コンパクト性によりモデル $N$ を得る．$a\mapsto c_a^N$ はすべての式の真偽を保つ単射であり初等埋込みである．同型による台集合の置換で $M$ を部分集合とみなせる．$i\mapsto d_i^N$ は単射である．
+\end{proof}
+% genron:end K-001531
+% genron:begin K-001532
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001528
+% genron:use K-001531
+% genron:use K-000137
+\begin{prop}[初等同値と同型]
+初等部分構造とその拡大は同じ文を充足する．逆に同じ文を充足する構造が同型とは限らない．
+\end{prop}
+\begin{proof}
+第一の主張は初等性を自由変数のない式に適用する．等号のみの言語の可算無限構造を取り，前命題で台集合の冪集合を $I$ とする．Cantorの定理から初等拡大は同じ濃度を持たないので同型でないが，同じ文を充足する．
+\end{proof}
+% genron:end K-001532

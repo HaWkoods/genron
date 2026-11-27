@@ -1,0 +1,102 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{アフィンスキーム}
+% genron:begin K-001523
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001323
+% genron:use K-001457
+\begin{defn}[アフィンスキーム]
+可換環 $A$ のスペクトルに構造層を付した $(\operatorname{Spec}A,\mathcal O_{\operatorname{Spec}A})$ を標準アフィンスキームと呼ぶ．これと局所環付き空間として同型なものをアフィンスキームという．
+\end{defn}
+% genron:end K-001523
+% genron:begin K-001524
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001523
+% genron:use K-001324
+% genron:use K-001139
+% genron:use K-000453
+% genron:use K-000447
+\begin{prop}[標準アフィンスキームの局所環性]
+標準アフィンスキームは局所環付き空間であり，点 $\mathfrak p$ の剰余体は $\operatorname{Frac}(A/\mathfrak p)$ と標準的に同型である．
+\end{prop}
+\begin{proof}
+茎は局所環 $A_{\mathfrak p}$ に同型であり極大イデアルは $\mathfrak p A_{\mathfrak p}$ である．$a/s\mapsto(a+\mathfrak p)/(s+\mathfrak p)$ は全射であり核は $\mathfrak p A_{\mathfrak p}$ なので主張を得る．
+\end{proof}
+% genron:end K-001524
+% genron:begin K-001525
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001523
+% genron:use K-001203
+% genron:use K-001199
+% genron:use K-001321
+% genron:use K-001324
+% genron:use K-000453
+% genron:use K-001454
+\begin{prop}[環準同型が誘導する射]
+環準同型 $\varphi:A\to B$ は局所環付き空間の射 $\operatorname{Spec}B\to\operatorname{Spec}A$ を誘導する．
+\end{prop}
+\begin{proof}
+点の写像 $f$ は $\mathfrak q\mapsto\varphi^{-1}(\mathfrak q)$ とする．基本開集合 $D(a)$ の逆像は $D(\varphi(a))$ なので連続である．$U$ 上の切断 $s$ に対し $f^{-1}(U)$ の各 $\mathfrak q$ における値を $s_{f(\mathfrak q)}$ の局所化写像 $A_{f(\mathfrak q)}\to B_{\mathfrak q}$ による像と定める．局所分数 $a/b$ は $\varphi(a)/\varphi(b)$ に移るから切断となる．演算と制限を保ち，茎写像は局所化写像である．その像が非単元となることは $\varphi(a)\in\mathfrak q$ と同値，すなわち $a\in f(\mathfrak q)$ と同値であるから局所準同型である．
+\end{proof}
+% genron:end K-001525
+% genron:begin K-001526
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001525
+% genron:use K-001326
+% genron:use K-001324
+% genron:use K-001454
+% genron:use K-000453
+% genron:use K-001186
+\begin{prop}[アフィンスキームの射の一意性]
+局所環付き空間の射 $f:\operatorname{Spec}B\to\operatorname{Spec}A$ は大域切断上の環準同型 $\varphi:A\to B$ から誘導される射に一致する．
+\end{prop}
+\begin{proof}
+$\mathfrak q\in\operatorname{Spec}B$ に対して $\mathfrak p=f(\mathfrak q)$ とおく．茎写像 $A_{\mathfrak p}\to B_{\mathfrak q}$ は大域切断からの標準写像と可換である．局所性により $a\in\mathfrak p$ と $\varphi(a)\in\mathfrak q$ は同値なので $\mathfrak p=\varphi^{-1}(\mathfrak q)$ である．局所化の普遍性から茎写像も $\varphi$ により一意に定まる．任意の切断に対して二射による像の芽が各点で一致するため，層の分離性により射は一致する．
+\end{proof}
+% genron:end K-001526
+% genron:begin K-001527
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001525
+% genron:use K-001526
+% genron:use K-001326
+\begin{prop}[アフィンスキームと可換環の反変対応]
+可換環の準同型 $A\to B$ と局所環付き空間の射 $\operatorname{Spec}B\to\operatorname{Spec}A$ は一対一に対応し，恒等射と反変な合成を保つ．アフィンスキームの圏は可換環の反対圏と同値である．
+\end{prop}
+\begin{proof}
+前二命題で二つの操作が互いに逆であることが示された．大域切断の写像は定義により反変に合成される．さらに任意のアフィンスキームは標準アフィンスキームと同型であるから，この対応は圏の同値を与える．
+\end{proof}
+% genron:end K-001527

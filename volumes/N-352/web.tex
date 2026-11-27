@@ -1,0 +1,133 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{入射層と分解}
+% genron:begin K-001544
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001381
+% genron:use K-001383
+% genron:use K-001386
+% genron:use K-000548
+\begin{defn}[入射層]
+環の層 $\mathcal R$ 上の加群の層 $I$ が入射的であるとは，任意の単射 $F\to G$ と射 $F\to I$ に対し延長射 $G\to I$ が存在することをいう．単射とは核が零となる射を意味する．
+\end{defn}
+% genron:end K-001544
+% genron:begin K-001545
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001381
+% genron:use K-001382
+% genron:use K-001183
+\begin{defn}[点に集中する層]
+点 $x\in X$ と $\mathcal R_x$ 加群 $E$ に対し，$(i_{x*}E)(U)=E$ ($x\in U$)，$(i_{x*}E)(U)=0$ ($x\notin U$) とし制限を恒等写像又は零写像で定める．$x\in U$ では $\mathcal R(U)\to\mathcal R_x$ により加群構造を入れる．
+\end{defn}
+% genron:end K-001545
+% genron:begin K-001546
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001545
+% genron:use K-001182
+% genron:use K-001382
+\begin{prop}[点に集中する層の随伴性]
+自然な全単射 $\operatorname{Hom}_{\mathcal R}(F,i_{x*}E)\simeq\operatorname{Hom}_{\mathcal R_x}(F_x,E)$ が存在する．
+\end{prop}
+\begin{proof}
+先の前層は層である．$x$ を含む被覆では $x$ を含む開集合上の両立切断がすべて同じ $E$ の元であることが必要十分であり，これが貼り合わせとなる．$x$ を含まない場合は零のみである．$F_x\to E$ からは芽写像と合成し，$x$ を含まない開集合では零写像を用いて層の射を得る．逆に層の射の近傍上の成分は制限と可換なので芽の同値類上の写像を定める．係数と切断を共通近傍へ制限して $\mathcal R_x$ 線形性を確認できる．二操作は互いに逆である．
+\end{proof}
+% genron:end K-001546
+% genron:begin K-001547
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001544
+% genron:use K-001546
+% genron:use K-001386
+% genron:use K-000548
+\begin{prop}[点に集中する入射層]
+$\mathcal R_x$ 加群 $E$ が入射的なら $i_{x*}E$ は入射層である．
+\end{prop}
+\begin{proof}
+層の単射は茎で単射である．随伴性により延長問題を茎上の延長問題へ移し，$E$ の入射性で解く．再度随伴性を使えば層の射の延長となる．
+\end{proof}
+% genron:end K-001547
+% genron:begin K-001548
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001544
+% genron:use K-000060
+% genron:use K-000048
+\begin{prop}[入射層の積]
+入射層の集合族の直積層は入射的である．選択公理を用いる．
+\end{prop}
+\begin{proof}
+各開集合上で直積を取れば貼り合わせは各成分で行えるから層となる．単射に沿う延長問題を各成分の入射性により解き，選択公理で延長射を選び直積の普遍性でまとめればよい．
+\end{proof}
+% genron:end K-001548
+% genron:begin K-001549
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001546
+% genron:use K-001547
+% genron:use K-001548
+% genron:use K-000558
+% genron:use K-001186
+\begin{prop}[十分な入射層の存在]
+任意の $\mathcal R$ 加群の層 $F$ は入射層への単射を持つ．
+\end{prop}
+\begin{proof}
+各点 $x$ において $F_x$ を入射 $\mathcal R_x$ 加群 $E_x$ に埋め込む．ここで $E_x$ は十分な入射加群の命題の具体的構成（指標による評価埋込みと余誘導加群）を用いて指定する．随伴性から $F\to\prod_x i_{x*}E_x$ を得る．像が零となる切断の各点での芽は $F_x\to E_x$ の単射性から零であり，層の分離性から切断も零となる．従って単射であり，各因子とその積は入射的である．
+\end{proof}
+% genron:end K-001549
+% genron:begin K-001550
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001549
+% genron:use K-001385
+% genron:use K-001386
+\begin{prop}[入射分解]
+任意の加群の層 $F$ に対し完全列 $0\to F\to I^0\to I^1\to I^2\to\cdots$ が存在し，各 $I^n$ は入射的である．
+\end{prop}
+\begin{proof}
+$F$ を入射層 $I^0$ に埋め込み余核 $C^0$ を取る．これをさらに入射層 $I^1$ へ埋め込み，余核射との合成を微分とする．同様に $I^n\to C^n\to I^{n+1}$ を反復する．合成の核は余核射の核であり直前の像と一致するから完全である．各埋込みには前命題の具体的構成を用いて自然数について再帰的に指定する．
+\end{proof}
+% genron:end K-001550

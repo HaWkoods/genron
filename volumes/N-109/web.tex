@@ -1,0 +1,116 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{有限生成Abel群}
+% genron:begin K-001499
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000550
+% genron:use K-001211
+\begin{defn}[捩れ部分群]
+Abel群 $G$ の元 $x$ がある正整数 $n$ に対して $nx=0$ を満たすとき捩れ元という．捩れ元全体を $T(G)$ と書く．素数 $p$ に対し，ある $a\geq0$ について $p^ax=0$ となる元全体を $G[p^\infty]$ と書く．
+\end{defn}
+% genron:end K-001499
+% genron:begin K-001500
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001499
+% genron:use K-000598
+% genron:use K-001213
+% genron:use K-001214
+% genron:use K-000457
+\begin{prop}[素数成分への分解]
+$T(G)$ と $G[p^\infty]$ は部分群であり，$T(G)=\bigoplus_p G[p^\infty]$ である．
+\end{prop}
+\begin{proof}
+$nx=my=0$ なら $nm(x-y)=0$ であり，素数冪についても同じ議論が成立する．$nx=0$ として $n=\prod_i p_i^{a_i}$，$b_i=n/p_i^{a_i}$ とおく．$b_i$ の最大公約数は $1$ なのでBezout等式を反復して $\sum_i c_i b_i=1$ を得る．従って $x=\sum_i c_i b_i x$ であり，第 $i$ 項は $p_i^{a_i}$ 倍で零となる．逆に相異なる素数に対応する有限和 $\sum_i x_i=0$ について各 $x_i$ を消す素数冪を取る．第 $i$ 項以外を消す $b_i$ を掛ければ $b_ix_i=0$ であり，$p_i^{a_i}$ と互いに素なので $x_i=0$ となる．
+\end{proof}
+% genron:end K-001500
+% genron:begin K-001501
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001499
+% genron:use K-000550
+% genron:use K-000551
+% genron:use K-001390
+\begin{prop}[有限生成Abel群の構造定理]
+有限生成Abel群は $\mathbb Z^r\oplus\bigoplus_{i=1}^s\mathbb Z/d_i\mathbb Z$ と同型である．ただし $d_i>1$，$d_i\mid d_{i+1}$ である．
+\end{prop}
+\begin{proof}
+Abel群を整数加群とみなせば群の生成系は加群の生成系である．整数環は単項イデアル整域なので有限生成加群の構造定理を適用する．非零非単元の符号を正に直せば所望の形になる．自由成分の非零元は捩れ元ではなく，有限巡回成分はすべて捩れ元なので後者の直和が $T(G)$ である．
+\end{proof}
+% genron:end K-001501
+% genron:begin K-001502
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001501
+% genron:use K-000598
+% genron:use K-000599
+% genron:use K-001213
+\begin{prop}[基本因子表示]
+有限生成Abel群は自由Abel群と有限個の素数冪位数の巡回群の直和に同型である．
+\end{prop}
+\begin{proof}
+互いに素な正整数 $u,v$ に対し剰余写像 $\mathbb Z/(uv)\to\mathbb Z/u\oplus\mathbb Z/v$ は単射である．$cu+dv=1$ なら $(x,y)$ の原像は $dv x+cu y$ の類であるから全射でもある．不変因子を素因数分解してこの同型を反復する．
+\end{proof}
+% genron:end K-001502
+% genron:begin K-001503
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001500
+% genron:use K-001501
+% genron:use K-001502
+% genron:use K-001216
+\begin{prop}[不変因子及び基本因子の一意性]
+自由階数，不変因子列及び基本因子の重複度は群の同型型で一意に定まる．
+\end{prop}
+\begin{proof}
+$G/T(G)\simeq\mathbb Z^r$ の $2$ 倍部分群による商は $2^r$ 元を持つので $r$ が定まる．$P=G[p^\infty]$ とおけば $|p^{k-1}P/p^kP|=p^{c_k}$ であり，$c_k$ は位数が $p^k$ 以上の巡回 $p$ 群成分の個数である．各巡回成分で直接計算すればこの式を得る．位数 $p^k$ の成分数は $c_k-c_{k+1}$ である．各素数の正指数を昇順に並べ，最大の列長に合わせ左側に零を補い，各位置の素数冪を掛ければ整除鎖を成す唯一の不変因子列が得られる．
+\end{proof}
+% genron:end K-001503
+% genron:begin K-001504
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001502
+% genron:use K-001503
+\begin{example}[不変因子の計算]
+$\mathbb Z/12\oplus\mathbb Z/18\simeq\mathbb Z/6\oplus\mathbb Z/36$ である．
+\end{example}
+\begin{proof}
+基本因子は $2,4,3,9$ である．小さい指数同士，大きい指数同士を組み合わせて $6,36$ を得る．
+\end{proof}
+% genron:end K-001504

@@ -46402,6 +46402,1590 @@
       "status": "draft",
       "source": "volumes/N-350/web.tex",
       "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001499",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "捩れ部分群",
+      "statement": "Abel群 $G$ の元 $x$ がある正整数 $n$ に対して $nx=0$ を満たすとき捩れ元という．捩れ元全体を $T(G)$ と書く．素数 $p$ に対し，ある $a\\geq0$ について $p^ax=0$ となる元全体を $G[p^\\infty]$ と書く．",
+      "assumptions": [],
+      "position": [
+        109,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000550",
+        "K-001211"
+      ],
+      "status": "draft",
+      "source": "volumes/N-109/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001500",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素数成分への分解",
+      "statement": "$T(G)$ と $G[p^\\infty]$ は部分群であり，$T(G)=\\bigoplus_p G[p^\\infty]$ である．",
+      "assumptions": [],
+      "position": [
+        109,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001499",
+        "K-000598",
+        "K-001213",
+        "K-001214",
+        "K-000457"
+      ],
+      "status": "draft",
+      "source": "volumes/N-109/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001501",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限生成Abel群の構造定理",
+      "statement": "有限生成Abel群は $\\mathbb Z^r\\oplus\\bigoplus_{i=1}^s\\mathbb Z/d_i\\mathbb Z$ と同型である．ただし $d_i>1$，$d_i\\mid d_{i+1}$ である．",
+      "assumptions": [],
+      "position": [
+        109,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001499",
+        "K-000550",
+        "K-000551",
+        "K-001390"
+      ],
+      "status": "draft",
+      "source": "volumes/N-109/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001502",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基本因子表示",
+      "statement": "有限生成Abel群は自由Abel群と有限個の素数冪位数の巡回群の直和に同型である．",
+      "assumptions": [],
+      "position": [
+        109,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001501",
+        "K-000598",
+        "K-000599",
+        "K-001213"
+      ],
+      "status": "draft",
+      "source": "volumes/N-109/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001503",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "不変因子及び基本因子の一意性",
+      "statement": "自由階数，不変因子列及び基本因子の重複度は群の同型型で一意に定まる．",
+      "assumptions": [],
+      "position": [
+        109,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001500",
+        "K-001501",
+        "K-001502",
+        "K-001216"
+      ],
+      "status": "draft",
+      "source": "volumes/N-109/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001504",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "不変因子の計算",
+      "statement": "$\\mathbb Z/12\\oplus\\mathbb Z/18\\simeq\\mathbb Z/6\\oplus\\mathbb Z/36$ である．",
+      "assumptions": [],
+      "position": [
+        109,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001502",
+        "K-001503"
+      ],
+      "status": "draft",
+      "source": "volumes/N-109/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001505",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "外冪の函手性",
+      "statement": "$R$ 線形写像 $f:M\\to N$ は $\\bigwedge^k f:\\bigwedge_R^k M\\to\\bigwedge_R^k N$ を誘導し，純外積を $f(x_1)\\wedge\\cdots\\wedge f(x_k)$ に移す．恒等写像と合成を保つ．",
+      "assumptions": [],
+      "position": [
+        115,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001400",
+        "K-001398"
+      ],
+      "status": "draft",
+      "source": "volumes/N-115/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001506",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "行列式加群",
+      "statement": "階数 $n$ の有限自由 $R$ 加群 $M$ に対し $\\det_R M=\\bigwedge_R^n M$ を行列式加群と呼ぶ．これは階数一の自由加群である．",
+      "assumptions": [],
+      "position": [
+        115,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001401",
+        "K-000580"
+      ],
+      "status": "draft",
+      "source": "volumes/N-115/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001507",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "内在的行列式",
+      "statement": "有限自由加群 $M$ の自己準同型 $f$ に対し，$\\bigwedge^n f$ が行列式加群上に誘導するスカラー倍の係数を $\\det f$ とする．",
+      "assumptions": [],
+      "position": [
+        115,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001505",
+        "K-001506"
+      ],
+      "status": "draft",
+      "source": "volumes/N-115/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001508",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "表示行列の行列式との一致",
+      "statement": "任意の基底での $f$ の表示行列 $A$ に対して $\\det f=\\det A$ である．",
+      "assumptions": [],
+      "position": [
+        115,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001507",
+        "K-000687",
+        "K-001398"
+      ],
+      "status": "draft",
+      "source": "volumes/N-115/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001509",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行列式の乗法性と共役不変性",
+      "statement": "$\\det(gf)=\\det g\\det f$ であり，同型 $u:M\\to N$ による共役 $ufu^{-1}$ は同じ行列式を持つ．",
+      "assumptions": [],
+      "position": [
+        115,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001505",
+        "K-001507"
+      ],
+      "status": "draft",
+      "source": "volumes/N-115/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001510",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "直和の行列式",
+      "statement": "有限自由加群の自己準同型 $f,g$ に対して $\\det(f\\oplus g)=\\det f\\det g$ である．",
+      "assumptions": [],
+      "position": [
+        115,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001507",
+        "K-001508",
+        "K-001401"
+      ],
+      "status": "draft",
+      "source": "volumes/N-115/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001511",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "正規拡大",
+      "statement": "代数拡大 $L/K$ について，$L$ に根を持つ任意の $K[X]$ の既約多項式が $L[X]$ で一次式の積に分解するとき正規拡大という．",
+      "assumptions": [],
+      "position": [
+        132,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001306",
+        "K-001406"
+      ],
+      "status": "draft",
+      "source": "volumes/N-132/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001512",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正規性と埋込み",
+      "statement": "$K\\subseteq L\\subseteq\\Omega$ とし $\\Omega$ は $K$ の代数閉包とする．$L/K$ が正規であることは，任意の $K$ 埋込み $\\sigma:L\\to\\Omega$ が $\\sigma(L)=L$ を満たすことと同値である．",
+      "assumptions": [],
+      "position": [
+        132,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001511",
+        "K-001408",
+        "K-001412",
+        "K-001307"
+      ],
+      "status": "draft",
+      "source": "volumes/N-132/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001513",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分解体による正規性の特徴づけ",
+      "statement": "有限次拡大 $L/K$ が正規であることとある非零多項式の分解体であることは同値である．",
+      "assumptions": [],
+      "position": [
+        132,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001512",
+        "K-001406",
+        "K-001190",
+        "K-001307"
+      ],
+      "status": "draft",
+      "source": "volumes/N-132/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001514",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "合成体の正規性",
+      "statement": "同じ代数閉包内の正規拡大 $L_1,L_2$ の合成体は正規である．",
+      "assumptions": [],
+      "position": [
+        132,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001512",
+        "K-001193",
+        "K-001312"
+      ],
+      "status": "draft",
+      "source": "volumes/N-132/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001515",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "有限Galois拡大",
+      "statement": "有限次拡大が正規かつ分離的であるとき有限Galois拡大という．$K$ を固定する体 $L$ の自己同型群を $\\operatorname{Gal}(L/K)$ と書く．",
+      "assumptions": [],
+      "position": [
+        132,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001511",
+        "K-001415"
+      ],
+      "status": "draft",
+      "source": "volumes/N-132/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001516",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限Galois拡大の自己同型数",
+      "statement": "有限次拡大 $L/K$ について $|\\operatorname{Gal}(L/K)|\\leq[L:K]$ であり，等号成立は正規かつ分離的であることと同値である．",
+      "assumptions": [],
+      "position": [
+        132,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001512",
+        "K-001515",
+        "K-001416"
+      ],
+      "status": "draft",
+      "source": "volumes/N-132/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001517",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整拡大と商及び局所化",
+      "statement": "整拡大 $A\\subseteq B$ において，$J\\subseteq B$ をイデアルとすれば $A/(J\\cap A)\\subseteq B/J$ は整である．積閉集合 $S\\subseteq A$ に対して $S^{-1}A\\subseteq S^{-1}B$ も整である．",
+      "assumptions": [],
+      "position": [
+        140,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001426",
+        "K-000451",
+        "K-000452",
+        "K-000330"
+      ],
+      "status": "draft",
+      "source": "volumes/N-140/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001518",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整域の整拡大と体性",
+      "statement": "整域の整拡大 $A\\subseteq B$ について，$A$ が体であることと $B$ が体であることは同値である．",
+      "assumptions": [],
+      "position": [
+        140,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001426",
+        "K-000443",
+        "K-000444"
+      ],
+      "status": "draft",
+      "source": "volumes/N-140/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001519",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "極大イデアルの縮小",
+      "statement": "整拡大 $A\\subseteq B$ の素イデアル $\\mathfrak q$ と $\\mathfrak p=\\mathfrak q\\cap A$ について $\\mathfrak q$ が極大であることと $\\mathfrak p$ が極大であることは同値である．",
+      "assumptions": [],
+      "position": [
+        140,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001517",
+        "K-001518",
+        "K-000446",
+        "K-000447"
+      ],
+      "status": "draft",
+      "source": "volumes/N-140/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001520",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素イデアルの持上げ（lying over）",
+      "statement": "整拡大 $A\\subseteq B$ の任意の素イデアル $\\mathfrak p$ は $B$ のある素イデアルの縮小である．",
+      "assumptions": [],
+      "position": [
+        140,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001517",
+        "K-001519",
+        "K-000448",
+        "K-001136",
+        "K-001139"
+      ],
+      "status": "draft",
+      "source": "volumes/N-140/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001521",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素イデアルの上昇（going up）",
+      "statement": "$\\mathfrak p_1\\subseteq\\mathfrak p_2$ を $A$ の素イデアルとし，$B$ の素イデアル $\\mathfrak q_1$ の縮小が $\\mathfrak p_1$ なら，$\\mathfrak q_1\\subseteq\\mathfrak q_2$ で縮小が $\\mathfrak p_2$ となる素イデアル $\\mathfrak q_2$ が存在する．",
+      "assumptions": [],
+      "position": [
+        140,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001517",
+        "K-001520",
+        "K-000333"
+      ],
+      "status": "draft",
+      "source": "volumes/N-140/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001522",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素イデアルの非比較性",
+      "statement": "整拡大における二素イデアル $\\mathfrak q_1\\subseteq\\mathfrak q_2$ の縮小が同じなら $\\mathfrak q_1=\\mathfrak q_2$ である．",
+      "assumptions": [],
+      "position": [
+        140,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001517",
+        "K-001519",
+        "K-001136",
+        "K-001139"
+      ],
+      "status": "draft",
+      "source": "volumes/N-140/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001523",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "アフィンスキーム",
+      "statement": "可換環 $A$ のスペクトルに構造層を付した $(\\operatorname{Spec}A,\\mathcal O_{\\operatorname{Spec}A})$ を標準アフィンスキームと呼ぶ．これと局所環付き空間として同型なものをアフィンスキームという．",
+      "assumptions": [],
+      "position": [
+        253,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001323",
+        "K-001457"
+      ],
+      "status": "draft",
+      "source": "volumes/N-253/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001524",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "標準アフィンスキームの局所環性",
+      "statement": "標準アフィンスキームは局所環付き空間であり，点 $\\mathfrak p$ の剰余体は $\\operatorname{Frac}(A/\\mathfrak p)$ と標準的に同型である．",
+      "assumptions": [],
+      "position": [
+        253,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001523",
+        "K-001324",
+        "K-001139",
+        "K-000453",
+        "K-000447"
+      ],
+      "status": "draft",
+      "source": "volumes/N-253/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001525",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "環準同型が誘導する射",
+      "statement": "環準同型 $\\varphi:A\\to B$ は局所環付き空間の射 $\\operatorname{Spec}B\\to\\operatorname{Spec}A$ を誘導する．",
+      "assumptions": [],
+      "position": [
+        253,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001523",
+        "K-001203",
+        "K-001199",
+        "K-001321",
+        "K-001324",
+        "K-000453",
+        "K-001454"
+      ],
+      "status": "draft",
+      "source": "volumes/N-253/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001526",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "アフィンスキームの射の一意性",
+      "statement": "局所環付き空間の射 $f:\\operatorname{Spec}B\\to\\operatorname{Spec}A$ は大域切断上の環準同型 $\\varphi:A\\to B$ から誘導される射に一致する．",
+      "assumptions": [],
+      "position": [
+        253,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001525",
+        "K-001326",
+        "K-001324",
+        "K-001454",
+        "K-000453",
+        "K-001186"
+      ],
+      "status": "draft",
+      "source": "volumes/N-253/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001527",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "アフィンスキームと可換環の反変対応",
+      "statement": "可換環の準同型 $A\\to B$ と局所環付き空間の射 $\\operatorname{Spec}B\\to\\operatorname{Spec}A$ は一対一に対応し，恒等射と反変な合成を保つ．アフィンスキームの圏は可換環の反対圏と同値である．",
+      "assumptions": [],
+      "position": [
+        253,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001525",
+        "K-001526",
+        "K-001326"
+      ],
+      "status": "draft",
+      "source": "volumes/N-253/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001528",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "部分構造と初等部分構造",
+      "statement": "一階言語の構造 $\\mathcal M$ が $\\mathcal N$ の部分構造であるとは台集合が包含され，定数，函数及び関係の解釈が制限に一致することをいう．任意の式 $\\varphi(\\boldsymbol x)$ と $M$ の有限組 $\\boldsymbol a$ に対して $\\mathcal M\\models\\varphi(\\boldsymbol a)$ と $\\mathcal N\\models\\varphi(\\boldsymbol a)$ が同値なら初等部分構造といい $\\mathcal M\\preccurlyeq\\mathcal N$ と書く．",
+      "assumptions": [],
+      "position": [
+        330,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001256",
+        "K-001258",
+        "K-001259"
+      ],
+      "status": "draft",
+      "source": "volumes/N-330/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001529",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Tarski–Vaughtの判定法",
+      "statement": "部分構造 $M\\subseteq N$ が初等的であることは，$N\\models\\exists x\\,\\varphi(x,\\boldsymbol a)$ なら $N\\models\\varphi(b,\\boldsymbol a)$ となる $b\\in M$ が存在することと同値である．ただしパラメータ $\\boldsymbol a$ は $M$ に属する．",
+      "assumptions": [],
+      "position": [
+        330,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001528",
+        "K-001257",
+        "K-001258"
+      ],
+      "status": "draft",
+      "source": "volumes/N-330/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001530",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "下方Löwenheim–Skolemの定理（可算言語）",
+      "statement": "可算言語の構造 $N$ の任意の可算部分集合 $A$ は可算初等部分構造に含まれる．可算には有限も含め，選択公理を用いる．",
+      "assumptions": [],
+      "position": [
+        330,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001529",
+        "K-000060",
+        "K-000138",
+        "K-000143",
+        "K-000144",
+        "K-001173",
+        "K-001177"
+      ],
+      "status": "draft",
+      "source": "volumes/N-330/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001531",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト性による初等拡大",
+      "statement": "無限構造 $M$ と任意の無限集合 $I$ に対し，$I$ からその台集合への単射を持つ初等拡大が存在する．",
+      "assumptions": [],
+      "position": [
+        330,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001528",
+        "K-001485",
+        "K-001258",
+        "K-001259"
+      ],
+      "status": "draft",
+      "source": "volumes/N-330/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001532",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "初等同値と同型",
+      "statement": "初等部分構造とその拡大は同じ文を充足する．逆に同じ文を充足する構造が同型とは限らない．",
+      "assumptions": [],
+      "position": [
+        330,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001528",
+        "K-001531",
+        "K-000137"
+      ],
+      "status": "draft",
+      "source": "volumes/N-330/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001533",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "証明可能性述語",
+      "statement": "$T$ をPAを含む算術理論とする．算術式 $\\operatorname{Pr}_T(x)$ が証明可能性を表示するとは，標準自然数 $n$ が $T$ で証明可能な文のGödel符号であることと $\\mathbb N\\models\\operatorname{Pr}_T(\\overline n)$ が同値であることをいう．この意味論的条件だけでは理論内部の導出可能性条件は従わない．",
+      "assumptions": [],
+      "position": [
+        332,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001486",
+        "K-001487",
+        "K-001488",
+        "K-001490"
+      ],
+      "status": "draft",
+      "source": "volumes/N-332/web.tex",
+      "review": "2026-11-28 条件付き初稿．算術化及び導出可能性条件の証明未了．独立査読未了．"
+    },
+    {
+      "id": "K-001534",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対角化補題（表示性を仮定）",
+      "statement": "$\\operatorname{diag}(n)$ を一自由変数式の符号 $n$ に数項 $\\overline n$ を代入した文の符号とする．他の入力の値は $0$ とする．各標準自然数 $n$ について $\\mathrm{PA}\\vdash\\forall y(D(\\overline n,y)\\Leftrightarrow y=\\overline{\\operatorname{diag}(n)})$ となる式 $D$ が存在すると仮定する．任意の一自由変数式 $\\theta$ に対して $\\mathrm{PA}\\vdash G\\Leftrightarrow\\theta(\\overline{\\ulcorner G\\urcorner})$ となる文 $G$ が存在する．",
+      "assumptions": [],
+      "position": [
+        332,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001490",
+        "K-001491",
+        "K-001492",
+        "K-001347",
+        "K-001348"
+      ],
+      "status": "draft",
+      "source": "volumes/N-332/web.tex",
+      "review": "2026-11-28 条件付き初稿．算術化及び導出可能性条件の証明未了．独立査読未了．"
+    },
+    {
+      "id": "K-001535",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "第一不完全性の論証（条件付き）",
+      "statement": "対角化補題の表示性を仮定する．無矛盾な $T\\supseteq\\mathrm{PA}$ について $T\\vdash A$ なら $T\\vdash\\operatorname{Pr}_T(\\overline{\\ulcorner A\\urcorner})$ と仮定する．このとき $T$ で証明できない文 $G$ が存在する．さらに $T$ が標準自然数構造で健全であり証明可能性述語が前述の意味論的条件を満たせば $T\\not\\vdash\\neg G$ でもある．",
+      "assumptions": [],
+      "position": [
+        332,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001533",
+        "K-001534",
+        "K-001479",
+        "K-001488"
+      ],
+      "status": "draft",
+      "source": "volumes/N-332/web.tex",
+      "review": "2026-11-28 条件付き初稿．算術化及び導出可能性条件の証明未了．独立査読未了．"
+    },
+    {
+      "id": "K-001536",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "導出可能性条件",
+      "statement": "$\\Box A$ を $\\operatorname{Pr}_T(\\overline{\\ulcorner A\\urcorner})$ の略記とする．(i) $T\\vdash A$ なら $T\\vdash\\Box A$，(ii) $T\\vdash\\Box(A\\Rightarrow B)\\Rightarrow(\\Box A\\Rightarrow\\Box B)$，(iii) $T\\vdash\\Box A\\Rightarrow\\Box\\Box A$ を導出可能性条件と呼ぶ．ここで $A,B$ は文である．",
+      "assumptions": [],
+      "position": [
+        332,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001533",
+        "K-001490"
+      ],
+      "status": "draft",
+      "source": "volumes/N-332/web.tex",
+      "review": "2026-11-28 条件付き初稿．算術化及び導出可能性条件の証明未了．独立査読未了．"
+    },
+    {
+      "id": "K-001537",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "第二不完全性の論証（条件付き）",
+      "statement": "対角化補題の表示性及び導出可能性条件を仮定する．PAを含む無矛盾な $T$ について $\\bot$ を $0=S0$ とし $\\operatorname{Con}(T)=\\neg\\Box\\bot$ とおけば $T\\not\\vdash\\operatorname{Con}(T)$ である．",
+      "assumptions": [],
+      "position": [
+        332,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001534",
+        "K-001535",
+        "K-001536",
+        "K-001487"
+      ],
+      "status": "draft",
+      "source": "volumes/N-332/web.tex",
+      "review": "2026-11-28 条件付き初稿．算術化及び導出可能性条件の証明未了．独立査読未了．"
+    },
+    {
+      "id": "K-001538",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "推移的集合と順序数",
+      "statement": "集合 $a$ が推移的であるとは $x\\in y\\in a$ なら $x\\in a$ となることをいう．推移的集合 $\\alpha$ が所属関係 $\\in$ によって厳密に整列されるとき順序数という．",
+      "assumptions": [],
+      "position": [
+        333,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000121",
+        "K-001375"
+      ],
+      "status": "draft",
+      "source": "volumes/N-333/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001539",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序数の元と始切片",
+      "statement": "$\\beta\\in\\alpha$ で $\\alpha$ が順序数なら $\\beta$ は順序数であり，$\\alpha$ の $\\beta$ における真の始切片に一致する．",
+      "assumptions": [],
+      "position": [
+        333,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001538",
+        "K-000122"
+      ],
+      "status": "draft",
+      "source": "volumes/N-333/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001540",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序数の比較",
+      "statement": "任意の順序数 $\\alpha,\\beta$ について $\\alpha=\\beta,\\alpha\\in\\beta,\\beta\\in\\alpha$ のうちただ一つが成り立つ．また $\\alpha\\subseteq\\beta$ は $\\alpha=\\beta$ 又は $\\alpha\\in\\beta$ と同値である．",
+      "assumptions": [],
+      "position": [
+        333,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001539",
+        "K-000123",
+        "K-000127",
+        "K-001379"
+      ],
+      "status": "draft",
+      "source": "volumes/N-333/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001541",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "後続順序数と上限",
+      "statement": "$\\alpha+1=\\alpha\\cup\\{\\alpha\\}$ は順序数である．順序数の集合 $A$ に対して $\\bigcup A$ は順序数であり包含順序について $A$ の上限である．",
+      "assumptions": [],
+      "position": [
+        333,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001540",
+        "K-001375"
+      ],
+      "status": "draft",
+      "source": "volumes/N-333/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001542",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整列集合の順序型",
+      "statement": "任意の整列集合 $(W,<)$ はただ一つの順序数と順序同型である．",
+      "assumptions": [],
+      "position": [
+        333,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001539",
+        "K-001540",
+        "K-000123",
+        "K-000126",
+        "K-001376"
+      ],
+      "status": "draft",
+      "source": "volumes/N-333/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001543",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全順序数からなる集合の不存在",
+      "statement": "すべての順序数を元とする集合は存在しない．",
+      "assumptions": [],
+      "position": [
+        333,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001541",
+        "K-001379"
+      ],
+      "status": "draft",
+      "source": "volumes/N-333/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001544",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "入射層",
+      "statement": "環の層 $\\mathcal R$ 上の加群の層 $I$ が入射的であるとは，任意の単射 $F\\to G$ と射 $F\\to I$ に対し延長射 $G\\to I$ が存在することをいう．単射とは核が零となる射を意味する．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001381",
+        "K-001383",
+        "K-001386",
+        "K-000548"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001545",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "点に集中する層",
+      "statement": "点 $x\\in X$ と $\\mathcal R_x$ 加群 $E$ に対し，$(i_{x*}E)(U)=E$ ($x\\in U$)，$(i_{x*}E)(U)=0$ ($x\\notin U$) とし制限を恒等写像又は零写像で定める．$x\\in U$ では $\\mathcal R(U)\\to\\mathcal R_x$ により加群構造を入れる．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001381",
+        "K-001382",
+        "K-001183"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001546",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "点に集中する層の随伴性",
+      "statement": "自然な全単射 $\\operatorname{Hom}_{\\mathcal R}(F,i_{x*}E)\\simeq\\operatorname{Hom}_{\\mathcal R_x}(F_x,E)$ が存在する．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001545",
+        "K-001182",
+        "K-001382"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001547",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "点に集中する入射層",
+      "statement": "$\\mathcal R_x$ 加群 $E$ が入射的なら $i_{x*}E$ は入射層である．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001544",
+        "K-001546",
+        "K-001386",
+        "K-000548"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001548",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "入射層の積",
+      "statement": "入射層の集合族の直積層は入射的である．選択公理を用いる．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001544",
+        "K-000060",
+        "K-000048"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001549",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "十分な入射層の存在",
+      "statement": "任意の $\\mathcal R$ 加群の層 $F$ は入射層への単射を持つ．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001546",
+        "K-001547",
+        "K-001548",
+        "K-000558",
+        "K-001186"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001550",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "入射分解",
+      "statement": "任意の加群の層 $F$ に対し完全列 $0\\to F\\to I^0\\to I^1\\to I^2\\to\\cdots$ が存在し，各 $I^n$ は入射的である．",
+      "assumptions": [],
+      "position": [
+        352,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001549",
+        "K-001385",
+        "K-001386"
+      ],
+      "status": "draft",
+      "source": "volumes/N-352/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -48156,16 +49740,18 @@
       "number": 109,
       "title": "有限生成Abel群",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         108,
-        76
+        76,
+        210
       ],
       "goals": [
         "不変因子・基本因子"
       ],
       "treatise": "T-16",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 110,
@@ -48249,7 +49835,7 @@
       "number": 115,
       "title": "行列式と外冪",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         114,
         99
@@ -48258,7 +49844,8 @@
         "最上外冪・内在的行列式"
       ],
       "treatise": "T-17",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 116,
@@ -48519,7 +50106,7 @@
       "number": 132,
       "title": "正規拡大",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         130,
         131
@@ -48528,7 +50115,8 @@
         "正規性・埋込みによる特徴"
       ],
       "treatise": "T-20",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 133,
@@ -48648,7 +50236,7 @@
       "number": 140,
       "title": "整拡大の素イデアル",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         139,
         6
@@ -48657,7 +50245,8 @@
         "lying over・going up・incomparability"
       ],
       "treatise": "T-21",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 141,
@@ -50491,7 +52080,7 @@
       "number": 253,
       "title": "アフィンスキーム",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         251,
         252
@@ -50500,7 +52089,8 @@
         "アフィンスキームと環の反変対応"
       ],
       "treatise": "T-36",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 254,
@@ -51687,15 +53277,17 @@
       "number": 330,
       "title": "モデル理論の初歩",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
-        329
+        329,
+        7
       ],
       "goals": [
         "初等部分構造・Löwenheim–Skolem"
       ],
       "treatise": "T-48",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 331,
@@ -51718,7 +53310,7 @@
       "number": 332,
       "title": "不完全性定理",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         331,
         324,
@@ -51728,13 +53320,14 @@
         "対角化補題・第一第二不完全性"
       ],
       "treatise": "T-48",
-      "display_index": 9
+      "display_index": 9,
+      "web_only": true
     },
     {
       "number": 333,
       "title": "順序数",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         49,
         6
@@ -51743,7 +53336,8 @@
         "von Neumann順序数・整列型"
       ],
       "treatise": "T-49",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 334,
@@ -52032,7 +53626,7 @@
       "number": 352,
       "title": "入射層と分解",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         52,
         210
@@ -52041,7 +53635,8 @@
         "十分な入射対象・入射分解"
       ],
       "treatise": "T-52",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 353,

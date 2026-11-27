@@ -1,0 +1,111 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{行列式と外冪}
+% genron:begin K-001505
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001400
+% genron:use K-001398
+\begin{prop}[外冪の函手性]
+$R$ 線形写像 $f:M\to N$ は $\bigwedge^k f:\bigwedge_R^k M\to\bigwedge_R^k N$ を誘導し，純外積を $f(x_1)\wedge\cdots\wedge f(x_k)$ に移す．恒等写像と合成を保つ．
+\end{prop}
+\begin{proof}
+右辺は交代多重線形なので外冪の普遍性を適用する．恒等写像と合成に関する等式は生成元である純外積上で確かめればよい．次数零の写像は $R$ の恒等写像とする．
+\end{proof}
+% genron:end K-001505
+% genron:begin K-001506
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001401
+% genron:use K-000580
+\begin{defn}[行列式加群]
+階数 $n$ の有限自由 $R$ 加群 $M$ に対し $\det_R M=\bigwedge_R^n M$ を行列式加群と呼ぶ．これは階数一の自由加群である．
+\end{defn}
+% genron:end K-001506
+% genron:begin K-001507
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001505
+% genron:use K-001506
+\begin{defn}[内在的行列式]
+有限自由加群 $M$ の自己準同型 $f$ に対し，$\bigwedge^n f$ が行列式加群上に誘導するスカラー倍の係数を $\det f$ とする．
+\end{defn}
+% genron:end K-001507
+% genron:begin K-001508
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001507
+% genron:use K-000687
+% genron:use K-001398
+\begin{prop}[表示行列の行列式との一致]
+任意の基底での $f$ の表示行列 $A$ に対して $\det f=\det A$ である．
+\end{prop}
+\begin{proof}
+基底を $e_1,\ldots,e_n$ とし $f(e_j)=\sum_i a_{ij}e_i$ と書く．外積を展開すると同じ基底元を含む項は零であり，残りは置換 $\sigma$ に対応する．隣接交換によって標準順に直すと符号は逆転数の偶奇で決まり，
+\[
+ f(e_1)\wedge\cdots\wedge f(e_n)=
+ \left(\sum_\sigma\epsilon(\sigma)\prod_j a_{\sigma(j),j}\right)e_1\wedge\cdots\wedge e_n .
+\]
+従って係数は行列式の定義式に等しい．次数零も空積を $1$ とすれば成立する．階数一加群上のスカラー倍の係数は基底によらない．
+\end{proof}
+% genron:end K-001508
+% genron:begin K-001509
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001505
+% genron:use K-001507
+\begin{prop}[行列式の乗法性と共役不変性]
+$\det(gf)=\det g\det f$ であり，同型 $u:M\to N$ による共役 $ufu^{-1}$ は同じ行列式を持つ．
+\end{prop}
+\begin{proof}
+外冪の函手性によれば最上外冪上の合成はスカラー倍の合成である．また $\bigwedge^n u$ は行列式加群の同型でありスカラー倍と可換なので共役によって係数は変わらない．
+\end{proof}
+% genron:end K-001509
+% genron:begin K-001510
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001507
+% genron:use K-001508
+% genron:use K-001401
+\begin{prop}[直和の行列式]
+有限自由加群の自己準同型 $f,g$ に対して $\det(f\oplus g)=\det f\det g$ である．
+\end{prop}
+\begin{proof}
+各加群の基底を連接して直和の基底を得る．その最上外積への作用は各基底外積に対する作用の積である．それぞれの係数を取り出せば主張を得る．
+\end{proof}
+% genron:end K-001510
