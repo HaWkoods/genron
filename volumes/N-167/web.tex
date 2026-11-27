@@ -1,0 +1,185 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{実数値函数の積分}
+% genron:begin K-000824
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000749
+\begin{defn}[ほとんど至る所]
+測度空間 $(X,\mathcal A,\mu)$ において，ある $N\in\mathcal A$，$\mu(N)=0$ に対し $X\setminus N$ のすべての点で性質 $P$ が成立するとき，$P$ はほとんど至る所成立するという．この定義は測度の完備性を要求しない．
+\end{defn}
+% genron:end K-000824
+% genron:begin K-000825
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000824
+% genron:use K-000783
+% genron:use K-000785
+% genron:use K-000786
+% genron:use K-000757
+% genron:use K-000761
+\begin{prop}[非負積分の零集合上での不変性]
+二つの非負可測函数 $f,g$ がほとんど至る所一致するならば $\int f\,d\mu=\int g\,d\mu$ である．
+\end{prop}
+\begin{proof}
+例外を含む可測零集合 $N$ を取る．$f1_N,f1_{X\setminus N}$ は可測である（集合ごとに $f$ 又は零と定義する）．ここでは $0\cdot+\infty=0$ とする．$\{f1_N>0\}\subseteq N$ なので $\int f1_N\,d\mu=0$ である．従って非負積分の加法性により $\int f=\int f1_{X\setminus N}$ である．$g$ についても同様であり，$f1_{X\setminus N}=g1_{X\setminus N}$ から結論を得る．
+\end{proof}
+% genron:end K-000825
+% genron:begin K-000826
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000758
+% genron:use K-000783
+% genron:use K-000785
+% genron:use K-000757
+% genron:use K-000643
+\begin{defn}[実可積分函数]
+実数値可測函数 $f$ に対し $f^+=\max(f,0)$，$f^-=\max(-f,0)$ とおく．両者は非負可測であり，$f=f^+-f^-$，$|f|=f^++f^-$ である．
+\[
+ \int_X |f|\,d\mu<+\infty
+\]
+であるとき $f$ を可積分という．このとき非負積分の加法性により $\int f^+$，$\int f^-$ はともに有限である．
+\[
+ \int_X f\,d\mu=\int_X f^+\,d\mu-\int_X f^-\,d\mu
+\]
+と定める．
+\end{defn}
+% genron:end K-000826
+% genron:begin K-000827
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000826
+% genron:use K-000758
+% genron:use K-000785
+% genron:use K-000783
+\begin{prop}[実積分の非負分解による計算]
+積分が有限な非負実数値可測函数 $g,h$ に対し $f=g-h$ とおけば $f$ は可積分であり，$\int f=\int g-\int h$ となる．
+\end{prop}
+\begin{proof}
+$|f|\leq g+h$ なので可積分性が従う．$f^+-f^-=g-h$ から $f^++h=f^-+g$ である．非負積分の加法性によって各積分の和が等しく，すべて有限であるため移項すれば主張を得る．
+\end{proof}
+% genron:end K-000827
+% genron:begin K-000828
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000826
+% genron:use K-000827
+% genron:use K-000785
+% genron:use K-000758
+% genron:use K-000644
+\begin{prop}[実積分の線形性と評価]
+実可積分函数全体は点ごとの演算に関して実線形空間であり，積分は線形写像である．また $f\leq g$ なら $\int f\leq\int g$ であり，
+\[
+ \left|\int f\,d\mu\right|\leq\int|f|\,d\mu
+\]
+である．
+\end{prop}
+\begin{proof}
+$f+g=(f^++g^+)-(f^-+g^-)$ と非負分解に関する命題から，和の可積分性と積分の加法性を得る．定数倍について正の定数なら同じ分解を定数倍し，負の定数なら正部と負部を交換すれば斉次性を得る．$f\leq g$ ならば可積分函数 $g-f$ は非負であるため $\int g-\int f\geq0$ である．最後に $-|f|\leq f\leq |f|$ に単調性を適用すれば評価が従う．
+\end{proof}
+% genron:end K-000828
+\section{複素数値函数の積分}
+% genron:begin K-000829
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000826
+% genron:use K-000717
+% genron:use K-000719
+% genron:use K-000720
+% genron:use K-000758
+% genron:use K-000757
+% genron:use K-000709
+% genron:use K-000783
+\begin{defn}[複素可積分函数]
+複素数値函数 $f=u+iv$ において，実部 $u$ と虚部 $v$ が可測であるとき $f$ を可測という．このとき $|f|=\sqrt{u^2+v^2}$ は可測である．実際，非負実函数 $w$ について $\{\sqrt w>a\}=\{w>a^2\}$ ($a\geq0$) である．$\int|f|<+\infty$ のとき $f$ を可積分という．$|u|,|v|\leq|f|\leq|u|+|v|$ より，この条件は $u,v$ の可積分性と同値である．
+\[
+ \int_X f\,d\mu=\int_X u\,d\mu+i\int_X v\,d\mu
+\]
+と定める．
+\end{defn}
+% genron:end K-000829
+% genron:begin K-000830
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000829
+% genron:use K-000828
+% genron:use K-000720
+% genron:use K-000717
+% genron:use K-000718
+% genron:use K-000785
+\begin{prop}[複素積分の線形性と評価]
+複素可積分函数全体は複素線形空間をなし，積分は複素線形である．さらに $\left|\int f\,d\mu\right|\leq\int|f|\,d\mu$ が成立する．
+\end{prop}
+\begin{proof}
+実部と虚部に関する演算を展開し，実積分の線形性を適用すれば，加法性及び複素定数倍の保存が従う．可積分性の保存は絶対値の三角不等式と乗法性による．$z=\int f\,d\mu$ とおく．$z=0$ なら評価は明らかである．$z\ne0$ なら $\lambda=\overline z/|z|$ とおけば $|\lambda|=1$，$\lambda z=|z|$ であり，
+\[
+ |z|=\operatorname{Re}\int\lambda f\,d\mu
+ =\int\operatorname{Re}(\lambda f)\,d\mu\leq\int|f|\,d\mu
+\]
+となる．最後は実積分の単調性による．
+\end{proof}
+% genron:end K-000830
+% genron:begin K-000831
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000824
+% genron:use K-000825
+% genron:use K-000783
+% genron:use K-000757
+% genron:use K-000749
+% genron:use K-000706
+\begin{prop}[有限積分を持つ拡大実函数]
+非負拡大実数値可測函数 $f$ が $\int f\,d\mu<+\infty$ を満たすならば $N=\{f=+\infty\}$ は測度零である．$N$ 上で $f$ を零に置き換えれば有限値可積分函数を得る．
+\end{prop}
+\begin{proof}
+$N=\bigcap_n\{f>n\}$ は可測であり，各正整数 $n$ について $n1_N\leq f$ である．従って $n\mu(N)\leq\int f$ であり，Archimedes性によって $\mu(N)=0$ が従う．$N$ 上で零，補集合上で $f$ と等しい函数は可測である．非負積分の零集合上での不変性から元の函数と積分が等しく，可積分である．
+\end{proof}
+% genron:end K-000831

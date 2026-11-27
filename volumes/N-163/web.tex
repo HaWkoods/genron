@@ -1,0 +1,175 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{前測度と拡張}
+% genron:begin K-000816
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000178
+% genron:use K-000179
+% genron:use K-000746
+\begin{defn}[前測度]
+集合 $X$ 上の集合環 $\mathcal R$ に定義された函数 $\mu_0:\mathcal R\to[0,+\infty]$ が $\mu_0(\varnothing)=0$ を満たし，互いに素な列 $(A_n)$ が $\mathcal R$ の元からなり，かつ $\bigcup_n A_n\in\mathcal R$ であるとき
+\[
+ \mu_0\left(\bigcup_n A_n\right)=\sum_n\mu_0(A_n)
+\]
+となるならば，$\mu_0$ を前測度という．
+\end{defn}
+% genron:end K-000816
+% genron:begin K-000817
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000816
+% genron:use K-000178
+% genron:use K-000179
+% genron:use K-000747
+\begin{prop}[前測度の単調性と被覆不等式]
+前測度 $\mu_0$ は有限加法的であり，単調である．さらに $A,A_n\in\mathcal R$，$A\subseteq\bigcup_n A_n$ ならば $\mu_0(A)\leq\sum_n\mu_0(A_n)$ である．ここで $\bigcup_n A_n\in\mathcal R$ は仮定しない．
+\end{prop}
+\begin{proof}
+有限加法性は空集合で列を補えば従う．$A\subseteq B$ なら $B=A\cup(B\setminus A)$ は互いに素な集合環内の分解なので単調性が従う．被覆については $D_n=(A\cap A_n)\setminus\bigcup_{k<n}A_k$ とおく．$D_n\in\mathcal R$ は互いに素であり，$\bigcup_n D_n=A\in\mathcal R$ である．従って前測度の可算加法性と単調性から $\mu_0(A)=\sum_n\mu_0(D_n)\leq\sum_n\mu_0(A_n)$ となる．
+\end{proof}
+% genron:end K-000817
+% genron:begin K-000818
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000817
+% genron:use K-000776
+% genron:use K-000777
+% genron:use K-000779
+% genron:use K-000187
+% genron:use K-000746
+% genron:use K-000747
+\begin{prop}[前測度の拡張定理]
+集合環 $\mathcal R$ 上の前測度 $\mu_0$ は，$\mathcal R$ が $X$ 上に生成する $\sigma$-加法族 $\sigma(\mathcal R)$ 上の測度へ拡張できる．
+\end{prop}
+\begin{proof}
+$\mathcal R$ の元による可算被覆の費用の下限として外測度 $m^*$ を構成する．$A\in\mathcal R$ について $A$ 自身を用いた被覆から $m^*(A)\leq\mu_0(A)$ であり，被覆不等式から逆向きも得られる．
+
+$A\in\mathcal R$ と任意の $T\subseteq X$ を固定する．$T$ の任意の $\mathcal R$ による被覆 $(C_n)$ に対して $C_n\cap A$ と $C_n\setminus A$ も集合環の元であり，それぞれ $T\cap A$ と $T\setminus A$ を覆う．有限加法性から
+\[
+ m^*(T\cap A)+m^*(T\setminus A)
+ \leq\sum_n\mu_0(C_n)
+\]
+である．非負和に対する等式は有限部分和から上限を取って従う．被覆が存在しない場合は $m^*(T)=+\infty$ なので同じ不等式は自明である．従って被覆について下限を取り $A$ の外測度可測性を得る．Carathéodoryの定理により外測度可測集合全体は $\sigma$-加法族であるから $\sigma(\mathcal R)$ を含み，その上に制限した測度は $\mu_0$ を拡張する．
+\end{proof}
+% genron:end K-000818
+\section{拡張の一意性}
+% genron:begin K-000819
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000027
+% genron:use K-000029
+% genron:use K-000045
+% genron:use K-000182
+\begin{defn}[π-集合族とDynkin族]
+集合 $X$ の部分集合族 $\mathcal P$ が二集合の共通部分を取ることについて閉じているとき，これを $\pi$-集合族という．部分集合族 $\mathcal D$ が $X\in\mathcal D$，$A,B\in\mathcal D,A\subseteq B\Rightarrow B\setminus A\in\mathcal D$，及び互いに素な可算個の元の合併について閉じているとき，これを Dynkin 族という．
+\end{defn}
+% genron:end K-000819
+% genron:begin K-000820
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000819
+% genron:use K-000182
+% genron:use K-000187
+% genron:use K-000185
+% genron:use K-000027
+% genron:use K-000045
+\begin{prop}[π-λ定理]
+$\pi$-集合族 $\mathcal P$ を含む任意の Dynkin 族は $\sigma(\mathcal P)$ を含む．
+\end{prop}
+\begin{proof}
+$\mathcal P$ を含むすべての Dynkin 族の共通部分を $\mathcal D_0$ とする．これは Dynkin 族であり，そのような族のうち最小である．$A\in\mathcal D_0$ に対して
+\[
+ \mathcal D_A=\{B\subseteq X\mid A\cap B\in\mathcal D_0\}
+\]
+とおく．$A\cap X=A$ であり，共通部分は相対差と互いに素な合併を保存するから $\mathcal D_A$ は Dynkin 族である．$A\in\mathcal P$ なら $\mathcal P$ の有限交叉性から $\mathcal P\subseteq\mathcal D_A$ であり，最小性により $\mathcal D_0\subseteq\mathcal D_A$ となる．よって任意の $B\in\mathcal D_0$ と $A\in\mathcal P$ に対し $A\cap B\in\mathcal D_0$ である．次に $B\in\mathcal D_0$ を固定すると，この結果によって $\mathcal P\subseteq\mathcal D_B$ となり，再び最小性によって $\mathcal D_0\subseteq\mathcal D_B$ である．従って $\mathcal D_0$ は有限交叉に閉じている．補集合にも閉じるので有限合併に閉じ，可算合併を非交化すれば任意の可算合併にも閉じる．従って $\mathcal D_0$ は $\sigma$-加法族であり，主張が従う．
+\end{proof}
+% genron:end K-000820
+% genron:begin K-000821
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000820
+% genron:use K-000748
+% genron:use K-000749
+\begin{prop}[有限測度の一致判定]
+同じ可測空間 $(X,\mathcal A)$ 上の有限測度 $\mu,\nu$ が $\mu(X)=\nu(X)$ を満たし，$\pi$-集合族 $\mathcal P\subseteq\mathcal A$ 上で一致するとする．このとき $\mu,\nu$ は $\sigma(\mathcal P)$ 上で一致する．
+\end{prop}
+\begin{proof}
+$\mathcal D=\{A\in\mathcal A\mid\mu(A)=\nu(A)\}$ は仮定によって $X$ を含む．$A\subseteq B$ がともに $\mathcal D$ に属するとき有限性によって $\mu(B\setminus A)=\mu(B)-\mu(A)=\nu(B)-\nu(A)=\nu(B\setminus A)$ となる．互いに素な可算合併については可算加法性によって閉じている．従って $\mathcal D$ は $\mathcal P$ を含む Dynkin 族であり，$\pi$-$\lambda$ 定理を適用できる．
+\end{proof}
+% genron:end K-000821
+% genron:begin K-000822
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000816
+% genron:use K-000748
+\begin{defn}[σ有限性]
+測度空間 $(X,\mathcal A,\mu)$ において $X=\bigcup_n E_n$，$E_n\in\mathcal A$，$\mu(E_n)<+\infty$ となる列が存在するとき，$\mu$ は $\sigma$ 有限であるという．集合環上の前測度についても $E_n$ を集合環の元として同じ条件で定める．
+\end{defn}
+% genron:end K-000822
+% genron:begin K-000823
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000818
+% genron:use K-000822
+% genron:use K-000821
+% genron:use K-000751
+% genron:use K-000179
+\begin{prop}[σ有限前測度の拡張の一意性]
+$\sigma$ 有限な前測度 $\mu_0$ の $\sigma(\mathcal R)$ 上への測度拡張はただ一つである．
+\end{prop}
+\begin{proof}
+二つの拡張を $\mu,\nu$ とする．$\sigma$ 有限性によって $X=\bigcup_n E_n$，$E_n\in\mathcal R$，$\mu_0(E_n)<+\infty$ となる列を取り，$F_n=\bigcup_{k\leq n}E_k$ とおく．$F_n\in\mathcal R$ は増加し，有限前測度を持つ．
+\[
+ \mu_n(A)=\mu(A\cap F_n),\qquad \nu_n(A)=\nu(A\cap F_n)
+\]
+と定めると $\sigma(\mathcal R)$ 上の有限測度であり，$X$ での値はいずれも $\mu_0(F_n)$ である．$\mathcal R$ は有限交叉に閉じ，$A\in\mathcal R$ なら $A\cap F_n\in\mathcal R$ なので $\mu_n(A)=\nu_n(A)$ である．有限測度の一致判定によって全可測集合で $\mu_n=\nu_n$ となる．任意の $A\in\sigma(\mathcal R)$ に対して $A\cap F_n$ は $A$ に増加するので，下からの連続性により $\mu(A)=\sup_n\mu_n(A)=\sup_n\nu_n(A)=\nu(A)$ となる．
+\end{proof}
+% genron:end K-000823

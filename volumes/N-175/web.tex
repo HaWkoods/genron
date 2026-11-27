@@ -1,0 +1,111 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{稠密集合とカテゴリー}
+% genron:begin K-000832
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000146
+% genron:use K-000045
+\begin{defn}[疎集合と第一類集合]
+位相空間 $X$ の部分集合 $A$ について $\operatorname{Int}\overline A=\varnothing$ となるとき，$A$ は疎であるという．可算個の疎集合の合併として表される集合を第一類集合という．第一類でない集合を第二類集合という．
+\end{defn}
+% genron:end K-000832
+% genron:begin K-000833
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000198
+% genron:use K-000199
+% genron:use K-000146
+% genron:use K-000045
+\begin{defn}[Baire空間]
+位相空間 $X$ において任意の稠密開集合列 $(U_n)$ に対し $\bigcap_n U_n$ が稠密であるとき，$X$ を Baire 空間という．
+\end{defn}
+% genron:end K-000833
+% genron:begin K-000834
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000833
+% genron:use K-000832
+% genron:use K-000198
+% genron:use K-000200
+% genron:use K-000201
+\begin{prop}[Baire性のカテゴリーによる判定]
+位相空間が Baire 空間であるための必要十分条件は，空でない開集合が第一類集合に含まれないことである．
+\end{prop}
+\begin{proof}
+疎集合 $A_n$ の閉包の補集合は稠密開集合である．Baire 性を仮定すればこれらの共通部分は稠密なので，空でない開集合と交わる．従ってその開集合は $\bigcup_n A_n$ に含まれない．逆に稠密開集合 $U_n$ の補集合 $X\setminus U_n$ は内部が空な閉集合なので疎である．共通部分が稠密でなければ，これと交わらない空でない開集合があり，その開集合は $\bigcup_n(X\setminus U_n)$ に含まれる．仮定に反するので共通部分は稠密である．
+\end{proof}
+% genron:end K-000834
+\section{完備距離空間のBaire性}
+% genron:begin K-000835
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000833
+% genron:use K-000769
+% genron:use K-000725
+% genron:use K-000726
+% genron:use K-000727
+% genron:use K-000731
+% genron:use K-000738
+% genron:use K-000060
+% genron:use K-000105
+% genron:use K-000706
+\begin{prop}[Baireのカテゴリー定理]
+完備距離空間は Baire 空間である．
+\end{prop}
+\begin{proof}
+完備距離空間 $X$ の稠密開集合列 $(U_n)$ と空でない開集合 $V$ を取る．$V\cap U_1$ は空でない開集合であるから，$x_1$ と $0<r_1<1/2$ を，閉球 $\overline B(x_1,r_1)$ が $V\cap U_1$ に含まれるよう選べる．実際，その開集合に属する点を一つ取り，その点の十分小さい開球が含まれることを利用し，さらに半径を小さくすればよい．
+
+$x_n,r_n$ が選ばれたとき，$B(x_n,r_n)\cap U_{n+1}$ は空でない開集合である．従って
+\[
+ 0<r_{n+1}<2^{-(n+1)},\quad
+ \overline B(x_{n+1},r_{n+1})
+ \subseteq B(x_n,r_n)\cap U_{n+1}
+\]
+を満たすものが存在する．選択公理により可能な選択に対する選択函数を固定し，再帰によってこの操作を反復する．$m\geq n$ なら $x_m\in\overline B(x_n,r_n)$ であるから，$p,q\geq n$ なら $d(x_p,x_q)\leq2r_n<2^{1-n}$ である．従って $(x_n)$ は Cauchy 列となり，完備性により極限 $x$ を持つ．各閉球は閉集合であり，点列の尾部を含むため $x$ も含む．従って $x\in V\cap\bigcap_n U_n$ である．任意の空でない開集合 $V$ についてこのことが成立するから，共通部分は稠密である．
+\end{proof}
+% genron:end K-000835
+% genron:begin K-000836
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000835
+% genron:use K-000834
+% genron:use K-000832
+\begin{prop}[閉集合による可算被覆と内部]
+空でない完備距離空間 $X$ が閉集合列 $(F_n)$ によって $X=\bigcup_n F_n$ と覆われるならば，ある $F_n$ は空でない内部を持つ．
+\end{prop}
+\begin{proof}
+すべての $F_n$ の内部が空ならば，すべて疎集合である．すると $X$ 自身が空でない開集合でありながら第一類集合となり，Baire性のカテゴリーによる判定に反する．
+\end{proof}
+% genron:end K-000836
