@@ -1,0 +1,226 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：J. B. Conway, Functions of One Complex Variable I, 第III章§2（区分的滑らかな道）及び第IV章§1（線積分）を確認．区分的C^1曲線に限ってRiemann積分から構成する．
+\section{複素曲線と線積分}
+% genron:begin K-001058
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000717
+% genron:use K-000720
+% genron:use K-000887
+% genron:use K-000959
+% genron:use K-000893
+% genron:use K-000897
+\begin{defn}[複素曲線と区分的滑らかさ]
+$U\subseteq\mathbb C$ に対し連続写像 $\gamma:[a,b]\to U$（$a<b$）を曲線という．有限分割 $a=t_0<\cdots<t_N=b$ が存在して各 $[t_{j-1},t_j]$ 上で実変数の函数として $\gamma$ が $C^1$ 級（端点は片側微分）であるとき区分的 $C^1$ 曲線という．$\gamma(a)=\gamma(b)$ のとき閉曲線という．
+\end{defn}
+% genron:end K-001058
+% genron:begin K-001059
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000717
+% genron:use K-000968
+% genron:use K-000969
+% genron:use K-000970
+\begin{defn}[複素数値函数のRiemann積分]
+実部及び虚部がRiemann可積分な複素数値函数 $g=u+iv$ の積分を $\int_a^b g=\int_a^b u+i\int_a^b v$ と定める．区分的連続函数では有限分割に従って積分の和を取る．
+\end{defn}
+% genron:end K-001059
+% genron:begin K-001060
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001059
+% genron:use K-000717
+% genron:use K-000720
+% genron:use K-000969
+% genron:use K-000968
+\begin{prop}[複素積分の線形性と評価]
+複素数値Riemann可積分函数 $g,h$ と $\alpha,\beta\in\mathbb C$ に対して積分は複素線形である．$|g|$ が可積分なら
+\[
+\left|\int_a^b g(t)\,dt\right|\leq\int_a^b|g(t)|\,dt\qquad(a\leq b).
+\]
+特に区分的連続函数についてこの評価が成立する．
+\end{prop}
+\begin{proof}
+線形性は実部・虚部の展開により従う．$z=\int_a^b g$ が零なら明らかである．そうでなければ $\lambda=\bar z/|z|$ とおくと $|\lambda|=1$，$\lambda z=|z|$ であり，
+\[
+|z|=\int_a^b\operatorname{Re}(\lambda g(t))\,dt\leq\int_a^b|g(t)|\,dt
+\]
+を得る．区分的連続函数の絶対値も区分的連続である．有限個の分割点での値の変更は，その点を含む小区間の全長を任意に小さくして上下和を比較すれば積分値を変えないことが分かる．
+\end{proof}
+% genron:end K-001060
+% genron:begin K-001061
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001058
+% genron:use K-001059
+% genron:use K-001060
+% genron:use K-000970
+\begin{defn}[複素線積分と曲線の長さ]
+区分的 $C^1$ 曲線 $\gamma:[a,b]\to U$ とその像上の連続複素函数 $f$ に対し
+\[
+\int_\gamma f(z)\,dz=\sum_{j=1}^N\int_{t_{j-1}}^{t_j}f(\gamma(t))\gamma'(t)\,dt,\qquad
+\ell(\gamma)=\sum_{j=1}^N\int_{t_{j-1}}^{t_j}|\gamma'(t)|\,dt
+\]
+と定める．
+\end{defn}
+% genron:end K-001061
+% genron:begin K-001062
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001061
+% genron:use K-001060
+% genron:use K-000970
+% genron:use K-001007
+\begin{prop}[線積分の分割・反転・連結]
+線積分と長さは定義に用いる有限分割に依存しない．線積分は函数に関して複素線形である．曲線の向きを反転すると線積分の符号は反転するが長さは変わらない．終点と始点が一致する二曲線の連結では線積分及び長さは加法的である．
+\end{prop}
+\begin{proof}
+二つの分割の共通細分を取ると各小区間で積分の加法性が成立する．線形性は複素積分の線形性による．反転曲線 $\tilde\gamma(t)=\gamma(a+b-t)$ に対し各区分で $\tilde\gamma'(t)=-\gamma'(a+b-t)$ なので置換積分により符号が反転する．長さでは絶対値により符号が消える．連結は各曲線を平行移動したパラメータ区間上で順に定義し，分割の加法性を適用すればよい．
+\end{proof}
+% genron:end K-001062
+% genron:begin K-001063
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001061
+% genron:use K-001062
+% genron:use K-001007
+% genron:use K-000896
+\begin{prop}[線積分の再パラメータ化]
+$\theta:[c,d]\to[a,b]$ が狭義単調な全単射 $C^1$ 級写像であるとする．増加なら $\int_{\gamma\circ\theta}f\,dz=\int_\gamma f\,dz$，減少なら右辺の符号が反転する．長さはいずれの場合も保存される．
+\end{prop}
+\begin{proof}
+分割点の逆像を取って再パラメータ化した曲線を区分的 $C^1$ 級とできる．各区分で $(\gamma\circ\theta)'=(\gamma'\circ\theta)\theta'$ が成り立つ．実部・虚部に置換積分を適用すれば向きに従う符号を得る．長さの場合は $|\theta'|$ を用いるので符号は消える．
+\end{proof}
+% genron:end K-001063
+% genron:begin K-001064
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001061
+% genron:use K-001060
+% genron:use K-000720
+% genron:use K-000969
+\begin{prop}[線積分のML評価]
+$|f(z)|\leq M$ が曲線の像上で成立するならば
+\[
+\left|\int_\gamma f(z)\,dz\right|\leq M\ell(\gamma).
+\]
+
+\end{prop}
+\begin{proof}
+各区分で複素積分の絶対値評価を用い，$|f(\gamma(t))\gamma'(t)|\leq M|\gamma'(t)|$ を積分する．区分の和に三角不等式を適用すればよい．
+\end{proof}
+% genron:end K-001064
+% genron:begin K-001065
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001061
+% genron:use K-000971
+% genron:use K-000972
+% genron:use K-000896
+% genron:use K-001006
+\begin{prop}[原始函数を持つ函数の線積分]
+開集合 $U\subseteq\mathbb C$ 上の連続函数 $f$ に対し複素微分可能な函数 $F$ が $F'=f$ を満たすとき，$F$ を原始函数という．任意の区分的 $C^1$ 曲線 $\gamma$ が $U$ に含まれるなら
+\[
+\int_\gamma f(z)\,dz=F(\gamma(b))-F(\gamma(a)).
+\]
+特に閉曲線に沿う積分は零である．
+\end{prop}
+\begin{proof}
+各区分で複素微分の線形近似から $(F\circ\gamma)'(t)=f(\gamma(t))\gamma'(t)$ を得る．右辺は連続であり，実部・虚部ごとにNewton–Leibniz公式を適用できる．隣接する区分の端点の値は相殺される．
+\end{proof}
+% genron:end K-001065
+% genron:begin K-001066
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001065
+% genron:use K-001062
+% genron:use K-001060
+% genron:use K-000971
+% genron:use K-000720
+\begin{prop}[積分経路の独立性と原始函数の存在]
+開集合 $U\subseteq\mathbb C$ の任意の二点が $U$ 内の区分的 $C^1$ 曲線で結べるとする．連続函数 $f:U\to\mathbb C$ について，原始函数の存在，始点・終点だけで線積分の値が定まること，全ての閉曲線で線積分が零であることは同値である．
+\end{prop}
+\begin{proof}
+原始函数の存在から経路独立性，経路独立性から閉曲線の積分が零であることは直ちに従う（定数曲線を取る）．閉曲線の積分が零なら同じ両端を持つ二曲線の一方と他方の反転を連結して両積分が等しいことを得る．点 $z_0\in U$ を固定し，$F(z)=\int_{z_0}^z f(w)\,dw$ を経路独立性により定義する．$h\ne0$ を十分小さく取ると線分 $z+th$（$0\leq t\leq1$）は $U$ 内にあり，
+\[
+\frac{F(z+h)-F(z)}h-f(z)=\int_0^1(f(z+th)-f(z))\,dt.
+\]
+右辺の絶対値は $\sup_{0\leq t\leq1}|f(z+th)-f(z)|$ 以下であり，連続性により零へ収束する．よって $F'=f$ である．
+\end{proof}
+% genron:end K-001066
+% genron:begin K-001067
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001061
+% genron:use K-001065
+% genron:use K-000717
+% genron:use K-000975
+% genron:use K-001006
+\begin{example}[閉曲線に沿う共役函数の積分]
+単位正方形の頂点 $0,1,1+i,i,0$ をこの順に線分で結ぶ閉曲線 $\gamma$ に対して $\int_\gamma\bar z\,dz=2i$ である．
+\end{example}
+\begin{proof}
+各辺を $t,\ 1+it,\ 1-t+i,\ i(1-t)$（$0\leq t\leq1$）とパラメータ表示する．各辺の積分は順に $1/2,\ 1/2+i,\ -1/2+i,\ -1/2$ であり，和は $2i$ となる．従って共役函数は正方形を含む開集合上で原始函数を持たない．
+\end{proof}
+積分経路の向きは \GenronFigureRef{complex-square-contour} に示す．
+% genron:end K-001067

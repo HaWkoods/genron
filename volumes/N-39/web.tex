@@ -1,0 +1,136 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：H. Brézis, Functional Analysis, Sobolev Spaces and Partial Differential Equations, §7.2 の発展方程式から積分方程式への移行を確認．有限次元の非自律初期値問題を成分ごとに独自論証．
+\section{常微分方程式の定式化}
+% genron:begin K-001068
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000959
+% genron:use K-000893
+% genron:use K-000897
+\begin{defn}[常微分方程式と初期値問題]
+開集合 $\Omega\subseteq\mathbb R\times\mathbb R^m$ と連続写像 $f:\Omega\to\mathbb R^m$ を取る．開区間 $I$ 上の $C^1$ 級写像 $x:I\to\mathbb R^m$ が各 $t\in I$ で $(t,x(t))\in\Omega$ かつ $x'(t)=f(t,x(t))$ を満たすとき解という．$(t_0,x_0)\in\Omega$ を固定し，$t_0\in I,\ x(t_0)=x_0$ を課した問題を初期値問題という．
+\end{defn}
+% genron:end K-001068
+% genron:begin K-001069
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001068
+% genron:use K-001005
+% genron:use K-001006
+% genron:use K-000969
+\begin{prop}[初期値問題と積分方程式の同値性]
+開区間 $I\ni t_0$ 上の連続函数 $x:I\to\mathbb R^m$ が $(t,x(t))\in\Omega$ を満たすとする．$x$ が初期値問題の解であることは
+\[
+x(t)=x_0+\int_{t_0}^tf(s,x(s))\,ds\qquad(t\in I)
+\]
+と同値である．積分は成分ごとに定める．
+\end{prop}
+\begin{proof}
+解なら連続な $x'$ を成分ごとに積分してNewton–Leibniz公式を用いる．逆に右辺の被積分函数は連続であるため微積分の基本定理により右辺は $C^1$ 級で，その微分は $f(t,x(t))$ である．$t=t_0$ で積分は零となる．
+\end{proof}
+% genron:end K-001069
+% genron:begin K-001070
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001068
+\begin{prop}[解の制限と接合]
+解を初期時刻を含む任意の開部分区間に制限しても解である．開区間 $I,J$ 上の二解が $I\cap J\ne\varnothing$ 上で一致するならば，両解は $I\cup J$ 上の一つの解に接合できる．
+\end{prop}
+\begin{proof}
+微分可能性，値域条件，微分方程式はいずれも局所的な条件である．重なりで値が一致すれば貼り合わせは写像を定め，各点の近傍で元のいずれか一方の解に一致する．従って $C^1$ 級であり方程式を満たす．
+\end{proof}
+% genron:end K-001070
+% genron:begin K-001071
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001068
+\begin{defn}[自律方程式と平衡点]
+右辺が時刻に依存せず $x'=F(x)$ と表される方程式を自律方程式という．ここで $F:V\subseteq\mathbb R^m\to\mathbb R^m$ は開集合上の連続写像である．$F(a)=0$ を満たす $a\in V$ を平衡点という．
+\end{defn}
+% genron:end K-001071
+% genron:begin K-001072
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001068
+% genron:use K-001071
+% genron:use K-000964
+% genron:use K-000960
+\begin{prop}[自律化と時刻の平行移動]
+非自律方程式 $x'=f(t,x)$ は $\Omega$ 上の自律方程式 $(s,y)'=(1,f(s,y))$ のうち初期値 $s(t_0)=t_0,\ y(t_0)=x_0$ を満たすものと同値である．自律方程式の解 $x(t)$ に対し $t\mapsto x(t+c)$ も定義される区間上の解であり，平衡点における定数函数は解である．
+\end{prop}
+\begin{proof}
+自律化した方程式の第一成分は $s'=1$ であり，$s(t)-t$ は導函数が零であるから定数である．初期値により $s(t)=t$ となり第二成分は元の方程式に一致する．逆は $(s(t),y(t))=(t,x(t))$ と置けばよい．時刻の平行移動と定数解については微分の定義及び $F(a)=0$ を用いる．
+\end{proof}
+% genron:end K-001072
+% genron:begin K-001073
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001068
+% genron:use K-000959
+\begin{prop}[高階方程式の一階連立方程式への帰着]
+$k\geq1$ とし，開集合 $\Omega\subseteq\mathbb R\times(\mathbb R^m)^k$ 上の連続函数 $F$ に対する方程式 $x^{(k)}=F(t,x,x',\ldots,x^{(k-1)})$ を考える．ここで $x^{(j)}$ は成分ごとに $j$ 回微分した函数とする．$k$ 回連続微分可能な解と，一階系
+\[
+y_0'=y_1,\quad\ldots,\quad y_{k-2}'=y_{k-1},\quad y_{k-1}'=F(t,y_0,\ldots,y_{k-1})
+\]
+の $C^1$ 級解との間には $y_j=x^{(j)}$ による一対一対応がある．初期値も各階の導函数の値に対応する．
+\end{prop}
+\begin{proof}
+高階方程式の解から $y_j=x^{(j)}$ と定めれば各等式が成り立つ．逆に一階系の解に対し最初の $k-1$ 個の等式を順に用いると $y_j=y_0^{(j)}$ が得られる．$y_{k-1}$ は $C^1$ 級であるから $y_0$ は $k$ 回連続微分可能であり，最後の等式は元の方程式である．$k=1$ の場合は最初の等式群を空とすればよい．
+\end{proof}
+% genron:end K-001073
+% genron:begin K-001074
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001068
+% genron:use K-000927
+% genron:use K-000960
+\begin{example}[定数解と非一意な初期値問題]
+実函数の方程式 $x'=2\sqrt{|x|}$，$x(0)=0$ は連続な右辺を持つが解は一意でない．任意の $c\geq0$ に対し $x_c(t)=0$（$t\leq c$），$x_c(t)=(t-c)^2$（$t>c$）は全実数上の解である．
+\end{example}
+\begin{proof}
+$t<c$ 及び $t>c$ では直接微分により方程式を満たす．$t=c$ では両片側微分が零であり導函数は連続である．$c\geq0$ なら初期値は零である．異なる $c$ は異なる解を与える．連続性だけでは一意性を保証できない．
+\end{proof}
+解の接合の様子を \GenronFigureRef{ode-waiting-solutions} に示す．
+% genron:end K-001074
