@@ -1,0 +1,140 @@
+% Web専用原稿．
+% 構成案：積閉集合・分数の同値関係・環演算・普遍性・分数体．
+% 文献確認：Lang, Algebra, Ch. II §4（局所化の節の導入周辺を確認）．分数の演算の検証を独自に記述する．
+\section{局所化の構成}
+% genron:begin K-000449
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000174
+\begin{defn}[積閉集合]
+可換環 $A$ の部分集合 $S$ が $1\in S$ 及び $s,t\in S\Rightarrow st\in S$ を満たすとき積閉集合という．ここでは $0\in S$ の場合も許す．
+\end{defn}
+% genron:end K-000449
+% genron:begin K-000450
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000449
+% genron:use K-000052
+% genron:use K-000250
+\begin{prop}[分数の同値関係]
+$A\times S$ 上に
+\[
+(a,s)\sim(b,t)\quad\Longleftrightarrow\quad
+\exists u\in S,\ u(at-bs)=0
+\]
+と定めると同値関係となる．同値類を $a/s$ と書く．
+\end{prop}
+\begin{proof}
+反射性と対称性は $1\in S$ と符号の法則から従う．$u(at-bs)=v(br-ct)=0$ とする．$t(ar-cs)=r(at-bs)+s(br-ct)$ であるから $uvt(ar-cs)=0$ となる．$uvt\in S$ であるので $(a,s)\sim(c,r)$ を得る．
+\end{proof}
+% genron:end K-000450
+% genron:begin K-000451
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000450
+% genron:use K-000249
+% genron:use K-000250
+\begin{prop}[局所化環]
+分数の同値類全体 $S^{-1}A$ に
+\[
+\frac a s+\frac b t=\frac{at+bs}{st},\qquad
+\frac a s\frac b t=\frac{ab}{st}
+\]
+と定めると可換環となる．零元は $0/1$，単位元は $1/1$，加法逆元は $(-a)/s$ である．
+\end{prop}
+\begin{proof}
+$u(as'-a's)=0$ とする．和の二代表の交叉差は $(at+bs)s't-(a't+bs')st=t^2(as'-a's)$ であり，積の交叉差は $ab s't-a'b st=bt(as'-a's)$ である．いずれも $u$ を掛ければ零となる．従って第一因子の代表の変更は値を変えず，可換性から第二因子も同様である．三分数の和及び積は共通分母 $str$ でそれぞれ $(atr+bsr+cst)/(str)$ 及び $abc/(str)$ と書けるので結合律が従う．分配律は共通分母 $s^2tr$ に書き換えれば従う．零元・単位元・加法逆元の性質も定義式から従う．
+\end{proof}
+% genron:end K-000451
+% genron:begin K-000452
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000451
+% genron:use K-000450
+% genron:use K-000251
+% genron:use K-000442
+\begin{prop}[局所化の標準準同型]
+写像 $i:A\to S^{-1}A$，$a\mapsto a/1$ は環準同型である．任意の $s\in S$ について $i(s)$ は逆元 $1/s$ を持つ．また
+\[
+\ker i=\{a\in A\mid \exists s\in S,\ sa=0\}
+\]
+である．
+\end{prop}
+\begin{proof}
+準同型性は演算式により，$s/s=1/1$ は同値関係により従う．核の表示は $a/1=0/1$ の定義にほかならない．
+\end{proof}
+% genron:end K-000452
+\section{普遍性と分数体}
+% genron:begin K-000453
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000452
+% genron:use K-000451
+% genron:use K-000450
+% genron:use K-000442
+\begin{prop}[局所化の普遍性]
+可換環の準同型 $f:A\to B$ が $f(S)\subseteq B^\times$ を満たすなら，$f=\bar f\circ i$ となる環準同型 $\bar f:S^{-1}A\to B$ はただ一つ存在する．
+\end{prop}
+\begin{proof}
+$\bar f(a/s)=f(a)f(s)^{-1}$ とおく．$u(at-bs)=0$ なら $f(u)$ は単元なので $f(a)f(t)=f(b)f(s)$ であり，値は代表元によらない．演算式によって加法・乗法・単位元を保存する．逆に条件を満たす準同型は $a/s=i(a)i(s)^{-1}$ をこの値に移すので一意である．
+\end{proof}
+% genron:end K-000453
+% genron:begin K-000454
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000452
+% genron:use K-000443
+% genron:use K-000444
+% genron:use K-000451
+\begin{prop}[整域の分数体]
+整域 $A$ において $S=A\setminus\{0\}$ とすると，$S^{-1}A$ は体となる．これを $\operatorname{Frac}(A)$ と書く．標準準同型 $A\to\operatorname{Frac}(A)$ は単射である．
+\end{prop}
+\begin{proof}
+零因子がないため $S$ は積閉集合であり，核の表示から標準準同型は単射である．$a/s$ が非零であることと $a\ne0$ は同値であり，この場合 $s/a$ はその逆元である．従って体となる．
+\end{proof}
+% genron:end K-000454
+% genron:begin K-000455
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000450
+% genron:use K-000451
+\begin{prop}[零元を含む積閉集合]
+$0\in S$ ならば同値関係の条件は $u=0$ によって常に成立する．従って $S^{-1}A$ は一元からなる零環である．
+\end{prop}
+% genron:end K-000455

@@ -1,0 +1,135 @@
+% Web専用原稿．
+% 構成案：昇鎖条件・有限生成性・拡大・有限直和・Noether環．
+% 文献確認：Lang, Algebra, Ch. III以降のNoether加群・有限直和に関する本文を確認（章頁未確定）．
+\section{昇鎖条件}
+% genron:begin K-000462
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000337
+% genron:use K-000103
+% genron:use K-000118
+\begin{defn}[Noether加群]
+加群 $M$ の部分加群の任意の列 $N_0\subseteq N_1\subseteq\cdots$ に対し，ある $k$ 以後すべて $N_n=N_k$ となるとき $M$ をNoether加群という．部分加群が有限生成であるとは有限個の元の生成部分加群に等しいことをいう．
+\end{defn}
+% genron:end K-000462
+% genron:begin K-000463
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000462
+% genron:use K-000342
+% genron:use K-000131
+% genron:use K-000060
+% genron:use K-000105
+% genron:use K-000110
+\begin{prop}[Noether性と有限生成性]
+次の条件は同値である．
+\begin{enumerate}
+\item $M$ はNoether加群である．
+\item 部分加群の任意の空でない集合は包含に関する極大元を持つ．
+\item $M$ のすべての部分加群は有限生成である．
+\end{enumerate}
+\end{prop}
+\begin{proof}
+第一から第二を示す．極大元のない非空の集合があると，各元 $P$ に対し $P$ を真に含む元を一つ選ぶ函数が選択公理によって得られる．再帰によってこれを反復すれば停止しない昇鎖を得る．第二を仮定し部分加群 $N$ の有限生成部分加群全体を考える．零部分加群を含むので極大元 $P$ がある．$P\ne N$ なら $x\in N\setminus P$ を加えた有限生成部分加群は $P$ を真に含み矛盾する．第三を仮定し昇鎖の合併を取ると部分加群となる．有限個の生成元はある一つの段階 $N_k$ にすべて属するので合併は $N_k$ に等しく，鎖は停止する．
+\end{proof}
+% genron:end K-000463
+\section{部分加群・商加群・拡大}
+% genron:begin K-000464
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000462
+% genron:use K-000340
+% genron:use K-000339
+% genron:use K-000337
+\begin{prop}[Noether性の拡大判定]
+部分加群 $N\subseteq M$ について，$M$ がNoether加群であることと $N$ 及び $M/N$ がNoether加群であることは同値である．
+\end{prop}
+\begin{proof}
+必要性のうち $N$ は昇鎖を $M$ 内で考えればよい．商加群の昇鎖は標準全射 $q$ による逆像を取れば停止する．逆に $M$ 内の昇鎖 $P_i$ に対し $P_i\cap N$ と $q(P_i)$ はいずれも停止する．両者が停止した段階 $k$ 以後について $x\in P_i$ とすると $q(x)=q(y)$ なる $y\in P_k$ がある．$x-y\in P_i\cap N=P_k\cap N$ より $x\in P_k$ である．従って $P_i=P_k$ となる．
+\end{proof}
+% genron:end K-000464
+% genron:begin K-000465
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000464
+% genron:use K-000457
+% genron:use K-000341
+% genron:use K-000100
+\begin{prop}[有限直和のNoether性]
+有限個のNoether加群の直和はNoether加群である．
+\end{prop}
+\begin{proof}
+二因子について $M\oplus N$ の部分加群 $M\oplus0$ は $M$ と同型であり，これによる商は第二射影に \GenronRef{K-000341}$ を適用して $N$ と同型である．拡大判定により結論が従う．有限個の場合は帰納法による．
+\end{proof}
+% genron:end K-000465
+% genron:begin K-000466
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000462
+% genron:use K-000343
+% genron:use K-000327
+\begin{defn}[左Noether環]
+環 $A$ が左 $A$ 加群としてNoetherであるとき左Noether環という．可換環では単にNoether環という．左 $A$ 加群 $A$ の部分加群は左イデアル，すなわち加法部分群で左乗法について閉じるものにほかならない．可換環ではイデアルと一致する．
+\end{defn}
+% genron:end K-000466
+% genron:begin K-000467
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000466
+% genron:use K-000464
+% genron:use K-000457
+% genron:use K-000342
+% genron:use K-000341
+\begin{prop}[Noether環上の有限生成加群]
+左Noether環 $A$ 上の有限生成左加群 $M$ はNoether加群である．
+\end{prop}
+\begin{proof}
+生成元 $x_1,\ldots,x_n$ に対し $A^{\oplus n}\to M$，$(a_i)\mapsto\sum_i a_ix_i$ は全射準同型である．有限直和のNoether性から始域はNoetherであり，商加群への保存と第一同型定理により $M$ もNoetherである．
+\end{proof}
+% genron:end K-000467
+% genron:begin K-000468
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000443
+% genron:use K-000442
+% genron:use K-000466
+% genron:use K-000334
+\begin{prop}[体自身のNoether性]
+体 $K$ のイデアルは零イデアルと $K$ に限る．非零元を含むイデアルはその元の逆元を掛けて $1$ を含むからである．従って任意の昇鎖は停止し，$K$ はNoether環である．
+\end{prop}
+% genron:end K-000468

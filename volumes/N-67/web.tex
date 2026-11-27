@@ -1,0 +1,110 @@
+% Web専用原稿．
+% 構成案：正規生成・関係による表示・普遍性・任意の群の表示・具体計算．
+% 文献確認：Lang, Algebra, Ch. I（自由群・関係に言及する箇所を確認）．自由群の既出構成から導出．
+\section{生成元と関係}
+% genron:begin K-000469
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000231
+% genron:use K-000232
+% genron:use K-000265
+% genron:use K-000226
+\begin{prop}[正規生成部分群]
+群 $G$ の部分集合 $S$ を含む最小の正規部分群を $S$ の正規生成部分群と呼ぶ．これは $\{gsg^{-1}\mid g\in G,\ s\in S\}$ の生成部分群である．
+\end{prop}
+\begin{proof}
+表示した生成集合は共役で不変であるからその生成部分群は正規であり，$g=1$ として $S$ を含む．一方 $S$ を含む正規部分群はすべての共役元を含むのでその生成部分群も含む．
+\end{proof}
+% genron:end K-000469
+% genron:begin K-000470
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000469
+% genron:use K-000428
+% genron:use K-000267
+\begin{defn}[群の表示]
+集合 $S$ と自由群 $F(S)$ の部分集合 $R$ に対し，$R$ の正規生成部分群 $N$ で割った商群を $\langle S\mid R\rangle=F(S)/N$ と書く．$S$ を生成元の集合，$R$ を関係式の集合と呼ぶ．$u=v$ という関係式は $uv^{-1}\in R$ として指定する．
+\end{defn}
+% genron:end K-000470
+% genron:begin K-000471
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000470
+% genron:use K-000429
+% genron:use K-000469
+% genron:use K-000288
+% genron:use K-000287
+\begin{prop}[表示群の普遍性]
+集合 $S$ から群 $G$ への写像 $f$ に対し，自由群への延長 $\widetilde f:F(S)\to G$ がすべての $r\in R$ を単位元へ移すことと，$f$ が表示群 $\langle S\mid R\rangle$ の標準生成元からの準同型に延長されることは同値である．延長は一意である．
+\end{prop}
+\begin{proof}
+核は正規部分群なので $R$ を含むこととその正規生成部分群を含むことは同値である．\GenronRef{K-000288}$ を適用して分解を得る．逆は関係式が表示群の単位元であることによる．一意性は自由群の普遍性と商写像の全射性による．
+\end{proof}
+% genron:end K-000471
+% genron:begin K-000472
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000470
+% genron:use K-000429
+% genron:use K-000232
+% genron:use K-000289
+% genron:use K-000287
+\begin{prop}[任意の群の表示]
+群 $G$ の生成部分集合 $S$ に対し，包含 $S\to G$ の延長 $p:F(S)\to G$ を考えると $G$ は $\langle S\mid\ker p\rangle$ と同型である．
+\end{prop}
+\begin{proof}
+生成性によって $p$ は全射である．核は正規部分群であるから自身の正規生成部分群に等しい．\GenronRef{K-000289}$ により結論を得る．
+\end{proof}
+% genron:end K-000472
+\section{具体例}
+% genron:begin K-000473
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000470
+% genron:use K-000471
+% genron:use K-000435
+% genron:use K-000232
+\begin{prop}[二元の可換性を課す表示]
+表示群において $aba^{-1}b^{-1}=1$ であるので $ab=ba$ が成立する．従って $a^{\pm1}$ と $b^{\pm1}$ は互いに可換である．任意の元はこれらの文字の有限積であるから，結合律を用いて因子を入れ替えることができ，任意の二元は可換である．
+\end{prop}
+% genron:end K-000473
+% genron:begin K-000474
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000470
+% genron:use K-000469
+% genron:use K-000428
+\begin{prop}[関係式のない表示]
+関係式を一つも課さない場合，空集合の正規生成部分群は自明群である．従って $\langle S\mid\varnothing\rangle$ は自由群 $F(S)$ と標準的に同型である．
+\end{prop}
+% genron:end K-000474

@@ -1,0 +1,133 @@
+% Web専用原稿．
+% 構成案：単元・整域・体・素及び極大イデアル・存在．
+% 文献確認：Lang, Algebra, Ch. II §2（整域の定義周辺を確認）．
+\section{整域と体}
+% genron:begin K-000442
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000225
+% genron:use K-000229
+% genron:use K-000226
+\begin{defn}[単元群]
+環 $A$ の乗法について両側逆元を持つ元を単元といい，その全体を $A^\times$ と書く．これは乗法について群をなす．
+\end{defn}
+\begin{proof}
+単位元は単元である．単元 $a,b$ の積の逆元は $b^{-1}a^{-1}$ であり，単元の逆元も単元である．従って乗法を制限すれば群となる．
+\end{proof}
+% genron:end K-000442
+% genron:begin K-000443
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000442
+% genron:use K-000250
+\begin{defn}[整域と体]
+$1\ne0$ なる可換環 $A$ において，$ab=0$ から $a=0$ 又は $b=0$ が従うとき $A$ を整域という．$1\ne0$ なる可換環の非零元がすべて単元であるとき体という．非零元 $a$ で，ある非零元 $b$ に対し $ab=0$ となるものを零因子という．
+\end{defn}
+% genron:end K-000443
+% genron:begin K-000444
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000443
+% genron:use K-000442
+% genron:use K-000250
+\begin{prop}[整域の簡約律と体の整域性]
+整域では $a\ne0$，$ab=ac$ なら $b=c$ である．また体は整域である．
+\end{prop}
+\begin{proof}
+前者は $a(b-c)=0$ より従う．後者は $a\ne0$ かつ $ab=0$ なら $b=a^{-1}ab=0$ となることによる．
+\end{proof}
+% genron:end K-000444
+% genron:begin K-000445
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000443
+% genron:use K-000321
+% genron:use K-000322
+% genron:use K-000324
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000103
+% genron:use K-000101
+\begin{prop}[整数環は整域]
+整数環 $\mathbb Z$ は整域である．しかし体ではない．
+\end{prop}
+\begin{proof}
+非零整数は正の自然数又はその負である．正の自然数 $m,n$ に対して $mn\ne0$ である．実際 $n=1+k$ と書けば $mn=m+mk\geq m>0$ である．符号の法則から非零整数二元の積は非零となる．また $2$ と任意の整数の積は $1$ とはならない（正の自然数との積は $2$ 以上，負の自然数との積は負，零との積は零）．
+\end{proof}
+% genron:end K-000445
+\section{素及び極大イデアル}
+% genron:begin K-000446
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000327
+% genron:use K-000072
+\begin{defn}[素イデアルと極大イデアル]
+可換環 $A$ の真のイデアル $\mathfrak p$ が $ab\in\mathfrak p$ なら $a\in\mathfrak p$ 又は $b\in\mathfrak p$ となる性質を持つとき素イデアルという．真のイデアル全体の包含順序における極大元を極大イデアルという．
+\end{defn}
+% genron:end K-000446
+% genron:begin K-000447
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000446
+% genron:use K-000443
+% genron:use K-000330
+% genron:use K-000333
+% genron:use K-000328
+% genron:use K-000334
+\begin{prop}[体と整域の商環による判定]
+可換環 $A$ の真のイデアル $\mathfrak a$ について，$A/\mathfrak a$ が整域であることと $\mathfrak a$ が素であることは同値である．また $A/\mathfrak a$ が体であることと $\mathfrak a$ が極大であることは同値である．従って極大イデアルは素イデアルである．
+\end{prop}
+\begin{proof}
+第一の同値性は商環の積と零元の定義による．第二について，体の非零イデアルは単元を含むから全体に等しい．逆に非零可換環の非零イデアルが全体に限るなら，非零元 $a$ の生成イデアル $(a)=\{ra\mid r\in A\}$ は全体に等しく，$ra=1$ となる $r$ が存在する．従って体である．\GenronRef{K-000333}$ により商環のイデアルと $\mathfrak a$ を含むイデアルとの対応を適用する．最後は体が整域であることによる．
+\end{proof}
+% genron:end K-000447
+% genron:begin K-000448
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000446
+% genron:use K-000131
+% genron:use K-000334
+\begin{prop}[極大イデアルの存在]
+可換環 $A$ の任意の真のイデアルは極大イデアルに含まれる．
+\end{prop}
+\begin{proof}
+所与の真イデアルを含む真イデアル全体を包含で順序づける．空でない鎖の合併はイデアルである（有限個の元は鎖の一元に同時に属する）．各イデアルは $1$ を含まないので合併も真である．空の鎖には所与のイデアルが上界を与える．\GenronRef{K-000131}$ により極大元を得る．
+\end{proof}
+% genron:end K-000448

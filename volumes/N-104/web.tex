@@ -1,0 +1,113 @@
+% Web専用原稿．
+% 構成案：直積と直和・各普遍性・有限の場合・自己準同型環．
+% 文献確認：Lang, Algebra, Ch. III §3（節本文の冒頭を確認）．既出可換群の直和の論証を利用する．
+\section{加群の積と直和}
+% genron:begin K-000456
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000338
+% genron:use K-000344
+% genron:use K-000345
+% genron:use K-000048
+\begin{prop}[加群の直積]
+環 $A$ 上の加群族 $(M_i)_{i\in I}$ に対し，直積集合 $\prod_iM_i$ は成分ごとの加法と作用 $(ax)_i=ax_i$ で加群となる．射影 $p_i$ は加群準同型であり，任意の加群準同型族 $f_i:N\to M_i$ に対し $p_i f=f_i$ となる加群準同型 $f:N\to\prod_iM_i$ はただ一つ存在する．
+\end{prop}
+\begin{proof}
+加法群は \GenronRef{K-000344}$ により可換群である．加群の四条件は成分ごとに成立する．普遍性は集合の直積の普遍性で定まる $f(x)=(f_i(x))_i$ が加法とスカラー倍を成分ごとに保存することによる．
+\end{proof}
+% genron:end K-000456
+% genron:begin K-000457
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000456
+% genron:use K-000347
+% genron:use K-000337
+% genron:use K-000346
+\begin{defn}[加群の直和]
+直積加群の元のうち非零成分の集合が有限なもの全体を $\bigoplus_iM_i$ と書き，直和という．これは直積の部分加群である．各標準埋込み $j_i:M_i\to\bigoplus_iM_i$ は加群準同型となる．
+\end{defn}
+\begin{proof}
+\GenronRef{K-000347}$ により加法部分群であり，スカラー倍は台を増やさないから部分加群である．標準埋込みは成分ごとに加法と作用を保存する．
+\end{proof}
+% genron:end K-000457
+% genron:begin K-000458
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000457
+% genron:use K-000348
+% genron:use K-000338
+\begin{prop}[加群の直和の普遍性]
+加群 $N$ と準同型族 $g_i:M_i\to N$ に対し，$g\circ j_i=g_i$ を満たす加群準同型 $g:\bigoplus_iM_i\to N$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000348}$ により加法群の準同型 $g(x)=\sum_i g_i(x_i)$ が一意に定まる．有限台の条件により有限和であり，作用の分配律から $g(ax)=ag(x)$ である．
+\end{proof}
+% genron:end K-000458
+\section{準同型の集合}
+% genron:begin K-000459
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000338
+% genron:use K-000335
+% genron:use K-000336
+\begin{prop}[加群準同型の加法群]
+加群 $M,N$ の間の準同型全体 $\operatorname{Hom}_A(M,N)$ は点ごとの加法 $(f+g)(x)=f(x)+g(x)$ に関して可換群となる．
+\end{prop}
+\begin{proof}
+加法及びスカラー倍の保存は $N$ の加法の可換性と分配律により和について成立する．零写像と点ごとの逆元も準同型である．加法群の法則は各点で成立する．
+\end{proof}
+% genron:end K-000459
+% genron:begin K-000460
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000459
+% genron:use K-000249
+% genron:use K-000036
+% genron:use K-000338
+\begin{prop}[加群自己準同型環]
+$\operatorname{End}_A(M)=\operatorname{Hom}_A(M,M)$ は合成を乗法とし恒等写像を乗法単位元とする環となる．
+\end{prop}
+\begin{proof}
+合成は準同型であり結合律を満たす．後から合成する準同型の加法保存性と点ごとの加法の定義から左右分配律が成立する．
+\end{proof}
+% genron:end K-000460
+% genron:begin K-000461
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000457
+% genron:use K-000456
+\begin{prop}[二つの加群の直和]
+二つの加群の直和 $M_1\oplus M_2$ は直積と一致する．その任意の元は $j_1p_1(x)+j_2p_2(x)$ と表される．これは各成分を比較すれば明らかであり，$p_i j_i=\mathrm{id}_{M_i}$，$p_i j_k=0$（$i\ne k$）も成立する．
+\end{prop}
+% genron:end K-000461

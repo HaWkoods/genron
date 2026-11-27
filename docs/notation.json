@@ -610,12 +610,12 @@
       {
         "tex": "\\mathfrak p",
         "label": "素イデアル",
-        "id": null
+        "id": "K-000446"
       },
       {
         "tex": "\\mathfrak m",
         "label": "極大イデアル",
-        "id": null
+        "id": "K-000446"
       },
       {
         "tex": "(0)",
@@ -630,7 +630,7 @@
       {
         "tex": "A^\\times",
         "label": "単元群",
-        "id": null
+        "id": "K-000442"
       },
       {
         "tex": "A/\\mathfrak a",
@@ -665,7 +665,7 @@
       {
         "tex": "S^{-1}A",
         "label": "局所化",
-        "id": null
+        "id": "K-000451"
       },
       {
         "tex": "A_{\\mathfrak p}",
@@ -675,7 +675,7 @@
       {
         "tex": "\\operatorname{Frac}(A)",
         "label": "分数体",
-        "id": null
+        "id": "K-000454"
       },
       {
         "tex": "A[X_1,\\ldots,X_n]",
@@ -755,12 +755,12 @@
       {
         "tex": "\\operatorname{End}_A(M)",
         "label": "加群自己準同型環",
-        "id": null
+        "id": "K-000460"
       },
       {
         "tex": "M\\oplus N",
         "label": "直和",
-        "id": null
+        "id": "K-000457"
       },
       {
         "tex": "M\\otimes_A N",
