@@ -1,0 +1,118 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{全有界性}
+% genron:begin K-000740
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000725
+\begin{defn}[距離空間の有界部分集合]
+距離空間 $(X,d)$ の部分集合 $A$ が有界であるとは，ある $M\geq0$ が存在して任意の $x,y\in A$ に対し $d(x,y)\leq M$ となることをいう．空集合も有界である．
+\end{defn}
+% genron:end K-000740
+% genron:begin K-000741
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000740
+% genron:use K-000725
+% genron:use K-000110
+\begin{defn}[全有界部分集合]
+距離空間の部分集合 $A$ が全有界であるとは，任意の $\varepsilon>0$ に対して有限集合 $F\subseteq A$ が存在し
+\[
+ A\subseteq\bigcup_{a\in F}B(a,\varepsilon)
+\]
+となることをいう．空集合は $F=\varnothing$ としてこの条件を満たす．
+\end{defn}
+% genron:end K-000741
+% genron:begin K-000742
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000741
+% genron:use K-000119
+\begin{prop}[全有界性の外部中心による判定]
+全有界性の定義において，開球の中心を $A$ に属する点に限らず $X$ の点としても同値な条件を得る．
+\end{prop}
+\begin{proof}
+必要性は明らかである．逆に任意の $\varepsilon>0$ に対して半径 $\varepsilon/2$ の開球による有限被覆を取り，$A$ と交わらない球を除く．残りの各球から $A$ の点 $a_i$ を一つずつ取る．もとの球に属する $A$ の点 $x$ について，中心を $c_i$ とすれば $d(x,a_i)\leq d(x,c_i)+d(c_i,a_i)<\varepsilon$ である．従って $a_i$ を中心とする球が $A$ を覆う．
+\end{proof}
+% genron:end K-000742
+% genron:begin K-000743
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000742
+% genron:use K-000740
+% genron:use K-000198
+% genron:use K-000201
+% genron:use K-000726
+\begin{prop}[全有界性の遺伝性と有界性]
+全有界集合の部分集合及び閉包は全有界である．また全有界集合は有界である．
+\end{prop}
+\begin{proof}
+部分集合については外部中心による判定を適用すればよい．閉包については，半径 $\varepsilon/2$ の有限開球被覆を取る．任意の $x\in\overline A$ について $B(x,\varepsilon/2)$ は $A$ と交わるので $a\in A$ で $d(x,a)<\varepsilon/2$ となるものがある．$a$ を含む被覆の中心を $c$ とすれば $d(x,c)<\varepsilon$ となる．よって閉包も全有界である．
+
+$A$ が空でなければ半径 $1$ の有限被覆を取る．その中心集合を $F$ とし，$M=\max\{d(c,c')\mid c,c'\in F\}$ とおく．任意の $x,y\in A$ に対して対応する中心 $c,c'$ が存在し，$d(x,y)<2+M$ である．
+\end{proof}
+% genron:end K-000743
+% genron:begin K-000744
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000741
+% genron:use K-000372
+% genron:use K-000374
+% genron:use K-000726
+% genron:use K-000730
+\begin{prop}[コンパクト集合の全有界性]
+距離空間のコンパクト部分集合 $A$ は全有界である．
+\end{prop}
+\begin{proof}
+任意の $\varepsilon>0$ に対して $\{B(a,\varepsilon)\cap A\mid a\in A\}$ は部分空間 $A$ の開被覆である．コンパクト性により有限部分被覆を取れるので，全有界性が従う．
+\end{proof}
+% genron:end K-000744
+% genron:begin K-000745
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000740
+% genron:use K-000741
+% genron:use K-000723
+\begin{example}[有界で全有界でない集合]
+無限集合 $X$ に離散距離を入れると $X$ は有界であるが全有界ではない．
+\end{example}
+\begin{proof}
+距離は常に $1$ 以下である．一方 $B(x,1/2)=\{x\}$ であり，有限個のこの開球で無限集合を覆うことはできない．
+\end{proof}
+% genron:end K-000745

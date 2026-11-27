@@ -1,0 +1,150 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{可測函数}
+% genron:begin K-000755
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000182
+% genron:use K-000037
+% genron:use K-000192
+\begin{defn}[可測写像]
+可測空間とは集合とその上の $\sigma$-加法族の組である．二つの可測空間 $(X,\mathcal A),(Y,\mathcal B)$ の間の写像 $f:X\to Y$ が可測であるとは，任意の $B\in\mathcal B$ に対して $f^{-1}(B)\in\mathcal A$ であることをいう．
+\end{defn}
+% genron:end K-000755
+% genron:begin K-000756
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000714
+% genron:use K-000187
+\begin{defn}[拡大実数上のBorel加法族]
+拡大実数の集合 $\overline{\mathbb R}$ において，$a\in\mathbb R$ に対する集合 $\{t\mid t>a\}$ 全体が生成する $\sigma$-加法族を Borel 加法族という．$\mathbb R$ 上の Borel 加法族はその $\mathbb R$ への制限とする．以下，実数又は拡大実数に値を取る可測写像を可測函数という．
+\end{defn}
+% genron:end K-000756
+% genron:begin K-000757
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000756
+% genron:use K-000755
+% genron:use K-000192
+% genron:use K-000183
+% genron:use K-000706
+\begin{prop}[可測函数の判定]
+拡大実数値函数 $f$ が可測であるための必要十分条件は，任意の実数 $a$ に対して $\{x\mid f(x)>a\}$ が可測であることである．この条件の $>$ は $<,\leq,\geq$ のいずれで置き換えてもよい．
+\end{prop}
+\begin{proof}
+第一の主張は生成族による逆像条件である．補集合により $>$ と $\leq$，$<$ と $\geq$ は同値である．また
+\[
+ \{f\geq a\}=\bigcap_{n\geq1}\{f>a-1/n\},\qquad
+ \{f>a\}=\bigcup_{n\geq1}\{f\geq a+1/n\}
+\]
+である．これらは Archimedes性による等式であり，無限大の値についても成立する．可算演算への閉性によって主張を得る．
+\end{proof}
+% genron:end K-000757
+% genron:begin K-000758
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000757
+% genron:use K-000706
+% genron:use K-000643
+% genron:use K-000182
+\begin{prop}[実数値可測函数の演算]
+実数値可測函数 $f,g$ に対し $f+g,f-g,fg,|f|$ は可測である．
+\end{prop}
+\begin{proof}
+有理数の稠密性により
+\[
+ \{f+g>a\}=\bigcup_{q\in\mathbb Q}
+ \bigl(\{f>q\}\cap\{g>a-q\}\bigr).
+\]
+実際 $f(x)+g(x)>a$ ならば $a-g(x)<q<f(x)$ なる有理数を取れる．逆包含は加法の不等式から従う．有理数集合は可算であるから右辺は可測である．$\{-f>a\}=\{f<-a\}$ 及び $\{|f|>a\}=\{f>a\}\cup\{f<-a\}$ ($a\geq0$) から符号反転と絶対値の可測性を得る（$a<0$ の場合は全体である）．平方について，$a\geq0$ なら $\{f^2>a\}=\{|f|>\sqrt a\}$ であり，$a<0$ なら全体である．従って $f^2$ は可測である．定数倍は，定数が正か負か零かに応じた不等号の変形で可測性が従う．最後に $fg=((f+g)^2-(f-g)^2)/4$ を用いる．
+\end{proof}
+% genron:end K-000758
+% genron:begin K-000759
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000757
+% genron:use K-000715
+% genron:use K-000183
+\begin{prop}[可測函数列の上限と下限]
+拡大実数値可測函数列 $(f_n)$ に対し点ごとの $\sup_n f_n$，$\inf_n f_n$，$\inf_m\sup_{n\geq m}f_n$，$\sup_m\inf_{n\geq m}f_n$ は可測である．最後の二つをそれぞれ上極限，下極限という．
+\end{prop}
+\begin{proof}
+$\{\sup_n f_n>a\}=\bigcup_n\{f_n>a\}$，$\{\inf_n f_n<a\}=\bigcup_n\{f_n<a\}$ である．各右辺は可測であるので可測性判定から上限・下限の可測性を得る．後の二つは可算回の上限・下限を組み合わせたものなので可測である．
+\end{proof}
+% genron:end K-000759
+\section{単函数}
+% genron:begin K-000760
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000757
+% genron:use K-000110
+\begin{defn}[単函数]
+有限個の非負実数値のみを取る可測函数を非負単函数という．非負単函数 $s$ の相異なる値を $a_1,\ldots,a_m$ とすると
+\[
+ s=\sum_{j=1}^m a_j1_{A_j},\qquad A_j=\{x\mid s(x)=a_j\}
+\]
+と表される．$1_A$ は $A$ 上で $1$，その外で $0$ を取る函数である．各 $A_j$ は可測性判定と補集合・共通部分により可測であり，互いに素である．
+\end{defn}
+% genron:end K-000760
+% genron:begin K-000761
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000760
+% genron:use K-000757
+% genron:use K-000706
+% genron:use K-000715
+% genron:use K-000105
+\begin{prop}[非負可測函数の単函数近似]
+任意の非負拡大実数値可測函数 $f$ に対し，非負単函数の列 $(s_n)$ であって $s_n\leq s_{n+1}$，$f=\sup_n s_n$ を満たすものが存在する．
+\end{prop}
+\begin{proof}
+$n\geq1$ について有限格子 $G_n=\{k2^{-n}\mid k=0,1,\ldots,n2^n\}$ を取り，
+\[
+ s_n(x)=\max\{a\in G_n\mid a\leq f(x)\}
+\]
+と定める．集合は $0$ を含むので最大元が存在する．$G_n$ の隣接する元を $a<b$ とすれば $\{s_n=a\}=\{a\leq f<b\}$ であり，最大元 $n$ については $\{s_n=n\}=\{f\geq n\}$ である．各集合は可測であるので，有限個のこれらの集合の合併として $\{s_n>t\}$ を表せる．従って $s_n$ は単函数である．
+
+$G_n\subseteq G_{n+1}$ なので $s_n\leq s_{n+1}\leq f$ である．$f(x)=+\infty$ ならば $s_n(x)=n$ で上限は無限大である．$f(x)<+\infty$ ならば $n>f(x)$ となるすべての $n$ に対して $0\leq f(x)-s_n(x)<2^{-n}$ である．$2^n\geq n+1$ が帰納法で従うから Archimedes性によって $2^{-n}$ は任意の正実数より小さくできる．従って $\sup_n s_n(x)=f(x)$ である．
+\end{proof}
+% genron:end K-000761

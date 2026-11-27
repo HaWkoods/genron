@@ -22437,6 +22437,944 @@
       "status": "draft",
       "source": "volumes/N-13/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000731",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "点列とその収束",
+      "statement": "点列は正整数集合から X への写像であり，x_n→x とは任意の ε>0 について十分大きい n で d(x_n,x)<ε となることである．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000725",
+        "K-000099",
+        "K-000034"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000732",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "収束の近傍による判定",
+      "statement": "x_n→x と，x の各近傍が点列の十分後の項をすべて含むことは同値である．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000731",
+        "K-000729",
+        "K-000194"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000733",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "極限の一意性",
+      "statement": "距離空間の収束点列は極限をただ一つ持つ．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000731",
+        "K-000728"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000734",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "部分列",
+      "statement": "狭義増加な正整数列 (n_k) による (x_{n_k}) を部分列という．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000731",
+        "K-000103"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000735",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉包の点列による判定",
+      "statement": "x∈cl A と A 内の x に収束する点列の存在は同値である．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000732",
+        "K-000201",
+        "K-000729",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000736",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連続性のε-δ判定",
+      "statement": "距離空間間の f が x で連続であることと任意の ε>0 に対し δ>0 が存在し d(x,y)<δ なら d'(f(x),f(y))<ε となることは同値．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000220",
+        "K-000221",
+        "K-000726",
+        "K-000729"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000737",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連続性の点列による判定",
+      "statement": "f が x で連続であることと x_n→x なら f(x_n)→f(x) となることは同値である．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000736",
+        "K-000731",
+        "K-000060",
+        "K-000729"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000738",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Cauchy列",
+      "statement": "任意の ε>0 に対しある N が存在して m,n≥N なら d(x_m,x_n)<ε となる点列を Cauchy 列という．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000731"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000739",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "収束列とCauchy列",
+      "statement": "収束点列は Cauchy 列であり，Cauchy 列が収束部分列を持てば点列全体も同じ極限に収束する．",
+      "assumptions": [],
+      "position": [
+        84,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000738",
+        "K-000734",
+        "K-000722"
+      ],
+      "status": "draft",
+      "source": "volumes/N-84/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000740",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "距離空間の有界部分集合",
+      "statement": "A⊆X が有界であるとは，ある M≥0 に対し任意の x,y∈A で d(x,y)≤M となることである．",
+      "assumptions": [],
+      "position": [
+        86,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000725"
+      ],
+      "status": "draft",
+      "source": "volumes/N-86/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000741",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "全有界部分集合",
+      "statement": "任意の ε>0 に対して A の有限個の点を中心とする半径 ε の開球で A が覆われるとき A を全有界という．",
+      "assumptions": [],
+      "position": [
+        86,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000740",
+        "K-000725",
+        "K-000110"
+      ],
+      "status": "draft",
+      "source": "volumes/N-86/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000742",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全有界性の外部中心による判定",
+      "statement": "任意の ε>0 について X 内の有限個の点を中心とする ε 球で A が覆われることは全有界性と同値である．",
+      "assumptions": [],
+      "position": [
+        86,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000741",
+        "K-000119"
+      ],
+      "status": "draft",
+      "source": "volumes/N-86/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000743",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "全有界性の遺伝性と有界性",
+      "statement": "全有界集合の部分集合と閉包は全有界であり，全有界集合は有界である．",
+      "assumptions": [],
+      "position": [
+        86,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000742",
+        "K-000740",
+        "K-000198",
+        "K-000201",
+        "K-000726"
+      ],
+      "status": "draft",
+      "source": "volumes/N-86/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000744",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト集合の全有界性",
+      "statement": "距離空間のコンパクト部分集合は全有界である．",
+      "assumptions": [],
+      "position": [
+        86,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000741",
+        "K-000372",
+        "K-000374",
+        "K-000726",
+        "K-000730"
+      ],
+      "status": "draft",
+      "source": "volumes/N-86/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000745",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "有界で全有界でない集合",
+      "statement": "無限集合の離散距離は有界であるが全有界ではない．",
+      "assumptions": [],
+      "position": [
+        86,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000740",
+        "K-000741",
+        "K-000723"
+      ],
+      "status": "draft",
+      "source": "volumes/N-86/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000746",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "非負拡大実数の和",
+      "statement": "[0,+∞] に +∞+a=a+∞=+∞ を定め，可算和を有限部分和の上限とする．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000714",
+        "K-000715",
+        "K-000107",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000747",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負級数の単調性",
+      "statement": "0≤a_n≤b_n ならば Σa_n≤Σb_n．また有限個の初項を切り離して和を取れる．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000746",
+        "K-000715"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000748",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "測度と測度空間",
+      "statement": "σ-加法族 A 上の μ:A→[0,+∞] が μ(∅)=0 と可算加法性を満たすとき測度である．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000746",
+        "K-000182",
+        "K-000044"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000749",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "測度の単調性と劣加法性",
+      "statement": "測度は有限加法的，単調であり，可算劣加法的である．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000748",
+        "K-000747",
+        "K-000185",
+        "K-000183"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000750",
+      "kind": "proposition",
+      "heading_kind": "example",
+      "title": "Dirac測度と数え上げ測度",
+      "statement": "一点の指示による Dirac 測度と集合の有限濃度または +∞ を与える数え上げ測度は測度である．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000748",
+        "K-000111",
+        "K-000113"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000751",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "下からの連続性",
+      "statement": "A_n が増加する可測集合列なら μ(∪A_n)=sup_n μ(A_n)．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000748",
+        "K-000749",
+        "K-000746",
+        "K-000183"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000752",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "上からの連続性",
+      "statement": "A_n が減少する可測集合列で μ(A_1)<∞ なら μ(∩A_n)=inf_n μ(A_n)．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000751",
+        "K-000749",
+        "K-000707"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000753",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "完備測度",
+      "statement": "測度零の可測集合の任意の部分集合が可測であるとき測度を完備という．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000748",
+        "K-000749"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000754",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "測度の完備化",
+      "statement": "可測集合と零集合の部分集合との対称差からなる σ-加法族に測度を一意に完備拡張できる．",
+      "assumptions": [],
+      "position": [
+        161,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000753",
+        "K-000749",
+        "K-000182",
+        "K-000183",
+        "K-000060"
+      ],
+      "status": "draft",
+      "source": "volumes/N-161/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000755",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "可測写像",
+      "statement": "可測空間間の写像 f は任意の可測集合の逆像が可測であるとき可測である．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000182",
+        "K-000037",
+        "K-000192"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000756",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "拡大実数上のBorel加法族",
+      "statement": "拡大実数上の集合 {t | t>a} (a∈R) が生成する σ-加法族を Borel 加法族とする．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000714",
+        "K-000187"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000757",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可測函数の判定",
+      "statement": "f:X→R̄ が可測であることと各実数 a について {f>a} が可測であることは同値．不等号は <,≤,≥ に置換してもよい．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000756",
+        "K-000755",
+        "K-000192",
+        "K-000183",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000758",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "実数値可測函数の演算",
+      "statement": "実数値可測函数 f,g の和・差・積，及び |f| は可測である．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000757",
+        "K-000706",
+        "K-000643",
+        "K-000182"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000759",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可測函数列の上限と下限",
+      "statement": "拡大実数値可測函数列の点ごとの上限・下限・上極限・下極限は可測である．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000757",
+        "K-000715",
+        "K-000183"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000760",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "単函数",
+      "statement": "有限個の非負実数値のみを取る可測函数を非負単函数という．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000757",
+        "K-000110"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000761",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負可測函数の単函数近似",
+      "statement": "非負拡大実数値可測函数 f は非負単函数の増加列の点ごとの上限で表される．",
+      "assumptions": [],
+      "position": [
+        165,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000760",
+        "K-000757",
+        "K-000706",
+        "K-000715",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-165/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
     }
   ],
   "notes": [
@@ -23737,16 +24675,18 @@
       "number": 84,
       "title": "点列と収束",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         13,
-        7
+        7,
+        55
       ],
       "goals": [
         "収束・連続性の点列判定・Cauchy列"
       ],
       "treatise": "T-13",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 85,
@@ -23766,7 +24706,7 @@
       "number": 86,
       "title": "全有界性",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         13,
         60
@@ -23775,7 +24715,8 @@
         "有限ε被覆・全有界集合"
       ],
       "treatise": "T-13",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 87,
@@ -24904,7 +25845,7 @@
       "number": 161,
       "title": "測度と測度空間",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         24,
         82
@@ -24913,7 +25854,8 @@
         "可算加法性・連続性・完備測度"
       ],
       "treatise": "T-24",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 162,
@@ -24964,7 +25906,7 @@
       "number": 165,
       "title": "可測函数",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         24,
         82
@@ -24973,7 +25915,8 @@
         "可測函数・演算・単函数近似"
       ],
       "treatise": "T-24",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 166,

@@ -1,0 +1,194 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{非負拡大実数と測度}
+% genron:begin K-000746
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000714
+% genron:use K-000715
+% genron:use K-000107
+% genron:use K-000105
+\begin{defn}[非負拡大実数の和]
+非負拡大実数の集合 $[0,+\infty]$ において，実数の加法を $a+(+\infty)=(+\infty)+a=+\infty$ として延長する．非負拡大実数列 $(a_n)$ に対して
+\[
+ \sum_{n=1}^{\infty}a_n=\sup_{N\geq1}\sum_{n=1}^N a_n
+\]
+と定める．有限和は結合律及び交換律を満たす（無限大を含むときはいずれの順序でも値は無限大である）．
+\end{defn}
+% genron:end K-000746
+% genron:begin K-000747
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000746
+% genron:use K-000715
+\begin{prop}[非負級数の単調性]
+非負拡大実数列 $(a_n),(b_n)$ が各 $n$ について $a_n\leq b_n$ を満たすならば $\sum_n a_n\leq\sum_n b_n$ である．また任意の正整数 $k$ に対して
+\[
+ \sum_{n=1}^{\infty}a_n=\sum_{n=1}^{k}a_n+\sum_{n=k+1}^{\infty}a_n
+\]
+である．
+\end{prop}
+\begin{proof}
+有限部分和の比較から第一の主張を得る．第二の主張について初項の有限和が無限大ならば双方は無限大である．有限であるならばそれを $c$ とおき，後半の部分和全体を $S$ とする．$S$ が上に非有界又は無限大を含めば $c+S$ の上限は無限大である．それ以外の場合には実数の順序と加法の整合性から $\sup(c+S)=c+\sup S$ が従う．初めの $k$ 個未満の部分和は $c$ 以下なので上限に影響しない．
+\end{proof}
+% genron:end K-000747
+% genron:begin K-000748
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000746
+% genron:use K-000182
+% genron:use K-000044
+\begin{defn}[測度と測度空間]
+集合 $X$ とその上の $\sigma$-加法族 $\mathcal A$ の組 $(X,\mathcal A)$ を可測空間という．写像 $\mu:\mathcal A\to[0,+\infty]$ が $\mu(\varnothing)=0$ を満たし，互いに素な $\mathcal A$ の元の列 $(A_n)$ に対し
+\[
+ \mu\left(\bigcup_{n=1}^{\infty}A_n\right)=\sum_{n=1}^{\infty}\mu(A_n)
+\]
+を満たすとき $\mu$ を測度といい，$(X,\mathcal A,\mu)$ を測度空間という．
+\end{defn}
+% genron:end K-000748
+% genron:begin K-000749
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000747
+% genron:use K-000185
+% genron:use K-000183
+\begin{prop}[測度の単調性と劣加法性]
+測度 $\mu$ について，互いに素な有限個の可測集合の合併の測度は各測度の和である．$A\subseteq B$ ならば $\mu(A)\leq\mu(B)$ である．任意の可測集合列 $(A_n)$ について
+\[
+ \mu\left(\bigcup_{n=1}^{\infty}A_n\right)\leq\sum_{n=1}^{\infty}\mu(A_n)
+\]
+である．
+\end{prop}
+\begin{proof}
+有限加法性は空集合を補って可算加法性を適用すればよい．$B=A\cup(B\setminus A)$ は互いに素な和であるから単調性が従う．$D_1=A_1$，$D_n=A_n\setminus\bigcup_{k<n}A_k$ とおく．$(D_n)$ は互いに素で合併が元の列と等しく，各 $D_n\subseteq A_n$ である．可算加法性と非負級数の単調性から主張を得る．
+\end{proof}
+% genron:end K-000749
+% genron:begin K-000750
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000111
+% genron:use K-000113
+\begin{example}[Dirac測度と数え上げ測度]
+$x_0\in X$ に対し，$x_0\in A$ なら $1$，そうでなければ $0$ とする函数 $\delta_{x_0}(A)$ は任意の $\sigma$-加法族上の測度である．また $A$ が有限集合ならばその元の個数，無限集合ならば $+\infty$ を与える函数も測度である．
+\end{example}
+\begin{proof}
+互いに素な集合列の合併に $x_0$ が属するとき，ただ一つの集合が $x_0$ を含む．属さない場合にはいずれも含まない．従って Dirac 測度の可算加法性が従う．数え上げ測度について有限合併の加法性は有限集合の濃度の性質による．可算合併が有限ならば，その中の非空な互いに素な集合は有限個しかない．合併が無限なら，いずれかの集合が無限であるか，有限集合からなる有限部分合併の濃度が上に非有界である．後者が上に有界ならば非空集合は有限個となり合併は有限となるからである．従って可算加法性が成立する．
+\end{proof}
+% genron:end K-000750
+\section{測度の連続性}
+% genron:begin K-000751
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000749
+% genron:use K-000746
+% genron:use K-000183
+\begin{prop}[下からの連続性]
+可測集合列 $(A_n)$ が $A_n\subseteq A_{n+1}$ を満たすならば
+\[
+ \mu\left(\bigcup_n A_n\right)=\sup_n\mu(A_n)
+\]
+である．
+\end{prop}
+\begin{proof}
+$D_1=A_1,D_n=A_n\setminus A_{n-1}$ とおけば互いに素であり，$A_N=\bigcup_{n\leq N}D_n$ である．従って可算加法性により合併の測度は $\sum_n\mu(D_n)$ であり，有限加法性によりその第 $N$ 部分和は $\mu(A_N)$ である．非負級数の定義により主張が従う．
+\end{proof}
+% genron:end K-000751
+% genron:begin K-000752
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000751
+% genron:use K-000749
+% genron:use K-000707
+\begin{prop}[上からの連続性]
+可測集合列 $(A_n)$ が $A_n\supseteq A_{n+1}$ を満たし，$\mu(A_1)<+\infty$ ならば
+\[
+ \mu\left(\bigcap_n A_n\right)=\inf_n\mu(A_n)
+\]
+である．
+\end{prop}
+\begin{proof}
+$B_n=A_1\setminus A_n$ は増加列であり，$\bigcup_n B_n=A_1\setminus\bigcap_n A_n$ である．有限加法性と $\mu(A_1)<+\infty$ によって $\mu(B_n)=\mu(A_1)-\mu(A_n)$ 及び $\mu(\bigcup_n B_n)=\mu(A_1)-\mu(\bigcap_n A_n)$ が成立する．下からの連続性と実数の上限・下限の双対性を適用すれば主張を得る．
+\end{proof}
+% genron:end K-000752
+% genron:begin K-000753
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000749
+\begin{defn}[完備測度]
+測度空間 $(X,\mathcal A,\mu)$ において，$\mu(N)=0$ となる任意の $N\in\mathcal A$ の任意の部分集合が $\mathcal A$ に属するとき，$\mu$ を完備測度という．この場合その部分集合の測度も単調性により零である．
+\end{defn}
+% genron:end K-000753
+% genron:begin K-000754
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000753
+% genron:use K-000749
+% genron:use K-000182
+% genron:use K-000183
+% genron:use K-000060
+\begin{prop}[測度の完備化]
+測度空間 $(X,\mathcal A,\mu)$ に対し，$E\subseteq X$ であって，ある $A,N\in\mathcal A$，$\mu(N)=0$ に対して $E\triangle A\subseteq N$ となるもの全体を $\widehat{\mathcal A}$ とする．ここに $E\triangle A=(E\setminus A)\cup(A\setminus E)$ である．$\widehat{\mathcal A}$ は $\sigma$-加法族であり，$\widehat\mu(E)=\mu(A)$ とおくと $\mu$ の完備拡張を得る．この拡張は一意である．
+\end{prop}
+\begin{proof}
+$\varnothing$ は属する．補集合を取っても対称差は変わらない．$E_n\triangle A_n\subseteq N_n$ なる代表を選択公理によって取れば，$\bigcup_n E_n$ と $\bigcup_n A_n$ の対称差は $\bigcup_n N_n$ に含まれ，この合併の測度は劣加法性によって零である．従って $\sigma$-加法族である．
+
+二つの代表 $A,B$ に対して $A\triangle B$ は二つの零集合の合併に含まれるので $\mu(A\setminus B)=\mu(B\setminus A)=0$ であり，有限加法性から $\mu(A)=\mu(B)$ となる．従って拡張は適法である．互いに素な $E_n$ の代表 $A_n,N_n$ を取り，$N=\bigcup_n N_n$ とおく．$A_n\setminus N$ は互いに素で，各 $A_n$ と同じ測度を持ち，$\bigcup_n E_n$ と $\bigcup_n(A_n\setminus N)$ の対称差は $N$ に含まれる．従って可算加法性を得る．$\widehat\mu(E)=0$ なら代表 $A$ の測度は零であり，$E\subseteq A\cup N$ なので $E$ の任意の部分集合が $\widehat{\mathcal A}$ に属する．一意性は $A\setminus N\subseteq E\subseteq A\cup N$ と単調性から従う．
+\end{proof}
+% genron:end K-000754

@@ -1,0 +1,174 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{点列の収束}
+% genron:begin K-000731
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000725
+% genron:use K-000099
+% genron:use K-000034
+\begin{defn}[点列とその収束]
+距離空間 $(X,d)$ における点列とは正整数全体から $X$ への写像 $(x_n)$ である．任意の $\varepsilon>0$ に対しある正整数 $N$ が存在し，$n\geq N$ ならば $d(x_n,x)<\varepsilon$ となるとき，$(x_n)$ は $x$ に収束するという．これを $x_n\to x$ と記す．
+\end{defn}
+% genron:end K-000731
+% genron:begin K-000732
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000731
+% genron:use K-000729
+% genron:use K-000194
+\begin{prop}[収束の近傍による判定]
+$x_n\to x$ であるための必要十分条件は，$x$ の任意の近傍 $U$ に対し，ある $N$ が存在し $n\geq N$ ならば $x_n\in U$ となることである．
+\end{prop}
+\begin{proof}
+近傍は $x$ を中心とする開球を含むため必要性が従う．逆に各開球が $x$ の近傍であるから十分性が従う．
+\end{proof}
+% genron:end K-000732
+% genron:begin K-000733
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000731
+% genron:use K-000728
+\begin{prop}[極限の一意性]
+点列が $x$ と $y$ の双方に収束するならば $x=y$ である．
+\end{prop}
+\begin{proof}
+$x\ne y$ と仮定し，$\varepsilon=d(x,y)/3$ とおく．十分大きい $n$ に対し $d(x,x_n)<\varepsilon$ かつ $d(x_n,y)<\varepsilon$ なので $d(x,y)<2\varepsilon$ となり矛盾する．
+\end{proof}
+% genron:end K-000733
+% genron:begin K-000734
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000731
+% genron:use K-000103
+\begin{defn}[部分列]
+正整数の狭義増加列 $(n_k)$ に対して $(x_{n_k})$ を $(x_n)$ の部分列という．収束点列の任意の部分列は元の点列と同じ極限に収束する．
+\end{defn}
+\begin{proof}
+帰納法から $n_k\geq k$ である．$x_n\to x$ とすれば，$\varepsilon>0$ に対して $n\geq N$ なら $d(x_n,x)<\varepsilon$ となる $N$ が存在する．$k\geq N$ ならば $n_k\geq N$ なので結論を得る．
+\end{proof}
+% genron:end K-000734
+% genron:begin K-000735
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000732
+% genron:use K-000201
+% genron:use K-000729
+% genron:use K-000060
+\begin{prop}[閉包の点列による判定]
+$A\subseteq X$ とする．点 $x$ が $A$ の閉包に属するための必要十分条件は，$A$ の元からなる点列で $x$ に収束するものが存在することである．
+\end{prop}
+\begin{proof}
+$x$ が閉包に属すれば，$A\cap B(x,1/n)$ は各正整数 $n$ に対して空でない．選択公理によってその中から $x_n$ を取ると $d(x_n,x)<1/n$ である．Archimedes性から $x_n\to x$ となる．逆に $A$ の点列が $x$ に収束すれば $x$ の各近傍はその点列の項を含むので $A$ と交わる．閉包の近傍による特徴づけから $x$ は閉包に属する．
+\end{proof}
+% genron:end K-000735
+\section{連続性とCauchy列}
+% genron:begin K-000736
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000220
+% genron:use K-000221
+% genron:use K-000726
+% genron:use K-000729
+\begin{prop}[連続性のε-δ判定]
+距離空間 $(X,d),(Y,d')$ の間の写像 $f:X\to Y$ が $x\in X$ で連続であるための必要十分条件は，任意の $\varepsilon>0$ に対して $\delta>0$ が存在し，
+\[
+ d(x,y)<\delta\ \Longrightarrow\ d'(f(x),f(y))<\varepsilon
+\]
+がすべての $y\in X$ について成立することである．
+\end{prop}
+\begin{proof}
+点における連続性の定義を $f(x)$ の開球に適用すると必要性を得る．逆に $f(x)$ の近傍はある開球を含むので，仮定によってその逆像は $x$ の開球を含み，従って $x$ の近傍である．
+\end{proof}
+% genron:end K-000736
+% genron:begin K-000737
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000736
+% genron:use K-000731
+% genron:use K-000060
+% genron:use K-000729
+\begin{prop}[連続性の点列による判定]
+距離空間間の写像 $f$ が点 $x$ で連続であることと，$x$ に収束する任意の点列 $(x_n)$ に対して $f(x_n)\to f(x)$ となることは同値である．
+\end{prop}
+\begin{proof}
+連続と仮定すれば，$\varepsilon>0$ に対応する $\delta>0$ を取り，十分後の $x_n$ が $B(x,\delta)$ に属することから結論を得る．逆に連続でないと仮定すれば，ある $\varepsilon>0$ に対して，各正整数 $n$ ごとに $d(x,x_n)<1/n$ かつ $d'(f(x),f(x_n))\geq\varepsilon$ なる $x_n$ を選択公理によって取れる．すると $x_n\to x$ であるが $f(x_n)$ は $f(x)$ に収束せず矛盾する．
+\end{proof}
+% genron:end K-000737
+% genron:begin K-000738
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000731
+\begin{defn}[Cauchy列]
+任意の $\varepsilon>0$ に対してある正整数 $N$ が存在し，$m,n\geq N$ ならば $d(x_m,x_n)<\varepsilon$ となる点列 $(x_n)$ を Cauchy 列という．
+\end{defn}
+% genron:end K-000738
+% genron:begin K-000739
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000738
+% genron:use K-000734
+% genron:use K-000722
+\begin{prop}[収束列とCauchy列]
+収束点列は Cauchy 列である．また Cauchy 列が収束部分列を持つならば，元の点列もその部分列の極限に収束する．
+\end{prop}
+\begin{proof}
+$x_n\to x$ ならば十分大きい $m,n$ に対し $d(x_m,x),d(x_n,x)<\varepsilon/2$ となり，三角不等式から $d(x_m,x_n)<\varepsilon$ である．
+
+逆に $(x_n)$ が Cauchy 列で $x_{n_k}\to x$ とする．$\varepsilon>0$ に対して $m,n\geq N$ なら $d(x_m,x_n)<\varepsilon/2$ となる $N$ を取り，$n_k\geq N$ かつ $d(x_{n_k},x)<\varepsilon/2$ となる $k$ を取る．$n\geq N$ ならば $d(x_n,x)\leq d(x_n,x_{n_k})+d(x_{n_k},x)<\varepsilon$ である．
+\end{proof}
+% genron:end K-000739
