@@ -29293,6 +29293,1111 @@
       "status": "draft",
       "source": "volumes/N-25/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献照合範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000940",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "道と道連結性",
+      "statement": "位相空間 $X$ において連続写像 $\\gamma:[0,1]\\to X$ で $\\gamma(0)=a,\\gamma(1)=b$ となるものを $a$ から $b$ への道という．任意の二点の間に道が存在する空間を道連結空間という．区間には距離位相を入れる．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000217",
+        "K-000723",
+        "K-000254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000941",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "道の合成と逆向きの道",
+      "statement": "道 $\\alpha:a\\to b,\\beta:b\\to c$ に対し，$\\alpha*\\beta$ を $0\\leq t\\leq1/2$ では $\\alpha(2t)$，$1/2\\leq t\\leq1$ では $\\beta(2t-1)$ と定めると道である．$\\bar\\alpha(t)=\\alpha(1-t)$ は $b$ から $a$ への道である．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000940",
+        "K-000219",
+        "K-000218",
+        "K-000148",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000942",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "道連結成分",
+      "statement": "二点が道で結ばれるという関係は同値関係である．その同値類を道連結成分という．各成分は極大な空でない道連結部分集合であり，道連結空間は連結である．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000940",
+        "K-000941",
+        "K-000364",
+        "K-000365",
+        "K-000366",
+        "K-000367",
+        "K-000890"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000943",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "ホモトピーと相対ホモトピー",
+      "statement": "連続写像 $f,g:X\\to Y$ に対し連続写像 $H:X\\times[0,1]\\to Y$ で $H(x,0)=f(x),H(x,1)=g(x)$ を満たすものをホモトピーという．$A\\subseteq X$ について更に $H(a,t)=f(a)$ が全ての $a\\in A,t\\in[0,1]$ で成立するとき $A$ に相対的という．道の端点を固定する場合は $A=\\{0,1\\}$ とする．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000217",
+        "K-000256",
+        "K-000940"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000944",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "相対ホモトピーの同値性",
+      "statement": "$A$ 上で同じ値を持つ連続写像の間で $A$ に相対的なホモトピーの存在は同値関係である．後合成は相対性を保ち，$h:Z\\to X$ による前合成は $h^{-1}(A)$ に相対的なホモトピーを与える．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000941",
+        "K-000943",
+        "K-000218",
+        "K-000257"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000945",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "変形収縮",
+      "statement": "部分空間 $A\\subseteq X$ に対して $r:X\\to A$ が連続で $r|_A=\\operatorname{id}_A$ なら収縮写像という．包含写像 $i:A\\to X$ との合成 $i\\circ r$ が $\\operatorname{id}_X$ と $A$ に相対的にホモトピックであるとき，$A$ を $X$ の変形収縮先という．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000943",
+        "K-000254",
+        "K-000218"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000946",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "星形集合",
+      "statement": "実ノルム空間の部分集合 $U$ と $a\\in U$ が任意の $x\\in U,t\\in[0,1]$ について $(1-t)x+ta\\in U$ を満たすとき，$\\{a\\}$ は $U$ の変形収縮先であり $U$ は道連結である．",
+      "assumptions": [],
+      "position": [
+        215,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000940",
+        "K-000941",
+        "K-000945",
+        "K-000790"
+      ],
+      "status": "draft",
+      "source": "volumes/N-215/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000947",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "位相多様体と座標近傍",
+      "statement": "非負整数 $n$ を固定する．Hausdorffかつ第二可算な位相空間 $M$ の各点 $p$ が，$\\mathbb R^n$ の開集合 $V$ への同相写像 $\\varphi:U\\to V$ を持つ開近傍 $U$ を持つとき，$M$ を $n$ 次元位相多様体という．$(U,\\varphi)$ を座標近傍という．$\\mathbb R^n$ には積位相を入れる．",
+      "assumptions": [],
+      "position": [
+        31,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000293",
+        "K-000475",
+        "K-000223",
+        "K-000256",
+        "K-000791"
+      ],
+      "status": "draft",
+      "source": "volumes/N-31/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000948",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "座標変換",
+      "statement": "同一の位相多様体の座標近傍 $(U,\\varphi),(W,\\psi)$ に対し $\\psi\\circ\\varphi^{-1}:\\varphi(U\\cap W)\\to\\psi(U\\cap W)$ は Euclid 空間の開集合間の同相写像である．",
+      "assumptions": [],
+      "position": [
+        31,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000947",
+        "K-000223",
+        "K-000224",
+        "K-000254",
+        "K-000218"
+      ],
+      "status": "draft",
+      "source": "volumes/N-31/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000949",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開部分多様体と直積",
+      "statement": "$n$ 次元位相多様体の開部分空間は $n$ 次元位相多様体である．$n$ 次元多様体と $m$ 次元多様体の直積は $(n+m)$ 次元位相多様体である．",
+      "assumptions": [],
+      "position": [
+        31,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000947",
+        "K-000302",
+        "K-000475",
+        "K-000257",
+        "K-000223"
+      ],
+      "status": "draft",
+      "source": "volumes/N-31/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000950",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "位相多様体の局所的性質",
+      "statement": "位相多様体は局所コンパクトであり，各点の任意の近傍は道連結な開近傍を含む．連結成分と道連結成分は一致し，各成分は開閉集合である．",
+      "assumptions": [],
+      "position": [
+        31,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000947",
+        "K-000850",
+        "K-000480",
+        "K-000364",
+        "K-000365",
+        "K-000369",
+        "K-000942",
+        "K-000946"
+      ],
+      "status": "draft",
+      "source": "volumes/N-31/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000951",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "境界付き位相多様体",
+      "statement": "$n\\geq1$ とする．$\\mathbb H^n=\\{x\\in\\mathbb R^n\\mid x_n\\geq0\\}$ に部分位相を入れる．Hausdorffかつ第二可算な位相空間の各点が $\\mathbb H^n$ の相対開集合と同相な開近傍を持つとき，$n$ 次元境界付き位相多様体という．座標像の最終成分が零である点をその座標での境界点という．これが座標に依存しないことはここでは未証明であり，後続の位相的不変性の議論に委ねる．",
+      "assumptions": [],
+      "position": [
+        31,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000947",
+        "K-000254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-31/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000952",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "球面の座標近傍",
+      "statement": "$n\\geq1$ に対して $S^n=\\{x\\in\\mathbb R^{n+1}\\mid\\sum_jx_j^2=1\\}$ は $n$ 次元位相多様体である．",
+      "assumptions": [],
+      "position": [
+        31,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000947",
+        "K-000927",
+        "K-000257",
+        "K-000475",
+        "K-000302",
+        "K-000648",
+        "K-000791"
+      ],
+      "status": "draft",
+      "source": "volumes/N-31/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000953",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "各点収束と一様収束",
+      "statement": "集合 $X$ と距離空間 $(Y,d)$ に対して $f_n:X\\to Y$ が $f:X\\to Y$ に各点収束するとは，各 $x\\in X$ について $d(f_n(x),f(x))\\to0$ となることをいう．任意の $\\varepsilon>0$ に対しある $N$ が存在して $n\\geq N,x\\in X$ なら $d(f_n(x),f(x))<\\varepsilon$ となるとき一様収束という．",
+      "assumptions": [],
+      "position": [
+        146,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000722",
+        "K-000731"
+      ],
+      "status": "draft",
+      "source": "volumes/N-146/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000954",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様Cauchy判定",
+      "statement": "$Y$ が完備なら函数列が一様収束するための必要十分条件は，任意の $\\varepsilon>0$ に対しある $N$ が存在して全ての $n,m\\geq N,x\\in X$ について $d(f_n(x),f_m(x))<\\varepsilon$ となることである．",
+      "assumptions": [],
+      "position": [
+        146,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000953",
+        "K-000724",
+        "K-000769",
+        "K-000738"
+      ],
+      "status": "draft",
+      "source": "volumes/N-146/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000955",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様極限の連続性",
+      "statement": "位相空間 $X$ 上の連続写像列 $f_n:X\\to Y$ が $f$ に一様収束すれば $f$ は連続である．",
+      "assumptions": [],
+      "position": [
+        146,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000953",
+        "K-000220",
+        "K-000725"
+      ],
+      "status": "draft",
+      "source": "volumes/N-146/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000956",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様ノルムと有界函数空間",
+      "statement": "ノルム空間 $E$ と空でない集合 $X$ に対し，有界函数全体 $B(X,E)$ は $\\|f\\|_\\infty=\\sup_{x\\in X}\\|f(x)\\|$ に関してノルム空間である．$E$ が Banach 空間なら $B(X,E)$ も Banach 空間である．$X$ が位相空間なら有界連続函数全体 $C_b(X,E)$ は閉部分空間である．",
+      "assumptions": [],
+      "position": [
+        146,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000953",
+        "K-000954",
+        "K-000955",
+        "K-000788",
+        "K-000794",
+        "K-000735"
+      ],
+      "status": "draft",
+      "source": "volumes/N-146/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000957",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Weierstrassの優級数判定",
+      "statement": "Banach空間 $E$ に値を取る函数列 $u_n:X\\to E$ が $\\|u_n(x)\\|\\leq M_n$（$M_n\\geq0$）を満たし $\\sum_n M_n<\\infty$ なら $\\sum_nu_n$ は一様に収束する．各 $u_n$ が連続なら和も連続である．",
+      "assumptions": [],
+      "position": [
+        146,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000954",
+        "K-000955",
+        "K-000794",
+        "K-000808"
+      ],
+      "status": "draft",
+      "source": "volumes/N-146/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000958",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "各点収束と一様収束の相違",
+      "statement": "$[0,1]$ 上の $f_n(x)=x^n$ は $x<1$ で零，$x=1$ で一となる函数に各点収束するが一様には収束しない．",
+      "assumptions": [],
+      "position": [
+        146,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000953",
+        "K-000955",
+        "K-000810",
+        "K-000763",
+        "K-000887"
+      ],
+      "status": "draft",
+      "source": "volumes/N-146/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000959",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一変数函数の微分",
+      "statement": "開区間 $I\\subseteq\\mathbb R$ 上の実函数 $f$ と $a\\in I$ に対し，$\\lim_{h\\to0,\\ h\\ne0}(f(a+h)-f(a))/h$ が有限実数として存在するとき，$f$ は $a$ で微分可能であるという．この極限を $f'(a)$ と記す．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000712",
+        "K-000887"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000960",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微分の演算法則",
+      "statement": "$f,g$ が $a$ で微分可能なら連続であり，和・積は微分可能で $(f+g)'=f'+g'$，$(fg)'=f'g+fg'$ が成立する．$g(a)\\ne0$ なら $(f/g)'=(f'g-fg')/g^2$ である．合成可能な微分可能函数について $(g\\circ f)'(a)=g'(f(a))f'(a)$ である．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000959",
+        "K-000763",
+        "K-000736"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000961",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "極値における微分係数",
+      "statement": "開区間内の局所最大点又は局所最小点 $a$ で $f$ が微分可能なら $f'(a)=0$ である．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000959",
+        "K-000762"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000962",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Rolleの定理",
+      "statement": "$a<b$ とし $f:[a,b]\\to\\mathbb R$ が連続で $(a,b)$ 上微分可能かつ $f(a)=f(b)$ なら，ある $c\\in(a,b)$ で $f'(c)=0$ となる．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000961",
+        "K-000889"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000963",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchyの平均値定理",
+      "statement": "$a<b$ とし $f,g:[a,b]\\to\\mathbb R$ は連続で $(a,b)$ 上微分可能とする．ある $c\\in(a,b)$ で\n\\[\n(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)\n\\]\nが成立する．特に $g(x)=x$ のとき $f(b)-f(a)=(b-a)f'(c)$ である．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000960",
+        "K-000962"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000964",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "微分係数による単調性と評価",
+      "statement": "区間 $I$ 上の連続函数が内点で微分可能であるとする．$f'\\geq0$ なら単調増加，$f'>0$ なら狭義増加，$f'=0$ なら定値である．$|f'|\\leq L$ なら任意の $x,y\\in I$ について $|f(x)-f(y)|\\leq L|x-y|$ である．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000963"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000965",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "導函数の中間値性（Darbouxの定理）",
+      "statement": "開区間上で微分可能な実函数の導函数は中間値性を持つ．",
+      "assumptions": [],
+      "position": [
+        147,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000960",
+        "K-000961",
+        "K-000889"
+      ],
+      "status": "draft",
+      "source": "volumes/N-147/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000966",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "分割とDarboux上下和",
+      "statement": "$a<b$ とし有界函数 $f:[a,b]\\to\\mathbb R$ を取る．分割 $P$ とは $a=x_0<x_1<\\cdots<x_n=b$ なる有限列である．$m_i=\\inf_{[x_{i-1},x_i]} f,\\ M_i=\\sup_{[x_{i-1},x_i]} f$ とおき，$L(f,P)=\\sum_i m_i(x_i-x_{i-1})$，$U(f,P)=\\sum_iM_i(x_i-x_{i-1})$ を下和，上和という．",
+      "assumptions": [],
+      "position": [
+        149,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000707",
+        "K-000887"
+      ],
+      "status": "draft",
+      "source": "volumes/N-149/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000967",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "上下積分と可積分性の判定",
+      "statement": "分割全体にわたる $\\underline I(f)=\\sup_P L(f,P)$，$\\overline I(f)=\\inf_P U(f,P)$ は有限で $\\underline I(f)\\leq\\overline I(f)$ となる．一致するとき $f$ は Riemann可積分といい，共通値を $\\int_a^b f(x)\\,dx$ と記す．可積分性は任意の $\\varepsilon>0$ に対して $U(f,P)-L(f,P)<\\varepsilon$ となる分割が存在することと同値である．",
+      "assumptions": [],
+      "position": [
+        149,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000966",
+        "K-000708"
+      ],
+      "status": "draft",
+      "source": "volumes/N-149/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000968",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連続函数と単調函数の可積分性",
+      "statement": "閉有界区間上の連続実函数及び単調実函数は Riemann可積分である．",
+      "assumptions": [],
+      "position": [
+        149,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000966",
+        "K-000967",
+        "K-000889",
+        "K-000892",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-149/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000969",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積分の線形性と単調性",
+      "statement": "$f,g$ が Riemann可積分なら $f+g,\\alpha f,|f|$ も可積分であり積分は線形である．$f\\leq g$ なら $\\int f\\leq\\int g$，また $|\\int f|\\leq\\int|f|$ が成立する．",
+      "assumptions": [],
+      "position": [
+        149,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000967"
+      ],
+      "status": "draft",
+      "source": "volumes/N-149/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000970",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "区間に関する積分の加法性",
+      "statement": "$a<c<b$ とする．$[a,b]$ 上の可積分性は $[a,c],[c,b]$ の両方での可積分性と同値であり $\\int_a^b f=\\int_a^c f+\\int_c^b f$ が成立する．$\\int_a^a f=0,\\ \\int_b^a f=-\\int_a^b f$ と約束する．",
+      "assumptions": [],
+      "position": [
+        149,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000967"
+      ],
+      "status": "draft",
+      "source": "volumes/N-149/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000971",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "複素微分と正則函数",
+      "statement": "開集合 $U\\subseteq\\mathbb C$ 上の函数 $f$ と $a\\in U$ に対し，$\\lim_{h\\to0,\\ h\\ne0}(f(a+h)-f(a))/h$ が複素数として存在するとき $f$ は $a$ で複素微分可能という．極限を $f'(a)$ と記す．$U$ の各点で複素微分可能な函数を正則函数という．",
+      "assumptions": [],
+      "position": [
+        26,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000719",
+        "K-000720",
+        "K-000893"
+      ],
+      "status": "draft",
+      "source": "volumes/N-26/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000972",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "複素微分と線形近似",
+      "statement": "$f$ が $a$ で複素微分可能であることは，ある $c\\in\\mathbb C$ について $f(a+h)=f(a)+ch+r(h)$，$|r(h)|/|h|\\to0$ が成立することと同値である．これは複素ノルム空間としての Fréchet微分可能性と同値であり，特に $f$ は $a$ で連続である．",
+      "assumptions": [],
+      "position": [
+        26,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000971",
+        "K-000893",
+        "K-000894",
+        "K-000792"
+      ],
+      "status": "draft",
+      "source": "volumes/N-26/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000973",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchy–Riemann方程式",
+      "statement": "$f(x+iy)=u(x,y)+iv(x,y)$ とする．$f$ が $a=x_0+iy_0$ で複素微分可能なら $u,v$ は $(x_0,y_0)$ で実 Fréchet微分可能であり $u_x=v_y,\\ u_y=-v_x$ が成立する．逆に $u,v$ がその点で実 Fréchet微分可能でこれらの等式を満たせば，$f$ は複素微分可能で $f'(a)=u_x+iv_x$ である．",
+      "assumptions": [],
+      "position": [
+        26,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000972",
+        "K-000717",
+        "K-000719",
+        "K-000893",
+        "K-000894",
+        "K-000847",
+        "K-000848"
+      ],
+      "status": "draft",
+      "source": "volumes/N-26/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000974",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正則函数の演算法則",
+      "statement": "正則函数の和・積・合成は正則であり，分母が零にならない開集合では商も正則である．$(f+g)'=f'+g'$，$(fg)'=f'g+fg'$，$(f/g)'=(f'g-fg')/g^2$，$(g\\circ f)'=(g'\\circ f)f'$ が成立する．",
+      "assumptions": [],
+      "position": [
+        26,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000972",
+        "K-000895",
+        "K-000896",
+        "K-000720"
+      ],
+      "status": "draft",
+      "source": "volumes/N-26/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000975",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "多項式と共役函数",
+      "statement": "複素多項式 $p(z)=\\sum_{k=0}^n a_kz^k$ は全平面で正則で $p'(z)=\\sum_{k=1}^nka_kz^{k-1}$ である．共役函数 $z\\mapsto\\bar z$ はどの点でも複素微分可能でない．",
+      "assumptions": [],
+      "position": [
+        26,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000971",
+        "K-000974",
+        "K-000718"
+      ],
+      "status": "draft",
+      "source": "volumes/N-26/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -29708,16 +30813,18 @@
       "number": 26,
       "title": "複素微分と正則函数",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         83,
-        155
+        155,
+        153
       ],
       "goals": [
         "複素微分・Cauchy–Riemann方程式"
       ],
       "treatise": "T-26",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 27,
@@ -29788,18 +30895,23 @@
       "number": 31,
       "title": "位相多様体",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         58,
         61,
         13,
-        96
+        96,
+        23,
+        153,
+        59,
+        215
       ],
       "goals": [
         "局所Euclid性・座標・境界"
       ],
       "treatise": "T-31",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 32,
@@ -31570,22 +32682,24 @@
       "number": 146,
       "title": "函数列と一様収束",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         145,
-        144
+        144,
+        23
       ],
       "goals": [
         "各点収束・一様収束・連続性"
       ],
       "treatise": "T-22",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 147,
       "title": "一変数微分",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         145
       ],
@@ -31593,7 +32707,8 @@
         "導函数・平均値定理・単調性"
       ],
       "treatise": "T-22",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 148,
@@ -31613,7 +32728,7 @@
       "number": 149,
       "title": "Riemann積分",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         145,
         82
@@ -31622,7 +32737,8 @@
         "上下和・可積分性・積分の性質"
       ],
       "treatise": "T-22",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 150,
@@ -32655,17 +33771,22 @@
       "number": 215,
       "title": "道とホモトピー",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         59,
-        81
+        81,
+        13,
+        84,
+        145,
+        23
       ],
       "goals": [
         "道・ホモトピー・変形収縮",
         "弧状連結性・道連結成分"
       ],
       "treatise": "T-31",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 216,

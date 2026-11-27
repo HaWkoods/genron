@@ -1,0 +1,101 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Conway, Functions of One Complex Variable I, §2.1 の複素微分の定義・Cauchy–Riemann方程式導入を照合．Fréchet微分との比較で再構成．
+\section{複素微分と正則函数}
+% genron:begin K-000971
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000719
+% genron:use K-000720
+% genron:use K-000893
+\begin{defn}[複素微分と正則函数]
+開集合 $U\subseteq\mathbb C$ 上の函数 $f$ と $a\in U$ に対し，$\lim_{h\to0,\ h\ne0}(f(a+h)-f(a))/h$ が複素数として存在するとき $f$ は $a$ で複素微分可能という．極限を $f'(a)$ と記す．$U$ の各点で複素微分可能な函数を正則函数という．
+\end{defn}
+% genron:end K-000971
+% genron:begin K-000972
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000971
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000792
+\begin{prop}[複素微分と線形近似]
+$f$ が $a$ で複素微分可能であることは，ある $c\in\mathbb C$ について $f(a+h)=f(a)+ch+r(h)$，$|r(h)|/|h|\to0$ が成立することと同値である．これは複素ノルム空間としての Fréchet微分可能性と同値であり，特に $f$ は $a$ で連続である．
+\end{prop}
+\begin{proof}
+差商と $c$ の差の絶対値は $|r(h)|/|h|$ に等しい．複素線形写像 $A:\mathbb C\to\mathbb C$ は $A(h)=hA(1)$ と表され有界である．従って \GenronRef{K-000893} と一致し連続性は \GenronRef{K-000894} から従う．
+\end{proof}
+% genron:end K-000972
+% genron:begin K-000973
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000972
+% genron:use K-000717
+% genron:use K-000719
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000847
+% genron:use K-000848
+\begin{prop}[Cauchy–Riemann方程式]
+$f(x+iy)=u(x,y)+iv(x,y)$ とする．$f$ が $a=x_0+iy_0$ で複素微分可能なら $u,v$ は $(x_0,y_0)$ で実 Fréchet微分可能であり $u_x=v_y,\ u_y=-v_x$ が成立する．逆に $u,v$ がその点で実 Fréchet微分可能でこれらの等式を満たせば，$f$ は複素微分可能で $f'(a)=u_x+iv_x$ である．
+\end{prop}
+\begin{proof}
+$\mathbb C$ を実線形空間 $\mathbb R^2$ と同一視し Euclidノルムを用いる．$c=s+it$ による複素乗法は実座標で行列 $\begin{pmatrix}s&-t\\t&s\end{pmatrix}$ を持つ．\GenronRef{K-000972} の複素線形近似はそのまま実線形近似となる．逆に実微分の行列は $\begin{pmatrix}u_x&u_y\\v_x&v_y\end{pmatrix}$ である．方程式によって複素数 $c=u_x+iv_x$ による乗法の行列となるので実微分の剰余評価を \GenronRef{K-000972} に適用できる．
+\end{proof}
+% genron:end K-000973
+% genron:begin K-000974
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000972
+% genron:use K-000895
+% genron:use K-000896
+% genron:use K-000720
+\begin{prop}[正則函数の演算法則]
+正則函数の和・積・合成は正則であり，分母が零にならない開集合では商も正則である．$(f+g)'=f'+g'$，$(fg)'=f'g+fg'$，$(f/g)'=(f'g-fg')/g^2$，$(g\circ f)'=(g'\circ f)f'$ が成立する．
+\end{prop}
+\begin{proof}
+和と合成は \GenronRef{K-000972} と \GenronRef{K-000895}，\GenronRef{K-000896} から従う．積について差を $f(a+h)(g(a+h)-g(a))+g(a)(f(a+h)-f(a))$ と分解して $h$ で除し極限を取る．逆数の差商は $-(g(a+h)-g(a))/(hg(a+h)g(a))$ であり，連続性から分母は十分小さい非零の $h$ で零でない．
+\end{proof}
+% genron:end K-000974
+% genron:begin K-000975
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000971
+% genron:use K-000974
+% genron:use K-000718
+\begin{example}[多項式と共役函数]
+複素多項式 $p(z)=\sum_{k=0}^n a_kz^k$ は全平面で正則で $p'(z)=\sum_{k=1}^nka_kz^{k-1}$ である．共役函数 $z\mapsto\bar z$ はどの点でも複素微分可能でない．
+\end{example}
+\begin{proof}
+恒等函数と定数函数の微分はそれぞれ一と零であり \GenronRef{K-000974} の帰納的適用によって多項式の公式を得る．共役函数の差商は $\bar h/h$ であり，実軸上で一，虚軸上で負一なので極限は存在しない．
+\end{proof}
+% genron:end K-000975

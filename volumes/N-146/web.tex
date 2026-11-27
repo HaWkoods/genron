@@ -1,0 +1,120 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 一様収束による連続性保存の応用箇所を確認．一般距離空間値函数について独自論証．
+\section{函数列と一様収束}
+% genron:begin K-000953
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000722
+% genron:use K-000731
+\begin{defn}[各点収束と一様収束]
+集合 $X$ と距離空間 $(Y,d)$ に対して $f_n:X\to Y$ が $f:X\to Y$ に各点収束するとは，各 $x\in X$ について $d(f_n(x),f(x))\to0$ となることをいう．任意の $\varepsilon>0$ に対しある $N$ が存在して $n\geq N,x\in X$ なら $d(f_n(x),f(x))<\varepsilon$ となるとき一様収束という．
+\end{defn}
+% genron:end K-000953
+% genron:begin K-000954
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000953
+% genron:use K-000724
+% genron:use K-000769
+% genron:use K-000738
+\begin{prop}[一様Cauchy判定]
+$Y$ が完備なら函数列が一様収束するための必要十分条件は，任意の $\varepsilon>0$ に対しある $N$ が存在して全ての $n,m\geq N,x\in X$ について $d(f_n(x),f_m(x))<\varepsilon$ となることである．
+\end{prop}
+\begin{proof}
+必要性は三角不等式と $\varepsilon/2$ に対する一様収束から従う．逆に各点で Cauchy 列となるから完備性によって $f(x)$ が定まる．$\varepsilon/2$ に対応する $N$ を固定して $m\to\infty$ とすると $d(f_n(x),f(x))\leq\varepsilon/2<\varepsilon$ であり，$N$ は $x$ に依存しない．
+\end{proof}
+% genron:end K-000954
+% genron:begin K-000955
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000953
+% genron:use K-000220
+% genron:use K-000725
+\begin{prop}[一様極限の連続性]
+位相空間 $X$ 上の連続写像列 $f_n:X\to Y$ が $f$ に一様収束すれば $f$ は連続である．
+\end{prop}
+\begin{proof}
+点 $a$ と $\varepsilon>0$ を固定する．全点で $d(f_N(x),f(x))<\varepsilon/3$ となる $N$ を取り，$f_N$ の連続性から $a$ の近傍 $U$ で $d(f_N(x),f_N(a))<\varepsilon/3$ となるものを取る．$x\in U$ に対して三角不等式により $d(f(x),f(a))<\varepsilon$ である．
+\end{proof}
+% genron:end K-000955
+% genron:begin K-000956
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000953
+% genron:use K-000954
+% genron:use K-000955
+% genron:use K-000788
+% genron:use K-000794
+% genron:use K-000735
+\begin{prop}[一様ノルムと有界函数空間]
+ノルム空間 $E$ と空でない集合 $X$ に対し，有界函数全体 $B(X,E)$ は $\|f\|_\infty=\sup_{x\in X}\|f(x)\|$ に関してノルム空間である．$E$ が Banach 空間なら $B(X,E)$ も Banach 空間である．$X$ が位相空間なら有界連続函数全体 $C_b(X,E)$ は閉部分空間である．
+\end{prop}
+\begin{proof}
+各点での演算とノルムの性質からノルム公理が従う．Cauchy列は \GenronRef{K-000954} により一様極限 $f$ を持つ．ある $N$ に対して全点で $\|f(x)-f_N(x)\|\leq1$ であるから $f$ は有界でありノルム収束する．有界連続函数のノルム極限は \GenronRef{K-000955} により連続であり，閉包の点列判定から閉性が従う．
+\end{proof}
+% genron:end K-000956
+% genron:begin K-000957
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000954
+% genron:use K-000955
+% genron:use K-000794
+% genron:use K-000808
+\begin{prop}[Weierstrassの優級数判定]
+Banach空間 $E$ に値を取る函数列 $u_n:X\to E$ が $\|u_n(x)\|\leq M_n$（$M_n\geq0$）を満たし $\sum_n M_n<\infty$ なら $\sum_nu_n$ は一様に収束する．各 $u_n$ が連続なら和も連続である．
+\end{prop}
+\begin{proof}
+部分和の差のノルムは $\sum_{k=m+1}^nM_k$ 以下である．数値級数のCauchy判定により一様Cauchy条件が従い，\GenronRef{K-000954} と \GenronRef{K-000955} を適用できる．
+\end{proof}
+% genron:end K-000957
+% genron:begin K-000958
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000953
+% genron:use K-000955
+% genron:use K-000810
+% genron:use K-000763
+% genron:use K-000887
+\begin{example}[各点収束と一様収束の相違]
+$[0,1]$ 上の $f_n(x)=x^n$ は $x<1$ で零，$x=1$ で一となる函数に各点収束するが一様には収束しない．
+\end{example}
+\begin{proof}
+$0<x<1$ では等比級数の項が零に収束することを用いる．端点では直接計算できる．極限函数は $1$ で不連続であり，各 $f_n$ は連続であるから \GenronRef{K-000955} により一様収束しない．
+\end{proof}
+% genron:end K-000958

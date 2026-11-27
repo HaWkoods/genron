@@ -1,0 +1,92 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 3.7 のRiemann積分との関係の章題を確認．Darboux積分による独自論証．
+\section{Riemann積分}
+% genron:begin K-000966
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000707
+% genron:use K-000887
+\begin{defn}[分割とDarboux上下和]
+$a<b$ とし有界函数 $f:[a,b]\to\mathbb R$ を取る．分割 $P$ とは $a=x_0<x_1<\cdots<x_n=b$ なる有限列である．$m_i=\inf_{[x_{i-1},x_i]} f,\ M_i=\sup_{[x_{i-1},x_i]} f$ とおき，$L(f,P)=\sum_i m_i(x_i-x_{i-1})$，$U(f,P)=\sum_iM_i(x_i-x_{i-1})$ を下和，上和という．
+\end{defn}
+% genron:end K-000966
+% genron:begin K-000967
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000966
+% genron:use K-000708
+\begin{prop}[上下積分と可積分性の判定]
+分割全体にわたる $\underline I(f)=\sup_P L(f,P)$，$\overline I(f)=\inf_P U(f,P)$ は有限で $\underline I(f)\leq\overline I(f)$ となる．一致するとき $f$ は Riemann可積分といい，共通値を $\int_a^b f(x)\,dx$ と記す．可積分性は任意の $\varepsilon>0$ に対して $U(f,P)-L(f,P)<\varepsilon$ となる分割が存在することと同値である．
+\end{prop}
+\begin{proof}
+細分によって下和は減少せず上和は増加しない．二分割 $P,Q$ の共通細分を取れば $L(f,P)\leq U(f,Q)$ となる．有界性と区間長の和が $b-a$ であることから上下積分は有限である．一致すれば各上下和が共通値に $\varepsilon/2$ 未満まで近づく二分割を取り共通細分する．逆は $\overline I(f)-\underline I(f)\leq U(f,P)-L(f,P)$ より従う．
+\end{proof}
+% genron:end K-000967
+% genron:begin K-000968
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000966
+% genron:use K-000967
+% genron:use K-000889
+% genron:use K-000892
+% genron:use K-000706
+\begin{prop}[連続函数と単調函数の可積分性]
+閉有界区間上の連続実函数及び単調実函数は Riemann可積分である．
+\end{prop}
+\begin{proof}
+連続函数は有界かつ一様連続である．任意の $\varepsilon>0$ に対して十分短い区間内の函数値の差を $\varepsilon/(2(b-a))$ 未満にできる．全小区間がこの長さ以下となる等分割を取れば上下和の差は $\varepsilon/2$ 以下である．単調増加函数では $n$ 等分割について $U-L=(b-a)(f(b)-f(a))/n$ である．減少函数は符号を逆にして同様である．\GenronRef{K-000967} を適用する．
+\end{proof}
+% genron:end K-000968
+% genron:begin K-000969
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000967
+\begin{prop}[積分の線形性と単調性]
+$f,g$ が Riemann可積分なら $f+g,\alpha f,|f|$ も可積分であり積分は線形である．$f\leq g$ なら $\int f\leq\int g$，また $|\int f|\leq\int|f|$ が成立する．
+\end{prop}
+\begin{proof}
+各区間における和の振幅は各函数の振幅の和以下であるから，共通細分を用いて可積分性を得る．同じ細分で $L(f,P)+L(g,P)\leq L(f+g,P)\leq U(f+g,P)\leq U(f,P)+U(g,P)$ である．上下和を積分値に近づければ加法性が従う．スカラー倍では正の場合上下和を同じ係数で，負の場合上下を交換して計算する．絶対値の振幅は $f$ の振幅以下である．単調性は下和の比較から，絶対値評価は $-|f|\leq f\leq|f|$ から従う．
+\end{proof}
+% genron:end K-000969
+% genron:begin K-000970
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000967
+\begin{prop}[区間に関する積分の加法性]
+$a<c<b$ とする．$[a,b]$ 上の可積分性は $[a,c],[c,b]$ の両方での可積分性と同値であり $\int_a^b f=\int_a^c f+\int_c^b f$ が成立する．$\int_a^a f=0,\ \int_b^a f=-\int_a^b f$ と約束する．
+\end{prop}
+\begin{proof}
+分割に $c$ を追加しても上下和の差は増加しないので $c$ を含む分割だけで判定できる．その上下和は両区間の上下和の和である．全体で差が小さければ各区間で差も小さく，逆に各区間で差が小さい分割を合併すれば全体でも差が小さい．上下和を積分値に近づければ加法性が従う．
+\end{proof}
+% genron:end K-000970

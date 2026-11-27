@@ -1,0 +1,131 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 4.1 の章題・平均値定理の適用箇所を確認．証明は独自記述．
+\section{一変数微分}
+% genron:begin K-000959
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000712
+% genron:use K-000887
+\begin{defn}[一変数函数の微分]
+開区間 $I\subseteq\mathbb R$ 上の実函数 $f$ と $a\in I$ に対し，$\lim_{h\to0,\ h\ne0}(f(a+h)-f(a))/h$ が有限実数として存在するとき，$f$ は $a$ で微分可能であるという．この極限を $f'(a)$ と記す．
+\end{defn}
+% genron:end K-000959
+% genron:begin K-000960
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000959
+% genron:use K-000763
+% genron:use K-000736
+\begin{prop}[微分の演算法則]
+$f,g$ が $a$ で微分可能なら連続であり，和・積は微分可能で $(f+g)'=f'+g'$，$(fg)'=f'g+fg'$ が成立する．$g(a)\ne0$ なら $(f/g)'=(f'g-fg')/g^2$ である．合成可能な微分可能函数について $(g\circ f)'(a)=g'(f(a))f'(a)$ である．
+\end{prop}
+\begin{proof}
+微分可能性から $f(a+h)-f(a)=h(f'(a)+\epsilon(h))$，$\epsilon(h)\to0$ となり連続性が従う．和と積について差商を展開して極限の演算則を用いる．逆数について差商は $-(g(a+h)-g(a))/(hg(a+h)g(a))$ である．合成は $k=f(a+h)-f(a)$ とおき，$g(f(a)+k)-g(f(a))=g'(f(a))k+k\eta(k)$，$\eta(k)\to0$（$\eta(0)=0$）を代入して $h$ で除すればよい．
+\end{proof}
+% genron:end K-000960
+% genron:begin K-000961
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000959
+% genron:use K-000762
+\begin{prop}[極値における微分係数]
+開区間内の局所最大点又は局所最小点 $a$ で $f$ が微分可能なら $f'(a)=0$ である．
+\end{prop}
+\begin{proof}
+局所最大点について正の $h$ に対する差商は非正，負の $h$ に対する差商は非負である．両方の極限は同じ実数なので零である．局所最小点は $-f$ に帰着する．
+\end{proof}
+% genron:end K-000961
+% genron:begin K-000962
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000961
+% genron:use K-000889
+\begin{prop}[Rolleの定理]
+$a<b$ とし $f:[a,b]\to\mathbb R$ が連続で $(a,b)$ 上微分可能かつ $f(a)=f(b)$ なら，ある $c\in(a,b)$ で $f'(c)=0$ となる．
+\end{prop}
+\begin{proof}
+定値函数なら明らかである．そうでなければ最大値又は最小値の少なくとも一方は端点値と異なる．\GenronRef{K-000889} によってその値を取る内点が存在するから \GenronRef{K-000961} を適用する．
+\end{proof}
+% genron:end K-000962
+% genron:begin K-000963
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000960
+% genron:use K-000962
+\begin{prop}[Cauchyの平均値定理]
+$a<b$ とし $f,g:[a,b]\to\mathbb R$ は連続で $(a,b)$ 上微分可能とする．ある $c\in(a,b)$ で
+\[
+(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)
+\]
+が成立する．特に $g(x)=x$ のとき $f(b)-f(a)=(b-a)f'(c)$ である．
+\end{prop}
+\begin{proof}
+$F(x)=(f(b)-f(a))(g(x)-g(a))-(g(b)-g(a))(f(x)-f(a))$ とおくと端点で零である．\GenronRef{K-000962} を適用し微分を計算すればよい．
+\end{proof}
+% genron:end K-000963
+% genron:begin K-000964
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000963
+\begin{prop}[微分係数による単調性と評価]
+区間 $I$ 上の連続函数が内点で微分可能であるとする．$f'\geq0$ なら単調増加，$f'>0$ なら狭義増加，$f'=0$ なら定値である．$|f'|\leq L$ なら任意の $x,y\in I$ について $|f(x)-f(y)|\leq L|x-y|$ である．
+\end{prop}
+\begin{proof}
+$x<y$ として $[x,y]$ に \GenronRef{K-000963} を適用すると $f(y)-f(x)=(y-x)f'(c)$ となる．符号及び絶対値の評価から従う．
+\end{proof}
+% genron:end K-000964
+% genron:begin K-000965
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000960
+% genron:use K-000961
+% genron:use K-000889
+\begin{prop}[導函数の中間値性（Darbouxの定理）]
+開区間上で微分可能な実函数の導函数は中間値性を持つ．
+\end{prop}
+\begin{proof}
+$a<b,\ f'(a)<v<f'(b)$ とし $F(x)=f(x)-vx$ とおく．$F'(a)<0,F'(b)>0$ であるから差商の符号により $a$ の直右及び $b$ の直左にそれぞれ端点値より小さい値を取る点が存在する．従って $F$ の $[a,b]$ 上の最小値を取る点は内点であり \GenronRef{K-000961} によって $F'=0$，すなわち $f'=v$ となる．逆の大小関係は $-f$ に帰着し，端点値は自明である．
+\end{proof}
+% genron:end K-000965

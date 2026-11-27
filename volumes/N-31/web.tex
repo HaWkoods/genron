@@ -1,0 +1,125 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Lee, Introduction to Topological Manifolds, 2nd ed., 2011, Ch.2 の多様体・境界付き多様体の記述を参照．境界の位相的不変性は後続で扱う．
+\section{位相多様体}
+% genron:begin K-000947
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000293
+% genron:use K-000475
+% genron:use K-000223
+% genron:use K-000256
+% genron:use K-000791
+\begin{defn}[位相多様体と座標近傍]
+非負整数 $n$ を固定する．Hausdorffかつ第二可算な位相空間 $M$ の各点 $p$ が，$\mathbb R^n$ の開集合 $V$ への同相写像 $\varphi:U\to V$ を持つ開近傍 $U$ を持つとき，$M$ を $n$ 次元位相多様体という．$(U,\varphi)$ を座標近傍という．$\mathbb R^n$ には積位相を入れる．
+\end{defn}
+% genron:end K-000947
+% genron:begin K-000948
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000947
+% genron:use K-000223
+% genron:use K-000224
+% genron:use K-000254
+% genron:use K-000218
+\begin{prop}[座標変換]
+同一の位相多様体の座標近傍 $(U,\varphi),(W,\psi)$ に対し $\psi\circ\varphi^{-1}:\varphi(U\cap W)\to\psi(U\cap W)$ は Euclid 空間の開集合間の同相写像である．
+\end{prop}
+\begin{proof}
+$U\cap W$ は両座標近傍内で開であり，同相写像は開集合を開集合に移す．制限した同相写像の合成が所要の写像であり，逆写像は $\varphi\circ\psi^{-1}$ の制限である．
+\end{proof}
+% genron:end K-000948
+% genron:begin K-000949
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000947
+% genron:use K-000302
+% genron:use K-000475
+% genron:use K-000257
+% genron:use K-000223
+\begin{prop}[開部分多様体と直積]
+$n$ 次元位相多様体の開部分空間は $n$ 次元位相多様体である．$n$ 次元多様体と $m$ 次元多様体の直積は $(n+m)$ 次元位相多様体である．
+\end{prop}
+\begin{proof}
+開部分空間の分離性と第二可算性は元の空間の分離近傍と可算開基を制限すれば従う．座標近傍も共通部分に制限する．直積では異なる点の異なる成分に分離近傍を取り，二つの可算開基の長方形を用いて可算開基を得る．座標近傍の積は $\mathbb R^n\times\mathbb R^m$ の開集合と同相であり，座標を連結する写像は積位相について $\mathbb R^{n+m}$ への同相写像である．
+\end{proof}
+% genron:end K-000949
+% genron:begin K-000950
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000947
+% genron:use K-000850
+% genron:use K-000480
+% genron:use K-000364
+% genron:use K-000365
+% genron:use K-000369
+% genron:use K-000942
+% genron:use K-000946
+\begin{prop}[位相多様体の局所的性質]
+位相多様体は局所コンパクトであり，各点の任意の近傍は道連結な開近傍を含む．連結成分と道連結成分は一致し，各成分は開閉集合である．
+\end{prop}
+\begin{proof}
+座標像内で十分小さい開球を取れば閉球も座標像に含まれる．有限次元ノルム空間の閉有界集合のコンパクト性により閉球はコンパクトであり，開球は凸であるため星形集合の道連結性により道連結である．逆座標写像によって近傍を得る．各道連結成分は各点においてその成分内の開近傍を含むので開であり，他の成分の合併が開であるから閉である．一つの連結成分に複数の道連結成分が含まれるなら非自明な開閉分解となり矛盾する．
+\end{proof}
+% genron:end K-000950
+% genron:begin K-000951
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000947
+% genron:use K-000254
+\begin{defn}[境界付き位相多様体]
+$n\geq1$ とする．$\mathbb H^n=\{x\in\mathbb R^n\mid x_n\geq0\}$ に部分位相を入れる．Hausdorffかつ第二可算な位相空間の各点が $\mathbb H^n$ の相対開集合と同相な開近傍を持つとき，$n$ 次元境界付き位相多様体という．座標像の最終成分が零である点をその座標での境界点という．これが座標に依存しないことはここでは未証明であり，後続の位相的不変性の議論に委ねる．
+\end{defn}
+% genron:end K-000951
+% genron:begin K-000952
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000947
+% genron:use K-000927
+% genron:use K-000257
+% genron:use K-000475
+% genron:use K-000302
+% genron:use K-000648
+% genron:use K-000791
+\begin{example}[球面の座標近傍]
+$n\geq1$ に対して $S^n=\{x\in\mathbb R^{n+1}\mid\sum_jx_j^2=1\}$ は $n$ 次元位相多様体である．
+\end{example}
+\begin{proof}
+各 $j$ と $\sigma\in\{1,-1\}$ に対して $U_{j,\sigma}=\{x\in S^n\mid\sigma x_j>0\}$ は相対開集合で球面を覆う．第 $j$ 座標を除く射影は開単位球への全単射で，逆は第 $j$ 座標に $\sigma\sqrt{1-\sum_{k=1}^n y_k^2}$ を挿入する写像である．平方根の連続性及び積位相の普遍性から両写像は連続である．$\mathbb R^{n+1}$ は有理点を中心とする有理半径の球を可算開基に持ち Hausdorff である．これらの性質は部分空間にも移る．
+\end{proof}
+% genron:end K-000952

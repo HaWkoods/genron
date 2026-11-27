@@ -1,0 +1,135 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Lee, Introduction to Topological Manifolds, 2nd ed., 2011, Ch.4 道連結性・Ch.7 相対ホモトピーの定義を照合．
+\section{道とホモトピー}
+% genron:begin K-000940
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000217
+% genron:use K-000723
+% genron:use K-000254
+\begin{defn}[道と道連結性]
+位相空間 $X$ において連続写像 $\gamma:[0,1]\to X$ で $\gamma(0)=a,\gamma(1)=b$ となるものを $a$ から $b$ への道という．任意の二点の間に道が存在する空間を道連結空間という．区間には距離位相を入れる．
+\end{defn}
+% genron:end K-000940
+% genron:begin K-000941
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000940
+% genron:use K-000219
+% genron:use K-000218
+% genron:use K-000148
+% genron:use K-000736
+\begin{prop}[道の合成と逆向きの道]
+道 $\alpha:a\to b,\beta:b\to c$ に対し，$\alpha*\beta$ を $0\leq t\leq1/2$ では $\alpha(2t)$，$1/2\leq t\leq1$ では $\beta(2t-1)$ と定めると道である．$\bar\alpha(t)=\alpha(1-t)$ は $b$ から $a$ への道である．
+\end{prop}
+\begin{proof}
+二つの式は $t=1/2$ で一致する．閉集合の逆像は二つの閉半区間内で閉であるからその合併も閉であり，\GenronRef{K-000219} により連続である．逆向きの道は連続函数との合成である．
+\end{proof}
+% genron:end K-000941
+% genron:begin K-000942
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000940
+% genron:use K-000941
+% genron:use K-000364
+% genron:use K-000365
+% genron:use K-000366
+% genron:use K-000367
+% genron:use K-000890
+\begin{prop}[道連結成分]
+二点が道で結ばれるという関係は同値関係である．その同値類を道連結成分という．各成分は極大な空でない道連結部分集合であり，道連結空間は連結である．
+\end{prop}
+\begin{proof}
+定値道，逆向きの道及び \GenronRef{K-000941} によって同値関係の公理を満たす．始点から道の途中の点までは $s\mapsto\gamma(ts)$ によって結ばれるから道は同値類内に含まれる．極大性は定義から従う．$[0,1]$ の非自明な開閉分解があれば各部分に値 $0,1$ を取る連続函数が存在し，中間値の定理に反する．よって区間は連結であり，道の像も連結である．固定した一点から各点への道の像の合併は共通点を持つので連結である．空空間の場合も連結の定義から従う．
+\end{proof}
+% genron:end K-000942
+% genron:begin K-000943
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000217
+% genron:use K-000256
+% genron:use K-000940
+\begin{defn}[ホモトピーと相対ホモトピー]
+連続写像 $f,g:X\to Y$ に対し連続写像 $H:X\times[0,1]\to Y$ で $H(x,0)=f(x),H(x,1)=g(x)$ を満たすものをホモトピーという．$A\subseteq X$ について更に $H(a,t)=f(a)$ が全ての $a\in A,t\in[0,1]$ で成立するとき $A$ に相対的という．道の端点を固定する場合は $A=\{0,1\}$ とする．
+\end{defn}
+% genron:end K-000943
+% genron:begin K-000944
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000941
+% genron:use K-000943
+% genron:use K-000218
+% genron:use K-000257
+\begin{prop}[相対ホモトピーの同値性]
+$A$ 上で同じ値を持つ連続写像の間で $A$ に相対的なホモトピーの存在は同値関係である．後合成は相対性を保ち，$h:Z\to X$ による前合成は $h^{-1}(A)$ に相対的なホモトピーを与える．
+\end{prop}
+\begin{proof}
+時間に依存しないホモトピーと時間反転が反射性と対称性を与える．二つのホモトピーを時間の前半と後半に割り当てれば推移性を得る．二つの閉部分空間上で連続かつ共通部分で一致するので \GenronRef{K-000941} と同じ閉集合の逆像の論証で連続である．後合成は $k(H(x,t))$，前合成は $H(h(z),t)$ で与えられ，連続性は積位相の普遍性による．
+\end{proof}
+% genron:end K-000944
+% genron:begin K-000945
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000943
+% genron:use K-000254
+% genron:use K-000218
+\begin{defn}[変形収縮]
+部分空間 $A\subseteq X$ に対して $r:X\to A$ が連続で $r|_A=\operatorname{id}_A$ なら収縮写像という．包含写像 $i:A\to X$ との合成 $i\circ r$ が $\operatorname{id}_X$ と $A$ に相対的にホモトピックであるとき，$A$ を $X$ の変形収縮先という．
+\end{defn}
+% genron:end K-000945
+% genron:begin K-000946
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000940
+% genron:use K-000941
+% genron:use K-000945
+% genron:use K-000790
+\begin{example}[星形集合]
+実ノルム空間の部分集合 $U$ と $a\in U$ が任意の $x\in U,t\in[0,1]$ について $(1-t)x+ta\in U$ を満たすとき，$\{a\}$ は $U$ の変形収縮先であり $U$ は道連結である．
+\end{example}
+\begin{proof}
+$H(x,t)=(1-t)x+ta$ は線形演算の連続性により連続で，$H(x,0)=x,H(x,1)=a,H(a,t)=a$ を満たす．固定した $x$ に対して $t\mapsto H(x,t)$ は $x$ から $a$ への道であり \GenronRef{K-000941} により任意の二点が結ばれる．
+\end{proof}
+% genron:end K-000946
