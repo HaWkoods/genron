@@ -1,0 +1,145 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 3.9 の目次を確認．以下の上限・Hahn分解による論証は独自記述であり，文献本文との個別照合未了．
+\section{Radon–Nikodymの定理}
+% genron:begin K-000914
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000748
+% genron:use K-000783
+% genron:use K-000825
+% genron:use K-000787
+\begin{defn}[測度の絶対連続性]
+同じ可測空間上の非負測度 $\mu,\nu$ に対し，$\mu(A)=0\Rightarrow\nu(A)=0$ が任意の可測集合 $A$ について成立するとき，$\nu$ は $\mu$ に関して絶対連続であるといい，$\nu\ll\mu$ と記す．非負可測函数 $f$ から得られる測度 $A\mapsto\int_A f\,d\mu$ を $f\mu$ と記す．
+\end{defn}
+% genron:end K-000914
+% genron:begin K-000915
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000914
+% genron:use K-000749
+% genron:use K-000758
+% genron:use K-000784
+% genron:use K-000785
+% genron:use K-000822
+% genron:use K-000825
+\begin{prop}[密度の一意性]
+$\mu$ を$\sigma$有限測度とする．非負拡大実数値可測函数 $f,g$ について $f\mu=g\mu$ ならば $f=g$ が $\mu$ ほとんど至る所成立する．逆も成立する．
+\end{prop}
+\begin{proof}
+$\{f>g\}$ は，$g\leq m$，$f\geq g+1/n$ となる可測集合の可算合併である（$m,n$ は正整数）．$\mu$ の有限測度集合による被覆との共通部分を取れば，各集合 $A$ 上で $g$ は有界かつ $\mu(A)<\infty$ である．$\int_A f\geq\int_A g+\mu(A)/n$ と密度測度の相等から $\mu(A)=0$ となる．従って $\mu(\{f>g\})=0$ であり，対称性から逆向きも成立する．逆は積分の零集合上での不変性による．
+\end{proof}
+% genron:end K-000915
+% genron:begin K-000916
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000914
+% genron:use K-000915
+% genron:use K-000060
+% genron:use K-000708
+% genron:use K-000748
+% genron:use K-000758
+% genron:use K-000784
+% genron:use K-000785
+% genron:use K-000826
+% genron:use K-000831
+% genron:use K-000867
+% genron:use K-000869
+% genron:use K-000870
+\begin{prop}[有限測度のLebesgue分解]
+$\mu,\nu$ を同じ可測空間上の有限非負測度とする．このとき $\nu=f\mu+\rho$ を満たす非負可積分函数 $f$ と非負測度 $\rho$ が存在し，$\rho\perp\mu$ である．$f$ は $\mu$ ほとんど至る所の相等を除いて一意であり，$\rho$ も一意である．
+\end{prop}
+\begin{proof}
+$\mathcal F=\{h\geq0\mid h\text{ は可測であり } h\mu\leq\nu\}$ とおく．ここで測度の不等式は全可測集合での値の比較を表す．$0\in\mathcal F$ であり，$h,k\in\mathcal F$ なら $\max(h,k)\in\mathcal F$ である．実際，任意の可測集合を $\{h\geq k\}$ とその補集合で二分して積分すればよい．$\alpha=\sup_{h\in\mathcal F}\int h\,d\mu\leq\nu(X)$ とし，積分値が $\alpha$ に近づく列を選ぶ．有限個の最大値で置き換えて $h_n\uparrow f$ とすれば，単調収束定理によって $f\in\mathcal F$ かつ $\int f\,d\mu=\alpha$ である．$f=\infty$ となる零集合上では値を零に変えてよい．$\rho=\nu-f\mu$ は有限非負測度である．
+各正整数 $n$ に対し有限符号付き測度 $\rho-\mu/n$ の Hahn分解を $P_n,N_n$ とする．もし $\mu(P_n)>0$ なら $f+1_{P_n}/n$ は $\mathcal F$ に属する．実際，$\rho(A\cap P_n)\geq\mu(A\cap P_n)/n$ かつ $\rho(A\setminus P_n)\geq0$ である．しかしその積分は $\alpha$ より大となり矛盾する．従って $P=\bigcup_n P_n$ は $\mu$ 零集合である．$X\setminus P\subseteq N_n$ なので $\rho(X\setminus P)\leq\mu(X)/n$ がすべての $n$ について成立する．従って $\rho(X\setminus P)=0$ であり $\rho\perp\mu$ である．
+別の分解 $g\mu+\rho'$ が与えられたら，$\rho,\rho'$ がそれぞれ集中する $\mu$ 零集合の合併 $P'$ を取る．$X\setminus P'$ への制限によって $f\mu=g\mu$ となる（$P'$ では両測度とも零）．\GenronRef{K-000915} から $f=g$ ほとんど至る所であり，有限測度の差を取れば $\rho=\rho'$ である．
+\end{proof}
+% genron:end K-000916
+% genron:begin K-000917
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000914
+% genron:use K-000915
+% genron:use K-000916
+% genron:use K-000185
+% genron:use K-000748
+% genron:use K-000787
+% genron:use K-000822
+% genron:use K-000870
+\begin{prop}[Radon–Nikodymの定理とσ有限Lebesgue分解]
+$\mu,\nu$ を同じ可測空間上の$\sigma$有限非負測度とする．一意の分解 $\nu=f\mu+\rho$ が存在し，$f$ は非負可測函数で $\mu$ ほとんど至る所有限，$\rho\perp\mu$ である．密度 $f$ はほとんど至る所の相等を除いて一意である．特に $\nu\ll\mu$ ならば $\rho=0$ であり，$d\nu/d\mu=f$ と記す．
+\end{prop}
+\begin{proof}
+両測度の有限測度集合による可算被覆を交叉させ，非交化すれば $X=\bigcup_j E_j$ を互いに素な可測集合の合併として，$\mu(E_j),\nu(E_j)<\infty$ とできる．各 $E_j$ 上に \GenronRef{K-000916} を適用して $\nu_j=f_j\mu_j+\rho_j$ を得る．$f$ を $E_j$ 上で $f_j$ と定め，$\rho(A)=\sum_j\rho_j(A\cap E_j)$ とする．非負積分の可算加法性によって $\nu=f\mu+\rho$ である．各 $\rho_j$ の集中する $\mu_j$ 零集合を合併すれば特異性を得る．$f$ は各 $E_j$ 上でほとんど至る所有限だから全体でも同様である．別の分解を各 $E_j$ に制限すると，各項は $\nu_j$ 以下の有限測度であるから有限の場合の一意性を適用できる．$\nu\ll\mu$ の場合には $\rho\leq\nu$ により $\rho\ll\mu$ でもある．特異性と絶対連続性を同時に持つ非負測度は零測度である．
+\end{proof}
+% genron:end K-000917
+% genron:begin K-000918
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000914
+% genron:use K-000917
+% genron:use K-000761
+% genron:use K-000781
+% genron:use K-000784
+% genron:use K-000785
+% genron:use K-000826
+% genron:use K-000827
+% genron:use K-000829
+% genron:use K-000830
+\begin{prop}[密度による積分の変換]
+$\nu=f\mu$ とする．任意の非負可測函数 $g$ に対し $\int g\,d\nu=\int gf\,d\mu$ である．実又は複素数値の可測函数 $g$ は $\nu$ 可積分であることと $gf$ が $\mu$ 可積分であることが同値であり，その場合も積分は一致する．ここでは $f$ をほとんど至る所有限と仮定し，必要なら零集合上で零とする．
+\end{prop}
+\begin{proof}
+指示函数の場合は $f\mu$ の定義であり，非負単函数については線形性で従う．任意の非負可測函数には単函数の増加近似を用い，単調収束定理を両測度に適用する．可積分性は $|g|$ に適用して得られる．実函数については正負部分，複素函数については実部と虚部に分けて等式を得る．
+\end{proof}
+% genron:end K-000918
+% genron:begin K-000919
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000917
+% genron:use K-000786
+% genron:use K-000826
+% genron:use K-000828
+% genron:use K-000871
+\begin{prop}[符号付き測度のRadon–Nikodym表示]
+$\mu$ が$\sigma$有限非負測度，$\eta$ が実数値符号付き測度であり，$\mu(A)=0$ なら $\eta(A)=0$ であるとする．ある実可積分函数 $h$ が存在して $\eta(A)=\int_A h\,d\mu$ が任意の可測集合 $A$ に対して成立する．$h$ はほとんど至る所の相等を除いて一意である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000871} の正負部分はともに有限測度であり，任意の $\mu$ 零集合の可測部分集合に $\eta$ が零となることから $\eta^\pm\ll\mu$ である．\GenronRef{K-000917} によって $\eta^\pm=f_\pm\mu$ を得る．$f_\pm$ は有限積分を持つから $h=f_+-f_-$ は実可積分である．零集合で値を調整して実数値函数とする．別の密度との差 $u$ が全可測集合上で積分零なら，$\{u>0\}$ と $\{u<0\}$ に対し非負積分の零判定を用い $u=0$ ほとんど至る所を得る．
+\end{proof}
+% genron:end K-000919

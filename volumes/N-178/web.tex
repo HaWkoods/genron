@@ -1,0 +1,146 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 5.1 の半ノルムの記述，8.1.1・8.1.6 の局所凸位相の定義を照合．
+\section{局所凸空間}
+% genron:begin K-000920
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000881
+% genron:use K-000705
+\begin{defn}[凸集合と局所凸空間]
+実又は複素線形空間 $E$ の部分集合 $C$ が任意の $x,y\in C$ と実数 $0\leq t\leq1$ について $(1-t)x+ty\in C$ を満たすとき，凸集合という．位相線形空間の任意の零元近傍が凸な零元近傍を含むとき，これを局所凸空間という．
+\end{defn}
+% genron:end K-000920
+% genron:begin K-000921
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000788
+% genron:use K-000560
+\begin{defn}[半ノルム]
+線形空間 $E$ 上の写像 $p:E\to[0,\infty)$ が $p(\lambda x)=|\lambda|p(x)$ 及び $p(x+y)\leq p(x)+p(y)$ を満たすとき，半ノルムという．半ノルム族 $(p_i)_{i\in I}$ が $\bigcap_i\ker p_i=\{0\}$ を満たすとき，点を分離するという．
+\end{defn}
+% genron:end K-000921
+% genron:begin K-000922
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000920
+% genron:use K-000921
+% genron:use K-000882
+% genron:use K-000883
+\begin{prop}[半ノルムの連続性判定]
+位相線形空間上の半ノルム $p$ が連続であることは零元において連続であることと同値である．また連続なら $\{x\mid p(x)<\varepsilon\}$ は凸かつ平衡な開零元近傍である．
+\end{prop}
+\begin{proof}
+半ノルムの三角不等式と $p(-z)=p(z)$ から $|p(x)-p(y)|\leq p(x-y)$ となる．零元における連続性と平行移動の連続性から任意の点での連続性を得る．逆は自明である．劣加法性・斉次性から $p((1-t)x+ty)\leq(1-t)p(x)+tp(y)$ であり，開半球は凸である．平衡性も斉次性から従う．
+\end{proof}
+% genron:end K-000922
+% genron:begin K-000923
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000920
+% genron:use K-000921
+% genron:use K-000922
+% genron:use K-000881
+% genron:use K-000882
+% genron:use K-000719
+\begin{prop}[半ノルム族が定める位相]
+点を分離する半ノルム族 $(p_i)_{i\in I}$ に対し，有限個の条件 $p_{i_j}(x)<\varepsilon_j$（$\varepsilon_j>0$）を同時に満たす集合の平行移動を開基とする位相が定まり，これは局所凸な位相線形空間の位相である．各 $p_i$ は連続である．
+\end{prop}
+\begin{proof}
+有限交叉は同じ形であり，$x$ がそのような集合に属すれば各条件の余裕 $\varepsilon_j-p_{i_j}(x)>0$ を用いて $x$ の平行移動近傍を内包させられる．従って開基をなす．相異なる二点 $x,y$ に対し $p_i(x-y)>0$ となる $i$ を選び，その値の三分の一を半径とする二近傍は交わらない．加法の連続性は各半径を半分にすることで示せる．スカラー倍について
+\[
+p_i(\lambda x-\lambda_0x_0)\leq|\lambda|p_i(x-x_0)+|\lambda-\lambda_0|p_i(x_0)
+\]
+を用いる．$\lambda_0$ の近傍で $|\lambda|$ を有界に制限し，有限個の右辺を同時に任意に小さくできる．従ってスカラー倍は連続である．各 $p_i$ は零元で連続であり \GenronRef{K-000922} により連続である．零元の基本近傍は凸なので局所凸である．
+\end{proof}
+% genron:end K-000923
+% genron:begin K-000924
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000920
+% genron:use K-000881
+% genron:use K-000882
+% genron:use K-000883
+% genron:use K-000884
+\begin{prop}[凸平衡開近傍の存在]
+局所凸空間の任意の零元近傍は凸かつ平衡な開零元近傍を含む．
+\end{prop}
+\begin{proof}
+与えられた近傍内の凸な零元近傍 $C$ を取る．$C$ の内部は凸である．実際，内部の二点 $x,y$ と $0<t<1$ に対し，$x+U\subseteq C$ となる開零元近傍 $U$ を取ると $(1-t)x+ty+(1-t)U\subseteq C$ である．従って内部を取って $C$ は開としてよい．\GenronRef{K-000884} により平衡な開零元近傍 $V\subseteq C$ を取る．$W$ を $V$ の有限凸結合全体とする．$W$ は凸であり，$\lambda V\subseteq V$（$|\lambda|\leq1$）から平衡である．$C$ の凸性から $W\subseteq C$ となる．任意の有限凸結合で正の係数を持つ項を一つ選び，その項の元を $V$ 内で動かせば開近傍が得られるので $W$ は開である．
+\end{proof}
+% genron:end K-000924
+% genron:begin K-000925
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000920
+% genron:use K-000921
+% genron:use K-000922
+% genron:use K-000708
+% genron:use K-000881
+% genron:use K-000883
+% genron:use K-000884
+\begin{prop}[Minkowski汎函数]
+位相線形空間 $E$ の凸平衡開零元近傍 $U$ に対し $p_U(x)=\inf\{t>0\mid x\in tU\}$ とおくと，これは連続半ノルムであり，$U=\{x\mid p_U(x)<1\}$ である．
+\end{prop}
+\begin{proof}
+吸収性により下限を取る集合は空でなく $p_U(x)$ は有限である．平衡性により $s<t$ なら $sU\subseteq tU$ となる．$|\zeta|=1$ のとき $\zeta U=U$ だから，零でない $\lambda$ について $p_U(\lambda x)=|\lambda|p_U(x)$ となる．零の場合も成立する．$s>p_U(x),t>p_U(y)$ なら $x\in sU,y\in tU$ であり，凸性から $(x+y)/(s+t)\in U$ となる．従って $p_U(x+y)\leq s+t$ である．$s,t$ をそれぞれ下限に近づけて三角不等式を得る．$p_U(x)<1$ なら $x\in tU$ となる $t<1$ があり，平衡性によって $x\in U$ である．逆に $x\in U$ ならスカラー倍の連続性と $U$ の開性からある実数 $\lambda>1$ について $\lambda x\in U$ となる．従って $p_U(x)\leq1/\lambda<1$ である．斉次性から $\{p_U<\varepsilon\}=\varepsilon U$ は開であり，\GenronRef{K-000922} により連続である．
+\end{proof}
+% genron:end K-000925
+% genron:begin K-000926
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000920
+% genron:use K-000921
+% genron:use K-000923
+% genron:use K-000924
+% genron:use K-000925
+% genron:use K-000293
+% genron:use K-000882
+\begin{prop}[局所凸位相の半ノルムによる特徴づけ]
+Hausdorff位相線形空間が局所凸であることと，その位相が点を分離する半ノルム族によって定まることとは同値である．
+\end{prop}
+\begin{proof}
+一方は \GenronRef{K-000923} による．局所凸空間について，凸平衡開零元近傍 $U$ 全体に対応する \GenronRef{K-000925} の半ノルム $p_U$ を用いる．各半ノルムは連続であるため，これらが生成する位相は元の位相より細かくない．他方 \GenronRef{K-000924} によって任意の零元近傍は $\{p_U<1\}=U$ となる近傍を含み，平行移動を考えれば元の位相と一致する．Hausdorff性により任意の $x\ne0$ について $x\notin U$ となる $U$ が存在し，$p_U(x)\geq1$ だから半ノルム族は点を分離する．
+\end{proof}
+% genron:end K-000926
