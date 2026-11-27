@@ -314,7 +314,7 @@ try{
   assert.deepEqual(figureActual.map(f=>({id:f.id,src:f.src})).sort((a,b)=>a.src.localeCompare(b.src)),figureExpected.slice().sort((a,b)=>a.src.localeCompare(b.src)),"Figures attached to correct entries");
   for(const f of figureActual){
    assert.ok(f.alt&&f.caption,"Accessible diagram "+f.src);
-   if(!coveredFigures.has(f.src)){const response=await page.request.get(origin+f.src);assert.equal(response.status(),200);assert.match(response.headers()["content-type"],/image\/svg\+xml/);coveredFigures.add(f.src)}
+   if(!coveredFigures.has(f.src)){const response=await page.request.get(origin+f.src);assert.equal(response.status(),200);assert.match(response.headers()["content-type"],/image\/svg\+xml/);assert.ok(await page.evaluate(async src=>{const img=new Image();img.src=src;await img.decode();return img.naturalWidth>0},f.src),"SVG decodes "+f.src);coveredFigures.add(f.src)}
   }
   // One individual legacy URL per part exercises the common router.
   await page.goto(origin+"?note="+representative.number+"&view=pdf&page=1");
