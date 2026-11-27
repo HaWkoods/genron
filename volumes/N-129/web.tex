@@ -1,0 +1,139 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{代数元と単拡大}
+% genron:begin K-001306
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001190
+% genron:use K-000353
+\begin{defn}[代数元と超越元]
+体拡大 $L/K$ の元 $\alpha$ に対し，ある零でない $f\in K[X]$ が $f(\alpha)=0$ を満たすなら $\alpha$ は $K$ 上代数的という．そうでないとき超越的という．
+\end{defn}
+% genron:end K-001306
+% genron:begin K-001307
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001306
+% genron:use K-001235
+% genron:use K-001233
+% genron:use K-000329
+% genron:use K-000446
+\begin{prop}[最小多項式]
+代数元 $\alpha$ に対し評価準同型 $K[X]\to L$ の核は一意のモニック既約多項式 $m_\alpha$ により生成される．
+\end{prop}
+\begin{proof}
+核は非零の真の素イデアルである．$K[X]$ は PID なので生成元をモニックに正規化できる．非零素イデアルの生成元は既約である（素性により因子の一方が生成元で割り切れるので他方は単元）．同伴元のうちモニックなものは一意である．
+\end{proof}
+% genron:end K-001307
+% genron:begin K-001308
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001307
+% genron:use K-001238
+% genron:use K-001239
+% genron:use K-001195
+% genron:use K-001190
+% genron:use K-000332
+\begin{prop}[代数的単拡大の構造]
+代数元 $\alpha$ に対し $K[\alpha]=K(\alpha)\simeq K[X]/(m_\alpha)$ であり，$[K(\alpha):K]=\deg m_\alpha$ である．
+\end{prop}
+\begin{proof}
+評価準同型の像は $K[\alpha]$ であり，第一同型定理により剰余環と同型である．最小多項式が既約なので剰余環は体であり，像は $K(\alpha)$ に等しい．剰余代表元の一意性により $1,\alpha,\ldots,\alpha^{n-1}$ が基底となる．
+\end{proof}
+% genron:end K-001308
+% genron:begin K-001309
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001306
+% genron:use K-001195
+% genron:use K-000454
+% genron:use K-000353
+\begin{prop}[超越的単拡大の構造]
+超越元 $\alpha$ について $K[\alpha]\simeq K[X]$，$K(\alpha)\simeq K(X)$（多項式環の分数体）である．
+\end{prop}
+\begin{proof}
+評価準同型は核が零なので像への同型となる．分数体の普遍性によって分数体から $L$ への単射が得られ，その像は $K[\alpha]$ の分数全体であり $K(\alpha)$ である．
+\end{proof}
+% genron:end K-001309
+% genron:begin K-001310
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001307
+% genron:use K-001238
+% genron:use K-001239
+\begin{prop}[既約多項式の根を持つ拡大の構成]
+モニック既約多項式 $f\in K[X]$ に対し，体 $E=K[X]/(f)$ は $K$ を標準的に含み，$\bar X$ は最小多項式 $f$ を持つ．
+\end{prop}
+\begin{proof}
+剰余体であることと定数埋込みは既出の剰余体の構成による．$g(\bar X)=0$ は $g\in(f)$ と同値であるから評価の核は $(f)$ である．
+\end{proof}
+% genron:end K-001310
+% genron:begin K-001311
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001306
+% genron:use K-001308
+% genron:use K-001194
+% genron:use K-001196
+% genron:use K-000604
+\begin{prop}[有限次拡大と代数性]
+有限次拡大 $L/K$ のすべての元は代数的である．また有限個の代数元が生成する部分体は有限次拡大である．
+\end{prop}
+\begin{proof}
+$[L:K]=n$ なら $1,\alpha,\ldots,\alpha^n$ は線形従属である．その非自明な関係は $\alpha$ を根とする非零多項式を与える．逆に有限個の代数元について各単拡大は有限次であるから，合成体の次数の上界を反復して結論を得る．
+\end{proof}
+% genron:end K-001311
+% genron:begin K-001312
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001311
+% genron:use K-001306
+\begin{prop}[代数元全体の部分体性]
+拡大 $L/K$ における $K$ 上代数的な元全体は $L$ の部分体をなす．
+\end{prop}
+\begin{proof}
+二つの代数元 $\alpha,\beta$ を取れば $K(\alpha,\beta)$ は有限次拡大であり，$\alpha\pm\beta,\alpha\beta$ と $\alpha\ne0$ のとき $\alpha^{-1}$ はその元なので代数的である．$K$ の元も一次多項式の根である．
+\end{proof}
+% genron:end K-001312

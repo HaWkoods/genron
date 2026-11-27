@@ -39480,6 +39480,1261 @@
       "status": "draft",
       "source": "volumes/N-347/web.tex",
       "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001272",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "整数の合同",
+      "statement": "正整数 $m$ に対し，$m\\mid a-b$ であることを $a\\equiv b\\pmod m$ と書く．",
+      "assumptions": [],
+      "position": [
+        77,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000572",
+        "K-000596"
+      ],
+      "status": "draft",
+      "source": "volumes/N-77/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001273",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "剰余類環",
+      "statement": "合同は同値関係であり，加法及び乗法と両立する．商環 $\\mathbb Z/m\\mathbb Z$ の各元は $0,\\ldots,m-1$ のただ一つで代表される．",
+      "assumptions": [],
+      "position": [
+        77,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001272",
+        "K-000330",
+        "K-000596"
+      ],
+      "status": "draft",
+      "source": "volumes/N-77/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001274",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "剰余類の単元判定",
+      "statement": "$m\\geq2$ とする．$[a]\\in\\mathbb Z/m\\mathbb Z$ が単元であることと，$a,m$ の正の最大公約数が $1$ であることは同値である．",
+      "assumptions": [],
+      "position": [
+        77,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001273",
+        "K-000598"
+      ],
+      "status": "draft",
+      "source": "volumes/N-77/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001275",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素数の剰余体",
+      "statement": "$m\\geq2$ について $\\mathbb Z/m\\mathbb Z$ が体であることと $m$ が素数であることは同値である．",
+      "assumptions": [],
+      "position": [
+        77,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001274",
+        "K-001211",
+        "K-000443"
+      ],
+      "status": "draft",
+      "source": "volumes/N-77/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001276",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "中国剰余定理",
+      "statement": "対ごとに互いに素な正整数 $m_1,\\ldots,m_r$ と $M=\\prod_i m_i$ に対し，標準環準同型\n\\[\n\\mathbb Z/M\\mathbb Z\\longrightarrow\\prod_{i=1}^r\\mathbb Z/m_i\\mathbb Z\n\\]\nは同型である．",
+      "assumptions": [],
+      "position": [
+        77,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001273",
+        "K-000598",
+        "K-001214",
+        "K-001217"
+      ],
+      "status": "draft",
+      "source": "volumes/N-77/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001277",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一次合同式の可解性",
+      "statement": "$ax\\equiv b\\pmod m$ が解を持つことと $d=\\gcd(a,m)$ が $b$ を割ることは同値である．可解なら法 $m$ で相異なる解はちょうど $d$ 個である．",
+      "assumptions": [],
+      "position": [
+        77,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001272",
+        "K-001274",
+        "K-000598",
+        "K-000596"
+      ],
+      "status": "draft",
+      "source": "volumes/N-77/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001278",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一様空間の分離商",
+      "statement": "一様空間 $(X,\\mathcal U)$ に対し $x\\sim y$ を $(x,y)\\in\\bigcap\\mathcal U$ と定める．これは同値関係であり，商写像 $q:X\\to X/{\\sim}$ に対し $(q\\times q)(U)$（$U\\in\\mathcal U$）を近縁の基とする分離一様構造が存在する．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000392",
+        "K-000393",
+        "K-000396",
+        "K-000052",
+        "K-000053"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001279",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchyフィルターの縮小",
+      "statement": "Cauchyフィルター $\\mathcal F$ に対し，対称近縁 $U$ と $A\\in\\mathcal F$ による $U[A]=\\{y\\mid\\exists a\\in A,\\ (a,y)\\in U\\}$ を基とするフィルター $\\mathcal F^0$ は Cauchy であり，$\\mathcal F$ に含まれる．さらに $(\\mathcal F^0)^0=\\mathcal F^0$ である．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000233",
+        "K-000235",
+        "K-000236",
+        "K-000393",
+        "K-000490"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001280",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchyフィルターの同値性",
+      "statement": "Cauchyフィルター $\\mathcal F,\\mathcal G$ について $\\mathcal F^0=\\mathcal G^0$ と，任意の近縁 $U$ に対し $A\\in\\mathcal F,B\\in\\mathcal G$ が存在して $A\\times B\\subseteq U$ となることは同値である．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001279",
+        "K-000490",
+        "K-000393"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001281",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備化の一様構造",
+      "statement": "$\\widehat X$ を $\\mathcal F=\\mathcal F^0$ を満たす Cauchy フィルターの集合とする．対称近縁 $U$ に対し\n\\[\nW_U=\\{(\\mathcal F,\\mathcal G)\\mid\\exists A\\in\\mathcal F,\\exists B\\in\\mathcal G,\\ A\\times B\\subseteq U\\}\n\\]\nを定める．これらは分離一様構造の基をなす．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001279",
+        "K-001280",
+        "K-000392",
+        "K-000396"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001282",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備化への標準写像",
+      "statement": "$x\\mapsto j(x)$（$j(x)$ は $x$ の近傍フィルター）は一様連続で，像は $\\widehat X$ に稠密である．また $X$ が分離なら一様埋込みである．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001281",
+        "K-000394",
+        "K-000397",
+        "K-000491"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001283",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備化の完備性",
+      "statement": "$\\widehat X$ は完備である．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001282",
+        "K-001279",
+        "K-001281",
+        "K-000490",
+        "K-000493"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001284",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備化の普遍性",
+      "statement": "分離完備一様空間 $Y$ への一様連続写像 $f:X\\to Y$ は一意の一様連続写像 $\\widehat f:\\widehat X\\to Y$ で $\\widehat f j=f$ を満たすものに延長される．",
+      "assumptions": [],
+      "position": [
+        94,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001283",
+        "K-001282",
+        "K-000397",
+        "K-000484",
+        "K-000396",
+        "K-000293"
+      ],
+      "status": "draft",
+      "source": "volumes/N-94/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001285",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル積の結合同型",
+      "statement": "可換環 $R$ の加群 $L,M,N$ に対し標準同型 $(L\\otimes_R M)\\otimes_R N\\simeq L\\otimes_R(M\\otimes_R N)$ があり，$(l\\otimes m)\\otimes n$ を $l\\otimes(m\\otimes n)$ に移す．",
+      "assumptions": [],
+      "position": [
+        112,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001225",
+        "K-001226",
+        "K-001227",
+        "K-001228"
+      ],
+      "status": "draft",
+      "source": "volumes/N-112/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001286",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "テンソル冪",
+      "statement": "$M^{\\otimes0}=R$，$M^{\\otimes(n+1)}=M^{\\otimes n}\\otimes_R M$ とする．純テンソルを $m_1\\otimes\\cdots\\otimes m_n$ と書く．",
+      "assumptions": [],
+      "position": [
+        112,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001285",
+        "K-001230",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-112/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001287",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル冪の多重線形普遍性",
+      "statement": "$n$ 重線形写像 $M^n\\to P$ は一意の線形写像 $M^{\\otimes n}\\to P$ を通じて因子化する．$n=0$ では $P$ の元と $R$ からの線形写像を対応させる．",
+      "assumptions": [],
+      "position": [
+        112,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001286",
+        "K-001226",
+        "K-000607"
+      ],
+      "status": "draft",
+      "source": "volumes/N-112/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001288",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "次数付き代数",
+      "statement": "可換環 $R$ 上の単位的結合代数 $A$ とは $R$ 加群と $R$ 双線形な結合的乗法及び単位元を持つものをいう．$A=\\bigoplus_{n\\geq0}A_n$ で $1\\in A_0$，$A_mA_n\\subseteq A_{m+n}$ を満たすとき非負整数次数付き代数という．",
+      "assumptions": [],
+      "position": [
+        112,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000335",
+        "K-000457",
+        "K-001225",
+        "K-000249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-112/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001289",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル代数",
+      "statement": "$T_R(M)=\\bigoplus_{n\\geq0}M^{\\otimes n}$ に純テンソルの連接による乗法を入れると次数付き代数となる．",
+      "assumptions": [],
+      "position": [
+        112,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001288",
+        "K-001287",
+        "K-001286",
+        "K-000457"
+      ],
+      "status": "draft",
+      "source": "volumes/N-112/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001290",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "テンソル代数の普遍性",
+      "statement": "任意の単位的 $R$ 代数 $A$ と線形写像 $f:M\\to A$ に対し，$f$ を次数一の成分から延長する単位的 $R$ 代数準同型 $T_R(M)\\to A$ がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        112,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001289",
+        "K-001287",
+        "K-000458"
+      ],
+      "status": "draft",
+      "source": "volumes/N-112/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001291",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "p群とSylow部分群",
+      "statement": "素数 $p$ に対して位数が $p$ の冪である有限群を $p$ 群という．$|G|=p^a m$，$p\\nmid m$ とするとき，位数 $p^a$ の部分群を Sylow $p$ 部分群という．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000313",
+        "K-001211",
+        "K-001214"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001292",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "p群の作用と固定点の合同",
+      "statement": "有限 $p$ 群 $P$ が有限集合 $X$ に作用するとき $|X|\\equiv |X^P|\\pmod p$，ただし $X^P$ は全元で固定される点の集合である．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001291",
+        "K-000359",
+        "K-000360",
+        "K-001214"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001293",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchyの定理",
+      "statement": "有限群 $G$ の位数を素数 $p$ が割るなら，$G$ は位数 $p$ の元を持つ．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001292",
+        "K-000318",
+        "K-000116",
+        "K-001211"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001294",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Sylowの第一定理",
+      "statement": "有限群 $G$ は Sylow $p$ 部分群を持つ．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001291",
+        "K-001293",
+        "K-000361",
+        "K-000357",
+        "K-000315",
+        "K-000292"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001295",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Sylowの第二定理",
+      "statement": "Sylow $p$ 部分群 $P$ を固定する．任意の $p$ 部分群 $H$ は $P$ の共役部分群の一つに含まれる．特に任意の二つの Sylow $p$ 部分群は共役である．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001294",
+        "K-001292",
+        "K-000306",
+        "K-000315"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001296",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Sylowの第三定理",
+      "statement": "Sylow $p$ 部分群の個数 $n_p$ は $m$ の約数であり，$p\\mid(n_p-1)$ である．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001295",
+        "K-001292",
+        "K-000362",
+        "K-000359",
+        "K-000315",
+        "K-001214"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001297",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Sylow部分群の正規性",
+      "statement": "Sylow $p$ 部分群が正規であることと $n_p=1$ は同値である．",
+      "assumptions": [],
+      "position": [
+        123,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001295",
+        "K-000266"
+      ],
+      "status": "draft",
+      "source": "volumes/N-123/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001298",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一般線形群",
+      "statement": "体 $K$ 上の線形空間 $V$ の可逆線形自己写像全体を合成で群としたものを $\\operatorname{GL}_K(V)$ と書く．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000561",
+        "K-000225",
+        "K-000629"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001299",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "群表現",
+      "statement": "群 $G$ の $K$ 上の表現とは線形空間 $V$ と群準同型 $\\rho:G\\to\\operatorname{GL}_K(V)$ の組である．$\\dim_K V$ が有限なら有限次元表現という．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001298",
+        "K-000282",
+        "K-000604"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001300",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "表現の準同型と同値",
+      "statement": "二表現 $(V,\\rho),(W,\\sigma)$ の準同型とは $T\\rho(g)=\\sigma(g)T$ をすべての $g\\in G$ で満たす線形写像 $T:V\\to W$ である．全単射の準同型が存在するとき二表現は同値という．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001299",
+        "K-000561"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001301",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "部分表現",
+      "statement": "部分空間 $U\\subseteq V$ が任意の $g$ に対し $\\rho(g)U\\subseteq U$ を満たすとき，$U$ を不変部分空間といい，制限により定まる表現を部分表現という．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001299",
+        "K-000562"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001302",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商表現",
+      "statement": "不変部分空間 $U$ に対し $\\bar\\rho(g)(v+U)=\\rho(g)v+U$ は $V/U$ の表現を定める．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001301",
+        "K-000630",
+        "K-000631"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001303",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "準同型の核と像",
+      "statement": "表現の準同型 $T:V\\to W$ の核及び像はそれぞれ不変部分空間であり，誘導写像 $V/\\ker T\\to\\operatorname{im}T$ は表現の同値を与える．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001300",
+        "K-001302",
+        "K-000629",
+        "K-000632"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001304",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "既約表現",
+      "statement": "零でない表現が零空間及び全空間以外の不変部分空間を持たないとき既約という．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001301"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001305",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Schurの補題",
+      "statement": "二つの既約表現の間の零でない準同型は同値を与える．特に既約表現の自己準同型環の零でない元は可逆である．",
+      "assumptions": [],
+      "position": [
+        125,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001304",
+        "K-001303",
+        "K-001300"
+      ],
+      "status": "draft",
+      "source": "volumes/N-125/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001306",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "代数元と超越元",
+      "statement": "体拡大 $L/K$ の元 $\\alpha$ に対し，ある零でない $f\\in K[X]$ が $f(\\alpha)=0$ を満たすなら $\\alpha$ は $K$ 上代数的という．そうでないとき超越的という．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001190",
+        "K-000353"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001307",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "最小多項式",
+      "statement": "代数元 $\\alpha$ に対し評価準同型 $K[X]\\to L$ の核は一意のモニック既約多項式 $m_\\alpha$ により生成される．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001306",
+        "K-001235",
+        "K-001233",
+        "K-000329",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001308",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "代数的単拡大の構造",
+      "statement": "代数元 $\\alpha$ に対し $K[\\alpha]=K(\\alpha)\\simeq K[X]/(m_\\alpha)$ であり，$[K(\\alpha):K]=\\deg m_\\alpha$ である．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001307",
+        "K-001238",
+        "K-001239",
+        "K-001195",
+        "K-001190",
+        "K-000332"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001309",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "超越的単拡大の構造",
+      "statement": "超越元 $\\alpha$ について $K[\\alpha]\\simeq K[X]$，$K(\\alpha)\\simeq K(X)$（多項式環の分数体）である．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001306",
+        "K-001195",
+        "K-000454",
+        "K-000353"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001310",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "既約多項式の根を持つ拡大の構成",
+      "statement": "モニック既約多項式 $f\\in K[X]$ に対し，体 $E=K[X]/(f)$ は $K$ を標準的に含み，$\\bar X$ は最小多項式 $f$ を持つ．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001307",
+        "K-001238",
+        "K-001239"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001311",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次拡大と代数性",
+      "statement": "有限次拡大 $L/K$ のすべての元は代数的である．また有限個の代数元が生成する部分体は有限次拡大である．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001306",
+        "K-001308",
+        "K-001194",
+        "K-001196",
+        "K-000604"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001312",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "代数元全体の部分体性",
+      "statement": "拡大 $L/K$ における $K$ 上代数的な元全体は $L$ の部分体をなす．",
+      "assumptions": [],
+      "position": [
+        129,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001311",
+        "K-001306"
+      ],
+      "status": "draft",
+      "source": "volumes/N-129/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -40703,7 +41958,7 @@
       "number": 77,
       "title": "整数の合同",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         76,
         69
@@ -40712,7 +41967,8 @@
         "合同式・中国剰余定理"
       ],
       "treatise": "T-11",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 78,
@@ -40981,7 +42237,7 @@
       "number": 94,
       "title": "一様空間の完備化",
       "area": "位相",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         93
       ],
@@ -40989,7 +42245,8 @@
         "分離化・完備化と普遍性"
       ],
       "treatise": "T-14",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 95,
@@ -41265,7 +42522,7 @@
       "number": 112,
       "title": "テンソル代数",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         111
       ],
@@ -41273,7 +42530,8 @@
         "次数付き代数・テンソル積の結合性"
       ],
       "treatise": "T-17",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 113,
@@ -41429,7 +42687,7 @@
       "number": 123,
       "title": "Sylowの定理",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         122,
         76
@@ -41438,7 +42696,8 @@
         "p群・Sylow部分群・三定理"
       ],
       "treatise": "T-19",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 124,
@@ -41460,7 +42719,7 @@
       "number": 125,
       "title": "群表現",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         97,
         62
@@ -41469,7 +42728,8 @@
         "表現・部分表現・同値"
       ],
       "treatise": "T-19",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 126,
@@ -41521,16 +42781,18 @@
       "number": 129,
       "title": "代数元と単拡大",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         20,
-        128
+        128,
+        74
       ],
       "goals": [
         "最小多項式・単拡大の構成"
       ],
       "treatise": "T-20",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 130,

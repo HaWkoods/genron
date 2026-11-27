@@ -1,0 +1,114 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{テンソル積の結合性とテンソル代数}
+% genron:begin K-001285
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001225
+% genron:use K-001226
+% genron:use K-001227
+% genron:use K-001228
+\begin{prop}[テンソル積の結合同型]
+可換環 $R$ の加群 $L,M,N$ に対し標準同型 $(L\otimes_R M)\otimes_R N\simeq L\otimes_R(M\otimes_R N)$ があり，$(l\otimes m)\otimes n$ を $l\otimes(m\otimes n)$ に移す．
+\end{prop}
+\begin{proof}
+三重線形写像 $b:L\times M\times N\to P$ に対し，各 $n$ を固定してテンソル積の普遍性を適用する．得られる写像 $L\otimes M\to P$ は $n$ に関して線形に変化する（純テンソル上で確認すればよい）ので，さらに普遍性を適用できる．逆順にも同じ三重線形写像を表現する．指定の写像は双方の普遍性で得られ，合成は純テンソルで恒等となる．
+\end{proof}
+% genron:end K-001285
+% genron:begin K-001286
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001285
+% genron:use K-001230
+% genron:use K-000105
+\begin{defn}[テンソル冪]
+$M^{\otimes0}=R$，$M^{\otimes(n+1)}=M^{\otimes n}\otimes_R M$ とする．純テンソルを $m_1\otimes\cdots\otimes m_n$ と書く．
+\end{defn}
+% genron:end K-001286
+% genron:begin K-001287
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001286
+% genron:use K-001226
+% genron:use K-000607
+\begin{prop}[テンソル冪の多重線形普遍性]
+$n$ 重線形写像 $M^n\to P$ は一意の線形写像 $M^{\otimes n}\to P$ を通じて因子化する．$n=0$ では $P$ の元と $R$ からの線形写像を対応させる．
+\end{prop}
+\begin{proof}
+二重線形普遍性を帰納的に適用する．最後の変数を固定した写像が前の $n$ 変数に関して多重線形であるため，帰納法で線形写像を得る．最後の変数に関する線形性は純テンソル上での一致から従う．
+\end{proof}
+% genron:end K-001287
+% genron:begin K-001288
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000335
+% genron:use K-000457
+% genron:use K-001225
+% genron:use K-000249
+\begin{defn}[次数付き代数]
+可換環 $R$ 上の単位的結合代数 $A$ とは $R$ 加群と $R$ 双線形な結合的乗法及び単位元を持つものをいう．$A=\bigoplus_{n\geq0}A_n$ で $1\in A_0$，$A_mA_n\subseteq A_{m+n}$ を満たすとき非負整数次数付き代数という．
+\end{defn}
+% genron:end K-001288
+% genron:begin K-001289
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001288
+% genron:use K-001287
+% genron:use K-001286
+% genron:use K-000457
+\begin{prop}[テンソル代数]
+$T_R(M)=\bigoplus_{n\geq0}M^{\otimes n}$ に純テンソルの連接による乗法を入れると次数付き代数となる．
+\end{prop}
+\begin{proof}
+各次数 $m,n$ について純テンソルの連接は両側の多重線形関係を満たすため，多重線形普遍性を二回適用して $M^{\otimes m}\times M^{\otimes n}$ 上の双線形写像を得る．次数零ではスカラー作用及び環の積を用いる．有限台の和に分配して全体の積を定める．結合律は三つの純テンソルの連接が括り方によらないことから生成元上で成立し，双線形性で一般の場合を得る．$1\in R$ は単位元である．
+\end{proof}
+% genron:end K-001289
+% genron:begin K-001290
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001289
+% genron:use K-001287
+% genron:use K-000458
+\begin{prop}[テンソル代数の普遍性]
+任意の単位的 $R$ 代数 $A$ と線形写像 $f:M\to A$ に対し，$f$ を次数一の成分から延長する単位的 $R$ 代数準同型 $T_R(M)\to A$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+各 $n>0$ で $(m_1,\ldots,m_n)\mapsto f(m_1)\cdots f(m_n)$ は多重線形であるから線形写像を得る．次数零には $r\mapsto r1_A$ を用いる．直和の普遍性により全体に延長し，純テンソルの連接で乗法を保存することを確認する．任意の代数準同型は次数一の元の積である純テンソル及び次数零で値が定まるので一意である．
+\end{proof}
+% genron:end K-001290
