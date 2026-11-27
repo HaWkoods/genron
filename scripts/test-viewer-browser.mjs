@@ -4,7 +4,7 @@ import http from "node:http";
 import path from "node:path";
 import {chromium} from "playwright-core";
 const base=path.resolve("_site");
-const types={".html":"text/html; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json",".pdf":"application/pdf",".woff2":"font/woff2",".woff":"font/woff",".ttf":"font/ttf"};
+const types={".html":"text/html; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json",".pdf":"application/pdf",".woff2":"font/woff2",".woff":"font/woff",".ttf":"font/ttf",".svg":"image/svg+xml"};
 const server=http.createServer((req,res)=>{
  const pathname=new URL(req.url,"http://localhost").pathname;
  const file=path.resolve(base,"."+pathname.replace(/\/$/,"/index.html"));
@@ -288,16 +288,41 @@ try{
  assert.equal(await page.locator(".pdf-shell").count(),0);
  assert.deepEqual(errors,[],"Web citation navigation errors");
 
- // Web-only publications never require a PDF.
- for(const n of planData.notes.filter(n=>n.web_only)){
-  await page.goto(origin+"?note="+n.number);
-  const chapter=page.locator("#N-"+n.number);
-  await chapter.waitFor();
-  assert.ok(await chapter.locator(".web-entry").count()>0);
-  assert.equal(await chapter.locator(".web-legacy").count(),0);
-  assert.equal(await page.locator(".pdf-shell").count(),0);
+ // Each reader page contains a complete part, not just the requested note.
+ // Render each part once and check EVERY published note and entry in its DOM.
+ const partFor=n=>planData.treatises.find(t=>t.id===n.treatise)?.part;
+ const fullBrowser=process.env.GENRON_BROWSER_FULL==="1";
+ const coveredNotes=new Set();
+ const coveredFigures=new Set();
+ for(const part of planData.parts){
+  const members=planData.notes.filter(n=>partFor(n)===part.id);
+  if(!members.length)continue;
+  const representative=members.filter(n=>n.web_only).at(-1)??members[0];
+  await page.goto(origin+"?note="+representative.number);
+  await page.locator("#N-"+representative.number+" .web-entry").first().waitFor();
+  const expected=planData.entries.filter(e=>members.some(n=>n.number===e.position[0]));
+  assert.deepEqual(await page.locator(".web-entry").evaluateAll(els=>els.map(e=>e.id).sort()),expected.map(e=>e.id).sort(),"All published entries in "+part.id);
+  const actual=await page.locator(".web-chapter").evaluateAll(els=>els.filter(e=>e.querySelector(".web-entry")).map(e=>Number(e.id.slice(2))).sort((a,b)=>a-b));
+  assert.deepEqual(actual,members.map(n=>n.number).sort((a,b)=>a-b),"All published notes in "+part.id);
+  for(const n of members){
+   coveredNotes.add(n.number);
+   assert.equal(await page.locator("#N-"+n.number+" .web-draft-status").count(),n.review_status==="draft"?1:0);
+  }
+  assert.equal(await page.locator(".web-legacy,.pdf-shell").count(),0);
+  const figureExpected=expected.flatMap(e=>(e.figures??[]).map(f=>({id:e.id,src:f.src})));
+  const figureActual=await page.locator(".web-entry .web-figure img").evaluateAll(els=>els.map(img=>({id:img.closest(".web-entry").id,src:img.getAttribute("src"),alt:img.alt,caption:img.closest("figure").querySelector("figcaption")?.textContent??""})));
+  assert.deepEqual(figureActual.map(f=>({id:f.id,src:f.src})).sort((a,b)=>a.src.localeCompare(b.src)),figureExpected.slice().sort((a,b)=>a.src.localeCompare(b.src)),"Figures attached to correct entries");
+  for(const f of figureActual){
+   assert.ok(f.alt&&f.caption,"Accessible diagram "+f.src);
+   if(!coveredFigures.has(f.src)){const response=await page.request.get(origin+f.src);assert.equal(response.status(),200);assert.match(response.headers()["content-type"],/image\/svg\+xml/);coveredFigures.add(f.src)}
+  }
+  // One individual legacy URL per part exercises the common router.
+  await page.goto(origin+"?note="+representative.number+"&view=pdf&page=1");
+  await page.locator("#N-"+representative.number+" .web-entry").first().waitFor();
+  assert.equal(await page.locator(".pdf-shell,.web-legacy").count(),0);
  }
- // Legacy URLs resolve to native content, never a PDF.
+ assert.equal(coveredNotes.size,planData.notes.length,"Every public note covered");
+ // Retired note aliases are distinct routing cases; retain all of them.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   for(const suffix of ["","&page=1","&view=pdf&page=2"]){
    await page.goto(origin+"?note="+old+suffix);
@@ -305,11 +330,16 @@ try{
    assert.equal(await page.locator(".pdf-shell").count(),0);
   }
  }
- for(const n of planData.notes){
-  await page.goto(origin+"?note="+n.number+"&view=pdf&page=1");
-  await page.locator("#N-"+n.number+" .web-entry").first().waitFor();
-  assert.equal(await page.locator(".pdf-shell,.web-legacy").count(),0);
+ if(fullBrowser){
+  for(const n of planData.notes){
+   for(const suffix of ["","&view=pdf&page=1"]){
+    await page.goto(origin+"?note="+n.number+suffix);
+    await page.locator("#N-"+n.number+" .web-entry").first().waitFor();
+    assert.equal(await page.locator(".pdf-shell,.web-legacy").count(),0);
+   }
+  }
  }
+ console.log("Part-level coverage: "+coveredNotes.size+" notes; "+coveredFigures.size+" figures; exhaustive individual routes: "+fullBrowser);
  for(const name of ["statements","notation","examples"]){
   await page.goto(origin+"?note="+name+"&view=pdf&page=1");
   await page.locator(".web-catalogue").waitFor();

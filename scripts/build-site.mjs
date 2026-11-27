@@ -31,6 +31,20 @@ const modules=path.join(root,"node_modules");
 for(const name of ["katex.min.js","katex.min.css","fonts"])cp(path.join(modules,"katex/dist",name),path.join(out,"vendor/katex",name));
 cp(path.join(modules,"katex/LICENSE"),path.join(out,"vendor/katex/LICENSE"));
 
+// Figure assets are authored SVGs keyed by permanent knowledge IDs.
+const figureManifest=JSON.parse(fs.readFileSync(path.join(root,"site/figures.json"),"utf8"));
+const knownIds=new Set(ledger.entries.map(e=>e.id));
+const figurePaths=new Set(),figuresById=new Map();
+for(const f of figureManifest){
+ if(!knownIds.has(f.id)||!/^figures\/[a-z0-9-]+\.svg$/.test(f.src)||!f.alt?.trim()||!f.caption?.trim()||figurePaths.has(f.src))throw Error("Invalid figure manifest entry "+JSON.stringify(f));
+ figurePaths.add(f.src);
+ const source=path.join(root,"site",f.src);
+ const svg=fs.readFileSync(source,"utf8");
+ if(!/^<svg\b/.test(svg.trim())||/<(?:script|foreignObject)\b|\bon\w+\s*=|\b(?:href|src)\s*=/i.test(svg))throw Error("Unsafe or invalid figure "+f.src);
+ if(!publicIds.has(f.id))continue;
+ const dest=path.join(out,f.src);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(source,dest);
+ const list=figuresById.get(f.id)??[];list.push({src:f.src,alt:f.alt,caption:f.caption});figuresById.set(f.id,list);
+}
 const webProofs=new Map();
 function collectProofs(source){
  const labels=new Map();
@@ -72,7 +86,7 @@ for(const n of published){
  const knowledgeGraph=graph({...ledger,entries},"knowledge");
  if(knowledgeGraph.unordered.length)throw Error("Cyclic published knowledge graph");
  const knowledgeDepth=new Map(knowledgeGraph.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
- const publicEntries=entries.map(({id,kind,heading_kind,problem_tex,title,statement,assumptions,position,depends_on})=>({id,heading_kind:headingKind({kind,heading_kind}),problem_tex,display_number:entryDisplayNumber(ledger,{position}),kind,title,statement,assumptions,position,depends_on,knowledge_depth:knowledgeDepth.get(id),webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
+ const publicEntries=entries.map(({id,kind,heading_kind,problem_tex,title,statement,assumptions,position,depends_on})=>({id,heading_kind:headingKind({kind,heading_kind}),problem_tex,display_number:entryDisplayNumber(ledger,{position}),kind,title,statement,assumptions,position,depends_on,knowledge_depth:knowledgeDepth.get(id),webProof:webProofs.get(id),figures:figuresById.get(id)??[],preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
  fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,aliases:ledger.note_aliases??{},entries:publicEntries,notation:webNotation,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");
  console.log("Web-only site: "+published.length+" notes, "+entries.length+" entries; no PDF assets.");

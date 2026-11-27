@@ -459,7 +459,7 @@ function renderSourceEntry(section,e){
 }
 
 
-function renderEntryContent(section,e){
+function renderEntryBody(section,e){
  if(headingKind(e)==="worked_example"){
   const metadata={...e.webProof,noteNumber:e.position[0]};
   const question=node("div","worked-question");
@@ -485,6 +485,14 @@ function renderEntryContent(section,e){
    }
 }
 
+function renderEntryContent(section,e){
+ renderEntryBody(section,e);
+ for(const f of e.figures??[]){
+  const figure=node("figure","web-figure"),img=node("img");
+  img.setAttribute("src",f.src);img.alt=f.alt;img.loading="lazy";img.decoding="async";
+  figure.append(img,node("figcaption","",f.caption));section.append(figure);
+ }
+}
 
 function appendKnowledgeDependencies(section,e){
  // Restrict only the reference panel, not the knowledge graph or inline citations.
@@ -518,7 +526,7 @@ function showWeb(info,restore){
   const chapter=node("section","web-chapter");chapter.id="N-"+n.number;
   side.append(anchor(noteNumber(n)+"　"+n.title,"#"+chapter.id,"web-toc-note"));
   chapter.append(node("h3","web-note-title",noteNumber(n)+"　"+n.title));
-  if(n.review_status==="draft")chapter.append(node("p","web-draft-status","草稿公開・査読未了"));
+  if(notes.get(n.number)?.review_status==="draft")chapter.append(node("p","web-draft-status","草稿公開・査読未了"));
   if(!notes.has(n.number)){chapter.append(node("p","muted","制作予定 — "+(n.goals??[]).join("；")));article.append(chapter);continue}
 
   const items=data.entries.filter(e=>e.position[0]===n.number).sort(order);

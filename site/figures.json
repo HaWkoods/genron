@@ -1,0 +1,44 @@
+[
+  {
+    "id": "K-000029",
+    "src": "figures/set-intersection.svg",
+    "alt": "二つの円 A と B の共通部分を青く塗った図。",
+    "caption": "図：二集合の共通部分 A ∩ B．"
+  },
+  {
+    "id": "K-000725",
+    "src": "figures/metric-balls.svg",
+    "alt": "Euclid平面の開球と閉球。開球の境界は破線、閉球の境界は実線。",
+    "caption": "図：Euclid平面における開球と閉球（境界の包含の相違）．"
+  },
+  {
+    "id": "K-000890",
+    "src": "figures/intermediate-value.svg",
+    "alt": "連続曲線が水平線 y=k と交わる点 c を示す図。",
+    "caption": "図：中間値の定理の模式図．f(a) ＜ k ＜ f(b) ならば f(c) = k を満たす c が存在する．"
+  },
+  {
+    "id": "K-000958",
+    "src": "figures/pointwise-convergence.svg",
+    "alt": "区間 [0,1] の x、x²、x⁵、x¹⁰ のグラフと、1 でだけ値 1 をとる極限函数。",
+    "caption": "図：fₙ(x)=xⁿ（0≤x≤1）の各点収束．極限は x=1 で不連続であり，一様収束ではない．"
+  },
+  {
+    "id": "K-000966",
+    "src": "figures/darboux-sums.svg",
+    "alt": "f(x)=x² を四等分した区間で下和と上和を長方形で表した図。",
+    "caption": "図：f(x)=x²（0≤x≤1）に対する同一分割のDarboux下和と上和．"
+  },
+  {
+    "id": "K-000879",
+    "src": "figures/orthogonal-projection.svg",
+    "alt": "ベクトル x を直線 M に直交射影し、垂直成分 x-P_M x を示した図。",
+    "caption": "図：二次元実内積空間における閉部分空間 M への直交射影．"
+  },
+  {
+    "id": "K-000943",
+    "src": "figures/relative-homotopy.svg",
+    "alt": "同じ端点 a,b を結ぶ上側と下側の道、およびその間の連続的な変形を示す模式図。",
+    "caption": "図：端点を固定した道のホモトピーの模式図．実平面では線形補間でこの変形を実現できる．"
+  }
+]

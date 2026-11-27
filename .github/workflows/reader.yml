@@ -14,6 +14,11 @@ on:
       - 'scripts/knowledge*.mjs'
       - '.github/workflows/reader.yml'
   workflow_dispatch:
+    inputs:
+      full_browser:
+        description: '全ノートの個別URLも検査する（通常は部単位で検査）'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -37,6 +42,8 @@ jobs:
           node scripts/test-statements-tex.mjs
           node scripts/build-site.mjs
       - name: Browser smoke test
+        env:
+          GENRON_BROWSER_FULL: ${{ inputs.full_browser && '1' || '0' }}
         run: node scripts/test-viewer-browser.mjs
       - uses: actions/upload-artifact@v4
         with:
