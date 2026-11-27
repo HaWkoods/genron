@@ -1,0 +1,157 @@
+% Web専用原稿．
+% 構成案：両側イデアル・生成・商環と同型定理．
+% 文献確認：Lang, Algebra, Ch. II（イデアルと剰余環の本文を確認）．
+\section{イデアル}
+% genron:begin K-000327
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000228
+\begin{defn}[イデアル]
+環 $A$ の加法群の部分群 $\mathfrak a$ が任意の $a\in A$，$x\in\mathfrak a$ に対して $ax,xa\in\mathfrak a$ を満たすとき，$\mathfrak a$ を（両側）イデアルという．可換環では左右いずれかの条件で足りる．
+\end{defn}
+% genron:end K-000327
+% genron:begin K-000328
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000327
+% genron:use K-000230
+% genron:use K-000250
+% genron:use K-000231
+% genron:use K-000165
+\begin{prop}[生成イデアル]
+$A$ のイデアルの任意の共通部分はイデアルである（空の共通部分は $A$ とする）．部分集合 $S\subseteq A$ を含む最小のイデアル $(S)$ は，$asb$（$a,b\in A$，$s\in S$）の有限和全体である．
+\end{prop}
+\begin{proof}
+共通部分は加法部分群であり，左右からの積について閉じる．有限和全体は空和 $0$ を含み，和と逆元及び左右からの積で閉じる（逆元は $a$ を $-a$ に替える）．$1s1=s$ であるから $S$ を含む．$S$ を含む任意のイデアルは各 $asb$ を含み，有限和も含むので最小性を得る．
+\end{proof}
+% genron:end K-000328
+% genron:begin K-000329
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000327
+% genron:use K-000251
+% genron:use K-000285
+% genron:use K-000286
+% genron:use K-000287
+\begin{prop}[環準同型の核]
+環準同型 $f:A\to B$ の核 $\ker f=\{a\in A\mid f(a)=0\}$ は $A$ のイデアルである．$B$ のイデアルの逆像はイデアルであり，$f$ が全射なら $A$ のイデアルの像もイデアルである．
+\end{prop}
+\begin{proof}
+加法部分群に関する主張は \GenronRef{K-000286}$ による．逆像について $f(ax)=f(a)f(x)$，$f(xa)=f(x)f(a)$ であるから吸収性が従う．核は零イデアルの逆像である．像については $b\in B$ を $f(a)$ と書くことができ，$bf(x)=f(ax)$，$f(x)b=f(xa)$ を用いる．
+\end{proof}
+% genron:end K-000329
+\section{商環}
+% genron:begin K-000330
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000327
+% genron:use K-000267
+% genron:use K-000249
+% genron:use K-000250
+% genron:use K-000268
+\begin{prop}[商環]
+イデアル $\mathfrak a$ に対し，加法商群 $A/\mathfrak a$ 上で
+\[
+(a+\mathfrak a)(b+\mathfrak a)=ab+\mathfrak a
+\]
+と定めると環となり，標準全射 $q:A\to A/\mathfrak a$ は環準同型である．
+\end{prop}
+\begin{proof}
+加法群は可換であるから $\mathfrak a$ は正規部分群である．$a'=a+x$，$b'=b+y$（$x,y\in\mathfrak a$）なら
+$a'b'-ab=ay+xb+xy\in\mathfrak a$ であり，積は代表元に依存しない．乗法の結合律・単位律・分配律は代表元についての環の法則から従う．標準全射は各演算と単位元を保存する．
+\end{proof}
+% genron:end K-000330
+% genron:begin K-000331
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000330
+% genron:use K-000288
+% genron:use K-000251
+\begin{prop}[商環の普遍性]
+イデアル $\mathfrak a$ と環準同型 $f:A\to B$ に対し，$f=\bar f\circ q$ を満たす環準同型 $\bar f:A/\mathfrak a\to B$ が存在することと $\mathfrak a\subseteq\ker f$ は同値である．存在するとき $\bar f$ は一意である．
+\end{prop}
+\begin{proof}
+必要性は $q(x)=0$（$x\in\mathfrak a$）による．十分性については \GenronRef{K-000288}$ を加法群に適用し，$\bar f(a+\mathfrak a)=f(a)$ と定まる．代表元で積と単位元を比較すれば環準同型である．一意性は $q$ の全射性による．
+\end{proof}
+% genron:end K-000331
+% genron:begin K-000332
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000331
+% genron:use K-000289
+% genron:use K-000252
+\begin{prop}[環準同型の第一同型定理]
+環準同型 $f:A\to B$ に対して
+\[
+ A/\ker f\longrightarrow f(A),\qquad a+\ker f\longmapsto f(a)
+\]
+は環同型である．
+\end{prop}
+\begin{proof}
+前命題によって環準同型が定まり，\GenronRef{K-000289}$ を加法群に適用すると全単射である．\GenronRef{K-000252}$ により逆写像も環準同型である．
+\end{proof}
+% genron:end K-000332
+% genron:begin K-000333
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000330
+% genron:use K-000292
+% genron:use K-000327
+% genron:use K-000251
+% genron:use K-000286
+\begin{prop}[イデアル対応]
+標準全射 $q:A\to A/\mathfrak a$ の像と逆像は，$\mathfrak a$ を含む $A$ のイデアル全体と $A/\mathfrak a$ のイデアル全体との間の互いに逆な順序保存写像を定める．
+\end{prop}
+\begin{proof}
+像及び逆像がイデアルとなることは核に関する命題と同じ吸収性の論証による．\GenronRef{K-000292}$ により加法部分群について像と逆像は互いに逆であり，包含を保存する．
+\end{proof}
+% genron:end K-000333
+% genron:begin K-000334
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000327
+\begin{prop}[単位元を含むイデアル]
+イデアル $\mathfrak a$ が $1_A$ を含めば任意の $a\in A$ は $a1_A\in\mathfrak a$ であり，$\mathfrak a=A$ である．従って真のイデアルは単位元を含まない．
+\end{prop}
+% genron:end K-000334

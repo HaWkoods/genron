@@ -1,0 +1,141 @@
+% Web専用原稿．
+% 構成案：差の同値関係・環演算・埋込みと順序・普遍性．
+% 文献確認：Lang, Algebra, Ch. II（環の章の目次及び商環の本文を確認）．以下の自然数対の構成は既出自然数論から独自に論証する．
+\section{自然数の差}
+% genron:begin K-000321
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000053
+% genron:use K-000052
+\begin{defn}[整数環]
+自然数の対の集合 $\mathbb N\times\mathbb N$ に
+\[
+(a,b)\sim(c,d)\quad\Longleftrightarrow\quad a+d=b+c
+\]
+と定める．この関係は同値関係である．商集合を $\mathbb Z$ と書き，$(a,b)$ の同値類を $[a,b]$ と記す．
+\end{defn}
+\begin{proof}
+反射性及び対称性は加法の可換性から従う．$a+d=b+c$，$c+f=d+e$ とすれば，両辺を加え $c+d$ を簡約して $a+f=b+e$ を得る．ここで \GenronRef{K-000108}$ を用いた．従って推移性も成立し，\GenronRef{K-000053}$ により商集合が存在する．
+\end{proof}
+% genron:end K-000321
+% genron:begin K-000322
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000321
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000249
+\begin{prop}[整数の加法と乗法]
+$\mathbb Z$ 上に
+\[
+\begin{aligned}
+[a,b]+[c,d]&=[a+c,b+d],\\
+[a,b][c,d]&=[ac+bd,ad+bc]
+\end{aligned}
+\]
+と定めると，$\mathbb Z$ は加法単位元 $[0,0]$，乗法単位元 $[1,0]$ を持つ可換環となる．$-[a,b]=[b,a]$ である．
+\end{prop}
+\begin{proof}
+$a+b'=b+a'$ とする．加法の代表元の独立性はこの等式に $c+d$ を加えて得られる．乗法については
+\[
+(ac+bd)+(a'd+b'c)=(ad+bc)+(a'c+b'd)
+\]
+である．実際左辺は $(a+b')c+(b+a')d$，右辺は $(b+a')c+(a+b')d$ に等しい．従って第一因子の代表元を変えても積は変わらず，対称性から第二因子も同様である．加法の結合律・可換律は成分ごとの法則から従い，$[a+b,b+a]=[0,0]$ である．乗法の結合律は三対 $(a,b),(c,d),(e,f)$ について両結合の第一成分が $ace+bde+adf+bcf$，第二成分が $acf+bdf+ade+bce$ であることから従う．分配律も自然数の分配律で両成分を展開すれば一致する．単位元の性質は定義式から従う．
+\end{proof}
+% genron:end K-000322
+% genron:begin K-000323
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000321
+% genron:use K-000322
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000039
+\begin{prop}[自然数の整数への埋込み]
+写像 $\iota:\mathbb N\to\mathbb Z$，$n\mapsto[n,0]$ は単射で，加法・乗法及び $0,1$ を保存する．また任意の $x\in\mathbb Z$ は $\iota(a)-\iota(b)$ の形に書ける．
+\end{prop}
+\begin{proof}
+$[a,0]=[b,0]$ は $a=b$ を意味する．演算の保存は定義式による．$[a,b]=[a,0]+[0,b]$ であるから最後の主張を得る．以下 $\iota(n)$ を単に $n$ とも書く．
+\end{proof}
+% genron:end K-000323
+\section{順序と普遍性}
+% genron:begin K-000324
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000323
+% genron:use K-000322
+% genron:use K-000103
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000068
+\begin{prop}[整数の符号と順序]
+任意の整数は $\iota(n)$ 又は $-\iota(n)$ の形であり，両方の形を持つのは $0$ に限る．
+\[
+x\leq y\quad\Longleftrightarrow\quad y-x\in\iota(\mathbb N)
+\]
+は $\mathbb Z$ 上の全順序を定める．この順序は加法で不変であり，非負元の積は非負である．
+\end{prop}
+\begin{proof}
+$[a,b]$ について $b\leq a$ なら \GenronRef{K-000108}$ により $a=b+n$ となる $n$ が存在し，$[a,b]=[n,0]$ である．$a\leq b$ の場合も同様である．$[n,0]=[0,m]$ なら $n+m=0$ であり，$n=m=0$ となる（$0$ が自然数の最小元であることを用いる）．非負元は加法・乗法で閉じるから反射性，推移性及び積に関する主張が従う．反対称性は両符号を持つ元が $0$ に限ること，全順序性は差の符号の分類による．加法不変性は $(y+t)-(x+t)=y-x$ から従う．
+\end{proof}
+% genron:end K-000324
+% genron:begin K-000325
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000323
+% genron:use K-000322
+% genron:use K-000249
+% genron:use K-000250
+% genron:use K-000251
+% genron:use K-000100
+% genron:use K-000105
+% genron:use K-000108
+% genron:use K-000109
+\begin{prop}[整数環の普遍性]
+任意の環 $R$ に対して，単位元を保存する環準同型 $\mathbb Z\to R$ はただ一つ存在する．
+\end{prop}
+\begin{proof}
+再帰によって $u_0=0_R$，$u_{n+1}=u_n+1_R$ と定める．帰納法により $u_{m+n}=u_m+u_n$，$u_{mn}=u_mu_n$ が成り立つ（後者は $n$ に関する帰納法と分配律による）．$[a,b]\mapsto u_a-u_b$ とおけば，同値関係の定義により値は代表元に依存しない．加法及び乗法の保存は整数の演算式と \GenronRef{K-000250}$ による．単位元も保存する．任意の単位的環準同型は自然数 $n$ を $u_n$ に移し，差を保存するので一意である．
+\end{proof}
+% genron:end K-000325
+% genron:begin K-000326
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000322
+% genron:use K-000323
+\begin{prop}[整数の差の計算]
+$[2,5]+[4,1]=[6,6]=[0,0]$ である．積は $[8+5,2+20]=[13,22]=[0,9]$ となる．
+\end{prop}
+% genron:end K-000326

@@ -1,0 +1,174 @@
+% Web専用原稿．
+% 構成案：左加群・部分加群・準同型・商加群と同型定理．
+% 文献確認：Lang, Algebra, Ch. III §§1–3（目次を確認；個々の証明は既出群・環論から独自に再構成）．
+\section{加群と準同型}
+% genron:begin K-000335
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000225
+% genron:use K-000159
+\begin{defn}[左加群]
+環 $A$ に対し，可換群 $M$ と写像 $A\times M\to M$，$(a,x)\mapsto ax$ が
+\[
+\begin{aligned}
+a(x+y)&=ax+ay,&(a+b)x&=ax+bx,\\
+(ab)x&=a(bx),&1_Ax&=x
+\end{aligned}
+\]
+を満たすとき $M$ を左 $A$ 加群という．以下加群は左加群を意味する．
+\end{defn}
+% genron:end K-000335
+% genron:begin K-000336
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000227
+% genron:use K-000250
+\begin{prop}[加群の零元と符号]
+任意の $a\in A$，$x\in M$ に対して $0_Ax=a0_M=0_M$，$(-a)x=a(-x)=-ax$ が成り立つ．
+\end{prop}
+\begin{proof}
+$0_Ax=(0_A+0_A)x=0_Ax+0_Ax$ であるから加法群の簡約律によって $0_Ax=0_M$ を得る．$a0_M$ も同様である．$(a+(-a))x=0_M$，$a(x+(-x))=0_M$ を分配すれば逆元の一意性から符号の法則を得る．
+\end{proof}
+% genron:end K-000336
+% genron:begin K-000337
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000228
+% genron:use K-000229
+\begin{defn}[部分加群]
+加群 $M$ の加法部分群 $N$ が任意の $a\in A$，$x\in N$ に対して $ax\in N$ を満たすとき，$N$ を部分加群という．従って非空部分集合 $N$ が部分加群であるためには差とスカラー倍で閉じることが必要十分である．
+\end{defn}
+% genron:end K-000337
+% genron:begin K-000338
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000282
+% genron:use K-000047
+\begin{defn}[加群準同型]
+$A$ 加群 $M,N$ の間の写像 $f:M\to N$ が
+\[
+ f(x+y)=f(x)+f(y),\qquad f(ax)=af(x)
+\]
+を満たすとき $A$ 準同型という．これらの写像全体を $\operatorname{Hom}_A(M,N)$ と書く．
+\end{defn}
+% genron:end K-000338
+% genron:begin K-000339
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000337
+% genron:use K-000338
+% genron:use K-000285
+% genron:use K-000286
+% genron:use K-000284
+\begin{prop}[加群準同型の核と像]
+$A$ 準同型 $f:M\to N$ の核及び像は部分加群である．$f$ が全単射なら逆写像も $A$ 準同型である．
+\end{prop}
+\begin{proof}
+加法部分群に関しては \GenronRef{K-000286}$ による．$f(ax)=af(x)$ であるから核及び像はスカラー倍に閉じる．全単射の場合，$y=f(x)$ と書けば $f^{-1}(ay)=f^{-1}(f(ax))=ax$ である．加法の保存は \GenronRef{K-000284}$ による．
+\end{proof}
+% genron:end K-000339
+\section{商加群と生成}
+% genron:begin K-000340
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000337
+% genron:use K-000335
+% genron:use K-000267
+% genron:use K-000268
+\begin{prop}[商加群]
+部分加群 $N\subseteq M$ に対して加法商群 $M/N$ に
+\[
+ a(x+N)=ax+N
+\]
+で作用を定めると $A$ 加群となる．標準全射は $A$ 準同型である．
+\end{prop}
+\begin{proof}
+$x-y\in N$ なら $a(x-y)\in N$ であるから値は代表元に依存しない．加群の各条件は代表元についての条件から従う．標準全射は加法と作用を保存する．
+\end{proof}
+% genron:end K-000340
+% genron:begin K-000341
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000340
+% genron:use K-000338
+% genron:use K-000289
+% genron:use K-000288
+\begin{prop}[加群準同型の第一同型定理]
+$A$ 準同型 $f:M\to N$ と部分加群 $P\subseteq M$ について，$f$ は $M/P$ を経由する $A$ 準同型に分解することと $P\subseteq\ker f$ は同値であり，分解は一意である．特に $M/\ker f$ と $f(M)$ は標準的に同型である．
+\end{prop}
+\begin{proof}
+加法群として \GenronRef{K-000288}$ を適用すると分解写像は $x+P\mapsto f(x)$ に限る．$f(ax)=af(x)$ によりスカラー倍を保存する．$P=\ker f$ の場合には \GenronRef{K-000289}$ によって像への写像は全単射である．
+\end{proof}
+% genron:end K-000341
+% genron:begin K-000342
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000337
+% genron:use K-000335
+% genron:use K-000230
+% genron:use K-000165
+\begin{prop}[生成部分加群]
+部分集合 $S\subseteq M$ を含む最小の部分加群は，$a_ix_i$（$a_i\in A$，$x_i\in S$）の有限和全体である．
+\end{prop}
+\begin{proof}
+この集合は空和を含み，和，逆元及びスカラー倍で閉じ，$1_Ax=x$ によって $S$ を含む．$S$ を含む任意の部分加群は各 $a_ix_i$ と有限和を含む．
+\end{proof}
+% genron:end K-000342
+% genron:begin K-000343
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000249
+\begin{prop}[環自身の左加群]
+環 $A$ の加法群に左乗法を作用として入れると $A$ 加群となる．加群の四条件は環の分配律・結合律・単位律にほかならない．
+\end{prop}
+% genron:end K-000343

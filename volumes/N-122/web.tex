@@ -1,0 +1,149 @@
+% Web専用原稿．
+% 構成案：共役作用・中心・中心化群・類等式・p群への適用前の計数公式．
+% 文献確認：Lang, Algebra, Ch. I §5（群作用・軌道の本文を前回確認；今回作用の既刊原稿を前提に再構成）．
+\section{共役と中心化群}
+% genron:begin K-000357
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000228
+% genron:use K-000229
+% genron:use K-000306
+% genron:use K-000309
+\begin{defn}[中心と中心化群]
+群 $G$ の部分集合 $S$ に対し
+\[
+ C_G(S)=\{g\in G\mid \forall s\in S,\ gs=sg\}
+\]
+を中心化群という．$Z(G)=C_G(G)$ を $G$ の中心という．中心化群は部分群であり，中心は正規部分群である．
+\end{defn}
+\begin{proof}
+$1\in C_G(S)$ であり，$g,h$ が $s$ と可換なら $h^{-1}$ も $s$ と可換であるから $gh^{-1}$ も $s$ と可換である．部分群判定を適用する．中心の元 $z$ は任意の $g$ に対して $gzg^{-1}=z$ であるから正規性が従う．
+\end{proof}
+% genron:end K-000357
+% genron:begin K-000358
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000357
+% genron:use K-000306
+% genron:use K-000307
+% genron:use K-000309
+\begin{defn}[共役類]
+共役作用における $x\in G$ の軌道 $\{gxg^{-1}\mid g\in G\}$ を共役類という．その安定化部分群は $C_G(\{x\})$ に等しい．これは $gxg^{-1}=x$ と $gx=xg$ が同値であることによる．
+\end{defn}
+% genron:end K-000358
+% genron:begin K-000359
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000311
+% genron:use K-000315
+% genron:use K-000313
+% genron:use K-000309
+% genron:use K-000113
+\begin{prop}[有限群の軌道の濃度]
+有限群 $G$ が集合 $X$ に作用するとき，任意の $x\in X$ について
+\[
+ |Gx|=[G:G_x],\qquad |Gx|\,|G_x|=|G|
+\]
+が成り立つ．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000311}$ によって $G/G_x$ と $Gx$ は全単射を持ち，前者は有限である．\GenronRef{K-000315}$ を部分群 $G_x$ に適用する．
+\end{proof}
+% genron:end K-000359
+\section{有限集合上の作用の計数}
+% genron:begin K-000360
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000359
+% genron:use K-000308
+% genron:use K-000115
+% genron:use K-000119
+% genron:use K-000113
+\begin{prop}[有限集合の軌道分解公式]
+有限群 $G$ が有限集合 $X$ に作用するとき，軌道全体を $\mathcal C$ とし，各 $C\in\mathcal C$ から $x_C\in C$ をとると
+\[
+ |X|=\sum_{C\in\mathcal C}|C|
+      =\sum_{C\in\mathcal C}[G:G_{x_C}]
+\]
+である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000308}$ により軌道は分割をなす．軌道全体は $X$ の写像による像で有限であるため，\GenronRef{K-000119}$ により代表元を選べる．有限個の互いに素な有限集合の合併の濃度は各濃度の和であることは \GenronRef{K-000115}$ と帰納法による．各軌道について前命題を用いれば第二の等号を得る．
+\end{proof}
+% genron:end K-000360
+% genron:begin K-000361
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000360
+% genron:use K-000357
+% genron:use K-000358
+\begin{prop}[類等式]
+有限群 $G$ の中心に属さない元の共役類の代表元を $x_1,\ldots,x_r$ とすると
+\[
+ |G|=|Z(G)|+\sum_{i=1}^{r}[G:C_G(\{x_i\})]
+\]
+が成り立つ．
+\end{prop}
+\begin{proof}
+共役作用に関する一元軌道の元はすべての $g\in G$ と可換な元，すなわち中心の元に限る．一元軌道の寄与をまとめ，その他の軌道について \GenronRef{K-000360}$ と共役作用の安定化部分群の表示を用いる．
+\end{proof}
+% genron:end K-000361
+% genron:begin K-000362
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000229
+% genron:use K-000265
+% genron:use K-000226
+\begin{defn}[正規化群]
+部分群 $H\subseteq G$ に対し $N_G(H)=\{g\in G\mid gHg^{-1}=H\}$ を正規化群という．これは $H$ を含む部分群であり，$H$ は $N_G(H)$ の正規部分群である．
+\end{defn}
+\begin{proof}
+単位元は $H$ を共役で保つ．$g,h$ が $H$ を保つなら $h^{-1}$ も保つので $gh^{-1}$ も保つ．従って部分群である．$h\in H$ について $hHh^{-1}=H$ であるから $H$ を含み，最後の主張は定義から従う．
+\end{proof}
+% genron:end K-000362
+% genron:begin K-000363
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000357
+% genron:use K-000358
+\begin{prop}[可換群の類等式]
+$G$ が可換群なら $gxg^{-1}=x$ であり，各共役類は $\{x\}$ に等しい．この場合 $Z(G)=G$ となり，類等式の非中心部分は空和となる．
+\end{prop}
+% genron:end K-000363

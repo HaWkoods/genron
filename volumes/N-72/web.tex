@@ -1,0 +1,139 @@
+% Web専用原稿．
+% 構成案：有限台係数列・Cauchy積・多項式環・評価の普遍性・次数．
+% 文献確認：Lang, Algebra, Ch. II §3（p.97–98，有限台函数による多項式の導入本文を確認）．
+\section{形式多項式}
+% genron:begin K-000350
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000249
+% genron:use K-000047
+% genron:use K-000110
+% genron:use K-000113
+\begin{defn}[形式多項式]
+可換環 $A$ に対し，函数 $f:\mathbb N\to A$ で $\{n\in\mathbb N\mid f(n)\ne0\}$ が有限となるものを形式多項式という．$f(n)$ を $a_n$ と書き，$f$ を $\sum_{n\geq0}a_nX^n$ と表す．これは有限個の非零係数を持つという形式的記号であり，無限級数の収束を意味しない．
+\end{defn}
+% genron:end K-000350
+% genron:begin K-000351
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000350
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000100
+% genron:use K-000113
+% genron:use K-000120
+% genron:use K-000249
+% genron:use K-000250
+\begin{prop}[多項式環]
+形式多項式 $f=(a_n)$，$g=(b_n)$ に対し
+\[
+ (f+g)_n=a_n+b_n,\qquad
+ (fg)_n=\sum_{i+j=n}a_ib_j
+\]
+と定めると可換環となる．これを $A[X]$ と書く．
+\end{prop}
+\begin{proof}
+$i+j=n$ なら $i,j\leq n$ であるから和は有限である．有限台の集合をそれぞれ $S,T$ とすると和の台は $S\cup T$ に，積の台は $\{i+j\mid i\in S,j\in T\}$ に含まれるので有限である．加法は成分ごとの可換群演算である．積の結合律は $(fg)h$ と $f(gh)$ の第 $n$ 係数がともに $\sum_{i+j+k=n}a_ib_jc_k$ に等しいことによる．有限和の分配律を用いた．可換性は添字の交換，分配律は各係数の分配律による．定数項が $1_A$ で他係数が $0$ の列が乗法単位元となる．
+\end{proof}
+% genron:end K-000351
+% genron:begin K-000352
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000351
+% genron:use K-000168
+% genron:use K-000169
+% genron:use K-000100
+\begin{prop}[多項式の一意表示]
+$a\in A$ を定数項が $a$ で他係数が $0$ の多項式に移す写像は単射環準同型である．第 $1$ 係数が $1_A$ で他が $0$ の多項式を $X$ とすれば，各形式多項式は有限和 $\sum_i a_iX^i$ に一意に表示される（零係数の付加・除去を除く）．
+\end{prop}
+\begin{proof}
+定数多項式の演算は係数の定義から従う．$X^i$ は第 $i$ 係数が $1_A$ で他係数が $0$ であることが帰納法で従う．従って有限和の第 $i$ 係数は $a_i$ であり，存在及び一意性を得る．
+\end{proof}
+% genron:end K-000352
+\section{評価と次数}
+% genron:begin K-000353
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000351
+% genron:use K-000352
+% genron:use K-000169
+% genron:use K-000251
+\begin{prop}[多項式環の普遍性]
+可換環 $B$，環準同型 $u:A\to B$ 及び $b\in B$ に対し，定数上で $u$ に一致し $X$ を $b$ に移す環準同型 $A[X]\to B$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+多項式 $\sum_i a_iX^i$ を $\sum_i u(a_i)b^i$ に移す．一意表示により値が定まり，有限和と積の分配律及び $b^{i+j}=b^ib^j$ によって加法・乗法を保存する．単位元を保存する．逆にこの二条件を満たす準同型の値は各項について既に定まるから一意である．
+\end{proof}
+% genron:end K-000353
+% genron:begin K-000354
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000350
+% genron:use K-000103
+% genron:use K-000110
+% genron:use K-000104
+\begin{defn}[多項式の次数]
+非零多項式 $f=\sum_i a_iX^i$ の非零係数の添字集合の最大元を $\deg f$ といい，その係数を最高次係数という．有限な非空の自然数集合が最大元を持つことは有限集合への一元の添加に関する帰納法から従う．零多項式の次数はここでは定めない．
+\end{defn}
+% genron:end K-000354
+% genron:begin K-000355
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000354
+% genron:use K-000351
+% genron:use K-000108
+\begin{prop}[積の次数]
+非零多項式 $f,g$ の最高次係数 $a_m,b_n$ が $a_mb_n\ne0$ を満たすなら，$fg\ne0$ かつ $\deg(fg)=m+n$ である．
+\end{prop}
+\begin{proof}
+非零な項は $i\leq m$，$j\leq n$ を満たすから $i+j\leq m+n$ である．等号の場合は自然数の加法の簡約律により $i=m$，$j=n$ でなければならない．従って第 $m+n$ 係数は $a_mb_n$ に等しく，それより上の係数は零である．
+\end{proof}
+% genron:end K-000355
+% genron:begin K-000356
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000351
+% genron:use K-000352
+\begin{prop}[一次式の積]
+分配律を適用し，$X$ と定数多項式の可換性により
+\[
+(X+a)(X+b)=X^2+(a+b)X+ab
+\]
+を得る．
+\end{prop}
+% genron:end K-000356

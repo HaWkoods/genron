@@ -450,7 +450,7 @@
       {
         "tex": "\\mathbb Z",
         "label": "整数環",
-        "id": null
+        "id": "K-000321"
       },
       {
         "tex": "\\mathbb Q",
@@ -535,17 +535,17 @@
       {
         "tex": "Z(G)",
         "label": "群の中心",
-        "id": null
+        "id": "K-000357"
       },
       {
         "tex": "C_G(S)",
         "label": "中心化群",
-        "id": null
+        "id": "K-000357"
       },
       {
         "tex": "N_G(H)",
         "label": "正規化群",
-        "id": null
+        "id": "K-000362"
       },
       {
         "tex": "[G,G]",
@@ -605,7 +605,7 @@
       {
         "tex": "\\mathfrak a",
         "label": "イデアル",
-        "id": null
+        "id": "K-000327"
       },
       {
         "tex": "\\mathfrak p",
@@ -620,12 +620,12 @@
       {
         "tex": "(0)",
         "label": "零イデアル",
-        "id": null
+        "id": "K-000327"
       },
       {
         "tex": "(a_1,\\ldots,a_n)",
         "label": "生成イデアル",
-        "id": null
+        "id": "K-000328"
       },
       {
         "tex": "A^\\times",
@@ -635,7 +635,7 @@
       {
         "tex": "A/\\mathfrak a",
         "label": "商環",
-        "id": null
+        "id": "K-000330"
       },
       {
         "tex": "\\sqrt{\\mathfrak a}",
@@ -680,7 +680,7 @@
       {
         "tex": "A[X_1,\\ldots,X_n]",
         "label": "多項式環",
-        "id": null
+        "id": "K-000351"
       },
       {
         "tex": "A[[X]]",
@@ -690,7 +690,7 @@
       {
         "tex": "\\deg f",
         "label": "多項式の次数",
-        "id": null
+        "id": "K-000354"
       },
       {
         "tex": "\\operatorname{char}K",
@@ -750,7 +750,7 @@
       {
         "tex": "\\operatorname{Hom}_A(M,N)",
         "label": "加群準同型全体",
-        "id": null
+        "id": "K-000338"
       },
       {
         "tex": "\\operatorname{End}_A(M)",

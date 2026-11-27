@@ -9993,6 +9993,1296 @@
       "source": "volumes/N-19/web.tex",
       "review": "2026-11-27 ChatGPT：数学的自己査読，Lang Algebra 第I章との構成比較，既存知識との照合．CI及びWeb実画面は未確認．",
       "heading_kind": "proposition"
+    },
+    {
+      "id": "K-000321",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "整数環",
+      "statement": "ℤ=(ℕ×ℕ)/∼，(a,b)∼(c,d) ⇔ a+d=b+c．",
+      "assumptions": [],
+      "position": [
+        11,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000108",
+        "K-000109",
+        "K-000053",
+        "K-000052"
+      ],
+      "status": "verified",
+      "source": "volumes/N-11/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000322",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数の加法と乗法",
+      "statement": "[a,b]+[c,d]=[a+c,b+d]， [a,b][c,d]=[ac+bd,ad+bc] により ℤ は可換環となる．",
+      "assumptions": [],
+      "position": [
+        11,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000321",
+        "K-000108",
+        "K-000109",
+        "K-000249"
+      ],
+      "status": "verified",
+      "source": "volumes/N-11/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000323",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自然数の整数への埋込み",
+      "statement": "n↦[n,0] は加法・乗法・0・1 を保存する単射．すべての整数は二自然数の差．",
+      "assumptions": [],
+      "position": [
+        11,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000321",
+        "K-000322",
+        "K-000108",
+        "K-000109",
+        "K-000039"
+      ],
+      "status": "verified",
+      "source": "volumes/N-11/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000324",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数の符号と順序",
+      "statement": "任意の整数は n 又は −n (n∈ℕ) の形．x≤y ⇔ y−x∈ℕ は加法で不変な全順序で，非負元の積は非負．",
+      "assumptions": [],
+      "position": [
+        11,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000323",
+        "K-000322",
+        "K-000103",
+        "K-000108",
+        "K-000109",
+        "K-000068"
+      ],
+      "status": "verified",
+      "source": "volumes/N-11/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000325",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数環の普遍性",
+      "statement": "任意の単位元を持つ環 R に ℤ→R の単位的環準同型が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        11,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000323",
+        "K-000322",
+        "K-000249",
+        "K-000250",
+        "K-000251",
+        "K-000100",
+        "K-000105",
+        "K-000108",
+        "K-000109"
+      ],
+      "status": "verified",
+      "source": "volumes/N-11/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000326",
+      "kind": "worked_example",
+      "heading_kind": "worked_example",
+      "title": "整数の差の計算",
+      "statement": "[2,5]+[4,1]=0， [2,5][4,1]=−9．",
+      "assumptions": [],
+      "position": [
+        11,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000322",
+        "K-000323"
+      ],
+      "status": "verified",
+      "source": "volumes/N-11/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．",
+      "problem_tex": "整数の定義に従い，$[2,5]$ と $[4,1]$ の和及び積を求めよ．"
+    },
+    {
+      "id": "K-000327",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "イデアル",
+      "statement": "環 A の加法部分群 I が AI⊆I，IA⊆I を満たすとき両側イデアルという．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000249",
+        "K-000228"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000328",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "生成イデアル",
+      "statement": "イデアルの共通部分はイデアル．S⊆A の生成イデアルは asb (a,b∈A,s∈S) の有限和全体．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000327",
+        "K-000230",
+        "K-000250",
+        "K-000231",
+        "K-000165"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000329",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "環準同型の核",
+      "statement": "環準同型 f:A→B の核はイデアル．I がイデアルなら f^{-1}(I) はイデアル．f が全射なら f(J) もイデアル．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000327",
+        "K-000251",
+        "K-000285",
+        "K-000286",
+        "K-000287"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000330",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商環",
+      "statement": "イデアル I に対し加法商群 A/I 上の (a+I)(b+I)=ab+I は環を定める．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000327",
+        "K-000267",
+        "K-000249",
+        "K-000250",
+        "K-000268"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000331",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商環の普遍性",
+      "statement": "f:A→B が A/I を経由する環準同型に分解する必要十分条件は I⊆ker f．分解は一意．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000330",
+        "K-000288",
+        "K-000251"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000332",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "環準同型の第一同型定理",
+      "statement": "A/ker f≅im f が環同型として成立する．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000331",
+        "K-000289",
+        "K-000252"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000333",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "イデアル対応",
+      "statement": "A/I のイデアルは I を含む A のイデアルと標準全射の像・逆像により順序同型．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000330",
+        "K-000292",
+        "K-000327",
+        "K-000251",
+        "K-000286"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000334",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "単位元を含むイデアル",
+      "statement": "イデアル I が 1 を含めば I=A．",
+      "assumptions": [],
+      "position": [
+        69,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000327"
+      ],
+      "status": "verified",
+      "source": "volumes/N-69/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000335",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "左加群",
+      "statement": "環 A 上の左加群は可換群 M と作用 A×M→M で分配律・結合律・単位律を満たすもの．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000249",
+        "K-000225",
+        "K-000159"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000336",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加群の零元と符号",
+      "statement": "0_Ax=a0_M=0_M，(−a)x=a(−x)=−ax．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000335",
+        "K-000227",
+        "K-000250"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000337",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "部分加群",
+      "statement": "加群 M の加法部分群 N が A の作用で閉じるとき部分加群という．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000335",
+        "K-000228",
+        "K-000229"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000338",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "加群準同型",
+      "statement": "f:M→N が加法及び A の作用を保存するとき A 準同型という．その全体を Hom_A(M,N) と書く．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000335",
+        "K-000282",
+        "K-000047"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000339",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加群準同型の核と像",
+      "statement": "核・像は部分加群であり，全単射な加群準同型は逆も加群準同型．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000337",
+        "K-000338",
+        "K-000285",
+        "K-000286",
+        "K-000284"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000340",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商加群",
+      "statement": "部分加群 N⊆M に対して M/N 上で a(x+N)=ax+N は加群を定める．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000337",
+        "K-000335",
+        "K-000267",
+        "K-000268"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000341",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加群準同型の第一同型定理",
+      "statement": "f:M→N に対して M/ker f≅im f が A 加群同型として成立する．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000340",
+        "K-000338",
+        "K-000289",
+        "K-000288"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000342",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "生成部分加群",
+      "statement": "S⊆M を含む最小部分加群は ax (a∈A,x∈S) の有限和全体．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000337",
+        "K-000335",
+        "K-000230",
+        "K-000165"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000343",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "環自身の左加群",
+      "statement": "環 A は左乗法により A 加群となる．",
+      "assumptions": [],
+      "position": [
+        16,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000335",
+        "K-000249"
+      ],
+      "status": "verified",
+      "source": "volumes/N-16/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000344",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "群の直積",
+      "statement": "群族 (G_i) の直積は成分ごとの積によって群となる．",
+      "assumptions": [],
+      "position": [
+        65,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000225",
+        "K-000047",
+        "K-000048",
+        "K-000226"
+      ],
+      "status": "verified",
+      "source": "volumes/N-65/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000345",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "群の直積の普遍性",
+      "statement": "任意の群 H と準同型族 f_i:H→G_i に対し射影との合成が f_i となる準同型 H→∏G_i が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        65,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000344",
+        "K-000048",
+        "K-000282"
+      ],
+      "status": "verified",
+      "source": "volumes/N-65/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000346",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "直積への標準埋込み",
+      "statement": "各因子 G_i は他成分を単位元とする写像により直積群に単射準同型を持つ．",
+      "assumptions": [],
+      "position": [
+        65,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000344",
+        "K-000282",
+        "K-000039"
+      ],
+      "status": "verified",
+      "source": "volumes/N-65/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000347",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "可換群の直和",
+      "statement": "可換群族の直積のうち有限個の成分を除き 0 の元全体を直和 ⊕G_i という．",
+      "assumptions": [],
+      "position": [
+        65,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000344",
+        "K-000346",
+        "K-000228",
+        "K-000113",
+        "K-000120"
+      ],
+      "status": "verified",
+      "source": "volumes/N-65/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000348",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "直和の普遍性",
+      "statement": "可換群 H と準同型族 f_i:G_i→H に対し f∘j_i=f_i となる準同型 ⊕G_i→H が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        65,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000347",
+        "K-000346",
+        "K-000165",
+        "K-000166",
+        "K-000167",
+        "K-000282",
+        "K-000160"
+      ],
+      "status": "verified",
+      "source": "volumes/N-65/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000349",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "無限直積と直和の相違",
+      "statement": "非自明な可換群 G と無限集合 I について G の I 個の直和は直積の真部分群．",
+      "assumptions": [],
+      "position": [
+        65,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000347"
+      ],
+      "status": "verified",
+      "source": "volumes/N-65/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000350",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "形式多項式",
+      "statement": "可換環 A 上の形式多項式は ℕ→A の有限台函数．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000249",
+        "K-000047",
+        "K-000110",
+        "K-000113"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000351",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式環",
+      "statement": "係数列に成分ごとの和と (fg)_n=Σ_{i+j=n}a_i b_j を入れると可換環 A[X] となる．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000350",
+        "K-000108",
+        "K-000109",
+        "K-000100",
+        "K-000113",
+        "K-000120",
+        "K-000249",
+        "K-000250"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000352",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式の一意表示",
+      "statement": "A→A[X] は定数多項式への単射環準同型．X=(0,1,0,…) とすると f=Σ a_i X^i は係数に関して一意．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000351",
+        "K-000168",
+        "K-000169",
+        "K-000100"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000353",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式環の普遍性",
+      "statement": "可換環 A,B，環準同型 u:A→B，b∈B に対し u を延長し X↦b とする準同型 A[X]→B が一意．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000351",
+        "K-000352",
+        "K-000169",
+        "K-000251"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000354",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "多項式の次数",
+      "statement": "非零多項式 f の次数 deg f は非零係数の添字の最大元．零多項式の次数はここでは定めない．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000350",
+        "K-000103",
+        "K-000110",
+        "K-000104"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000355",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積の次数",
+      "statement": "非零 f,g の最高次係数の積が非零なら deg(fg)=deg f+deg g．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000354",
+        "K-000351",
+        "K-000108"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000356",
+      "kind": "worked_example",
+      "heading_kind": "worked_example",
+      "title": "一次式の積",
+      "statement": "(X+a)(X+b)=X²+(a+b)X+ab．",
+      "assumptions": [],
+      "position": [
+        72,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000351",
+        "K-000352"
+      ],
+      "status": "verified",
+      "source": "volumes/N-72/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．",
+      "problem_tex": "可換環 $A$ と $a,b\\in A$ に対し，$(X+a)(X+b)$ の各係数を求めよ．"
+    },
+    {
+      "id": "K-000357",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "中心と中心化群",
+      "statement": "C_G(S)={g∈G|∀s∈S,gs=sg}，Z(G)=C_G(G)．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000225",
+        "K-000228",
+        "K-000229",
+        "K-000306",
+        "K-000309"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000358",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "共役類",
+      "statement": "共役作用の軌道を共役類という．x の安定化部分群は C_G({x})．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000357",
+        "K-000306",
+        "K-000307",
+        "K-000309"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000359",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限群の軌道の濃度",
+      "statement": "有限群 G の作用の軌道 Gx の濃度は [G:G_x] であり，|Gx||G_x|=|G|．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000311",
+        "K-000315",
+        "K-000313",
+        "K-000309",
+        "K-000113"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000360",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限集合の軌道分解公式",
+      "statement": "有限群 G の有限集合 X への作用について |X|=Σ_C |C|=Σ_C [G:G_xC]．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000359",
+        "K-000308",
+        "K-000115",
+        "K-000119",
+        "K-000113"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000361",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "類等式",
+      "statement": "有限群 G の非中心共役類から代表 x_i を選ぶと |G|=|Z(G)|+Σ_i[G:C_G({x_i})]．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000360",
+        "K-000357",
+        "K-000358"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000362",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "正規化群",
+      "statement": "N_G(H)={g∈G|gHg^{-1}=H} は部分群で H⊆N_G(H)．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000225",
+        "K-000229",
+        "K-000265",
+        "K-000226"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000363",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "可換群の類等式",
+      "statement": "可換群の共役類はすべて一元集合で，Z(G)=G．",
+      "assumptions": [],
+      "position": [
+        122,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000357",
+        "K-000358"
+      ],
+      "status": "verified",
+      "source": "volumes/N-122/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -10158,7 +11448,7 @@
       "number": 11,
       "title": "整数の構成",
       "area": "数体系",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         5,
         10
@@ -10167,7 +11457,8 @@
         "自然数の差による整数環"
       ],
       "treatise": "T-11",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 12,
@@ -10233,7 +11524,7 @@
       "number": 16,
       "title": "加群と準同型",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         10,
         64
@@ -10242,7 +11533,8 @@
         "部分加群・核・像・商加群"
       ],
       "treatise": "T-16",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 17,
@@ -10970,7 +12262,7 @@
       "number": 65,
       "title": "群の直積と直和",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         62,
         64
@@ -10979,7 +12271,8 @@
         "積の普遍性・可換群の直和"
       ],
       "treatise": "T-09",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 66,
@@ -11029,7 +12322,7 @@
       "number": 69,
       "title": "イデアルと商環",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         10,
         64
@@ -11038,7 +12331,8 @@
         "イデアル・商・同型定理"
       ],
       "treatise": "T-10",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 70,
@@ -11072,7 +12366,7 @@
       "number": 72,
       "title": "多項式環",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         10,
         5
@@ -11081,7 +12375,8 @@
         "形式多項式・評価準同型・普遍性"
       ],
       "treatise": "T-10",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 73,
@@ -11799,7 +13094,7 @@
       "number": 122,
       "title": "有限群の作用",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         19,
         68
@@ -11808,7 +13103,8 @@
         "類等式・共役・中心"
       ],
       "treatise": "T-19",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 123,

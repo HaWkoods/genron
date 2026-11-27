@@ -1,0 +1,120 @@
+% Web専用原稿．
+% 構成案：積群・普遍性・有限台直和とその普遍性．
+% 文献確認：Lang, Algebra, Ch. I §12（積への標準埋込みに関する本文を確認）．
+\section{直積}
+% genron:begin K-000344
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000225
+% genron:use K-000047
+% genron:use K-000048
+% genron:use K-000226
+\begin{prop}[群の直積]
+群族 $(G_i)_{i\in I}$ の直積集合に $(xy)_i=x_iy_i$ と成分ごとの積を入れると群となる．単位元は $(1_{G_i})_{i\in I}$，逆元は $(x_i^{-1})_{i\in I}$ である．空添字の場合は一元群となる．
+\end{prop}
+\begin{proof}
+値が一意に指定される各族は \GenronRef{K-000047}$ の直積の元である．結合律と単位律は各成分で成立し，指定した逆元との積は両順序で単位元に等しい．成分がすべて可換群なら直積も可換である．
+\end{proof}
+% genron:end K-000344
+% genron:begin K-000345
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000344
+% genron:use K-000048
+% genron:use K-000282
+\begin{prop}[群の直積の普遍性]
+射影 $p_i:\prod_i G_i\to G_i$ は群準同型である．群 $H$ と群準同型族 $f_i:H\to G_i$ に対し，$p_i\circ f=f_i$ となる群準同型 $f:H\to\prod_i G_i$ が一意に存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000048}$ により写像 $f(h)=(f_i(h))_{i\in I}$ が一意に定まる．各成分で $f_i(hk)=f_i(h)f_i(k)$ であるから $f$ は群準同型となる．
+\end{proof}
+% genron:end K-000345
+% genron:begin K-000346
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000344
+% genron:use K-000282
+% genron:use K-000039
+\begin{prop}[直積への標準埋込み]
+各 $i\in I$ に対し $j_i:G_i\to\prod_k G_k$ を第 $i$ 成分が $g$，他成分が単位元となる元への対応とする．$j_i$ は単射準同型であり，相異なる因子の像の元は互いに可換である．
+\end{prop}
+\begin{proof}
+演算の保存は各成分で成立し，$p_i\circ j_i=\mathrm{id}_{G_i}$ により単射である．異なる成分にのみ非単位元を持つ二元は各成分で可換である．
+\end{proof}
+% genron:end K-000346
+\section{可換群の直和}
+% genron:begin K-000347
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000344
+% genron:use K-000346
+% genron:use K-000228
+% genron:use K-000113
+% genron:use K-000120
+\begin{defn}[可換群の直和]
+可換群族 $(G_i)_{i\in I}$ に対し
+\[
+ \bigoplus_{i\in I}G_i=\{x\in\prod_iG_i\mid
+ \{i\in I\mid x_i\ne0\}\text{ は有限}\}
+\]
+を直和という．これは直積の部分群である．有限添字の場合は直積と一致する．
+\end{defn}
+\begin{proof}
+零元の非零成分の集合は空である．$x-y$ の非零成分の集合は $x,y$ の非零成分の集合の合併に含まれ，有限である（\GenronRef{K-000120}$，\GenronRef{K-000113}$）．従って部分群判定が適用できる．
+\end{proof}
+% genron:end K-000347
+% genron:begin K-000348
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000347
+% genron:use K-000346
+% genron:use K-000165
+% genron:use K-000166
+% genron:use K-000167
+% genron:use K-000282
+% genron:use K-000160
+\begin{prop}[直和の普遍性]
+可換群 $H$ と準同型族 $f_i:G_i\to H$ に対し，各標準埋込み $j_i$ について $f\circ j_i=f_i$ を満たす群準同型 $f:\bigoplus_i G_i\to H$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+$x$ の非零成分の有限集合を $S$ とおき $f(x)=\sum_{i\in S}f_i(x_i)$ とする．可換性により有限和は列挙順序に依存しない（隣接交換で任意の有限列挙を移し合えることは帰納法で示される）．二元 $x,y$ の非零成分の合併上で両和を計算しても値は変わらないから，$f(x+y)=f(x)+f(y)$ を得る．任意の $x$ は有限和 $\sum_{i\in S}j_i(x_i)$ であるので条件を満たす準同型はこの写像に限る．
+\end{proof}
+% genron:end K-000348
+% genron:begin K-000349
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000347
+\begin{prop}[無限直積と直和の相違]
+非自明な可換群 $G$ と無限集合 $I$ を取る．$a\in G$，$a\ne0$ とし，各成分が $a$ の元を考えると，これは直積に属するが非零成分の集合が $I$ であるため直和には属さない．
+\end{prop}
+% genron:end K-000349
