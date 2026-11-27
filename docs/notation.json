@@ -805,42 +805,42 @@
       {
         "tex": "V^*",
         "label": "双対空間",
-        "id": null
+        "id": "K-000649"
       },
       {
         "tex": "V^{**}",
         "label": "二重双対空間",
-        "id": null
+        "id": "K-000655"
       },
       {
         "tex": "T^\\vee",
         "label": "双対写像",
-        "id": null
+        "id": "K-000650"
       },
       {
         "tex": "A=(a_{ij})",
         "label": "行列",
-        "id": null
+        "id": "K-000657"
       },
       {
         "tex": "M_{m,n}(K)",
         "label": "m行n列行列全体",
-        "id": null
+        "id": "K-000657"
       },
       {
         "tex": "M_n(K)",
         "label": "n次正方行列全体",
-        "id": null
+        "id": "K-000657"
       },
       {
         "tex": "I_n",
         "label": "単位行列",
-        "id": null
+        "id": "K-000658"
       },
       {
         "tex": "0_{m,n}",
         "label": "零行列",
-        "id": null
+        "id": "K-000657"
       },
       {
         "tex": "E_{ij}",
@@ -850,7 +850,7 @@
       {
         "tex": "A^{\\mathsf T}",
         "label": "転置行列",
-        "id": null
+        "id": "K-000664"
       },
       {
         "tex": "\\overline A",
@@ -865,7 +865,7 @@
       {
         "tex": "A^{-1}",
         "label": "逆行列",
-        "id": null
+        "id": "K-000662"
       },
       {
         "tex": "\\det A",
@@ -880,7 +880,7 @@
       {
         "tex": "\\operatorname{rank}A",
         "label": "階数",
-        "id": null
+        "id": "K-000667"
       },
       {
         "tex": "\\operatorname{adj}A",
@@ -895,12 +895,12 @@
       {
         "tex": "[T]_{\\mathcal B,\\mathcal C}",
         "label": "線形写像の行列（始域基底B、終域基底C）",
-        "id": null
+        "id": "K-000660"
       },
       {
         "tex": "[v]_{\\mathcal B}",
         "label": "基底Bに関する座標列",
-        "id": null
+        "id": "K-000659"
       },
       {
         "tex": "\\chi_A(t)",

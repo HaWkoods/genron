@@ -19629,6 +19629,1154 @@
       "status": "verified",
       "source": "volumes/N-97/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000639",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序体",
+      "statement": "体 K に順序環となる全順序を与えたものを順序体という．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000443",
+        "K-000591",
+        "K-000625"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000640",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正元集合による順序体の特徴づけ",
+      "statement": "体 K の部分集合 P が K=P⊔{0}⊔(−P) と P+P⊆P, PP⊆P を満たすことと，P がある順序体の正元集合であることは同値．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000639",
+        "K-000593",
+        "K-000068",
+        "K-000069",
+        "K-000049"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000641",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序体における積と逆元の不等式",
+      "statement": "順序体で x>0 なら x⁻¹>0，x≠0 なら x²>0．a<b,c>0 なら ac<bc．0<a<b なら b⁻¹<a⁻¹．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000639",
+        "K-000593",
+        "K-000443",
+        "K-000444"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000642",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序体への有理数体の標準埋込み",
+      "statement": "任意の順序体 K には ℚ→K の単位的環準同型が一意に存在し，それは順序埋込みである．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000639",
+        "K-000641",
+        "K-000325",
+        "K-000569",
+        "K-000621",
+        "K-000624",
+        "K-000076",
+        "K-000100",
+        "K-000592"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000643",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "順序体の絶対値",
+      "statement": "順序体 K の x に対し |x|=max(x,−x) とする．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000639",
+        "K-000072"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000644",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序体の絶対値の基本性質",
+      "statement": "|x|≥0，|x|=0⇔x=0，|xy|=|x||y|，|x+y|≤|x|+|y|，||x|−|y||≤|x−y|．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000643",
+        "K-000641",
+        "K-000593"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000645",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Archimedes順序体",
+      "statement": "各 x∈K に対し x<n となる自然数 n が存在するとき順序体 K はArchimedes的という．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000639",
+        "K-000642",
+        "K-000626"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000646",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Archimedes性の同値条件",
+      "statement": "順序体のArchimedes性，任意の u>0,v に対して nu>v となる自然数の存在，任意の ε>0 に対し 0<1/n<ε となる正整数の存在は同値．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000645",
+        "K-000641",
+        "K-000642"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000647",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Archimedes順序体における整数部分",
+      "statement": "Archimedes順序体 K の各 x に対して m≤x<m+1 となる整数 m が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000645",
+        "K-000642",
+        "K-000644",
+        "K-000104",
+        "K-000592"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000648",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Archimedes性と有理数の稠密性",
+      "statement": "順序体 K がArchimedes的であることと，任意の x<y に対し x<q<y なる q∈ℚ が存在することは同値．",
+      "assumptions": [],
+      "position": [
+        79,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000646",
+        "K-000647",
+        "K-000642",
+        "K-000626",
+        "K-000641"
+      ],
+      "status": "verified",
+      "source": "volumes/N-79/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000649",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "双対空間",
+      "statement": "K 線形空間 V の双対空間 V* は線形写像 V→K の全体である．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000561",
+        "K-000343",
+        "K-000047",
+        "K-000562"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000650",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "双対写像",
+      "statement": "線形写像 T:V→W に対し T^∨:W*→V* を T^∨(φ)=φ∘T と定める．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000649",
+        "K-000561",
+        "K-000338",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000651",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "双対写像と合成",
+      "statement": "S:U→V,T:V→W に対し (T∘S)^∨=S^∨∘T^∨．恒等写像の双対は恒等写像．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000650",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000652",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "零化空間",
+      "statement": "S⊆V の零化空間 S^⊥ は全ての s∈S で φ(s)=0 となる φ∈V* の部分空間である．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000649",
+        "K-000562"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000653",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "双対写像の核と像",
+      "statement": "T:V→W について ker T^∨=(Im T)^⊥，Im T^∨=(ker T)^⊥．後者の一般の場合は選択公理を用いる．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000650",
+        "K-000652",
+        "K-000629",
+        "K-000634",
+        "K-000631"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000654",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限次元の双対基底",
+      "statement": "有限次元 V の基底 (e_i) に対し e^i(e_j)=δ_ij なる双対基底 (e^i) が存在する．dim V*=dim V．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000649",
+        "K-000633",
+        "K-000600",
+        "K-000604",
+        "K-000567"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000655",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "二重双対への標準写像",
+      "statement": "V→V**，v↦(φ↦φ(v)) は線形単射である．有限次元の場合は線形同型である．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000649",
+        "K-000654",
+        "K-000633",
+        "K-000602",
+        "K-000638",
+        "K-000629"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000656",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "二重双対と線形写像の整合性",
+      "statement": "線形写像 T:V→W に対し (T^∨)^∨∘ι_V=ι_W∘T．",
+      "assumptions": [],
+      "position": [
+        17,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000655",
+        "K-000650",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-17/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000657",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "行列",
+      "statement": "体 K の元の m 行 n 列の族 (a_ij) を行列といい M_{m,n}(K) と書く．和とスカラー倍は成分ごと．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000118",
+        "K-000047",
+        "K-000033"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000658",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "行列の積と単位行列",
+      "statement": "A∈M_{m,n},B∈M_{n,r} の積の (i,j) 成分は Σ_k a_ik b_kj．単位行列 I_n=(δ_ij)．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000657",
+        "K-000109",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000659",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底による座標表示",
+      "statement": "有限次元 V の順序づけられた基底 B に対し v↦[v]_B は V→K^n の線形同型である．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000600",
+        "K-000567",
+        "K-000633",
+        "K-000560",
+        "K-000118",
+        "K-000033"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000660",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形写像の行列表示",
+      "statement": "有限基底 B,C に対し線形写像 T:V→W は [Tv]_C=A[v]_B なる行列 A=[T]_{B,C} で一意に表される．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000657",
+        "K-000658",
+        "K-000659",
+        "K-000633",
+        "K-000561"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000661",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行列積と合成",
+      "statement": "線形写像 S:U→V,T:V→W の行列について [TS]=[T][S]．恒等写像の行列は I．行列積は結合的である．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000660",
+        "K-000658",
+        "K-000036"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000662",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "逆行列",
+      "statement": "正方行列 A に対し AB=BA=I を満たす B が存在するとき A は可逆で B=A⁻¹ と書く．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000658",
+        "K-000661"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000663",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底変換と表示行列",
+      "statement": "新基底 B',C' の旧基底における座標列を P,Q とすると [v]_B=P[v]_{B'}， [T]_{B',C'}=Q⁻¹[T]_{B,C}P．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000659",
+        "K-000660",
+        "K-000661",
+        "K-000662"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000664",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "転置行列",
+      "statement": "A の転置 A^T は (A^T)_ij=a_ji で定める．(AB)^T=B^T A^T．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000657",
+        "K-000658"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000665",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行基本変形の可逆性",
+      "statement": "行の交換，非零スカラー倍，他行のスカラー倍の加算は可逆であり，対応する可逆行列の左乗法である．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000657",
+        "K-000658",
+        "K-000662",
+        "K-000661",
+        "K-000443"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000666",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行基本変形による階段形への変形",
+      "statement": "任意の行列は有限回の行基本変形で，非零行の先頭非零成分が下に行くほど右に現れ，零行が下に並ぶ階段形となる．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000665",
+        "K-000657",
+        "K-000100",
+        "K-000104"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000667",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行列の階数と階段形",
+      "statement": "行列 A の階数 rank A を対応する線形写像の階数とすると，行基本変形で不変であり，階段形の非零行数に等しい．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000660",
+        "K-000665",
+        "K-000666",
+        "K-000636",
+        "K-000638",
+        "K-000605",
+        "K-000567",
+        "K-000600"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000668",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連立一次方程式の解と階数",
+      "statement": "Ax=b が可解 ⇔ b∈Im A ⇔ rank(A|b)=rank A．可解なら解集合は x₀+ker A，ker A の次元は n−rank A．",
+      "assumptions": [],
+      "position": [
+        98,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000667",
+        "K-000660",
+        "K-000666",
+        "K-000665",
+        "K-000637",
+        "K-000629",
+        "K-000605"
+      ],
+      "status": "verified",
+      "source": "volumes/N-98/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000669",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "双線形形式",
+      "statement": "線形空間 V,W の積から K への双線形写像を双線形形式という．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000607",
+        "K-000560",
+        "K-000608"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000670",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "双線形形式の左根基と右根基",
+      "statement": "b:V×W→K の左根基は全ての w に対し b(v,w)=0 なる v の集合，右根基は双対の条件．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000669",
+        "K-000562"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000671",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "根基による商空間上の非退化形式",
+      "statement": "双線形形式 b は V/L_b×W/R_b に一意に非退化双線形形式を誘導する．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000670",
+        "K-000669",
+        "K-000630",
+        "K-000631"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000672",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "双線形形式の基底に関する係数表示",
+      "statement": "有限基底 (e_i),(f_j) に対して b(x,y)=Σ_ij x_i y_j b(e_i,f_j)．係数族の任意の指定は双線形形式を一意に定める．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000669",
+        "K-000609",
+        "K-000610",
+        "K-000600",
+        "K-000567"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000673",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "対称形式と交代形式",
+      "statement": "V 上の双線形形式 b が b(x,y)=b(y,x) を満たすとき対称，b(x,x)=0 を満たすとき交代という．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000669",
+        "K-000611",
+        "K-000612"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000674",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "双線形形式の合同変換",
+      "statement": "新基底 e'_j=Σ_i p_ij e_i について g'_{jk}=Σ_{i,l}p_ij g_il p_lk．これは係数の合同変換 G'=P^T GP である．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000672",
+        "K-000673",
+        "K-000600",
+        "K-000567",
+        "K-000609"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000675",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称形式と交代形式への分解",
+      "statement": "1+1≠0 の体上では任意の双線形形式が対称形式と交代形式の和として一意に表される．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000673",
+        "K-000669",
+        "K-000443",
+        "K-000612"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000676",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "対称双線形形式の直交基底",
+      "statement": "1+1≠0 の体上の有限次元空間の対称双線形形式は b(e_i,e_j)=0 (i≠j) なる基底を持つ．",
+      "assumptions": [],
+      "position": [
+        103,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000673",
+        "K-000669",
+        "K-000605",
+        "K-000604",
+        "K-000600",
+        "K-000443",
+        "K-000100"
+      ],
+      "status": "verified",
+      "source": "volumes/N-103/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -19888,7 +21036,7 @@
       "number": 17,
       "title": "双対空間",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         97
       ],
@@ -19896,7 +21044,8 @@
         "双対写像・双対基底・双対性"
       ],
       "treatise": "T-17",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 18,
@@ -20850,7 +21999,7 @@
       "number": 79,
       "title": "順序体",
       "area": "数体系",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         78
       ],
@@ -20858,7 +22007,8 @@
         "正元・順序体の性質・Archimedes性の特徴"
       ],
       "treatise": "T-11",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 80,
@@ -21133,7 +22283,7 @@
       "number": 98,
       "title": "行列と基底変換",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         97
       ],
@@ -21141,7 +22291,8 @@
         "行列表示・行基本変形・連立方程式"
       ],
       "treatise": "T-15",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 99,
@@ -21206,15 +22357,17 @@
       "number": 103,
       "title": "双線形形式",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
-        97
+        97,
+        110
       ],
       "goals": [
         "双線形形式・対称形式・合同変換"
       ],
       "treatise": "T-15",
-      "display_index": 9
+      "display_index": 9,
+      "web_only": true
     },
     {
       "number": 104,

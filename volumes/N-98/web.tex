@@ -1,0 +1,242 @@
+% Web専用原稿．
+% Lang, Algebra (2002), Ch. XIII §§1–3, pp.503–511 の行列・行列積・線形写像との対応を参照．行基本変形は有限帰納法で説明する．
+\section{行列と線形写像}
+% genron:begin K-000657
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000118
+% genron:use K-000047
+% genron:use K-000033
+\begin{defn}[行列]
+体 $K$ の元の二重添字族 $A=(a_{ij})_{1\leq i\leq m,\,1\leq j\leq n}$ を $m$ 行 $n$ 列行列といい，その全体を $M_{m,n}(K)$ と書く．$m=n$ の場合を正方行列といい $M_n(K)$ とも書く．和及びスカラー倍は成分ごとに定め，零行列を $0_{m,n}$ と書く．$m,n$ は零でもよい．
+\end{defn}
+% genron:end K-000657
+% genron:begin K-000658
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000657
+% genron:use K-000109
+% genron:use K-000118
+\begin{defn}[行列の積と単位行列]
+$A\in M_{m,n}(K)$，$B\in M_{n,r}(K)$ に対し積 $AB\in M_{m,r}(K)$ を
+\[
+ (AB)_{ij}=\sum_{k=1}^n a_{ik}b_{kj}
+\]
+で定める．$I_n=(\delta_{ij})$ を $n$ 次単位行列という．$\delta_{ij}$ は $i=j$ のとき $1$，そうでないとき $0$ である．
+\end{defn}
+% genron:end K-000658
+% genron:begin K-000659
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000600
+% genron:use K-000567
+% genron:use K-000633
+% genron:use K-000560
+% genron:use K-000118
+% genron:use K-000033
+\begin{prop}[基底による座標表示]
+$V$ の有限基底に順序を与え $\mathcal B=(b_1,\ldots,b_n)$ とする．$v=\sum_j x_jb_j$ の一意な係数を縦に並べた列 $(x_j)$ を $[v]_{\mathcal B}$ と書く．対応 $v\mapsto[v]_{\mathcal B}$ は，成分ごとの演算を持つ $K^n$ への線形同型である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000567}により各元に対して係数列が一意に存在する．任意の係数列 $(x_j)$ に対し $\sum_j x_jb_j$ が逆対応を与える．線形結合の係数は成分ごとの線形結合となるから線形である．
+\end{proof}
+% genron:end K-000659
+% genron:begin K-000660
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000657
+% genron:use K-000658
+% genron:use K-000659
+% genron:use K-000633
+% genron:use K-000561
+\begin{prop}[線形写像の行列表示]
+$V,W$ の順序づけられた基底をそれぞれ $\mathcal B=(b_1,\ldots,b_n),\ \mathcal C=(c_1,\ldots,c_m)$ とする．線形写像 $T:V\to W$ に対して第 $j$ 列を $[T(b_j)]_{\mathcal C}$ とする行列 $A$ は
+\[
+ [T(v)]_{\mathcal C}=A[v]_{\mathcal B}
+\]
+を満たす唯一の行列である．これを $[T]_{\mathcal B,\mathcal C}$ と書く．逆に任意の $m$ 行 $n$ 列行列はこのような線形写像を一意に定める．
+\end{prop}
+\begin{proof}
+$v=\sum_j x_jb_j$ とすれば $T(v)=\sum_j x_jT(b_j)$ であり，その第 $i$ 座標は $\sum_j a_{ij}x_j$ である．従って表示式が成立する．$v=b_j$ を代入すると第 $j$ 列が定まるので一意である．任意の行列の各列を $W$ の元の座標とみなし，\GenronRef{K-000633}を適用すれば逆の主張も従う．
+\end{proof}
+% genron:end K-000660
+% genron:begin K-000661
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000660
+% genron:use K-000658
+% genron:use K-000036
+\begin{prop}[行列積と合成]
+基底を固定した有限次元線形空間の間の線形写像 $S:U\to V,\ T:V\to W$ に対し，対応する行列は $[T\circ S]=[T][S]$ を満たす．同一基底に関する恒等写像の行列は単位行列である．行列積は定義可能な限り結合的である．
+\end{prop}
+\begin{proof}
+任意の $u\in U$ の座標に対して $[T(S(u))]=[T][S][u]$ である．表示行列の一意性が合成公式を与える．恒等写像については基底元の座標から従う．任意の適合する三つの行列は座標空間の間の線形写像として表され，合成は結合的だから行列積も結合的である．
+\end{proof}
+% genron:end K-000661
+% genron:begin K-000662
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000658
+% genron:use K-000661
+\begin{defn}[逆行列]
+正方行列 $A\in M_n(K)$ に対し $AB=BA=I_n$ なる $B\in M_n(K)$ が存在するとき $A$ は可逆であるといい，$B$ を逆行列といい $A^{-1}$ と書く．$C$ も同じ条件を満たせば $B=BAC=C$ なので一意である．\GenronRef{K-000661}により可逆性は対応する線形写像の同型性と同値である．
+\end{defn}
+% genron:end K-000662
+% genron:begin K-000663
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000659
+% genron:use K-000660
+% genron:use K-000661
+% genron:use K-000662
+\begin{prop}[基底変換と表示行列]
+始域の旧基底 $\mathcal B$ と新基底 $\mathcal B'$，終域の旧基底 $\mathcal C$ と新基底 $\mathcal C'$ を取る．新基底の各元の旧基底による座標を列に並べた行列をそれぞれ $P,Q$ とする．これらは可逆であり，
+\[
+ [v]_{\mathcal B}=P[v]_{\mathcal B'},\qquad
+ [T]_{\mathcal B',\mathcal C'}=Q^{-1}[T]_{\mathcal B,\mathcal C}P
+\]
+となる．
+\end{prop}
+\begin{proof}
+$P,Q$ は各空間の恒等写像を異なる基底の間で表した行列である．逆方向の恒等写像の行列との積は双方とも単位行列となるから可逆である．第一の式は恒等写像の行列表示である．$[T(v)]_{\mathcal C}=Q[T(v)]_{\mathcal C'}=[T]_{\mathcal B,\mathcal C}P[v]_{\mathcal B'}$ であり，左から $Q^{-1}$ を掛けて行列表示の一意性を適用する．
+\end{proof}
+% genron:end K-000663
+% genron:begin K-000664
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000657
+% genron:use K-000658
+\begin{defn}[転置行列]
+$A\in M_{m,n}(K)$ に対し $(A^{\mathsf T})_{ij}=a_{ji}$ によって定める $n$ 行 $m$ 列行列を転置行列という．成分の定義により $(A^{\mathsf T})^{\mathsf T}=A$ である．また $(AB)^{\mathsf T}=B^{\mathsf T}A^{\mathsf T}$ は，双方の $(i,j)$ 成分が $\sum_k a_{jk}b_{ki}$ であることから従う．
+\end{defn}
+% genron:end K-000664
+\section{行基本変形と連立方程式}
+% genron:begin K-000665
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000657
+% genron:use K-000658
+% genron:use K-000662
+% genron:use K-000661
+% genron:use K-000443
+\begin{prop}[行基本変形の可逆性]
+行列の相異なる二行の交換，一行の非零スカラー倍，ある行への他行のスカラー倍の加算を行基本変形という．いずれも可逆であり，単位行列に同じ変形を施した可逆行列の左乗法に一致する．
+\end{prop}
+\begin{proof}
+交換の逆は同じ交換，非零元 $c$ による乗法の逆は $c^{-1}$ による乗法，他行の $c$ 倍の加算の逆はその $-c$ 倍の加算である．行列積の成分式から，単位行列の行を同じように変形した行列を左から掛けると当該変形が生じる．逆変形との積が単位行列になるので可逆である．
+\end{proof}
+% genron:end K-000665
+% genron:begin K-000666
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000665
+% genron:use K-000657
+% genron:use K-000100
+% genron:use K-000104
+\begin{prop}[行基本変形による階段形への変形]
+任意の行列は有限回の行基本変形によって，零行が最下部に並び，非零行の先頭非零成分が下の行ほど右の列に位置する階段形に変形できる．先頭非零成分は $1$ にでき，その列の他の成分は零にできる．
+\end{prop}
+\begin{proof}
+全成分が零なら既に条件を満たす．そうでなければ非零成分が存在する最初の列を選び，その列に非零成分を持つ行を第一行と交換する．その成分を逆元で $1$ にし，他行から第一行の適切な倍を引いてその列の他の成分を零にする．残りの行について右側の列の部分行列に同じ操作を施す．行数が一つずつ減るから有限回で終了する．各段で先頭成分の列が右に進むため階段形を得る．最後に下から順に先頭成分の列の上方の成分を消去する．下の行は先行する先頭列では零なので，既に得た左側の先頭成分を変えない．
+\end{proof}
+% genron:end K-000666
+% genron:begin K-000667
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000660
+% genron:use K-000665
+% genron:use K-000666
+% genron:use K-000636
+% genron:use K-000638
+% genron:use K-000605
+% genron:use K-000567
+% genron:use K-000600
+\begin{prop}[行列の階数と階段形]
+行列 $A\in M_{m,n}(K)$ の階数 $\operatorname{rank}A$ を線形写像 $x\mapsto Ax$ の階数とする．階数は行基本変形で不変であり，階段形に変形したときの非零行数に等しい．
+\end{prop}
+\begin{proof}
+可逆行列 $E$ の左乗法は $\operatorname{Im}A$ を同型によって $\operatorname{Im}(EA)$ に移すから階数を変えない．先頭成分の列が他の成分を零とした階段形を $R$ とする．非零行数を $s$ とすれば先頭成分を含む $s$ 本の列は $K^m$ の最初の $s$ 個の標準座標ベクトルである．他の列も最初の $s$ 個以外の成分が全て零なので，これら $s$ 本は像の基底をなす．従って階数は $s$ である．
+\end{proof}
+% genron:end K-000667
+% genron:begin K-000668
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000667
+% genron:use K-000660
+% genron:use K-000666
+% genron:use K-000665
+% genron:use K-000637
+% genron:use K-000629
+% genron:use K-000605
+\begin{prop}[連立一次方程式の解と階数]
+$A\in M_{m,n}(K),\ b\in K^m$ とする．連立一次方程式 $Ax=b$ が解を持つことと $b\in\operatorname{Im}A$ は同値であり，さらに
+\[
+ \operatorname{rank}(A\mid b)=\operatorname{rank}A
+\]
+と同値である．ここで $(A\mid b)$ は $A$ に列 $b$ を付加した行列である．一つの解を $x_0$ とすれば解集合は $x_0+\ker A$ であり，$\dim_K\ker A=n-\operatorname{rank}A$ である．
+\end{prop}
+\begin{proof}
+可解性と像への所属の同値性は定義による．付加行列の像は $A$ の像と $b$ で生成される部分空間であり，\GenronRef{K-000605}により階数が一致することと像が一致することは同値である．$Ax=b$ と $A(x-x_0)=0$ は同値なので解集合の表示を得る．次元は \GenronRef{K-000637}による．計算上は付加行列全体に行基本変形を施せば同じ解集合を持つ階段形の系が得られる．先頭成分に対応しない変数を任意に定め，先頭成分に対応する変数を下の行から決めれば全解を得る．零係数行に非零の右辺が現れれば解は存在しない．
+\end{proof}
+% genron:end K-000668

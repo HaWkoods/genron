@@ -1,0 +1,164 @@
+% Web専用原稿．
+% Lang, Algebra (2002), Ch. III §6, pp.142–143 の双対空間・評価写像・双対基底を確認．有限次元と一般の場合を区別する．
+\section{代数的双対}
+% genron:begin K-000649
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000561
+% genron:use K-000343
+% genron:use K-000047
+% genron:use K-000562
+\begin{defn}[双対空間]
+体 $K$ 上の線形空間 $V$ に対し，$\mathcal L_K(V,K)$ を $V$ の双対空間といい，$V^*$ と書く．その元を線形汎函数という．演算は各点における和及びスカラー倍である．零函数が含まれ，任意の二つの線形汎函数の線形結合も線形なので，これらの演算に関し線形空間をなす．
+\end{defn}
+% genron:end K-000649
+% genron:begin K-000650
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000649
+% genron:use K-000561
+% genron:use K-000338
+% genron:use K-000036
+\begin{defn}[双対写像]
+線形写像 $T:V\to W$ に対し，$\varphi\in W^*$ を $\varphi\circ T\in V^*$ に移す写像を $T$ の双対写像といい，$T^\vee:W^*\to V^*$ と書く．合成の線形性及び点ごとの演算から $T^\vee$ は線形である．
+\end{defn}
+% genron:end K-000650
+% genron:begin K-000651
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000650
+% genron:use K-000036
+\begin{prop}[双対写像と合成]
+線形写像 $S:U\to V,\ T:V\to W$ に対して $(T\circ S)^\vee=S^\vee\circ T^\vee$ であり，$(\operatorname{id}_V)^\vee=\operatorname{id}_{V^*}$ である．
+\end{prop}
+\begin{proof}
+$\varphi\in W^*$ に対して $(T\circ S)^\vee(\varphi)=\varphi\circ T\circ S=S^\vee(T^\vee(\varphi))$ となる．恒等写像についても合成の性質から従う．
+\end{proof}
+% genron:end K-000651
+% genron:begin K-000652
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000649
+% genron:use K-000562
+\begin{defn}[零化空間]
+線形空間 $V$ の部分集合 $S$ に対して
+\[
+ S^\perp=\{\varphi\in V^*\mid \forall s\in S,\ \varphi(s)=0\}
+\]
+を $S$ の零化空間という．零函数を含み，和及びスカラー倍について閉じるから部分空間である．
+\end{defn}
+% genron:end K-000652
+% genron:begin K-000653
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000650
+% genron:use K-000652
+% genron:use K-000629
+% genron:use K-000634
+% genron:use K-000631
+\begin{prop}[双対写像の核と像]
+線形写像 $T:V\to W$ に対して
+\[
+ \ker T^\vee=(\operatorname{Im}T)^\perp,\qquad
+ \operatorname{Im}T^\vee=(\ker T)^\perp
+\]
+となる．
+\end{prop}
+\begin{proof}
+第一の等式は $\varphi\circ T=0$ が $\varphi$ が $\operatorname{Im}T$ 上で零であることと同値であることによる．第二の等式について，$\varphi\circ T$ は $\ker T$ 上で零である．逆に $\lambda\in(\ker T)^\perp$ ならば $\psi(T(v))=\lambda(v)$ と定めた函数 $\psi:\operatorname{Im}T\to K$ は適法であり線形である．実際，$T(v)=T(v')$ なら $\lambda(v-v')=0$ であり，演算の保存も $T,\lambda$ の線形性から従う．\GenronRef{K-000634}によって $\psi$ を $W$ 上の線形汎函数 $\varphi$ に延長すると $T^\vee(\varphi)=\lambda$ となる．一般の延長には選択公理を用いる．
+\end{proof}
+% genron:end K-000653
+\section{双対基底と二重双対}
+% genron:begin K-000654
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000649
+% genron:use K-000633
+% genron:use K-000600
+% genron:use K-000604
+% genron:use K-000567
+\begin{prop}[有限次元の双対基底]
+有限次元線形空間 $V$ の基底を $(e_1,\ldots,e_n)$ とする．$e^i(e_j)=\delta_{ij}$（$i=j$ なら $1$，それ以外なら $0$）を満たす線形汎函数 $e^i$ が一意に存在する．$(e^1,\ldots,e^n)$ は $V^*$ の基底であり，これを双対基底という．特に $\dim_K V^*=\dim_K V$ である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000633}により各 $e^i$ が一意に存在する．任意の $\varphi\in V^*$ に対し $\varphi=\sum_i\varphi(e_i)e^i$ が基底上で成立するので全域で成立する．また $\sum_i a_ie^i=0$ を各 $e_j$ に適用すると $a_j=0$ となる．従って双対基底は線形独立かつ生成族である．
+\end{proof}
+% genron:end K-000654
+% genron:begin K-000655
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000649
+% genron:use K-000654
+% genron:use K-000633
+% genron:use K-000602
+% genron:use K-000638
+% genron:use K-000629
+\begin{prop}[二重双対への標準写像]
+$V^{**}=(V^*)^*$ を二重双対空間という．評価による写像
+\[
+ \iota_V:V\to V^{**},\qquad \iota_V(v)(\varphi)=\varphi(v)
+\]
+は線形単射である．$V$ が有限次元なら線形同型である．
+\end{prop}
+\begin{proof}
+各 $v$ に対し評価は $\varphi$ について線形であるから $\iota_V(v)\in V^{**}$ であり，$\varphi$ の線形性により $\iota_V$ も線形である．$v\ne0$ なら $\{v\}$ は線形独立であり，\GenronRef{K-000602}により基底に拡張できる．\GenronRef{K-000633}により $v$ を $1$，他の基底元を零に移す汎函数 $\varphi$ が存在する．従って $\iota_V(v)\ne0$ であり，単射である．一般の場合の基底拡張には選択公理を用いる．有限次元の場合は \GenronRef{K-000654}を二度適用して $\dim_K V^{**}=\dim_K V$ を得るから \GenronRef{K-000638}により全射でもある．
+\end{proof}
+% genron:end K-000655
+% genron:begin K-000656
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000655
+% genron:use K-000650
+% genron:use K-000036
+\begin{prop}[二重双対と線形写像の整合性]
+線形写像 $T:V\to W$ に対して
+\[
+ (T^\vee)^\vee\circ\iota_V=\iota_W\circ T
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+任意の $v\in V,\ \varphi\in W^*$ について左辺の $v$ における値を $\varphi$ に適用すると $\iota_V(v)(T^\vee(\varphi))=\varphi(T(v))$ となる．これは右辺の対応する値に等しい．
+\end{proof}
+% genron:end K-000656

@@ -1,0 +1,206 @@
+% Web専用原稿．
+% Lang, Algebra (2002), ordered fields, p.449 の正元集合による順序の記述を参照．Archimedes性の諸条件を既出の有理数体を用いて独立に証明する．
+\section{順序と正元}
+% genron:begin K-000639
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000443
+% genron:use K-000591
+% genron:use K-000625
+\begin{defn}[順序体]
+体 $K$ に全順序 $\leq$ が与えられ，この順序について $K$ が順序環であるとき，$K$ を順序体という．\GenronRef{K-000625}により $\mathbb Q$ は順序体である．
+\end{defn}
+% genron:end K-000639
+% genron:begin K-000640
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000639
+% genron:use K-000593
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000049
+\begin{prop}[正元集合による順序体の特徴づけ]
+体 $K$ の部分集合 $P$ に対し，$P$ がある順序体の正元全体であるための必要十分条件は
+\[
+ K=P\sqcup\{0\}\sqcup(-P),\qquad P+P\subseteq P,\quad PP\subseteq P
+\]
+である．このとき順序は $x<y\Longleftrightarrow y-x\in P$ によって一意に定まる．
+\end{prop}
+\begin{proof}
+必要性は全順序及び \GenronRef{K-000593}による．逆にこの条件を仮定し，上式で狭義順序を定める．$0\notin P$ から非反射性，和についての閉性から推移性，非交和の条件から相異なる二元の比較可能性が得られる．従ってこれに相等関係を加えて全順序を得る．差が変わらないので加法による移動は順序を保存する．非負元の積は，一方が零なら零，双方正なら $P$ に属する．よって順序環である．正元が $P$ であること及び一意性は定義式による．
+\end{proof}
+% genron:end K-000640
+% genron:begin K-000641
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000639
+% genron:use K-000593
+% genron:use K-000443
+% genron:use K-000444
+\begin{prop}[順序体における積と逆元の不等式]
+順序体において $x>0$ なら $x^{-1}>0$，$x\ne0$ なら $x^2>0$ である．$a<b,\ c>0$ なら $ac<bc$ となり，$0<a<b$ なら $b^{-1}<a^{-1}$ となる．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000593}により $1>0$ である．$x>0$ で $x^{-1}<0$ なら $-x^{-1}>0$ なので $-1=x(-x^{-1})>0$ となって矛盾する．平方については $x$ 又は $-x$ が正であることを用いる．$c(b-a)>0$ が第一の不等式を与える．最後に $a^{-1}-b^{-1}=(b-a)a^{-1}b^{-1}>0$ である．
+\end{proof}
+% genron:end K-000641
+% genron:begin K-000642
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000639
+% genron:use K-000641
+% genron:use K-000325
+% genron:use K-000569
+% genron:use K-000621
+% genron:use K-000624
+% genron:use K-000076
+% genron:use K-000100
+% genron:use K-000592
+\begin{prop}[順序体への有理数体の標準埋込み]
+任意の順序体 $K$ には有理数体 $\mathbb Q$ からの単位的環準同型がただ一つ存在し，これは順序埋込みである．以下，この埋込みによって $\mathbb Q$ を $K$ の部分体と同一視する．
+\end{prop}
+\begin{proof}
+整数環の普遍性により単位的環準同型 $i:\mathbb Z\to K$ が一意に存在する．$i(1)=1>0$ であり，帰納法によって正の整数 $n$ に対し $i(n)>0$ となる．負の整数は負元に移るので $i$ は単射であり順序を保存し反映する．\GenronRef{K-000569}によって $i$ は $\mathbb Q$ からの単位的準同型へ一意に延長される．$a/b>0$ を正の分母で表示すれば $a>0$ であり，延長による像 $i(a)i(b)^{-1}$ は正である．負元についても符号が保存される．従って延長は順序埋込みである．
+\end{proof}
+% genron:end K-000642
+% genron:begin K-000643
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000639
+% genron:use K-000072
+\begin{defn}[順序体の絶対値]
+順序体 $K$ の元 $x$ に対して $|x|=\max(x,-x)$ と定め，これを $x$ の絶対値という．
+\end{defn}
+% genron:end K-000643
+% genron:begin K-000644
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000643
+% genron:use K-000641
+% genron:use K-000593
+\begin{prop}[順序体の絶対値の基本性質]
+順序体の任意の元 $x,y$ に対して $|x|\geq0$，$|x|=0\Longleftrightarrow x=0$ であり，
+\[
+ |xy|=|x||y|,\qquad |x+y|\leq|x|+|y|,\qquad
+ \bigl||x|-|y|\bigr|\leq|x-y|
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+最初の二性質は定義から従う．乗法性は $x,y$ の符号に応じて $|x|,|y|$ の定義を適用すれば得られる．$-|x|\leq x\leq|x|$ と $-|y|\leq y\leq|y|$ を加えると三角不等式を得る．$x=(x-y)+y$ と $y=(y-x)+x$ に三角不等式を適用すれば，$|x|-|y|\leq|x-y|$ 及び $|y|-|x|\leq|x-y|$ となる．
+\end{proof}
+% genron:end K-000644
+\section{Archimedes性}
+% genron:begin K-000645
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000639
+% genron:use K-000642
+% genron:use K-000626
+\begin{defn}[Archimedes順序体]
+順序体 $K$ において，任意の $x\in K$ に対し $x<n$ となる自然数 $n$ が存在するとき，$K$ は Archimedes 的であるという．ここで自然数は有理数体の標準埋込みによって $K$ の元とみなす．
+\end{defn}
+% genron:end K-000645
+% genron:begin K-000646
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000645
+% genron:use K-000641
+% genron:use K-000642
+\begin{prop}[Archimedes性の同値条件]
+順序体 $K$ に関する次の条件は同値である．
+
+(1) $K$ は Archimedes 的である．
+
+(2) 任意の $u,v\in K$ で $u>0$ ならば，$nu>v$ となる自然数 $n$ が存在する．
+
+(3) 任意の $\varepsilon>0$ に対し $0<1/n<\varepsilon$ となる正の自然数 $n$ が存在する．
+\end{prop}
+\begin{proof}
+(1) を $v/u$ に適用し正元 $u$ を掛ければ (2) を得る．(2) を $u=\varepsilon,\ v=1$ に適用すれば $n\varepsilon>1$ となり，$n>0$ なので (3) を得る．(3) を正元 $x$ に対して $\varepsilon=1/x$ として適用すると $n>x$ である．$x\leq0$ の場合は $n=1$ と取ればよい．従って (1) が成立する．
+\end{proof}
+% genron:end K-000646
+% genron:begin K-000647
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000645
+% genron:use K-000642
+% genron:use K-000644
+% genron:use K-000104
+% genron:use K-000592
+\begin{prop}[Archimedes順序体における整数部分]
+$K$ を Archimedes 順序体とする．任意の $x\in K$ に対し $m\leq x<m+1$ を満たす整数 $m$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+Archimedes性から $N>|x|$ なる自然数 $N$ を取る．$y=x+N>0$ とおく．$S=\{n\in\mathbb N\mid n>y\}$ は空でないから \GenronRef{K-000104}によって最小元 $k$ を持つ．$k>0$ であり，最小性から $k-1\leq y<k$ である．従って $m=k-1-N$ が求める整数である．もし $m<m'$ が共に条件を満たすなら，整数の順序から $m+1\leq m'\leq x<m+1$ となり矛盾する．
+\end{proof}
+% genron:end K-000647
+% genron:begin K-000648
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000646
+% genron:use K-000647
+% genron:use K-000642
+% genron:use K-000626
+% genron:use K-000641
+\begin{prop}[Archimedes性と有理数の稠密性]
+順序体 $K$ が Archimedes 的であることと，任意の $x,y\in K$ で $x<y$ ならば $x<q<y$ となる $q\in\mathbb Q$ が存在することは同値である．
+\end{prop}
+\begin{proof}
+Archimedes性を仮定する．\GenronRef{K-000646}により $1/n<y-x$ なる正整数 $n$ を取る．\GenronRef{K-000647}により $m\leq nx<m+1$ なる整数 $m$ を取ると
+\[
+ nx<m+1\leq nx+1<ny
+\]
+である．正元 $n$ で割れば $q=(m+1)/n$ が所要の元となる．逆に有理数がこの意味で稠密なら任意の $x\in K$ に対して $x<q<x+1$ なる有理数 $q$ が存在する．有理数体の Archimedes 性により $q<n$ なる自然数があるので $x<n$ である．
+\end{proof}
+% genron:end K-000648

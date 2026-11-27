@@ -1,0 +1,175 @@
+% Web専用原稿．
+% Lang, Algebra (2002), Ch. XIII §§5–6, pp.522–528 の双線形形式・根基・基底変換を参照．合同変換は係数の変換式として記述し，行列ノートとの相互依存を避ける．
+\section{双線形形式}
+% genron:begin K-000669
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000607
+% genron:use K-000560
+% genron:use K-000608
+\begin{defn}[双線形形式]
+体 $K$ 上の線形空間 $V,W$ に対し，双線形写像 $b:V\times W\to K$ を双線形形式という．$V=W$ の場合には $V$ 上の双線形形式という．双線形形式全体は点ごとの演算に関して線形空間をなす．
+\end{defn}
+% genron:end K-000669
+% genron:begin K-000670
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000669
+% genron:use K-000562
+\begin{defn}[双線形形式の左根基と右根基]
+双線形形式 $b:V\times W\to K$ に対し
+\[
+ L_b=\{v\in V\mid \forall w\in W,\ b(v,w)=0\},\qquad
+ R_b=\{w\in W\mid \forall v\in V,\ b(v,w)=0\}
+\]
+をそれぞれ左根基及び右根基という．双線形性により両者は部分空間である．$L_b=\{0\}$ のとき左非退化，$R_b=\{0\}$ のとき右非退化，双方を満たすとき非退化という．
+\end{defn}
+% genron:end K-000670
+% genron:begin K-000671
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000670
+% genron:use K-000669
+% genron:use K-000630
+% genron:use K-000631
+\begin{prop}[根基による商空間上の非退化形式]
+双線形形式 $b:V\times W\to K$ は商線形空間上に非退化双線形形式 $\bar b:(V/L_b)\times(W/R_b)\to K$ を一意に誘導し，
+\[
+ \bar b(v+L_b,w+R_b)=b(v,w)
+\]
+を満たす．
+\end{prop}
+\begin{proof}
+$l\in L_b,\ r\in R_b$ に対し $b(v+l,w+r)=b(v,w)$ なので表示は適法である．商空間の演算の定義から双線形性が従う．標準全射の全射性から一意である．$\bar b(v+L_b,w+R_b)=0$ が全ての $w$ について成立すれば $v\in L_b$ であり，左根基は零である．右根基についても同様である．
+\end{proof}
+% genron:end K-000671
+% genron:begin K-000672
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000669
+% genron:use K-000609
+% genron:use K-000610
+% genron:use K-000600
+% genron:use K-000567
+\begin{prop}[双線形形式の基底に関する係数表示]
+有限基底 $(e_1,\ldots,e_m)$，$(f_1,\ldots,f_n)$ を取る．$g_{ij}=b(e_i,f_j)$ とおけば $x=\sum_i x_ie_i,\ y=\sum_j y_jf_j$ に対して
+\[
+ b(x,y)=\sum_{i=1}^m\sum_{j=1}^n g_{ij}x_i y_j
+\]
+である．逆に任意の係数族 $(g_{ij})$ はこの式によって双線形形式を一意に定める．
+\end{prop}
+\begin{proof}
+表示は \GenronRef{K-000609}の二変数の場合である．逆にこの式は基底表示の一意性から適法であり，各変数について和及びスカラー倍を保存する．基底元の組に適用すれば指定係数を得る．一意性は \GenronRef{K-000610}による．
+\end{proof}
+% genron:end K-000672
+\section{対称性と合同変換}
+% genron:begin K-000673
+% genron:use K-000612
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000669
+% genron:use K-000611
+\begin{defn}[対称形式と交代形式]
+$V$ 上の双線形形式 $b$ が任意の $x,y\in V$ に対して $b(x,y)=b(y,x)$ を満たすとき対称形式という．任意の $x\in V$ について $b(x,x)=0$ を満たすとき交代形式という．交代形式は $b(y,x)=-b(x,y)$ を満たす（\GenronRef{K-000612}）．
+\end{defn}
+% genron:end K-000673
+% genron:begin K-000674
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000672
+% genron:use K-000673
+% genron:use K-000600
+% genron:use K-000567
+% genron:use K-000609
+\begin{prop}[双線形形式の合同変換]
+$V$ 上の双線形形式 $b$ と二つの有限基底 $(e_i)_{i=1}^n$，$(e'_j)_{j=1}^n$ を考える．$e'_j=\sum_i p_{ij}e_i$ とし，$g_{il}=b(e_i,e_l)$，$g'_{jk}=b(e'_j,e'_k)$ とおく．このとき
+\[
+ g'_{jk}=\sum_{i=1}^n\sum_{l=1}^n p_{ij}g_{il}p_{lk}
+\]
+が成り立つ．係数のこの変換を合同変換という．
+\end{prop}
+\begin{proof}
+$b(e'_j,e'_k)=b(\sum_i p_{ij}e_i,\sum_l p_{lk}e_l)$ を双線形性によって展開する．この公式は基底の変更だけを表すので，形式の対称性・交代性・非退化性は基底の取り方に依存しない．
+\end{proof}
+% genron:end K-000674
+% genron:begin K-000675
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000673
+% genron:use K-000669
+% genron:use K-000443
+% genron:use K-000612
+\begin{prop}[対称形式と交代形式への分解]
+$1+1\ne0$ なる体 $K$ 上の線形空間 $V$ の任意の双線形形式 $b$ は，対称形式 $s$ と交代形式 $a$ の和にただ一通り表される．
+\end{prop}
+\begin{proof}
+$2=1+1$ とおき
+\[
+ s(x,y)=\frac{b(x,y)+b(y,x)}2,\qquad
+ a(x,y)=\frac{b(x,y)-b(y,x)}2
+\]
+と定める．いずれも双線形であり，前者は対称，後者は対角で零である．和は $b$ である．二通りの分解があればその差から対称かつ交代的な形式を得るが，\GenronRef{K-000612}によりその値の二倍は零となる．$2$ は単元なので差は零である．
+\end{proof}
+% genron:end K-000675
+% genron:begin K-000676
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000673
+% genron:use K-000669
+% genron:use K-000605
+% genron:use K-000604
+% genron:use K-000600
+% genron:use K-000443
+% genron:use K-000100
+\begin{prop}[対称双線形形式の直交基底]
+$1+1\ne0$ なる体 $K$ 上の有限次元線形空間 $V$ の対称双線形形式 $b$ に対し，相異なる基底元の組について $b(e_i,e_j)=0$ となる基底 $(e_1,\ldots,e_n)$ が存在する．
+\end{prop}
+\begin{proof}
+次元に関する帰納法による．$b=0$ なら任意の基底でよい．$b\ne0$ なら $b(v,v)\ne0$ なる $v$ が存在する．実際，全ての $v$ に対して $b(v,v)=0$ なら $0=b(x+y,x+y)=2b(x,y)$ なので $b=0$ となる．$U=\{x\in V\mid b(v,x)=0\}$ とおくと部分空間である．任意の $x$ に対し
+\[
+ x=\frac{b(v,x)}{b(v,v)}v+
+ \left(x-\frac{b(v,x)}{b(v,v)}v\right)
+\]
+であり，括弧内は $U$ に属する．$Kv\cap U=\{0\}$ であるから，$U$ の基底に $v$ を加えれば $V$ の基底になる．また $v\notin U$ なので $\dim U<\dim V$ である．帰納法によって $b$ の $U$ への制限について所要の基底を取り，これに $v$ を加える．対称性により $v$ と $U$ の元は双方の順序で直交するから主張が従う．
+\end{proof}
+% genron:end K-000676
