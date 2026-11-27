@@ -4,6 +4,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {spawnSync} from "node:child_process";
 import {previewParts} from "./statements-tex.mjs";
+import {typesetFigure} from "./figure-math.mjs";
 const root=fileURLToPath(new URL("../",import.meta.url));
 const out=path.join(root,"_site");
 const ledger=JSON.parse(fs.readFileSync(path.join(root,"docs/knowledge.json"),"utf8"));
@@ -43,7 +44,7 @@ for(const f of figureManifest){
  if(!/^<svg\b/.test(svg.trim())||/<(?:script|foreignObject)\b|\bon\w+\s*=|\b(?:href|src)\s*=/i.test(svg))throw Error("Unsafe or invalid figure "+f.src);
  if(!publicIds.has(f.id))continue;
  publicFigureIds.add(f.figure_id);
- const dest=path.join(out,f.src);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(source,dest);
+ const dest=path.join(out,f.src);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,typesetFigure(svg,f.src).svg);
  const list=figuresById.get(f.id)??[];list.push({figure_id:f.figure_id,title:f.title,src:f.src,alt:f.alt,caption:f.caption});figuresById.set(f.id,list);
 }
 const webProofs=new Map();
