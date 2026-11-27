@@ -94,6 +94,10 @@ function runTests(){
  check("statements omit internal review metadata",!rtext.includes("査読記録"));
  check("statements order by source position",rtext.indexOf("K-900001")<rtext.indexOf("K-900002"));
  check("statements count and note links",rtext.includes("全2項目")&&rtext.includes("](#n-1)")&&rtext.includes('id="n-1"'));
+ const unifiedKinds=["construction","lemma","theorem","corollary","proposition"];
+ const unifiedEntries=unifiedKinds.map((kind,i)=>({...ritems[0],id:"K-91000"+i,kind,title:"分類名を保持する定理"+i,position:[1,1,1,i+1]}));
+ const unifiedText=statementsMarkdown({notes:[rnote],entries:unifiedEntries});
+ check("all result kinds use proposition heading",unifiedEntries.every(e=>unifiedText.includes("**命題（"+e.title+"）**")));
  check("empty statements list",statementsMarkdown({notes:[],entries:[]}).includes("全0項目"));
  return tests;
 }

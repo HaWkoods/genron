@@ -60,6 +60,12 @@ try{
  await page.goto(origin+"?note=statements");
  await page.locator(".web-catalogue").waitFor();
  assert.equal(await page.locator(".catalogue-entry").count(),planData.entries.filter(e=>e.kind!=="exercise").length);
+ for(const id of ["K-000047","K-000131","K-000289","K-000315"]){
+  const e=planData.entries.find(e=>e.id===id);
+  const heading=page.locator("#catalogue-"+id+" .web-statement-title");
+  assert.equal(await heading.textContent(),"命題 "+e.display_number+"（"+e.title+"）");
+ }
+
  assert.equal(await page.locator(".pdf-shell").count(),0);
  const statementRef=page.locator("#catalogue-K-000060 .catalogue-reference");
  assert.equal(await statementRef.innerText(),"選択公理");
@@ -97,6 +103,11 @@ try{
  assert.equal(await page.locator(".web-entry").count(),planData.entries.filter(e=>partNotes.some(n=>n.number===e.position[0])).length);
  assert.equal(await page.locator(".pdf-shell").count(),0);
  const logic=page.locator("#K-000001");
+ for(const id of ["K-000047","K-000131"]){
+  const e=planData.entries.find(e=>e.id===id);
+  assert.equal(await page.locator("#"+id+" .web-statement-title").textContent(),"命題 "+e.display_number+"（"+e.title+"）");
+ }
+
  assert.match(await page.locator("#N-1 .web-note-title").innerText(),/^01\.01\.01/);
  assert.match(await logic.locator(".web-statement-title").innerText(),/^規約 01\.01\.01\.1\.1\.1/);
 

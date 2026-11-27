@@ -2,7 +2,7 @@ import * as pdfjs from "./vendor/pdfjs/build/pdf.mjs";
 pdfjs.GlobalWorkerOptions.workerSrc=new URL("./vendor/pdfjs/build/pdf.worker.mjs",import.meta.url).href;
 const $=s=>document.querySelector(s);
 const main=$("#app"), preview=$("#preview"), dialog=$("#settings");
-const types={axiom:"公理",convention:"規約",definition:"定義",lemma:"補題",proposition:"命題",theorem:"定理",corollary:"系",construction:"構成",background:"背景原理",exercise:"演習"};
+const types={axiom:"公理",convention:"規約",definition:"定義",lemma:"命題",proposition:"命題",theorem:"命題",corollary:"命題",construction:"命題",background:"背景原理",exercise:"演習"};
 const root=new URL("./",location.href);
 const url=(key,val)=>{const u=new URL(root);u.searchParams.set(key,val);return u.href};
 const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};

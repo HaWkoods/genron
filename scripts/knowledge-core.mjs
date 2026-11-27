@@ -311,7 +311,7 @@ function planMarkdown(ledger,published=[]){
 }
 
 function statementsMarkdown(ledger){
- const names={axiom:"公理",convention:"規約",definition:"定義",lemma:"補題",proposition:"命題",theorem:"定理",corollary:"系",construction:"構成",background:"背景原理"};
+ const names={axiom:"公理",convention:"規約",definition:"定義",lemma:"命題",proposition:"命題",theorem:"命題",corollary:"命題",construction:"命題",background:"背景原理"};
  const escape=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/[\\\x60*_\[\]~$]/g,c=>"\\"+c).replace(/\r?\n/g," ");
  const entries=(ledger.entries??[]).filter(e=>e.status==="verified"&&Object.hasOwn(names,e.kind)).sort((a,b)=>{
   for(let i=0;i<4;i++)if(a.position[i]!==b.position[i])return a.position[i]-b.position[i];
@@ -320,7 +320,7 @@ function statementsMarkdown(ledger){
  const notes=new Map((ledger.notes??[]).map(n=>[n.number,n.title]));
  const groups=new Map();
  for(const e of entries){const n=e.position[0];if(!groups.has(n))groups.set(n,[]);groups.get(n).push(e)}
- const lines=["# 数学原論　定義・命題一覧","","[PDF版（推奨）](statements.pdf) · [総目次](roadmap.md) · [知識台帳](knowledge.json)","","知識台帳から自動生成した復習・確認用の一覧。検証済みの記法・公理・定義・構成・結果を、各ノート内の掲載順に掲げる（全"+entries.length+"項目）。証明・解説は収録しない。本文の厳密な記述と照合するには総目次から該当ノートを参照する。","","## ノート別索引",""];
+ const lines=["# 数学原論　定義・命題一覧","","[PDF版（推奨）](statements.pdf) · [総目次](roadmap.md) · [知識台帳](knowledge.json)","","知識台帳から自動生成した復習・確認用の一覧。検証済みの記法・公理・定義・命題を、各ノート内の掲載順に掲げる（全"+entries.length+"項目）。証明・解説は収録しない。本文の厳密な記述と照合するには総目次から該当ノートを参照する。","","## ノート別索引",""];
  for(const [n,items] of groups)lines.push("- ["+noteDisplayNumber(ledger,n)+" "+escape(notes.get(n)??"")+"（"+items.length+"項目）](#n-"+n+")");
  for(const [n,items] of groups){
   lines.push("","---","",'<a id="n-'+n+'"></a>',"## "+noteDisplayNumber(ledger,n)+" "+escape(notes.get(n)??""),"");
