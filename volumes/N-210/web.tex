@@ -38,7 +38,7 @@
 左 $A$ 加群 $E$ が入射的であるための必要十分条件は，任意の左イデアル $I\subseteq A$ から $E$ への $A$ 準同型が $A$ 全体に延長されることである．
 \end{prop}
 \begin{proof}
-必要性は $A$ を左 $A$ 加群とみなせばよい．逆に条件を仮定し，$N\subseteq M$ と準同型 $f:N\to E$ を取る．$f$ の延長 $(P,g)$（$N\subseteq P\subseteq M$，$g|_N=f$）を定義域の包含と制限の一致で順序づける．鎖の合併上の函数は一意に定まり準同型であるから上界となり，\GenronRef{K-000131}$ により極大な延長 $(P,g)$ を得る．$x\in M\setminus P$ があると仮定する．$I=\{a\in A\mid ax\in P\}$ は左イデアルであり，$a\mapsto g(ax)$ は準同型 $I\to E$ となる．仮定により $A$ への延長 $h$ があり，$e=h(1)$ とすると $h(a)=ae$ である．そこで
+必要性は $A$ を左 $A$ 加群とみなせばよい．逆に条件を仮定し，$N\subseteq M$ と準同型 $f:N\to E$ を取る．$f$ の延長 $(P,g)$（$N\subseteq P\subseteq M$，$g|_N=f$）を定義域の包含と制限の一致で順序づける．鎖の合併上の函数は一意に定まり準同型であるから上界となり，\GenronRef{K-000131} により極大な延長 $(P,g)$ を得る．$x\in M\setminus P$ があると仮定する．$I=\{a\in A\mid ax\in P\}$ は左イデアルであり，$a\mapsto g(ax)$ は準同型 $I\to E$ となる．仮定により $A$ への延長 $h$ があり，$e=h(1)$ とすると $h(a)=ae$ である．そこで
 \[
  \widetilde g(p+ax)=g(p)+ae
 \]
@@ -126,7 +126,7 @@ $I=0$ なら $n=0$ でよい．そうでなければ符号を変えて正の元�
 可換群 $D$ が可除であることと，$\mathbb Z$ 加群として入射的であることは同値である．
 \end{prop}
 \begin{proof}
-入射的とする．$n>0$ と $x\in D$ に対し $n\mathbb Z\to D$，$nk\mapsto kx$ は整数環の整域性により一意に定まる準同型である．これを $\mathbb Z$ へ延長して $1$ の像を $y$ とすれば $ny=x$ である．逆に可除とする．\GenronRef{K-000551}$ によりイデアルは $n\mathbb Z$ である．$n=0$ なら零写像は零写像に延長する．$n>0$ のとき準同型 $f:n\mathbb Z\to D$ に対し $ny=f(n)$ となる $y$ を取れば $k\mapsto ky$ が延長となる．\GenronRef{K-000549}$ を適用する．
+入射的とする．$n>0$ と $x\in D$ に対し $n\mathbb Z\to D$，$nk\mapsto kx$ は整数環の整域性により一意に定まる準同型である．これを $\mathbb Z$ へ延長して $1$ の像を $y$ とすれば $ny=x$ である．逆に可除とする．\GenronRef{K-000551} によりイデアルは $n\mathbb Z$ である．$n=0$ なら零写像は零写像に延長する．$n>0$ のとき準同型 $f:n\mathbb Z\to D$ に対し $ny=f(n)$ となる $y$ を取れば $k\mapsto ky$ が延長となる．\GenronRef{K-000549} を適用する．
 \end{proof}
 % genron:end K-000553
 \section{十分な入射対象}
@@ -172,7 +172,7 @@ $I=0$ なら $n=0$ でよい．そうでなければ符号を変えて正の元�
 可換群 $M$ の非零元 $x$ に対し，$\chi(x)\ne0$ となる加法準同型 $\chi:M\to D$ が存在する．
 \end{prop}
 \begin{proof}
-写像 $\mathbb Z\to M$，$k\mapsto kx$ の核は $n\mathbb Z$ である．$x\ne0$ なので $n\ne1$ である．$n=0$ なら $kx\mapsto k(1/2+\mathbb Z)$ と定める．$n>1$ なら $kx\mapsto k(1/n+\mathbb Z)$ と定める．後者は $kx=lx$ なら $k-l\in n\mathbb Z$ であるから値が代表元によらない．どちらも巡回部分群から $D$ への準同型であり $x$ の像は非零である．$D$ は可除なので \GenronRef{K-000553}$ により入射的であり，この準同型は $M$ 全体に延長される．
+写像 $\mathbb Z\to M$，$k\mapsto kx$ の核は $n\mathbb Z$ である．$x\ne0$ なので $n\ne1$ である．$n=0$ なら $kx\mapsto k(1/2+\mathbb Z)$ と定める．$n>1$ なら $kx\mapsto k(1/n+\mathbb Z)$ と定める．後者は $kx=lx$ なら $k-l\in n\mathbb Z$ であるから値が代表元によらない．どちらも巡回部分群から $D$ への準同型であり $x$ の像は非零である．$D$ は可除なので \GenronRef{K-000553} により入射的であり，この準同型は $M$ 全体に延長される．
 \end{proof}
 % genron:end K-000555
 % genron:begin K-000556
@@ -194,7 +194,7 @@ $I=0$ なら $n=0$ でよい．そうでなければ符号を変えて正の元�
 任意の可換群 $M$ は入射的な $\mathbb Z$ 加群に単射準同型を持つ．
 \end{prop}
 \begin{proof}
-$D$ を前命題の群とし $I=\operatorname{Hom}_{\mathbb Z}(M,D)$ とおく．評価写像 $j:M\to D^I$，$j(m)=(\chi(m))_{\chi\in I}$ は準同型である．\GenronRef{K-000555}$ により非零元は非零成分を持つので単射である．$D^I$ は可除である．実際 $n>0$ について各座標で $n$ 倍の原像を取り，選択公理により原像の族を選べる．従って \GenronRef{K-000553}$ によって $D^I$ は入射的である．
+$D$ を前命題の群とし $I=\operatorname{Hom}_{\mathbb Z}(M,D)$ とおく．評価写像 $j:M\to D^I$，$j(m)=(\chi(m))_{\chi\in I}$ は準同型である．\GenronRef{K-000555} により非零元は非零成分を持つので単射である．$D^I$ は可除である．実際 $n>0$ について各座標で $n$ 倍の原像を取り，選択公理により原像の族を選べる．従って \GenronRef{K-000553} によって $D^I$ は入射的である．
 \end{proof}
 % genron:end K-000556
 % genron:begin K-000557
@@ -234,7 +234,7 @@ $D$ を前命題の群とし $I=\operatorname{Hom}_{\mathbb Z}(M,D)$ とおく�
 任意の環 $A$ 上の左加群 $M$ に対して，入射的左 $A$ 加群 $J$ と単射 $A$ 準同型 $M\to J$ が存在する．
 \end{prop}
 \begin{proof}
-\GenronRef{K-000556}$ により $M$ の加法群から入射的 $\mathbb Z$ 加群 $E$ への単射加法準同型 $j$ を取る．\GenronRef{K-000557}$ により $J=\operatorname{Hom}_{\mathbb Z}(A,E)$ は左 $A$ 加群として入射的である．$i(m)(a)=j(am)$ とおくと，$i(m)$ は加法準同型であり，$i$ は加法を保存する．$i(bm)(a)=j((ab)m)=(bi(m))(a)$ なので $A$ 準同型である．$i(m)=0$ なら $j(m)=i(m)(1)=0$ なので $m=0$ となり単射である．
+\GenronRef{K-000556} により $M$ の加法群から入射的 $\mathbb Z$ 加群 $E$ への単射加法準同型 $j$ を取る．\GenronRef{K-000557} により $J=\operatorname{Hom}_{\mathbb Z}(A,E)$ は左 $A$ 加群として入射的である．$i(m)(a)=j(am)$ とおくと，$i(m)$ は加法準同型であり，$i$ は加法を保存する．$i(bm)(a)=j((ab)m)=(bi(m))(a)$ なので $A$ 準同型である．$i(m)=0$ なら $j(m)=i(m)(1)=0$ なので $m=0$ となり単射である．
 \end{proof}
 % genron:end K-000558
 % genron:begin K-000559
