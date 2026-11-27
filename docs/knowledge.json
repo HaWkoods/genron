@@ -33846,6 +33846,1027 @@
       "status": "draft",
       "source": "volumes/N-156/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-001085",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "命題式",
+      "statement": "命題変数の集合 $P$ を固定する．形式的命題式の集合 $\\mathcal F(P)$ は，$p\\in P$ を原子式とし，$\\neg A$，$(A\\land B)$，$(A\\lor B)$，$(A\\Rightarrow B)$ を生成操作として得られる有限の構文木全体とする．各演算記号と変数は互いに区別し，木の節点には演算記号，葉には変数を付す．二項演算の子は順序づける．括弧付きの文字列はこの木の表記とする．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000541",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001086",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "命題式の構造帰納法",
+      "statement": "命題式に関する性質がすべての原子式に成立し，その性質を持つ式に各生成操作を施しても成立するなら，すべての命題式に成立する．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001085",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001087",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "真理値付値",
+      "statement": "$2=\\{0,1\\}$ とし，写像 $v:P\\to 2$ を真理値付値という．否定は $1-a$，連言は双方が $1$ のときに限り $1$，選言は少なくとも一方が $1$ のときに限り $1$，含意は $(a,b)=(1,0)$ のときに限り $0$ とする二値演算である．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001085"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001088",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "真理値付値の延長",
+      "statement": "任意の真理値付値 $v$ は，各生成操作と対応する二値演算を可換にする写像 $\\widehat v:\\mathcal F(P)\\to2$ にただ一通り延長される．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001086",
+        "K-001087",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001089",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "充足と意味論的帰結",
+      "statement": "$\\widehat v(A)=1$ のとき $v\\models A$ と書く．式の集合 $\\Gamma$ に対し，すべての $A\\in\\Gamma$ を充足する付値が存在すれば $\\Gamma$ は充足可能という．$\\Gamma$ を充足する任意の付値が $B$ を充足するとき $\\Gamma\\models B$ と書く．特に $\\varnothing\\models B$ のとき $B$ を恒真式という．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001088"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001090",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限個の変数による真理値の決定",
+      "statement": "各命題式 $A$ に現れる変数の集合 $P_A$ は有限であり，二つの付値が $P_A$ 上で一致すれば $A$ の値も一致する．従って恒真性及び有限個の式の同時充足可能性は有限個の付値を調べれば決定できる．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001086",
+        "K-001088",
+        "K-001089",
+        "K-000120",
+        "K-000116"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001091",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "含意と意味論的帰結",
+      "statement": "任意の式 $A,B$ について $\\{A\\}\\models B$ と $\\models(A\\Rightarrow B)$ は同値である．また $\\Gamma\\models A$ かつ $\\Gamma\\cup\\{A\\}\\models B$ なら $\\Gamma\\models B$ である．",
+      "assumptions": [],
+      "position": [
+        48,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001089",
+        "K-001087"
+      ],
+      "status": "draft",
+      "source": "volumes/N-48/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001092",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "極限を保存する函手",
+      "statement": "函手 $F:\\mathcal C\\to\\mathcal D$ が図式 $D:\\mathcal J\\to\\mathcal C$ の極限錐 $(L,p_j)$ を $(FL,Fp_j)$ という極限錐に移すとき，$F$ はこの極限を保存するという．余極限の保存も同様に定める．",
+      "assumptions": [],
+      "position": [
+        121,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000510",
+        "K-000511",
+        "K-000520"
+      ],
+      "status": "draft",
+      "source": "volumes/N-121/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001093",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "右随伴は極限を保存する",
+      "statement": "局所小圏の間の随伴 $F:\\mathcal C\\rightleftarrows\\mathcal D:G$ において $F\\dashv G$ とする．小圏 $\\mathcal J$ 上の図式 $D:\\mathcal J\\to\\mathcal D$ が極限 $(L,p_j)$ を持てば，$(GL,Gp_j)$ は $GD$ の極限である．",
+      "assumptions": [],
+      "position": [
+        121,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001092",
+        "K-000520",
+        "K-000510",
+        "K-000511"
+      ],
+      "status": "draft",
+      "source": "volumes/N-121/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001094",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "左随伴は余極限を保存する",
+      "statement": "随伴 $F\\dashv G$ において $F$ は存在するすべての小余極限を保存する．",
+      "assumptions": [],
+      "position": [
+        121,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001092",
+        "K-000520",
+        "K-000511"
+      ],
+      "status": "draft",
+      "source": "volumes/N-121/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001095",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積と等化子の保存",
+      "statement": "右随伴は存在する任意の小積，終対象，等化子及び引戻しを保存する．左随伴は小余積，始対象，余等化子及び押出しを保存する．",
+      "assumptions": [],
+      "position": [
+        121,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001093",
+        "K-001094",
+        "K-000513",
+        "K-000514",
+        "K-000515"
+      ],
+      "status": "draft",
+      "source": "volumes/N-121/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001096",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "自由群と非交和",
+      "statement": "自由群函手 $F:\\mathbf{Set}\\to\\mathbf{Grp}$ は集合の非交和を群の余積へ移し，忘却函手 $U:\\mathbf{Grp}\\to\\mathbf{Set}$ は群の積を集合の積へ移す（いずれも標準同型の意味である）．",
+      "assumptions": [],
+      "position": [
+        121,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001095",
+        "K-000525",
+        "K-000517",
+        "K-000518"
+      ],
+      "status": "draft",
+      "source": "volumes/N-121/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001097",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "左随伴は終対象を保存するとは限らない",
+      "statement": "自由群函手は集合の終対象である一元集合を群の終対象へ移さない．",
+      "assumptions": [],
+      "position": [
+        121,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001092",
+        "K-000525",
+        "K-000513"
+      ],
+      "status": "draft",
+      "source": "volumes/N-121/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001098",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "位相環",
+      "statement": "単位元を持つ環 $R$ に位相 $\\mathcal O$ が与えられ，加法について位相群となり，乗法 $R\\times R\\to R$ が積位相に関して連続であるとき，$R$ を位相環という．ここでは Hausdorff 性を定義に含めない．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000249",
+        "K-000382",
+        "K-000256"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001099",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "平行移動と単元による乗法",
+      "statement": "位相環では加法的平行移動は同相写像である．任意の $a\\in R$ に対して $x\\mapsto ax$ 及び $x\\mapsto xa$ は連続であり，$a$ が単元なら同相写像である．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001098",
+        "K-000383",
+        "K-000442",
+        "K-000257"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001100",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "零元近傍による乗法の連続性判定",
+      "statement": "加法について位相群である環 $R$ において，すべての $a\\in R$ について左乗法及び右乗法が零元で連続であり，乗法が $(0,0)$ で連続なら，乗法は全域で連続である．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001098",
+        "K-000383",
+        "K-000385"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001101",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "位相体",
+      "statement": "可換体 $K$ が位相環であり，$K^\\times=K\\setminus\\{0\\}$ の部分位相に関して逆元写像 $x\\mapsto x^{-1}$ が連続であるとき，$K$ を位相体という．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001098",
+        "K-000443",
+        "K-000254"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001102",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "除法の連続性",
+      "statement": "位相体 $K$ において除法 $(x,y)\\mapsto xy^{-1}$ は $K\\times K^\\times$ 上で連続である．また乗法群 $K^\\times$ は位相群である．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001101",
+        "K-000257",
+        "K-000382"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001103",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分環と部分体",
+      "statement": "位相環の部分環は部分位相により位相環となり，位相体の部分体は部分位相により位相体となる．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001098",
+        "K-001101",
+        "K-000254",
+        "K-000256",
+        "K-000257",
+        "K-000251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001104",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "離散位相と密着位相",
+      "statement": "任意の環は離散位相及び密着位相のそれぞれにより位相環となる．任意の体についても同様に位相体となる．",
+      "assumptions": [],
+      "position": [
+        194,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001101",
+        "K-001098",
+        "K-000256",
+        "K-000391"
+      ],
+      "status": "draft",
+      "source": "volumes/N-194/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001105",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "形式文法",
+      "statement": "互いに素な有限集合 $V,T$，$S\\in V$，有限個の生成規則 $P$ からなる組 $G=(V,T,P,S)$ を文法という．$V$ は非終端記号集合，$T$ は終端記号集合，$S$ は開始記号である．各生成規則は $\\alpha\\to\\beta$ の形を持ち，$\\alpha,\\beta\\in(V\\cup T)^*$ であり，$\\alpha$ は少なくとも一つの非終端記号を含む．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000541",
+        "K-000542",
+        "K-000543"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001106",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "導出と生成言語",
+      "statement": "規則 $\\alpha\\to\\beta$ と語 $u,v$ に対し $u\\alpha v\\Rightarrow_G u\\beta v$ と書く．$\\Rightarrow_G^*$ はこの関係の反射推移閉包，すなわち有限回（零回を含む）の導出による関係である．$L(G)=\\{w\\in T^*\\mid S\\Rightarrow_G^*w\\}$ を生成言語という．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001105",
+        "K-000543",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001107",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "導出の文脈に関する閉性",
+      "statement": "$a\\Rightarrow_G^*b$ なら任意の語 $u,v$ に対し $uav\\Rightarrow_G^*ubv$ である．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001106",
+        "K-000544"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001108",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "文脈自由文法",
+      "statement": "各規則の左辺がただ一つの非終端記号である文法を文脈自由文法という．そのような文法で生成される言語を文脈自由言語という．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001105",
+        "K-001106"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001109",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "導出木",
+      "statement": "文脈自由文法の導出木とは，根のラベルが $S$ である有限順序木で，各非終端節点にはそのラベルを左辺とする規則を選び，右辺を順に子のラベルとするものをいう．空語への規則を用いた節点は子を持たず，それを終端記号の葉とは区別する．完全な導出木では未展開の非終端節点を許さない．左から順に終端記号の葉を読んだ語を収量という．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001108",
+        "K-000542"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001110",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "導出と導出木の同値性",
+      "statement": "文脈自由文法 $G$ と $w\\in T^*$ に対し，$w\\in L(G)$ であることは収量 $w$ の完全な導出木が存在することと同値である．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001109",
+        "K-001106",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001111",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "等しい個数の二種類の記号",
+      "statement": "$V=\\{S\\}$，$T=\\{a,b\\}$，規則 $S\\to aSb$，$S\\to\\varepsilon$ の文脈自由文法の生成言語は $\\{a^nb^n\\mid n\\in\\mathbb N\\}$ である．",
+      "assumptions": [],
+      "position": [
+        321,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001108",
+        "K-001106",
+        "K-000542",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-321/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001112",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "決定性Turing機械",
+      "statement": "有限状態集合 $Q$，有限テープ記号集合 $\\Gamma$（空白記号 $\\square$ を含む），入力記号集合 $\\Sigma\\subseteq\\Gamma\\setminus\\{\\square\\}$，初期状態 $q_0$，相異なる停止状態 $q_a,q_r$，及び遷移函数 $\\delta:(Q\\setminus\\{q_a,q_r\\})\\times\\Gamma\\to Q\\times\\Gamma\\times\\{L,R,S\\}$ の組を決定性Turing機械とする．テープの位置は自然数で添字づけ，左端での左移動は位置零に留まるものとする．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000541",
+        "K-000110",
+        "K-000118"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001113",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "配置と一段の計算",
+      "statement": "配置とは状態 $q\\in Q$，ヘッド位置 $i\\in\\mathbb N$，有限個の位置以外で空白となるテープ写像 $t:\\mathbb N\\to\\Gamma$ の組である．非停止状態で $\\delta(q,t(i))=(q',c,d)$ なら，位置 $i$ の記号を $c$ に置換し，状態を $q'$ にし，$d$ に従ってヘッドを移す．停止状態には後続配置を定めない．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001112",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001114",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "計算の一意性",
+      "statement": "初期配置から始まる計算は一意であり，有限回で停止するか，すべての自然数時点に配置を持つかのいずれかである．各有限時点のテープは有限台を持つ．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001113",
+        "K-000105",
+        "K-000104",
+        "K-000112"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001115",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "言語の認識と決定",
+      "statement": "入力 $w\\in\\Sigma^*$ はテープの先頭から置き，残りを空白とし，初期状態及び位置零から計算を開始する．$q_a$ に到達した入力全体を認識言語という．すべての入力について停止し，$w\\in L$ のときに限り $q_a$ に到達する機械が存在するとき，$L$ は決定可能という．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001112",
+        "K-001114",
+        "K-000541"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001116",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "空語を判定する機械",
+      "statement": "任意の有限入力アルファベット $\\Sigma$ に対し $\\{\\varepsilon\\}$ は決定可能である．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001115"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001117",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限記述の符号化",
+      "statement": "状態とテープ記号を有限の自然数区間で番号づけた決定性Turing機械は，二文字のアルファベット上の有限語によって単射的に符号化できる．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001112",
+        "K-000118",
+        "K-000542"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
+    },
+    {
+      "id": "K-001118",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限記述による一段の模擬",
+      "statement": "番号付き機械の符号と有限台配置の記述が与えられれば，停止の判定及び非停止の場合の後続配置は有限個の文字列操作によって求められる．",
+      "assumptions": [],
+      "position": [
+        322,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001117",
+        "K-001113",
+        "K-000118",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-322/web.tex",
+      "review": "2026-11-27 初稿．独立査読・文献本文照合未了．"
     }
   ],
   "notes": [
@@ -34616,7 +35637,7 @@
       "number": 48,
       "title": "命題論理の構文と意味",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         47,
         1
@@ -34625,7 +35646,8 @@
         "形式的命題・真理値・充足"
       ],
       "treatise": "T-48",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 49,
@@ -35754,7 +36776,7 @@
       "number": 121,
       "title": "随伴と極限保存",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         118,
         119
@@ -35763,7 +36785,8 @@
         "左随伴と余極限・右随伴と極限"
       ],
       "treatise": "T-18",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 122,
@@ -36951,7 +37974,7 @@
       "number": 194,
       "title": "位相環と位相体",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         27,
         70
@@ -36960,7 +37983,8 @@
         "環演算・逆元の連続性・位相体"
       ],
       "treatise": "T-27",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 195,
@@ -38896,7 +39920,7 @@
       "number": 321,
       "title": "形式文法",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         47
       ],
@@ -38904,13 +39928,14 @@
         "生成規則・文脈自由文法"
       ],
       "treatise": "T-47",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 322,
       "title": "Turing機械",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         47,
         5
@@ -38919,7 +39944,8 @@
         "計算モデル・符号化・万能機械"
       ],
       "treatise": "T-47",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 323,

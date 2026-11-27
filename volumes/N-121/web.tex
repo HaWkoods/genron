@@ -1,0 +1,118 @@
+% Web専用草稿．独立査読未了．
+% 所蔵文献は検索したが該当箇所の本文を確認できなかったため，以下は既出の知識に基づく独自の論証である．
+\section{随伴による極限と余極限の保存}
+% genron:begin K-001092
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000510
+% genron:use K-000511
+% genron:use K-000520
+\begin{defn}[極限を保存する函手]
+函手 $F:\mathcal C\to\mathcal D$ が図式 $D:\mathcal J\to\mathcal C$ の極限錐 $(L,p_j)$ を $(FL,Fp_j)$ という極限錐に移すとき，$F$ はこの極限を保存するという．余極限の保存も同様に定める．
+\end{defn}
+% genron:end K-001092
+% genron:begin K-001093
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001092
+% genron:use K-000520
+% genron:use K-000510
+% genron:use K-000511
+\begin{prop}[右随伴は極限を保存する]
+局所小圏の間の随伴 $F:\mathcal C\rightleftarrows\mathcal D:G$ において $F\dashv G$ とする．小圏 $\mathcal J$ 上の図式 $D:\mathcal J\to\mathcal D$ が極限 $(L,p_j)$ を持てば，$(GL,Gp_j)$ は $GD$ の極限である．
+\end{prop}
+\begin{proof}
+任意の対象 $X$ と $GD$ への錐 $(a_j:X\to GD(j))$ を取る．随伴の全単射 $\operatorname{Hom}_{\mathcal C}(X,GY)\simeq\operatorname{Hom}_{\mathcal D}(FX,Y)$ による像を $b_j:FX\to D(j)$ とする．終域変数についての自然性により，$GD(u)a_j=a_k$ は $D(u)b_j=b_k$ と同値である．極限の普遍性から $p_jb=b_j$ を満たす $b:FX\to L$ がただ一つ存在する．その逆像 $a:X\to GL$ は自然性により $Gp_ja=a_j$ を満たす．逆にこの条件を満たす射の像は $b$ に限られる．
+\end{proof}
+% genron:end K-001093
+% genron:begin K-001094
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001092
+% genron:use K-000520
+% genron:use K-000511
+\begin{prop}[左随伴は余極限を保存する]
+随伴 $F\dashv G$ において $F$ は存在するすべての小余極限を保存する．
+\end{prop}
+\begin{proof}
+図式 $D:\mathcal J\to\mathcal C$ の余極限を $(L,q_j)$ とする．対象 $Y$ への余錐 $a_j:FD(j)\to Y$ の随伴像 $b_j:D(j)\to GY$ は始域変数に関する自然性によって余錐になる．ただ一つの射 $b:L\to GY$ が $bq_j=b_j$ を満たす．その随伴逆像 $a:FL\to Y$ は $aFq_j=a_j$ を満たし，逆も成立するので一意である．
+\end{proof}
+% genron:end K-001094
+% genron:begin K-001095
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001093
+% genron:use K-001094
+% genron:use K-000513
+% genron:use K-000514
+% genron:use K-000515
+\begin{prop}[積と等化子の保存]
+右随伴は存在する任意の小積，終対象，等化子及び引戻しを保存する．左随伴は小余積，始対象，余等化子及び押出しを保存する．
+\end{prop}
+\begin{proof}
+積は離散な添字圏の極限，終対象は空圏上の極限，等化子と引戻しはそれぞれの形の有限図式の極限である．従って右随伴の極限保存を適用できる．余極限について左随伴の余極限保存を適用する．
+\end{proof}
+% genron:end K-001095
+% genron:begin K-001096
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001095
+% genron:use K-000525
+% genron:use K-000517
+% genron:use K-000518
+\begin{prop}[自由群と非交和]
+自由群函手 $F:\mathbf{Set}\to\mathbf{Grp}$ は集合の非交和を群の余積へ移し，忘却函手 $U:\mathbf{Grp}\to\mathbf{Set}$ は群の積を集合の積へ移す（いずれも標準同型の意味である）．
+\end{prop}
+\begin{proof}
+自由群の普遍性により $F\dashv U$ である．左随伴の余極限保存と右随伴の極限保存をそれぞれ適用する．
+\end{proof}
+% genron:end K-001096
+% genron:begin K-001097
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001092
+% genron:use K-000525
+% genron:use K-000513
+\begin{prop}[左随伴は終対象を保存するとは限らない]
+自由群函手は集合の終対象である一元集合を群の終対象へ移さない．
+\end{prop}
+\begin{proof}
+一元集合上の自由群を $F(\{x\})$ とする．任意の非自明な群の非単位元へ $x$ を移す写像は自由群の普遍性により準同型へ延長されるので，$x$ の像は $F(\{x\})$ の単位元ではない．従って自由群は自明群ではなく，終対象でない．
+\end{proof}
+% genron:end K-001097

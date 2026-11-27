@@ -1,0 +1,122 @@
+% Web専用草稿．独立査読未了．
+% 所蔵文献は検索したが該当箇所の本文を確認できなかったため，以下は既出の知識に基づく独自の論証である．
+\section{形式文法と導出}
+% genron:begin K-001105
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000541
+% genron:use K-000542
+% genron:use K-000543
+\begin{defn}[形式文法]
+互いに素な有限集合 $V,T$，$S\in V$，有限個の生成規則 $P$ からなる組 $G=(V,T,P,S)$ を文法という．$V$ は非終端記号集合，$T$ は終端記号集合，$S$ は開始記号である．各生成規則は $\alpha\to\beta$ の形を持ち，$\alpha,\beta\in(V\cup T)^*$ であり，$\alpha$ は少なくとも一つの非終端記号を含む．
+\end{defn}
+% genron:end K-001105
+% genron:begin K-001106
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001105
+% genron:use K-000543
+% genron:use K-000118
+\begin{defn}[導出と生成言語]
+規則 $\alpha\to\beta$ と語 $u,v$ に対し $u\alpha v\Rightarrow_G u\beta v$ と書く．$\Rightarrow_G^*$ はこの関係の反射推移閉包，すなわち有限回（零回を含む）の導出による関係である．$L(G)=\{w\in T^*\mid S\Rightarrow_G^*w\}$ を生成言語という．
+\end{defn}
+% genron:end K-001106
+% genron:begin K-001107
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001106
+% genron:use K-000544
+\begin{prop}[導出の文脈に関する閉性]
+$a\Rightarrow_G^*b$ なら任意の語 $u,v$ に対し $uav\Rightarrow_G^*ubv$ である．
+\end{prop}
+\begin{proof}
+一回の導出については生成規則の適用箇所の左右に $u,v$ を付加すればよい．有限回の場合は各段に同じ操作を施し，導出を連結する．
+\end{proof}
+% genron:end K-001107
+% genron:begin K-001108
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001105
+% genron:use K-001106
+\begin{defn}[文脈自由文法]
+各規則の左辺がただ一つの非終端記号である文法を文脈自由文法という．そのような文法で生成される言語を文脈自由言語という．
+\end{defn}
+% genron:end K-001108
+% genron:begin K-001109
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001108
+% genron:use K-000542
+\begin{defn}[導出木]
+文脈自由文法の導出木とは，根のラベルが $S$ である有限順序木で，各非終端節点にはそのラベルを左辺とする規則を選び，右辺を順に子のラベルとするものをいう．空語への規則を用いた節点は子を持たず，それを終端記号の葉とは区別する．完全な導出木では未展開の非終端節点を許さない．左から順に終端記号の葉を読んだ語を収量という．
+\end{defn}
+% genron:end K-001109
+% genron:begin K-001110
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001109
+% genron:use K-001106
+% genron:use K-000104
+\begin{prop}[導出と導出木の同値性]
+文脈自由文法 $G$ と $w\in T^*$ に対し，$w\in L(G)$ であることは収量 $w$ の完全な導出木が存在することと同値である．
+\end{prop}
+\begin{proof}
+導出の初めに根 $S$ のみを置く．各規則適用は現在の葉にある未展開非終端記号一個の展開であるから，選択された規則に従って子を付加する．空語規則の場合はその節点を展開済みとする．導出終了時に未展開非終端記号はなく，終端葉の列は $w$ である．逆に完全な導出木の非終端節点を親が子より先となる順で展開すれば，その都度合法な導出が得られ，有限回で収量に至る．
+\end{proof}
+% genron:end K-001110
+% genron:begin K-001111
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001108
+% genron:use K-001106
+% genron:use K-000542
+% genron:use K-000100
+\begin{prop}[等しい個数の二種類の記号]
+$V=\{S\}$，$T=\{a,b\}$，規則 $S\to aSb$，$S\to\varepsilon$ の文脈自由文法の生成言語は $\{a^nb^n\mid n\in\mathbb N\}$ である．
+\end{prop}
+\begin{proof}
+空語規則を適用する以前には常に $a^nSb^n$ の形であり，第一規則の適用は $n$ を一増す．空語規則は非終端記号を除去し，これ以後の導出はない．逆に第一規則を $n$ 回，第二規則を一回適用すれば所望の語が得られる．
+\end{proof}
+% genron:end K-001111

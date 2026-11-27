@@ -1,0 +1,126 @@
+% Web専用草稿．独立査読未了．
+% 所蔵文献は検索したが該当箇所の本文を確認できなかったため，以下は既出の知識に基づく独自の論証である．
+\section{Turing機械と計算}
+% genron:begin K-001112
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000541
+% genron:use K-000110
+% genron:use K-000118
+\begin{defn}[決定性Turing機械]
+有限状態集合 $Q$，有限テープ記号集合 $\Gamma$（空白記号 $\square$ を含む），入力記号集合 $\Sigma\subseteq\Gamma\setminus\{\square\}$，初期状態 $q_0$，相異なる停止状態 $q_a,q_r$，及び遷移函数 $\delta:(Q\setminus\{q_a,q_r\})\times\Gamma\to Q\times\Gamma\times\{L,R,S\}$ の組を決定性Turing機械とする．テープの位置は自然数で添字づけ，左端での左移動は位置零に留まるものとする．
+\end{defn}
+% genron:end K-001112
+% genron:begin K-001113
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001112
+% genron:use K-000105
+\begin{defn}[配置と一段の計算]
+配置とは状態 $q\in Q$，ヘッド位置 $i\in\mathbb N$，有限個の位置以外で空白となるテープ写像 $t:\mathbb N\to\Gamma$ の組である．非停止状態で $\delta(q,t(i))=(q',c,d)$ なら，位置 $i$ の記号を $c$ に置換し，状態を $q'$ にし，$d$ に従ってヘッドを移す．停止状態には後続配置を定めない．
+\end{defn}
+% genron:end K-001113
+% genron:begin K-001114
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001113
+% genron:use K-000105
+% genron:use K-000104
+% genron:use K-000112
+\begin{prop}[計算の一意性]
+初期配置から始まる計算は一意であり，有限回で停止するか，すべての自然数時点に配置を持つかのいずれかである．各有限時点のテープは有限台を持つ．
+\end{prop}
+\begin{proof}
+停止配置を固定点にすることで全配置上の後続写像を定め，再帰定理により一意の配置列を得る．最初の停止配置が存在すればそこで切断する．存在しなければ全列が計算となる．一段の変更は一箇所に限られるので有限台の性質は帰納法で保たれる．
+\end{proof}
+% genron:end K-001114
+% genron:begin K-001115
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001112
+% genron:use K-001114
+% genron:use K-000541
+\begin{defn}[言語の認識と決定]
+入力 $w\in\Sigma^*$ はテープの先頭から置き，残りを空白とし，初期状態及び位置零から計算を開始する．$q_a$ に到達した入力全体を認識言語という．すべての入力について停止し，$w\in L$ のときに限り $q_a$ に到達する機械が存在するとき，$L$ は決定可能という．
+\end{defn}
+% genron:end K-001115
+% genron:begin K-001116
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001115
+\begin{prop}[空語を判定する機械]
+任意の有限入力アルファベット $\Sigma$ に対し $\{\varepsilon\}$ は決定可能である．
+\end{prop}
+\begin{proof}
+初期状態で空白を読むなら受理状態へ，それ以外を読むなら拒否状態へ遷移する機械を取る．空語に限って位置零が空白であるから一段で正しく判定する．
+\end{proof}
+% genron:end K-001116
+% genron:begin K-001117
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001112
+% genron:use K-000118
+% genron:use K-000542
+\begin{prop}[有限記述の符号化]
+状態とテープ記号を有限の自然数区間で番号づけた決定性Turing機械は，二文字のアルファベット上の有限語によって単射的に符号化できる．
+\end{prop}
+\begin{proof}
+状態数，記号数，空白番号，入力記号の番号列，初期及び停止状態の番号，番号順に並べた遷移表を自然数の有限列として記す．入力記号列の長さを記し，移動方向には $0,1,2$ を割り当てる．自然数列 $(a_1,\ldots,a_m)$ を $1^{a_1}0\cdots1^{a_m}0$ と符号化する．零は区切りそのものであり，各成分は連続する一の数として一意に復元される．表の大きさは冒頭の個数から定まるので，機械の番号付き記述が復元される．
+\end{proof}
+% genron:end K-001117
+% genron:begin K-001118
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001117
+% genron:use K-001113
+% genron:use K-000118
+% genron:use K-000105
+\begin{prop}[有限記述による一段の模擬]
+番号付き機械の符号と有限台配置の記述が与えられれば，停止の判定及び非停止の場合の後続配置は有限個の文字列操作によって求められる．
+\end{prop}
+\begin{proof}
+状態番号，ヘッド位置，及び最後の非空白位置又はヘッド位置までの記号列を配置の記述とする．現在位置の記号を読み，遷移表を番号順に走査して該当項を選ぶ．指定記号で該当位置を置換し，ヘッド位置を更新する．右端を越える場合は空白を補い，不要な末尾空白を除けば次の有限記述を得る．停止状態は番号比較により判定できる．この論証は抽象的な有限操作の記述であって，万能Turing機械の遷移表の構成までは与えない．
+\end{proof}
+% genron:end K-001118
