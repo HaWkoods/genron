@@ -1,0 +1,163 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当箇所の本文は未照合．既出知識から独自に論証する．
+\section{体上の多項式の除法と既約性}
+% genron:begin K-001233
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000443
+% genron:use K-000351
+% genron:use K-000355
+% genron:use K-000442
+\begin{prop}[体上の多項式環の単元]
+体 $K$ 上の多項式環 $K[X]$ は整域であり，その単元は零でない定数多項式に限る．
+\end{prop}
+\begin{proof}
+非零多項式の積の最高次係数は非零なので積も非零である．$fg=1$ なら次数の加法性によって両者の次数が零となる．非零定数は $K$ における逆元を持つ．
+\end{proof}
+% genron:end K-001233
+% genron:begin K-001234
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001233
+% genron:use K-000352
+% genron:use K-000354
+% genron:use K-000355
+% genron:use K-000104
+\begin{prop}[多項式の除法算法]
+$f,g\in K[X]$，$g\ne0$ とする．$f=qg+r$ かつ $r=0$ 又は $\deg r<\deg g$ を満たす $q,r\in K[X]$ は一意に存在する．
+\end{prop}
+\begin{proof}
+$f=0$ 又は $\deg f<\deg g$ なら $q=0,r=f$ である．それ以外の場合，$f,g$ の最高次係数を $a,b$，次数の差を $d$ とする．$f_1=f-(a/b)X^d g$ は零又は $f$ より低次数である．強い帰納法で $f_1=q_1g+r$ と表せるので $q=q_1+(a/b)X^d$ とする．一意性について二表示を引けば $(q-q')g=r'-r$ である．$q-q'\ne0$ なら左辺の次数は $\deg g$ 以上，右辺は零又はそれ未満となり矛盾する．従って $q=q'$，$r=r'$ である．
+\end{proof}
+% genron:end K-001234
+% genron:begin K-001235
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001233
+% genron:use K-001234
+% genron:use K-001120
+% genron:use K-001121
+% genron:use K-001126
+\begin{prop}[多項式環のEuclid性]
+$K[X]$ は次数を Euclid 函数とする Euclid 整域であり，従って PID かつ一意分解整域である．
+\end{prop}
+\begin{proof}
+整域性と除法算法によって Euclid 整域の条件を満たす．Euclid 整域の単項性と PID の一意分解を適用する．
+\end{proof}
+% genron:end K-001235
+% genron:begin K-001236
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001234
+% genron:use K-001235
+% genron:use K-001122
+% genron:use K-000574
+% genron:use K-001233
+\begin{prop}[多項式の互除法]
+零でない多項式を少なくとも一つ含む二元 $f,g$ の最大公約元は，最高次係数を $1$ とする条件の下で一意であり，除法算法を反復することで得られる．また $uf+vg=d$ となる $u,v\in K[X]$ が存在する．
+\end{prop}
+\begin{proof}
+$f=qg+r$ のとき $(f,g)=(g,r)$ である．剰余の非零な間は次数が真に減少するので有限回で終了し，最後の非零剰余が元のイデアルを生成する．その最高次係数で割ればモニックな生成元 $d$ を得る．単項イデアルの生成元は同伴であり，モニックなものは単元の記述によって一意である．Bézout等式は $d\in(f,g)$ から従う．
+\end{proof}
+% genron:end K-001236
+% genron:begin K-001237
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001234
+% genron:use K-000353
+\begin{prop}[剰余と根の判定]
+$a\in K$ に対し $f$ を $X-a$ で割った剰余は $f(a)$ であり，$f(a)=0$ と $(X-a)\mid f$ は同値である．
+\end{prop}
+\begin{proof}
+除法算法によって $f=q(X-a)+r$ で $r$ は定数である．評価準同型 $X\mapsto a$ を適用すれば $f(a)=r$ となる．
+\end{proof}
+% genron:end K-001237
+% genron:begin K-001238
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001235
+% genron:use K-001124
+% genron:use K-000447
+% genron:use K-000444
+\begin{prop}[既約多項式と剰余体]
+非定数多項式 $f$ が既約であることと，$K[X]/(f)$ が体であることは同値である．
+\end{prop}
+\begin{proof}
+既約なら PID における既約元の主張により $(f)$ は極大イデアルであり，商は体となる．逆に $(f)$ が極大で $f=gh$ とする．$g$ が非単元なら $(f)\subseteq(g)\ne K[X]$ なので両イデアルは等しく，整域での簡約によって $h$ は単元である．
+\end{proof}
+% genron:end K-001238
+% genron:begin K-001239
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001234
+% genron:use K-001238
+% genron:use K-000330
+% genron:use K-000355
+\begin{prop}[剰余環の代表元]
+$\deg f=n>0$ なら $K[X]/(f)$ の各元は次数が $n$ 未満の多項式又は零によって一意に表される．特に $f$ が既約ならこの剰余体の各元は $1,\bar X,\ldots,\bar X^{n-1}$ の $K$ 係数による一意な線形結合である．
+\end{prop}
+\begin{proof}
+存在は除法算法による．二つの代表元の差は $(f)$ に属する．非零なら次数は $n$ 以上となるため，差は零である．定数の像は零でない定数が $(f)$ に属さないので $K$ を埋め込む．
+\end{proof}
+% genron:end K-001239
+% genron:begin K-001240
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001237
+% genron:use K-001233
+% genron:use K-000355
+\begin{prop}[低次数の既約性]
+次数 $2$ 又は $3$ の多項式が既約であることは $K$ に根を持たないことと同値である．
+\end{prop}
+\begin{proof}
+根があれば一次因子を持つ．逆に非自明な分解では因子の正の次数の和が $2$ 又は $3$ であり，一方は一次である．一次多項式は $K$ に根を持つ．
+\end{proof}
+% genron:end K-001240

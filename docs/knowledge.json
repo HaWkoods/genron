@@ -38299,6 +38299,1187 @@
       "status": "draft",
       "source": "volumes/N-111/web.tex",
       "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001233",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "体上の多項式環の単元",
+      "statement": "体 $K$ 上の多項式環 $K[X]$ は整域であり，その単元は零でない定数多項式に限る．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000443",
+        "K-000351",
+        "K-000355",
+        "K-000442"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001234",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式の除法算法",
+      "statement": "$f,g\\in K[X]$，$g\\ne0$ とする．$f=qg+r$ かつ $r=0$ 又は $\\deg r<\\deg g$ を満たす $q,r\\in K[X]$ は一意に存在する．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001233",
+        "K-000352",
+        "K-000354",
+        "K-000355",
+        "K-000104"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001235",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式環のEuclid性",
+      "statement": "$K[X]$ は次数を Euclid 函数とする Euclid 整域であり，従って PID かつ一意分解整域である．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001233",
+        "K-001234",
+        "K-001120",
+        "K-001121",
+        "K-001126"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001236",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "多項式の互除法",
+      "statement": "零でない多項式を少なくとも一つ含む二元 $f,g$ の最大公約元は，最高次係数を $1$ とする条件の下で一意であり，除法算法を反復することで得られる．また $uf+vg=d$ となる $u,v\\in K[X]$ が存在する．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001234",
+        "K-001235",
+        "K-001122",
+        "K-000574",
+        "K-001233"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001237",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "剰余と根の判定",
+      "statement": "$a\\in K$ に対し $f$ を $X-a$ で割った剰余は $f(a)$ であり，$f(a)=0$ と $(X-a)\\mid f$ は同値である．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001234",
+        "K-000353"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001238",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "既約多項式と剰余体",
+      "statement": "非定数多項式 $f$ が既約であることと，$K[X]/(f)$ が体であることは同値である．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001235",
+        "K-001124",
+        "K-000447",
+        "K-000444"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001239",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "剰余環の代表元",
+      "statement": "$\\deg f=n>0$ なら $K[X]/(f)$ の各元は次数が $n$ 未満の多項式又は零によって一意に表される．特に $f$ が既約ならこの剰余体の各元は $1,\\bar X,\\ldots,\\bar X^{n-1}$ の $K$ 係数による一意な線形結合である．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001234",
+        "K-001238",
+        "K-000330",
+        "K-000355"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001240",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "低次数の既約性",
+      "statement": "次数 $2$ 又は $3$ の多項式が既約であることは $K$ に根を持たないことと同値である．",
+      "assumptions": [],
+      "position": [
+        128,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001237",
+        "K-001233",
+        "K-000355"
+      ],
+      "status": "draft",
+      "source": "volumes/N-128/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001241",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "イデアルと加群の積",
+      "statement": "可換環 $R$ のイデアル $I$ と加群 $M$ に対し $IM$ は元 $am$（$a\\in I,m\\in M$）の有限和全体からなる部分加群である．",
+      "assumptions": [],
+      "position": [
+        142,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000327",
+        "K-000335",
+        "K-000337",
+        "K-000342"
+      ],
+      "status": "draft",
+      "source": "volumes/N-142/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001242",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Jacobson根基",
+      "statement": "可換環 $R$ の極大イデアル全体の共通部分を Jacobson 根基 $J(R)$ という．極大イデアルが存在しない場合には共通部分を $R$ とする．",
+      "assumptions": [],
+      "position": [
+        142,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000446",
+        "K-000045"
+      ],
+      "status": "draft",
+      "source": "volumes/N-142/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001243",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Jacobson根基の単元判定",
+      "statement": "$a\\in J(R)$ であることは，任意の $r\\in R$ について $1-ra$ が単元であることと同値である．",
+      "assumptions": [],
+      "position": [
+        142,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001242",
+        "K-000442",
+        "K-000447",
+        "K-000448"
+      ],
+      "status": "draft",
+      "source": "volumes/N-142/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001244",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Nakayamaの補題",
+      "statement": "$M$ が有限生成 $R$ 加群であり，$I\\subseteq J(R)$ がイデアルであるとする．$IM=M$ なら $M=0$ である．",
+      "assumptions": [],
+      "position": [
+        142,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001241",
+        "K-001243",
+        "K-000104",
+        "K-000342"
+      ],
+      "status": "draft",
+      "source": "volumes/N-142/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001245",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "剰余加群からの生成元の持上げ",
+      "statement": "$M$ を有限生成加群，$I\\subseteq J(R)$ とする．$m_1,\\ldots,m_r$ の像が $M/IM$ を生成するなら $m_1,\\ldots,m_r$ は $M$ を生成する．",
+      "assumptions": [],
+      "position": [
+        142,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001244",
+        "K-001241",
+        "K-000340",
+        "K-000342"
+      ],
+      "status": "draft",
+      "source": "volumes/N-142/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001246",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所環上の極小生成数",
+      "statement": "局所環 $(R,\\mathfrak m)$ の有限生成加群 $M$ について，$M/\\mathfrak m M$ は体 $k=R/\\mathfrak m$ 上の有限生成線形空間である．この空間の基底を持ち上げた元は $M$ の生成集合となり，任意の生成集合の像はこれを生成する．従って基底を持ち上げた生成集合は最小個数を持つ．",
+      "assumptions": [],
+      "position": [
+        142,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001245",
+        "K-001242",
+        "K-001137",
+        "K-000447",
+        "K-000560",
+        "K-000604"
+      ],
+      "status": "draft",
+      "source": "volumes/N-142/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001247",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "前加法圏と加法圏",
+      "statement": "局所小圏 $\\mathcal A$ の各射集合 $\\operatorname{Hom}(X,Y)$ が Abel 群であり，合成が両変数に関して加法的であるとき前加法圏という．さらに零対象を持ち，任意の二対象 $X,Y$ に対して双積 $X\\oplus Y$ を持つとき加法圏という．双積とは射 $i_X,i_Y,p_X,p_Y$ が $p_Xi_X=1_X,p_Yi_Y=1_Y,p_Xi_Y=p_Yi_X=0,i_Xp_X+i_Yp_Y=1$ を満たす対象である．零対象とは始対象かつ終対象である対象である．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000401",
+        "K-000513",
+        "K-000459"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001248",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "双積の二つの普遍性",
+      "statement": "双積は積及び余積の双方である．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001247",
+        "K-000513"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001249",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "圏における核と余核",
+      "statement": "加法圏の射 $f:X\\to Y$ の核とは $f$ と零射の等化子 $k:K\\to X$ であり，余核とは $f$ と零射の余等化子 $q:Y\\to Q$ である．射 $m$ が左からの合成を簡約可能なら単射（monomorphism），射 $e$ が右からの合成を簡約可能なら全射（epimorphism）という．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001247",
+        "K-000514"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001250",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "核の単射性と余核の全射性",
+      "statement": "核は単射，余核は全射である．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001249",
+        "K-000514"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001251",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Abel圏",
+      "statement": "加法圏で，すべての射が核と余核を持ち，すべての単射がその余核の核であり，すべての全射がその核の余核であるものを Abel 圏という．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001247",
+        "K-001249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001252",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "加群の圏のAbel性",
+      "statement": "任意の単位的環 $R$ の左加群の圏は Abel 圏である．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001251",
+        "K-001248",
+        "K-000339",
+        "K-000340",
+        "K-000341",
+        "K-000459",
+        "K-000461"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001253",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "像と余像及び完全列",
+      "statement": "Abel 圏の射 $f$ に対し $\\operatorname{im}f$ は $\\operatorname{coker}f$ の核，$\\operatorname{coim}f$ は $\\ker f$ の余核とする．射列 $X\\xrightarrow fY\\xrightarrow gZ$ が完全とは $\\operatorname{im}f$ と $\\ker g$ が $Y$ の部分対象として同じであること，すなわち両単射と可換な同型があることをいう．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001251",
+        "K-001249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001254",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "加法函手と完全函手",
+      "statement": "加法圏の間の函手が各射集合上で加法群準同型を与えるとき加法函手という．Abel 圏の間の加法函手が短完全列を短完全列に移すとき完全函手という．短完全列とは零対象を用いた $0\\to X\\to Y\\to Z\\to0$ の完全列である．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001253",
+        "K-000245"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001255",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "核と余核による完全性の判定",
+      "statement": "Abel 圏の間の加法函手がすべての核及び余核を保存するなら完全函手である．",
+      "assumptions": [],
+      "position": [
+        211,
+        1,
+        1,
+        9
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001254",
+        "K-001250",
+        "K-001251"
+      ],
+      "status": "draft",
+      "source": "volumes/N-211/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001256",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一階構造",
+      "statement": "一階言語 $\\mathcal L$ の構造 $\\mathcal M$ とは空でない集合 $M$ と，各 $n$ 項函数記号 $f$ に対する写像 $f^{\\mathcal M}:M^n\\to M$，各 $n$ 項関係記号 $R$ に対する部分集合 $R^{\\mathcal M}\\subseteq M^n$ の組である．定数記号の解釈は $M$ の元であり，等号の解釈は $M$ の実際の等号とする．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001173",
+        "K-000033",
+        "K-000047"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001257",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "変数割当てと項の値",
+      "statement": "変数集合から $M$ への写像 $s$ を割当てという．項の値 $t^{\\mathcal M}[s]$ は $x^{\\mathcal M}[s]=s(x)$ とし，函数記号について\n\\[\n f(t_1,\\ldots,t_n)^{\\mathcal M}[s]=f^{\\mathcal M}(t_1^{\\mathcal M}[s],\\ldots,t_n^{\\mathcal M}[s])\n\\]\nにより再帰的に定める．$s[x\\mapsto a]$ は $x$ の値だけを $a$ に変えた割当てとする．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001256",
+        "K-001174",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001258",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "一階論理式の充足",
+      "statement": "$\\mathcal M,s\\models A$ を次のように定める．原子式 $t=u$ では二つの項の値が等しいこと，$R(t_1,\\ldots,t_n)$ では値の組が $R^{\\mathcal M}$ に属することをいう．論理結合子は古典的二値演算で解釈する．$\\forall xA$ の充足はすべての $a\\in M$ について $\\mathcal M,s[x\\mapsto a]\\models A$ が成り立つこと，$\\exists xA$ の充足はそのような $a$ が存在することである．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001257",
+        "K-001175",
+        "K-001087"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001259",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自由変数による充足の決定",
+      "statement": "二割当てが項 $t$ の変数集合上で一致すれば項の値は一致する．二割当てが式 $A$ の自由変数集合上で一致すれば，$A$ の充足の成否も一致する．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001258",
+        "K-001176",
+        "K-001086"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001260",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "項の代入補題",
+      "statement": "任意の項 $t,u$ と変数 $x$ について\n\\[\n(t[u/x])^{\\mathcal M}[s]=t^{\\mathcal M}[s[x\\mapsto u^{\\mathcal M}[s]]]\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001257",
+        "K-001178"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001261",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "論理式の代入補題",
+      "statement": "項 $u$ が $A$ において $x$ に代入可能なら\n\\[\n\\mathcal M,s\\models A[u/x]\\quad\\Longleftrightarrow\\quad\n\\mathcal M,s[x\\mapsto u^{\\mathcal M}[s]]\\models A\n\\]\nである．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001260",
+        "K-001259",
+        "K-001258",
+        "K-001179"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001262",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "モデルと意味論的帰結",
+      "statement": "文 $A$ に対し割当てによらない充足を $\\mathcal M\\models A$ と書く．文集合 $\\Gamma$ の各元を充足する構造を $\\Gamma$ のモデルという．すべての $\\Gamma$ のモデルが文 $B$ を充足することを $\\Gamma\\models B$ と書く．すべての構造で真である文を論理的妥当式という．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001259",
+        "K-001258"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001263",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "構造によって変わる文の真理値",
+      "statement": "一つの二項関係記号 $R$ を持つ言語の文 $\\forall x\\exists y\\,R(x,y)$ は，一般には妥当式ではない．",
+      "assumptions": [],
+      "position": [
+        327,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001262",
+        "K-001256"
+      ],
+      "status": "draft",
+      "source": "volumes/N-327/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001264",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所的に芽で表される族",
+      "statement": "位相空間 $X$ 上の集合値前層 $F$ を取る．開集合 $U$ の各点 $x$ に $a_x\\in F_x$ を対応させる族が局所的に表されるとは，各 $x\\in U$ の開近傍 $V\\subseteq U$ と $s\\in F(V)$ が存在して，すべての $y\\in V$ について $a_y=s_y$ となることをいう．このような族全体を $F^+(U)$ と書く．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001183",
+        "K-000417",
+        "K-000146"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001265",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所表現可能な族の層性",
+      "statement": "開集合 $U$ への $F^+$ の制限写像を族の制限とすると $F^+$ は集合値層となる．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001264",
+        "K-000526",
+        "K-000527"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001266",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "前層から層への標準射",
+      "statement": "$\\eta_U:F(U)\\to F^+(U)$，$s\\mapsto(s_x)_{x\\in U}$ は前層の射 $\\eta:F\\to F^+$ を定める．各点 $x$ で $\\eta_x:F_x\\to (F^+)_x$ は全単射である．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001265",
+        "K-001264",
+        "K-001183",
+        "K-001185"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001267",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層化の普遍性",
+      "statement": "任意の集合値層 $G$ と前層の射 $\\varphi:F\\to G$ に対し，$\\psi\\eta=\\varphi$ を満たす層の射 $\\psi:F^+\\to G$ がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001266",
+        "K-001265",
+        "K-001185",
+        "K-001186",
+        "K-000526"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001268",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "層化",
+      "statement": "前層 $F$ から構成した層 $F^+$ と標準射 $\\eta:F\\to F^+$ を $F$ の層化という．一般に同じ普遍性を満たす組も層化という．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001267"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001269",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層化の一意性と函手性",
+      "statement": "層化は標準射と可換な一意の層同型を除いて一意である．前層の射 $f:F\\to H$ は標準射と可換な層の射 $f^+:F^+\\to H^+$ を一意に誘導し，この操作は恒等射及び合成を保存する．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001268",
+        "K-001267",
+        "K-000245"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001270",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層化と包含函手の随伴",
+      "statement": "層化函手は集合値層の圏から集合値前層の圏への包含函手の左随伴である．特に既に層である前層の標準射は同型である．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001269",
+        "K-001267",
+        "K-000520"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001271",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "定値前層の層化",
+      "statement": "集合 $A$ を値とし制限写像が恒等写像である定値前層の層化は局所定値函数 $U\\to A$ の層である．",
+      "assumptions": [],
+      "position": [
+        347,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001264",
+        "K-001268",
+        "K-000421"
+      ],
+      "status": "draft",
+      "source": "volumes/N-347/web.tex",
+      "review": "2026-11-28 初稿．独立査読未了．"
     }
   ],
   "notes": [
@@ -40324,7 +41505,7 @@
       "number": 128,
       "title": "一変数多項式の整除",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         72,
         107
@@ -40333,7 +41514,8 @@
         "除法算法・既約分解・剰余体"
       ],
       "treatise": "T-20",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 129,
@@ -40538,16 +41720,18 @@
       "number": 142,
       "title": "有限生成加群とNakayama",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         21,
-        138
+        138,
+        96
       ],
       "goals": [
         "Nakayama補題・局所生成"
       ],
       "treatise": "T-21",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 143,
@@ -41687,7 +42871,7 @@
       "number": 211,
       "title": "Abel圏と完全函手",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         208,
         118
@@ -41696,7 +42880,8 @@
         "Abel圏・加法函手・完全性"
       ],
       "treatise": "T-30",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 212,
@@ -43459,7 +44644,7 @@
       "number": 327,
       "title": "一階構造と意味論",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         326,
         2
@@ -43468,7 +44653,8 @@
         "構造・割当て・充足関係"
       ],
       "treatise": "T-48",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 328,
@@ -43763,7 +44949,7 @@
       "number": 347,
       "title": "層化",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         346,
         119
@@ -43772,7 +44958,8 @@
         "層化の構成・普遍性"
       ],
       "treatise": "T-51",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 348,
