@@ -1,0 +1,127 @@
+% Web専用原稿．
+% 構成案：フィルターの像・超フィルターによるコンパクト性・任意積．
+% 文献確認：Bredon, Topology and Geometry, Ch. I §8（積位相・Tychonoff位相の本文を確認）．超フィルターによる証明は既出のフィルター論から再構成．
+\section{超フィルターとコンパクト性}
+% genron:begin K-000484
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000233
+% genron:use K-000037
+% genron:use K-000038
+\begin{defn}[フィルターの像]
+写像 $f:X\to Y$ と $X$ 上のフィルター $\mathcal F$ に対して
+\[
+ f_*\mathcal F=\{B\subseteq Y\mid f^{-1}(B)\in\mathcal F\}
+\]
+を $\mathcal F$ の像フィルターという．これは $Y$ 上のフィルターとなる．
+\end{defn}
+\begin{proof}
+逆像は全体集合，空集合，有限交叉及び包含関係を保存するからフィルターの四条件が成立する．
+\end{proof}
+% genron:end K-000484
+% genron:begin K-000485
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000484
+% genron:use K-000271
+% genron:use K-000038
+\begin{prop}[超フィルターの像]
+$\mathcal F$ が超フィルターなら $f_*\mathcal F$ も超フィルターである．
+\end{prop}
+\begin{proof}
+任意の $B\subseteq Y$ について $f^{-1}(Y\setminus B)=X\setminus f^{-1}(B)$ である．\GenronRef{K-000271}$ により両逆像のちょうど一方が $\mathcal F$ に属するので，像フィルターも二者択一性を満たす．
+\end{proof}
+% genron:end K-000485
+% genron:begin K-000486
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000373
+% genron:use K-000233
+% genron:use K-000270
+% genron:use K-000272
+% genron:use K-000201
+% genron:use K-000236
+% genron:use K-000238
+% genron:use K-000240
+% genron:use K-000024
+\begin{prop}[超フィルターによるコンパクト性の判定]
+位相空間 $X$ がコンパクトであることと，$X$ 上の任意の超フィルターがある点に収束することは同値である．
+\end{prop}
+\begin{proof}
+$X$ をコンパクトとし，超フィルター $\mathcal F$ を取る．閉集合族 $\{\operatorname{cl}(A)\mid A\in\mathcal F\}$ の有限交叉は $\mathcal F$ の有限交叉を含むので非空である．\GenronRef{K-000373}$ により共通点 $x$ が存在する．任意の近傍は各 $A\in\mathcal F$ と交わるので $x$ は集積点であり，\GenronRef{K-000272}$ により収束点である．逆にコンパクトでなければ，有限交叉性を持ち全共通部分が空である閉集合族 $\mathcal C$ が存在する．その有限交叉を基とする真のフィルターを作り，\GenronRef{K-000270}$ によって超フィルターに延長する．この超フィルターの収束点はすべての $C\in\mathcal C$ に属するはずである．実際 $x\notin C$ なら $X\setminus C$ が近傍なのでフィルターに属し，$C$ と交わらず矛盾する．従って収束点は存在しない．空空間の場合はコンパクトであり真のフィルターは存在しない．
+\end{proof}
+% genron:end K-000486
+\section{積位相}
+% genron:begin K-000487
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000484
+% genron:use K-000257
+% genron:use K-000238
+% genron:use K-000233
+\begin{prop}[積へのフィルターの収束]
+積空間 $\prod_i X_i$ 上のフィルター $\mathcal F$ が $x=(x_i)$ に収束することと，各射影 $p_i$ の像フィルター $(p_i)_*\mathcal F$ が $x_i$ に収束することは同値である．
+\end{prop}
+\begin{proof}
+必要性は $p_i$ の連続性と逆像の定義から従う．十分性について，積位相の開基により $x$ の任意の近傍は有限個の座標の近傍の逆像の共通部分を含む．各逆像は $\mathcal F$ に属し，有限交叉と上方包含の条件から元の近傍も属する．
+\end{proof}
+% genron:end K-000487
+% genron:begin K-000488
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000486
+% genron:use K-000484
+% genron:use K-000485
+% genron:use K-000487
+% genron:use K-000060
+% genron:use K-000256
+% genron:use K-000257
+% genron:use K-000270
+\begin{prop}[Tychonoffの定理]
+コンパクト空間の任意の集合族 $(X_i)_{i\in I}$ に対し，積空間 $\prod_i X_i$ はコンパクトである．
+\end{prop}
+\begin{proof}
+積が空である場合はコンパクトである．そうでない場合，積上の任意の超フィルター $\mathcal F$ を取る．各射影の像は超フィルターであり，$X_i$ のコンパクト性と超フィルターによる判定から収束点を持つ．選択公理により各収束点集合から $x_i$ を選べば，前命題によって $\mathcal F$ は $(x_i)$ に収束する．従って超フィルターによる判定から積はコンパクトである．
+\end{proof}
+% genron:end K-000488
+% genron:begin K-000489
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000488
+% genron:use K-000381
+% genron:use K-000293
+% genron:use K-000257
+\begin{prop}[二点離散空間の任意積]
+二元集合 $D$ に離散位相を入れると有限空間なのでコンパクトである．従って任意の添字集合 $I$ について $D^I$ はコンパクトである．相異なる二元は少なくとも一つの座標で異なり，その座標の相異なる単集合の逆像によって分離されるので Hausdorff 空間でもある．
+\end{prop}
+% genron:end K-000489

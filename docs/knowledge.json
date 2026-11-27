@@ -14619,6 +14619,1090 @@
       "status": "verified",
       "source": "volumes/N-67/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000475",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "第一可算性と第二可算性",
+      "statement": "各点が高々可算な近傍基を持つとき第一可算，空間が高々可算な開基を持つとき第二可算．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000138",
+        "K-000208",
+        "K-000214"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000476",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "第二可算性から第一可算性",
+      "statement": "第二可算空間は第一可算であり，部分空間も第二可算．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000475",
+        "K-000215",
+        "K-000255",
+        "K-000113",
+        "K-000136",
+        "K-000138"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000477",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "第一可算空間の列による閉包",
+      "statement": "第一可算空間 X の部分集合 A に対し x∈cl(A) ⇔ A 内の列で x に収束するものが存在する．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000475",
+        "K-000201",
+        "K-000214",
+        "K-000060",
+        "K-000100",
+        "K-000274",
+        "K-000273",
+        "K-000138"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000478",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Lindelöf空間",
+      "statement": "任意の開被覆が高々可算な部分被覆を持つ空間をLindelöf空間という．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000138"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000479",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "第二可算空間のLindelöf性",
+      "statement": "第二可算空間は Lindelöf 空間．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000475",
+        "K-000478",
+        "K-000060",
+        "K-000208",
+        "K-000138"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000480",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所コンパクト空間",
+      "statement": "各点がコンパクトな近傍を持つ空間を局所コンパクトという．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000372",
+        "K-000194"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000481",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所コンパクトHausdorff空間の近傍の縮小",
+      "statement": "局所コンパクトHausdorff空間では各点の任意の近傍 U に対し開近傍 V で cl(V)⊆U がコンパクトとなるものが存在する．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000480",
+        "K-000377",
+        "K-000375",
+        "K-000374",
+        "K-000293",
+        "K-000302",
+        "K-000201",
+        "K-000199",
+        "K-000119"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000482",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所コンパクト性の開部分空間と閉部分空間への保存",
+      "statement": "局所コンパクトHausdorff空間の開部分空間及び閉部分空間は局所コンパクト．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000480",
+        "K-000481",
+        "K-000375",
+        "K-000255"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000483",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "離散空間の可算性と局所性",
+      "statement": "任意の離散空間は第一可算かつ局所コンパクト．第二可算であることと台集合が高々可算であることは同値．",
+      "assumptions": [],
+      "position": [
+        61,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000475",
+        "K-000480",
+        "K-000150",
+        "K-000372",
+        "K-000138"
+      ],
+      "status": "verified",
+      "source": "volumes/N-61/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000484",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "フィルターの像",
+      "statement": "f:X→Y と X のフィルター F に対し f_*F={B⊆Y|f^{-1}(B)∈F} はフィルター．",
+      "assumptions": [],
+      "position": [
+        91,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000233",
+        "K-000037",
+        "K-000038"
+      ],
+      "status": "verified",
+      "source": "volumes/N-91/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000485",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "超フィルターの像",
+      "statement": "超フィルターの像フィルターは超フィルター．",
+      "assumptions": [],
+      "position": [
+        91,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000484",
+        "K-000271",
+        "K-000038"
+      ],
+      "status": "verified",
+      "source": "volumes/N-91/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000486",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "超フィルターによるコンパクト性の判定",
+      "statement": "X がコンパクト ⇔ X 上の全超フィルターが収束する．",
+      "assumptions": [],
+      "position": [
+        91,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000373",
+        "K-000233",
+        "K-000270",
+        "K-000272",
+        "K-000201",
+        "K-000236",
+        "K-000238",
+        "K-000240",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-91/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000487",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積へのフィルターの収束",
+      "statement": "積空間のフィルター F が x=(x_i) に収束 ⇔ 各射影の像フィルターが x_i に収束．",
+      "assumptions": [],
+      "position": [
+        91,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000484",
+        "K-000257",
+        "K-000238",
+        "K-000233"
+      ],
+      "status": "verified",
+      "source": "volumes/N-91/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000488",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Tychonoffの定理",
+      "statement": "コンパクト空間の任意の族の積はコンパクトである（選択公理の下）．",
+      "assumptions": [],
+      "position": [
+        91,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000486",
+        "K-000484",
+        "K-000485",
+        "K-000487",
+        "K-000060",
+        "K-000256",
+        "K-000257",
+        "K-000270"
+      ],
+      "status": "verified",
+      "source": "volumes/N-91/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000489",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "二点離散空間の任意積",
+      "statement": "二元離散空間の任意積はコンパクトHausdorff．",
+      "assumptions": [],
+      "position": [
+        91,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000488",
+        "K-000381",
+        "K-000293",
+        "K-000257"
+      ],
+      "status": "verified",
+      "source": "volumes/N-91/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000490",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Cauchyフィルター",
+      "statement": "一様空間 X のフィルター F が各近縁 U に対し A∈F，A×A⊆U となる A を持つときCauchyという．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000392",
+        "K-000233",
+        "K-000033"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000491",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "収束フィルターのCauchy性",
+      "statement": "収束するフィルターはCauchyフィルター．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000490",
+        "K-000393",
+        "K-000395",
+        "K-000238"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000492",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Cauchyフィルターの集積点",
+      "statement": "Cauchyフィルターは任意の集積点に収束する．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000490",
+        "K-000393",
+        "K-000395",
+        "K-000238",
+        "K-000233"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000493",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "完備一様空間",
+      "statement": "全てのCauchyフィルターが収束する一様空間を完備という．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000490",
+        "K-000238"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000494",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉部分空間の完備性",
+      "statement": "完備一様空間の閉部分空間は完備．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000493",
+        "K-000399",
+        "K-000484",
+        "K-000395",
+        "K-000148"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000495",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分離一様空間の完備部分空間",
+      "statement": "Hausdorff一様空間の完備部分空間は閉集合．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000493",
+        "K-000399",
+        "K-000395",
+        "K-000393",
+        "K-000234",
+        "K-000236",
+        "K-000201",
+        "K-000293",
+        "K-000238"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000496",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト一様空間の完備性",
+      "statement": "誘導位相がコンパクトな一様空間は完備．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000493",
+        "K-000492",
+        "K-000373",
+        "K-000233",
+        "K-000201",
+        "K-000238"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000497",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "離散一様空間の完備性",
+      "statement": "離散一様構造を備えた空間は完備．",
+      "assumptions": [],
+      "position": [
+        93,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000493",
+        "K-000490",
+        "K-000400",
+        "K-000233",
+        "K-000395"
+      ],
+      "status": "verified",
+      "source": "volumes/N-93/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000498",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分群の閉包",
+      "statement": "位相群 G の部分群 H の閉包は部分群．H が正規なら閉包も正規．",
+      "assumptions": [],
+      "position": [
+        191,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000384",
+        "K-000383",
+        "K-000228",
+        "K-000229",
+        "K-000265",
+        "K-000201",
+        "K-000257"
+      ],
+      "status": "verified",
+      "source": "volumes/N-191/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000499",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開部分群の閉性",
+      "statement": "位相群の開部分群は閉部分群．単位元の近傍を含む部分群は開．",
+      "assumptions": [],
+      "position": [
+        191,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000383",
+        "K-000386",
+        "K-000263",
+        "K-000264"
+      ],
+      "status": "verified",
+      "source": "volumes/N-191/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000500",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "位相群のHausdorff性の判定",
+      "statement": "位相群 G が Hausdorff ⇔ {1} が閉集合 ⇔ G が T1．",
+      "assumptions": [],
+      "position": [
+        191,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000383",
+        "K-000385",
+        "K-000293",
+        "K-000295"
+      ],
+      "status": "verified",
+      "source": "volumes/N-191/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000501",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商位相群の分離性",
+      "statement": "正規部分群 N について G/N が Hausdorff ⇔ N が G の閉集合．",
+      "assumptions": [],
+      "position": [
+        191,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000500",
+        "K-000390",
+        "K-000259",
+        "K-000268"
+      ],
+      "status": "verified",
+      "source": "volumes/N-191/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000502",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "閉包と商写像",
+      "statement": "位相群の標準商写像 q:G→G/N に対し任意の B⊆G/N について q^{-1}(cl B)=cl(q^{-1}(B))．",
+      "assumptions": [],
+      "position": [
+        191,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000390",
+        "K-000261",
+        "K-000201",
+        "K-000037"
+      ],
+      "status": "verified",
+      "source": "volumes/N-191/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000503",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "単位元の閉包とHausdorff商",
+      "statement": "K=cl({1}) は閉正規部分群であり，G/K は Hausdorff．任意の Hausdorff 位相群への連続準同型は G/K を一意に経由する．",
+      "assumptions": [],
+      "position": [
+        191,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000498",
+        "K-000501",
+        "K-000500",
+        "K-000390",
+        "K-000288",
+        "K-000260",
+        "K-000219"
+      ],
+      "status": "verified",
+      "source": "volumes/N-191/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000504",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "左一様構造と右一様構造",
+      "statement": "単位元近傍 V に対し L_V={(x,y)|x^{-1}y∈V}, R_V={(x,y)|xy^{-1}∈V} を基とする一様構造が定まる．",
+      "assumptions": [],
+      "position": [
+        192,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000382",
+        "K-000385",
+        "K-000392",
+        "K-000233",
+        "K-000236",
+        "K-000051"
+      ],
+      "status": "verified",
+      "source": "volumes/N-192/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000505",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "左右一様構造の誘導位相",
+      "statement": "左・右一様構造の誘導位相は元の群位相と一致．",
+      "assumptions": [],
+      "position": [
+        192,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000504",
+        "K-000395",
+        "K-000383",
+        "K-000194"
+      ],
+      "status": "verified",
+      "source": "volumes/N-192/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000506",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "両側一様構造",
+      "statement": "L_V∩R_V を基とする一様構造は左右一様構造を含む最粗の一様構造であり，元の位相を誘導する．",
+      "assumptions": [],
+      "position": [
+        192,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000504",
+        "K-000392",
+        "K-000385",
+        "K-000395",
+        "K-000194",
+        "K-000383"
+      ],
+      "status": "verified",
+      "source": "volumes/N-192/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000507",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連続準同型の一様連続性",
+      "statement": "連続群準同型は左右それぞれ及び両側一様構造に関して一様連続．",
+      "assumptions": [],
+      "position": [
+        192,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000504",
+        "K-000506",
+        "K-000388",
+        "K-000389",
+        "K-000397",
+        "K-000283"
+      ],
+      "status": "verified",
+      "source": "volumes/N-192/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000508",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "逆元写像と左右一様構造",
+      "statement": "逆元写像は左一様構造と右一様構造を交換し，両側一様構造の一様同型となる．",
+      "assumptions": [],
+      "position": [
+        192,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000504",
+        "K-000506",
+        "K-000397"
+      ],
+      "status": "verified",
+      "source": "volumes/N-192/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000509",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "可換位相群の一様構造",
+      "statement": "可換位相群では左・右・両側一様構造は一致．",
+      "assumptions": [],
+      "position": [
+        192,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000504",
+        "K-000506",
+        "K-000385"
+      ],
+      "status": "verified",
+      "source": "volumes/N-192/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -15551,17 +16635,20 @@
       "number": 61,
       "title": "可算性と局所性",
       "area": "位相",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         54,
         60,
-        7
+        7,
+        3,
+        14
       ],
       "goals": [
         "第一・第二可算・Lindelöf性・局所コンパクト性"
       ],
       "treatise": "T-08",
-      "display_index": 10
+      "display_index": 10,
+      "web_only": true
     },
     {
       "number": 62,
@@ -16001,7 +17088,7 @@
       "number": 91,
       "title": "積のコンパクト性",
       "area": "位相",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         90,
         60
@@ -16010,7 +17097,8 @@
         "超フィルターによるTychonoff定理"
       ],
       "treatise": "T-14",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 92,
@@ -16033,16 +17121,18 @@
       "number": 93,
       "title": "一様空間の完備性",
       "area": "位相",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         92,
-        90
+        90,
+        91
       ],
       "goals": [
         "Cauchyフィルター・完備性"
       ],
       "treatise": "T-14",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 94,
@@ -17491,23 +18581,25 @@
       "number": 191,
       "title": "位相群の部分群と商",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         27,
         62,
-        56
+        56,
+        58
       ],
       "goals": [
         "閉部分群・商群・開写像"
       ],
       "treatise": "T-27",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 192,
       "title": "位相群の一様構造",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         27,
         92
@@ -17516,7 +18608,8 @@
         "左右一様性・両側一様性"
       ],
       "treatise": "T-27",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 193,

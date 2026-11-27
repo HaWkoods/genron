@@ -1,0 +1,131 @@
+% Web専用原稿．
+% 構成案：閉包・開部分群・正規閉包・商の分離性・閉性の対応．
+% 文献確認：Bredon, Topology and Geometry, Ch. I §15 の導入本文を確認．既出の位相群と商位相から論証する．
+\section{部分群の閉包}
+% genron:begin K-000498
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000384
+% genron:use K-000383
+% genron:use K-000228
+% genron:use K-000229
+% genron:use K-000265
+% genron:use K-000201
+% genron:use K-000257
+\begin{prop}[部分群の閉包]
+位相群 $G$ の部分群 $H$ の閉包 $\overline H$ は部分群である．$H$ が正規なら $\overline H$ も正規である．
+\end{prop}
+\begin{proof}
+$x,y\in\overline H$ とする．$xy^{-1}$ の任意の開近傍 $W$ に対し差写像の連続性から $x,y$ の開近傍 $U,V$ で $UV^{-1}\subseteq W$ がある．閉包の特徴づけにより $u\in U\cap H$，$v\in V\cap H$ を取れば $uv^{-1}\in W\cap H$ である．従って $xy^{-1}\in\overline H$ である．正規性については共役写像 $x\mapsto gxg^{-1}$ が同相写像であるので $gHg^{-1}=H$ なら $g\overline H g^{-1}=\overline H$ となる．
+\end{proof}
+% genron:end K-000498
+% genron:begin K-000499
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000383
+% genron:use K-000386
+% genron:use K-000263
+% genron:use K-000264
+\begin{prop}[開部分群の閉性]
+位相群 $G$ において単位元の近傍を含む部分群は開であり，開部分群は閉である．
+\end{prop}
+\begin{proof}
+部分群 $H$ が単位元の開近傍 $V$ を含むとき，$hV\subseteq H$（$h\in H$）の合併が $H$ であるから開である．$H$ が開なら，補集合は $H$ でない左剰余類の合併であり，各剰余類は平行移動により開である．
+\end{proof}
+% genron:end K-000499
+\section{分離性と商}
+% genron:begin K-000500
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000383
+% genron:use K-000385
+% genron:use K-000293
+% genron:use K-000295
+\begin{prop}[位相群のHausdorff性の判定]
+位相群 $G$ において，$G$ が Hausdorff であること，$\{1\}$ が閉集合であること，$G$ が $T_1$ であることは同値である．
+\end{prop}
+\begin{proof}
+Hausdorff なら $T_1$ であり，$T_1$ ならすべての単集合が閉である．$\{1\}$ が閉なら平行移動によってすべての単集合も閉となる．また $x\ne y$ に対し $x^{-1}y\ne1$ なので $1$ の開近傍 $U=G\setminus\{x^{-1}y\}$ を取る．\GenronRef{K-000385}$ により対称開近傍 $V$ で $VV\subseteq U$ がある．もし $xV\cap yV\ne\varnothing$ なら $x^{-1}y\in VV^{-1}=VV$ で矛盾する．従って分離できる．
+\end{proof}
+% genron:end K-000500
+% genron:begin K-000501
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000500
+% genron:use K-000390
+% genron:use K-000259
+% genron:use K-000268
+\begin{prop}[商位相群の分離性]
+位相群 $G$ と正規部分群 $N$ に対し，商位相群 $G/N$ が Hausdorff 空間であることと $N$ が $G$ の閉集合であることは同値である．
+\end{prop}
+\begin{proof}
+商位相の定義によって $G/N$ の単位元の単集合が閉であることとその逆像 $N$ が閉であることは同値である．\GenronRef{K-000500}$ を商位相群に適用する．
+\end{proof}
+% genron:end K-000501
+% genron:begin K-000502
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000390
+% genron:use K-000261
+% genron:use K-000201
+% genron:use K-000037
+\begin{prop}[閉包と商写像]
+商位相群の標準全射 $q:G\to G/N$ に対し，任意の部分集合 $B\subseteq G/N$ について
+\[
+ q^{-1}(\operatorname{cl}(B))=\operatorname{cl}(q^{-1}(B))
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+連続性によって右辺は左辺に含まれる．$q(x)\in\operatorname{cl}(B)$ なら $x$ の任意の開近傍 $U$ に対し $q(U)$ は $q(x)$ の開近傍であり，$B$ と交わる．従って $U$ は $q^{-1}(B)$ と交わり，逆の包含が従う．
+\end{proof}
+% genron:end K-000502
+% genron:begin K-000503
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000498
+% genron:use K-000501
+% genron:use K-000500
+% genron:use K-000390
+% genron:use K-000288
+% genron:use K-000260
+% genron:use K-000219
+\begin{prop}[単位元の閉包とHausdorff商]
+位相群 $G$ において $K=\operatorname{cl}(\{1\})$ は閉正規部分群であり，$G/K$ は Hausdorff である．任意の Hausdorff 位相群 $H$ への連続準同型 $f:G\to H$ は連続準同型 $G/K\to H$ を経由して一意に分解する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000498}$ により $K$ は閉正規部分群であり，商の分離性から $G/K$ は Hausdorff である．$H$ の単位元の単集合は閉であるから $\ker f$ は閉であり $\{1\}$ を含むので $K\subseteq\ker f$ である．\GenronRef{K-000288}$ により群準同型として分解し，\GenronRef{K-000260}$ により分解写像は連続となる．
+\end{proof}
+% genron:end K-000503

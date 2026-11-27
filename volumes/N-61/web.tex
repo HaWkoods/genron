@@ -1,0 +1,172 @@
+% Web専用原稿．
+% 構成案：第一・第二可算性，列による閉包，Lindelöf性，局所コンパクト性．
+% 文献確認：Bredon, Topology and Geometry, Ch. I §2（可算公理の定義本文），§7（局所コンパクト性への言及）を確認．局所コンパクト性はHausdorff性と区別して導入．
+\section{可算性}
+% genron:begin K-000475
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000138
+% genron:use K-000208
+% genron:use K-000214
+\begin{defn}[第一可算性と第二可算性]
+各点において高々可算な近傍基が存在する位相空間を第一可算空間という．位相全体に高々可算な開基が存在するとき第二可算空間という．
+\end{defn}
+% genron:end K-000475
+% genron:begin K-000476
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000475
+% genron:use K-000215
+% genron:use K-000255
+% genron:use K-000113
+% genron:use K-000136
+% genron:use K-000138
+\begin{prop}[第二可算性から第一可算性]
+第二可算空間は第一可算であり，その任意の部分空間も第二可算である．
+\end{prop}
+\begin{proof}
+高々可算な開基 $\mathcal B$ を取る．各点 $x$ を含む $\mathcal B$ の元全体は近傍基であり，高々可算である．部分空間 $A$ に対し $\{B\cap A\mid B\in\mathcal B\}$ は部分位相の開基となり，高々可算な集合の像であるから高々可算である．
+\end{proof}
+% genron:end K-000476
+% genron:begin K-000477
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000475
+% genron:use K-000201
+% genron:use K-000214
+% genron:use K-000060
+% genron:use K-000100
+% genron:use K-000274
+% genron:use K-000273
+% genron:use K-000138
+\begin{prop}[第一可算空間の列による閉包]
+第一可算空間 $X$ の部分集合 $A$ に対し，$x\in\operatorname{cl}(A)$ であることと，$A$ の元からなる列 $(a_n)_{n\in\mathbb N}$ で $x$ に収束するものが存在することは同値である．
+\end{prop}
+\begin{proof}
+高々可算な近傍基を列挙し，有限の場合は繰り返して $(B_n)$ とする．$V_n=\bigcap_{k\leq n}B_k$ は近傍である．$x\in\operatorname{cl}(A)$ なら各 $V_n\cap A$ は空でなく，選択公理により $a_n\in V_n\cap A$ を取る．任意の近傍はある $B_k$ を含むため $n\geq k$ なら $a_n$ はその近傍に属する．逆に収束列の任意の近傍は列の元を含むから \GenronRef{K-000201}$ により閉包に属する．
+\end{proof}
+% genron:end K-000477
+% genron:begin K-000478
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000138
+\begin{defn}[Lindelöf空間]
+任意の開被覆が高々可算な部分被覆を持つ位相空間を Lindelöf 空間という．コンパクト空間は Lindelöf 空間である．
+\end{defn}
+% genron:end K-000478
+% genron:begin K-000479
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000475
+% genron:use K-000478
+% genron:use K-000060
+% genron:use K-000208
+% genron:use K-000138
+\begin{prop}[第二可算空間のLindelöf性]
+第二可算空間は Lindelöf 空間である．
+\end{prop}
+\begin{proof}
+高々可算な開基 $\mathcal B$ と開被覆 $\mathcal U$ を取る．ある $U\in\mathcal U$ に含まれる $B\in\mathcal B$ の全体は $X$ を覆う．各そのような $B$ について $B\subseteq U_B\in\mathcal U$ を満たす $U_B$ を選択公理により選ぶ．$\{U_B\}$ は高々可算な部分被覆である．
+\end{proof}
+% genron:end K-000479
+\section{局所コンパクト性}
+% genron:begin K-000480
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000372
+% genron:use K-000194
+\begin{defn}[局所コンパクト空間]
+位相空間 $X$ の各点がコンパクトな近傍を持つとき，$X$ を局所コンパクトという．この定義には Hausdorff 性を含めない．
+\end{defn}
+% genron:end K-000480
+% genron:begin K-000481
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000480
+% genron:use K-000377
+% genron:use K-000375
+% genron:use K-000374
+% genron:use K-000293
+% genron:use K-000302
+% genron:use K-000201
+% genron:use K-000199
+% genron:use K-000119
+\begin{prop}[局所コンパクトHausdorff空間の近傍の縮小]
+局所コンパクトな Hausdorff 空間の点 $x$ の任意の近傍 $U$ に対し，$x$ の開近傍 $V$ で $\operatorname{cl}(V)\subseteq U$ かつ $\operatorname{cl}(V)$ がコンパクトとなるものが存在する．
+\end{prop}
+\begin{proof}
+コンパクト近傍 $K$ を取る．これは閉である．$x$ を含む開集合 $O$ で $O\subseteq U\cap K$ となるものを取る．$K\setminus O$ はコンパクトである．Hausdorff性から $x$ と各 $y\in K\setminus O$ を交わらない開集合で分離でき，有限部分被覆と有限選択により $x$ の開近傍 $W$ と $K\setminus O$ を含む開集合 $P$ で $W\cap P=\varnothing$ となるものを得る．$V=W\cap O$ とすると閉集合 $K\setminus P$ が $V$ を含むから $\operatorname{cl}(V)\subseteq K\setminus P\subseteq O\subseteq U$ である．この閉包はコンパクトな $K$ の閉部分集合である．
+\end{proof}
+% genron:end K-000481
+% genron:begin K-000482
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000480
+% genron:use K-000481
+% genron:use K-000375
+% genron:use K-000255
+\begin{prop}[局所コンパクト性の開部分空間と閉部分空間への保存]
+局所コンパクトな Hausdorff 空間の開部分空間及び閉部分空間は局所コンパクトである．
+\end{prop}
+\begin{proof}
+開部分空間の場合，各点において前命題を開部分空間自身を近傍として適用すれば，そこに含まれるコンパクト近傍を得る．閉部分空間の場合，元の空間のコンパクト近傍と閉部分空間の交わりはコンパクトであり，相対近傍である．
+\end{proof}
+% genron:end K-000482
+% genron:begin K-000483
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000475
+% genron:use K-000480
+% genron:use K-000150
+% genron:use K-000372
+% genron:use K-000138
+\begin{prop}[離散空間の可算性と局所性]
+離散空間では各点の単集合が近傍基でありコンパクト近傍でもある．また開基は各単集合を必ず含むので，第二可算であるためには台集合が高々可算でなければならない．逆に台集合が高々可算なら単集合全体が高々可算な開基をなす．
+\end{prop}
+% genron:end K-000483

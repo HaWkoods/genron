@@ -1,0 +1,155 @@
+% Web専用原稿．
+% 構成案：Cauchyフィルター，完備性，収束判定，部分空間，コンパクト性．
+% 文献確認：所蔵資料の検索では一般一様空間の完備性の本文を確認できなかった．一様構造・フィルターの既刊理論から独自に論証する．
+\section{Cauchyフィルター}
+% genron:begin K-000490
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000392
+% genron:use K-000233
+% genron:use K-000033
+\begin{defn}[Cauchyフィルター]
+一様空間 $X$ 上のフィルター $\mathcal F$ が，任意の近縁 $U$ に対し $A\in\mathcal F$ で $A\times A\subseteq U$ となるものを持つとき Cauchy フィルターという．
+\end{defn}
+% genron:end K-000490
+% genron:begin K-000491
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000490
+% genron:use K-000393
+% genron:use K-000395
+% genron:use K-000238
+\begin{prop}[収束フィルターのCauchy性]
+一様空間において収束するフィルターは Cauchy フィルターである．
+\end{prop}
+\begin{proof}
+$\mathcal F$ が $x$ に収束するとする．近縁 $U$ に対し対称近縁 $V$ で $V\circ V\subseteq U$ となるものを取る．$V[x]\in\mathcal F$ であり，$y,z\in V[x]$ なら $(y,x),(x,z)\in V$ なので $(y,z)\in U$ である．従って $A=V[x]$ が条件を満たす．
+\end{proof}
+% genron:end K-000491
+% genron:begin K-000492
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000490
+% genron:use K-000393
+% genron:use K-000395
+% genron:use K-000238
+% genron:use K-000233
+\begin{prop}[Cauchyフィルターの集積点]
+一様空間上の Cauchy フィルター $\mathcal F$ の集積点 $x$ は収束点である．
+\end{prop}
+\begin{proof}
+任意の近縁 $U$ に対し対称近縁 $V$ を $V\circ V\subseteq U$ となるように取る．$A\in\mathcal F$ で $A\times A\subseteq V$ となるものを取る．$x$ は集積点であるから $V[x]\cap A$ の元 $y$ が存在する．任意の $z\in A$ に対し $(x,y),(y,z)\in V$ なので $A\subseteq U[x]$ である．上方包含によって $U[x]\in\mathcal F$ となり，近傍基により収束する．
+\end{proof}
+% genron:end K-000492
+\section{完備性}
+% genron:begin K-000493
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000490
+% genron:use K-000238
+\begin{defn}[完備一様空間]
+任意の Cauchy フィルターが少なくとも一つの点に収束する一様空間を完備という．空空間も完備とする．分離性は定義に含めない．
+\end{defn}
+% genron:end K-000493
+% genron:begin K-000494
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000493
+% genron:use K-000399
+% genron:use K-000484
+% genron:use K-000395
+% genron:use K-000148
+\begin{prop}[閉部分空間の完備性]
+完備一様空間 $X$ の閉部分集合 $A$ は部分一様構造に関して完備である．
+\end{prop}
+\begin{proof}
+$A$ 上の Cauchy フィルター $\mathcal G$ の包含写像による像は $X$ 上の Cauchy フィルターとなる．実際，任意の近縁の制限に対して小さい集合 $B\in\mathcal G$ を取れば，同じ $B$ は像フィルターに属しその直積は元の近縁に含まれる．完備性により収束点 $x$ が存在する．像フィルターは $A$ を含むので $x\notin A$ なら開近傍 $X\setminus A$ も含み矛盾する．従って $x\in A$ であり，部分位相の近傍の定義から $\mathcal G$ は $x$ に収束する．
+\end{proof}
+% genron:end K-000494
+% genron:begin K-000495
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000493
+% genron:use K-000399
+% genron:use K-000395
+% genron:use K-000393
+% genron:use K-000234
+% genron:use K-000236
+% genron:use K-000201
+% genron:use K-000293
+% genron:use K-000238
+\begin{prop}[分離一様空間の完備部分空間]
+誘導位相が Hausdorff である一様空間 $X$ の完備部分空間 $A$ は閉集合である．
+\end{prop}
+\begin{proof}
+$x\in\operatorname{cl}(A)$ とする．$A$ 上で $U[x]\cap A$（$U$ は近縁）を基とするフィルターを考える．閉包の特徴づけから各基の元は空でなく，有限交叉条件を満たす．対称近縁の縮小によりこのフィルターは Cauchy である．完備性からある $a\in A$ に収束する．包含写像による像フィルターは $X$ で $a$ に収束すると同時に，構成から $x$ に収束する．Hausdorff 空間では異なる二点の互いに素な近傍が同時にフィルターに属することはできないから $x=a\in A$ である．
+\end{proof}
+% genron:end K-000495
+% genron:begin K-000496
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000493
+% genron:use K-000492
+% genron:use K-000373
+% genron:use K-000233
+% genron:use K-000201
+% genron:use K-000238
+\begin{prop}[コンパクト一様空間の完備性]
+誘導位相に関してコンパクトな一様空間は完備である．
+\end{prop}
+\begin{proof}
+Cauchy フィルター $\mathcal F$ の各元の閉包からなる族は有限交叉性を持つ．コンパクト性によって共通点を得る．これは $\mathcal F$ の集積点であるから \GenronRef{K-000492}$ により収束点である．
+\end{proof}
+% genron:end K-000496
+% genron:begin K-000497
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000493
+% genron:use K-000490
+% genron:use K-000400
+% genron:use K-000233
+% genron:use K-000395
+\begin{prop}[離散一様空間の完備性]
+離散一様構造では対角集合が近縁である．従って Cauchy フィルターは $A\times A\subseteq\Delta_X$ となる非空集合 $A$ を含み，$A=\{x\}$ となる．そのフィルターは $x$ のすべての近傍を含むので収束する．
+\end{prop}
+% genron:end K-000497

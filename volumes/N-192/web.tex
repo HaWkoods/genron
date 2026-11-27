@@ -1,0 +1,125 @@
+% Web専用原稿．
+% 構成案：左・右・両側一様構造，位相の一致，準同型の一様連続性，逆元と可換群．
+% 文献確認：一般一様構造の該当文献本文は未確認．既出位相群と一様構造に基づく独自の論証．
+\section{左右の一様構造}
+% genron:begin K-000504
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000382
+% genron:use K-000385
+% genron:use K-000392
+% genron:use K-000233
+% genron:use K-000236
+% genron:use K-000051
+\begin{prop}[左一様構造と右一様構造]
+位相群 $G$ の単位元の近傍 $V$ に対して
+\[
+ L_V=\{(x,y)\mid x^{-1}y\in V\},\qquad
+ R_V=\{(x,y)\mid xy^{-1}\in V\}
+\]
+とおく．$L_V$ 全体及び $R_V$ 全体をそれぞれフィルター基とするフィルターは一様構造となる．これを左一様構造及び右一様構造という．
+\end{prop}
+\begin{proof}
+いずれも対角集合を含み，$V$ の有限交叉に対応する近縁は元の近縁の有限交叉であるから真のフィルター基である．逆関係は $V^{-1}$ に対応する．$WW\subseteq V$ となる近傍 $W$ を \GenronRef{K-000385}$ によって取る．$(x,y),(y,z)\in L_W$ なら $x^{-1}z=(x^{-1}y)(y^{-1}z)\in V$ であり，$L_W\circ L_W\subseteq L_V$ となる．右の場合も $xz^{-1}=(xy^{-1})(yz^{-1})$ を用いる．上方包含によりフィルター全体について一様構造の条件が従う．
+\end{proof}
+% genron:end K-000504
+% genron:begin K-000505
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000504
+% genron:use K-000395
+% genron:use K-000383
+% genron:use K-000194
+\begin{prop}[左右一様構造の誘導位相]
+左及び右一様構造の誘導位相はいずれも元の群位相に一致する．
+\end{prop}
+\begin{proof}
+$L_V[x]=xV$，$R_V[x]=V^{-1}x$ であり，平行移動及び逆元は同相写像である．従って双方の近縁近傍基は元の群位相の点 $x$ の近傍基をなす．
+\end{proof}
+% genron:end K-000505
+% genron:begin K-000506
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000504
+% genron:use K-000392
+% genron:use K-000385
+% genron:use K-000395
+% genron:use K-000194
+% genron:use K-000383
+\begin{prop}[両側一様構造]
+$L_V\cap R_V$ を基とする一様構造を両側一様構造という．これは左・右の両一様構造を包含する最も粗い一様構造である．誘導位相は元の群位相に等しい．
+\end{prop}
+\begin{proof}
+有限交叉，逆関係，対角集合の条件は各一様構造の条件による．$WW\subseteq V$ なら $(L_W\cap R_W)\circ(L_W\cap R_W)\subseteq L_V\cap R_V$ である．両方を含む任意の一様構造はその有限交叉を含むので最小性が従う．点 $x$ の近縁近傍は $xV\cap V^{-1}x$ であり，これらは元の群位相の近傍基である．
+\end{proof}
+% genron:end K-000506
+\section{写像と一様連続性}
+% genron:begin K-000507
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000504
+% genron:use K-000506
+% genron:use K-000388
+% genron:use K-000389
+% genron:use K-000397
+% genron:use K-000283
+\begin{prop}[連続準同型の一様連続性]
+位相群間の連続準同型 $f:G\to H$ は左一様構造同士，右一様構造同士及び両側一様構造同士について一様連続である．
+\end{prop}
+\begin{proof}
+$H$ の単位元近傍 $V$ に対し $W=f^{-1}(V)$ は $G$ の単位元近傍である．準同型性から $(f\times f)^{-1}(L_V)=L_W$，$(f\times f)^{-1}(R_V)=R_W$ である．交叉についても同じ等式が成り立ち，一様連続性の条件が従う．
+\end{proof}
+% genron:end K-000507
+% genron:begin K-000508
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000504
+% genron:use K-000506
+% genron:use K-000397
+\begin{prop}[逆元写像と左右一様構造]
+逆元写像 $\iota(x)=x^{-1}$ は左一様構造から右一様構造への一様連続な全単射であり，逆写像も一様連続である．両側一様構造に関しても同様である．
+\end{prop}
+\begin{proof}
+$(x^{-1},y^{-1})\in R_V$ と $(x,y)\in L_V$ は同値であり，左と右を入れ替えた同値性も成立する．従って逆像は左右の近縁を交換し，両側の近縁を保つ．逆写像は自身である．
+\end{proof}
+% genron:end K-000508
+% genron:begin K-000509
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000504
+% genron:use K-000506
+% genron:use K-000385
+\begin{prop}[可換位相群の一様構造]
+$G$ が可換群なら $xy^{-1}=(x^{-1}y)^{-1}$ である．従って対称近傍 $V$ に対し $L_V=R_V$ となる．対称近傍は単位元の近傍基をなすので左右の一様構造は一致し，両側一様構造もこれに等しい．
+\end{prop}
+% genron:end K-000509
