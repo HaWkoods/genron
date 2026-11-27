@@ -66,8 +66,8 @@ function fillPreview(box,e,withClose=true){
  box.append(node("div","meta",noteNumber(noteByNumber(e.position[0]))+" "+(notes.get(e.position[0])?.title??"")));
  box.append(node("h3","",headingLabel(e)+" "+entryNumber(e)+"（"+e.title+"）"));
  if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
- const p=node("div");if(headingKind(e)==="worked_example")renderBookText(p,e.problem_tex??e.statement,{...e.webProof,noteNumber:e.position[0]});else renderParts(p,e.preview?.statement,e.statement);box.append(p);
- const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",(new URL(location.href).searchParams.get("view")==="web"||isNativeCatalogue(new URL(location.href).searchParams))?webUrl("id",e.id):url("id",e.id)));box.append(foot)
+ const p=node(headingKind(e)==="worked_example"?"div":"p");if(headingKind(e)==="worked_example")renderBookText(p,e.problem_tex??e.statement,{...e.webProof,noteNumber:e.position[0]});else renderParts(p,e.preview?.statement,e.statement);box.append(p);
+ const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",(isExample(e)||new URL(location.href).searchParams.get("view")==="web"||isNativeCatalogue(new URL(location.href).searchParams))?webUrl("id",e.id):url("id",e.id)));box.append(foot)
 }
 function positionPreview(el){
  if(!el?.isConnected)return hidePreview();
@@ -222,7 +222,7 @@ function showHome(){
    if(exactNote&&(data.aliases?.[exactNote[1]]?!data.aliases[exactNote[1]].ids.includes(e.id):e.position[0]!==Number(exactNote[1])))continue;
    if(exactTreatise&&normalize(t?.id??"")!==q)continue;
    if(exactPart&&normalize(p?.id??"")!==q)continue;
-   const d=node("article","result knowledge-result"),a=anchor(headingLabel(e)+"（"+e.title+"）",url("id",e.id));bindPreview(a,e);d.append(node("span","meta",entryNumber(e)),a,node("span","summary",headingKind(e)==="worked_example"?"例題：本文で問題と解答を閲覧":e.statement));list.append(d);total++
+   const d=node("article","result knowledge-result"),a=anchor(headingLabel(e)+"（"+e.title+"）",isExample(e)?webUrl("id",e.id):url("id",e.id));bindPreview(a,e);d.append(node("span","meta",entryNumber(e)),a,node("span","summary",headingKind(e)==="worked_example"?"例題：本文で問題と解答を閲覧":e.statement));list.append(d);total++
   }
   count.textContent=total+"件";if(!total)list.append(node("p","empty","一致する項目がありません。"));
  }
