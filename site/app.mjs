@@ -9,7 +9,7 @@ const url=(key,val)=>{const u=new URL(root);u.searchParams.set(key,val);return u
 const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
 const anchor=(txt,href,cls)=>{const a=node("a",cls,txt);a.href=href;return a};
 const clamp=(x,min,max)=>Math.max(min,Math.min(max,x));
-let data, entries, notes, disposeReader=null, closeTimer=0, active=null, pinned=false;
+let data, entries, notes, figureIndex, disposeReader=null, closeTimer=0, active=null, pinned=false;
 const noteNumber=n=>n?.display_number??("N-"+(n?.number??""));
 const noteByNumber=n=>notes.get(n)??data.plan?.find(x=>x.number===n);
 const entryNumber=e=>e.display_number??[noteNumber(noteByNumber(e.position[0])),...e.position.slice(1)].join(".");
@@ -57,9 +57,19 @@ function fitMath(box){
   }
  }
 }
+function figureUrl(f){const u=new URL(webUrl("id",f.owner.id));u.searchParams.set("figure",f.figure_id);return u.href}
+function makeFigure(f,previewMode=false){const figure=node("figure",previewMode?"web-figure preview-figure":"web-figure"),img=node("img");img.setAttribute("src",f.src);img.alt=f.alt;img.loading=previewMode?"eager":"lazy";img.decoding="async";figure.append(img,node("figcaption","",f.caption));return figure}
+function figureCitation(id){const f=figureIndex.get(id);if(!f)return null;const a=anchor(f.title,figureUrl(f),"web-citation figure-citation");a.dataset.figure=id;bindPreview(a,{figureRef:f});return a}
 function fillPreview(box,e,withClose=true){
  box.replaceChildren();
  if(withClose){const close=node("button","close-preview","×");close.setAttribute("aria-label","プレビューを閉じる");close.onclick=hidePreview;box.append(close)}
+ if(e.figureRef){
+  const f=e.figureRef,owner=f.owner;
+  box.append(node("div","meta",noteNumber(noteByNumber(owner.position[0]))+" "+owner.title),node("h3","","図・図式（"+f.title+"）"));
+  const figure=makeFigure(f,true);box.append(figure);
+  const img=figure.querySelector("img");img.addEventListener("load",()=>{if(box===preview&&active&&box.contains(img))positionPreview(active)},{once:true});
+  const foot=node("div","foot");foot.append(anchor("参照先の図・図式を開く ↗",figureUrl(f)));box.append(foot);return;
+ }
  box.append(node("div","meta",noteNumber(noteByNumber(e.position[0]))+" "+(notes.get(e.position[0])?.title??"")));
  box.append(node("h3","",headingLabel(e)+" "+entryNumber(e)+"（"+e.title+"）"));
  if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
@@ -90,7 +100,7 @@ document.fonts?.ready.then(()=>{if(active)positionPreview(active);fitMath($("#se
 addEventListener("scroll",()=>{if(active)positionPreview(active)},{passive:true,capture:true});
 function bindPreview(a,e){a.addEventListener("pointerenter",ev=>{if(ev.pointerType!=="touch")showPreview(a,e)});a.addEventListener("pointerleave",deferClose);a.addEventListener("focus",()=>{if(a.matches(":focus-visible"))showPreview(a,e)});a.addEventListener("blur",deferClose);a.addEventListener("click",ev=>{if(!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey&&isTouch()&&(!pinned||active!==a)){ev.preventDefault();showPreview(a,e,true)}})}
 function button(txt,fn){const b=node("button","",txt);b.type="button";b.onclick=fn;return b}
-function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);return {n:e.position[0],id,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias)return {n:alias.number,id:alias.first,page:null};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
+function routeInfo(){const p=new URL(location.href).searchParams;const id=p.get("id");if(id){const e=entries.get(id);if(!e)throw Error("未登録の知識ID："+id);const figure=p.get("figure");if(figure&&figureIndex.get(figure)?.owner.id!==id)throw Error("未登録の図・図式："+figure);return {n:e.position[0],id,figure,page:null}}const n=p.get("note");if(n==="statements"||n==="notation"||n==="examples")return {n,page:parseInt(p.get("page"),10)||1};const alias=data.aliases?.[n];if(alias)return {n:alias.number,id:alias.first,page:null};if(n&&notes.has(Number(n)))return {n:Number(n),page:parseInt(p.get("page"),10)||1};if(n)throw Error("未掲載ノート："+n);return null}
 
 function showMap(){
  const plan=data.plan??[], by=new Map(plan.map(n=>[n.number,n])), parts=data.parts??[], ts=data.treatises??[];
@@ -400,13 +410,15 @@ function appendWebCitationText(target,text,metadata={}){
 
 function renderProof(target,proof,metadata){
  const tex=proof.tex;
- const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\})/g;
+ const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\}|\\GenronFigureRef\{[a-z0-9-]+\})/g;
  const macros=Object.fromEntries(Object.entries(metadata.macros??{}).map(([k,v])=>["\\"+k,v]));
  const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));appendWebCitationText(target,p.textContent,metadata);if(s.includes("\n\n"))target.append(node("br"))}};
  let last=0;
  for(const m of tex.matchAll(pattern)){
   plain(tex.slice(last,m.index));last=m.index+m[0].length;
-  const token=m[0];const ref=token.match(/^(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
+  const token=m[0];const figureRef=token.match(/^\\GenronFigureRef\{([a-z0-9-]+)\}$/);
+  if(figureRef){const link=figureCitation(figureRef[1]);target.append(link??document.createTextNode(token));continue}
+  const ref=token.match(/^(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
   if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(e.title,webUrl("id",id),"web-citation");bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
   const display=token.startsWith("\\[")||token.startsWith("$$")||token.startsWith("\\begin");
   let formula=token;
@@ -490,11 +502,9 @@ function renderEntryContent(section,e){
  // Supplementary figures and mathematical diagrams are independently collapsible.
  const figures=e.figures??[];
  for(const [i,f] of figures.entries()){
-  const block=node("details","web-figure-toggle");
+  const block=node("details","web-figure-toggle");block.id="figure-"+f.figure_id;
   const summary=node("summary","",figures.length===1?"図・図式":"図・図式 "+(i+1));
-  const figure=node("figure","web-figure"),img=node("img");
-  img.setAttribute("src",f.src);img.alt=f.alt;img.loading="lazy";img.decoding="async";
-  figure.append(img,node("figcaption","",f.caption));
+  const figure=makeFigure(f),img=figure.querySelector("img");
   // A lazy image in a closed details has no layout box yet. Start loading
   // explicitly on disclosure so the first opening also works offscreen.
   block.addEventListener("toggle",()=>{if(block.open)img.loading="eager"});
@@ -554,7 +564,8 @@ function showWeb(info,restore){
   article.append(chapter);
  }
  layout.append(side,article);main.replaceChildren(layout);
- requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore);else document.getElementById(info.id??"N-"+info.n)?.scrollIntoView()});
+ const destination=info.figure?document.getElementById("figure-"+info.figure):null;if(destination)destination.open=true;
+ requestAnimationFrame(()=>{fitMath(article);if(restore!==null)window.scrollTo(0,restore);else (destination??document.getElementById(info.id??"N-"+info.n))?.scrollIntoView()});
 }
 
 
@@ -655,4 +666,4 @@ document.addEventListener("click",ev=>{
 });
 history.scrollRestoration="manual";
 window.addEventListener("popstate",ev=>{render(ev.state?.scrollY??null)});
-try{const res=await fetch(new URL("data.json",root));if(!res.ok)throw Error("検索データの取得に失敗しました");data=await res.json();entries=new Map(data.entries.map(e=>[e.id,e]));notes=new Map(data.notes.map(n=>[n.number,n]));await render()}catch(e){showError(e)}
+try{const res=await fetch(new URL("data.json",root));if(!res.ok)throw Error("検索データの取得に失敗しました");data=await res.json();entries=new Map(data.entries.map(e=>[e.id,e]));notes=new Map(data.notes.map(n=>[n.number,n]));figureIndex=new Map(data.entries.flatMap(e=>(e.figures??[]).map(f=>[f.figure_id,{...f,owner:e}])));await render()}catch(e){showError(e)}

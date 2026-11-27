@@ -34,16 +34,17 @@ cp(path.join(modules,"katex/LICENSE"),path.join(out,"vendor/katex/LICENSE"));
 // Figure assets are authored SVGs keyed by permanent knowledge IDs.
 const figureManifest=JSON.parse(fs.readFileSync(path.join(root,"site/figures.json"),"utf8"));
 const knownIds=new Set(ledger.entries.map(e=>e.id));
-const figurePaths=new Set(),figuresById=new Map();
+const figurePaths=new Set(),figuresById=new Map(),figureIds=new Set(),publicFigureIds=new Set();
 for(const f of figureManifest){
- if(!knownIds.has(f.id)||!/^figures\/[a-z0-9-]+\.svg$/.test(f.src)||!f.alt?.trim()||!f.caption?.trim()||figurePaths.has(f.src))throw Error("Invalid figure manifest entry "+JSON.stringify(f));
- figurePaths.add(f.src);
+ if(!knownIds.has(f.id)||!/^figures\/[a-z0-9-]+\.svg$/.test(f.src)||!f.alt?.trim()||!f.caption?.trim()||figurePaths.has(f.src)||!/^([a-z0-9]+-)*[a-z0-9]+$/.test(f.figure_id)||figureIds.has(f.figure_id)||!f.title?.trim())throw Error("Invalid figure manifest entry "+JSON.stringify(f));
+ figurePaths.add(f.src);figureIds.add(f.figure_id);
  const source=path.join(root,"site",f.src);
  const svg=fs.readFileSync(source,"utf8");
  if(!/^<svg\b/.test(svg.trim())||/<(?:script|foreignObject)\b|\bon\w+\s*=|\b(?:href|src)\s*=/i.test(svg))throw Error("Unsafe or invalid figure "+f.src);
  if(!publicIds.has(f.id))continue;
+ publicFigureIds.add(f.figure_id);
  const dest=path.join(out,f.src);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(source,dest);
- const list=figuresById.get(f.id)??[];list.push({src:f.src,alt:f.alt,caption:f.caption});figuresById.set(f.id,list);
+ const list=figuresById.get(f.id)??[];list.push({figure_id:f.figure_id,title:f.title,src:f.src,alt:f.alt,caption:f.caption});figuresById.set(f.id,list);
 }
 const webProofs=new Map();
 function collectProofs(source){
@@ -75,6 +76,10 @@ for(const n of published){
   if((body.match(/(?<!\\)\$/g)??[]).length%2!==0)
    throw Error("N-"+n.number+": unbalanced dollar delimiters near source line "+(source.slice(0,p.index).split("\n").length));
  }
+ const prose=source.replace(/(?<!\\)%[^\n]*/g,"");
+ const refs=[...prose.matchAll(/\\GenronFigureRef\{([a-z0-9-]+)\}/g)];
+ if((prose.match(/\\GenronFigureRef\b/g)??[]).length!==refs.length)throw Error("Malformed figure reference in N-"+n.number);
+ for(const ref of refs)if(!publicFigureIds.has(ref[1]))throw Error("Unknown or unpublished figure "+ref[1]+" in N-"+n.number);
  collectProofs(source);
 }
  const webNotation=JSON.parse(fs.readFileSync(path.join(root,"docs/notation.json"),"utf8"));

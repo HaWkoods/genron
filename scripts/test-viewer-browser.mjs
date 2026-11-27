@@ -360,6 +360,37 @@ try{
   assert.equal(await disclosure.getAttribute("open"),null);
   await page.setViewportSize({width:1440,height:1000});
  }
+ // Exercise an actual prose figure reference, including preview, navigation and independent disclosure.
+ const citedFigure=planData.entries.find(e=>e.id==="K-000890");
+ const f=citedFigure.figures.find(f=>f.figure_id==="intermediate-value");
+ await page.goto(origin+"?id="+citedFigure.id+"&view=web");
+ const figLink=page.locator("#"+citedFigure.id+" .figure-citation[data-figure='"+f.figure_id+"']");
+ await figLink.waitFor();
+ assert.equal(await figLink.innerText(),f.title);
+ const figureTarget=page.locator("#figure-"+f.figure_id);
+ assert.equal(await figureTarget.getAttribute("open"),null);
+ await figLink.hover();
+ const figurePreview=page.locator("#preview:not([hidden]) .preview-figure img");
+ await figurePreview.waitFor({state:"visible"});
+ assert.equal(await figurePreview.getAttribute("src"),f.src);
+ assert.ok(await figurePreview.evaluate(async el=>{await el.decode();return el.naturalWidth>0}));
+ assert.equal(await figureTarget.getAttribute("open"),null,"Preview must not open source figure");
+ await figLink.click();
+ await page.waitForURL(/figure=intermediate-value/);
+ await page.locator("#figure-"+f.figure_id+" img").waitFor({state:"visible"});
+ assert.equal(await figureTarget.getAttribute("open"),"");
+ await page.reload();
+ await page.locator("#figure-"+f.figure_id+" img").waitFor({state:"visible"});
+ assert.equal(await figureTarget.getAttribute("open"),"","Direct figure URL opens target");
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(origin+"?view=knowledge-path&target="+citedFigure.id+"&scope=direct");
+ await figLink.waitFor();
+ await figLink.focus();await figLink.press("Tab");await figLink.press("Shift+Tab");
+ await figurePreview.waitFor({state:"visible"});
+ assert.ok(await figurePreview.evaluate(async el=>{await el.decode();return el.getBoundingClientRect().width<=el.closest("#preview").clientWidth&&el.naturalWidth>0}),"Mobile figure preview fits");
+ await page.keyboard.press("Escape");
+ assert.equal(await page.locator("#preview").isVisible(),false);
+ await page.setViewportSize({width:1440,height:1000});
  // Retired note aliases are distinct routing cases; retain all of them.
  for(const [old,a] of Object.entries(planData.aliases??{})){
   for(const suffix of ["","&page=1","&view=pdf&page=2"]){

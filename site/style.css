@@ -122,3 +122,9 @@ dialog{border:1px solid #c6cdd0;border-radius:10px;padding:24px;width:min(820px,
 .web-figure-toggle:not([open])>figure{display:none}
 .web-figure-toggle>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .web-figure-toggle>.web-figure{margin:1em auto 1.2em}
+
+/* Figure citations use the same preview and reference styling as knowledge citations. */
+#preview .preview-figure{margin:.65em auto;max-width:100%;min-width:0}
+#preview .preview-figure img{width:100%;max-width:100%;height:auto;max-height:48vh;object-fit:contain}
+#preview .preview-figure figcaption{overflow-wrap:anywhere;text-align:left}
+.web-figure-toggle{scroll-margin-top:24px}
