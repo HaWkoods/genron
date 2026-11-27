@@ -30398,6 +30398,738 @@
       "status": "draft",
       "source": "volumes/N-26/web.tex",
       "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000976",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "ノルム空間値写像の平均値評価",
+      "statement": "実又は複素ノルム空間 $E,F$ の間の写像 $f:U\\to F$ が開集合 $U$ 上で Fréchet 微分可能であるとする．線分 $[a,b]\\subseteq U$ 上で $\\|Df(x)\\|\\leq L$ ならば $\\|f(b)-f(a)\\|\\leq L\\|b-a\\|$ である．",
+      "assumptions": [],
+      "position": [
+        157,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000893",
+        "K-000894",
+        "K-000853",
+        "K-000889",
+        "K-000765"
+      ],
+      "status": "draft",
+      "source": "volumes/N-157/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000977",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "恒等写像に近い写像の局所可逆性",
+      "statement": "Banach空間 $E$ の開集合 $U$ に対し $f:U\\to E$ を $C^1$ 級とし，$\\overline B(a,r)\\subseteq U$，$0\\leq q<1$，$\\|Df(x)-I\\|\\leq q$（$x\\in\\overline B(a,r)$）とする．$f$ は $B(a,r)$ 上で単射かつ開写像で，その逆写像は Lipschitz 定数 $(1-q)^{-1}$ を持つ．像は $B(f(a),(1-q)r)$ を含む．",
+      "assumptions": [],
+      "position": [
+        157,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000976",
+        "K-000897",
+        "K-000805",
+        "K-000771",
+        "K-000794"
+      ],
+      "status": "draft",
+      "source": "volumes/N-157/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000978",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Banach空間の逆写像定理",
+      "statement": "Banach空間 $E,F$ と開集合 $U\\subseteq E$，$C^1$ 級写像 $f:U\\to F$，$a\\in U$ を取る．$A=Df(a):E\\to F$ が有界線形同型で逆写像も有界ならば，ある開近傍 $V$（$a\\in V\\subseteq U$）と $W$（$f(a)\\in W\\subseteq F$）について $f|_V:V\\to W$ は $C^1$ 級の逆写像 $g$ を持つ．さらに $Dg(y)=Df(g(y))^{-1}$ である．",
+      "assumptions": [],
+      "position": [
+        157,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000977",
+        "K-000893",
+        "K-000896",
+        "K-000897",
+        "K-000856",
+        "K-000853"
+      ],
+      "status": "draft",
+      "source": "volumes/N-157/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000979",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一点での全単射性による判定",
+      "statement": "前命題で $Df(a)$ が全単射な有界線形写像であると仮定すれば十分である．有限次元の場合には $E,F$ が同次元であり $Df(a)$ の核が零であることを仮定すればよい．",
+      "assumptions": [],
+      "position": [
+        157,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000978",
+        "K-000912",
+        "K-000849",
+        "K-000638"
+      ],
+      "status": "draft",
+      "source": "volumes/N-157/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000980",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "劣線形汎函数",
+      "statement": "実線形空間 $E$ 上の実数値函数 $p$ が $p(x+y)\\leq p(x)+p(y)$，$p(tx)=tp(x)$（$t\\geq0$）を満たすとき劣線形汎函数という．特に半ノルムは劣線形である．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000560",
+        "K-000921"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000981",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形汎函数の一次元延長",
+      "statement": "実線形空間 $E$ の部分空間 $M$ 上の線形汎函数 $\\ell$ が $E$ 上の劣線形汎函数 $p$ に対し $\\ell\\leq p$ を満たすとする．$z\\notin M$ に対して $\\ell$ は $M+\\mathbb Rz$ 上の線形汎函数で $p$ 以下のものに延長できる．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000980",
+        "K-000705",
+        "K-000707"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000982",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Hahn–Banachの定理（実数体）",
+      "statement": "実線形空間 $E$ 上の劣線形汎函数 $p$ と部分空間 $M$ 上の線形汎函数 $\\ell\\leq p$ に対し，$\\ell$ を延長する $E$ 上の線形汎函数 $L\\leq p$ が存在する．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000980",
+        "K-000981",
+        "K-000131"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000983",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "半ノルムに支配された線形汎函数の延長",
+      "statement": "実又は複素線形空間 $E$ の部分空間 $M$ 上の線形汎函数 $\\ell$ が半ノルム $p$ に対し $|\\ell(x)|\\leq p(x)$ を満たすなら，$E$ 全体への線形延長 $L$ で $|L(x)|\\leq p(x)$ を満たすものが存在する．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000982",
+        "K-000921",
+        "K-000717",
+        "K-000720"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000984",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "ノルムを保つ延長と双対によるノルムの表示",
+      "statement": "ノルム空間 $E$ の部分空間上の有界線形汎函数は同じノルムを持つ $E$ 上の有界線形汎函数に延長できる．特に $x\\in E$ に対し $\\|x\\|=\\sup\\{|L(x)|\\mid L\\in E^*,\\ \\|L\\|\\leq1\\}$ が成立する．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000983",
+        "K-000788",
+        "K-000852",
+        "K-000853",
+        "K-000904"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000985",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開凸集合と外部の一点の分離",
+      "statement": "実位相線形空間 $E$ において空でない開凸集合 $C$ と $a\\notin C$ が与えられれば，ある連続実線形汎函数 $L$ で全ての $x\\in C$ について $L(x)<L(a)$ を満たすものが存在する．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000980",
+        "K-000982",
+        "K-000881",
+        "K-000883",
+        "K-000920",
+        "K-000708"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000986",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所凸空間における閉凸集合からの分離",
+      "statement": "Hausdorff局所凸空間 $E$ の空でない閉凸集合 $C$ と $a\\notin C$ に対して，ある連続実線形汎函数 $L$ と実数 $\\beta$ が存在し，$\\sup_{x\\in C}L(x)\\leq\\beta<L(a)$ となる．複素空間では $L$ はある連続複素線形汎函数の実部として取れる．",
+      "assumptions": [],
+      "position": [
+        179,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000985",
+        "K-000924",
+        "K-000882",
+        "K-000920",
+        "K-000881"
+      ],
+      "status": "draft",
+      "source": "volumes/N-179/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000987",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "自己随伴作用素・正作用素・正規作用素",
+      "statement": "Hilbert空間 $H$ の有界線形作用素 $T$ について，$T^*=T$ なら自己随伴，$T^*T=TT^*$ なら正規という．自己随伴作用素で任意の $x$ に対し $\\langle Tx,x\\rangle\\geq0$ を満たすものを正作用素という．内積は第一変数に線形とする．",
+      "assumptions": [],
+      "position": [
+        181,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000874",
+        "K-000877",
+        "K-000907",
+        "K-000908"
+      ],
+      "status": "draft",
+      "source": "volumes/N-181/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000988",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自己随伴作用素の数値的ノルム",
+      "statement": "$T$ が自己随伴なら $\\|T\\|=\\sup_{\\|x\\|\\leq1}|\\langle Tx,x\\rangle|$ である．",
+      "assumptions": [],
+      "position": [
+        181,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000987",
+        "K-000875",
+        "K-000876",
+        "K-000852"
+      ],
+      "status": "draft",
+      "source": "volumes/N-181/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000989",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "核と像の直交関係",
+      "statement": "$T:H\\to K$ が有界線形写像なら $(\\operatorname{im}T)^\\perp=\\ker T^*$，$\\overline{\\operatorname{im}T}=(\\ker T^*)^\\perp$ である．特に自己随伴作用素について $H=\\ker T\\oplus\\overline{\\operatorname{im}T}$ は直交直和である．",
+      "assumptions": [],
+      "position": [
+        181,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000907",
+        "K-000879",
+        "K-000880",
+        "K-000629",
+        "K-000987"
+      ],
+      "status": "draft",
+      "source": "volumes/N-181/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000990",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "直交射影の作用素による特徴づけ",
+      "statement": "有界線形作用素 $P$ がある閉部分空間への直交射影であることと，$P^2=P,\\ P^*=P$ を満たすこととは同値である．",
+      "assumptions": [],
+      "position": [
+        181,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000987",
+        "K-000989",
+        "K-000879",
+        "K-000880",
+        "K-000908"
+      ],
+      "status": "draft",
+      "source": "volumes/N-181/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000991",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正作用素の基本性質",
+      "statement": "$S,T$ を正作用素，$a,b\\geq0$ とする．$aS+bT$ は正であり，任意の有界作用素 $A$ に対して $A^*A$ は正である．また正作用素 $T$ について $|\\langle Tx,y\\rangle|^2\\leq\\langle Tx,x\\rangle\\langle Ty,y\\rangle$ である．",
+      "assumptions": [],
+      "position": [
+        181,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000987",
+        "K-000875",
+        "K-000907",
+        "K-000908"
+      ],
+      "status": "draft",
+      "source": "volumes/N-181/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000992",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "強正値性と可逆性",
+      "statement": "自己随伴作用素 $T$ がある $c>0$ に対し $\\langle Tx,x\\rangle\\geq c\\|x\\|^2$ を満たすなら，$T$ は有界線形同型であり $\\|T^{-1}\\|\\leq1/c$ である．",
+      "assumptions": [],
+      "position": [
+        181,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000987",
+        "K-000989",
+        "K-000875",
+        "K-000877",
+        "K-000735",
+        "K-000794"
+      ],
+      "status": "draft",
+      "source": "volumes/N-181/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000993",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Borel加法族とRadon測度",
+      "statement": "局所コンパクトHausdorff空間 $X$ の開集合系 $\\mathcal O$ が生成する $\\mathcal B(X)=\\sigma(\\mathcal O)$ をBorel加法族という．本稿ではBorel測度 $\\mu$ が全てのコンパクト集合上で有限であり，任意の $A\\in\\mathcal B(X)$ について\n\\[\n\\mu(A)=\\sup_{K\\subseteq A,\\ K\\ {\\rm compact}}\\mu(K)=\\inf_{U\\supseteq A,\\ U\\ {\\rm open}}\\mu(U)\n\\]\nを満たすとき Radon測度という．この正則性の規約では全Borel集合の内部正則性を要求する．",
+      "assumptions": [],
+      "position": [
+        29,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000146",
+        "K-000187",
+        "K-000480",
+        "K-000293",
+        "K-000377",
+        "K-000748"
+      ],
+      "status": "draft",
+      "source": "volumes/N-29/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000994",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト集合を含む開近傍の縮小",
+      "statement": "局所コンパクトHausdorff空間 $X$ でコンパクト集合 $K$ が開集合 $U$ に含まれるなら，開集合 $V$ で $K\\subseteq V\\subseteq\\overline V\\subseteq U$ かつ $\\overline V$ がコンパクトとなるものが存在する．",
+      "assumptions": [],
+      "position": [
+        29,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000481",
+        "K-000374",
+        "K-000148",
+        "K-000377"
+      ],
+      "status": "draft",
+      "source": "volumes/N-29/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000995",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト台を持つ切断函数",
+      "statement": "局所コンパクトHausdorff空間 $X$ においてコンパクト集合 $K\\subseteq U$（$U$ は開）に対し，連続函数 $f:X\\to[0,1]$ で $f|_K=1$ かつ $\\overline{\\{x\\mid f(x)\\ne0\\}}\\subseteq U$ がコンパクトとなるものが存在する．",
+      "assumptions": [],
+      "position": [
+        29,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000994",
+        "K-000705",
+        "K-000708",
+        "K-000648",
+        "K-000217",
+        "K-000375"
+      ],
+      "status": "draft",
+      "source": "volumes/N-29/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000996",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "コンパクト台連続函数の空間",
+      "statement": "連続実又は複素函数 $f:X\\to\\mathbb K$ の台を $\\operatorname{supp}f=\\overline{\\{x\\mid f(x)\\ne0\\}}$ と記す．台がコンパクトな函数全体を $C_c(X,\\mathbb K)$ という．",
+      "assumptions": [],
+      "position": [
+        29,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000217",
+        "K-000148",
+        "K-000374",
+        "K-000788"
+      ],
+      "status": "draft",
+      "source": "volumes/N-29/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000997",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Radon測度による正線形汎函数",
+      "statement": "Radon測度 $\\mu$ に対し $C_c(X,\\mathbb R)$ 上の $I_\\mu(f)=\\int_X f\\,d\\mu$ は有限値の正線形汎函数である．$\\operatorname{supp}f\\subseteq K$（$K$ はコンパクト）なら $|I_\\mu(f)|\\leq\\mu(K)\\sup_{x\\in X}|f(x)|$ が成立する．",
+      "assumptions": [],
+      "position": [
+        29,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000993",
+        "K-000996",
+        "K-000376",
+        "K-000781",
+        "K-000826",
+        "K-000828",
+        "K-000889",
+        "K-000755"
+      ],
+      "status": "draft",
+      "source": "volumes/N-29/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
+    },
+    {
+      "id": "K-000998",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "コンパクト台連続函数によるRadon測度の一意性",
+      "statement": "Radon測度 $\\mu$ と任意の開集合 $U$ に対し\n\\[\n\\mu(U)=\\sup\\{I_\\mu(f)\\mid f\\in C_c(X,\\mathbb R),\\ 0\\leq f\\leq1,\\ \\operatorname{supp}f\\subseteq U\\}\n\\]\nである．従って二つのRadon測度が $C_c(X,\\mathbb R)$ 上の積分値で一致すれば同じ測度である．",
+      "assumptions": [],
+      "position": [
+        29,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000993",
+        "K-000995",
+        "K-000996",
+        "K-000997",
+        "K-000749",
+        "K-000783",
+        "K-000785"
+      ],
+      "status": "draft",
+      "source": "volumes/N-29/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読未了．文献確認範囲は原稿冒頭に記録．"
     }
   ],
   "notes": [
@@ -30862,16 +31594,19 @@
       "number": 29,
       "title": "局所コンパクト空間とRadon測度",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         195,
-        172
+        172,
+        23,
+        145
       ],
       "goals": [
         "正則測度・コンパクト台連続函数"
       ],
       "treatise": "T-29",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 30,
@@ -32856,16 +33591,21 @@
       "number": 157,
       "title": "逆写像定理",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         155,
-        89
+        89,
+        145,
+        176,
+        153,
+        97
       ],
       "goals": [
         "Banach空間の局所逆写像"
       ],
       "treatise": "T-23",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 158,
@@ -33218,16 +33958,19 @@
       "number": 179,
       "title": "Hahn–Banachの定理",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         178,
-        6
+        6,
+        154,
+        174
       ],
       "goals": [
         "線形汎函数の延長・分離"
       ],
       "treatise": "T-25",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 180,
@@ -33248,7 +33991,7 @@
       "number": 181,
       "title": "Hilbert空間の作用素",
       "area": "解析",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         174
       ],
@@ -33256,7 +33999,8 @@
         "自己随伴・正作用素・直交分解"
       ],
       "treatise": "T-25",
-      "display_index": 10
+      "display_index": 10,
+      "web_only": true
     },
     {
       "number": 182,

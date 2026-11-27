@@ -1,0 +1,128 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 6.8.2–6.8.3（自己随伴作用素・直交射影）を照合．以下は有界作用素に限る．
+\section{Hilbert空間の作用素}
+% genron:begin K-000987
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000874
+% genron:use K-000877
+% genron:use K-000907
+% genron:use K-000908
+\begin{defn}[自己随伴作用素・正作用素・正規作用素]
+Hilbert空間 $H$ の有界線形作用素 $T$ について，$T^*=T$ なら自己随伴，$T^*T=TT^*$ なら正規という．自己随伴作用素で任意の $x$ に対し $\langle Tx,x\rangle\geq0$ を満たすものを正作用素という．内積は第一変数に線形とする．
+\end{defn}
+% genron:end K-000987
+% genron:begin K-000988
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000987
+% genron:use K-000875
+% genron:use K-000876
+% genron:use K-000852
+\begin{prop}[自己随伴作用素の数値的ノルム]
+$T$ が自己随伴なら $\|T\|=\sup_{\|x\|\leq1}|\langle Tx,x\rangle|$ である．
+\end{prop}
+\begin{proof}
+右辺を $m$ とする．Cauchy–Schwarz不等式により $m\leq\|T\|$ である．自己随伴性から二次形式 $Q(x)=\langle Tx,x\rangle$ は実数値であり，
+\[
+4\operatorname{Re}\langle Tx,y\rangle=Q(x+y)-Q(x-y).
+\]
+単位ベクトル $x,y$ に対して $y$ を絶対値一のスカラー倍で取り替え，$\langle Tx,y\rangle$ を非負実数にできる（実の場合は符号を取る）．従って平行四辺形等式より $4|\langle Tx,y\rangle|\leq m(\|x+y\|^2+\|x-y\|^2)=4m$ となる．$Tx\ne0$ なら $y=Tx/\|Tx\|$ を取って $\|Tx\|\leq m$ を得る．零空間の場合も成立する．
+\end{proof}
+% genron:end K-000988
+% genron:begin K-000989
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000907
+% genron:use K-000879
+% genron:use K-000880
+% genron:use K-000629
+% genron:use K-000987
+\begin{prop}[核と像の直交関係]
+$T:H\to K$ が有界線形写像なら $(\operatorname{im}T)^\perp=\ker T^*$，$\overline{\operatorname{im}T}=(\ker T^*)^\perp$ である．特に自己随伴作用素について $H=\ker T\oplus\overline{\operatorname{im}T}$ は直交直和である．
+\end{prop}
+\begin{proof}
+$y\perp\operatorname{im}T$ であることは全ての $x$ に対して $\langle Tx,y\rangle=\langle x,T^*y\rangle=0$ であることと同値であり，$x=T^*y$ を取れば $T^*y=0$ である．逆も明らかである．\GenronRef{K-000880} によって二重直交補は閉包を与える．自己随伴の場合は \GenronRef{K-000879} を閉部分空間 $\ker T$ に適用すればよい．
+\end{proof}
+% genron:end K-000989
+% genron:begin K-000990
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000987
+% genron:use K-000989
+% genron:use K-000879
+% genron:use K-000880
+% genron:use K-000908
+\begin{prop}[直交射影の作用素による特徴づけ]
+有界線形作用素 $P$ がある閉部分空間への直交射影であることと，$P^2=P,\ P^*=P$ を満たすこととは同値である．
+\end{prop}
+\begin{proof}
+直交射影なら冪等性は既知であり，直交分解により $\langle Px,y\rangle=\langle Px,Py\rangle=\langle x,Py\rangle$ となる．逆に冪等なら $\operatorname{im}P=\ker(I-P)$ は閉であり $x=Px+(I-P)x$ で後項は核に属する．自己随伴性から核は像の直交補である（\GenronRef{K-000989}）．よって直交分解の一意性により $P$ は像への直交射影である．
+\end{proof}
+% genron:end K-000990
+% genron:begin K-000991
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000987
+% genron:use K-000875
+% genron:use K-000907
+% genron:use K-000908
+\begin{prop}[正作用素の基本性質]
+$S,T$ を正作用素，$a,b\geq0$ とする．$aS+bT$ は正であり，任意の有界作用素 $A$ に対して $A^*A$ は正である．また正作用素 $T$ について $|\langle Tx,y\rangle|^2\leq\langle Tx,x\rangle\langle Ty,y\rangle$ である．
+\end{prop}
+\begin{proof}
+最初の二主張は随伴の演算法則と $\langle A^*Ax,x\rangle=\|Ax\|^2$ から従う．最後の不等式を示すため $B(x,y)=\langle Tx,y\rangle$ とおく．これは半正定値Hermite形式である．$B(y,y)>0$ なら $B(x-\lambda y,x-\lambda y)\geq0$ に $\lambda=B(x,y)/B(y,y)$ を代入する．$B(y,y)=0$ で $B(x,y)\ne0$ とすると，$\lambda=tB(x,y)$（$t>0$）を代入した左辺は $B(x,x)-2t|B(x,y)|^2$ となり，十分大きい $t$ で負になるので矛盾する．
+\end{proof}
+% genron:end K-000991
+% genron:begin K-000992
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000987
+% genron:use K-000989
+% genron:use K-000875
+% genron:use K-000877
+% genron:use K-000735
+% genron:use K-000794
+\begin{prop}[強正値性と可逆性]
+自己随伴作用素 $T$ がある $c>0$ に対し $\langle Tx,x\rangle\geq c\|x\|^2$ を満たすなら，$T$ は有界線形同型であり $\|T^{-1}\|\leq1/c$ である．
+\end{prop}
+\begin{proof}
+Cauchy–Schwarz不等式により $\|Tx\|\geq c\|x\|$ であり，核は零である．像内の収束列 $Tx_n$ に対しこの評価から $(x_n)$ は Cauchy列であり，完備性と $T$ の連続性から像は閉である．\GenronRef{K-000989} より像は核の直交補として全空間に一致する．評価から逆写像の有界性と所要のノルム評価が従う．
+\end{proof}
+% genron:end K-000992

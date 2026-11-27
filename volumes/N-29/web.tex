@@ -1,0 +1,136 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 1.9(iv) の函数による集合の分離の導入及び 11.6 のRadon測度への言及を確認．正則性の定義は以下で明示的に選択し，個別文献との比較は未了．
+\section{局所コンパクト空間とRadon測度}
+% genron:begin K-000993
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000146
+% genron:use K-000187
+% genron:use K-000480
+% genron:use K-000293
+% genron:use K-000377
+% genron:use K-000748
+\begin{defn}[Borel加法族とRadon測度]
+局所コンパクトHausdorff空間 $X$ の開集合系 $\mathcal O$ が生成する $\mathcal B(X)=\sigma(\mathcal O)$ をBorel加法族という．本稿ではBorel測度 $\mu$ が全てのコンパクト集合上で有限であり，任意の $A\in\mathcal B(X)$ について
+\[
+\mu(A)=\sup_{K\subseteq A,\ K\ {\rm compact}}\mu(K)=\inf_{U\supseteq A,\ U\ {\rm open}}\mu(U)
+\]
+を満たすとき Radon測度という．この正則性の規約では全Borel集合の内部正則性を要求する．
+\end{defn}
+% genron:end K-000993
+% genron:begin K-000994
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000481
+% genron:use K-000374
+% genron:use K-000148
+% genron:use K-000377
+\begin{prop}[コンパクト集合を含む開近傍の縮小]
+局所コンパクトHausdorff空間 $X$ でコンパクト集合 $K$ が開集合 $U$ に含まれるなら，開集合 $V$ で $K\subseteq V\subseteq\overline V\subseteq U$ かつ $\overline V$ がコンパクトとなるものが存在する．
+\end{prop}
+\begin{proof}
+各 $x\in K$ について \GenronRef{K-000481} によってコンパクト閉包を持つ開近傍 $V_x$ で $\overline{V_x}\subseteq U$ となるものを取る．コンパクト性によって有限部分被覆を取り，その合併を $V$ とする．有限合併の閉包は各閉包の合併であり，有限個のコンパクト集合の合併もコンパクトである．
+\end{proof}
+% genron:end K-000994
+% genron:begin K-000995
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000994
+% genron:use K-000705
+% genron:use K-000708
+% genron:use K-000648
+% genron:use K-000217
+% genron:use K-000375
+\begin{prop}[コンパクト台を持つ切断函数]
+局所コンパクトHausdorff空間 $X$ においてコンパクト集合 $K\subseteq U$（$U$ は開）に対し，連続函数 $f:X\to[0,1]$ で $f|_K=1$ かつ $\overline{\{x\mid f(x)\ne0\}}\subseteq U$ がコンパクトとなるものが存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000994} により $K\subseteq V_0\subseteq\overline V_0\subseteq V_1\subseteq\overline V_1\subseteq U$ となるコンパクト閉包を持つ開集合を取る．二進有理数 $r\in[0,1]$ について開集合 $V_r$ を帰納的に挿入し，$r<s$ なら $\overline V_r\subseteq V_s$ を満たすようにする．各挿入はコンパクト集合 $\overline V_r$ と開集合 $V_s$ に \GenronRef{K-000994} を適用すればできる．$g(x)=\inf(\{r:x\in V_r\}\cup\{1\})$ とおく．$0<t\leq1$ について $\{g<t\}=\bigcup_{r<t}V_r$ であり，$0\leq t<1$ について $\{g>t\}=\bigcup_{r>t}(X\setminus\overline V_r)$ である．後者の包含は，$g(x)>t$ なら $t<r<s<g(x)$ を選んで $x\notin V_s$，従って $x\notin\overline V_r$ とでき，逆に $x\notin\overline V_r$ なら $g(x)\geq r>t$ となることによる．両集合は開であり $g$ は連続である．$f=1-g$ とすれば $K$ 上で一，$X\setminus V_1$ 上で零である．台は $\overline V_1$ の閉部分集合なのでコンパクトである．
+\end{proof}
+% genron:end K-000995
+% genron:begin K-000996
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000217
+% genron:use K-000148
+% genron:use K-000374
+% genron:use K-000788
+\begin{defn}[コンパクト台連続函数の空間]
+連続実又は複素函数 $f:X\to\mathbb K$ の台を $\operatorname{supp}f=\overline{\{x\mid f(x)\ne0\}}$ と記す．台がコンパクトな函数全体を $C_c(X,\mathbb K)$ という．
+\end{defn}
+% genron:end K-000996
+% genron:begin K-000997
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000993
+% genron:use K-000996
+% genron:use K-000376
+% genron:use K-000781
+% genron:use K-000826
+% genron:use K-000828
+% genron:use K-000889
+% genron:use K-000755
+\begin{prop}[Radon測度による正線形汎函数]
+Radon測度 $\mu$ に対し $C_c(X,\mathbb R)$ 上の $I_\mu(f)=\int_X f\,d\mu$ は有限値の正線形汎函数である．$\operatorname{supp}f\subseteq K$（$K$ はコンパクト）なら $|I_\mu(f)|\leq\mu(K)\sup_{x\in X}|f(x)|$ が成立する．
+\end{prop}
+\begin{proof}
+連続函数はBorel可測である．台の外で零であり，コンパクト集合上の連続実函数の像はコンパクトかつ有界である．従って $|f|\leq M1_K$ となる有限定数 $M$ が存在する．$\mu(K)<\infty$ により可積分性と評価が従う．二函数の台はその合併に含まれ，有限合併はコンパクトなので $C_c$ は線形空間である．積分の線形性と非負積分の性質から主張を得る．
+\end{proof}
+% genron:end K-000997
+% genron:begin K-000998
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000993
+% genron:use K-000995
+% genron:use K-000996
+% genron:use K-000997
+% genron:use K-000749
+% genron:use K-000783
+% genron:use K-000785
+\begin{prop}[コンパクト台連続函数によるRadon測度の一意性]
+Radon測度 $\mu$ と任意の開集合 $U$ に対し
+\[
+\mu(U)=\sup\{I_\mu(f)\mid f\in C_c(X,\mathbb R),\ 0\leq f\leq1,\ \operatorname{supp}f\subseteq U\}
+\]
+である．従って二つのRadon測度が $C_c(X,\mathbb R)$ 上の積分値で一致すれば同じ測度である．
+\end{prop}
+\begin{proof}
+右辺は $f\leq1_U$ によって $\mu(U)$ 以下である．任意のコンパクト集合 $K\subseteq U$ について \GenronRef{K-000995} の函数を用いれば $1_K\leq f$ なので $I_\mu(f)\geq\mu(K)$ である．内部正則性により逆の不等式を得る．従って汎函数が一致すれば全開集合上で測度が一致し，外部正則性によって全Borel集合上で一致する．
+\end{proof}
+% genron:end K-000998

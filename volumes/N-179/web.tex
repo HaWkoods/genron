@@ -1,0 +1,144 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：H. Brezis, Functional Analysis, Sobolev Spaces and Partial Differential Equations, 2011, §1.1, p.3 の一次元延長の上下限条件を照合．複素化・局所凸分離は独自論証．
+\section{Hahn–Banachの定理}
+% genron:begin K-000980
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000560
+% genron:use K-000921
+\begin{defn}[劣線形汎函数]
+実線形空間 $E$ 上の実数値函数 $p$ が $p(x+y)\leq p(x)+p(y)$，$p(tx)=tp(x)$（$t\geq0$）を満たすとき劣線形汎函数という．特に半ノルムは劣線形である．
+\end{defn}
+% genron:end K-000980
+% genron:begin K-000981
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000980
+% genron:use K-000705
+% genron:use K-000707
+\begin{prop}[線形汎函数の一次元延長]
+実線形空間 $E$ の部分空間 $M$ 上の線形汎函数 $\ell$ が $E$ 上の劣線形汎函数 $p$ に対し $\ell\leq p$ を満たすとする．$z\notin M$ に対して $\ell$ は $M+\mathbb Rz$ 上の線形汎函数で $p$ 以下のものに延長できる．
+\end{prop}
+\begin{proof}
+延長は $\widetilde\ell(x+tz)=\ell(x)+t\alpha$ と書ける．必要十分条件は
+\[
+\sup_{x\in M}(\ell(x)-p(x-z))\leq\alpha\leq\inf_{y\in M}(p(y+z)-\ell(y))
+\]
+である．実際，$t>0$ の場合 $t$ で割って右側を，$t<0$ の場合 $-t$ で割って左側を得る．任意の $x,y\in M$ に対し $\ell(x)+\ell(y)=\ell(x+y)\leq p(x+y)\leq p(x-z)+p(y+z)$ なので左端は右端以下である．両方の集合は空でなく各元は有限であり，この比較によって適当な有限実数 $\alpha$ が存在する．
+\end{proof}
+% genron:end K-000981
+% genron:begin K-000982
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000980
+% genron:use K-000981
+% genron:use K-000131
+\begin{prop}[Hahn–Banachの定理（実数体）]
+実線形空間 $E$ 上の劣線形汎函数 $p$ と部分空間 $M$ 上の線形汎函数 $\ell\leq p$ に対し，$\ell$ を延長する $E$ 上の線形汎函数 $L\leq p$ が存在する．
+\end{prop}
+\begin{proof}
+$\ell$ を延長し $p$ 以下となる線形汎函数とその定義域の組を，定義域の包含と制限の一致によって順序づける．鎖の上限として定義域の合併とその上に一致して定まる函数を取れる．鎖であるため任意の二元は同一の定義域に入り，線形性と優越条件が保たれる．\GenronRef{K-000131} により極大な組が存在する．その定義域が $E$ でなければ \GenronRef{K-000981} によって真に拡張でき，極大性に反する．
+\end{proof}
+% genron:end K-000982
+% genron:begin K-000983
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000982
+% genron:use K-000921
+% genron:use K-000717
+% genron:use K-000720
+\begin{prop}[半ノルムに支配された線形汎函数の延長]
+実又は複素線形空間 $E$ の部分空間 $M$ 上の線形汎函数 $\ell$ が半ノルム $p$ に対し $|\ell(x)|\leq p(x)$ を満たすなら，$E$ 全体への線形延長 $L$ で $|L(x)|\leq p(x)$ を満たすものが存在する．
+\end{prop}
+\begin{proof}
+実の場合は \GenronRef{K-000982} を適用し，$L(x)\leq p(x)$ と $L(-x)\leq p(-x)=p(x)$ を合わせる．複素の場合は $E,M$ を実線形空間とみて $u=\operatorname{Re}\ell$ を実線形汎函数 $U\leq p$ に延長する．$L(x)=U(x)-iU(ix)$ とおけば $L(ix)=iL(x)$ であり実線形性から複素線形である．$M$ 上では $\operatorname{Re}\ell(ix)=-\operatorname{Im}\ell(x)$ なので延長となる．$L(x)\ne0$ の場合，$|\zeta|=1$ で $\zeta L(x)=|L(x)|$ となる $\zeta$ を取ると $|L(x)|=U(\zeta x)\leq p(\zeta x)=p(x)$ である．零の場合は自明である．
+\end{proof}
+% genron:end K-000983
+% genron:begin K-000984
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000983
+% genron:use K-000788
+% genron:use K-000852
+% genron:use K-000853
+% genron:use K-000904
+\begin{prop}[ノルムを保つ延長と双対によるノルムの表示]
+ノルム空間 $E$ の部分空間上の有界線形汎函数は同じノルムを持つ $E$ 上の有界線形汎函数に延長できる．特に $x\in E$ に対し $\|x\|=\sup\{|L(x)|\mid L\in E^*,\ \|L\|\leq1\}$ が成立する．
+\end{prop}
+\begin{proof}
+$p(x)=\|\ell\|\|x\|$ に \GenronRef{K-000983} を適用すると延長のノルムは $\|\ell\|$ 以下であり，制限が $\ell$ であるので等しい．$x\ne0$ のとき一次元部分空間上で $\ell(tx)=t\|x\|$ とおけばノルムは一であるから，延長によって上限が実現される．逆の不等式は作用素ノルムの評価から従う．$x=0$ も成立する．
+\end{proof}
+% genron:end K-000984
+% genron:begin K-000985
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000980
+% genron:use K-000982
+% genron:use K-000881
+% genron:use K-000883
+% genron:use K-000920
+% genron:use K-000708
+\begin{prop}[開凸集合と外部の一点の分離]
+実位相線形空間 $E$ において空でない開凸集合 $C$ と $a\notin C$ が与えられれば，ある連続実線形汎函数 $L$ で全ての $x\in C$ について $L(x)<L(a)$ を満たすものが存在する．
+\end{prop}
+\begin{proof}
+$c\in C$ を取り $V=C-c$，$z=a-c$ とおく．$V$ は零を含む開凸集合で吸収的である．$p(x)=\inf\{t>0\mid x\in tV\}$ とおくと $p$ は有限非負で，正斉次性は変数変換により，劣加法性は $x\in sV,y\in tV$ のとき $(x+y)/(s+t)\in V$ となることから従う．零が $V$ に属するので $0<s<t$ なら $sV\subseteq tV$ である．開性とスカラー倍の連続性から $V=\{p<1\}$ となる（$x\in V$ ならある $\lambda>1$ について $\lambda x\in V$）．$p(z)\geq1$ であり，一次元空間上で $\ell(tz)=t$ と定めると $t\geq0$ では $\ell(tz)\leq p(tz)$，$t<0$ では非負性から同じ不等式が従う．\GenronRef{K-000982} により $L\leq p$ に延長する．$V\cap(-V)$ 上で $|L(x)|<1$ なのでスカラー倍により零で連続，従って全点で連続である．$x\in C$ なら $L(x-c)<1=L(a-c)$ である．
+\end{proof}
+% genron:end K-000985
+% genron:begin K-000986
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000985
+% genron:use K-000924
+% genron:use K-000882
+% genron:use K-000920
+% genron:use K-000881
+\begin{prop}[局所凸空間における閉凸集合からの分離]
+Hausdorff局所凸空間 $E$ の空でない閉凸集合 $C$ と $a\notin C$ に対して，ある連続実線形汎函数 $L$ と実数 $\beta$ が存在し，$\sup_{x\in C}L(x)\leq\beta<L(a)$ となる．複素空間では $L$ はある連続複素線形汎函数の実部として取れる．
+\end{prop}
+\begin{proof}
+$a$ の近傍で $C$ と交わらないものを取る．\GenronRef{K-000924} によって凸平衡開零近傍 $V$ で $(a+V)\cap C=\varnothing$ となるものを取る．$C+V$ は開凸で $a$ を含まないから \GenronRef{K-000985} によってこれと $a$ を分離する連続実線形汎函数 $L$ が存在する．これは零でない．$V$ は零近傍なので $v\in V$ で $L(v)>0$ となるものがある．全ての $x\in C$ で $L(x)+L(v)<L(a)$ だから $\beta=L(a)-L(v)$ とすればよい．複素の場合は実線形空間として議論し $L(x)-iL(ix)$ が所要の連続複素線形汎函数となる．
+\end{proof}
+% genron:end K-000986

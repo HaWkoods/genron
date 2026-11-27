@@ -1,0 +1,99 @@
+% Web専用原稿．独立査読未了．
+% 文献確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020 の縮小写像・一様収束の応用箇所を確認．逆写像定理自体の文献照合は未了．以下は平均値評価と縮小写像を用いる独自記述．
+\section{逆写像定理}
+% genron:begin K-000976
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000893
+% genron:use K-000894
+% genron:use K-000853
+% genron:use K-000889
+% genron:use K-000765
+\begin{prop}[ノルム空間値写像の平均値評価]
+実又は複素ノルム空間 $E,F$ の間の写像 $f:U\to F$ が開集合 $U$ 上で Fréchet 微分可能であるとする．線分 $[a,b]\subseteq U$ 上で $\|Df(x)\|\leq L$ ならば $\|f(b)-f(a)\|\leq L\|b-a\|$ である．
+\end{prop}
+\begin{proof}
+$v=b-a$，$g(t)=\|f(a+tv)-f(a)\|$ とおく．$0\leq t<1$ で $h>0$ を零に近づけると，逆三角不等式と微分可能性より
+\[
+\limsup_{h\downarrow0}\frac{g(t+h)-g(t)}h\leq L\|v\|
+\]
+となる．任意の $\varepsilon>0$ に対し $G(t)=g(t)-(L\|v\|+\varepsilon)t$ とおくと右上差商は負である．従って $t<1$ では十分小さい正の $h$ に対し $G(t+h)<G(t)$ となり，$G$ はその点で最小値を取り得ない．連続性と \GenronRef{K-000889} から最小値は $1$ で取られる．$G(1)\leq G(0)$ によって $g(1)\leq L\|v\|+\varepsilon$ を得る．$\varepsilon\downarrow0$ とすればよい．
+\end{proof}
+% genron:end K-000976
+% genron:begin K-000977
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000976
+% genron:use K-000897
+% genron:use K-000805
+% genron:use K-000771
+% genron:use K-000794
+\begin{prop}[恒等写像に近い写像の局所可逆性]
+Banach空間 $E$ の開集合 $U$ に対し $f:U\to E$ を $C^1$ 級とし，$\overline B(a,r)\subseteq U$，$0\leq q<1$，$\|Df(x)-I\|\leq q$（$x\in\overline B(a,r)$）とする．$f$ は $B(a,r)$ 上で単射かつ開写像で，その逆写像は Lipschitz 定数 $(1-q)^{-1}$ を持つ．像は $B(f(a),(1-q)r)$ を含む．
+\end{prop}
+\begin{proof}
+$u(x)=f(x)-x$ とおくと \GenronRef{K-000976} より閉球内で $\|u(x)-u(z)\|\leq q\|x-z\|$ である．従って $(1-q)\|x-z\|\leq\|f(x)-f(z)\|$ であり，単射性と逆写像の評価が従う．$y\in B(f(a),(1-q)r)$ に対し $T_y(x)=y-u(x)$ とおく．
+\[
+\|T_y(x)-a\|\leq\|y-f(a)\|+q\|x-a\|<r
+\]
+だから $T_y$ は閉球をそれ自身に移し縮小写像である．閉球は完備であり \GenronRef{K-000805} によって一意の不動点 $x$ が存在する．それは開球に属し $f(x)=y$ を満たす．開球内の任意の点を中心とする十分小さい閉球について同じ議論を適用できるから，開部分集合の像は各像点の近傍を含み開である．
+\end{proof}
+% genron:end K-000977
+% genron:begin K-000978
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000977
+% genron:use K-000893
+% genron:use K-000896
+% genron:use K-000897
+% genron:use K-000856
+% genron:use K-000853
+\begin{prop}[Banach空間の逆写像定理]
+Banach空間 $E,F$ と開集合 $U\subseteq E$，$C^1$ 級写像 $f:U\to F$，$a\in U$ を取る．$A=Df(a):E\to F$ が有界線形同型で逆写像も有界ならば，ある開近傍 $V$（$a\in V\subseteq U$）と $W$（$f(a)\in W\subseteq F$）について $f|_V:V\to W$ は $C^1$ 級の逆写像 $g$ を持つ．さらに $Dg(y)=Df(g(y))^{-1}$ である．
+\end{prop}
+\begin{proof}
+$h(x)=A^{-1}(f(x)-f(a))$ とおけば $Dh(a)=I$ である．連続性によって十分小さい閉球で $\|Dh(x)-I\|\leq q<1$ となる．\GenronRef{K-000977} を適用し局所逆写像が存在して局所 Lipschitz であることを得る．作用素ノルムによる逆写像の存在により $Dh(x)$ は可逆なので $Df(x)$ も可逆である．$y=f(x),\ y'=f(x+k)$ とすると
+\[
+y'-y=Df(x)k+o(\|k\|).
+\]
+逆写像の局所 Lipschitz 性より $\|k\|\leq C\|y'-y\|$ である．従って $k=Df(x)^{-1}(y'-y)+o(\|y'-y\|)$ となり微分公式が従う．逆作用素の連続性を示すには $B$ を可逆とし $\|B^{-1}(C-B)\|<1/2$ とする．\GenronRef{K-000856} の級数評価から $\|C^{-1}\|\leq2\|B^{-1}\|$ であり，$C^{-1}-B^{-1}=C^{-1}(B-C)B^{-1}$ より $C\to B$ のとき逆作用素も収束する．$Df$ と $g$ の連続性によって $Dg$ も連続である．
+\end{proof}
+% genron:end K-000978
+% genron:begin K-000979
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000978
+% genron:use K-000912
+% genron:use K-000849
+% genron:use K-000638
+\begin{prop}[一点での全単射性による判定]
+前命題で $Df(a)$ が全単射な有界線形写像であると仮定すれば十分である．有限次元の場合には $E,F$ が同次元であり $Df(a)$ の核が零であることを仮定すればよい．
+\end{prop}
+\begin{proof}
+Banach空間間の全単射な有界線形写像は \GenronRef{K-000912} によって逆写像も有界である．有限次元の場合，次元公式によって単射性から全射性が従い，有限次元ノルム空間は完備である．\GenronRef{K-000978} が適用できる．
+\end{proof}
+% genron:end K-000979
