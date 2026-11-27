@@ -28,9 +28,28 @@ try{
  assert.equal(await page.locator(".note-result").count(),planData.plan.length);
  assert.equal(await page.locator('.note-result[data-status="planned"] a[href*="note="]').count()>0,true,"Published prerequisites may link to Web notes");
  assert.equal(await page.locator('.note-result[data-status="planned"] > a[href*="note="]').count(),0);
- await page.getByRole("searchbox").fill("Radon–Nikodym");
- const planned=page.locator(".note-result").filter({hasText:"Radon–Nikodymの定理"});await planned.waitFor();assert.equal(await planned.getAttribute("data-status"),"planned");assert.equal(await planned.locator("strong.planned-title").count(),1);
- await page.getByRole("button",{name:"公開済み",exact:true}).click();assert.equal(await page.locator(".note-result").count(),0);
+ // Choose fixtures from the current plan, rather than assuming a particular note stays unwritten.
+ const publishedNumbers=new Set(planData.notes.map(n=>n.number));
+ const plannedFixture=planData.plan.find(n=>n.status==="planned"&&!publishedNumbers.has(n.number));
+ assert.ok(plannedFixture,"Need an unpublished planned note for this search test");
+ await page.getByRole("searchbox").fill("N-"+plannedFixture.number);
+ const planned=page.locator('.note-result[data-note="'+plannedFixture.number+'"]');
+ await planned.waitFor();
+ assert.equal(await planned.getAttribute("data-status"),"planned");
+ assert.equal(await planned.locator("strong.planned-title").count(),1);
+ assert.equal(await planned.locator(':scope > a[href*="note="]').count(),0);
+ await page.getByRole("button",{name:"公開済み",exact:true}).click();
+ assert.equal(await page.locator(".note-result").count(),0);
+ // A newly published draft must be searchable and link to its Web body.
+ const draftFixture=planData.notes.find(n=>n.review_status==="draft");
+ if(draftFixture){
+  await page.getByRole("searchbox").fill("N-"+draftFixture.number);
+  const draft=page.locator('.note-result[data-note="'+draftFixture.number+'"]');
+  await draft.waitFor();
+  assert.equal(await draft.getAttribute("data-status"),"draft");
+  assert.equal(await draft.locator("strong.planned-title").count(),0);
+  assert.match(await draft.locator(':scope > a').getAttribute("href"),new RegExp("note="+draftFixture.number+"(?:&|$)"));
+ }
  await page.getByRole("searchbox").fill("選択公理");await page.locator('.note-result[data-note="3"] > a').filter({hasText:"選択公理"}).waitFor();
  await page.getByRole("button",{name:"すべて",exact:true}).click();await page.getByRole("searchbox").fill("N-8");await page.locator('.note-result[data-note="8"]').waitFor();assert.equal(await page.locator(".note-result").count(),1);
  const note8=planData.plan.find(n=>n.number===8);
