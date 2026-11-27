@@ -1,0 +1,137 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Rotman, An Introduction to Homological Algebra の自由分解の導入本文を確認．
+\section{射影加群と射影分解}
+% genron:begin K-001147
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000335
+% genron:use K-000338
+\begin{defn}[射影加群]
+左加群 $P$ が射影的であるとは，任意の全射準同型 $q:E\to M$ と準同型 $f:P\to M$ に対し $q\widetilde f=f$ を満たす準同型 $\widetilde f:P\to E$ が存在することをいう．
+\end{defn}
+% genron:end K-001147
+% genron:begin K-001148
+% genron:use K-000060
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001147
+% genron:use K-000582
+% genron:use K-000585
+\begin{prop}[自由加群の射影性]
+自由加群は射影加群である．
+\end{prop}
+\begin{proof}
+基底の各元の $f$ による像を $q$ に沿って持ち上げる．選択公理により同時に選び，自由加群の普遍性で線形写像に延長する．二写像は基底で一致する．
+\end{proof}
+% genron:end K-001148
+% genron:begin K-001149
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001147
+% genron:use K-000337
+% genron:use K-000338
+% genron:use K-000583
+\begin{prop}[射影性の分裂による判定]
+$P$ が射影的であることと，$P$ を終域とする任意の全射が右逆準同型を持つことは同値である．
+\end{prop}
+\begin{proof}
+必要性は $1_P$ を持ち上げればよい．逆に全射 $q:E\to M$ と $f:P\to M$ に対し，部分加群 $D=\{(e,x)\in E\oplus P\mid q(e)=f(x)\}$ を取る．第二射影 $D\to P$ は全射であるから右逆 $s$ を持つ．$s$ と第一射影との合成は所望の持上げである．
+\end{proof}
+% genron:end K-001149
+% genron:begin K-001150
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001148
+% genron:use K-001149
+% genron:use K-000584
+% genron:use K-000583
+\begin{prop}[自由加群の直和因子としての射影加群]
+加群が射影的であることは，ある自由加群の直和因子に同型であることと同値である．
+\end{prop}
+\begin{proof}
+射影加群 $P$ に自由加群からの全射 $q:F\to P$ を取る．右逆 $s$ を用いれば $x=(x-sq(x))+sq(x)$ から $F=\ker q\oplus s(P)$ である．共通部分は $qs=1$ により零である．逆に $F=P\oplus Q$ なら $f:P\to M$ を射影と合成して $F$ 上に延長し，自由加群の射影性で持ち上げて $P$ に制限する．
+\end{proof}
+% genron:end K-001150
+% genron:begin K-001151
+% genron:use K-000060
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001147
+% genron:use K-000583
+\begin{prop}[射影加群の直和]
+射影加群の任意の族の直和は射影加群である．
+\end{prop}
+\begin{proof}
+直和からの写像を各成分に制限し，それぞれの持上げを選択公理で選ぶ．有限台の元に対し成分の像の和を取れば線形写像が定まり，所要の合成等式を満たす．
+\end{proof}
+% genron:end K-001151
+% genron:begin K-001152
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001147
+% genron:use K-000339
+\begin{defn}[射影分解]
+加群 $M$ の射影分解とは，各 $P_n$ が射影加群である列
+\[
+\cdots\longrightarrow P_2\longrightarrow P_1\longrightarrow P_0\longrightarrow M\longrightarrow0
+\]
+で，各位置において直前の写像の像が直後の写像の核に一致するものをいう．
+\end{defn}
+% genron:end K-001152
+% genron:begin K-001153
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001152
+% genron:use K-001148
+% genron:use K-000584
+% genron:use K-000581
+% genron:use K-000105
+\begin{prop}[射影分解の存在]
+任意の加群は自由加群からなる射影分解を持つ．
+\end{prop}
+\begin{proof}
+$M$ の元全体を添字とする標準自由加群 $P_0$ から $M$ への全射を取る．その核の元全体を添字とする標準自由加群 $P_1$ から核への全射を包含写像と合成する．以後も直前の写像の核を用いる操作を再帰的に続ける．像は直前の核に一致し，すべての $P_n$ は射影的である．
+\end{proof}
+% genron:end K-001153

@@ -1,0 +1,117 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Atiyah–Macdonald, Introduction to Commutative Algebra, Ch. 2, Proposition 2.6, pp.21–22 の極小生成集合による証明；Rotman, An Introduction to Homological Algebra, Proposition 4.51 を照合．
+\section{Nakayamaの補題と局所環上の生成}
+% genron:begin K-001241
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000327
+% genron:use K-000335
+% genron:use K-000337
+% genron:use K-000342
+\begin{defn}[イデアルと加群の積]
+可換環 $R$ のイデアル $I$ と加群 $M$ に対し $IM$ は元 $am$（$a\in I,m\in M$）の有限和全体からなる部分加群である．
+\end{defn}
+% genron:end K-001241
+% genron:begin K-001242
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000446
+% genron:use K-000045
+\begin{defn}[Jacobson根基]
+可換環 $R$ の極大イデアル全体の共通部分を Jacobson 根基 $J(R)$ という．極大イデアルが存在しない場合には共通部分を $R$ とする．
+\end{defn}
+% genron:end K-001242
+% genron:begin K-001243
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001242
+% genron:use K-000442
+% genron:use K-000447
+% genron:use K-000448
+\begin{prop}[Jacobson根基の単元判定]
+$a\in J(R)$ であることは，任意の $r\in R$ について $1-ra$ が単元であることと同値である．
+\end{prop}
+\begin{proof}
+$a\in J(R)$ で $1-ra$ が非単元なら，それを含む極大イデアル $\mathfrak m$ が存在する．$a\in\mathfrak m$ から $1\in\mathfrak m$ となり矛盾する．逆に $a\notin J(R)$ なら $a\notin\mathfrak m$ となる極大イデアルがある．剰余体 $R/\mathfrak m$ における $a$ の逆元を $r$ で持ち上げれば $1-ra\in\mathfrak m$ は非単元となる．零環の場合にも両条件は成立する．
+\end{proof}
+% genron:end K-001243
+% genron:begin K-001244
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001241
+% genron:use K-001243
+% genron:use K-000104
+% genron:use K-000342
+\begin{prop}[Nakayamaの補題]
+$M$ が有限生成 $R$ 加群であり，$I\subseteq J(R)$ がイデアルであるとする．$IM=M$ なら $M=0$ である．
+\end{prop}
+\begin{proof}
+$M\ne0$ と仮定し，生成元の個数が最小である有限生成集合 $m_1,\ldots,m_n$ を取る．$m_n\in IM$ なので，各積に現れる加群の元を生成元で展開して $m_n=\sum_i a_i m_i$（$a_i\in I$）と書ける．よって $(1-a_n)m_n=\sum_{i<n}a_i m_i$ である．$a_n\in J(R)$ なので $1-a_n$ は単元である．従って $m_n$ は残りの元の生成する部分加群に属し，最小性に反する．
+\end{proof}
+% genron:end K-001244
+% genron:begin K-001245
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001244
+% genron:use K-001241
+% genron:use K-000340
+% genron:use K-000342
+\begin{prop}[剰余加群からの生成元の持上げ]
+$M$ を有限生成加群，$I\subseteq J(R)$ とする．$m_1,\ldots,m_r$ の像が $M/IM$ を生成するなら $m_1,\ldots,m_r$ は $M$ を生成する．
+\end{prop}
+\begin{proof}
+これらの元が生成する部分加群を $N$ とする．仮定から $M=N+IM$ であり，商 $Q=M/N$ について $IQ=Q$ を得る．$Q$ は有限生成なので Nakayama の補題により $Q=0$，従って $M=N$ である．
+\end{proof}
+% genron:end K-001245
+% genron:begin K-001246
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001245
+% genron:use K-001242
+% genron:use K-001137
+% genron:use K-000447
+% genron:use K-000560
+% genron:use K-000604
+\begin{prop}[局所環上の極小生成数]
+局所環 $(R,\mathfrak m)$ の有限生成加群 $M$ について，$M/\mathfrak m M$ は体 $k=R/\mathfrak m$ 上の有限生成線形空間である．この空間の基底を持ち上げた元は $M$ の生成集合となり，任意の生成集合の像はこれを生成する．従って基底を持ち上げた生成集合は最小個数を持つ．
+\end{prop}
+\begin{proof}
+$\mathfrak m$ は剰余加群を零化するので $k$ の作用が定まる．局所環では $J(R)=\mathfrak m$ であり，持上げ命題を適用する．逆に生成関係を剰余へ移せば任意の生成集合の像が生成する．有限次元の基底定理によりその個数は基底の個数以上である．
+\end{proof}
+% genron:end K-001246

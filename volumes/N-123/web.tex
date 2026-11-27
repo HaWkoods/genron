@@ -1,0 +1,141 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{有限群のSylow理論}
+% genron:begin K-001291
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000313
+% genron:use K-001211
+% genron:use K-001214
+\begin{defn}[p群とSylow部分群]
+素数 $p$ に対して位数が $p$ の冪である有限群を $p$ 群という．$|G|=p^a m$，$p\nmid m$ とするとき，位数 $p^a$ の部分群を Sylow $p$ 部分群という．
+\end{defn}
+% genron:end K-001291
+% genron:begin K-001292
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001291
+% genron:use K-000359
+% genron:use K-000360
+% genron:use K-001214
+\begin{prop}[p群の作用と固定点の合同]
+有限 $p$ 群 $P$ が有限集合 $X$ に作用するとき $|X|\equiv |X^P|\pmod p$，ただし $X^P$ は全元で固定される点の集合である．
+\end{prop}
+\begin{proof}
+軌道の濃度は $|P|$ の約数なので $p$ の冪である．一元の軌道は固定点に一致し，それ以外の軌道の濃度は $p$ で割り切れる．軌道分解公式から $p$ は $|X|-|X^P|$ を割る．
+\end{proof}
+% genron:end K-001292
+% genron:begin K-001293
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001292
+% genron:use K-000318
+% genron:use K-000116
+% genron:use K-001211
+\begin{prop}[Cauchyの定理]
+有限群 $G$ の位数を素数 $p$ が割るなら，$G$ は位数 $p$ の元を持つ．
+\end{prop}
+\begin{proof}
+積が $1$ となる $p$ 個の元の列全体を $X$ とする．最初の $p-1$ 個を任意に選べば最後が一意に定まるので $|X|=|G|^{p-1}$ である．巡回置換は積が $1$ である条件を保ち，位数 $p$ の巡回群の作用を定める．固定点は $(g,\ldots,g)$ で $g^p=1$ のものに限る．固定点の数は $p$ の倍数であり，単位元の列を含むから他の固定点も存在する．対応する $g\ne1$ の位数は $p$ の約数であり $p$ である．
+\end{proof}
+% genron:end K-001293
+% genron:begin K-001294
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001291
+% genron:use K-001293
+% genron:use K-000361
+% genron:use K-000357
+% genron:use K-000315
+% genron:use K-000292
+\begin{prop}[Sylowの第一定理]
+有限群 $G$ は Sylow $p$ 部分群を持つ．
+\end{prop}
+\begin{proof}
+$a=0$ では自明群でよい．群の位数に関する帰納法を用いる．$p\mid|Z(G)|$ なら Cauchy の定理により中心に位数 $p$ の部分群 $C$ がある．$C$ は正規であり，$G/C$ の帰納法による Sylow 部分群の逆像は位数 $p^a$ である．$p\nmid|Z(G)|$ なら類等式から少なくとも一つの非中心元 $x$ について $p\nmid[G:C_G(x)]$ である．従って真部分群 $C_G(x)$ の位数は $p^a$ で割り切れ，帰納法を適用できる．
+\end{proof}
+% genron:end K-001294
+% genron:begin K-001295
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001294
+% genron:use K-001292
+% genron:use K-000306
+% genron:use K-000315
+\begin{prop}[Sylowの第二定理]
+Sylow $p$ 部分群 $P$ を固定する．任意の $p$ 部分群 $H$ は $P$ の共役部分群の一つに含まれる．特に任意の二つの Sylow $p$ 部分群は共役である．
+\end{prop}
+\begin{proof}
+$H$ を左乗法により $G/P$ に作用させる．その濃度 $m$ は $p$ で割り切れないため固定点が存在する．$gP$ が固定されるなら $g^{-1}Hg\subseteq P$ である．$H$ 自身が Sylow 部分群なら両群の位数が等しいので包含は等号となる．
+\end{proof}
+% genron:end K-001295
+% genron:begin K-001296
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001295
+% genron:use K-001292
+% genron:use K-000362
+% genron:use K-000359
+% genron:use K-000315
+% genron:use K-001214
+\begin{prop}[Sylowの第三定理]
+Sylow $p$ 部分群の個数 $n_p$ は $m$ の約数であり，$p\mid(n_p-1)$ である．
+\end{prop}
+\begin{proof}
+共役作用は第二定理によって推移的であり，$P$ の安定化群は正規化群 $N_G(P)$ である．従って $n_p=[G:N_G(P)]$ は $[G:P]=m$ の約数である．$P$ 自身の共役作用を考える．$P$ が固定する Sylow 部分群 $Q$ は $P\subseteq N_G(Q)$ を満たす．このとき $PQ$ は部分群であり，その位数は $|P||Q|/|P\cap Q|$（積の各元の表示の個数は $|P\cap Q|$）なので $p$ の冪である．最大性から $PQ=Q=P$ となる．固定点は $P$ 一つだけなので固定点の合同を適用する．
+\end{proof}
+% genron:end K-001296
+% genron:begin K-001297
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001295
+% genron:use K-000266
+\begin{prop}[Sylow部分群の正規性]
+Sylow $p$ 部分群が正規であることと $n_p=1$ は同値である．
+\end{prop}
+\begin{proof}
+正規性はすべての共役部分群が自身に等しいことにほかならない．第二定理により共役部分群全体は Sylow 部分群全体である．
+\end{proof}
+% genron:end K-001297

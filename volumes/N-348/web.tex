@@ -1,0 +1,122 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Rotman, An Introduction to Homological Algebra, Ch.5 の etale-sheaf の定義付近を確認．集合値の場合に芽から構成する．
+\section{エタール空間と集合値層}
+% genron:begin K-001353
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000217
+% genron:use K-000223
+% genron:use K-000245
+\begin{defn}[エタール空間]
+位相空間 $X$ 上のエタール空間とは，各 $e\in E$ が開近傍 $W$ を持ち，$p|_W:W\to p(W)$ が開集合 $p(W)\subseteq X$ への同相写像となる連続写像 $p:E\to X$ をいう．この性質を局所同相という．射は $X$ 上で可換な連続写像とする．
+\end{defn}
+% genron:end K-001353
+% genron:begin K-001354
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001353
+% genron:use K-000526
+% genron:use K-000221
+\begin{prop}[エタール空間の切断の層]
+エタール空間 $p:E\to X$ に対し，開集合 $U$ 上の連続切断 $s:U\to E$（$ps=1_U$）の集合は制限によって集合値層 $\Gamma(E)$ をなす．
+\end{prop}
+\begin{proof}
+整合する切断族は各点で値が一致するため一意の写像に貼り合わされる．連続性は開被覆上で局所的に成立するので全体で成立し，$ps=1_U$ も点ごとに従う．空集合では唯一の空写像がある．
+\end{proof}
+% genron:end K-001354
+% genron:begin K-001355
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001353
+% genron:use K-001182
+% genron:use K-001183
+% genron:use K-000208
+% genron:use K-000209
+% genron:use K-000210
+% genron:use K-000049
+\begin{prop}[芽の空間の位相]
+集合値層 $F$ に対し $E(F)=\coprod_{x\in X}F_x$ とし，$p(x,a)=x$ とする．開集合 $U$ と $s\in F(U)$ に対して $[s,U]=\{(x,s_x)\mid x\in U\}$ とおくと，これらは $E(F)$ の位相の開基をなし，$p$ は局所同相となる．
+\end{prop}
+\begin{proof}
+各芽は代表元を持つから基集合は全体を覆う．$[s,U]$ と $[t,V]$ の共通元 $(x,a)$ について芽の等号により $x\in W\subseteq U\cap V$ で $s|_W=t|_W$ となる開集合がある．従って $[s|_W,W]$ は共通部分に含まれる．開基の条件を満たす．$p^{-1}(U)$ はこのような基集合の和なので $p$ は連続である．$p|_{[s,U]}$ は全単射であり，基集合との交叉の像は芽の一致が成立する点の集合で，芽の定義によって開である．従って制限は同相である．
+\end{proof}
+% genron:end K-001355
+% genron:begin K-001356
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001355
+% genron:use K-001354
+% genron:use K-001186
+% genron:use K-000526
+% genron:use K-000532
+\begin{prop}[層から得た芽の空間の切断]
+標準射 $F\to\Gamma(E(F))$，$s\mapsto(x\mapsto(x,s_x))$ は層同型である．
+\end{prop}
+\begin{proof}
+各局所的な芽の切断は基集合上で $p$ の局所逆写像であるので連続である．標準射の単射性は芽による一致判定による．逆に連続切断 $t$ を取る．各点の像を含む基集合を選び，$t$ の逆像を取れば，その近傍では $t$ は基集合の局所逆写像に一致する．従って局所的に $F$ の切断で表される．重なりでは芽が一致し，層の一意性と貼合せにより大域的な $F$ の切断を得る．制限との可換性は定義から従う．
+\end{proof}
+% genron:end K-001356
+% genron:begin K-001357
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001353
+% genron:use K-001354
+% genron:use K-001182
+\begin{prop}[切断の芽とエタール空間の点]
+エタール空間 $p:E\to X$ に対し，$\Gamma(E)_x\to p^{-1}(x)$ を芽の $x$ における評価で定めると全単射である．
+\end{prop}
+\begin{proof}
+局所同相の逆写像は各 $e\in p^{-1}(x)$ を通る局所切断を与えるので全射である．二つの局所切断が同じ $e$ を通るなら，$e$ の局所同相近傍の逆像を取って共通定義域を縮めると，双方とも同じ局所逆写像に一致する．従って芽は等しく単射である．
+\end{proof}
+% genron:end K-001357
+% genron:begin K-001358
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001356
+% genron:use K-001357
+% genron:use K-001185
+% genron:use K-000245
+% genron:use K-000277
+\begin{prop}[エタール空間と集合値層の圏の同値]
+芽の空間を作る函手と切断の層を作る函手は互いに逆の自然同型を持つ圏同値を与える．
+\end{prop}
+\begin{proof}
+層の射 $\varphi:F\to G$ は $(x,a)\mapsto(x,\varphi_x(a))$ により芽の空間の射を与える．基集合に入る点の近傍では代表切断の像と指定の芽が一致するよう縮小できるため連続である．エタール空間の射は切断との合成で層の射を定める．恒等射と合成の保存は定義から明らかである．$F\simeq\Gamma(E(F))$ は前の標準同型であり，$E(\Gamma(E))\to E$ は各茎での評価による全単射である．基集合の像は局所切断の像であり，局所同相近傍に制限すれば開となる．同じ局所同相近傍を用いると評価写像と逆写像が連続である．自然性は射を適用することと芽を取ること及び評価することが可換なことから従う．
+\end{proof}
+% genron:end K-001358

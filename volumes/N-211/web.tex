@@ -1,0 +1,157 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Rotman, An Introduction to Homological Algebra の Abel 圏および Hom 函手への言及を確認した．定義と証明は既出の圏論・加群論から再構成．
+\section{Abel圏と完全函手}
+% genron:begin K-001247
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000401
+% genron:use K-000513
+% genron:use K-000459
+\begin{defn}[前加法圏と加法圏]
+局所小圏 $\mathcal A$ の各射集合 $\operatorname{Hom}(X,Y)$ が Abel 群であり，合成が両変数に関して加法的であるとき前加法圏という．さらに零対象を持ち，任意の二対象 $X,Y$ に対して双積 $X\oplus Y$ を持つとき加法圏という．双積とは射 $i_X,i_Y,p_X,p_Y$ が $p_Xi_X=1_X,p_Yi_Y=1_Y,p_Xi_Y=p_Yi_X=0,i_Xp_X+i_Yp_Y=1$ を満たす対象である．零対象とは始対象かつ終対象である対象である．
+\end{defn}
+% genron:end K-001247
+% genron:begin K-001248
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001247
+% genron:use K-000513
+\begin{prop}[双積の二つの普遍性]
+双積は積及び余積の双方である．
+\end{prop}
+\begin{proof}
+射 $a:Z\to X,b:Z\to Y$ について $h=i_Xa+i_Yb$ が指定した射影を持つ．任意のそのような射 $h'$ に対し $h'=(i_Xp_X+i_Yp_Y)h'=h$ である．余積については $a:X\to Z,b:Y\to Z$ に対して $a p_X+b p_Y$ とおけば同様である．
+\end{proof}
+% genron:end K-001248
+% genron:begin K-001249
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001247
+% genron:use K-000514
+\begin{defn}[圏における核と余核]
+加法圏の射 $f:X\to Y$ の核とは $f$ と零射の等化子 $k:K\to X$ であり，余核とは $f$ と零射の余等化子 $q:Y\to Q$ である．射 $m$ が左からの合成を簡約可能なら単射（monomorphism），射 $e$ が右からの合成を簡約可能なら全射（epimorphism）という．
+\end{defn}
+% genron:end K-001249
+% genron:begin K-001250
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001249
+% genron:use K-000514
+\begin{prop}[核の単射性と余核の全射性]
+核は単射，余核は全射である．
+\end{prop}
+\begin{proof}
+$k a=k b$ ならば両者は同じ射の核を通る分解であり，核の普遍性の一意性から $a=b$ である．余核については双対の論証による．
+\end{proof}
+% genron:end K-001250
+% genron:begin K-001251
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001247
+% genron:use K-001249
+\begin{defn}[Abel圏]
+加法圏で，すべての射が核と余核を持ち，すべての単射がその余核の核であり，すべての全射がその核の余核であるものを Abel 圏という．
+\end{defn}
+% genron:end K-001251
+% genron:begin K-001252
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001251
+% genron:use K-001248
+% genron:use K-000339
+% genron:use K-000340
+% genron:use K-000341
+% genron:use K-000459
+% genron:use K-000461
+\begin{prop}[加群の圏のAbel性]
+任意の単位的環 $R$ の左加群の圏は Abel 圏である．
+\end{prop}
+\begin{proof}
+射集合の加法は点ごとの加法であり合成は加法的である．零加群は零対象であり，通常の二加群の直和と包含・射影は双積の等式を満たす．核は通常の核の包含，余核は像による商写像である．単射の像を商の核として表せる．全射はその核による商からの同型を通じて余核となる．ここで圏論的単射・全射が通常の単射・全射と一致することは，単射でなければ非零核の包含と零写像が，また全射でなければ像による非零商への商写像と零写像が簡約律に反することから従う．
+\end{proof}
+% genron:end K-001252
+% genron:begin K-001253
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001251
+% genron:use K-001249
+\begin{defn}[像と余像及び完全列]
+Abel 圏の射 $f$ に対し $\operatorname{im}f$ は $\operatorname{coker}f$ の核，$\operatorname{coim}f$ は $\ker f$ の余核とする．射列 $X\xrightarrow fY\xrightarrow gZ$ が完全とは $\operatorname{im}f$ と $\ker g$ が $Y$ の部分対象として同じであること，すなわち両単射と可換な同型があることをいう．
+\end{defn}
+% genron:end K-001253
+% genron:begin K-001254
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001253
+% genron:use K-000245
+\begin{defn}[加法函手と完全函手]
+加法圏の間の函手が各射集合上で加法群準同型を与えるとき加法函手という．Abel 圏の間の加法函手が短完全列を短完全列に移すとき完全函手という．短完全列とは零対象を用いた $0\to X\to Y\to Z\to0$ の完全列である．
+\end{defn}
+% genron:end K-001254
+% genron:begin K-001255
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001254
+% genron:use K-001250
+% genron:use K-001251
+\begin{prop}[核と余核による完全性の判定]
+Abel 圏の間の加法函手がすべての核及び余核を保存するなら完全函手である．
+\end{prop}
+\begin{proof}
+加法函手は零射を保存する．零対象の恒等射は零射なのでその像の恒等射も零射となり，その像は零対象である．短完全列の第一射は単射で第二射の核，第二射は全射で第一射の余核である．核と余核を保存すれば像の二射も同じ関係を持つので短完全列となる．この短完全列の記述は Abel 圏の単射と全射の正規性及び像の定義による．
+\end{proof}
+% genron:end K-001255

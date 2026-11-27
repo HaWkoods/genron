@@ -1,0 +1,134 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Atiyah–Macdonald, Introduction to Commutative Algebra, Ch. 3 の局所化の導入を確認．証明は独自に再構成．
+\section{加群の局所化と完全性}
+% genron:begin K-001127
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000449
+% genron:use K-000335
+\begin{defn}[加群の分数の関係]
+可換環 $R$，積閉集合 $S$，$R$ 加群 $M$ に対し $(m,s)\sim(n,t)$ を，ある $u\in S$ について $u(tm-sn)=0$ となることと定める．
+\end{defn}
+% genron:end K-001127
+% genron:begin K-001128
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001127
+% genron:use K-000450
+\begin{prop}[分数の同値関係]
+この関係は $M\times S$ 上の同値関係である．
+\end{prop}
+\begin{proof}
+反射性と対称性は定義による．$u(tm-sn)=0$，$v(rn-tp)=0$ なら $uvt(rm-sp)=uv[r(tm-sn)+s(rn-tp)]=0$ である．$uvt\in S$ より推移性を得る．
+\end{proof}
+% genron:end K-001128
+% genron:begin K-001129
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001128
+% genron:use K-000451
+% genron:use K-000335
+% genron:use K-000336
+\begin{prop}[局所化加群]
+商集合 $S^{-1}M=(M\times S)/{\sim}$ の類を $m/s$ と書く．
+\[
+m/s+n/t=(tm+sn)/(st),\qquad (a/r)(m/s)=am/(rs)
+\]
+によって $S^{-1}R$ 加群となる．
+\end{prop}
+\begin{proof}
+$u(s'm-sm')=v(t'n-tn')=0$ とする．加法の候補の交差差は $tt'(s'm-sm')+ss'(t'n-tn')$ であり，$uv$ を掛ければ零である．また $w(r'a-ra')=0$ のときスカラー積の候補の交差差は $r'a(s'm-sm')+sm'(r'a-ra')$ であり $uw$ がこれを消す．従って演算は代表元によらない．加法・スカラー積の各公理は共通分母にして分子を比較すれば元の加群の公理に帰着する．零元は $0/1$，加法逆元は $(-m)/s$ である．
+\end{proof}
+% genron:end K-001129
+% genron:begin K-001130
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001129
+\begin{prop}[局所化の零判定]
+$m/s=0$ と，ある $u\in S$ について $um=0$ となることは同値である．
+\end{prop}
+\begin{proof}
+$m/s=0/1$ の定義を適用する．
+\end{proof}
+% genron:end K-001130
+% genron:begin K-001131
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001129
+% genron:use K-000338
+\begin{prop}[局所化の函手性]
+加群準同型 $f:M\to N$ は $m/s\mapsto f(m)/s$ により準同型 $S^{-1}f$ を誘導し，恒等写像及び合成を保存する．
+\end{prop}
+\begin{proof}
+同値関係の等式に $f$ を適用すれば代表元によらない．線形性と合成及び恒等写像の保存は分数上の式から従う．
+\end{proof}
+% genron:end K-001131
+% genron:begin K-001132
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001129
+% genron:use K-000452
+% genron:use K-000453
+% genron:use K-000338
+\begin{prop}[加群局所化の普遍性]
+$S^{-1}R$ 加群 $N$ を標準準同型により $R$ 加群とみなすとき，任意の $R$ 線形写像 $f:M\to N$ は $m\mapsto m/1$ を介して一意の $S^{-1}R$ 線形写像に延長される．
+\end{prop}
+\begin{proof}
+$\bar f(m/s)=(s/1)^{-1}f(m)$ と定める．同値関係に $f$ を適用し，$S$ の元の作用が可逆であることを用いると値が一致する．演算式から線形性を得る．$m/s=(1/s)(m/1)$ によって一意性が従う．
+\end{proof}
+% genron:end K-001132
+% genron:begin K-001133
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001131
+% genron:use K-001130
+% genron:use K-000339
+\begin{prop}[局所化の完全性]
+加群準同型列 $L\xrightarrow f M\xrightarrow g N$ が中央で完全，すなわち $\operatorname{im}f=\ker g$ なら局所化した列も中央で完全である．局所化は単射及び全射を保存する．
+\end{prop}
+\begin{proof}
+$gf=0$ なので像は核に含まれる．$g(m)/s=0$ ならある $u\in S$ が $g(um)=0$ を満たし，ある $l$ について $um=f(l)$ となる．従って $m/s=f(l)/(us)$ である．$f$ が単射なら $f(m)/s=0$ から $f(um)=0$ となる $u$ を取り $um=0$ を得る．全射の場合は分子を持ち上げればよい．
+\end{proof}
+% genron:end K-001133

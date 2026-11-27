@@ -1,0 +1,151 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{一様空間の分離化と完備化}
+% genron:begin K-001278
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000392
+% genron:use K-000393
+% genron:use K-000396
+% genron:use K-000052
+% genron:use K-000053
+\begin{prop}[一様空間の分離商]
+一様空間 $(X,\mathcal U)$ に対し $x\sim y$ を $(x,y)\in\bigcap\mathcal U$ と定める．これは同値関係であり，商写像 $q:X\to X/{\sim}$ に対し $(q\times q)(U)$（$U\in\mathcal U$）を近縁の基とする分離一様構造が存在する．
+\end{prop}
+\begin{proof}
+反射・対称性は近縁の公理から，推移性は $V^2\subseteq U$ となる $V$ を用いて従う．商での近縁の合成において中間点の代表元が異なる場合も，その二元はすべての近縁に属する．従って対称近縁 $V^3\subseteq U$ を取ると $(q\times q)(V)^2\subseteq(q\times q)(U)$ となる．有限共通部分及び逆関係の条件も成立する．$(q(x),q(y))$ が全商近縁に属すなら，任意の $U$ に対し $V^3\subseteq U$ を選び，$x\sim x',y\sim y'$ かつ $(x',y')\in V$ となる代表元を取れば $(x,y)\in U$ である．よって分離である．
+\end{proof}
+% genron:end K-001278
+% genron:begin K-001279
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000233
+% genron:use K-000235
+% genron:use K-000236
+% genron:use K-000393
+% genron:use K-000490
+\begin{prop}[Cauchyフィルターの縮小]
+Cauchyフィルター $\mathcal F$ に対し，対称近縁 $U$ と $A\in\mathcal F$ による $U[A]=\{y\mid\exists a\in A,\ (a,y)\in U\}$ を基とするフィルター $\mathcal F^0$ は Cauchy であり，$\mathcal F$ に含まれる．さらに $(\mathcal F^0)^0=\mathcal F^0$ である．
+\end{prop}
+\begin{proof}
+有限個の基集合に対し $U$ と $A$ の共通の縮小を取れば基条件が従う．$A\subseteq U[A]$ なので $\mathcal F^0\subseteq\mathcal F$ である．任意の近縁 $W$ に対し対称 $V^3\subseteq W$ を選び，$A^2\subseteq V$ となる $A\in\mathcal F$ を取れば $(V[A])^2\subseteq V^3$ となり Cauchy 性を得る．さらに $V^2\subseteq U$ のとき $V[V[A]]\subseteq U[A]$ なので各基集合は $(\mathcal F^0)^0$ に属する．逆包含は先の包含を再び適用して得る．
+\end{proof}
+% genron:end K-001279
+% genron:begin K-001280
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001279
+% genron:use K-000490
+% genron:use K-000393
+\begin{prop}[Cauchyフィルターの同値性]
+Cauchyフィルター $\mathcal F,\mathcal G$ について $\mathcal F^0=\mathcal G^0$ と，任意の近縁 $U$ に対し $A\in\mathcal F,B\in\mathcal G$ が存在して $A\times B\subseteq U$ となることは同値である．
+\end{prop}
+\begin{proof}
+等号が成り立てば共通の Cauchy フィルターから直径の十分小さい集合を取り，両方のフィルターの元として用いればよい．逆に対称近縁 $U$ と $A\in\mathcal F$ を取る．$V^2\subseteq U$ となる対称 $V$ に対して $A'\times B'\subseteq V$ となる $A'\in\mathcal F,B'\in\mathcal G$ がある．$a\in A\cap A'$ を取れば $V[B']\subseteq U[A]$ となる．よって $U[A]\in\mathcal G^0$ である．対称な論証で逆包含を得る．
+\end{proof}
+% genron:end K-001280
+% genron:begin K-001281
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001279
+% genron:use K-001280
+% genron:use K-000392
+% genron:use K-000396
+\begin{prop}[完備化の一様構造]
+$\widehat X$ を $\mathcal F=\mathcal F^0$ を満たす Cauchy フィルターの集合とする．対称近縁 $U$ に対し
+\[
+W_U=\{(\mathcal F,\mathcal G)\mid\exists A\in\mathcal F,\exists B\in\mathcal G,\ A\times B\subseteq U\}
+\]
+を定める．これらは分離一様構造の基をなす．
+\end{prop}
+\begin{proof}
+Cauchy 性により対角を含む．逆関係及び有限共通部分の基条件は対称性とフィルターの共通部分条件による．$V^2\subseteq U$ とする．$(\mathcal F,\mathcal G),(\mathcal G,\mathcal H)\in W_V$ なら中間フィルターの二つの集合に共通の元を取り，関係の合成により $(\mathcal F,\mathcal H)\in W_U$ を得る．すべての $W_U$ に属する対は前命題により同じフィルターである．
+\end{proof}
+% genron:end K-001281
+% genron:begin K-001282
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001281
+% genron:use K-000394
+% genron:use K-000397
+% genron:use K-000491
+\begin{prop}[完備化への標準写像]
+$x\mapsto j(x)$（$j(x)$ は $x$ の近傍フィルター）は一様連続で，像は $\widehat X$ に稠密である．また $X$ が分離なら一様埋込みである．
+\end{prop}
+\begin{proof}
+近傍フィルターは Cauchy であり $U$ の縮小を用いれば自身の縮小に一致する．$(x,y)\in V$，$V^3\subseteq U$ なら $V[x]\times V[y]\subseteq U$ なので $(j(x),j(y))\in W_U$ である．逆に後者なら二つの近傍集合は各中心を含むので $(x,y)\in U$ である．従って分離の場合は一様埋込みとなる．任意の $\mathcal F\in\widehat X$ と $U$ に対し対称 $V^2\subseteq U$ を取り，$A^2\subseteq V$ なる $A\in\mathcal F$ と $x\in A$ を選べば $V[x]\times A\subseteq U$ なので $j(x)$ は $W_U[\mathcal F]$ に属する．
+\end{proof}
+% genron:end K-001282
+% genron:begin K-001283
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001282
+% genron:use K-001279
+% genron:use K-001281
+% genron:use K-000490
+% genron:use K-000493
+\begin{prop}[完備化の完備性]
+$\widehat X$ は完備である．
+\end{prop}
+\begin{proof}
+$\mathcal D$ を $\widehat X$ の Cauchy フィルターとする．$D\in\mathcal D$ と対称近縁 $U$ に対する $j^{-1}(W_U[D])$ を基として $X$ 上のフィルター $\mathcal F$ を作る．各集合は稠密性から非空で，有限共通部分について $D,U$ を縮小できる．任意の $U$ に対し $V^3\subseteq U$ となる $V$ を取り，$D^2\subseteq W_V$ なる $D$ を選ぶと $j^{-1}(W_V[D])$ の任意の二元の像は $W_U$ で近い（合成の包含を反復する）．従って元の二元は $U$ で近く，$\mathcal F$ は Cauchy である．$\mathcal F^0$ を極限候補とする．任意の $U$ に対し対称 $V$ を $V^6\subseteq U$ となるように選び，$D^2\subseteq W_V$ を満たす $D\in\mathcal D$ を取る．$B=j^{-1}(W_V[D])\in\mathcal F$ とおく．任意の $\mathcal G\in D$ と $x\in B$ について $(j(x),\mathcal G)\in W_{V^2}$ である．一つの $x_0\in B$ を選ぶとある $C\in\mathcal G$ について $\{x_0\}\times C\subseteq V^2$ となる．また $B^2\subseteq V^3$ なので，$V[B]\times C\subseteq U$ を得る．$V[B]\in\mathcal F^0$ より $(\mathcal F^0,\mathcal G)\in W_U$ である．従って $D\subseteq W_U[\mathcal F^0]$ となり $\mathcal D$ は収束する．
+\end{proof}
+% genron:end K-001283
+% genron:begin K-001284
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001283
+% genron:use K-001282
+% genron:use K-000397
+% genron:use K-000484
+% genron:use K-000396
+% genron:use K-000293
+\begin{prop}[完備化の普遍性]
+分離完備一様空間 $Y$ への一様連続写像 $f:X\to Y$ は一意の一様連続写像 $\widehat f:\widehat X\to Y$ で $\widehat f j=f$ を満たすものに延長される．
+\end{prop}
+\begin{proof}
+各 $\mathcal F\in\widehat X$ の像フィルターは一様連続性により Cauchy なので分離完備性からただ一つの極限を持つ．これを $\widehat f(\mathcal F)$ と定める．$j(x)$ の像フィルターは $f(x)$ に収束する．一様連続性を示すため $Y$ の近縁 $U$ と対称 $V^3\subseteq U$ を取る．$(f\times f)(W)\subseteq V$ なる $X$ の対称近縁 $W$ を選ぶ．$(\mathcal F,\mathcal G)\in W_W$ なら $A\times B\subseteq W$ となる集合がある．像フィルターの収束により $f(A),f(B)$ はそれぞれ極限の $V$ 近傍と交わるので，その二点を介して極限同士は $U$ で近い．一意性は連続性，稠密性，Hausdorff 性から従う（異なる値を取れば互いに素な近傍の逆像の共通部分が稠密像と交わり矛盾する）．
+\end{proof}
+% genron:end K-001284

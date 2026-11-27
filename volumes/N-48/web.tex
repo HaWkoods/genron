@@ -1,0 +1,122 @@
+% Web専用草稿．独立査読未了．
+% 所蔵文献は検索したが該当箇所の本文を確認できなかったため，以下は既出の知識に基づく独自の論証である．
+\section{命題式と真理値}
+% genron:begin K-001085
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000541
+% genron:use K-000118
+\begin{defn}[命題式]
+命題変数の集合 $P$ を固定する．形式的命題式の集合 $\mathcal F(P)$ は，$p\in P$ を原子式とし，$\neg A$，$(A\land B)$，$(A\lor B)$，$(A\Rightarrow B)$ を生成操作として得られる有限の構文木全体とする．各演算記号と変数は互いに区別し，木の節点には演算記号，葉には変数を付す．二項演算の子は順序づける．括弧付きの文字列はこの木の表記とする．
+\end{defn}
+% genron:end K-001085
+% genron:begin K-001086
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001085
+% genron:use K-000104
+\begin{prop}[命題式の構造帰納法]
+命題式に関する性質がすべての原子式に成立し，その性質を持つ式に各生成操作を施しても成立するなら，すべての命題式に成立する．
+\end{prop}
+\begin{proof}
+構文木の高さを，葉で零，それ以外で子の高さの最大値に一を加えた数とする．高さ零では仮定による．高さ $n>0$ の木の子は高さが $n$ 未満であるから，強い帰納法と生成操作に関する仮定により主張が成立する．
+\end{proof}
+% genron:end K-001086
+% genron:begin K-001087
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001085
+\begin{defn}[真理値付値]
+$2=\{0,1\}$ とし，写像 $v:P\to 2$ を真理値付値という．否定は $1-a$，連言は双方が $1$ のときに限り $1$，選言は少なくとも一方が $1$ のときに限り $1$，含意は $(a,b)=(1,0)$ のときに限り $0$ とする二値演算である．
+\end{defn}
+% genron:end K-001087
+% genron:begin K-001088
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001086
+% genron:use K-001087
+% genron:use K-000105
+\begin{prop}[真理値付値の延長]
+任意の真理値付値 $v$ は，各生成操作と対応する二値演算を可換にする写像 $\widehat v:\mathcal F(P)\to2$ にただ一通り延長される．
+\end{prop}
+\begin{proof}
+原子式には $v$ を適用し，それ以外の式には子の値に指定された二値演算を適用する．高さに関する再帰により，各有限構文木に一つの値が定まる．他の延長も葉及び各生成操作で同じ値を持つため，構造帰納法によって一致する．
+\end{proof}
+% genron:end K-001088
+% genron:begin K-001089
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001088
+\begin{defn}[充足と意味論的帰結]
+$\widehat v(A)=1$ のとき $v\models A$ と書く．式の集合 $\Gamma$ に対し，すべての $A\in\Gamma$ を充足する付値が存在すれば $\Gamma$ は充足可能という．$\Gamma$ を充足する任意の付値が $B$ を充足するとき $\Gamma\models B$ と書く．特に $\varnothing\models B$ のとき $B$ を恒真式という．
+\end{defn}
+% genron:end K-001089
+% genron:begin K-001090
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001086
+% genron:use K-001088
+% genron:use K-001089
+% genron:use K-000120
+% genron:use K-000116
+\begin{prop}[有限個の変数による真理値の決定]
+各命題式 $A$ に現れる変数の集合 $P_A$ は有限であり，二つの付値が $P_A$ 上で一致すれば $A$ の値も一致する．従って恒真性及び有限個の式の同時充足可能性は有限個の付値を調べれば決定できる．
+\end{prop}
+\begin{proof}
+原子式の変数集合は一元集合であり，生成操作では子の変数集合の和集合を取る．構造帰納法により有限性と値の一致が同時に従う．有限個の式では変数集合の和も有限である．この集合から $2$ への写像をすべて調べる．各写像は残りの変数に $0$ を割り当てれば全体に延長できる．
+\end{proof}
+% genron:end K-001090
+% genron:begin K-001091
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001089
+% genron:use K-001087
+\begin{prop}[含意と意味論的帰結]
+任意の式 $A,B$ について $\{A\}\models B$ と $\models(A\Rightarrow B)$ は同値である．また $\Gamma\models A$ かつ $\Gamma\cup\{A\}\models B$ なら $\Gamma\models B$ である．
+\end{prop}
+\begin{proof}
+含意の値が零であることは $A$ の値が一，$B$ の値が零であることと同値である．第一の同値はこれにより従う．第二について，$\Gamma$ を充足する任意の付値は第一の仮定により $A$ を充足するので第二の仮定を適用できる．
+\end{proof}
+% genron:end K-001091

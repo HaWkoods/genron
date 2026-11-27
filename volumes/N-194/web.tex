@@ -1,0 +1,135 @@
+% Web専用草稿．独立査読未了．
+% 所蔵文献は検索したが該当箇所の本文を確認できなかったため，以下は既出の知識に基づく独自の論証である．
+\section{位相環及び位相体}
+% genron:begin K-001098
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000249
+% genron:use K-000382
+% genron:use K-000256
+\begin{defn}[位相環]
+単位元を持つ環 $R$ に位相 $\mathcal O$ が与えられ，加法について位相群となり，乗法 $R\times R\to R$ が積位相に関して連続であるとき，$R$ を位相環という．ここでは Hausdorff 性を定義に含めない．
+\end{defn}
+% genron:end K-001098
+% genron:begin K-001099
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001098
+% genron:use K-000383
+% genron:use K-000442
+% genron:use K-000257
+\begin{prop}[平行移動と単元による乗法]
+位相環では加法的平行移動は同相写像である．任意の $a\in R$ に対して $x\mapsto ax$ 及び $x\mapsto xa$ は連続であり，$a$ が単元なら同相写像である．
+\end{prop}
+\begin{proof}
+第一の主張は加法位相群の性質による．定値写像と恒等写像からなる積への写像は連続であるから乗法との合成も連続である．$a$ が単元なら逆写像はそれぞれ $a^{-1}$ による左乗法及び右乗法であり，連続である．
+\end{proof}
+% genron:end K-001099
+% genron:begin K-001100
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001098
+% genron:use K-000383
+% genron:use K-000385
+\begin{prop}[零元近傍による乗法の連続性判定]
+加法について位相群である環 $R$ において，すべての $a\in R$ について左乗法及び右乗法が零元で連続であり，乗法が $(0,0)$ で連続なら，乗法は全域で連続である．
+\end{prop}
+\begin{proof}
+$(a,b)$ と $ab$ の近傍 $O$ を取る．加法位相群の連続性により零元近傍 $W$ で $W+W+W\subseteq O-ab$ を満たすものを取れる．仮定により零元近傍 $U,V$ を十分小さくすれば $Ub\subseteq W$，$aV\subseteq W$，$UV\subseteq W$ となる．$u\in U,v\in V$ に対し $(a+u)(b+v)-ab=av+ub+uv\in O-ab$ である．平行移動の同相性から所望の連続性が従う．
+\end{proof}
+% genron:end K-001100
+% genron:begin K-001101
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001098
+% genron:use K-000443
+% genron:use K-000254
+\begin{defn}[位相体]
+可換体 $K$ が位相環であり，$K^\times=K\setminus\{0\}$ の部分位相に関して逆元写像 $x\mapsto x^{-1}$ が連続であるとき，$K$ を位相体という．
+\end{defn}
+% genron:end K-001101
+% genron:begin K-001102
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001101
+% genron:use K-000257
+% genron:use K-000382
+\begin{prop}[除法の連続性]
+位相体 $K$ において除法 $(x,y)\mapsto xy^{-1}$ は $K\times K^\times$ 上で連続である．また乗法群 $K^\times$ は位相群である．
+\end{prop}
+\begin{proof}
+積位相の普遍性により $(x,y)\mapsto(x,y^{-1})$ は連続であり，乗法との合成も連続である．乗法群の積は環の乗法の制限であり，逆元写像は定義により連続である．
+\end{proof}
+% genron:end K-001102
+% genron:begin K-001103
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001098
+% genron:use K-001101
+% genron:use K-000254
+% genron:use K-000256
+% genron:use K-000257
+% genron:use K-000251
+\begin{prop}[部分環と部分体]
+位相環の部分環は部分位相により位相環となり，位相体の部分体は部分位相により位相体となる．
+\end{prop}
+\begin{proof}
+部分空間の積位相は積空間の部分位相に一致する．各演算の制限は連続であり，値が部分環又は部分体に属するので部分空間への写像としても連続である．部分体では逆元写像についても同様である．
+\end{proof}
+% genron:end K-001103
+% genron:begin K-001104
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001101
+% genron:use K-001098
+% genron:use K-000256
+% genron:use K-000391
+\begin{prop}[離散位相と密着位相]
+任意の環は離散位相及び密着位相のそれぞれにより位相環となる．任意の体についても同様に位相体となる．
+\end{prop}
+\begin{proof}
+有限個の離散空間の積は離散空間であるため，すべての演算は連続である．密着空間を終域とする任意の写像は連続であり，部分空間も密着空間となる．
+\end{proof}
+% genron:end K-001104

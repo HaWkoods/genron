@@ -1,0 +1,138 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当箇所の本文は未照合．既出知識から独自に論証する．
+\section{拡大体と拡大次数}
+% genron:begin K-001190
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000443
+% genron:use K-000560
+% genron:use K-000604
+\begin{defn}[拡大体と次数]
+体 $K$ が体 $L$ の部分体であるとき $L/K$ を体の拡大という．$L$ を $K$ 上の線形空間とみなす．これが有限次元なら有限次拡大といい，その次元を $[L:K]$ と書く．有限次元でない場合にはここでは $[L:K]=\infty$ と書く．
+\end{defn}
+% genron:end K-001190
+% genron:begin K-001191
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001190
+% genron:use K-000600
+% genron:use K-000601
+% genron:use K-000605
+\begin{prop}[拡大次数の塔の公式]
+$K\subseteq M\subseteq L$ とする．$L/K$ が有限次であることは $M/K,L/M$ がともに有限次であることと同値であり，このとき
+\[
+[L:K]=[L:M][M:K]
+\]
+である．
+\end{prop}
+\begin{proof}
+$L/K$ が有限次なら $M$ はその部分空間であり，また $K$ 上の有限生成集合は $M$ 上でも生成する．逆に $M/K$ の基底 $(a_i)_{i=1}^r$，$L/M$ の基底 $(b_j)_{j=1}^s$ を取る．各元をまず $b_j$ で展開し，その係数を $a_i$ で展開すれば積 $a_i b_j$ が $L$ を生成する．これらの $K$ 線形関係を $b_j$ ごとにまとめ，$b_j$ の独立性を適用すると各 $j$ で係数 $\sum_i c_{ij}a_i=0$ となる．$a_i$ の独立性からすべての $c_{ij}=0$ であり，積の族は基底となる．
+\end{proof}
+% genron:end K-001191
+% genron:begin K-001192
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001190
+% genron:use K-000444
+% genron:use K-000600
+% genron:use K-000604
+% genron:use K-000606
+\begin{prop}[有限次元部分代数の体性]
+拡大体 $L/K$ の中の $K$ を含む部分環 $A$ が $K$ 上有限次元なら $A$ は体である．
+\end{prop}
+\begin{proof}
+$a\in A\setminus\{0\}$ に対し $x\mapsto ax$ は $A$ の $K$ 線形単射である．有限次元空間の基底をこの単射で移した族は独立で，もとの次元と同数の元からなるので基底である．従って単射は全射であり，$ax=1$ となる $x\in A$ が存在する．
+\end{proof}
+% genron:end K-001192
+% genron:begin K-001193
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000443
+% genron:use K-000045
+\begin{defn}[合成体]
+同一の体 $\Omega$ の部分体 $L_1,L_2$ に対し，両者を含む $\Omega$ の部分体の共通部分を合成体といい $L_1L_2$ と書く．
+\end{defn}
+% genron:end K-001193
+% genron:begin K-001194
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001193
+% genron:use K-001192
+% genron:use K-000601
+\begin{prop}[有限次拡大との合成体]
+$L_1,L_2$ が共通の体 $\Omega$ の部分体で $K\subseteq L_1\cap L_2$，$[L_1:K]=r<\infty$ とする．このとき $L_1L_2/L_2$ は有限次で，$[L_1L_2:L_2]\leq r$ である．さらに $L_1$ の $K$ 基底 $(a_i)$ に対し
+\[
+L_1L_2=\sum_{i=1}^r L_2a_i
+\]
+である．
+\end{prop}
+\begin{proof}
+右辺を $A$ とおく．$1$ と $L_1$ の元を基底で展開できるので $A$ は $L_1,L_2$ を含む．各積 $a_i a_j$ は $L_1$ に属して基底で展開できるから $A$ は乗法で閉じる．従って $A$ は $L_2$ 上有限生成の部分環であり，有限次元部分代数の体性から体である．合成体の最小性と $A\subseteq L_1L_2$ によって等号を得る．有限生成集合からの基底抽出により次数の上界が従う．
+\end{proof}
+% genron:end K-001194
+% genron:begin K-001195
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001193
+% genron:use K-000045
+% genron:use K-000443
+\begin{defn}[生成される部分体]
+拡大 $L/K$ と部分集合 $S\subseteq L$ に対し，$K$ と $S$ を含む最小の部分体を $K(S)$ と書く．一元集合の場合を $K(a)$ と書く．$K$ と $S$ を含む最小の部分環は $K[S]$ と書く．
+\end{defn}
+% genron:end K-001195
+% genron:begin K-001196
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001195
+% genron:use K-001194
+% genron:use K-001191
+% genron:use K-000100
+\begin{prop}[有限生成部分体の有限性]
+$a_1,\ldots,a_n\in L$ の各 $K(a_i)/K$ が有限次なら $K(a_1,\ldots,a_n)/K$ は有限次で，その次数は $\prod_i[K(a_i):K]$ 以下である．
+\end{prop}
+\begin{proof}
+$K(a_1,\ldots,a_j)$ は $K(a_1,\ldots,a_{j-1})$ と $K(a_j)$ の合成体である．合成体の次数の上界と塔の公式を帰納的に適用する．
+\end{proof}
+% genron:end K-001196

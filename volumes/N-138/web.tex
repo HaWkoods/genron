@@ -1,0 +1,148 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Rotman, An Introduction to Homological Algebra, Ch. 4 §4.7 の素イデアル対応の証明を確認．
+\section{素イデアルと局所環}
+% genron:begin K-001134
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000327
+% genron:use K-000328
+% genron:use K-000451
+\begin{defn}[イデアルの拡大と縮小]
+環準同型 $h:R\to B$ に対し，$R$ のイデアル $I$ の像の生成するイデアルを $I^e$，$B$ のイデアル $J$ の逆像を $J^c$ と書く．
+\end{defn}
+% genron:end K-001134
+% genron:begin K-001135
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001134
+% genron:use K-000450
+% genron:use K-000451
+% genron:use K-000452
+% genron:use K-000334
+\begin{prop}[局所化イデアルの表示]
+$B=S^{-1}R$ なら $I^e=\{a/s\mid a\in I,s\in S\}$ であり，$(J^c)^e=J$ である．$I^e=B$ と $I\cap S\ne\varnothing$ は同値である．
+\end{prop}
+\begin{proof}
+表示の右辺はイデアルで $h(I)$ を含み，$a/s=(1/s)h(a)$ から逆包含を得る．$a/s\in J$ なら $a/1\in J$ であり，$(J^c)^e=J$ が従う．$I$ が $S$ と交わればその像は単元を含む．逆に $1=a/s$，$a\in I$ ならある $u\in S$ について $u(a-s)=0$ だから $us=ua\in I\cap S$ である．
+\end{proof}
+% genron:end K-001135
+% genron:begin K-001136
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001135
+% genron:use K-000446
+% genron:use K-000450
+\begin{prop}[局所化の素イデアル対応]
+$S^{-1}R$ の素イデアルと，$R$ の $S$ と交わらない素イデアルは拡大と縮小によって包含順序を保つ一対一の対応をなす．
+\end{prop}
+\begin{proof}
+素イデアルの逆像は素であり$S$ の像がすべて単元であるため $S$ と交わらない．$\mathfrak p\cap S=\varnothing$ なら $\mathfrak p^e$ は真である．$(a/s)(b/t)=c/v$，$c\in\mathfrak p$ ならある $u\in S$ について $u(vab-stc)=0$ であり，$uvab\in\mathfrak p$ から $a$ 又は $b$ が $\mathfrak p$ に属する．また $a/1=b/s$，$b\in\mathfrak p$ なら $u(sa-b)=0$ から $a\in\mathfrak p$ である．従って $(\mathfrak p^e)^c=\mathfrak p$ となる．反対の合成は前命題による．
+\end{proof}
+% genron:end K-001136
+% genron:begin K-001137
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000446
+\begin{defn}[局所環]
+ただ一つの極大イデアルを持つ可換環を局所環という．
+\end{defn}
+% genron:end K-001137
+% genron:begin K-001138
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001137
+% genron:use K-000442
+% genron:use K-000448
+% genron:use K-000334
+\begin{prop}[局所環の非単元]
+零環でない可換環が局所環であることと，非単元全体がイデアルをなすことは同値である．そのイデアルは唯一の極大イデアルである．
+\end{prop}
+\begin{proof}
+非単元は真の単項イデアルを生成し，極大イデアルに属する．局所環ならこの極大イデアルは一意であるから非単元集合と一致する．逆に非単元集合がイデアルなら全真イデアルを含み，自身も真なので唯一の極大イデアルとなる．
+\end{proof}
+% genron:end K-001138
+% genron:begin K-001139
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001138
+% genron:use K-001136
+% genron:use K-000449
+\begin{prop}[素イデアルにおける局所化]
+素イデアル $\mathfrak p\subset R$ に対して $R_{\mathfrak p}=(R\setminus\mathfrak p)^{-1}R$ は局所環であり，唯一の極大イデアルは $\mathfrak p R_{\mathfrak p}$ である．
+\end{prop}
+\begin{proof}
+補集合は積閉である．$\mathfrak p R_{\mathfrak p}$ は真であり，その外の元 $a/s$ は $a\notin\mathfrak p$ を満たすから逆元 $s/a$ を持つ．内部の元は単元ではない．非単元による判定を適用する．
+\end{proof}
+% genron:end K-001139
+% genron:begin K-001140
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000327
+% genron:use K-000249
+% genron:use K-000105
+\begin{defn}[イデアルの根基]
+イデアル $I$ の根基を $\sqrt I=\{a\in R\mid a^n\in I\text{ となる正整数 }n\text{ が存在する}\}$ と定める．
+\end{defn}
+% genron:end K-001140
+% genron:begin K-001141
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001140
+% genron:use K-001135
+% genron:use K-001136
+% genron:use K-000448
+\begin{prop}[根基の素イデアル表示]
+$\sqrt I$ は $I$ を含む全素イデアルの共通部分に等しい．空の共通部分を $R$ とする．特に根基はイデアルである．
+\end{prop}
+\begin{proof}
+$a^n\in I$ なら素性により $a$ はすべての当該素イデアルに属する．逆に $a\notin\sqrt I$ なら $S=\{1,a,a^2,\ldots\}$ は $I$ と交わらない．$I^e$ は真であるからある極大イデアルに含まれる．その縮小は $I$ を含む素イデアルで $S$ と交わらず，特に $a$ を含まない．
+\end{proof}
+% genron:end K-001141

@@ -1,0 +1,131 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を主題名・著者名で検索したが該当本文を確認できなかった．以下は既出事項から独自に論証する．
+\section{原始再帰函数と最小化}
+% genron:begin K-001154
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000097
+% genron:use K-000099
+% genron:use K-000118
+\begin{defn}[原始再帰函数の初期函数]
+自然数値函数の初期函数として零函数，後者函数 $s(n)=n+1$，各座標への射影 $\pi_i^k:\mathbb N^k\to\mathbb N$ を取る．零変数の函数も許し，$\mathbb N^0$ は一元集合とする．
+\end{defn}
+% genron:end K-001154
+% genron:begin K-001155
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001154
+% genron:use K-000105
+\begin{defn}[原始再帰函数]
+初期函数を含み，合成及び次の原始再帰操作について閉じる最小の函数族を原始再帰函数の族という．$g:\mathbb N^k\to\mathbb N$，$h:\mathbb N^{k+2}\to\mathbb N$ から
+\[
+ f(\mathbf x,0)=g(\mathbf x),\qquad f(\mathbf x,n+1)=h(\mathbf x,n,f(\mathbf x,n))
+\]
+で定まる $f$ を得る操作が原始再帰である．
+\end{defn}
+% genron:end K-001155
+% genron:begin K-001156
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001155
+% genron:use K-000105
+\begin{prop}[原始再帰函数の全域性]
+原始再帰で定める函数は存在して一意であり，原始再帰函数はすべて全域函数である．
+\end{prop}
+\begin{proof}
+各 $\mathbf x$ を固定し，初期値 $g(\mathbf x)$ と再帰式から自然数上の再帰定理を適用する．すべての $\mathbf x$ に一意の函数が対応する．初期函数は全域であり，全域函数の合成及び原始再帰は全域函数を与えるので，最小閉族の全元は全域である．
+\end{proof}
+% genron:end K-001156
+% genron:begin K-001157
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001155
+% genron:use K-000107
+% genron:use K-000108
+% genron:use K-000109
+\begin{prop}[初等算術の原始再帰表示]
+加法，乗法，冪函数，前者函数 $p(0)=0,\ p(n+1)=n$，切断減法 $a\mathbin{\dot-}b=\max(a-b,0)$ は原始再帰的である．最後の式は自然数上で $b$ 回の前者操作を意味する．
+\end{prop}
+\begin{proof}
+$a+0=a$，$a+(n+1)=s(a+n)$ は原始再帰である．$a0=0$，$a(n+1)=an+a$，$a^0=1$，$a^{n+1}=a^na$ も順に原始再帰となる．前者函数は再帰式の右辺を再帰添字の射影とすれば得られ，$a\mathbin{\dot-}0=a$，$a\mathbin{\dot-}(n+1)=p(a\mathbin{\dot-}n)$ も原始再帰である．
+\end{proof}
+% genron:end K-001157
+% genron:begin K-001158
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001155
+% genron:use K-000104
+\begin{defn}[部分再帰函数]
+部分函数とは定義域が $\mathbb N^k$ の部分集合である自然数値函数をいう．初期函数から，部分函数の合成，原始再帰（必要な値が存在しなければ未定義とする），及び最小化
+\[
+(\mu g)(\mathbf x)=\min\{n\mid g(\mathbf x,n)=0,\ \forall m<n,\ g(\mathbf x,m)\text{ が定義され非零}\}
+\]
+によって有限回で得られる部分函数を部分再帰函数という．該当する $n$ が存在しないとき未定義である．全域である部分再帰函数を全再帰函数という．
+\end{defn}
+% genron:end K-001158
+% genron:begin K-001159
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001158
+\begin{prop}[最小化と未定義性]
+$g(a,n)=a$ とおくと $\mu g$ は $a=0$ のとき値 $0$ を持ち，$a\ne0$ のとき未定義である．
+\end{prop}
+\begin{proof}
+$g$ は射影である．$a=0$ なら最初の試行で零を得る．$a\ne0$ なら零を与える自然数が存在しない．
+\end{proof}
+% genron:end K-001159
+% genron:begin K-001160
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001158
+% genron:use K-001156
+% genron:use K-001114
+\begin{prop}[原始再帰と最小化の手続き]
+原始再帰の式は有限回の反復による評価手続きを定める．部分再帰の最小化は $n=0,1,\ldots$ の順に部分函数を評価し，初めて零を返した時点で停止する手続きを定める．途中で評価が停止しない場合には後続の試行に移らない．
+\end{prop}
+\begin{proof}
+原始再帰では添字 $n$ に至るまで初期値から順に値を更新する．各段の評価が停止すれば有限回で所望の値に達する．最小化について，定義されるための条件は有限個の先行評価が停止して非零を返し，次の評価が零を返すことに一致する．従って部分函数として定義した値と手続きの停止時の値は一致する．Turing機械への完全な翻訳と逆方向の数値的符号化は別途補筆する．
+\end{proof}
+% genron:end K-001160

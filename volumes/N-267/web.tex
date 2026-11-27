@@ -1,0 +1,111 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{形式冪級数と母函数}
+% genron:begin K-001331
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000249
+% genron:use K-000350
+% genron:use K-000047
+\begin{defn}[形式冪級数]
+可換環 $R$ 上の形式冪級数とは列 $(a_n)_{n\geq0}$ であり，$\sum_{n\geq0}a_nX^n$ と書く．これは解析的な収束を意味しない．
+\end{defn}
+% genron:end K-001331
+% genron:begin K-001332
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001331
+% genron:use K-000351
+% genron:use K-000249
+\begin{prop}[形式冪級数環]
+係数ごとの加法と積の係数 $(fg)_n=\sum_{i+j=n}a_i b_j$ によって形式冪級数全体は可換環 $R[[X]]$ となり，$R[X]$ を部分環として含む．
+\end{prop}
+\begin{proof}
+各係数は有限和である．結合律は積の第 $n$ 係数を $\sum_{i+j+k=n}a_i b_j c_k$ と書き直すことで得られ，交換律と分配律も有限和の法則による．単位元は定数列 $1$ であり有限台の列に制限すると多項式の演算に一致する．
+\end{proof}
+% genron:end K-001332
+% genron:begin K-001333
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001332
+% genron:use K-000442
+% genron:use K-000105
+\begin{prop}[形式冪級数の単元判定]
+$f=\sum a_nX^n$ が単元であることと $a_0$ が $R$ の単元であることは同値である．
+\end{prop}
+\begin{proof}
+逆元の定数係数から必要性が従う．逆に $b_0=a_0^{-1}$ とし，$n>0$ について $b_n=-a_0^{-1}\sum_{i=1}^n a_i b_{n-i}$ と再帰的に定める．積の第零係数は $1$，それ以外は零になる．逆元の一意性は環の公理から従う．
+\end{proof}
+% genron:end K-001333
+% genron:begin K-001334
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001331
+% genron:use K-001332
+\begin{defn}[通常母函数]
+数列 $(a_n)_{n\geq0}$ の通常母函数を $A(X)=\sum_{n\geq0}a_nX^n$ と定める．積の係数は二つの数列の畳込みを表す．
+\end{defn}
+% genron:end K-001334
+% genron:begin K-001335
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001334
+% genron:use K-001333
+\begin{prop}[線形漸化式の母函数]
+$a_n=c_1a_{n-1}+\cdots+c_da_{n-d}$ が $n\geq d$ で成り立つなら
+\[
+(1-c_1X-\cdots-c_dX^d)A(X)=\sum_{n=0}^{d-1}(a_n-\sum_{i=1}^{n}c_i a_{n-i})X^n .
+\]
+この式は初期値から母函数を一意に定める．
+\end{prop}
+\begin{proof}
+左辺の第 $n$ 係数を積の定義で計算すると括弧内の式になる（$n\geq d$ では和を $i\leq d$ まで取る）．漸化式により高次係数は零である．左辺の因子の定数係数は $1$ なので形式的に逆元を持つ．
+\end{proof}
+% genron:end K-001335
+% genron:begin K-001336
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001335
+\begin{prop}[Fibonacci数の母函数]
+$a_0=0,a_1=1,a_{n+2}=a_{n+1}+a_n$ なら母函数は $X/(1-X-X^2)$ である．
+\end{prop}
+\begin{proof}
+前命題で $d=2,c_1=c_2=1$ とすれば右辺は $X$ となる．分数は形式冪級数環の単元による除法を意味する．
+\end{proof}
+% genron:end K-001336

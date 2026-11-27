@@ -1,0 +1,123 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵代数幾何学・可換環論の資料を検索した．本稿は局所化の既出結果から独自に構成し，文献の該当本文は未照合．
+\section{素スペクトルの構造層}
+% genron:begin K-001321
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001197
+% genron:use K-001198
+% genron:use K-001139
+% genron:use K-000451
+\begin{defn}[局所分数による切断]
+可換環 $A$ と $X=\operatorname{Spec}A$ に対し，開集合 $U$ 上の族 $(s_{\mathfrak p})_{\mathfrak p\in U}$，$s_{\mathfrak p}\in A_{\mathfrak p}$ が局所分数で表されるとは，各 $\mathfrak p\in U$ の開近傍 $V\subseteq U$ と $a,b\in A$ があり，全ての $\mathfrak q\in V$ に対して $b\notin\mathfrak q$ かつ $s_{\mathfrak q}=a/b$ が成立することをいう．このような族の集合を $\mathcal O_X(U)$ と書く．
+\end{defn}
+% genron:end K-001321
+% genron:begin K-001322
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001321
+% genron:use K-000451
+% genron:use K-000249
+% genron:use K-000251
+\begin{prop}[構造層の環演算]
+$\mathcal O_X(U)$ は成分ごとの環演算により可換環となり，族の制限は単位元を保つ環準同型となる．
+\end{prop}
+\begin{proof}
+二つの局所分数表示を同一の近傍へ制限すると，加法と乗法はそれぞれ $(ad+bc)/(bd)$ と $ac/(bd)$ で表される．素性から $bd$ はどの点の素イデアルにも属さない．負元は $-a/b$，零と単位元は $0/1,1/1$ により表される．環の公理は各成分で成立し，制限は成分ごとの演算と可換である．
+\end{proof}
+% genron:end K-001322
+% genron:begin K-001323
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001322
+% genron:use K-000526
+% genron:use K-000527
+\begin{prop}[構造層の層性]
+$\mathcal O_X$ は集合値層であり，その各切断集合は前命題の環構造を持つ．これを $X$ の構造層という．
+\end{prop}
+\begin{proof}
+開被覆上で整合する切断族は，各点で値が一致するため全体の族を一意に定める．局所分数表示は被覆の一つの中で取れるので全体の族も局所分数で表される．空集合上には空の族だけが存在する．従って層の貼合せ及び一意性が成立する．
+\end{proof}
+% genron:end K-001323
+% genron:begin K-001324
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001323
+% genron:use K-001182
+% genron:use K-001183
+% genron:use K-000450
+% genron:use K-001199
+\begin{prop}[構造層の茎]
+各 $\mathfrak p\in X$ で評価による標準環同型 $(\mathcal O_X)_{\mathfrak p}\simeq A_{\mathfrak p}$ が存在する．茎の環演算は共通近傍上で切断を演算して定める．
+\end{prop}
+\begin{proof}
+芽をその点での成分へ移す写像は代表元によらず演算を保存する．$a/b\in A_{\mathfrak p}$ は $D(b)$ 上の局所分数を定めるので全射である．二つの芽を局所分数 $a/b,c/d$ によって表す．点 $\mathfrak p$ で値が等しいならある $u\notin\mathfrak p$ に対し $u(ad-bc)=0$ である．元の共通近傍を $D(u)\cap D(b)\cap D(d)$ と交叉させれば各点で分数は等しくなる．従って芽が一致し単射である．
+\end{proof}
+% genron:end K-001324
+% genron:begin K-001325
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001323
+% genron:use K-001324
+% genron:use K-000453
+% genron:use K-001141
+% genron:use K-001199
+\begin{prop}[基本開集合への局所化準同型]
+各 $f\in A$ について標準準同型 $A_f\to\mathcal O_X(D(f))$ があり，$a/f^n$ を各点での同じ分数に移す．この準同型は単射である．
+\end{prop}
+\begin{proof}
+$D(f)$ 上では $f$ がすべての茎で可逆であるため局所化の普遍性で準同型を得る．像が零なら各 $\mathfrak p\in D(f)$ に対し $u_{\mathfrak p}\notin\mathfrak p$ かつ $u_{\mathfrak p}a=0$ となる元がある．従って $\operatorname{Ann}(a)=\{u\mid ua=0\}$ を含む素イデアルはすべて $f$ を含む．根基の素イデアル表示から $f^N a=0$ となる正整数 $N$ が存在する．よって分数は $A_f$ で零である．
+\end{proof}
+% genron:end K-001325
+% genron:begin K-001326
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001325
+% genron:use K-001202
+% genron:use K-001136
+% genron:use K-001141
+% genron:use K-000453
+% genron:use K-001199
+\begin{prop}[基本開集合の切断環]
+標準準同型 $A_f\to\mathcal O_X(D(f))$ は同型である．特に $\mathcal O_X(X)\simeq A$ である．
+\end{prop}
+\begin{proof}
+まず $f=1$ の場合を示す．局所分数表示 $a/b$ の近傍を基本開 $D(g)$ に縮め，必要なら $g$ を $gb$ に替える．$D(g)\subseteq D(b)$ なので $b$ は $A_g$ の単元である．実際 $g$ は $(b)$ の根基に属し，$g^N=bc$ から逆元 $c/g^N$ を得る．有限被覆性により有限個の $D(g_i)$ で $X$ を覆い，切断は各開上で $a_i/g_i^{n_i}$ と表される．指数を共通の $n$ に揃える．重なりで等しいことと前命題の単射性により，ある共通の $k$ について $(g_ig_j)^k(g_j^na_i-g_i^na_j)=0$ がすべての組で成立する．分子を $g_i^ka_i$，分母を $g_i^{n+k}$ に置き換えれば交差積は $A$ で一致する．これらを $c_i,h_i$ と書く．$D(h_i)$ は全体を覆うので $(h_i)_i=A$ である．$\sum_i r_i h_i=1$ を取り，$c=\sum_i r_i c_i$ とおくと $h_jc=c_j$ である．従って大域切断は $c$ の像である．一般の $f$ では局所化の素イデアル対応が $\operatorname{Spec}A_f$ と $D(f)$ の同相を与える（基本開集合の逆像を比較する）．各点で $(A_f)_{\mathfrak pA_f}\simeq A_{\mathfrak p}$ となることは二段の局所化の普遍性から従い，局所分数表示もこの同一視の下で一致する．従って $A_f$ に対する大域切断の結果を適用できる．
+\end{proof}
+% genron:end K-001326

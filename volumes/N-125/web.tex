@@ -1,0 +1,137 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{群の線形表現}
+% genron:begin K-001298
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000561
+% genron:use K-000225
+% genron:use K-000629
+\begin{defn}[一般線形群]
+体 $K$ 上の線形空間 $V$ の可逆線形自己写像全体を合成で群としたものを $\operatorname{GL}_K(V)$ と書く．
+\end{defn}
+% genron:end K-001298
+% genron:begin K-001299
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001298
+% genron:use K-000282
+% genron:use K-000604
+\begin{defn}[群表現]
+群 $G$ の $K$ 上の表現とは線形空間 $V$ と群準同型 $\rho:G\to\operatorname{GL}_K(V)$ の組である．$\dim_K V$ が有限なら有限次元表現という．
+\end{defn}
+% genron:end K-001299
+% genron:begin K-001300
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001299
+% genron:use K-000561
+\begin{defn}[表現の準同型と同値]
+二表現 $(V,\rho),(W,\sigma)$ の準同型とは $T\rho(g)=\sigma(g)T$ をすべての $g\in G$ で満たす線形写像 $T:V\to W$ である．全単射の準同型が存在するとき二表現は同値という．
+\end{defn}
+% genron:end K-001300
+% genron:begin K-001301
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001299
+% genron:use K-000562
+\begin{defn}[部分表現]
+部分空間 $U\subseteq V$ が任意の $g$ に対し $\rho(g)U\subseteq U$ を満たすとき，$U$ を不変部分空間といい，制限により定まる表現を部分表現という．
+\end{defn}
+% genron:end K-001301
+% genron:begin K-001302
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001301
+% genron:use K-000630
+% genron:use K-000631
+\begin{prop}[商表現]
+不変部分空間 $U$ に対し $\bar\rho(g)(v+U)=\rho(g)v+U$ は $V/U$ の表現を定める．
+\end{prop}
+\begin{proof}
+$v-v'\in U$ なら $\rho(g)(v-v')\in U$ なので代表元によらない．線形性は元の線形性から従う．恒等元と積を保存し，$\bar\rho(g^{-1})$ が逆写像となる．
+\end{proof}
+% genron:end K-001302
+% genron:begin K-001303
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001300
+% genron:use K-001302
+% genron:use K-000629
+% genron:use K-000632
+\begin{prop}[準同型の核と像]
+表現の準同型 $T:V\to W$ の核及び像はそれぞれ不変部分空間であり，誘導写像 $V/\ker T\to\operatorname{im}T$ は表現の同値を与える．
+\end{prop}
+\begin{proof}
+$Tv=0$ なら $T\rho(g)v=\sigma(g)Tv=0$ であり，$\sigma(g)Tv=T\rho(g)v$ は像に属する．線形写像の第一同型定理による同型はこの等式から作用と可換になる．
+\end{proof}
+% genron:end K-001303
+% genron:begin K-001304
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001301
+\begin{defn}[既約表現]
+零でない表現が零空間及び全空間以外の不変部分空間を持たないとき既約という．
+\end{defn}
+% genron:end K-001304
+% genron:begin K-001305
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001304
+% genron:use K-001303
+% genron:use K-001300
+\begin{prop}[Schurの補題]
+二つの既約表現の間の零でない準同型は同値を与える．特に既約表現の自己準同型環の零でない元は可逆である．
+\end{prop}
+\begin{proof}
+零でない写像の核は全空間ではなく，像は零でない．既約性と前命題から核は零，像は全空間となる．逆写像も作用との可換性の等式を両側から逆写像で合成して得られる．
+\end{proof}
+% genron:end K-001305

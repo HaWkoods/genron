@@ -1,0 +1,118 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を検索したが該当本文は未照合．既出事項から独自に論証する．
+\section{整数の合同と中国剰余定理}
+% genron:begin K-001272
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000572
+% genron:use K-000596
+\begin{defn}[整数の合同]
+正整数 $m$ に対し，$m\mid a-b$ であることを $a\equiv b\pmod m$ と書く．
+\end{defn}
+% genron:end K-001272
+% genron:begin K-001273
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001272
+% genron:use K-000330
+% genron:use K-000596
+\begin{prop}[剰余類環]
+合同は同値関係であり，加法及び乗法と両立する．商環 $\mathbb Z/m\mathbb Z$ の各元は $0,\ldots,m-1$ のただ一つで代表される．
+\end{prop}
+\begin{proof}
+合同はイデアル $(m)$ による商の同値関係に一致する．商環の構成を適用し，除法算法により代表元の存在と一意性を得る．
+\end{proof}
+% genron:end K-001273
+% genron:begin K-001274
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001273
+% genron:use K-000598
+\begin{prop}[剰余類の単元判定]
+$m\geq2$ とする．$[a]\in\mathbb Z/m\mathbb Z$ が単元であることと，$a,m$ の正の最大公約数が $1$ であることは同値である．
+\end{prop}
+\begin{proof}
+逆元 $[b]$ があれば $ab+cm=1$ となる整数 $c$ が存在するので公約数は $1$ の約数となる．逆に Bézout 等式 $ua+vm=1$ は $[u]$ が逆元であることを示す．
+\end{proof}
+% genron:end K-001274
+% genron:begin K-001275
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001274
+% genron:use K-001211
+% genron:use K-000443
+\begin{prop}[素数の剰余体]
+$m\geq2$ について $\mathbb Z/m\mathbb Z$ が体であることと $m$ が素数であることは同値である．
+\end{prop}
+\begin{proof}
+素数なら非零類の代表元は $m$ と互いに素である．合成数なら $m=ab$，$1<a,b<m$ と書け，二つの非零類の積が零になる．
+\end{proof}
+% genron:end K-001275
+% genron:begin K-001276
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001273
+% genron:use K-000598
+% genron:use K-001214
+% genron:use K-001217
+\begin{prop}[中国剰余定理]
+対ごとに互いに素な正整数 $m_1,\ldots,m_r$ と $M=\prod_i m_i$ に対し，標準環準同型
+\[
+\mathbb Z/M\mathbb Z\longrightarrow\prod_{i=1}^r\mathbb Z/m_i\mathbb Z
+\]
+は同型である．
+\end{prop}
+\begin{proof}
+核はすべての $m_i$ で割り切れる整数の類であり，素因数分解の一意性によってそれらは $M$ で割り切れる．各 $i$ について $M_i=M/m_i$ とおけば $(M_i,m_i)=1$ であるから $u_iM_i\equiv1\pmod{m_i}$ となる $u_i$ が存在する．$j\ne i$ では $u_iM_i\equiv0\pmod{m_j}$ である．任意の剰余類の組 $([a_i])_i$ は $\sum_i a_i u_iM_i$ の像なので全射である．
+\end{proof}
+% genron:end K-001276
+% genron:begin K-001277
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001272
+% genron:use K-001274
+% genron:use K-000598
+% genron:use K-000596
+\begin{prop}[一次合同式の可解性]
+$ax\equiv b\pmod m$ が解を持つことと $d=\gcd(a,m)$ が $b$ を割ることは同値である．可解なら法 $m$ で相異なる解はちょうど $d$ 個である．
+\end{prop}
+\begin{proof}
+解があれば $ax-b$ は $m$ の倍数なので $d\mid b$ である．逆に $d\mid b$ のとき $a=da'$, $m=dm'$, $b=db'$ と書けば $a'x\equiv b'\pmod{m'}$ と同値である．$a',m'$ は互いに素なので Bézout 等式からただ一つの解の類を法 $m'$ で得る．法 $m$ においてその類を代表するものは $x_0+jm'$（$0\leq j<d$）に限る．$m'=1$ の場合にもこの記述は全類を与える．
+\end{proof}
+% genron:end K-001277

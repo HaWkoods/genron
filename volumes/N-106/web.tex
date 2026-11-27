@@ -1,0 +1,143 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当箇所の本文は未照合．既出知識から独自に論証する．
+\section{任意次元線形空間の基底}
+% genron:begin K-001218
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000565
+% genron:use K-000566
+% genron:use K-000600
+% genron:use K-000131
+\begin{prop}[線形独立集合の基底への拡張]
+体 $K$ 上の線形空間 $E$ の線形独立部分集合 $S$ はある基底に含まれる．
+\end{prop}
+\begin{proof}
+$S$ を含む独立集合全体を包含順序で並べる．全順序部分族の和集合は独立である．実際，有限個の元はその部分族の一つに同時に属する．Zorn の補題で極大独立集合 $B$ を取る．$E$ の元 $x$ が $B$ の線形包に属さないなら $B\cup\{x\}$ も独立となり極大性に反する．従って $B$ は生成集合であり基底である．
+\end{proof}
+% genron:end K-001218
+% genron:begin K-001219
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001218
+% genron:use K-000563
+% genron:use K-000566
+% genron:use K-000131
+\begin{prop}[生成集合からの基底の抽出]
+任意の生成集合 $S\subseteq E$ は基底を含む．
+\end{prop}
+\begin{proof}
+$S$ に含まれる独立集合に Zorn の補題を適用する．全順序部分族の和集合の独立性は有限個の元だけを用いて判定される．極大な独立集合 $B$ の線形包に属さない $x\in S$ があれば $B$ に添加できて矛盾する．よって $B$ は $S$ を，従って $E$ を生成する．
+\end{proof}
+% genron:end K-001219
+% genron:begin K-001220
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000060
+% genron:use K-000121
+% genron:use K-000123
+% genron:use K-000127
+% genron:use K-000129
+% genron:use K-000133
+% genron:use K-000135
+% genron:use K-000139
+% genron:use K-000143
+\begin{prop}[無限整列集合の有限部分集合の濃度]
+無限整列可能集合 $I$ に対し，その有限部分集合の集合及び有限列の集合の濃度は $|I|$ に等しい．
+\end{prop}
+\begin{proof}
+整列定理で $I$ の濃度を表す最小の整列型 $\kappa$ を取る．無限な最小整列型について $|\kappa\times\kappa|=|\kappa|$ を整列型の比較と超限帰納法により示す．対をまず二座標の最大値で比較し，同じ最大値の対を辞書式に整列する．任意の対の先行集合はある $\alpha<\kappa$ について $(\alpha+1)^2$ に含まれる．$\kappa$ は極限型であり，$\alpha+1$ の濃度は $\kappa$ より小さい．それが有限なら平方も有限であり，無限なら帰納法の仮定により平方の濃度も $\kappa$ より小さい．従ってこの整列のどの真の始切片も $\kappa$ より小さい濃度を持ち，整列型の比較により全体は $\kappa$ を超えない．逆向きには対角写像による単射がある．これを有限回用いれば任意の正整数 $n$ で $|\kappa^n|=|\kappa|$ であり，それぞれの単射を選び $\mathbb N\times\kappa$ に有限列全体を単射する．$\mathbb N$ は $\kappa$ に単射するから平方の結果を再び用いられる．有限部分集合は昇順に並べた有限列へ単射する．一元列及び一元集合による逆向きの単射と Cantor–Bernstein の定理で結論を得る．
+\end{proof}
+% genron:end K-001220
+% genron:begin K-001221
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001220
+% genron:use K-000060
+% genron:use K-000563
+% genron:use K-000603
+% genron:use K-000604
+\begin{prop}[独立集合と生成集合の濃度比較]
+独立集合 $B$ と無限生成集合 $S$ について $|B|\leq |S|$ である．
+\end{prop}
+\begin{proof}
+各 $b\in B$ について $b$ を含む $S$ の有限部分集合の線形包を一つ選び，その部分集合を $F_b$ とする．同じ $F$ が選ばれた元の集合は有限次元空間 $\operatorname{span}F$ の独立集合である．その個数は $|F|$ 以下である（これより多ければ有限個を取り出して有限次元の交換補題に反する）．選択公理により各繊維から自然数集合への単射を同時に選べば，$B$ は有限部分集合の集合と $\mathbb N$ の積に単射する．前命題の濃度計算により上界を得る．
+\end{proof}
+% genron:end K-001221
+% genron:begin K-001222
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001221
+% genron:use K-000603
+% genron:use K-000604
+% genron:use K-000135
+\begin{prop}[基底の濃度の不変性]
+同一線形空間の任意の二基底は同じ濃度を持つ．
+\end{prop}
+\begin{proof}
+一方が有限なら有限次元の次元定理により他方も同じ個数の元からなる（独立集合の任意の有限部分集合に交換補題を適用する）．双方が無限なら独立集合と生成集合の濃度比較を両方向に用い，Cantor–Bernstein の定理を適用する．
+\end{proof}
+% genron:end K-001222
+% genron:begin K-001223
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001218
+% genron:use K-001222
+\begin{defn}[線形空間の次元]
+線形空間の任意の基底の濃度をその次元といい $\dim_K E$ と書く．有限次元の場合の定義と一致する．
+\end{defn}
+% genron:end K-001223
+% genron:begin K-001224
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001218
+% genron:use K-000567
+% genron:use K-000461
+\begin{prop}[部分空間の代数的補空間]
+任意の部分空間 $F\subseteq E$ に対し，$E=F\oplus G$ を満たす部分空間 $G$ が存在する．
+\end{prop}
+\begin{proof}
+$F$ の基底 $B_F$ を取り，これを $E$ の基底 $B_E$ に拡張する．$G$ を $B_E\setminus B_F$ の線形包とすれば基底展開の一意性により和は全体で共通部分は零となる．
+\end{proof}
+% genron:end K-001224

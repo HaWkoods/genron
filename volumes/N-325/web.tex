@@ -1,0 +1,154 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵資料を主題名・著者名で検索したが該当本文を確認できなかった．以下は既出事項から独自に論証する．
+\section{命題論理の形式的導出}
+% genron:begin K-001167
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001085
+% genron:use K-001086
+% genron:use K-001087
+% genron:use K-001088
+% genron:use K-001089
+\begin{defn}[古典命題論理の自然演繹]
+有限の導出木を考え，葉は仮定である．規則として連言の導入及び二つの除去，選言の二つの導入及び場合分けによる除去，含意の導入（仮定を解除する）及び除去を用いる．さらに矛盾記号 $\bot$ を加え，$A,\neg A$ から $\bot$，$\bot$ から任意の式，仮定 $A$ から $\bot$ が導けたときの $\neg A$ の導入，仮定 $\neg A$ から $\bot$ が導けたときの $A$ の導入（古典的背理法）を許す．$\bot$ の真理値は常に零である．未解除の仮定が $\Gamma$ に属する導出木が存在することを $\Gamma\vdash A$ と書く．
+\end{defn}
+% genron:end K-001167
+% genron:begin K-001168
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001167
+% genron:use K-001087
+% genron:use K-001089
+\begin{prop}[自然演繹の健全性]
+$\Gamma\vdash A$ なら $\Gamma\models A$ である．
+\end{prop}
+\begin{proof}
+導出木に関する帰納法を用いる．仮定は付値が充足する．連言と選言の導入・連言の除去・含意の除去は真理値演算によって真を保存する．選言除去では選言の少なくとも一方が真なので，対応する分枝の仮定を充足する．含意導入では前件が偽なら含意は真，真なら解除前の導出によって後件が真である．矛盾導入の二前提は同時には真にならないから，矛盾からの導出も健全である．否定導入では仮定 $A$ が真なら矛盾が真となるので $A$ は偽である．背理法でも同様に $\neg A$ は偽，従って $A$ は真である．
+\end{proof}
+% genron:end K-001168
+% genron:begin K-001169
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001167
+% genron:use K-001086
+% genron:use K-001088
+% genron:use K-001090
+\begin{prop}[付値に対応する符号付き導出]
+有限の変数集合 $P_0$ 上の付値 $v$ について，真の変数 $p$ を $p$，偽の変数を $\neg p$ とした仮定集合を $\Delta_v$ とする．$P_0$ の変数のみを含む式 $A$ について，値が一なら $\Delta_v\vdash A$，零なら $\Delta_v\vdash\neg A$ である．
+\end{prop}
+\begin{proof}
+構造帰納法を用いる．原子式は仮定である．$\bot$ については仮定 $\bot$ から矛盾そのものを得て否定を導く．否定式は子が偽なら帰納法でその否定が得られ，子が真ならその否定を仮定して矛盾を導き二重否定を得る．連言が真なら二つの導出を合わせる．偽なら偽の因子の否定を用い，連言を仮定して除去すれば矛盾となる．選言が真なら真の因子から導入し，偽なら双方の否定と場合分けで矛盾を導く．含意が真なら後件が真又は前件が偽である．前者なら後件の導出を含意導入に使い，後者なら前件を仮定して矛盾から後件を得る．含意が偽なら前件の導出と後件の否定が得られ，含意を仮定して除去すれば矛盾となる．
+\end{proof}
+% genron:end K-001169
+% genron:begin K-001170
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001167
+\begin{prop}[排中律と仮定の消去]
+任意の式 $A$ について $\vdash A\lor\neg A$ である．また $\Gamma\cup\{A\}\vdash B$ かつ $\Gamma\cup\{\neg A\}\vdash B$ なら $\Gamma\vdash B$ である．
+\end{prop}
+\begin{proof}
+$\neg(A\lor\neg A)$ を仮定する．さらに $A$ を仮定すれば選言導入から矛盾するので $A$ の仮定を解除して $\neg A$ を得る．今度は $\neg A$ から選言導入して最初の仮定と矛盾する．背理法で $A\lor\neg A$ を得る．第二の主張はこれを選言除去の主前提とし二つの導出を分枝に用いる．
+\end{proof}
+% genron:end K-001170
+% genron:begin K-001171
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001169
+% genron:use K-001170
+% genron:use K-001090
+\begin{prop}[恒真式に対する完全性]
+任意の恒真式 $A$ について $\vdash A$ である．
+\end{prop}
+\begin{proof}
+$A$ の変数集合は有限である．任意の付値に対応する符号付き仮定から前命題によって $A$ を導出できる．一つの変数を固定し，その正負だけが異なる二つの導出から仮定の消去を行う．これをすべての変数に対して反復すれば無仮定の導出が得られる．
+\end{proof}
+% genron:end K-001171
+% genron:begin K-001172
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001171
+% genron:use K-001167
+% genron:use K-001091
+\begin{prop}[有限前提に対する完全性]
+$\Gamma$ が有限で $\Gamma\models B$ なら $\Gamma\vdash B$ である．
+\end{prop}
+\begin{proof}
+$\Gamma=\{A_1,\ldots,A_n\}$ とし，$A_1\Rightarrow(A_2\Rightarrow\cdots(A_n\Rightarrow B)\cdots)$ を考える．この式が偽になるのはすべての $A_i$ が真で $B$ が偽の場合に限るので恒真式である．恒真式の完全性を適用し，$A_1,\ldots,A_n$ を仮定として順次含意除去を施せば $B$ を得る．$n=0$ は恒真式そのものである．
+\end{proof}
+% genron:end K-001172
+% genron:begin K-001188
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000131
+% genron:use K-001089
+% genron:use K-001090
+\begin{prop}[命題論理のコンパクト性]
+任意の命題式の集合 $\Gamma$ について，そのすべての有限部分集合が充足可能であるなら $\Gamma$ は充足可能である．
+\end{prop}
+\begin{proof}
+$\Gamma$ を含む有限充足可能な式集合全体を包含で順序づける．全順序部分集合の和集合は有限充足可能である．実際，その有限部分集合の各元は全順序の有限個の成員に含まれ，そのうち最大の一つにすべて含まれるからである．Zorn の補題により極大な集合 $T$ を得る．任意の変数 $p$ について $p,\neg p$ の双方を $T$ に加えることがそれぞれ有限充足可能性を破るとすれば，有限部分集合 $E,F\subseteq T$ が存在し，$E\cup\{p\}$ と $F\cup\{\neg p\}$ はいずれも充足不可能となる．しかし $E\cup F$ の任意の充足付値では $p$ は真又は偽であり矛盾する．従って極大性から $T$ は $p,\neg p$ の少なくとも一方を含み，有限充足可能性から双方を含まない．$v(p)=1$ を $p\in T$ と同値に定める．任意の $A\in T$ に対して，$A$ の有限個の変数に対応する符号付き式を $T$ から取り出す．これらと $A$ の有限集合は充足可能であり，その充足付値は当該変数上で $v$ に一致する．従って $v$ 自身が $A$ を充足する．特に $\Gamma$ を充足する．
+\end{proof}
+% genron:end K-001188
+% genron:begin K-001189
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001188
+% genron:use K-001172
+% genron:use K-001168
+% genron:use K-001089
+\begin{prop}[命題論理の完全性]
+任意の式集合 $\Gamma$ と式 $B$ について，$\Gamma\models B$ と $\Gamma\vdash B$ は同値である．
+\end{prop}
+\begin{proof}
+健全性により後者から前者が従う．逆に $\Gamma\models B$ なら $\Gamma\cup\{\neg B\}$ は充足不可能である．コンパクト性の対偶により，ある有限部分集合も充足不可能である．その $\Gamma$ に属する部分を $\Gamma_0$ とすると $\Gamma_0\cup\{\neg B\}$ は充足不可能であり，$\Gamma_0\models B$ が従う．有限前提に対する完全性から $\Gamma_0\vdash B$ である．導出の未解除仮定は $\Gamma_0$ の元であり $\Gamma$ の元でもあるので $\Gamma\vdash B$ である．
+\end{proof}
+% genron:end K-001189

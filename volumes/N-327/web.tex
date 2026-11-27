@@ -1,0 +1,154 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当箇所の本文は未照合．既出知識から独自に論証する．
+\section{一階言語の解釈と充足関係}
+% genron:begin K-001256
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001173
+% genron:use K-000033
+% genron:use K-000047
+\begin{defn}[一階構造]
+一階言語 $\mathcal L$ の構造 $\mathcal M$ とは空でない集合 $M$ と，各 $n$ 項函数記号 $f$ に対する写像 $f^{\mathcal M}:M^n\to M$，各 $n$ 項関係記号 $R$ に対する部分集合 $R^{\mathcal M}\subseteq M^n$ の組である．定数記号の解釈は $M$ の元であり，等号の解釈は $M$ の実際の等号とする．
+\end{defn}
+% genron:end K-001256
+% genron:begin K-001257
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001256
+% genron:use K-001174
+% genron:use K-000105
+\begin{defn}[変数割当てと項の値]
+変数集合から $M$ への写像 $s$ を割当てという．項の値 $t^{\mathcal M}[s]$ は $x^{\mathcal M}[s]=s(x)$ とし，函数記号について
+\[
+ f(t_1,\ldots,t_n)^{\mathcal M}[s]=f^{\mathcal M}(t_1^{\mathcal M}[s],\ldots,t_n^{\mathcal M}[s])
+\]
+により再帰的に定める．$s[x\mapsto a]$ は $x$ の値だけを $a$ に変えた割当てとする．
+\end{defn}
+% genron:end K-001257
+% genron:begin K-001258
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001257
+% genron:use K-001175
+% genron:use K-001087
+\begin{defn}[一階論理式の充足]
+$\mathcal M,s\models A$ を次のように定める．原子式 $t=u$ では二つの項の値が等しいこと，$R(t_1,\ldots,t_n)$ では値の組が $R^{\mathcal M}$ に属することをいう．論理結合子は古典的二値演算で解釈する．$\forall xA$ の充足はすべての $a\in M$ について $\mathcal M,s[x\mapsto a]\models A$ が成り立つこと，$\exists xA$ の充足はそのような $a$ が存在することである．
+\end{defn}
+% genron:end K-001258
+% genron:begin K-001259
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001258
+% genron:use K-001176
+% genron:use K-001086
+\begin{prop}[自由変数による充足の決定]
+二割当てが項 $t$ の変数集合上で一致すれば項の値は一致する．二割当てが式 $A$ の自由変数集合上で一致すれば，$A$ の充足の成否も一致する．
+\end{prop}
+\begin{proof}
+項については構造帰納法を用いる．変数の場合は仮定そのものであり，函数記号の場合は各引数の値が一致するから結論が従う．式について原子式は項の主張による．結合子では子の自由変数上で一致するので帰納法を適用する．$QxB$ の場合，任意の $a\in M$ に対し両割当ての $x$ を $a$ に変えると $B$ の全自由変数上で一致する．帰納法と量化子の定義により充足は一致する．
+\end{proof}
+% genron:end K-001259
+% genron:begin K-001260
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001257
+% genron:use K-001178
+\begin{prop}[項の代入補題]
+任意の項 $t,u$ と変数 $x$ について
+\[
+(t[u/x])^{\mathcal M}[s]=t^{\mathcal M}[s[x\mapsto u^{\mathcal M}[s]]]
+\]
+である．
+\end{prop}
+\begin{proof}
+$t$ が $x$ なら両辺は $u$ の値であり，他の変数ならともとの割当ての値である．函数記号による項の場合，各引数に帰納法を適用し函数記号の解釈を施せばよい．
+\end{proof}
+% genron:end K-001260
+% genron:begin K-001261
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001260
+% genron:use K-001259
+% genron:use K-001258
+% genron:use K-001179
+\begin{prop}[論理式の代入補題]
+項 $u$ が $A$ において $x$ に代入可能なら
+\[
+\mathcal M,s\models A[u/x]\quad\Longleftrightarrow\quad
+\mathcal M,s[x\mapsto u^{\mathcal M}[s]]\models A
+\]
+である．
+\end{prop}
+\begin{proof}
+原子式は項の代入補題による．結合子については帰納法を各子に適用する．$A=QyB$ の場合，$y=x$ 又は $x$ が $A$ に自由に現れないなら代入は変化を生じず，自由変数による充足の決定を用いる．残る場合は $y\ne x$ であり，代入可能性から $y$ は $u$ に現れない．各 $a\in M$ に対し $u$ の値は $s[y\mapsto a]$ でも変わらない．従って $x$ と $y$ の値の更新は交換し，帰納法を $B$ と $s[y\mapsto a]$ に適用すれば各 $a$ で両辺が同値となる．量化子の定義によって結論を得る．
+\end{proof}
+% genron:end K-001261
+% genron:begin K-001262
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001259
+% genron:use K-001258
+\begin{defn}[モデルと意味論的帰結]
+文 $A$ に対し割当てによらない充足を $\mathcal M\models A$ と書く．文集合 $\Gamma$ の各元を充足する構造を $\Gamma$ のモデルという．すべての $\Gamma$ のモデルが文 $B$ を充足することを $\Gamma\models B$ と書く．すべての構造で真である文を論理的妥当式という．
+\end{defn}
+% genron:end K-001262
+% genron:begin K-001263
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001262
+% genron:use K-001256
+\begin{prop}[構造によって変わる文の真理値]
+一つの二項関係記号 $R$ を持つ言語の文 $\forall x\exists y\,R(x,y)$ は，一般には妥当式ではない．
+\end{prop}
+\begin{proof}
+一元集合 $\{a\}$ において関係を全関係とする構造では各 $x$ に対し $y=a$ が条件を満たす．空関係とする構造ではいずれの $y$ も条件を満たさない．従って同じ文でも構造によって充足が変わる．
+\end{proof}
+% genron:end K-001263

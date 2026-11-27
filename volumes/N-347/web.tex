@@ -1,0 +1,150 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：Shafarevich, Basic Algebraic Geometry 2, §2.4 の芽による associated sheaf の記述及び Rotman, An Introduction to Homological Algebra, sheafification の定義を照合．
+\section{集合値前層の層化}
+% genron:begin K-001264
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001183
+% genron:use K-000417
+% genron:use K-000146
+\begin{defn}[局所的に芽で表される族]
+位相空間 $X$ 上の集合値前層 $F$ を取る．開集合 $U$ の各点 $x$ に $a_x\in F_x$ を対応させる族が局所的に表されるとは，各 $x\in U$ の開近傍 $V\subseteq U$ と $s\in F(V)$ が存在して，すべての $y\in V$ について $a_y=s_y$ となることをいう．このような族全体を $F^+(U)$ と書く．
+\end{defn}
+% genron:end K-001264
+% genron:begin K-001265
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001264
+% genron:use K-000526
+% genron:use K-000527
+\begin{prop}[局所表現可能な族の層性]
+開集合 $U$ への $F^+$ の制限写像を族の制限とすると $F^+$ は集合値層となる．
+\end{prop}
+\begin{proof}
+制限しても局所表現可能性は保たれるので前層である．開被覆上の整合族は重なりで各点の値が一致するから，全体の族を一意に定める．その族の各点では被覆の一つを選べば局所表現可能性を得る．よって貼合せと一意性が成立する．空集合の場合は空の族が唯一の元である．
+\end{proof}
+% genron:end K-001265
+% genron:begin K-001266
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001265
+% genron:use K-001264
+% genron:use K-001183
+% genron:use K-001185
+\begin{prop}[前層から層への標準射]
+$\eta_U:F(U)\to F^+(U)$，$s\mapsto(s_x)_{x\in U}$ は前層の射 $\eta:F\to F^+$ を定める．各点 $x$ で $\eta_x:F_x\to (F^+)_x$ は全単射である．
+\end{prop}
+\begin{proof}
+像は $U$ 上の $s$ 自身によって表され，制限と可換である．任意の $(F^+)_x$ の芽はある族によって表され，その族は $x$ の近傍で $F$ の切断から生じるので $\eta_x$ は全射である．二つの $F$ の芽の像が等しいなら，共通の近傍でそれらの表す族が一致する．特に点 $x$ における値が一致するので，元の二つの芽も等しい．
+\end{proof}
+% genron:end K-001266
+% genron:begin K-001267
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001266
+% genron:use K-001265
+% genron:use K-001185
+% genron:use K-001186
+% genron:use K-000526
+\begin{prop}[層化の普遍性]
+任意の集合値層 $G$ と前層の射 $\varphi:F\to G$ に対し，$\psi\eta=\varphi$ を満たす層の射 $\psi:F^+\to G$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+$a=(a_x)\in F^+(U)$ を取る．$a$ を局所的に表すすべての対 $(V,s)$ を考える．$V$ は $U$ の被覆をなし，各 $V$ 上で $\varphi_V(s)$ を取る．重なりの点 $x$ では双方の芽は $\varphi_x(a_x)$ に等しいので，芽による切断の一致判定により重なりで切断が一致する．層 $G$ の貼合せで一意の切断 $\psi_U(a)$ を得る．制限との可換性は同じ局所表示を制限して貼り合わせの一意性を用いれば従う．$a=\eta_U(s)$ のとき $\varphi_U(s)$ が貼合せを満たすので $\psi\eta=\varphi$ である．他の射も各局所表示上で $\varphi_V(s)$ を値としなければならず，貼合せの一意性から一致する．
+\end{proof}
+% genron:end K-001267
+% genron:begin K-001268
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001267
+\begin{defn}[層化]
+前層 $F$ から構成した層 $F^+$ と標準射 $\eta:F\to F^+$ を $F$ の層化という．一般に同じ普遍性を満たす組も層化という．
+\end{defn}
+% genron:end K-001268
+% genron:begin K-001269
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001268
+% genron:use K-001267
+% genron:use K-000245
+\begin{prop}[層化の一意性と函手性]
+層化は標準射と可換な一意の層同型を除いて一意である．前層の射 $f:F\to H$ は標準射と可換な層の射 $f^+:F^+\to H^+$ を一意に誘導し，この操作は恒等射及び合成を保存する．
+\end{prop}
+\begin{proof}
+二つの層化にそれぞれの普遍性を適用して互いに逆となる射を得る．前層の射 $f$ に対して $F\to H\to H^+$ を層化の普遍性に適用すれば $f^+$ を得る．恒等射及び合成の保存は同じ標準射との可換性を満たす射の一意性から従う．
+\end{proof}
+% genron:end K-001269
+% genron:begin K-001270
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001269
+% genron:use K-001267
+% genron:use K-000520
+\begin{prop}[層化と包含函手の随伴]
+層化函手は集合値層の圏から集合値前層の圏への包含函手の左随伴である．特に既に層である前層の標準射は同型である．
+\end{prop}
+\begin{proof}
+普遍性が与える全単射 $\operatorname{Hom}(F^+,G)\simeq\operatorname{Hom}(F,G)$ は標準射との合成によって定まる．両変数での自然性は合成の結合律と層化の函手性から従う．$F$ が層なら恒等射 $F\to F$ も同じ普遍性を持つので層化の一意性によって標準射は同型となる．
+\end{proof}
+% genron:end K-001270
+% genron:begin K-001271
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001264
+% genron:use K-001268
+% genron:use K-000421
+\begin{prop}[定値前層の層化]
+集合 $A$ を値とし制限写像が恒等写像である定値前層の層化は局所定値函数 $U\to A$ の層である．
+\end{prop}
+\begin{proof}
+各点の茎は制限写像が恒等なので $A$ と標準的に同一視される．従って芽の族は $A$ 値函数であり，局所表現可能であることは各点の近傍で一定であることに一致する．空集合においても空函数が唯一の切断である．
+\end{proof}
+% genron:end K-001271

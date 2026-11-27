@@ -1,0 +1,130 @@
+% Web専用草稿．独立査読未了．
+% 文献調査：所蔵文献を検索したが該当箇所の本文は未照合．既出知識から独自に論証する．
+\section{素数と整数の一意分解}
+% genron:begin K-001211
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000596
+% genron:use K-000572
+\begin{defn}[素数]
+整数 $p>1$ が正の約数として $1,p$ しか持たないとき素数という．
+\end{defn}
+% genron:end K-001211
+% genron:begin K-001212
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001211
+% genron:use K-000598
+% genron:use K-000599
+\begin{prop}[素数の積の整除]
+素数 $p$ について $p\mid ab$ なら $p\mid a$ 又は $p\mid b$ である．
+\end{prop}
+\begin{proof}
+$p\nmid a$ とする．$p$ の正の約数の条件により $a,p$ の正の最大公約元は $1$ である．Bézout等式から $ua+vp=1$ となる整数 $u,v$ が存在する．両辺に $b$ を掛けると $b=uab+vpb$ であり，右辺は $p$ で割り切れる．
+\end{proof}
+% genron:end K-001212
+% genron:begin K-001213
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001211
+% genron:use K-000104
+% genron:use K-000592
+% genron:use K-000593
+\begin{prop}[素因数分解の存在]
+任意の整数 $n>1$ は有限個の素数の積である．
+\end{prop}
+\begin{proof}
+$n$ に関する強い帰納法を用いる．$n$ が素数なら成立する．そうでなければ $n=ab$ と $1<a,b<n$ を満たす正整数に分解できる．帰納法により両因子が素数の積となるので $n$ も同様である．
+\end{proof}
+% genron:end K-001213
+% genron:begin K-001214
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001212
+% genron:use K-001213
+% genron:use K-000444
+% genron:use K-000593
+\begin{prop}[素因数分解の一意性]
+整数 $n>1$ の素因数分解は因子の順序を除いて一意である．
+\end{prop}
+\begin{proof}
+$p_1\cdots p_r=q_1\cdots q_s$ とする．素数の積の整除を反復すると $p_1$ はある $q_j$ を割り，両者は素数なので等しい．この因子を両辺から簡約する．同様の操作を反復し，一方だけに素数が残ればその積は $1$ より大きいので矛盾する．よって因子が一対一に対応する．
+\end{proof}
+% genron:end K-001214
+% genron:begin K-001215
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001213
+% genron:use K-001211
+% genron:use K-000593
+\begin{prop}[素数の無限性]
+素数全体は有限集合ではない．
+\end{prop}
+\begin{proof}
+すべての素数が $p_1,\ldots,p_r$ であると仮定する．$N=p_1\cdots p_r+1>1$ は素因数を持つが，いずれの $p_i$ でも割り切れない．矛盾である．空の候補集合は $2$ が素数であることによって排除される．
+\end{proof}
+% genron:end K-001215
+% genron:begin K-001216
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001214
+% genron:use K-000594
+\begin{defn}[素数に関する指数]
+非零整数 $a$ と素数 $p$ に対し，$|a|$ の素因数分解における $p$ の個数を $v_p(a)$ と書く．$|a|=1$ なら零とする．
+\end{defn}
+% genron:end K-001216
+% genron:begin K-001217
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001216
+% genron:use K-000595
+% genron:use K-001214
+\begin{prop}[指数と整除]
+非零整数 $a,b$ について $v_p(ab)=v_p(a)+v_p(b)$ である．また $a\mid b$ であることはすべての素数 $p$ について $v_p(a)\leq v_p(b)$ であることと同値である．
+\end{prop}
+\begin{proof}
+絶対値の乗法性と一意分解により積の指数を得る．整除なら積の指数から不等式が従う．逆に指数差が非負なら，有限個の非零な指数差で素数の積を作り符号を調整することで $b=ac$ を得る．
+\end{proof}
+% genron:end K-001217
