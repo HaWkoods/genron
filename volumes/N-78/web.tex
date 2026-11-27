@@ -1,0 +1,180 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. II の局所化・分数体の記述を参照．整数の順序から独立に順序とArchimedes性を証明する．
+\section{有理数体と分数表示}
+% genron:begin K-000621
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000445
+% genron:use K-000454
+% genron:use K-000568
+% genron:use K-000569
+% genron:use K-000323
+\begin{defn}[有理数体]
+整数環 $\mathbb Z$ の分数体 $\operatorname{Frac}(\mathbb Z)$ を有理数体といい，$\mathbb Q$ と書く．その元を有理数という．標準単射によって $\mathbb Z$ を $\mathbb Q$ の部分環とみなす．従って自然数も有理数とみなされる．
+\end{defn}
+% genron:end K-000621
+% genron:begin K-000622
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000621
+% genron:use K-000568
+% genron:use K-000592
+% genron:use K-000593
+% genron:use K-000250
+\begin{prop}[正の分母による表示]
+任意の有理数は $a/b$（$a,b\in\mathbb Z$，$b>0$）と表示できる．また正の分母を持つ二つの表示 $a/b,c/d$ が等しいことと $ad=bc$ は同値である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000568}により非零分母の表示を取る．分母が負ならば分子と分母の双方の符号を変える．$(-a)b=a(-b)$ であるからこの操作は分数の値を変えない．二表示の相等条件も同命題による．
+\end{proof}
+% genron:end K-000622
+% genron:begin K-000623
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000622
+% genron:use K-000597
+% genron:use K-000598
+% genron:use K-000599
+% genron:use K-000572
+% genron:use K-000444
+% genron:use K-000592
+% genron:use K-000593
+\begin{prop}[有理数の既約分数表示]
+任意の $x\in\mathbb Q$ に対し，$x=a/b$，$b>0$ であって $a,b$ が互いに素であるような整数の組 $(a,b)$ がただ一つ存在する．この表示を既約分数表示という．
+\end{prop}
+\begin{proof}
+$x=c/d$（$d>0$）とし，$g$ を $c,d$ の非負最大公約元とする．$d>0$ なので $g>0$ であり，$c=ga,\ d=gb$ と書ける．$b>0$ である．\GenronRef{K-000598}によって $uc+vd=g$ となる整数 $u,v$ が存在するので $g$ を簡約して $ua+vb=1$ を得る．従って $a,b$ の最大公約元は $1$ である．分数の相等条件により $a/b=c/d$ となる．
+
+別の既約分数表示 $x=a'/b'$ があれば $ab'=a'b$ である．\GenronRef{K-000599}から $b\mid b'$ であり，同様に $b'\mid b$ である．正の整数が互いに整除すれば等しいから $b=b'$ となり，簡約によって $a=a'$ を得る．
+\end{proof}
+% genron:end K-000623
+\section{有理数の順序}
+% genron:begin K-000624
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000622
+% genron:use K-000592
+% genron:use K-000593
+% genron:use K-000068
+% genron:use K-000069
+% genron:use K-000444
+\begin{prop}[有理数体の順序]
+正の分母による表示 $x=a/b,\ y=c/d$ を用いて
+\[
+ x\leq y\quad\Longleftrightarrow\quad ad\leq bc
+\]
+と定める．これは表示に依存せず，$\mathbb Q$ 上の全順序を定め，整数の順序を延長する．
+\end{prop}
+\begin{proof}
+$a/b=a'/b'$，$c/d=c'/d'$ とする．全ての分母は正であり，$ab'=a'b,\ cd'=c'd$ であるから
+\[
+ b'd'(bc-ad)=bd(b'c'-a'd')
+\]
+となる．正の整数との乗法は不等式を保存し，反映する．実際，負元との積は負，正元との積は正である．従って $bc-ad\geq0$ と $b'c'-a'd'\geq0$ は同値であり，定義は適法である．
+
+反射性と比較可能性は整数の全順序から従う．$ad\leq bc$ かつ $bc\leq ad$ なら $ad=bc$ なので反対称性が成立する．$a/b\leq c/d\leq e/f$ とすると $ad\leq bc,\ cf\leq de$ から $adf\leq bcf\leq bde$ を得る．正の $d$ を簡約して $af\leq be$ となり，推移性が成立する．整数 $a,c$ を分母 $1$ の分数として比較すると元の順序に一致する．
+\end{proof}
+% genron:end K-000624
+% genron:begin K-000625
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000624
+% genron:use K-000621
+% genron:use K-000591
+% genron:use K-000593
+% genron:use K-000451
+\begin{prop}[順序と体演算の整合性]
+有理数の順序は加法による移動で保存され，非負元の積は非負である．従って $\mathbb Q$ は順序環であるとともに体である．
+\end{prop}
+\begin{proof}
+$x=a/b,\ y=c/d,\ z=e/f$ とし，全分母を正とする．$x\leq y$ なら $ad\leq bc$ である．加法の公式から
+\[
+ x+z=(af+be)/(bf),\qquad y+z=(cf+de)/(df)
+\]
+である．$(af+be)df\leq(cf+de)bf$ は $adf^2\leq bcf^2$ と同値なので，$x+z\leq y+z$ となる．また $x,y\geq0$ なら $a,c\geq0$ であり，$xy=ac/(bd)\geq0$ となる．
+\end{proof}
+% genron:end K-000625
+% genron:begin K-000626
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000625
+% genron:use K-000622
+% genron:use K-000594
+% genron:use K-000592
+% genron:use K-000593
+% genron:use K-000443
+\begin{prop}[有理数体のArchimedes性]
+任意の $x\in\mathbb Q$ に対し，$x<n$ となる自然数 $n$ が存在する．また任意の $u,v\in\mathbb Q$ で $u>0$ ならば $nu>v$ となる自然数 $n$ が存在する．
+\end{prop}
+\begin{proof}
+$x=a/b$（$b>0$）とする．$b\geq1$ なので $n=|a|+1$ と取れば $a<nb$ となり，有理数の順序の定義から $x<n$ である．後半は $v/u$ に前半を適用すればよい．正元 $u$ との乗法は狭義不等式を保存するので $v<nu$ となる．
+\end{proof}
+% genron:end K-000626
+% genron:begin K-000627
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000624
+% genron:use K-000625
+% genron:use K-000596
+% genron:use K-000592
+\begin{prop}[有理数の整数部分]
+任意の有理数 $x$ に対し $m\leq x<m+1$ を満たす整数 $m$ がただ一つ存在する．これを $x$ の整数部分という．
+\end{prop}
+\begin{proof}
+$x=a/b$（$b>0$）と表示する．\GenronRef{K-000596}により $a=bm+r$，$0\leq r<b$ となる整数 $m,r$ が存在する．分数の順序によって $m\leq x<m+1$ である．二つの整数 $m,m'$ が条件を満たし $m<m'$ なら $m+1\leq m'\leq x$ となり矛盾する．$m'<m$ の場合も同様である．
+\end{proof}
+% genron:end K-000627
+% genron:begin K-000628
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000625
+% genron:use K-000593
+% genron:use K-000443
+% genron:use K-000592
+\begin{prop}[有理数の順序の稠密性]
+$x,y\in\mathbb Q$ で $x<y$ ならば $x<z<y$ を満たす $z\in\mathbb Q$ が存在する．
+\end{prop}
+\begin{proof}
+$z=(x+y)/2$ とする．$2=1+1$ は正であり，その逆元も正である．逆元が負なら $2$ との積 $1$ が負となり矛盾するからである．$z-x=(y-x)/2$ 及び $y-z=(y-x)/2$ は正元の積であり，従って正である．
+\end{proof}
+% genron:end K-000628

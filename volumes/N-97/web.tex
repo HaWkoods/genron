@@ -1,0 +1,219 @@
+% Web専用原稿．
+% Lang, Algebra (Springer, 2002), Ch. III §5, Th.5.3 (p.141) の商空間及び核・像の次元公式を参照．有限基底の拡張を用いて証明する．
+\section{核・像と商空間}
+% genron:begin K-000629
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000561
+% genron:use K-000339
+% genron:use K-000338
+% genron:use K-000336
+% genron:use K-000282
+\begin{prop}[線形写像の核と像]
+体 $K$ 上の線形写像 $T:V\to W$ の核及び像
+\[
+ \ker T=\{v\in V\mid T(v)=0\},\qquad
+ \operatorname{Im}T=\{T(v)\mid v\in V\}
+\]
+はそれぞれ $V,W$ の部分空間である．$T$ が単射であることと $\ker T=\{0\}$ は同値であり，全射であることと $\operatorname{Im}T=W$ は同値である．
+\end{prop}
+\begin{proof}
+核と像が部分空間であることは \GenronRef{K-000339}の特別の場合である．$T(v)=T(v')$ と $T(v-v')=0$ は同値である．従って核が零なら単射であり，単射なら $T(0)=0$ より核は零である．全射性は像の定義から従う．
+\end{proof}
+% genron:end K-000629
+% genron:begin K-000630
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000560
+% genron:use K-000561
+% genron:use K-000340
+\begin{defn}[商線形空間]
+線形空間 $V$ の部分空間 $U$ に対し商加群 $V/U$ を商線形空間という．演算は
+\[
+ (v+U)+(w+U)=v+w+U,\qquad a(v+U)=av+U
+\]
+である．標準全射を $p:V\to V/U$ と書く．
+\end{defn}
+% genron:end K-000630
+% genron:begin K-000631
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000630
+% genron:use K-000629
+% genron:use K-000338
+% genron:use K-000340
+\begin{prop}[商線形空間の普遍性]
+線形写像 $T:V\to W$ と $V$ の部分空間 $U$ を考える．$T=S\circ p$ を満たす線形写像 $S:V/U\to W$ が存在するための必要十分条件は $U\subseteq\ker T$ である．存在すれば $S$ は一意である．
+\end{prop}
+\begin{proof}
+$T=S\circ p$ なら $u\in U$ に対し $p(u)=0$ なので $T(u)=0$ である．逆に $U\subseteq\ker T$ とする．$v+U=v'+U$ なら $v-v'\in U$ なので $T(v)=T(v')$ となる．よって $S(v+U)=T(v)$ と定められる．商空間の演算により $S$ は線形であり，$p$ の全射性により一意である．
+\end{proof}
+% genron:end K-000631
+% genron:begin K-000632
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000629
+% genron:use K-000630
+% genron:use K-000631
+% genron:use K-000341
+% genron:use K-000339
+\begin{prop}[線形写像の第一同型定理]
+線形写像 $T:V\to W$ に対し，$v+\ker T\mapsto T(v)$ は線形同型 $V/\ker T\simeq\operatorname{Im}T$ を定める．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000631}を $U=\ker T$ として適用し，終域を $\operatorname{Im}T$ に制限する．得られた写像は全射であり，$T(v)=0$ なら $v\in\ker T$ なので核は零である．従って単射でもあり，その逆は線形写像である．
+\end{proof}
+% genron:end K-000632
+\section{基底による線形写像の決定}
+% genron:begin K-000633
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000600
+% genron:use K-000567
+% genron:use K-000561
+% genron:use K-000338
+% genron:use K-000118
+\begin{prop}[基底上の指定による線形写像]
+線形空間 $V$ の基底を $B$ とする．線形空間 $W$ の元からなる任意の族 $(w_b)_{b\in B}$ に対し，$T(b)=w_b$ を満たす線形写像 $T:V\to W$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000567}により各 $v\in V$ は $B$ 上の有限台係数函数 $(a_b)$ を用いて一意に $v=\sum_b a_bb$ と表示できる．そこで
+\[
+ T(v)=\sum_b a_bw_b
+\]
+と定める．和及びスカラー倍の係数は係数の和及びスカラー倍なので $T$ は線形である．各 $b$ に対し $T(b)=w_b$ を満たす．逆に線形写像の各値は上式に従うので一意である．
+\end{proof}
+% genron:end K-000633
+% genron:begin K-000634
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000633
+% genron:use K-000602
+% genron:use K-000600
+\begin{prop}[部分空間上の線形写像の延長]
+線形空間 $V$ の部分空間 $U$ と線形写像 $f:U\to W$ に対し，$T|_U=f$ となる線形写像 $T:V\to W$ が存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000602}により $U$ の基底 $B$ を取り，これを $V$ の基底 $C$ に拡張する．$c\in C$ に対し $c\in B$ なら $w_c=f(c)$，そうでなければ $w_c=0$ とする．\GenronRef{K-000633}によりこの値を持つ $T$ が存在し，$U$ は $B$ により生成されるので $T|_U=f$ である．一般の基底の存在及び拡張には選択公理を用いる．
+\end{proof}
+% genron:end K-000634
+\section{有限次元と階数}
+% genron:begin K-000635
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000630
+% genron:use K-000604
+% genron:use K-000605
+% genron:use K-000601
+% genron:use K-000600
+% genron:use K-000567
+% genron:use K-000113
+% genron:use K-000116
+\begin{prop}[商空間の次元公式]
+$V$ を有限次元線形空間，$U$ をその部分空間とする．$V/U$ も有限次元であり，
+\[
+ \dim_K V=\dim_K U+\dim_K(V/U)
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000605}により $U$ の有限基底 $(u_1,\ldots,u_r)$ を取る．これと $V$ の有限生成集合との合併は有限生成集合であり，\GenronRef{K-000601}により $U$ の基底を含む $V$ の基底 $(u_1,\ldots,u_r,v_1,\ldots,v_s)$ を抽出できる．
+
+標準全射 $p:V\to V/U$ による像の族 $(p(v_1),\ldots,p(v_s))$ は $V/U$ を生成する．実際，任意の元 $p(v)$ は $v$ の基底表示に $p$ を適用して得られ，$p(u_i)=0$ である．また $\sum_j a_jp(v_j)=0$ なら $\sum_j a_jv_j\in U$ となる．これを $u_i$ の線形結合に表示すれば $V$ の基底の線形独立性から全ての $a_j$ が零となる．ゆえにこの像の族は基底であり，$\dim_K(V/U)=s$ である．
+\end{proof}
+% genron:end K-000635
+% genron:begin K-000636
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000629
+% genron:use K-000604
+\begin{defn}[線形写像の階数]
+線形写像 $T:V\to W$ の像が有限次元であるとき，$\operatorname{rank}T=\dim_K\operatorname{Im}T$ と定め，これを $T$ の階数という．
+\end{defn}
+% genron:end K-000636
+% genron:begin K-000637
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000636
+% genron:use K-000632
+% genron:use K-000635
+% genron:use K-000604
+% genron:use K-000600
+% genron:use K-000567
+% genron:use K-000339
+\begin{prop}[線形写像の次元公式]
+有限次元線形空間 $V$ から線形空間 $W$ への線形写像 $T$ に対し，$\ker T$ と $\operatorname{Im}T$ は有限次元であり，
+\[
+ \dim_K V=\dim_K\ker T+\operatorname{rank}T
+\]
+が成立する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000635}を $U=\ker T$ として適用する．\GenronRef{K-000632}によって $V/\ker T$ と $\operatorname{Im}T$ は線形同型である．線形同型は基底を基底に移す．実際，生成性は全射性から，線形独立性は単射性から従う．従って両空間の次元は等しく，商空間の次元公式から結論を得る．
+\end{proof}
+% genron:end K-000637
+% genron:begin K-000638
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000637
+% genron:use K-000629
+% genron:use K-000605
+% genron:use K-000604
+% genron:use K-000339
+\begin{prop}[同次元の線形空間の間の線形写像]
+有限次元線形空間 $V,W$ の次元が等しいとする．線形写像 $T:V\to W$ が単射であること，全射であること，線形同型であることは互いに同値である．
+\end{prop}
+\begin{proof}
+共通の次元を $n$ とする．$T$ が単射なら核は零であり，\GenronRef{K-000637}により像の次元は $n$ である．\GenronRef{K-000605}より像は $W$ に等しく，全射である．逆に全射なら階数は $n$ なので核の次元は零である．零次元の空間は空の基底で生成され，零空間に等しい．従って単射である．全単射な線形写像の逆は線形であるから同型性も同値である．
+\end{proof}
+% genron:end K-000638

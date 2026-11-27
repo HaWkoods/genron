@@ -455,7 +455,7 @@
       {
         "tex": "\\mathbb Q",
         "label": "有理数体",
-        "id": null
+        "id": "K-000621"
       },
       {
         "tex": "\\mathbb R",
@@ -575,12 +575,12 @@
       {
         "tex": "\\ker f",
         "label": "準同型の核",
-        "id": null
+        "id": "K-000339"
       },
       {
         "tex": "\\operatorname{Im}f",
         "label": "準同型の像",
-        "id": null
+        "id": "K-000339"
       },
       {
         "tex": "A,\\ R",

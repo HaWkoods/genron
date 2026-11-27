@@ -19071,6 +19071,564 @@
       "status": "verified",
       "source": "volumes/N-195/web.tex",
       "review": "2026-11-27 ChatGPT：数学的論証・既出知識・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000621",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "有理数体",
+      "statement": "整数環 ℤ の分数体 Frac(ℤ) を有理数体 ℚ とする．標準単射により ℤ をその部分環とみなす．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000445",
+        "K-000454",
+        "K-000568",
+        "K-000569",
+        "K-000323"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000622",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正の分母による表示",
+      "statement": "各有理数は a/b (a,b∈ℤ,b>0) と書ける．a/b=c/d ⇔ ad=bc．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000621",
+        "K-000568",
+        "K-000592",
+        "K-000593",
+        "K-000250"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000623",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数の既約分数表示",
+      "statement": "各 x∈ℚ は a,b が互いに素で b>0 である表示 a/b を一意に持つ．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000622",
+        "K-000597",
+        "K-000598",
+        "K-000599",
+        "K-000572",
+        "K-000444",
+        "K-000592",
+        "K-000593"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000624",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数体の順序",
+      "statement": "正分母の表示に対して a/b≤c/d ⇔ ad≤bc と定めると ℚ 上の全順序となり，ℤ の順序を延長する．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000622",
+        "K-000592",
+        "K-000593",
+        "K-000068",
+        "K-000069",
+        "K-000444"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000625",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "順序と体演算の整合性",
+      "statement": "ℚ の順序は加法で不変であり，非負元の積は非負となる．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000624",
+        "K-000621",
+        "K-000591",
+        "K-000593",
+        "K-000451"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000626",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数体のArchimedes性",
+      "statement": "任意の x∈ℚ に対し x<n となる自然数 n が存在する．u>0,v∈ℚ に対し nu>v となる自然数 n が存在する．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000625",
+        "K-000622",
+        "K-000594",
+        "K-000592",
+        "K-000593",
+        "K-000443"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000627",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数の整数部分",
+      "statement": "各 x∈ℚ に対して m≤x<m+1 となる整数 m が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000624",
+        "K-000625",
+        "K-000596",
+        "K-000592"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000628",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有理数の順序の稠密性",
+      "statement": "x<y なる二有理数の間に有理数 z が存在する．",
+      "assumptions": [],
+      "position": [
+        78,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000625",
+        "K-000593",
+        "K-000443",
+        "K-000592"
+      ],
+      "status": "verified",
+      "source": "volumes/N-78/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000629",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形写像の核と像",
+      "statement": "線形写像 T:V→W の核と像はそれぞれ V,W の部分空間．単射 ⇔ ker T={0}．全射 ⇔ Im T=W．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000561",
+        "K-000339",
+        "K-000338",
+        "K-000336",
+        "K-000282"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000630",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "商線形空間",
+      "statement": "部分空間 U⊆V に対する商加群 V/U を商線形空間という．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000560",
+        "K-000561",
+        "K-000340"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000631",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商線形空間の普遍性",
+      "statement": "T:V→W が線形で U⊆ker T なら T=Sp となる線形写像 S:V/U→W が一意に存在する．逆も成り立つ．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000630",
+        "K-000629",
+        "K-000338",
+        "K-000340"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000632",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形写像の第一同型定理",
+      "statement": "線形写像 T:V→W に対し V/ker T≅Im T．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000629",
+        "K-000630",
+        "K-000631",
+        "K-000341",
+        "K-000339"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000633",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "基底上の指定による線形写像",
+      "statement": "V の基底 B と W の任意の B 添字族 (w_b) に対し T(b)=w_b なる線形写像 T:V→W が一意に存在する．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000600",
+        "K-000567",
+        "K-000561",
+        "K-000338",
+        "K-000118"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000634",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "部分空間上の線形写像の延長",
+      "statement": "部分空間 U⊆V 上の線形写像 f:U→W は V 上の線形写像に延長できる（一般には選択公理を使用）．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000633",
+        "K-000602",
+        "K-000600"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000635",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "商空間の次元公式",
+      "statement": "V が有限次元で U⊆V が部分空間なら V/U は有限次元で dim V=dim U+dim(V/U)．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000630",
+        "K-000604",
+        "K-000605",
+        "K-000601",
+        "K-000600",
+        "K-000567",
+        "K-000113",
+        "K-000116"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000636",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "線形写像の階数",
+      "statement": "線形写像 T の像が有限次元であるとき dim_K Im T を T の階数 rank T という．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000629",
+        "K-000604"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000637",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "線形写像の次元公式",
+      "statement": "V が有限次元で T:V→W が線形なら dim V=dim ker T+rank T．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000636",
+        "K-000632",
+        "K-000635",
+        "K-000604",
+        "K-000600",
+        "K-000567",
+        "K-000339"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000638",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "同次元の線形空間の間の線形写像",
+      "statement": "有限次元 V,W が同次元なら T:V→W の単射性・全射性・同型性は同値．",
+      "assumptions": [],
+      "position": [
+        97,
+        1,
+        3,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000637",
+        "K-000629",
+        "K-000605",
+        "K-000604",
+        "K-000339"
+      ],
+      "status": "verified",
+      "source": "volumes/N-97/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識・数学的論証・数式区切りを自己点検．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -20276,7 +20834,7 @@
       "number": 78,
       "title": "有理数体の構成",
       "area": "数体系",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         75,
         71
@@ -20285,7 +20843,8 @@
         "分数体の順序・Archimedes性"
       ],
       "treatise": "T-11",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 79,
@@ -20559,7 +21118,7 @@
       "number": 97,
       "title": "線形写像",
       "area": "代数",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         96
       ],
@@ -20567,7 +21126,8 @@
         "核・像・階数・次元定理"
       ],
       "treatise": "T-15",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 98,
