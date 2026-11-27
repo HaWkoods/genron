@@ -410,6 +410,7 @@ try{
   await item.locator("img").scrollIntoViewIfNeeded();
   assert.ok(await item.locator("img").evaluate(async img=>{await img.decode();return img.naturalWidth>0}));
   await page.reload();
+  await page.locator(".figure-catalogue").waitFor();
   assert.equal(await page.locator(".figure-item:visible").count(),1,"Search survives reload");
   await search.fill("存在しない図XYZ123");
   assert.equal(await page.locator(".figure-item:visible").count(),0);
