@@ -1,0 +1,140 @@
+% Web専用原稿．
+% 構成案：層の局所性・貼り合わせ・具体例・定値前層との相違・部分層．
+% 文献確認：Mac Lane, Categories for the Working Mathematician, Ch. III（前層のmatching条件に関する記述を確認）．層の公理と具体例は独自に論証する．
+\section{層の公理}
+% genron:begin K-000526
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000417
+% genron:use K-000044
+% genron:use K-000045
+% genron:use K-000255
+\begin{defn}[集合値層]
+位相空間 $X$ 上の集合値前層 $\mathcal F$ が任意の開集合 $U$ とその開被覆 $(U_i)_{i\in I}$ に関して次の二条件を満たすとき，層という．制限は $s|_V$ と書く．
+\begin{enumerate}
+\item 局所性：$s,t\in\mathcal F(U)$ が全ての $i$ で $s|_{U_i}=t|_{U_i}$ を満たすなら $s=t$．
+\item 貼り合わせ：$s_i\in\mathcal F(U_i)$ が任意の $i,j$ で $s_i|_{U_i\cap U_j}=s_j|_{U_i\cap U_j}$ を満たすなら，$s|_{U_i}=s_i$ となる $s\in\mathcal F(U)$ が存在する．
+\end{enumerate}
+二条件から貼り合わせは一意である．空集合の空被覆も対象とする．
+\end{defn}
+% genron:end K-000526
+% genron:begin K-000527
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000526
+% genron:use K-000047
+% genron:use K-000048
+% genron:use K-000039
+\begin{prop}[整合族による層の判定]
+開被覆 $(U_i)$ に対し
+\[
+ \mathcal F(U)\longrightarrow
+ \{(s_i)\in\prod_i\mathcal F(U_i)\mid
+ s_i|_{U_i\cap U_j}=s_j|_{U_i\cap U_j}\}
+\]
+を制限の族によって定める．前層が層であることと，この写像が常に全単射であることは同値である．特に層では $\mathcal F(\varnothing)$ は一元集合である．
+\end{prop}
+\begin{proof}
+前層の制限の合成条件により写像は整合族に値を取る．単射性は局所性，全射性は貼り合わせに等しい．空被覆の場合，右辺は空積で一元集合なので最後の主張が従う．
+\end{proof}
+% genron:end K-000527
+\section{函数の層}
+% genron:begin K-000528
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000526
+% genron:use K-000419
+% genron:use K-000035
+\begin{prop}[函数の前層の層性]
+集合 $A$ を固定した函数の前層 $U\mapsto A^U$ は層である．
+\end{prop}
+\begin{proof}
+二函数が被覆の各元上で一致すれば各点で一致する．整合族 $(f_i)$ があれば，$x\in U_i$ について $f(x)=f_i(x)$ と定める．重なりでの一致により値が一意であり，\GenronRef{K-000035}$ により函数が定まる．各制限は $f_i$ となる．空集合上では空写像が唯一存在する．
+\end{proof}
+% genron:end K-000528
+% genron:begin K-000529
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000526
+% genron:use K-000528
+% genron:use K-000420
+% genron:use K-000217
+% genron:use K-000262
+\begin{prop}[連続函数の層]
+位相空間 $Y$ を固定した連続函数の前層 $\mathcal C_Y$ は層である．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000528}$ によって整合する連続函数族を一意な函数 $f$ に貼り合わせられる．$Y$ の任意の開集合 $V$ について $f^{-1}(V)=\bigcup_i f_i^{-1}(V)$ である．各 $f_i^{-1}(V)$ は $U_i$ の相対開集合であり $U_i$ は $U$ の開集合だから $U$ で開である．従って $f$ は連続である．局所性は函数の局所性から従う．
+\end{proof}
+% genron:end K-000529
+% genron:begin K-000530
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000526
+% genron:use K-000421
+% genron:use K-000150
+% genron:use K-000529
+% genron:use K-000217
+\begin{prop}[定値前層と層の相違]
+二元以上の集合 $A$ の定値前層は空集合上でも値が $A$ であるため層でない．これに対して $A$ に離散位相を入れたときの連続函数の層は局所定値函数，すなわち各点のある開近傍で一定となる函数からなる．連続写像では各単集合の逆像が開であるから局所定値であり，逆に局所定値であれば任意の部分集合の逆像が開集合の合併となるので連続である．
+\end{prop}
+% genron:end K-000530
+\section{層の射}
+% genron:begin K-000531
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000526
+% genron:use K-000418
+\begin{defn}[層の射と部分層]
+層の射とはその前層としての射をいう．層 $\mathcal F$ に対して層 $\mathcal G$ が各開集合 $U$ で $\mathcal G(U)\subseteq\mathcal F(U)$ を満たし，制限が $\mathcal F$ の制限の縮小であるとき部分層という．
+\end{defn}
+% genron:end K-000531
+% genron:begin K-000532
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000418
+% genron:use K-000526
+% genron:use K-000041
+% genron:use K-000280
+\begin{prop}[層の射の成分同型判定]
+層の射 $\alpha:\mathcal F\to\mathcal G$ が同型であることと，任意の開集合 $U$ について $\alpha_U$ が全単射であることは同値である．
+\end{prop}
+\begin{proof}
+同型なら成分も同型である．逆に各成分の逆写像 $\beta_U=\alpha_U^{-1}$ を取る．自然性の等式 $\rho^{\mathcal G}\alpha_U=\alpha_V\rho^{\mathcal F}$ の左右から逆写像を合成すると $\beta_V\rho^{\mathcal G}=\rho^{\mathcal F}\beta_U$ となるので $\beta$ は層の射であり逆射となる．
+\end{proof}
+% genron:end K-000532

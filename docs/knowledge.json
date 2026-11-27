@@ -15703,6 +15703,688 @@
       "status": "verified",
       "source": "volumes/N-192/web.tex",
       "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000510",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "図式と錐",
+      "statement": "小圏 J から C への函手 D を図式といい，錐は対象 L と射 p_j:L→D(j) で各 u:j→k に D(u)p_j=p_k を満たすもの．余錐は双対．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000241",
+        "K-000245",
+        "K-000401"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000511",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "極限と余極限",
+      "statement": "任意の錐 (X,f_j) が一意な射 X→L によって (L,p_j) を経由するとき (L,p_j) を極限という．余極限は双対．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000510",
+        "K-000404",
+        "K-000401"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000512",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "極限の一意性",
+      "statement": "二つの極限の間には錐の射と可換な同型射が一意に存在する．余極限も同様．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511",
+        "K-000243"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000513",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "圏における積と余積",
+      "statement": "離散な添字圏の図式の極限を積，余極限を余積という．空積は終対象，空余積は始対象．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511",
+        "K-000241"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000514",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "等化子と余等化子",
+      "statement": "平行射 f,g:X→Y の等化子 e:E→X は fe=ge で任意の同条件の射を一意に経由させる．余等化子は双対．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000515",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "引戻しと押出し",
+      "statement": "f:X→Z,g:Y→Z に対する引戻しは fp=gq となる p:P→X,q:P→Y を持つ普遍的な対象．押出しは双対．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511",
+        "K-000514"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000516",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "積と等化子からの極限",
+      "statement": "任意の小さい積と等化子を持つ局所小圏は全ての小図式の極限を持つ．双対的に余積と余等化子から余極限を得る．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000513",
+        "K-000514",
+        "K-000511",
+        "K-000510"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000517",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "集合値図式の極限",
+      "statement": "Set の小図式の極限は直積内の整合族全体．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511",
+        "K-000510",
+        "K-000047",
+        "K-000048",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000518",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "集合値図式の余極限",
+      "statement": "Set の小図式の余極限は非交和を (j,x)∼(k,D(u)x) で生成される同値関係で割った商集合．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511",
+        "K-000049",
+        "K-000052",
+        "K-000053",
+        "K-000055",
+        "K-000027",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000519",
+      "kind": "worked_example",
+      "heading_kind": "worked_example",
+      "title": "集合の引戻し",
+      "statement": "Set の f:X→Z,g:Y→Z の引戻しは {(x,y)∈X×Y|f(x)=g(y)}．",
+      "assumptions": [],
+      "position": [
+        118,
+        1,
+        3,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000511",
+        "K-000043",
+        "K-000048",
+        "K-000024"
+      ],
+      "status": "verified",
+      "source": "volumes/N-118/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．",
+      "problem_tex": "集合の間の写像 $f:X\\to Z$，$g:Y\\to Z$ の引戻しを具体的に構成せよ．"
+    },
+    {
+      "id": "K-000520",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "随伴函手",
+      "statement": "函手 F:C→D，G:D→C に自然な全単射 Hom_D(FX,Y)≅Hom_C(X,GY) があるとき F は G の左随伴．",
+      "assumptions": [],
+      "position": [
+        119,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000401",
+        "K-000245",
+        "K-000403",
+        "K-000402"
+      ],
+      "status": "verified",
+      "source": "volumes/N-119/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000521",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "随伴の単位と余単位",
+      "statement": "η_X=Φ_{X,FX}(1_FX)，ε_Y=Φ^{-1}_{GY,Y}(1_GY) は自然変換 id_C→GF，FG→id_D．Φ(h)=G(h)η_X，Φ^{-1}(k)=ε_YF(k)．",
+      "assumptions": [],
+      "position": [
+        119,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000520",
+        "K-000277",
+        "K-000245"
+      ],
+      "status": "verified",
+      "source": "volumes/N-119/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000522",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "随伴の三角恒等式",
+      "statement": "ε_FX F(η_X)=1_FX，G(ε_Y)η_GY=1_GY．",
+      "assumptions": [],
+      "position": [
+        119,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000521",
+        "K-000520"
+      ],
+      "status": "verified",
+      "source": "volumes/N-119/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000523",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "三角恒等式による随伴の判定",
+      "statement": "自然変換 η:1→GF，ε:FG→1 が三角恒等式を満たせば Φ(h)=G(h)η_X が自然全単射を定める．",
+      "assumptions": [],
+      "position": [
+        119,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000520",
+        "K-000522",
+        "K-000521",
+        "K-000245"
+      ],
+      "status": "verified",
+      "source": "volumes/N-119/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000524",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "随伴函手の一意性",
+      "statement": "同じ右随伴を持つ二つの左随伴は自然同型．同じ左随伴を持つ二つの右随伴も自然同型．",
+      "assumptions": [],
+      "position": [
+        119,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000520",
+        "K-000521",
+        "K-000407",
+        "K-000406",
+        "K-000245",
+        "K-000277"
+      ],
+      "status": "verified",
+      "source": "volumes/N-119/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000525",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "自由群函手と忘却函手の随伴",
+      "statement": "自由群函手 F:Set→Grp は台集合を取る忘却函手 U:Grp→Set の左随伴．",
+      "assumptions": [],
+      "position": [
+        119,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000520",
+        "K-000428",
+        "K-000429",
+        "K-000245"
+      ],
+      "status": "verified",
+      "source": "volumes/N-119/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000526",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "集合値層",
+      "statement": "集合値前層 F が任意の開被覆について局所性と整合切断の貼り合わせを満たすとき層という．空被覆も含む．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000417",
+        "K-000044",
+        "K-000045",
+        "K-000255"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000527",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整合族による層の判定",
+      "statement": "層であることは任意の開被覆に対し F(U)→整合族集合 が全単射であることと同値．F(∅) は一元集合．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000526",
+        "K-000047",
+        "K-000048",
+        "K-000039"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000528",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "函数の前層の層性",
+      "statement": "集合 A への函数の前層 U↦A^U は層である．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000526",
+        "K-000419",
+        "K-000035"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000529",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "連続函数の層",
+      "statement": "任意の位相空間 Y に対し連続写像 U→Y の前層は層．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000526",
+        "K-000528",
+        "K-000420",
+        "K-000217",
+        "K-000262"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000530",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "定値前層と層の相違",
+      "statement": "二元以上の集合 A に値を取る定値前層は層ではない．離散位相を備えた A への連続函数の層は局所定値函数の層．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000526",
+        "K-000421",
+        "K-000150",
+        "K-000529",
+        "K-000217"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000531",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "層の射と部分層",
+      "statement": "層の射は前層の射．部分層は各開集合で部分集合となり制限と両立する層．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        3,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000526",
+        "K-000418"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
+    },
+    {
+      "id": "K-000532",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "層の射の成分同型判定",
+      "statement": "層の射は全ての開集合上で全単射なら層同型である．",
+      "assumptions": [],
+      "position": [
+        345,
+        1,
+        3,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000418",
+        "K-000526",
+        "K-000041",
+        "K-000280"
+      ],
+      "status": "verified",
+      "source": "volumes/N-345/web.tex",
+      "review": "2026-11-27 ChatGPT：既出知識との照合及び数学的自己査読．独立査読・Web目視は未実施．"
     }
   ],
   "notes": [
@@ -17488,7 +18170,7 @@
       "number": 118,
       "title": "極限と余極限",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         117
       ],
@@ -17496,21 +18178,24 @@
         "錐・積・等化子・引戻し"
       ],
       "treatise": "T-18",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 119,
       "title": "随伴函手",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
-        117
+        117,
+        66
       ],
       "goals": [
         "Homの自然同型・単位・余単位"
       ],
       "treatise": "T-18",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 120,
@@ -20921,7 +21606,7 @@
       "number": 345,
       "title": "層と貼り合わせ",
       "area": "構造",
-      "status": "planned",
+      "status": "verified",
       "depends_on": [
         51
       ],
@@ -20929,7 +21614,8 @@
         "局所性・貼り合わせ公理"
       ],
       "treatise": "T-51",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 346,

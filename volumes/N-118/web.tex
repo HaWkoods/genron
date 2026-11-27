@@ -1,0 +1,176 @@
+% Web専用原稿．
+% 構成案：図式・錐・余錐，極限の普遍性・一意性，積・等化子・引戻し，集合の極限と余極限．
+% 文献確認：Mac Lane, Categories for the Working Mathematician, Ch. III（余錐と余極限の普遍性の本文を確認）．
+\section{錐と極限}
+% genron:begin K-000510
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000241
+% genron:use K-000245
+% genron:use K-000401
+\begin{defn}[図式と錐]
+小圏 $\mathcal J$ から局所小圏 $\mathcal C$ への函手 $D:\mathcal J\to\mathcal C$ を図式という．対象 $L$ と各 $j\in\mathcal J$ に対する射 $p_j:L\to D(j)$ が，各射 $u:j\to k$ について $D(u)\circ p_j=p_k$ を満たすとき，$D$ への錐という．対象 $L$ への余錐は射 $q_j:D(j)\to L$ で $q_k\circ D(u)=q_j$ を満たすものである．
+\end{defn}
+% genron:end K-000510
+% genron:begin K-000511
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000510
+% genron:use K-000404
+% genron:use K-000401
+\begin{defn}[極限と余極限]
+図式 $D$ への錐 $(L,p_j)$ が次の普遍性を満たすとき極限という．任意の錐 $(X,f_j)$ について $p_j\circ h=f_j$ を全ての $j$ で満たす射 $h:X\to L$ がただ一つ存在する．これを $\varprojlim D$ とも書く．余極限 $\varinjlim D$ は余錐 $(L,q_j)$ であり，任意の余錐 $(X,g_j)$ に対して $h\circ q_j=g_j$ を満たす $h:L\to X$ が一意に存在するものをいう．
+\end{defn}
+% genron:end K-000511
+% genron:begin K-000512
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+% genron:use K-000243
+\begin{prop}[極限の一意性]
+同じ図式の二つの極限 $(L,p_j)$，$(L',p'_j)$ の間には $p'_j\circ h=p_j$ を満たす同型射 $h:L\to L'$ がただ一つ存在する．余極限についても双対的な主張が成り立つ．
+\end{prop}
+\begin{proof}
+普遍性を相互に適用して $h$ と $k:L'\to L$ を得る．$p_jkh=p_j$，$p'_jhk=p'_j$ であるから一意性により $kh=1_L$，$hk=1_{L'}$ である．余極限は反対圏での極限として同じ論証を適用できる．
+\end{proof}
+% genron:end K-000512
+\section{基本的な極限}
+% genron:begin K-000513
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+% genron:use K-000241
+\begin{defn}[圏における積と余積]
+添字集合 $I$ を対象集合とし恒等射のみを持つ圏を考える．これを添字圏とする図式 $(X_i)$ の極限を積 $\prod_iX_i$，余極限を余積という．空添字の積は任意の対象からただ一つの射を受ける終対象であり，空余積は任意の対象へただ一つの射を持つ始対象である．
+\end{defn}
+% genron:end K-000513
+% genron:begin K-000514
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+\begin{defn}[等化子と余等化子]
+同じ始域及び終域を持つ射 $f,g:X\to Y$ に対し，$f\circ e=g\circ e$ を満たす射 $e:E\to X$ であって，同条件を満たす任意の射 $a:A\to X$ が $a=e\circ h$ と一意に分解されるものを等化子という．余等化子は $q:Y\to Q$ で $qf=qg$ を満たし，同条件の射が $q$ を一意に経由するものである．これらは平行射の図式の極限及び余極限と等価である．
+\end{defn}
+% genron:end K-000514
+% genron:begin K-000515
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+% genron:use K-000514
+\begin{defn}[引戻しと押出し]
+射 $f:X\to Z$，$g:Y\to Z$ に対する引戻しとは，$fp=gq$ となる射 $p:P\to X$，$q:P\to Y$ を持ち，任意の同条件の組がただ一つの射を介してこの組を経由する対象 $P$ である．これを $X\times_ZY$ と書く．同じ始域を持つ二射の図式の余極限を押出しという．
+\end{defn}
+% genron:end K-000515
+% genron:begin K-000516
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000513
+% genron:use K-000514
+% genron:use K-000511
+% genron:use K-000510
+\begin{prop}[積と等化子からの極限]
+局所小圏 $\mathcal C$ が任意の集合で添字づけられた積と等化子を持つなら，任意の小圏 $\mathcal J$ を添字圏とする図式 $D$ の極限を持つ．双対的な主張も成立する．
+\end{prop}
+\begin{proof}
+積 $P=\prod_j D(j)$，$Q=\prod_{u:j\to k}D(k)$ を取る．$P$ の射影を $p_j$ とし，$P\to Q$ の二射 $s,t$ の $u$ 成分をそれぞれ $D(u)p_j$，$p_k$ とする．積の普遍性により二射が定まる．等化子 $e:L\to P$ を取ると $(L,p_je)$ は錐となる．任意の錐は積の普遍性から一意に $P$ への射を定め，錐条件はその射が $s,t$ を等しくすることを意味する．従って等化子を一意に経由し，極限の普遍性を満たす．反対圏に適用すれば余極限の主張を得る．
+\end{proof}
+% genron:end K-000516
+\section{集合の圏における構成}
+% genron:begin K-000517
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+% genron:use K-000510
+% genron:use K-000047
+% genron:use K-000048
+% genron:use K-000024
+\begin{prop}[集合値図式の極限]
+集合値図式 $D:\mathcal J\to\mathbf{Set}$ の極限は
+\[
+ L=\{(x_j)\in\prod_jD(j)\mid
+ D(u)(x_j)=x_k\ \text{ for all }u:j\to k\}
+\]
+とし座標射影を制限すれば得られる．
+\end{prop}
+\begin{proof}
+条件によって $L$ は集合として定まる．座標射影は錐条件を満たす．任意の錐 $(X,f_j)$ の各 $x$ に対し $(f_j(x))_j$ は整合族であるから $X\to L$ を定める．各座標によって値が定まるため一意である．
+\end{proof}
+% genron:end K-000517
+% genron:begin K-000518
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+% genron:use K-000049
+% genron:use K-000052
+% genron:use K-000053
+% genron:use K-000055
+% genron:use K-000027
+% genron:use K-000024
+\begin{prop}[集合値図式の余極限]
+集合値図式 $D$ の余極限は非交和 $S=\coprod_j D(j)$ を，すべての $u:j\to k$ と $x\in D(j)$ に対して $(j,x)$ と $(k,D(u)(x))$ を同値にする最小の同値関係で割った商集合である．
+\end{prop}
+\begin{proof}
+指定された対を含む同値関係は全関係を含む非空の集合をなし，その共通部分が所要の最小同値関係である．標準写像 $D(j)\to S/{\sim}$ は余錐条件を満たす．任意の余錐から得る $S\to X$ は指定された対を同じ元に移す．その核関係は同値関係なので最小同値関係を含む．従って \GenronRef{K-000055}$ により一意に商集合を経由する．
+\end{proof}
+% genron:end K-000518
+% genron:begin K-000519
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000511
+% genron:use K-000043
+% genron:use K-000048
+% genron:use K-000024
+\begin{prop}[集合の引戻し]
+$P=\{(x,y)\in X\times Y\mid f(x)=g(y)\}$ とおく．射影を制限して $p,q$ とすると $fp=gq$ である．任意の $a:A\to X$，$b:A\to Y$ で $fa=gb$ を満たすものに対し $h(t)=(a(t),b(t))$ は $P$ に値を取り，条件を満たす．座標が決まれば $h$ は一意である．
+\end{prop}
+% genron:end K-000519

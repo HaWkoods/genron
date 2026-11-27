@@ -1,0 +1,137 @@
+% Web専用原稿．
+% 構成案：Hom自然同型・単位・余単位・三角恒等式・逆構成・自由群の例．
+% 文献確認：Mac Lane, Categories for the Working Mathematician, Ch. IV §1（随伴の導入本文を確認）．
+\section{随伴の定義}
+% genron:begin K-000520
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000401
+% genron:use K-000245
+% genron:use K-000403
+% genron:use K-000402
+\begin{defn}[随伴函手]
+局所小圏 $\mathcal C,\mathcal D$ の間の函手 $F:\mathcal C\to\mathcal D$，$G:\mathcal D\to\mathcal C$ に対し，対象 $X,Y$ について自然な全単射
+\[
+ \Phi_{X,Y}:\operatorname{Hom}_{\mathcal D}(F(X),Y)
+ \longrightarrow\operatorname{Hom}_{\mathcal C}(X,G(Y))
+\]
+が与えられているとき $F$ は $G$ の左随伴，$G$ は $F$ の右随伴であるといい，$F\dashv G$ と書く．自然性とは $a:X'\to X$，$b:Y\to Y'$ に対し $\Phi_{X',Y'}(b\circ h\circ F(a))=G(b)\circ\Phi_{X,Y}(h)\circ a$ が成立することをいう．
+\end{defn}
+% genron:end K-000520
+% genron:begin K-000521
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000520
+% genron:use K-000277
+% genron:use K-000245
+\begin{prop}[随伴の単位と余単位]
+随伴の全単射に対し
+\[
+ \eta_X=\Phi_{X,F(X)}(1_{F(X)}),\qquad
+ \varepsilon_Y=\Phi^{-1}_{G(Y),Y}(1_{G(Y)})
+\]
+とおくと，$\eta:1_{\mathcal C}\to GF$ と $\varepsilon:FG\to1_{\mathcal D}$ は自然変換となる．それぞれ単位及び余単位という．さらに
+\[
+ \Phi(h)=G(h)\circ\eta_X,\qquad
+ \Phi^{-1}(k)=\varepsilon_Y\circ F(k)
+\]
+である．
+\end{prop}
+\begin{proof}
+第一の式は $\Phi$ の第二変数の自然性を $h:F(X)\to Y$ に適用して得られ，第二は逆全単射の第一変数の自然性を $k:X\to G(Y)$ に適用して得られる．$a:X\to X'$ に対して $\Phi_{X,F(X')}(F(a))$ を二通りに計算すると $GF(a)\eta_X=\eta_{X'}a$ となる．同様に $\Phi^{-1}_{G(Y),Y'}(G(b))$ を二通りに計算して $b\varepsilon_Y=\varepsilon_{Y'}FG(b)$ を得る．
+\end{proof}
+% genron:end K-000521
+% genron:begin K-000522
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000521
+% genron:use K-000520
+\begin{prop}[随伴の三角恒等式]
+随伴の単位及び余単位は
+\[
+ \varepsilon_{F(X)}\circ F(\eta_X)=1_{F(X)},\qquad
+ G(\varepsilon_Y)\circ\eta_{G(Y)}=1_{G(Y)}
+\]
+を満たす．これを三角恒等式という．
+\end{prop}
+\begin{proof}
+前者は $\Phi^{-1}_{X,F(X)}(\eta_X)=1_{F(X)}$ を前命題の式で表したものであり，後者は $\Phi_{G(Y),Y}(\varepsilon_Y)=1_{G(Y)}$ を表したものである．
+\end{proof}
+% genron:end K-000522
+\section{単位と余単位からの随伴}
+% genron:begin K-000523
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000520
+% genron:use K-000522
+% genron:use K-000521
+% genron:use K-000245
+\begin{prop}[三角恒等式による随伴の判定]
+函手 $F,G$ と自然変換 $\eta:1_{\mathcal C}\to GF$，$\varepsilon:FG\to1_{\mathcal D}$ が三角恒等式を満たすとき，$\Phi(h)=G(h)\eta_X$ は随伴を定める．
+\end{prop}
+\begin{proof}
+逆写像の候補を $\Psi(k)=\varepsilon_YF(k)$ とする．余単位の自然性から $\Psi\Phi(h)=\varepsilon_YFG(h)F(\eta_X)=h\varepsilon_{F(X)}F(\eta_X)=h$ となる．単位の自然性から $\Phi\Psi(k)=G(\varepsilon_Y)GF(k)\eta_X=G(\varepsilon_Y)\eta_{G(Y)}k=k$ となる．また $\Phi$ の自然性は単位の自然性と函手の合成保存性から従う．
+\end{proof}
+% genron:end K-000523
+% genron:begin K-000524
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000520
+% genron:use K-000521
+% genron:use K-000407
+% genron:use K-000406
+% genron:use K-000245
+% genron:use K-000277
+\begin{prop}[随伴函手の一意性]
+函手 $G$ の二つの左随伴 $F,F'$ は自然同型である．同じ左随伴を持つ二つの右随伴も自然同型である．
+\end{prop}
+\begin{proof}
+各 $X$ に対し単位 $\eta_X$ と $\eta'_X$ は函手 $Y\mapsto\operatorname{Hom}_{\mathcal C}(X,G(Y))$ の普遍元である．\GenronRef{K-000407}$ により $\alpha_X:F(X)\to F'(X)$ で $G(\alpha_X)\eta_X=\eta'_X$ となる同型射が一意に存在する．$a:X\to X'$ に対し $F'(a)\alpha_X$ と $\alpha_{X'}F(a)$ は単位の自然性から同じ元 $G(F'(a))\eta'_X$ に対応するので一致する．従って自然同型となる．右随伴は反対圏での左随伴として同様に従う．
+\end{proof}
+% genron:end K-000524
+% genron:begin K-000525
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000520
+% genron:use K-000428
+% genron:use K-000429
+% genron:use K-000245
+\begin{prop}[自由群函手と忘却函手の随伴]
+集合 $S$ に自由群 $F(S)$ を対応させる．写像 $u:S\to T$ には標準生成元上で $u$ に一致する群準同型 $F(S)\to F(T)$ を対応させる．自由群の普遍性の一意性から恒等写像と合成が保存されるので函手である．群の台集合を取る函手 $U$ に対して，\GenronRef{K-000429}$ は
+\[
+ \operatorname{Hom}_{\mathbf{Grp}}(F(S),G)
+ \simeq \operatorname{Hom}_{\mathbf{Set}}(S,U(G))
+\]
+を与える．前合成及び後合成と生成元への制限が可換なので自然な全単射であり，$F\dashv U$ である．
+\end{prop}
+% genron:end K-000525

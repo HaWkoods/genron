@@ -1425,17 +1425,17 @@
       {
         "tex": "\\varprojlim",
         "label": "射影極限",
-        "id": null
+        "id": "K-000511"
       },
       {
         "tex": "\\varinjlim",
         "label": "帰納極限",
-        "id": null
+        "id": "K-000511"
       },
       {
         "tex": "F\\dashv G",
         "label": "随伴函手",
-        "id": null
+        "id": "K-000520"
       },
       {
         "tex": "(M,\\mathcal A)",
@@ -1610,7 +1610,7 @@
       {
         "tex": "\\mathcal F(U)",
         "label": "層の切断集合",
-        "id": null
+        "id": "K-000526"
       },
       {
         "tex": "\\mathcal F_x",
