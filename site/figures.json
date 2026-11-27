@@ -54,5 +54,117 @@
     "caption": "図：端点を固定した道のホモトピーの模式図．実平面では線形補間でこの変形を実現できる．",
     "figure_id": "relative-homotopy",
     "title": "端点固定ホモトピーの図"
+  },
+  {
+    "id": "K-000288",
+    "src": "figures/quotient-group-factorization.svg",
+    "alt": "G から H への f は商写像 π と一意な準同型 f̄ を経由する．",
+    "caption": "図：N ⊆ ker f のときの一意な分解．",
+    "figure_id": "quotient-group-factorization",
+    "title": "商群の普遍性の図式"
+  },
+  {
+    "id": "K-000289",
+    "src": "figures/group-first-isomorphism.svg",
+    "alt": "G から H への準同型は商群，像，包含写像を順に経由する．",
+    "caption": "図：核による商群と像の標準同型．",
+    "figure_id": "group-first-isomorphism",
+    "title": "第一同型定理の図式"
+  },
+  {
+    "id": "K-000345",
+    "src": "figures/group-product-universal.svg",
+    "alt": "H から G₁ と G₂ への写像は直積への一意な写像と射影を経由する．",
+    "caption": "図：二因子の場合の直積の普遍性．",
+    "figure_id": "group-product-universal",
+    "title": "直積の普遍性の図式"
+  },
+  {
+    "id": "K-000348",
+    "src": "figures/direct-sum-universal.svg",
+    "alt": "二つの可換群から H への写像は直和の標準埋込みと一意な写像を経由する．",
+    "caption": "図：二因子の場合の直和の普遍性．",
+    "figure_id": "direct-sum-universal",
+    "title": "直和の普遍性の図式"
+  },
+  {
+    "id": "K-000403",
+    "src": "figures/natural-transformation-square.svg",
+    "alt": "F(X) と G(X)，F(Y) と G(Y) の間の自然変換と函手による写像が作る可換四角形．",
+    "caption": "図：射 u:X→Y に関する自然性．",
+    "figure_id": "natural-transformation-square",
+    "title": "自然変換の可換図式"
+  },
+  {
+    "id": "K-000515",
+    "src": "figures/pullback-square.svg",
+    "alt": "P から X,Y への射と Z への射が可換であり，別の対象 T の射は P を一意に経由する．",
+    "caption": "図：引戻しの普遍性（破線の射は一意）．",
+    "figure_id": "pullback-square",
+    "title": "引戻しの可換図式"
+  },
+  {
+    "id": "K-000535",
+    "src": "figures/exact-sequence.svg",
+    "alt": "A から B を経て C に至る二つの写像と B における像と核の一致．",
+    "caption": "図：B における完全性 im f = ker g．",
+    "figure_id": "exact-sequence",
+    "title": "完全列の図式"
+  },
+  {
+    "id": "K-000537",
+    "src": "figures/split-exact-sequence.svg",
+    "alt": "0→L→M→N→0 の列で逆向きの射 r,s があり，ri=id と ps=id を満たす．",
+    "caption": "図：切断 s と左逆射 r を持つ短完全列．",
+    "figure_id": "split-exact-sequence",
+    "title": "短完全列の分裂の図式"
+  },
+  {
+    "id": "K-000631",
+    "src": "figures/quotient-vector-space.svg",
+    "alt": "V から W への T は商線形空間 V/U を通る一意な線形写像 S に分解する．",
+    "caption": "図：U ⊆ ker T の場合の線形写像の分解．",
+    "figure_id": "quotient-vector-space",
+    "title": "商線形空間の普遍性の図式"
+  },
+  {
+    "id": "K-000677",
+    "src": "figures/dedekind-cut.svg",
+    "alt": "数直線上で α より小さい有理数全体を太い左半直線で示し，α は含まれない．",
+    "caption": "図：有理数に対応する切断の例 A = {q ∈ ℚ | q < α}（α ∈ ℚ）．",
+    "figure_id": "dedekind-cut",
+    "title": "Dedekind切断の模式図"
+  },
+  {
+    "id": "K-000719",
+    "src": "figures/complex-modulus.svg",
+    "alt": "原点から点 (a,b) への線分の長さが絶対値であり，直角三角形の辺は a,b である．",
+    "caption": "図：複素平面上の z=a+bi と絶対値 |z|（a,b>0 の場合）．",
+    "figure_id": "complex-modulus",
+    "title": "複素数の絶対値の図"
+  },
+  {
+    "id": "K-000724",
+    "src": "figures/reverse-triangle.svg",
+    "alt": "三点 x,y,z の三角形で，z からの二辺の長さの差は x,y 間の距離を超えない．",
+    "caption": "図：Euclid 平面における三点の距離の関係．",
+    "figure_id": "reverse-triangle",
+    "title": "逆三角不等式の図"
+  },
+  {
+    "id": "K-000729",
+    "src": "figures/nested-metric-balls.svg",
+    "alt": "中心 x の周りに半径 1，1/2，1/3 の同心円が入れ子状にある．",
+    "caption": "図：半径 1/n の開球の縮小（Euclid 平面の場合）．",
+    "figure_id": "nested-metric-balls",
+    "title": "可算近傍基の図"
+  },
+  {
+    "id": "K-000735",
+    "src": "figures/sequence-in-closure.svg",
+    "alt": "開区間 (0,1) の点列が含まれない境界点 0 に収束する様子．",
+    "caption": "図：A=(0,1)，xₙ=1/(n+1) の例（n≥1）．",
+    "figure_id": "sequence-in-closure",
+    "title": "閉包と点列の図"
   }
 ]
