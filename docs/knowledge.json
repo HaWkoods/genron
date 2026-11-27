@@ -35106,7 +35106,7 @@
         "K-000444",
         "K-000573",
         "K-000100",
-        "K-000078"
+        "K-000060"
       ],
       "status": "draft",
       "source": "volumes/N-107/web.tex",
@@ -35765,7 +35765,8 @@
         "K-000024",
         "K-001147",
         "K-000582",
-        "K-000585"
+        "K-000585",
+        "K-000060"
       ],
       "status": "draft",
       "source": "volumes/N-209/web.tex",
@@ -35856,7 +35857,8 @@
         "K-000017",
         "K-000024",
         "K-001147",
-        "K-000583"
+        "K-000583",
+        "K-000060"
       ],
       "status": "draft",
       "source": "volumes/N-209/web.tex",
@@ -36931,6 +36933,67 @@
       ],
       "status": "draft",
       "source": "volumes/N-346/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001188",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "命題論理のコンパクト性",
+      "statement": "任意の命題式の集合 $\\Gamma$ について，そのすべての有限部分集合が充足可能であるなら $\\Gamma$ は充足可能である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000131",
+        "K-001089",
+        "K-001090"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
+      "review": "2026-11-27 初稿．独立査読未了．"
+    },
+    {
+      "id": "K-001189",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "命題論理の完全性",
+      "statement": "任意の式集合 $\\Gamma$ と式 $B$ について，$\\Gamma\\models B$ と $\\Gamma\\vdash B$ は同値である．",
+      "assumptions": [],
+      "position": [
+        325,
+        1,
+        1,
+        8
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001188",
+        "K-001172",
+        "K-001168",
+        "K-001089"
+      ],
+      "status": "draft",
+      "source": "volumes/N-325/web.tex",
       "review": "2026-11-27 初稿．独立査読未了．"
     }
   ],
@@ -42055,7 +42118,8 @@
       "area": "数学の研究",
       "status": "draft",
       "depends_on": [
-        48
+        48,
+        6
       ],
       "goals": [
         "形式的導出・健全性・完全性"
