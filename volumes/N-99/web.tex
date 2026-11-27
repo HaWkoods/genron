@@ -1,0 +1,102 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{行列式}
+% genron:begin K-000687
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000249
+% genron:use K-000118
+% genron:use K-000657
+\begin{defn}[行列式]
+$R$ を単位元を持つ可換環，$n$ を正整数とする．$\{1,\ldots,n\}$ の置換 $\sigma$ に対し，$i<j$ かつ $\sigma(i)>\sigma(j)$ となる対の個数を $I(\sigma)$ とし，$\epsilon(\sigma)=(-1)^{I(\sigma)}$ とおく．$A=(a_{ij})\in M_n(R)$ に対して
+\[
+ \det A=\sum_{\sigma}\epsilon(\sigma)\prod_{j=1}^n a_{\sigma(j),j}
+\]
+と定める．空行列の行列式は $1$ とする．
+\end{defn}
+% genron:end K-000687
+% genron:begin K-000688
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000687
+% genron:use K-000658
+% genron:use K-000100
+\begin{prop}[交代多重線形性]
+行列式は各列に関して線形であり，二列が等しいとき零となる．さらに $\det I_n=1$ である．これらの性質を満たす $n$ 列の函数はただ一つである．
+\end{prop}
+\begin{proof}
+定義の各項は各列の成分を一つずつ含むので線形性が従う．隣接する二つの位置を交換すると，逆転数の偶奇は反転する（他の位置との逆転数の総和は変わらない）．任意の二位置の交換は奇数回の隣接交換で表されるので，符号が反転する．二列が等しい場合，これらの列位置を交換した置換を対にすれば各対の寄与は相殺される．単位行列では恒等置換の項だけが残る．
+
+逆に交代多重線形函数 $F$ について，二列をともに $u+v$ とした値が零であることを展開すると，二列の交換で値が符号を変えることが分かる．標準列 $e_1,\ldots,e_n$ を用いて各列を展開すれば，同じ標準列を含む項は零である．残る項の値は $\epsilon(\sigma)F(e_1,\ldots,e_n)$ となる．従って $F(I_n)=1$ ならば定義式に一致する．標数 $2$ の場合にも，交代性を符号反転性で置き換えてはいないことに注意せよ．
+\end{proof}
+% genron:end K-000688
+% genron:begin K-000689
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000688
+% genron:use K-000658
+\begin{prop}[行列式の積公式]
+$A,B\in M_n(R)$ に対して $\det(AB)=\det A\det B$ である．
+\end{prop}
+\begin{proof}
+$B$ の各列 $b_j$ を標準列で展開する．函数 $(b_1,\ldots,b_n)\mapsto\det(Ab_1,\ldots,Ab_n)$ は交代多重線形である．前命題の一意性の証明は，標準列での値を任意の $c$ とした場合にも適用でき，この函数は $c\det B$ に等しい．ここで $c=\det A$ である．
+\end{proof}
+% genron:end K-000689
+% genron:begin K-000690
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000687
+% genron:use K-000688
+% genron:use K-000664
+% genron:use K-000665
+\begin{prop}[転置と行基本変形]
+$\det(A^{\mathrm t})=\det A$ である．従って行列式は行についても交代多重線形である．
+\end{prop}
+\begin{proof}
+置換の逆転 $(i,j)$ は逆置換の逆転 $(\sigma(j),\sigma(i))$ に対応し，符号は等しい．定義式で $\sigma$ を $\sigma^{-1}$ に取り替え，積の因子を並べ替えると転置の等式を得る．行交換と行の定数倍の効果は交代多重線形性から従う．他行の定数倍を加えたときに生ずる追加項は二つの比例する行を持つので零である．
+\end{proof}
+% genron:end K-000690
+% genron:begin K-000691
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000689
+% genron:use K-000690
+% genron:use K-000662
+% genron:use K-000666
+% genron:use K-000667
+\begin{prop}[行列式と可逆性]
+$R$ が体であるとき，$A$ が可逆であるための必要十分条件は $\det A\ne0$ である．
+\end{prop}
+\begin{proof}
+可逆ならば積公式より $\det A\det A^{-1}=1$ である．逆に行基本変形によって階段形に移す．各変形によって行列式は非零因子倍となるから，階段形の行列式は非零である．零行を持つ行列の行列式は零なので，階段形は $n$ 個の主成分を持つ．従ってその階数は $n$ であり，可逆である．各行基本変形も可逆なので $A$ は可逆である．
+\end{proof}
+% genron:end K-000691

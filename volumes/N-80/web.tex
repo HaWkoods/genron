@@ -1,0 +1,184 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{加法と加法逆元}
+% genron:begin K-000692
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000677
+% genron:use K-000678
+% genron:use K-000679
+% genron:use K-000625
+\begin{defn}[切断の加法]
+切断 $A,B$ に対し $A+B=\{a+b\mid a\in A,\ b\in B\}$ と定める．これは切断であり，$L_0$ を零元とする可換モノイドをなす．
+\end{defn}
+\begin{proof}
+$A,B$ は空でない．$u\notin A,v\notin B$ ならばすべての和は $u+v$ より小さい．$x<a+b$ ならば $x-b<a$ なので $x$ も和に属する．$a$ をより大きい $A$ の元で置き換えれば最大元の不存在を得る．結合律・交換律は有理数の対応する法則から従う．$a+t$（$t<0$）は $A$ に属する．逆に $x\in A$ ならば $a>x$ なる $a\in A$ を取り $x=a+(x-a)$ と書ける．従って $A+L_0=A$ である．
+\end{proof}
+% genron:end K-000692
+% genron:begin K-000693
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000692
+% genron:use K-000686
+% genron:use K-000678
+\begin{prop}[切断の加法逆元]
+$-A=\{x\in\mathbb Q\mid \exists b\notin A,\ x<-b\}$ とおく．$-A$ は切断であり，$A+(-A)=L_0$ である．
+\end{prop}
+\begin{proof}
+補集合の元 $b$ について $-b-1\in -A$ である．$a\in A$ ならば任意の $x\in-A$ は $x<-b<-a$ を満たすので $-a\notin-A$ である．下方閉性は定義から従い，$x<-b$ ならばその間の有理数も $-A$ に属する．$a+x<a-b<0$ なので和は $L_0$ に含まれる．逆に $t<0$ に対し $a\in A,b\notin A$ で $b-a<-t$ となるものを切断の近似性によって取る．すると $t-a<-b$ であるから $t=a+(t-a)\in A+(-A)$ である．
+\end{proof}
+% genron:end K-000693
+% genron:begin K-000694
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000692
+% genron:use K-000693
+% genron:use K-000681
+% genron:use K-000682
+% genron:use K-000628
+\begin{prop}[加法と切断の順序]
+任意の切断 $A,B,C$ に対して $A\leq B$ と $A+C\leq B+C$ は同値である．また $L_r+L_s=L_{r+s}$ である．
+\end{prop}
+\begin{proof}
+包含は加法によって保存され，逆の含意は $-C$ を加えれば従う．$a<r,b<s$ ならば $a+b<r+s$ である．$x<r+s$ のとき $x-s<a<r$ なる有理数 $a$ を取り $b=x-a<s$ とおけば逆包含も成立する．
+\end{proof}
+% genron:end K-000694
+\section{乗法}
+% genron:begin K-000695
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000694
+% genron:use K-000677
+% genron:use K-000678
+% genron:use K-000641
+\begin{defn}[非負切断の乗法]
+$A,B\geq L_0$ のとき
+\[
+ AB=L_0\cup\{q\in\mathbb Q\mid \exists a\in A,\exists b\in B,\ a>0,\ b>0,\ q<ab\}
+\]
+と定める．これは非負切断である．
+\end{defn}
+\begin{proof}
+$L_0$ を含むので空でない．$u\notin A,v\notin B$ を正有理数として取れば，正の積 $ab$ は $uv$ より小さい．従って $uv\notin AB$ である．下方閉性は明らかで，$q<ab$ ならば $q<q'<ab$ なる有理数があり，$q<0$ ならば $q<q'<0$ なる有理数がある．従って最大元を持たない．$A=L_0$ 又は $B=L_0$ のとき積は $L_0$ である．両方が正ならば両方とも正有理数を含むので積も正である．
+\end{proof}
+% genron:end K-000695
+% genron:begin K-000696
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000695
+% genron:use K-000692
+% genron:use K-000628
+\begin{prop}[非負切断の乗法則]
+非負切断の積は交換律，結合律，分配律を満たし，$L_1$ を単位元とする．
+\end{prop}
+\begin{proof}
+交換律は定義から従う．零因子を含む場合は直ちに成立するので，結合律について正切断のみを考える．$q\geq0$ が $(AB)C$ に属すれば $q<pc$，$0<p<ab$ なる正有理数 $a\in A,b\in B,c\in C$ が存在し，従って $q<abc$ である．逆に $q<abc$ ならば $q/c<p<ab$ なる正有理数 $p$ を取れる．この条件は三因子について対称であるから結合律が成立する．
+
+$A,B,C$ が正のとき $q\geq0$ が $A(B+C)$ に属すれば $q<a(b+c)$ なる $a\in A$ と $b\in B,c\in C$ が存在する．$b,c$ は，必要に応じて各切断内でより大きい正元に置き換えられる．$q<ab+ac$ なので $q=u+v$，$u<ab,v<ac$ なる有理数 $u,v$ が存在する．従って $q\in AB+AC$ である．逆に $q=u+v\geq0$，$u\in AB,v\in AC$ ならば，正元 $a_1,a_2\in A,b\in B,c\in C$ を $u<a_1b,v<a_2c$ となるよう取れる（負の $u,v$ に対しても任意の正元を取ればよい）．$a=\max(a_1,a_2)$ とすれば $q<a(b+c)$ である．負有理数は双方に属する．零の場合には加法単位元と零積の性質で同じ等式を得る．
+
+$AL_1\subseteq A$ は正の $a$ と $0<b<1$ に対して $ab<a$ であることから従う．逆に $q\in A$ が非負なら $a>q$ なる $a\in A$ を取り，$q/a<b<1$ なる正有理数 $b$ を選べば $q<ab$ である．
+\end{proof}
+% genron:end K-000696
+% genron:begin K-000697
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000696
+% genron:use K-000693
+% genron:use K-000694
+% genron:use K-000249
+\begin{prop}[切断上の環構造]
+任意の切断 $X,Y$ を非負切断の差 $X=A-B,Y=C-D$ と表し，
+\[
+ XY=(AC+BD)-(AD+BC)
+\]
+と定めると，表示によらず，$\mathcal D$ は単位元 $L_1$ を持つ可換環となる．
+\end{prop}
+\begin{proof}
+全順序性により $X\geq0$ ならば $X=X-0$，$X<0$ ならば $X=0-(-X)$ と表せる．$A-B=A'-B'$ ならば $A+B'=A'+B$ である．両辺に $C$ 又は $D$ を掛け，非負切断の分配律を適用すると $AC-A'C=BC-B'C$ 及び $AD-A'D=BD-B'D$ となる．これにより第一の表示の変更で積は不変である．交換対称性によって第二の表示についても同様である．従って積は適法に定義される．
+
+差の表示を用いて和を $(A+A')-(B+B')$ と書けば上の式と非負切断の分配律から全切断での分配律が従う．三因子の結合律は，分配律によってそれぞれを非負切断の差として展開した八項を比較すれば，非負切断に対する結合律によって成立する．交換律及び単位元の性質も同様に従う．
+\end{proof}
+% genron:end K-000697
+% genron:begin K-000698
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000697
+% genron:use K-000695
+% genron:use K-000686
+% genron:use K-000641
+\begin{prop}[正切断の乗法逆元]
+正切断 $A$ に対し
+\[
+ B=\{q\in\mathbb Q\mid \exists b\in\mathbb Q\setminus A,\ b>0,\ q<1/b\}
+\]
+と定める．このとき $B$ は正切断であり $AB=L_1$ である．
+\end{prop}
+\begin{proof}
+$A$ は正有理数 $p$ を含む．補集合の元はすべて $p$ より大きいから $1/p$ は $B$ に属さない．補集合から $b$ を取り $0<q<1/b$ とすれば $q\in B$ である．下方閉性と最大元の不存在は定義及び有理数の稠密性から従う．
+
+正の $a\in A,c\in B$ に対し，ある $b\notin A$ について $c<1/b$ であるから $ac<a/b<1$ である．従って $AB\subseteq L_1$ である．逆に $0\leq q<1$ とする．切断を挟む有理数の差を $(1-q)p$ より小さく選ぶ．下側の元を必要なら $p$ で置き換えて $a\in A,b\notin A$，$a\geq p$，$0<b-a<(1-q)p$ とできる．すると $b>p$ より $a/b=1-(b-a)/b>q$ である．$q/a<c<1/b$ なる正有理数 $c$ を取れば $c\in B$ かつ $q<ac$ なので $q\in AB$ である．負有理数は定義により $AB$ に属する．
+\end{proof}
+% genron:end K-000698
+% genron:begin K-000699
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000697
+% genron:use K-000698
+% genron:use K-000694
+% genron:use K-000684
+% genron:use K-000639
+% genron:use K-000642
+\begin{prop}[実数体の存在]
+切断全体 $\mathcal D$ は順序体であり，空でない上に有界な部分集合は上限を持つ．これを実数体と呼び，$\mathbb R$ と記す．写像 $r\mapsto L_r$ によって有理数体をその部分順序体とみなす．
+\end{prop}
+\begin{proof}
+加法群及び可換環の性質は既に示した．正元には乗法逆元が存在し，負元 $X$ の逆元は $-((-X)^{-1})$ である．$L_0<L_1$ なので単位元と零元は異なる．加法は順序を保存し，正元の積は正であるから順序体の公理を満たす．上限性は切断の上限の命題による．有理数の切断への写像は加法を保存し，$1$ を単位元に移す．従って整数の像は $nL_1$ である．有理数 $r=m/n$ ($n>0$) について $nL_r=L_m$ なので $L_r=(nL_1)^{-1}L_m$ である．これにより乗法も保存することが分かり，順序埋込み性と合わせて主張を得る．
+\end{proof}
+% genron:end K-000699

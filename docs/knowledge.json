@@ -21093,6 +21093,713 @@
       "status": "draft",
       "source": "volumes/N-12/web.tex",
       "review": "2026-11-27 初稿・証明自己点検．文献該当箇所・台帳CLI・独立査読未確認．"
+    },
+    {
+      "id": "K-000687",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "行列式",
+      "statement": "可換環 R 上の n 次正方行列 A の行列式は置換についての符号付き積の総和である．",
+      "assumptions": [],
+      "position": [
+        99,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000249",
+        "K-000118",
+        "K-000657"
+      ],
+      "status": "draft",
+      "source": "volumes/N-99/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000688",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "交代多重線形性",
+      "statement": "行列式は列に関して交代多重線形であり，単位行列で1を取る．この条件を満たす函数は一意である．",
+      "assumptions": [],
+      "position": [
+        99,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000687",
+        "K-000658",
+        "K-000100"
+      ],
+      "status": "draft",
+      "source": "volumes/N-99/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000689",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行列式の積公式",
+      "statement": "同じ次数の正方行列 A,B に対して det(AB)=det(A)det(B)．",
+      "assumptions": [],
+      "position": [
+        99,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000688",
+        "K-000658"
+      ],
+      "status": "draft",
+      "source": "volumes/N-99/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000690",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "転置と行基本変形",
+      "statement": "det(A^t)=det A．行交換は符号反転，行の定数倍はその定数倍，他行の定数倍の加算は不変．",
+      "assumptions": [],
+      "position": [
+        99,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000687",
+        "K-000688",
+        "K-000664",
+        "K-000665"
+      ],
+      "status": "draft",
+      "source": "volumes/N-99/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000691",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "行列式と可逆性",
+      "statement": "体上の正方行列 A は det A≠0 のとき，かつそのときに限り可逆である．",
+      "assumptions": [],
+      "position": [
+        99,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000689",
+        "K-000690",
+        "K-000662",
+        "K-000666",
+        "K-000667"
+      ],
+      "status": "draft",
+      "source": "volumes/N-99/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000692",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "切断の加法",
+      "statement": "A+B={a+b | a∈A,b∈B} は切断である．零元は L_0 である．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000677",
+        "K-000678",
+        "K-000679",
+        "K-000625"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000693",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断の加法逆元",
+      "statement": "−A={x∈Q | ある b∉A に対し x<−b} は切断であり A+(−A)=L_0．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000692",
+        "K-000686",
+        "K-000678"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000694",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "加法と切断の順序",
+      "statement": "A≤B と A+C≤B+C は同値である．r↦L_r は加法を保存する．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000692",
+        "K-000693",
+        "K-000681",
+        "K-000682",
+        "K-000628"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000695",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "非負切断の乗法",
+      "statement": "A,B≥L_0 に対し AB=L_0∪{q∈Q | q<ab, a∈A,b∈B,a,b>0} と定める．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000694",
+        "K-000677",
+        "K-000678",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000696",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負切断の乗法則",
+      "statement": "非負切断の積は可換・結合的で，加法に対し分配的，L_1 を単位元とする．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        2,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000695",
+        "K-000692",
+        "K-000628"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000697",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "切断上の環構造",
+      "statement": "任意の切断は非負切断の差で表せる．非負切断の積は一意に全切断の分配的な積に拡張される．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        2,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000696",
+        "K-000693",
+        "K-000694",
+        "K-000249"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000698",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "正切断の乗法逆元",
+      "statement": "A>L_0 に対し B={q∈Q | q<1/b となる正の b∉A が存在} と置くと AB=L_1．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        2,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000697",
+        "K-000695",
+        "K-000686",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000699",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "実数体の存在",
+      "statement": "切断全体は完備な順序体をなし，有理数体を順序体として含む．",
+      "assumptions": [],
+      "position": [
+        80,
+        1,
+        2,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000697",
+        "K-000698",
+        "K-000694",
+        "K-000684",
+        "K-000639",
+        "K-000642"
+      ],
+      "status": "draft",
+      "source": "volumes/N-80/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000700",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "固有値と固有空間",
+      "statement": "線形自己写像 T の固有値 λ は ker(T−λid) が非零となるスカラーである．",
+      "assumptions": [],
+      "position": [
+        100,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000629",
+        "K-000633",
+        "K-000660"
+      ],
+      "status": "draft",
+      "source": "volumes/N-100/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000701",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "特性多項式",
+      "statement": "有限次元の線形自己写像 T の χ_T(t)=det(tI−A) は基底に依存せず，その K における根が固有値である．",
+      "assumptions": [],
+      "position": [
+        100,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000700",
+        "K-000689",
+        "K-000691",
+        "K-000663",
+        "K-000350",
+        "K-000351",
+        "K-000355"
+      ],
+      "status": "draft",
+      "source": "volumes/N-100/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000702",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "異なる固有値の固有空間の独立性",
+      "statement": "相異なる固有値 λ_i に属する固有空間の和は直和である．",
+      "assumptions": [],
+      "position": [
+        100,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000700",
+        "K-000100",
+        "K-000629"
+      ],
+      "status": "draft",
+      "source": "volumes/N-100/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000703",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "不変部分空間",
+      "statement": "部分空間 W が T(W)⊆W を満たすとき T 不変という．",
+      "assumptions": [],
+      "position": [
+        100,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000700",
+        "K-000630"
+      ],
+      "status": "draft",
+      "source": "volumes/N-100/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000704",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "三角化可能性の判定",
+      "statement": "有限次元 V の T が上三角化可能であることと χ_T が K 上で一次式の積に分解することは同値である．",
+      "assumptions": [],
+      "position": [
+        100,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000701",
+        "K-000703",
+        "K-000602",
+        "K-000635",
+        "K-000356"
+      ],
+      "status": "draft",
+      "source": "volumes/N-100/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000705",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "完備順序体",
+      "statement": "非空な上に有界な部分集合が必ず上限を持つ順序体を完備順序体という．",
+      "assumptions": [],
+      "position": [
+        81,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000699",
+        "K-000639",
+        "K-000073"
+      ],
+      "status": "draft",
+      "source": "volumes/N-81/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000706",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "完備順序体のArchimedes性",
+      "statement": "完備順序体は Archimedes 順序体であり，その有理数部分体は順序稠密である．",
+      "assumptions": [],
+      "position": [
+        81,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000645",
+        "K-000646",
+        "K-000648"
+      ],
+      "status": "draft",
+      "source": "volumes/N-81/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000707",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "下限の存在",
+      "statement": "完備順序体の非空な下に有界な集合 S は下限を持ち inf S=−sup(−S)．",
+      "assumptions": [],
+      "position": [
+        81,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000639",
+        "K-000073"
+      ],
+      "status": "draft",
+      "source": "volumes/N-81/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000708",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "上限と下限の近似",
+      "statement": "s=sup S であることは s が上界であり，任意の ε>0 に対して s−ε<a≤s なる a∈S が存在することと同値である．下限について双対が成立する．",
+      "assumptions": [],
+      "position": [
+        81,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000707",
+        "K-000073"
+      ],
+      "status": "draft",
+      "source": "volumes/N-81/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
+    },
+    {
+      "id": "K-000709",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非負元の平方根",
+      "statement": "完備順序体 F の各 a≥0 に対して b≥0 かつ b²=a なる b がただ一つ存在する．",
+      "assumptions": [],
+      "position": [
+        81,
+        1,
+        2,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000705",
+        "K-000708",
+        "K-000641"
+      ],
+      "status": "draft",
+      "source": "volumes/N-81/web.tex",
+      "review": "2026-11-27 本文・証明を執筆し自己点検．独立査読・文献該当箇所の照合・正式CLI検証は未了．"
     }
   ],
   "notes": [
@@ -22331,7 +23038,7 @@
       "number": 80,
       "title": "実数体の構成",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         12
       ],
@@ -22339,13 +23046,14 @@
         "切断上の加法・乗法・順序体公理"
       ],
       "treatise": "T-12",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 81,
       "title": "完備順序体",
       "area": "数体系",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         80
       ],
@@ -22353,7 +23061,8 @@
         "上限公理・Archimedes性・有理数の稠密性"
       ],
       "treatise": "T-12",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 82,
@@ -22615,7 +23324,7 @@
       "number": 99,
       "title": "行列式",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         98
       ],
@@ -22623,22 +23332,25 @@
         "交代多重線形性・積公式・逆行列"
       ],
       "treatise": "T-15",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 100,
       "title": "固有値と不変部分空間",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         98,
-        72
+        72,
+        99
       ],
       "goals": [
         "固有空間・特性多項式・三角化条件"
       ],
       "treatise": "T-15",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 101,

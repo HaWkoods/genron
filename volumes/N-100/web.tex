@@ -1,0 +1,98 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{固有空間と特性多項式}
+% genron:begin K-000700
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000629
+% genron:use K-000633
+% genron:use K-000660
+\begin{defn}[固有値と固有空間]
+体 $K$ 上の線形空間 $V$ の線形自己写像 $T$ について，$T(v)=\lambda v$ を満たす非零元 $v$ が存在するとき，$\lambda\in K$ を $T$ の固有値という．そのような $v$ を固有ベクトル，$E_\lambda=\ker(T-\lambda\mathrm{id}_V)$ を固有空間という．
+\end{defn}
+% genron:end K-000700
+% genron:begin K-000701
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000700
+% genron:use K-000689
+% genron:use K-000691
+% genron:use K-000663
+% genron:use K-000350
+% genron:use K-000351
+% genron:use K-000355
+\begin{prop}[特性多項式]
+$V$ を有限次元とし，基底に関する $T$ の行列を $A$ とする．多項式環上の行列式 $\chi_T(t)=\det(tI-A)$ は基底に依存しない．これは $\dim V$ 次のモニック多項式であり，$\lambda$ が固有値であることと $\chi_T(\lambda)=0$ は同値である．
+\end{prop}
+\begin{proof}
+基底変換による行列は $P^{-1}AP$ である．$tI-P^{-1}AP=P^{-1}(tI-A)P$ なので積公式から行列式が一致する．定義式で恒等置換の項だけが $t^n$ を含み，その係数は $1$ である．評価 $t\mapsto\lambda$ は環準同型であるから $\chi_T(\lambda)=\det(\lambda I-A)$ となる．これは $\lambda I-A$ が非可逆であること，従ってその核が非零であることと同値である．
+\end{proof}
+% genron:end K-000701
+% genron:begin K-000702
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000700
+% genron:use K-000100
+% genron:use K-000629
+\begin{prop}[異なる固有値の固有空間の独立性]
+$\lambda_1,\ldots,\lambda_m$ が相異なる固有値ならば，$E_{\lambda_1}+\cdots+E_{\lambda_m}$ は直和である．
+\end{prop}
+\begin{proof}
+$v_i\in E_{\lambda_i}$，$\sum_i v_i=0$ とする．$m=1$ は明らかである．$T-\lambda_m\mathrm{id}$ を適用すると $\sum_{i<m}(\lambda_i-\lambda_m)v_i=0$ となる．帰納法により各項は零であり，係数は非零なので $v_i=0$ ($i<m$) である．元の等式より $v_m=0$ も従う．
+\end{proof}
+% genron:end K-000702
+% genron:begin K-000703
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000700
+% genron:use K-000630
+\begin{defn}[不変部分空間]
+線形自己写像 $T:V\to V$ に対して，部分空間 $W$ が $T(W)\subseteq W$ を満たすとき $W$ を $T$ 不変という．この場合，$T|_W$ と商上の写像 $\overline T(v+W)=T(v)+W$ が定まる．後者の適法性は $v-v'\in W$ ならば $T(v-v')\in W$ であることによる．
+\end{defn}
+% genron:end K-000703
+% genron:begin K-000704
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000701
+% genron:use K-000703
+% genron:use K-000602
+% genron:use K-000635
+% genron:use K-000356
+\begin{prop}[三角化可能性の判定]
+有限次元線形空間の自己写像 $T$ がある基底に関して上三角行列で表されるための必要十分条件は，$\chi_T$ が $K$ 上で一次式の積に分解することである．
+\end{prop}
+\begin{proof}
+上三角行列の行列式は対角成分の積である．実際，定義式の非零項は $\sigma(j)\leq j$ をすべて満たすものに限られ，この条件から $\sigma$ は恒等置換である．従って必要性が従う．
+
+十分性を次元 $n$ に関する帰納法で示す．$n=0$ では明らかである．$n>0$ ならば根 $\lambda$ を取り，非零固有ベクトル $v$ を選ぶ．$W=Kv$ は不変である．$v$ を第一元とする基底において行列は第一列が $(\lambda,0,\ldots,0)^{\mathrm t}$ となる．残りの下右部分行列は商写像の行列であり，行列式の定義式から $\chi_T=(t-\lambda)\chi_{\overline T}$ となる．多項式環の簡約律により $\chi_{\overline T}$ も一次式の積である．帰納法で商空間の上三角表示基底を選び，その代表元を $v$ と合わせて基底を得る．この基底で $T$ の行列は上三角である．
+\end{proof}
+% genron:end K-000704

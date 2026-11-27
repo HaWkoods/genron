@@ -1,0 +1,96 @@
+% Web専用原稿．独立査読・所蔵文献該当箇所の照合は未了．
+\section{順序完備性}
+% genron:begin K-000705
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000699
+% genron:use K-000639
+% genron:use K-000073
+\begin{defn}[完備順序体]
+順序体 $F$ において，空でない上に有界な任意の部分集合が $F$ に属する上限を持つとき，$F$ を完備順序体という．切断によって構成した $\mathbb R$ は完備順序体である．
+\end{defn}
+% genron:end K-000705
+% genron:begin K-000706
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000645
+% genron:use K-000646
+% genron:use K-000648
+\begin{prop}[完備順序体のArchimedes性]
+任意の完備順序体 $F$ は Archimedes 順序体である．特に任意の $x<y$ に対して $x<r<y$ なる有理数部分体の元 $r$ が存在する．
+\end{prop}
+\begin{proof}
+自然数の像の集合が上に有界であると仮定し，その上限を $s$ とする．$s-1<s$ は上界ではないから $n>s-1$ なる自然数の像が存在する．しかし $n+1>s$ は $s$ の上界性に反する．従って自然数の像は上に非有界であり，Archimedes性の同値条件によって主張を得る．有理数部分体の稠密性は既出の Archimedes 順序体に関する命題による．
+\end{proof}
+% genron:end K-000706
+% genron:begin K-000707
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000639
+% genron:use K-000073
+\begin{prop}[下限の存在]
+完備順序体 $F$ の空でない下に有界な部分集合 $S$ は下限を持ち，$\inf S=-\sup(-S)$ である．
+\end{prop}
+\begin{proof}
+$S$ の下界 $a$ に対して $-a$ は $-S$ の上界である．従って $b=\sup(-S)$ が存在する．任意の $s\in S$ について $-s\leq b$，すなわち $-b\leq s$ である．任意の下界 $c$ に対し $-c$ は上界なので $b\leq-c$，すなわち $c\leq-b$ である．
+\end{proof}
+% genron:end K-000707
+% genron:begin K-000708
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000707
+% genron:use K-000073
+\begin{prop}[上限と下限の近似]
+空でない集合 $S$ と元 $s$ について，$s=\sup S$ であるための必要十分条件は $s$ が上界であり，任意の $\varepsilon>0$ に対し $s-\varepsilon<a\leq s$ なる $a\in S$ が存在することである．下限については不等号を反転した主張が成立する．
+\end{prop}
+\begin{proof}
+上限より小さい元は上界ではないので必要性を得る．逆に $t<s$ を上界と仮定すれば $\varepsilon=s-t$ に対する $a$ は $t<a$ を満たし矛盾する．従って $s$ は最小上界である．下限については $-S$ に適用する．
+\end{proof}
+% genron:end K-000708
+\section{平方根}
+% genron:begin K-000709
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000705
+% genron:use K-000708
+% genron:use K-000641
+\begin{prop}[非負元の平方根]
+完備順序体 $F$ の任意の $a\geq0$ に対して $b\geq0$，$b^2=a$ を満たす元 $b$ がただ一つ存在する．
+\end{prop}
+\begin{proof}
+$S=\{x\in F\mid 0\leq x,\ x^2\leq a\}$ とおく．$0\in S$ であり，$x>a+1$ ならば $x>1$ かつ $x>a$ なので $x^2>a$ である．従って $b=\sup S$ が存在し $b\geq0$ である．もし $b^2<a$ ならば $0<h<\min(1,(a-b^2)/(2b+1))$ と選ぶと $(b+h)^2<b^2+h(2b+1)<a$ となり上界性に反する．もし $b^2>a$ ならば $b>0$ であり，$0<h<\min(b,(b^2-a)/(2b))$ と選ぶと $(b-h)^2>a$ である．非負元の平方は狭義単調なので $b-h$ は $S$ の上界となり矛盾する．従って $b^2=a$ である．非負元の平方の狭義単調性は $0\leq x<y$ に対する $y^2-x^2=(y-x)(y+x)>0$ から従い，一意性も得られる．
+\end{proof}
+% genron:end K-000709
