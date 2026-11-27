@@ -1,0 +1,255 @@
+% Web専用原稿．
+% 構成案：入射性・Baer判定・整数加群の可除性・分数体の商・指標による埋込み・任意環で十分な入射加群．
+% 文献確認：Rotman, An Introduction to Homological Algebra, §3.2（Baer判定の適用例及びTheorem 3.38の埋込み証明本文，p.121,123を確認）．有理数構成を先取りせず局所化で分数体を得る．
+\section{入射加群}
+% genron:begin K-000548
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000335
+% genron:use K-000337
+% genron:use K-000338
+% genron:use K-000039
+% genron:use K-000041
+\begin{defn}[入射加群]
+環 $A$ 上の左加群 $E$ が入射加群であるとは，任意の左加群 $M$ とその部分加群 $N$ に対し，任意の準同型 $f:N\to E$ が準同型 $g:M\to E$ に延長されることをいう．延長の一意性は要求しない．単射準同型 $i:N\to M$ を用い $g\circ i=f$ を要求する定義と同値である．
+\end{defn}
+% genron:end K-000548
+% genron:begin K-000549
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000548
+% genron:use K-000466
+% genron:use K-000131
+% genron:use K-000343
+% genron:use K-000337
+% genron:use K-000342
+% genron:use K-000060
+\begin{prop}[Baerの判定法]
+左 $A$ 加群 $E$ が入射的であるための必要十分条件は，任意の左イデアル $I\subseteq A$ から $E$ への $A$ 準同型が $A$ 全体に延長されることである．
+\end{prop}
+\begin{proof}
+必要性は $A$ を左 $A$ 加群とみなせばよい．逆に条件を仮定し，$N\subseteq M$ と準同型 $f:N\to E$ を取る．$f$ の延長 $(P,g)$（$N\subseteq P\subseteq M$，$g|_N=f$）を定義域の包含と制限の一致で順序づける．鎖の合併上の函数は一意に定まり準同型であるから上界となり，\GenronRef{K-000131}$ により極大な延長 $(P,g)$ を得る．$x\in M\setminus P$ があると仮定する．$I=\{a\in A\mid ax\in P\}$ は左イデアルであり，$a\mapsto g(ax)$ は準同型 $I\to E$ となる．仮定により $A$ への延長 $h$ があり，$e=h(1)$ とすると $h(a)=ae$ である．そこで
+\[
+ \widetilde g(p+ax)=g(p)+ae
+\]
+と定める．$p+ax=p'+a'x$ なら $(a-a')x=p'-p\in P$ であるため $g(p')-g(p)=(a-a')e$ となり，値は表示によらない．加法と作用を保存することは定義式から従う．$P+Ax$ への真の延長となり極大性に反する．従って $P=M$ である．
+\end{proof}
+% genron:end K-000549
+\section{可換群の入射性}
+% genron:begin K-000550
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000321
+% genron:use K-000322
+% genron:use K-000325
+% genron:use K-000335
+% genron:use K-000165
+% genron:use K-000169
+% genron:use K-000108
+% genron:use K-000109
+\begin{prop}[可換群と整数加群]
+可換群 $M$ の加法に対し，自然数倍 $nx$ を $x$ の $n$ 個の和として定め，$[a,b]x=ax-bx$ とおくと $\mathbb Z$ 加群となる．この加群構造は加法群を固定すれば一意であり，加法群の準同型は $\mathbb Z$ 準同型である．
+\end{prop}
+\begin{proof}
+自然数倍の加法及び積の法則は有限和と帰納法から従う．$a+d=b+c$ なら $ax+dx=bx+cx$ なので整数倍は代表元によらない．整数の演算式と自然数倍の法則から四つの加群条件が従う．任意の加群構造において $1x=x$ と分配律により自然数倍が定まり，負の倍も定まるので一意である．加法準同型は有限和と逆元を保存するので整数倍も保存する．
+\end{proof}
+% genron:end K-000550
+% genron:begin K-000551
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000550
+% genron:use K-000327
+% genron:use K-000324
+% genron:use K-000108
+% genron:use K-000109
+% genron:use K-000103
+% genron:use K-000104
+% genron:use K-000113
+% genron:use K-000110
+% genron:use K-000101
+\begin{prop}[整数環のイデアルの生成]
+整数環 $\mathbb Z$ のイデアル $I$ はある自然数 $n$ によって $I=n\mathbb Z$ と表される．
+\end{prop}
+\begin{proof}
+$I=0$ なら $n=0$ でよい．そうでなければ符号を変えて正の元が得られるから，最小の正の元 $n\in I$ を取る．任意の非負元 $m\in I$ に対し $qn\leq m$ となる自然数 $q$ の集合を考える．これは $0$ を含み，$qn\geq q$ なので $\{0,\ldots,m\}$ の部分集合である．有限な全順序集合の非空部分集合は最大元を持つ（有限集合への一元の添加による帰納法）から最大の $q$ を取れる．$r=m-qn$ は非負であり，もし $r\geq n$ なら $(q+1)n\leq m$ となって矛盾する．従って $0\leq r<n$ である．$r\in I$ なので $n$ の最小性から $r=0$ である．負の元についても符号を変えて同じ結論を得る．$n\in I$ だから $n\mathbb Z\subseteq I$ であり，逆の包含も示された．
+\end{proof}
+% genron:end K-000551
+% genron:begin K-000552
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000550
+% genron:use K-000039
+\begin{defn}[可除可換群]
+可換群 $D$ が可除であるとは，任意の正の自然数 $n$ と $x\in D$ に対して $ny=x$ となる $y\in D$ が存在することをいう．
+\end{defn}
+% genron:end K-000552
+% genron:begin K-000553
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000552
+% genron:use K-000549
+% genron:use K-000551
+% genron:use K-000550
+% genron:use K-000444
+% genron:use K-000445
+\begin{prop}[可除性と整数加群の入射性]
+可換群 $D$ が可除であることと，$\mathbb Z$ 加群として入射的であることは同値である．
+\end{prop}
+\begin{proof}
+入射的とする．$n>0$ と $x\in D$ に対し $n\mathbb Z\to D$，$nk\mapsto kx$ は整数環の整域性により一意に定まる準同型である．これを $\mathbb Z$ へ延長して $1$ の像を $y$ とすれば $ny=x$ である．逆に可除とする．\GenronRef{K-000551}$ によりイデアルは $n\mathbb Z$ である．$n=0$ なら零写像は零写像に延長する．$n>0$ のとき準同型 $f:n\mathbb Z\to D$ に対し $ny=f(n)$ となる $y$ を取れば $k\mapsto ky$ が延長となる．\GenronRef{K-000549}$ を適用する．
+\end{proof}
+% genron:end K-000553
+\section{十分な入射対象}
+% genron:begin K-000554
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000454
+% genron:use K-000445
+% genron:use K-000340
+% genron:use K-000550
+% genron:use K-000552
+% genron:use K-000324
+% genron:use K-000108
+% genron:use K-000109
+\begin{prop}[分数体の加法商の可除性]
+整数環の分数体 $K=\operatorname{Frac}(\mathbb Z)$ を取り，加法群の商 $D=K/\mathbb Z$ を考える．$D$ は可除である．また $n>0$ に対し $1/n+\mathbb Z$ の加法に関する最小の正の零倍数は $n$ である．
+\end{prop}
+\begin{proof}
+任意の $k+\mathbb Z$ に対し $n(k/n+\mathbb Z)=k+\mathbb Z$ であるから可除である．$n(1/n+\mathbb Z)=0$ である．$0<m<n$ なら $m/n\notin\mathbb Z$ である．実際 $m/n=z\in\mathbb Z$ なら $m=nz$ であり，$z\leq0$ なら $m\leq0$，$z>0$ なら $m\geq n$ となり矛盾する．従って所要の最小性を得る．
+\end{proof}
+% genron:end K-000554
+% genron:begin K-000555
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000554
+% genron:use K-000553
+% genron:use K-000551
+% genron:use K-000550
+% genron:use K-000339
+% genron:use K-000341
+% genron:use K-000338
+\begin{prop}[整数加群の指標による分離]
+可換群 $M$ の非零元 $x$ に対し，$\chi(x)\ne0$ となる加法準同型 $\chi:M\to D$ が存在する．
+\end{prop}
+\begin{proof}
+写像 $\mathbb Z\to M$，$k\mapsto kx$ の核は $n\mathbb Z$ である．$x\ne0$ なので $n\ne1$ である．$n=0$ なら $kx\mapsto k(1/2+\mathbb Z)$ と定める．$n>1$ なら $kx\mapsto k(1/n+\mathbb Z)$ と定める．後者は $kx=lx$ なら $k-l\in n\mathbb Z$ であるから値が代表元によらない．どちらも巡回部分群から $D$ への準同型であり $x$ の像は非零である．$D$ は可除なので \GenronRef{K-000553}$ により入射的であり，この準同型は $M$ 全体に延長される．
+\end{proof}
+% genron:end K-000555
+% genron:begin K-000556
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000555
+% genron:use K-000552
+% genron:use K-000553
+% genron:use K-000456
+% genron:use K-000338
+% genron:use K-000060
+% genron:use K-000047
+\begin{prop}[可換群の入射加群への埋込み]
+任意の可換群 $M$ は入射的な $\mathbb Z$ 加群に単射準同型を持つ．
+\end{prop}
+\begin{proof}
+$D$ を前命題の群とし $I=\operatorname{Hom}_{\mathbb Z}(M,D)$ とおく．評価写像 $j:M\to D^I$，$j(m)=(\chi(m))_{\chi\in I}$ は準同型である．\GenronRef{K-000555}$ により非零元は非零成分を持つので単射である．$D^I$ は可除である．実際 $n>0$ について各座標で $n$ 倍の原像を取り，選択公理により原像の族を選べる．従って \GenronRef{K-000553}$ によって $D^I$ は入射的である．
+\end{proof}
+% genron:end K-000556
+% genron:begin K-000557
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000548
+% genron:use K-000550
+% genron:use K-000338
+% genron:use K-000459
+% genron:use K-000335
+\begin{prop}[整数加群からの入射加群]
+環 $A$ と入射的 $\mathbb Z$ 加群 $E$ に対して $J=\operatorname{Hom}_{\mathbb Z}(A,E)$ とおき，$(a\varphi)(b)=\varphi(ba)$ によって左 $A$ 加群構造を入れると $J$ は入射的である．
+\end{prop}
+\begin{proof}
+点ごとの加法に関して可換群である．右乗法 $b\mapsto ba$ は加法を保存するので作用が定まり，$(a(a'\varphi))(b)=\varphi((ba)a')=((aa')\varphi)(b)$ であり，分配律及び単位律も成立する．$N\subseteq M$ と $A$ 準同型 $f:N\to J$ を取る．$f_0(n)=f(n)(1)$ は加法準同型であり，$E$ の入射性から加法準同型 $g_0:M\to E$ に延長できる．$g(m)(b)=g_0(bm)$ と定めれば $g(m)$ は加法準同型であり，$g$ は加法を保存し $g(am)(b)=g_0((ba)m)=(ag(m))(b)$ なので $A$ 準同型である．$n\in N$ なら $g(n)(b)=f_0(bn)=f(bn)(1)=f(n)(b)$ であるから $g|_N=f$ となる．
+\end{proof}
+% genron:end K-000557
+% genron:begin K-000558
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000556
+% genron:use K-000557
+% genron:use K-000550
+% genron:use K-000338
+% genron:use K-000335
+\begin{prop}[十分な入射加群の存在]
+任意の環 $A$ 上の左加群 $M$ に対して，入射的左 $A$ 加群 $J$ と単射 $A$ 準同型 $M\to J$ が存在する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000556}$ により $M$ の加法群から入射的 $\mathbb Z$ 加群 $E$ への単射加法準同型 $j$ を取る．\GenronRef{K-000557}$ により $J=\operatorname{Hom}_{\mathbb Z}(A,E)$ は左 $A$ 加群として入射的である．$i(m)(a)=j(am)$ とおくと，$i(m)$ は加法準同型であり，$i$ は加法を保存する．$i(bm)(a)=j((ab)m)=(bi(m))(a)$ なので $A$ 準同型である．$i(m)=0$ なら $j(m)=i(m)(1)=0$ なので $m=0$ となり単射である．
+\end{proof}
+% genron:end K-000558
+% genron:begin K-000559
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000553
+% genron:use K-000454
+% genron:use K-000552
+% genron:use K-000445
+\begin{prop}[分数体の加法群の入射性]
+$K=\operatorname{Frac}(\mathbb Z)$ の加法群において正整数 $n$ による倍写像は $k\mapsto k/n$ を右逆に持つ．従って可除であり，$\mathbb Z$ 加群として入射的である．
+\end{prop}
+% genron:end K-000559

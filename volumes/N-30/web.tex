@@ -1,0 +1,152 @@
+% Web専用原稿．
+% 構成案：複体・鎖写像・完全性・短完全列・分裂・ホモロジーの基本．
+% 文献確認：Rotman, An Introduction to Homological Algebra（鎖複体と鎖写像の本文を確認，版・頁未確認）．加群の理論から独自に再構成．
+\section{複体と完全性}
+% genron:begin K-000533
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000321
+% genron:use K-000324
+% genron:use K-000335
+% genron:use K-000338
+% genron:use K-000339
+\begin{defn}[鎖複体]
+環 $A$ を固定する．整数 $n$ によって添字づけられた $A$ 加群 $C_n$ と $A$ 準同型 $d_n:C_n\to C_{n-1}$ が
+\[
+ d_{n-1}\circ d_n=0
+\]
+を満たすとき，$(C_\bullet,d)$ を鎖複体という．$d_n$ を微分又は境界写像という．この条件は $\operatorname{im}d_n\subseteq\ker d_{n-1}$ と同値である．
+\end{defn}
+% genron:end K-000533
+% genron:begin K-000534
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000533
+% genron:use K-000338
+\begin{defn}[鎖写像]
+鎖複体 $C_\bullet,D_\bullet$ の間の鎖写像 $f$ とは，準同型 $f_n:C_n\to D_n$ の族であって $d_n^D f_n=f_{n-1}d_n^C$ を満たすものをいう．恒等写像及び成分ごとの合成は鎖写像である．実際二つの可換等式を合成すれば合成の条件が得られる．
+\end{defn}
+% genron:end K-000534
+% genron:begin K-000535
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000339
+% genron:use K-000533
+\begin{defn}[完全列]
+加群及び準同型の列 $L\xrightarrow f M\xrightarrow g N$ が $M$ において完全であるとは $\operatorname{im}f=\ker g$ が成立することをいう．列の各中間項において完全であれば完全列という．従って完全列において隣接する二射の合成は零である．
+\end{defn}
+% genron:end K-000535
+% genron:begin K-000536
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000535
+% genron:use K-000339
+% genron:use K-000340
+% genron:use K-000341
+% genron:use K-000039
+\begin{prop}[短完全列と商加群]
+列
+\[
+ 0\longrightarrow L\xrightarrow{i}M\xrightarrow{p}N\longrightarrow0
+\]
+が完全であることと，$i$ が単射，$p$ が全射，$\operatorname{im}i=\ker p$ であることは同値である．これを短完全列という．このとき $M/i(L)$ は $N$ と標準的に同型である．
+\end{prop}
+\begin{proof}
+$L$ での完全性は $\ker i=0$，$N$ での完全性は $\operatorname{im}p=N$ を意味する．$M$ での完全性は定義どおりである．従って同値性を得る．最後は \GenronRef{K-000341}$ による．
+\end{proof}
+% genron:end K-000536
+% genron:begin K-000537
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000536
+% genron:use K-000457
+% genron:use K-000456
+% genron:use K-000339
+% genron:use K-000041
+\begin{prop}[短完全列の分裂]
+短完全列において $p\circ s=1_N$ となる準同型 $s:N\to M$ が存在することと，$r\circ i=1_L$ となる準同型 $r:M\to L$ が存在することは同値である．このとき列は分裂するといい，$M\simeq L\oplus N$ である．
+\end{prop}
+\begin{proof}
+$s$ があれば $m-s(p(m))\in\ker p=i(L)$ である．この元を $i$ で引き戻すと $r(m)$ が一意に定まり，加法及び作用を保存する．$r(i(l))=l$ である．写像 $(l,n)\mapsto i(l)+s(n)$ の逆は $m\mapsto(r(m),p(m))$ である．逆に $r$ があれば $p|_{\ker r}:\ker r\to N$ は単射である（その核は $i(L)\cap\ker r=0$）．任意の $n\in N$ に対し $p(m)=n$ となる $m$ を取り $m-i(r(m))$ とすれば $\ker r$ に属して像は $n$ なので全射である．逆準同型を包含と合成して $s$ を得る．
+\end{proof}
+% genron:end K-000537
+\section{ホモロジー}
+% genron:begin K-000538
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000533
+% genron:use K-000339
+% genron:use K-000340
+% genron:use K-000535
+\begin{defn}[サイクル・境界・ホモロジー]
+鎖複体 $C_\bullet$ に対し
+\[
+ Z_n(C)=\ker d_n,\quad B_n(C)=\operatorname{im}d_{n+1},
+ \qquad H_n(C)=Z_n(C)/B_n(C)
+\]
+とおく．それぞれサイクル加群，境界加群，ホモロジー加群という．複体の条件から $B_n(C)\subseteq Z_n(C)$ であるので商加群が定まる．$H_n(C)=0$ であることと $C_\bullet$ が $C_n$ において完全であることは同値である．
+\end{defn}
+% genron:end K-000538
+% genron:begin K-000539
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000538
+% genron:use K-000534
+% genron:use K-000341
+% genron:use K-000339
+\begin{prop}[鎖写像の誘導するホモロジー写像]
+鎖写像 $f:C_\bullet\to D_\bullet$ は $H_n(f):H_n(C)\to H_n(D)$，$[z]\mapsto[f_n(z)]$ を定める．この対応は恒等写像及び合成を保存する．
+\end{prop}
+\begin{proof}
+$z\in Z_n(C)$ なら $d_n^Df_n(z)=f_{n-1}d_n^C(z)=0$ である．また $z=d_{n+1}^C(c)$ なら $f_n(z)=d_{n+1}^Df_{n+1}(c)$ は境界である．従って代表元を変えても商加群での値は変わらず，商加群の演算により準同型となる．恒等及び合成の保存は代表元に適用すれば従う．
+\end{proof}
+% genron:end K-000539
+% genron:begin K-000540
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000538
+% genron:use K-000339
+\begin{prop}[微分が零の複体]
+任意の加群族 $(C_n)_{n\in\mathbb Z}$ に零写像を微分として入れれば鎖複体となる．この場合 $Z_n(C)=C_n$，$B_n(C)=0$ であるので $H_n(C)\simeq C_n$ である．
+\end{prop}
+% genron:end K-000540

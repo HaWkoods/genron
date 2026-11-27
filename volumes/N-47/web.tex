@@ -1,0 +1,134 @@
+% Web専用原稿．
+% 構成案：アルファベット・語・形式言語・集合演算と連接・Kleene閉包．
+% 文献確認：所蔵文献検索で形式言語に特化した資料本文を確認できなかった．既出の有限列と自由モノイドから独自に展開する．
+\section{形式言語}
+% genron:begin K-000541
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000423
+% genron:use K-000027
+% genron:use K-000024
+\begin{defn}[アルファベットと形式言語]
+集合 $\Sigma$ をアルファベットといい，その自由モノイド $\Sigma^*$ の元を語という．形式言語とは $\Sigma^*$ の部分集合である．空語を $\varepsilon$ と書く．空言語 $\varnothing$ と空語のみを含む言語 $\{\varepsilon\}$ は相異なる．アルファベットは有限とは限らない．
+\end{defn}
+% genron:end K-000541
+% genron:begin K-000542
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000541
+% genron:use K-000423
+% genron:use K-000118
+% genron:use K-000108
+\begin{prop}[語の長さ]
+語 $u$ の有限列としての長さを $|u|$ とする．任意の語 $u,v$ に対し $|uv|=|u|+|v|$ である．また $|u|=0$ となる語は $\varepsilon$ に限る．
+\end{prop}
+\begin{proof}
+連接は最初に $u$ の文字を，その後に $v$ の文字を置く有限列であるから長さは両者の長さの和である．長さ零の有限列は空列ただ一つである．
+\end{proof}
+% genron:end K-000542
+% genron:begin K-000543
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000541
+% genron:use K-000423
+% genron:use K-000037
+\begin{defn}[言語の連接]
+形式言語 $L,M\subseteq\Sigma^*$ に対し $LM=\{uv\mid u\in L,\ v\in M\}$ をその連接と定める．和，共通部分，差及び補集合は母集合 $\Sigma^*$ における集合演算とする．
+\end{defn}
+% genron:end K-000543
+% genron:begin K-000544
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000543
+% genron:use K-000423
+% genron:use K-000045
+% genron:use K-000163
+\begin{prop}[言語連接の演算法則]
+言語の連接は結合律を満たし，$\{\varepsilon\}$ を単位元，$\varnothing$ を吸収元とする．任意の言語族 $(L_i)$ と言語 $M$ に対し
+\[
+ (\bigcup_i L_i)M=\bigcup_i(L_iM),\qquad
+ M(\bigcup_iL_i)=\bigcup_i(ML_i)
+\]
+である．
+\end{prop}
+\begin{proof}
+語の連接が結合的であるから $u(vw)=(uv)w$ であり，両集合の任意の元は相互に他方に属する．単位元と吸収元の性質は定義による．第一の分配律について，左辺の元はある $i$ の $u\in L_i$ と $v\in M$ の連接であり，右辺の元である．逆の包含も定義により成立する．第二も同様である．
+\end{proof}
+% genron:end K-000544
+\section{反復と閉包}
+% genron:begin K-000545
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000543
+% genron:use K-000105
+% genron:use K-000168
+% genron:use K-000045
+\begin{defn}[言語のKleene閉包]
+言語 $L$ に対して $L^0=\{\varepsilon\}$，$L^{n+1}=L^nL$ と定め，
+\[
+ L^*=\bigcup_{n\in\mathbb N}L^n,\qquad
+ L^+=\bigcup_{n\geq1}L^n
+\]
+と書く．$L^*$ を $L$ の Kleene 閉包という．
+\end{defn}
+% genron:end K-000545
+% genron:begin K-000546
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000545
+% genron:use K-000174
+% genron:use K-000176
+% genron:use K-000169
+% genron:use K-000423
+\begin{prop}[Kleene閉包の最小性]
+$L^*$ は $L$ を含む自由モノイド $\Sigma^*$ の最小の部分モノイドである．従って $(L^*)^*=L^*$ である．
+\end{prop}
+\begin{proof}
+空語は $L^0$ に属し，$L=L^1\subseteq L^*$ である．$u\in L^m$，$v\in L^n$ なら連接の結合律によって $uv\in L^{m+n}$ であるから積で閉じる．$L$ を含む部分モノイドは帰納法によって全ての $L^n$ を含むので $L^*$ を含む．最小性から冪等性も従う．
+\end{proof}
+% genron:end K-000546
+% genron:begin K-000547
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000543
+% genron:use K-000545
+% genron:use K-000542
+\begin{prop}[二文字の言語の二乗]
+連接の二因子はともに $\varepsilon,a,b$ のいずれかである．空語を含む場合の結果は $\varepsilon,a,b$ であり，双方が一文字なら $aa,ab,ba,bb$ の四通りである．従って $L^2=\{\varepsilon,a,b,aa,ab,ba,bb\}$ である．
+\end{prop}
+% genron:end K-000547
