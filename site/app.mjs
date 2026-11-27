@@ -384,14 +384,48 @@ function webUrl(key,val){const u=new URL(url(key,val));u.searchParams.set("view"
 // Link explicit prose citations, never guess a target from a mathematical term.
 // A single-ID citation with a note/name prefix is linked as a whole;
 // other explicit IDs (including lists of IDs) remain independently clickable.
-function appendWebCitationText(target,text){
- const re=/N-\d+\s*の\s*[^（）\n，、。．；;]{1,80}（(K-\d{6})(?:[，、,]\s*[^（）\n]*)?）|(?<![A-Za-z0-9-])(K-\d{6})(?![A-Za-z0-9-])/g;
+function appendWebCitationText(target,text,metadata={}){
+ // Canonical Japanese titles are the visible reference; IDs are internal.
+ const refs=[];
+ const mark=id=>{const e=entries.get(id);if(!e)return id;const i=refs.push(e)-1;return "\uE000"+i+"\uE001"};
+ const escape=s=>s.replace(/[.*+?^$(){}|[\]\\]/g,"\\$&");
+ const aliases={
+  "K-000030":["集合演算の分配律"],"K-000035":["写像の指定"],
+  "K-000041":["逆写像による全単射の判定"],"K-000049":["非交和の定義"],
+  "K-000053":["同値類"],"K-000054":["同値関係と分割の対応"],
+  "K-000104":["最小元の原理"],"K-000116":["有限集合の直積の濃度"],
+  "K-000263":["左剰余類の定義"],"K-000131":["Zornの補題"]
+ };
+ // Old prose sometimes has a reference to several results in one parenthesis.
+ text=text.replace(/商集合自体の構成とその普遍性[（(]N-2\s*[,，]\s*K-000053\s*[,，]\s*K-000055[）)]/g,()=>mark("K-000053")+"と"+mark("K-000055"));
+ text=text.replace(/N-5\s*の\s*元の個数と整合する[（(]K-000111[）)]/g,()=>mark("K-000111")+"における元の個数と整合する");
+ text=text.replace(/N-5\s*の\s*有限集合の直積・部分集合に関する結果/g,()=>mark("K-000116")+"及び"+mark("K-000113"));
+ // Explicit numbered citations with a stable ID.
+ text=text.replace(/(?:N-\d+\s*の\s*)?(?:定義|命題|定理|規約|原理|公理|補題|系|構成)\s*\d+(?:\.\d+)+\s*[（(](K-\d{6})(?:[，,、]\s*[^（）()]*)?[）)]/g,(m,id)=>entries.has(id)?mark(id):m);
+ // Canonical title or a recorded legacy alias followed by an ID.
+ for(const e of entries.values()){
+  if(!text.includes(e.id)&&!text.includes("N-"+e.position[0]))continue;
+  const names=[e.title,...(aliases[e.id]??[])].sort((a,b)=>b.length-a.length).map(escape).join("|");
+  const n="N-"+e.position[0];
+  const p=new RegExp("(?:\\b"+n+"\\s*の\\s*)?(?:"+names+")\\s*(?:[（(]\\s*(?:"+n+"\\s*[,，]\\s*)?"+e.id+"(?:\\s*[,，]\\s*[^（）()]*)?\\s*[）)]|"+e.id+"(?![0-9]))","g");
+  text=text.replace(p,()=>mark(e.id));
+  // A note-qualified title without an ID is still unambiguous.
+  text=text.replace(new RegExp("\\b"+n+"\\s*の\\s*(?:"+names+")","g"),()=>mark(e.id));
+ }
+ // A parenthetical ID after an assertion is a citation rather than part of the title.
+ text=text.replace(/[（(]\s*(?:N-\d+\s*[,，]\s*)?(K-\d{6}(?:\s*[,，]\s*K-\d{6})*)\s*[）)]/g,(m,list)=>{
+  const ids=list.match(/K-\d{6}/g);return ids.every(id=>entries.has(id))?"（"+ids.map(mark).join("，")+"）":m
+ });
+ // Numeric-only references can be resolved only within the current note.
+ if(metadata.noteNumber)text=text.replace(/(?:定義|命題|定理|規約|原理|公理|補題|系|構成)\s*(\d+)\.(\d+)(?![\d.])/g,(m,s,i)=>{
+  const es=[...entries.values()].filter(e=>e.position[0]===metadata.noteNumber&&e.position.at(-2)===Number(s)&&e.position.at(-1)===Number(i));
+  return es.length===1?mark(es[0].id):m
+ });
+ text=text.replace(/(?<![A-Za-z0-9-])K-\d{6}(?![A-Za-z0-9-])/g,id=>entries.has(id)?mark(id):id);
  let last=0;
- for(const m of text.matchAll(re)){
+ for(const m of text.matchAll(/\uE000(\d+)\uE001/g)){
   target.append(document.createTextNode(text.slice(last,m.index)));
-  const id=m[1]??m[2],e=entries.get(id);
-  if(e){const a=anchor(m[0],webUrl("id",id),"web-citation");bindPreview(a,e);target.append(a)}
-  else target.append(document.createTextNode(m[0]));
+  const e=refs[Number(m[1])],a=anchor(e.title,webUrl("id",e.id),"web-citation");bindPreview(a,e);target.append(a);
   last=m.index+m[0].length;
  }
  target.append(document.createTextNode(text.slice(last)));
@@ -399,14 +433,14 @@ function appendWebCitationText(target,text){
 
 function renderProof(target,proof,metadata){
  const tex=proof.tex;
- const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\})/g;
+ const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\})/g;
  const macros=Object.fromEntries(Object.entries(metadata.macros??{}).map(([k,v])=>["\\"+k,v]));
- const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));appendWebCitationText(target,p.textContent);if(s.includes("\n\n"))target.append(node("br"))}};
+ const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));appendWebCitationText(target,p.textContent,metadata);if(s.includes("\n\n"))target.append(node("br"))}};
  let last=0;
  for(const m of tex.matchAll(pattern)){
   plain(tex.slice(last,m.index));last=m.index+m[0].length;
-  const token=m[0];const ref=token.match(/^\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
-  if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(ref[2]??e.title,webUrl("id",id));bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
+  const token=m[0];const ref=token.match(/^(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
+  if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(e.title,webUrl("id",id),"web-citation");bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
   const display=token.startsWith("\\[")||token.startsWith("$$")||token.startsWith("\\begin");
   let formula=token;
   if(token.startsWith("\\[" )||token.startsWith("$$"))formula=token.slice(2,-2);
@@ -450,7 +484,7 @@ function appendWebProof(section,proof,metadata){
  block.addEventListener("toggle",()=>{if(block.open)fitMath(body)});
 }
 function renderSourceEntry(section,e){
- const metadata=e.webProof;
+ const metadata={...e.webProof,noteNumber:e.position[0]};
  const re=/\\begin\{proof\}(?:\[([^\]]*)\])?([\s\S]*?)\\end\{proof\}/g;
  let last=0;
  for(const m of metadata.content.matchAll(re)){renderBookText(section,metadata.content.slice(last,m.index),metadata);appendWebProof(section,{title:m[1]??"証明",tex:m[2]},metadata);last=m.index+m[0].length}

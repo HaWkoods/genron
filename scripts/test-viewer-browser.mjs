@@ -98,7 +98,13 @@ try{
  await page.goto(origin+"?id=K-000057&view=web");
  const citation=page.locator("#K-000057 a.web-citation[href*='id=K-000047']");
  await citation.waitFor();
- assert.match(await citation.innerText(),/定義 4\.4.*写像の集合と直積族/);
+ assert.equal(await citation.innerText(),"写像の集合と直積族");
+ assert.doesNotMatch(await page.locator("#K-000057 .web-paragraph").allTextContents().then(xs=>xs.join(" ")),/N-2\s*の\s*定義|K-000047/);
+ const localRef=page.locator("#K-000060 a.web-citation[href*='id=K-000057']");
+ assert.equal(await localRef.innerText(),"選択函数");
+ assert.doesNotMatch(await page.locator("#K-000060 .web-paragraph").allTextContents().then(xs=>xs.join(" ")),/定義選択函数/);
+ const numericRef=page.locator("#K-000016 a.web-citation[href*='id=K-000015']");
+ assert.equal(await numericRef.innerText(),"量化と論理結合子");
  await citation.hover();
  await page.locator("#preview:not([hidden])").waitFor();
  assert.match(await page.locator("#preview").innerText(),/写像の集合と直積族/);
