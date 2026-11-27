@@ -122,3 +122,116 @@ $a,b\in I,\ a<b$ とし，$f(a)<c<f(b)$ とする．$S=\{x\in[a,b]\mid f(x)\leq 
 \GenronRef{K-000888} によって閉有界区間はコンパクト距離空間である．\GenronRef{K-000844} を適用すればよい．
 \end{proof}
 % genron:end K-000892
+\section{実指数冪と基本不等式}
+% L^p 空間の前提として追記．論証は独自構成．
+% genron:begin K-000927
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000168
+% genron:use K-000169
+% genron:use K-000763
+% genron:use K-000890
+% genron:use K-000891
+\begin{prop}[非負実数の自然数乗根]
+任意の整数 $n\geq1$ と非負実数 $a$ に対し，$u^n=a$ を満たす非負実数 $u$ はただ一つ存在する．これを $a^{1/n}$ と記す．$a\mapsto a^{1/n}$ は連続で狭義増加である．
+\end{prop}
+\begin{proof}
+$u\mapsto u^n$ は積と極限の両立により連続であり，非負実数上で狭義増加である．$0^n=0$ であり $b=\max(1,a)$ とすれば $b^n\geq a$ であるから，\GenronRef{K-000890} によって $[0,b]$ 内に解がある．狭義増加性が一意性を与え，\GenronRef{K-000891} によって逆写像は連続である．
+\end{proof}
+% genron:end K-000927
+% genron:begin K-000928
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000927
+% genron:use K-000169
+% genron:use K-000641
+% genron:use K-000642
+\begin{prop}[正実数の有理数冪]
+$a>0$ に対して $a^{m/n}=(a^{1/n})^m$（$m$ は整数，$n$ は正整数，負冪は逆元で定める）とおくと，分数の表示によらない．有理数 $r,s$ に対して $a^{r+s}=a^ra^s$，$(ab)^r=a^rb^r$，$(a^r)^s=a^{rs}$ が成立する．$a>1$ なら $r\mapsto a^r$ は狭義増加である．
+\end{prop}
+\begin{proof}
+$m/n=m'/n'$ の場合，二つの正実数を $nn'$ 乗するとそれぞれ $a^{mn'}$ と $a^{m'n}$ となって一致する．乗根の一意性により元も等しい．加法の公式は通分して自然数冪及び整数冪の公式を使えばよい．積の公式は分母の自然数乗を取って一致を示す．合成の公式も両分母の積を指数とする自然数乗を取れば一致する．$a>1,r<s$ なら $s-r$ は正有理数で $a^{s-r}>1$ だから狭義増加性が従う．
+\end{proof}
+% genron:end K-000928
+% genron:begin K-000929
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000927
+% genron:use K-000928
+% genron:use K-000100
+% genron:use K-000648
+% genron:use K-000706
+% genron:use K-000763
+% genron:use K-000770
+\begin{prop}[正実数の実指数冪]
+任意の $a>0$ に対し，有理数上の函数 $r\mapsto a^r$ を連続に実数全体へ延長した函数 $t\mapsto a^t$ がただ一つ存在する．実数 $s,t$ について $a^{s+t}=a^sa^t$，$(ab)^t=a^tb^t$，$(a^s)^t=a^{st}$ が成立する．$a>1$ なら指数に関して狭義増加である．
+\end{prop}
+\begin{proof}
+まず $a>1$ とする．$(1+\varepsilon)^n\geq1+n\varepsilon$ は帰納法で従うので，任意の $\varepsilon>0$ に対し十分大きい $n$ では $1\leq a^{1/n}<1+\varepsilon$ となる．従って $a^{1/n}\to1$ である．有理数 $r,s$ が $|r-s|<1/n$ を満たすとき
+\[
+a^{-1/n}\leq a^{r-s}\leq a^{1/n}.
+\]
+有理数列 $(r_j)$ が有限の実数に収束すれば，整数 $M$ によって $|r_j|\leq M$ とでき，$a^{-M}\leq a^{r_j}\leq a^M$ である．上の評価から $(a^{r_j})$ は Cauchy 列であり，実数の完備性によって正の実数に収束する．二つの有理数列が同じ極限を持つ場合，交互に並べた列にも同じ議論が適用できるので極限は一致する．有理数の稠密性によってすべての実数 $t$ についてこの極限で $a^t$ を定める．$|s-t|<1/n$ のとき上の比の評価は有理数近似から実数にも移り，指数に関する連続性が従う．狭義増加性については $t-s>0$ のとき $0<q<t-s$ となる有理数 $q$ を取り，近似から $a^{t-s}\geq a^q>1$ を得る．$a=1$ では定数函数，$0<a<1$ では $a^t=(1/a)^{-t}$ と定めればよい．
+加法及び積の公式は有理数近似によって実数指数に移る．合成についてはまず $t=m/n$ の場合，$(a^s)^t$ と $a^{st}$ の $n$ 乗が $(a^s)^m=a^{sm}$ に等しいことを使う．任意の実数 $t$ には指数に関する連続性を適用する．連続延長の一意性は有理数の稠密性から従う．
+\end{proof}
+% genron:end K-000929
+% genron:begin K-000930
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000927
+% genron:use K-000929
+% genron:use K-000764
+\begin{prop}[底に関する実指数冪の連続性]
+固定した実数 $t$ について $a\mapsto a^t$ は $(0,\infty)$ 上で連続である．$t>0$ の場合は $0^t=0$ と定めることにより非負実数全体上で連続かつ狭義増加となる．
+\end{prop}
+\begin{proof}
+$b\geq1$ とし，整数 $M>|t|$ を取れば $b^{-M}\leq b^t\leq b^M$ である．$b$ が $1$ に近づくと両端が $1$ に近づく．$0<b<1$ も $1/b$ に同じ評価を適用できる．$a\to a_0>0$ に対し $a^t=a_0^t(a/a_0)^t$ であるから連続性を得る．$t>0$ なら $a>b>0$ のとき $(a/b)^t>1$ なので狭義増加である．$0<a<1$ とし $1/n<t$ なる自然数 $n$ を取れば $0<a^t\leq a^{1/n}$ となり，\GenronRef{K-000927} の連続性によって $a\to0$ のとき $a^t\to0$ である．
+\end{proof}
+% genron:end K-000930
+% genron:begin K-000931
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000927
+% genron:use K-000928
+% genron:use K-000929
+% genron:use K-000930
+% genron:use K-000100
+% genron:use K-000648
+\begin{prop}[重み付き相加相乗平均不等式とYoungの不等式]
+非負実数 $u,v$ と $0<\theta<1$ に対し $u^\theta v^{1-\theta}\leq\theta u+(1-\theta)v$ が成立する．特に $1<p,q<\infty,\ 1/p+1/q=1$ なら任意の $a,b\geq0$ について $ab\leq a^p/p+b^q/q$ が成立する．
+\end{prop}
+\begin{proof}
+まず正実数 $x_1,\ldots,x_n$ の相加平均が相乗平均以上であることを示す．二数の場合は $(\sqrt{x_1}-\sqrt{x_2})^2\geq0$ から従う．$n=2^k$ の場合は二組に分け，帰納法と二数の場合を適用する．一般の $n$ については $2^k\geq n$ を取り，$2^k-n$ 個の項としてもとの相加平均 $A$ を加える．$2^k$ 個の相加平均も $A$ なので $x_1\cdots x_n A^{2^k-n}\leq A^{2^k}$ となり，元の不等式が従う．
+$\theta=m/n$ が有理数の場合，$u$ を $m$ 個，$v$ を $n-m$ 個並べて適用すればよい．正の $u,v$ について指数に関する連続性を用いて任意の $\theta$ に拡張する．一方が零の場合は自明である．$\theta=1/p,u=a^p,v=b^q$ と代入すれば Young の不等式となる．
+\end{proof}
+% genron:end K-000931

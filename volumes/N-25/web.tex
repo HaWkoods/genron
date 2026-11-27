@@ -1,0 +1,200 @@
+% Web専用原稿．独立査読未了．
+% 参考確認（2026-11-27）：Bogachev–Smolyanov, Real and Functional Analysis, 2020, 3.8.1 および Minkowski 不等式の証明を照合．完備性は部分列の級数から独自論証．
+\section{L^p 空間と完備性}
+% genron:begin K-000932
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000930
+% genron:use K-000755
+% genron:use K-000758
+% genron:use K-000783
+% genron:use K-000786
+% genron:use K-000824
+% genron:use K-000825
+% genron:use K-000829
+\begin{defn}[L^p 可積分函数と同値類]
+測度空間 $(X,\mathcal A,\mu)$ と $\mathbb K=\mathbb R$ 又は $\mathbb C$ を固定する．$1\leq p<\infty$ に対し $\int_X|f|^p\,d\mu<\infty$ を満たす $\mathbb K$ 値可測函数 $f$ を $p$ 乗可積分函数という．ほとんど至る所の相等による同値類全体を $L^p(\mu)$ と記し，代表元 $f$ の類に $\|f\|_p=(\int |f|^p\,d\mu)^{1/p}$ を対応させる．
+\end{defn}
+\begin{proof}
+$|f|^p$ は \GenronRef{K-000930} の連続性によって可測である．ほとんど至る所の相等は同値関係であり，零集合上での積分の不変性によって値は代表元によらない．$\|f\|_p=0$ は \GenronRef{K-000786} によって $f=0$ ほとんど至る所と同値である．以後同値類を代表元と同じ記号で表す．
+\end{proof}
+% genron:end K-000932
+% genron:begin K-000933
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000932
+% genron:use K-000929
+% genron:use K-000931
+% genron:use K-000783
+% genron:use K-000785
+% genron:use K-000829
+\begin{prop}[Hölderの不等式]
+$1<p,q<\infty,\ 1/p+1/q=1$ とする．$f\in L^p(\mu),g\in L^q(\mu)$ なら $fg$ は可積分であり，$\int|fg|\,d\mu\leq\|f\|_p\|g\|_q$ が成立する．
+\end{prop}
+\begin{proof}
+いずれかのノルムが零なら積はほとんど至る所零である．両者が正なら \GenronRef{K-000931} を $|f|/\|f\|_p$ と $|g|/\|g\|_q$ に適用する．
+\[
+\frac{|fg|}{\|f\|_p\|g\|_q}
+\leq\frac{|f|^p}{p\|f\|_p^p}+\frac{|g|^q}{q\|g\|_q^q}.
+\]
+右辺の積分は $1/p+1/q=1$ であるから主張を得る．
+\end{proof}
+% genron:end K-000933
+% genron:begin K-000934
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000932
+% genron:use K-000933
+% genron:use K-000929
+% genron:use K-000930
+% genron:use K-000720
+% genron:use K-000785
+\begin{prop}[Minkowskiの不等式]
+$1\leq p<\infty$ とする．$f,g\in L^p(\mu)$ なら $f+g\in L^p(\mu)$ であり，$\|f+g\|_p\leq\|f\|_p+\|g\|_p$ が成立する．
+\end{prop}
+\begin{proof}
+$p=1$ では絶対値の三角不等式から従う．$p>1$ の場合，$|f+g|\leq2\max(|f|,|g|)$ であるから $|f+g|^p\leq2^p(|f|^p+|g|^p)$ となり，可積分性が従う．$q=p/(p-1)$ とすると $|f+g|^{p-1}$ は $q$ 乗可積分である．\GenronRef{K-000933} を二度適用して
+\[
+\begin{aligned}
+\|f+g\|_p^p
+&\leq\int |f||f+g|^{p-1}+\int |g||f+g|^{p-1}\\
+&\leq(\|f\|_p+\|g\|_p)\|f+g\|_p^{p-1}.
+\end{aligned}
+\]
+$\|f+g\|_p=0$ の場合は自明であり，それ以外は正の値で割って結論を得る．
+\end{proof}
+% genron:end K-000934
+% genron:begin K-000935
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000932
+% genron:use K-000934
+% genron:use K-000560
+% genron:use K-000788
+% genron:use K-000929
+% genron:use K-000785
+\begin{prop}[L^p のノルム空間構造]
+$1\leq p<\infty$ に対して $L^p(\mu)$ は各点演算から誘導される線形空間であり，$\|\cdot\|_p$ はノルムである．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000934} と実指数冪の積の公式から和とスカラー倍に閉じる．ほとんど至る所の相等はこれらの演算に関して保存されるので同値類上の演算は適法であり，線形空間の公理は函数の演算から従う．斉次性は積分の斉次性と実指数冪の積の公式による．正定値性は \GenronRef{K-000932} の証明で示されており，三角不等式は \GenronRef{K-000934} である．
+\end{proof}
+% genron:end K-000935
+% genron:begin K-000936
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000932
+% genron:use K-000934
+% genron:use K-000935
+% genron:use K-000060
+% genron:use K-000759
+% genron:use K-000784
+% genron:use K-000831
+% genron:use K-000795
+% genron:use K-000738
+% genron:use K-000794
+% genron:use K-000810
+% genron:use K-000811
+\begin{prop}[L^p 空間の完備性]
+任意の測度空間と $1\leq p<\infty$ に対し，$L^p(\mu)$ は Banach 空間である．
+\end{prop}
+\begin{proof}
+$(f_n)$ を $L^p$ の Cauchy 列とする．狭義増加する添字列 $(n_j)$ を $\|f_{n_{j+1}}-f_{n_j}\|_p\leq2^{-j}$ となるように選ぶ．各類の可測代表元を選び，$d_j=f_{n_{j+1}}-f_{n_j}$ とおく．$s_m=\sum_{j=1}^m|d_j|$ に対して \GenronRef{K-000934} の反復から $\|s_m\|_p\leq1$ となる．$s=\sup_m s_m$ とすれば単調収束定理によって $\int s^p\,d\mu\leq1$ である（$s=\infty$ では $s^p=\infty$ と約束する）．従って $s<\infty$ はほとんど至る所成立し，その集合上では $\mathbb K$ の完備性により級数 $\sum_j d_j$ は絶対収束する．$f=f_{n_1}+\sum_jd_j$ をそこで定め，例外集合で零とする．これは可測であり，$|f|\leq |f_{n_1}|+s$ がほとんど至る所成立するので $p$ 乗可積分である．
+さらに $s^{(J)}=\sum_{j\geq J}|d_j|$ についても有限部分和への \GenronRef{K-000934} と単調収束定理から $\|s^{(J)}\|_p\leq\sum_{j\geq J}2^{-j}$ を得る．従って $\|f-f_{n_J}\|_p\to0$ である．Cauchy 性と三角不等式により元の列も $f$ に収束する．
+\end{proof}
+% genron:end K-000936
+% genron:begin K-000937
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000708
+% genron:use K-000715
+% genron:use K-000749
+% genron:use K-000824
+% genron:use K-000825
+\begin{defn}[本質的上限とL^∞ 空間]
+$\mathbb K$ 値可測函数 $f$ に対し，$\|f\|_\infty=\inf\{C\geq0\mid |f|\leq C\ \text{ほとんど至る所}\}$ と定める．この値が有限である函数を本質的有界函数といい，ほとんど至る所の相等による同値類全体を $L^\infty(\mu)$ と記す．
+\end{defn}
+\begin{proof}
+定義の下限が有限であれば，各正整数 $n$ について $|f|\leq\|f\|_\infty+1/n$ がほとんど至る所成立する．例外集合の可算合併が零集合なので $|f|\leq\|f\|_\infty$ もほとんど至る所成立する．従って下限は実現する．同値類上の値は代表元によらない．
+\end{proof}
+% genron:end K-000937
+% genron:begin K-000938
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000937
+% genron:use K-000060
+% genron:use K-000749
+% genron:use K-000759
+% genron:use K-000788
+% genron:use K-000794
+% genron:use K-000795
+\begin{prop}[L^∞ 空間のBanach性]
+$L^\infty(\mu)$ は各点演算から誘導される線形空間であり，$\|\cdot\|_\infty$ をノルムとする Banach 空間である．
+\end{prop}
+\begin{proof}
+定義の評価によって和とスカラー倍に閉じる．ノルムの正定値性，斉次性，三角不等式はほとんど至る所の評価から従う．Cauchy 列 $(f_n)$ に可測代表元を選ぶ．各 $n,m$ について $|f_n-f_m|\leq\|f_n-f_m\|_\infty$ がほとんど至る所成立する．また $|f_n|\leq\|f_n\|_\infty$ もほとんど至る所成立する．これらの例外集合の可算合併を $N$ とすれば，$X\setminus N$ ではすべての不等式が同時に成立する．よって代表元は $X\setminus N$ 上で一様 Cauchy であり，各点極限 $f$ を持つ．$N$ 上で零と定めれば $f$ は可測で，本質的有界である．Cauchy 性の評価において $m\to\infty$ とすれば $\|f_n-f\|_\infty\to0$ となる．
+\end{proof}
+% genron:end K-000938
+% genron:begin K-000939
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000932
+% genron:use K-000937
+% genron:use K-000785
+% genron:use K-000825
+% genron:use K-000829
+\begin{prop}[Hölderの端点の場合]
+$f\in L^1(\mu),g\in L^\infty(\mu)$ なら $fg\in L^1(\mu)$ であり，$\|fg\|_1\leq\|f\|_1\|g\|_\infty$ が成立する．
+\end{prop}
+\begin{proof}
+\GenronRef{K-000937} から $|fg|\leq\|g\|_\infty |f|$ がほとんど至る所成立する．積分の単調性及び斉次性を用いればよい．
+\end{proof}
+% genron:end K-000939
