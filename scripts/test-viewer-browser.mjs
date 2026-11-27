@@ -107,6 +107,33 @@ try{
  assert.ok(await page.locator(".notation-table tbody tr:visible").count()>0);
  await page.setViewportSize({width:1440,height:1000});
  assert.deepEqual(errors,[],"Native catalogue JavaScript errors");
+ // Independently compute knowledge depth from the full exported dependency lists.
+ const byKnowledgeId=new Map(planData.entries.map(e=>[e.id,e]));
+ const ranks=new Map();
+ function rankKnowledge(id){
+  if(ranks.has(id))return ranks.get(id);
+  const e=byKnowledgeId.get(id);
+  assert.ok(e,"Missing dependency "+id);
+  const depth=Math.max(0,...(e.depends_on??[]).map(d=>rankKnowledge(d)+1));
+  ranks.set(id,depth);return depth;
+ }
+ const expectedPanel=e=>(e.depends_on??[]).filter(id=>{
+  const gap=rankKnowledge(e.id)-rankKnowledge(id);
+  return gap>=1&&gap<=2;
+ });
+ for(const e of planData.entries)assert.equal(e.knowledge_depth,rankKnowledge(e.id),"Exported knowledge depth "+e.id);
+ const filtered=planData.entries.find(e=>expectedPanel(e).length>0&&expectedPanel(e).length<e.depends_on.length);
+ assert.ok(filtered,"Need a regression case with both recent and distant dependencies");
+ await page.goto(origin+"?id="+filtered.id+"&view=web");
+ await page.locator("#"+filtered.id+".web-entry").waitFor();
+ const renderedPanels=await page.locator(".web-entry").evaluateAll(elements=>elements.map(el=>({id:el.id,panels:el.querySelectorAll(":scope > .web-dependencies").length,refs:[...el.querySelectorAll(":scope > .web-dependencies a")].map(a=>new URL(a.href).searchParams.get("id"))})));
+ for(const item of renderedPanels){
+  const expected=expectedPanel(byKnowledgeId.get(item.id));
+  assert.deepEqual(item.refs,expected,"Two-layer dependency panel "+item.id);
+  assert.equal(item.panels,expected.length?1:0,"Empty dependency panel "+item.id);
+ }
+ assert.ok(filtered.depends_on.some(id=>!expectedPanel(filtered).includes(id)),"Distant edges remain in exported data");
+ assert.deepEqual(errors,[],"Dependency panel JavaScript errors");
  // Native Web reader prototype: direct HTML, stable IDs and legacy escape hatch.
  await page.goto(origin+"?note=1&view=web");
  await page.locator(".web-article").waitFor();

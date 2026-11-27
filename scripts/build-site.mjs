@@ -1,4 +1,4 @@
-import {planGraph,noteDisplayNumber,entryDisplayNumber,headingKind} from "./knowledge-core.mjs";
+import {graph,planGraph,noteDisplayNumber,entryDisplayNumber,headingKind} from "./knowledge-core.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
@@ -60,7 +60,11 @@ for(const n of verified){
  const publicNotes=verified.map(({number,title,area,goals,depends_on,treatise,web_only})=>({number,display_number:noteDisplayNumber(ledger,number),title,area,goals,depends_on,treatise,web_only:!!web_only}));
  const depth=new Map(planGraph(ledger).layers.flatMap((ids,i)=>ids.map(id=>[Number(id.slice(2)),i])));
  const plan=ledger.notes.filter(n=>n.status!=="retired").map(({number,title,area,goals,depends_on,treatise,status,web_only})=>({number,display_number:noteDisplayNumber(ledger,number),title,area,goals,depends_on,treatise,status,web_only:!!web_only,depth:depth.get(number)}));
- const publicEntries=entries.map(({id,kind,heading_kind,problem_tex,title,statement,assumptions,position,depends_on})=>({id,heading_kind:headingKind({kind,heading_kind}),problem_tex,display_number:entryDisplayNumber(ledger,{position}),kind,title,statement,assumptions,position,depends_on,webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
+ // Knowledge layers use the individual-entry DAG, not the note plan or display numbers.
+ const knowledgeGraph=graph({...ledger,entries},"knowledge");
+ if(knowledgeGraph.unordered.length)throw Error("Cyclic published knowledge graph");
+ const knowledgeDepth=new Map(knowledgeGraph.layers.flatMap((ids,i)=>ids.map(id=>[id,i])));
+ const publicEntries=entries.map(({id,kind,heading_kind,problem_tex,title,statement,assumptions,position,depends_on})=>({id,heading_kind:headingKind({kind,heading_kind}),problem_tex,display_number:entryDisplayNumber(ledger,{position}),kind,title,statement,assumptions,position,depends_on,knowledge_depth:knowledgeDepth.get(id),webProof:webProofs.get(id),preview:{statement:previewParts(statement),assumptions:previewParts(assumptions.join("；"))}}));
  fs.writeFileSync(path.join(out,"data.json"),JSON.stringify({referenceOrigin:base.origin,referencePath:base.pathname,notes:publicNotes,aliases:ledger.note_aliases??{},entries:publicEntries,notation:webNotation,parts:ledger.parts??[],treatises:ledger.treatises??[],plan})+"\n");
  fs.writeFileSync(path.join(out,".nojekyll"),"");
  console.log("Web-only site: "+verified.length+" notes, "+entries.length+" entries; no PDF assets.");

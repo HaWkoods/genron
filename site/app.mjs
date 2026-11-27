@@ -399,7 +399,14 @@ function showWeb(info,restore){
    section.append(heading);
    const link=anchor(entryNumber(e)+"　"+e.title,"#"+e.id,"web-toc-entry");bindPreview(link,e);side.append(link);
    renderEntryContent(section,e);
-   if(e.depends_on?.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of e.depends_on){const ref=entries.get(id);if(!ref)continue;const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
+   // Restrict only the reference panel, not the knowledge graph or inline citations.
+   const visibleDependencies=(e.depends_on??[]).filter(id=>{
+    const ref=entries.get(id);
+    if(!ref||!Number.isInteger(e.knowledge_depth)||!Number.isInteger(ref.knowledge_depth))return false;
+    const gap=e.knowledge_depth-ref.knowledge_depth;
+    return gap>=1&&gap<=2;
+   });
+   if(visibleDependencies.length){const d=node("details","web-dependencies");d.append(node("summary","muted","参照する知識"));for(const id of visibleDependencies){const ref=entries.get(id);const a=anchor(ref.title,webUrl("id",id));bindPreview(a,ref);const row=node("div");row.append(a);d.append(row)}section.append(d)}
    chapter.append(section);
   }
   article.append(chapter);
