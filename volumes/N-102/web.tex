@@ -1,0 +1,111 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{Jordan標準形}
+% genron:begin K-001605
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000657
+\begin{defn}[Jordanブロック]
+$\lambda\in K$，$m\geq1$ に対し対角成分 $\lambda$，直上の成分 $1$，他の成分 $0$ の $m$ 次正方行列を $J_m(\lambda)$ と書く．
+\end{defn}
+% genron:end K-001605
+% genron:begin K-001606
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000838
+% genron:use K-000839
+\begin{prop}[自己準同型からの多項式加群]
+有限次元 $K$ 線形空間 $V$ の自己準同型 $u$ に対し $f\cdot v=f(u)v$ と定めれば $V$ は有限生成捩れ $K[X]$ 加群となる．
+\end{prop}
+\begin{proof}
+多項式の代入は環準同型であるから加群の公理を満たす．$K$ 基底は加群の生成系であり，Cayley–Hamiltonの定理によって非零多項式が全ての元を消す．
+\end{proof}
+% genron:end K-001606
+% genron:begin K-001607
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001606
+% genron:use K-001390
+% genron:use K-001121
+% genron:use K-001122
+% genron:use K-000840
+% genron:use K-001235
+\begin{prop}[巡回成分への分解]
+$u$ の最小多項式が一次式の積に分解するなら多項式加群 $V$ は $K[X]/((X-\lambda)^m)$ の有限直和に同型である．
+\end{prop}
+\begin{proof}
+$K[X]$ はEuclid整域である．PID上の有限生成加群の構造を用いると捩れ性により自由部分は零で，各巡回成分の消去イデアルの生成元は最小多項式を割る．互いに素な多項式 $a,b$ について $ra+sb=1$ とすれば剰余写像 $K[X]/(ab)\to K[X]/(a)\oplus K[X]/(b)$ は単射で，$(x,y)$ は $sbx+ray$ の類の像である．これを反復して一次式の冪ごとに分ける．
+\end{proof}
+% genron:end K-001607
+% genron:begin K-001608
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001605
+% genron:use K-001607
+% genron:use K-000840
+\begin{prop}[Jordan標準形の存在]
+最小多項式が一次式の積に分解することと，ある基底での表示行列がJordanブロックの直和となることは同値である．
+\end{prop}
+\begin{proof}
+各巡回成分で $z=X-\lambda$ とし，$z^{m-1},z^{m-2},\ldots,1$ の剰余類を順に基底とする．$X=\lambda+z$ による乗法は $J_m(\lambda)$ で表される．全成分の基底を連接すれば所望の行列となる．逆に各ブロックは $(X-\lambda)^m$ で消えるので最小多項式はこれらの積を割る．
+\end{proof}
+% genron:end K-001608
+% genron:begin K-001609
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001608
+% genron:use K-000604
+% genron:use K-000629
+\begin{prop}[Jordan標準形の一意性]
+各固有値 $\lambda$ と各大きさ $k$ のブロックの個数は $2d_k-d_{k-1}-d_{k+1}$ である．ただし $d_k=\dim\ker(u-\lambda\mathrm{id})^k$，$d_0=0$ とする．
+\end{prop}
+\begin{proof}
+固有値 $\lambda$ の大きさ $m$ のブロックの核次元への寄与は $\min(m,k)$ である．他の固有値のブロックでは非零スカラー倍の恒等写像と冪零写像の和が有限等比和による逆元を持つので寄与は零である．よって $d_k-d_{k-1}$ は大きさ $k$ 以上のブロック数であり，差を取れば公式を得る．
+\end{proof}
+% genron:end K-001609
+% genron:begin K-001610
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001609
+\begin{example}[冪零行列のJordan標準形]
+次元六の冪零写像について $d_1=2,d_2=4,d_3=5,d_4=6$ なら標準形は $J_4(0)\oplus J_2(0)$ である．
+\end{example}
+\begin{proof}
+差の列は $2,2,1,1,0$ なので大きさ二と四のブロックが一つずつ存在する．
+\end{proof}
+% genron:end K-001610

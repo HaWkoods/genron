@@ -1,0 +1,124 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{方程式と可解性}
+% genron:begin K-001611
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001406
+% genron:use K-001190
+\begin{defn}[冪根による可解性]
+標数零の体 $K$ の拡大 $E$ が $K=E_0\subseteq\cdots\subseteq E_r=E$，$E_i=E_{i-1}(a_i)$，$a_i^{m_i}\in E_{i-1}$ ($m_i\geq2$) と表されるとき冪根拡大という．多項式の分解体がある冪根拡大に含まれるとき冪根によって可解という．
+\end{defn}
+% genron:end K-001611
+% genron:begin K-001612
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001611
+% genron:use K-001513
+% genron:use K-001515
+\begin{prop}[一の冪根を含む体上の冪根添加]
+$F$ が $X^m-1$ の全根を含み $a^m\in F$ なら $F(a)/F$ は可換Galois群を持つ有限Galois拡大である（標数零）．
+\end{prop}
+\begin{proof}
+$a=0$ は自明である．そうでなければ $X^m-a^m$ の全根は $\zeta a$ ($\zeta^m=1$) である．従って分解体でありGaloisである．$\sigma\mapsto\sigma(a)/a$ は一の冪根の乗法群への単射準同型である．
+\end{proof}
+% genron:end K-001612
+% genron:begin K-001613
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001612
+% genron:use K-001552
+% genron:use K-001554
+% genron:use K-001191
+\begin{prop}[素数次数巡回拡大]
+標数零の $F$ が $p$ 次の一の冪根を全て含み，$L/F$ が位数 $p$ の巡回Galois群を持つなら $L=F(a)$，$a^p\in F$ となる $a$ がある．
+\end{prop}
+\begin{proof}
+群の生成元を $\sigma$，原始 $p$ 次根を $\zeta$ とする．相異なる体準同型の一次独立性により $\sum_{i=0}^{p-1}\zeta^{-i}\sigma^i(x)$ は恒等的に零ではない．非零値を $a$ とすれば添字をずらすことにより $\sigma(a)=\zeta a$ である．従って $a^p\in F$，$a\notin F$ となり素数次数と塔の公式により $F(a)=L$ である．
+\end{proof}
+% genron:end K-001613
+% genron:begin K-001614
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001611
+% genron:use K-001613
+% genron:use K-000437
+% genron:use K-000439
+% genron:use K-000440
+% genron:use K-001554
+% genron:use K-001555
+% genron:use K-000315
+\begin{prop}[可解Galois群と冪根可解性]
+標数零の体 $K$ 上の多項式の分解体 $L$ のGalois群が可解なら多項式は冪根によって可解である．
+\end{prop}
+\begin{proof}
+$m=|\operatorname{Gal}(L/K)|$ とし $m=1$ は自明とする．$X^m-1$ の分解体 $F$ は一の冪根を順に添加する冪根拡大である．$LF/F$ の群は制限によって $\operatorname{Gal}(L/K)$ に埋め込まれるので可解である．有限可解群の組成因子は単純可換群なので素数位数の巡回群である．組成列の固定体を取れば $F$ から $LF$ まで素数次数の巡回拡大の列を得る．これらの素数は $m$ を割るので必要な一の冪根は $F$ に属する．前命題を適用して各段を冪根添加とする．
+\end{proof}
+% genron:end K-001614
+% genron:begin K-001615
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001612
+% genron:use K-001512
+% genron:use K-001555
+% genron:use K-000438
+% genron:use K-000439
+% genron:use K-000317
+% genron:use K-000318
+\begin{prop}[冪根拡大の可解Galois拡大への埋込み]
+標数零の有限冪根拡大 $E/K$ は可解Galois群を持つ有限Galois拡大に含まれる．
+\end{prop}
+\begin{proof}
+冪根添加の指数の積を $m$ とし $F$ を $X^m-1$ の分解体とする．一の $m$ 次根の群は巡回である．実際有限可換群の元の位数の最小公倍数 $d$ に対し各素数冪部分の位数を持つ元を取りその積を作れば位数 $d$ の元が得られる．全元は $X^d-1$ の根なので位数は $d$ 以下であり巡回となる．従って $F/K$ の群は巡回群の自己同型群に埋め込まれ，可換である．
+$M_0=F$ とし，$M_{i-1}/K$ は可解Galoisで $E_{i-1}$ を含むとする．$b=a_i^{m_i}$ とし $M_i$ を各 $K$ 自己同型 $\tau$ に対する $X^{m_i}-\tau(b)$ の根を全て添加した体とする．全ての $K$ 埋込みは $M_{i-1}$ を保ち根の集合を置換するので $M_i/K$ は正規，標数零からGaloisである．$M_i/M_{i-1}$ の群は各非零根の一つに掛かる一の冪根の群の直積に埋め込まれ可換である．制限写像の商群は可解なので，正規列を接続して $M_i/K$ の群も可解である．帰納法で $M_r$ を得る．
+\end{proof}
+% genron:end K-001615
+% genron:begin K-001616
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001614
+% genron:use K-001615
+% genron:use K-001555
+% genron:use K-000439
+\begin{prop}[Galois群による可解性の判定]
+標数零の体上の非零多項式が冪根によって可解であることと分解体のGalois群が可解であることは同値である．
+\end{prop}
+\begin{proof}
+十分性は既に示した．必要性は分解体を含む冪根拡大をさらに可解Galois拡大 $M/K$ に埋め込む．分解体は正規なのでそのGalois群は $\operatorname{Gal}(M/K)$ の商群であり可解である．
+\end{proof}
+% genron:end K-001616

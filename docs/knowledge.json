@@ -49208,6 +49208,797 @@
       "status": "draft",
       "source": "volumes/N-353/web.tex",
       "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001591",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "絶対値",
+      "statement": "体 $K$ 上の絶対値とは写像 $|\\cdot|:K\\to\\mathbb R_{\\geq0}$ で，$|x|=0\\Leftrightarrow x=0$，$|xy|=|x||y|$，$|x+y|\\leq |x|+|y|$ を満たすものをいう．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000644",
+        "K-000699"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001592",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "絶対値の基本性質",
+      "statement": "$|1|=|-1|=1$，$|-x|=|x|$，$|x^{-1}|=|x|^{-1}$ ($x\\ne0$)，$\\big||x|-|y|\\big|\\leq |x-y|$ である．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001591"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001593",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "絶対値による位相体",
+      "statement": "$d(x,y)=|x-y|$ は距離であり，球 $B(a,r)=\\{x:|x-a|<r\\}$ ($r>0$) は開基をなし，その位相で $K$ はHausdorff位相体となる．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001591",
+        "K-001592",
+        "K-000209",
+        "K-001101"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001594",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "非Archimedes絶対値と付値",
+      "statement": "$|x+y|\\leq\\max(|x|,|y|)$ を満たす絶対値を非Archimedes的という．写像 $v:K\\to\\mathbb R\\cup\\{+\\infty\\}$ が $v(x)=+\\infty\\Leftrightarrow x=0$，$v(xy)=v(x)+v(y)$，$v(x+y)\\geq\\min(v(x),v(y))$ を満たすとき実数値加法的付値という．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001591"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001595",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "付値と絶対値の対応（指数・対数の法則を仮定）",
+      "statement": "実数の指数・対数函数の存在と通常の法則を仮定する．$c>1$ に対し $|x|=c^{-v(x)}$ ($x\\ne0$)，$|0|=0$ は非Archimedes絶対値である．逆に $v(x)=-\\log_c|x|$ ($x\\ne0$)，$v(0)=+\\infty$ は実数値付値である．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001594"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001596",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非Archimedes球の性質",
+      "statement": "非Archimedes絶対値について $|x|\\ne|y|$ なら $|x+y|=\\max(|x|,|y|)$ である．球内の任意の点を中心に取り直せる．二球が交われば一方が他方に含まれる．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001593",
+        "K-001594"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001597",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "絶対値の同値性",
+      "statement": "二つの絶対値が同じ位相を誘導することは，任意の $x$ について $|x|_1<1\\Leftrightarrow |x|_2<1$ が成立することと同値である．",
+      "assumptions": [],
+      "position": [
+        28,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001593",
+        "K-000706"
+      ],
+      "status": "draft",
+      "source": "volumes/N-28/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001598",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "代数的整数と整数環",
+      "statement": "数体とは $\\mathbb Q=\\operatorname{Frac}(\\mathbb Z)$ の有限次拡大 $K$ である．$\\mathbb Z$ 上整な $K$ の元を代数的整数といい，その全体 $\\mathcal O_K$ を整数環という．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001190",
+        "K-001426"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001599",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数環の基本性質",
+      "statement": "$\\mathcal O_K\\cap\\mathbb Q=\\mathbb Z$ であり，$\\mathcal O_K$ は整閉整域で分数体は $K$ である．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001598",
+        "K-001431",
+        "K-001432",
+        "K-001311",
+        "K-001122"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001600",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "トレースとノルム",
+      "statement": "数体 $K$ の次数を $n$ とし，代数閉包への $\\mathbb Q$ 埋込み $\\sigma_1,\\ldots,\\sigma_n$ に対し $\\operatorname{Tr}(x)=\\sum_i\\sigma_i(x)$，$N(x)=\\prod_i\\sigma_i(x)$ と定める．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001414",
+        "K-001416"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001601",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "トレースとノルムの整性",
+      "statement": "トレースとノルムは有理数に値を持ち，代数的整数に対しては整数に値を持つ．トレースは $\\mathbb Q$ 線形である．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001599",
+        "K-001600",
+        "K-001513",
+        "K-001554",
+        "K-001431"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001602",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "トレース形式の非退化性",
+      "statement": "任意の有理基底 $b_1,\\ldots,b_n$ について $\\det(\\operatorname{Tr}(b_i b_j))\\ne0$ である．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001600",
+        "K-001601",
+        "K-001552",
+        "K-000689",
+        "K-000690",
+        "K-000691"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001603",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整基底の存在",
+      "statement": "$\\mathcal O_K$ は階数 $n=[K:\\mathbb Q]$ の自由 $\\mathbb Z$ 加群である．その基底を整基底という．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001599",
+        "K-001601",
+        "K-001602",
+        "K-001387",
+        "K-001121",
+        "K-000596",
+        "K-000688"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001604",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "数体の判別式",
+      "statement": "整基底 $\\omega_i$ に対し $\\Delta_K=\\det(\\operatorname{Tr}(\\omega_i\\omega_j))$ は非零整数で整基底によらない．これを判別式という．",
+      "assumptions": [],
+      "position": [
+        37,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001601",
+        "K-001602",
+        "K-001603",
+        "K-000689",
+        "K-000690"
+      ],
+      "status": "draft",
+      "source": "volumes/N-37/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001605",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Jordanブロック",
+      "statement": "$\\lambda\\in K$，$m\\geq1$ に対し対角成分 $\\lambda$，直上の成分 $1$，他の成分 $0$ の $m$ 次正方行列を $J_m(\\lambda)$ と書く．",
+      "assumptions": [],
+      "position": [
+        102,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000657"
+      ],
+      "status": "draft",
+      "source": "volumes/N-102/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001606",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "自己準同型からの多項式加群",
+      "statement": "有限次元 $K$ 線形空間 $V$ の自己準同型 $u$ に対し $f\\cdot v=f(u)v$ と定めれば $V$ は有限生成捩れ $K[X]$ 加群となる．",
+      "assumptions": [],
+      "position": [
+        102,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000838",
+        "K-000839"
+      ],
+      "status": "draft",
+      "source": "volumes/N-102/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001607",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "巡回成分への分解",
+      "statement": "$u$ の最小多項式が一次式の積に分解するなら多項式加群 $V$ は $K[X]/((X-\\lambda)^m)$ の有限直和に同型である．",
+      "assumptions": [],
+      "position": [
+        102,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001606",
+        "K-001390",
+        "K-001121",
+        "K-001122",
+        "K-000840",
+        "K-001235"
+      ],
+      "status": "draft",
+      "source": "volumes/N-102/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001608",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Jordan標準形の存在",
+      "statement": "最小多項式が一次式の積に分解することと，ある基底での表示行列がJordanブロックの直和となることは同値である．",
+      "assumptions": [],
+      "position": [
+        102,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001605",
+        "K-001607",
+        "K-000840"
+      ],
+      "status": "draft",
+      "source": "volumes/N-102/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001609",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Jordan標準形の一意性",
+      "statement": "各固有値 $\\lambda$ と各大きさ $k$ のブロックの個数は $2d_k-d_{k-1}-d_{k+1}$ である．ただし $d_k=\\dim\\ker(u-\\lambda\\mathrm{id})^k$，$d_0=0$ とする．",
+      "assumptions": [],
+      "position": [
+        102,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001608",
+        "K-000604",
+        "K-000629"
+      ],
+      "status": "draft",
+      "source": "volumes/N-102/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001610",
+      "kind": "example",
+      "heading_kind": "example",
+      "title": "冪零行列のJordan標準形",
+      "statement": "次元六の冪零写像について $d_1=2,d_2=4,d_3=5,d_4=6$ なら標準形は $J_4(0)\\oplus J_2(0)$ である．",
+      "assumptions": [],
+      "position": [
+        102,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001609"
+      ],
+      "status": "draft",
+      "source": "volumes/N-102/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001611",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "冪根による可解性",
+      "statement": "標数零の体 $K$ の拡大 $E$ が $K=E_0\\subseteq\\cdots\\subseteq E_r=E$，$E_i=E_{i-1}(a_i)$，$a_i^{m_i}\\in E_{i-1}$ ($m_i\\geq2$) と表されるとき冪根拡大という．多項式の分解体がある冪根拡大に含まれるとき冪根によって可解という．",
+      "assumptions": [],
+      "position": [
+        134,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001406",
+        "K-001190"
+      ],
+      "status": "draft",
+      "source": "volumes/N-134/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001612",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "一の冪根を含む体上の冪根添加",
+      "statement": "$F$ が $X^m-1$ の全根を含み $a^m\\in F$ なら $F(a)/F$ は可換Galois群を持つ有限Galois拡大である（標数零）．",
+      "assumptions": [],
+      "position": [
+        134,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001611",
+        "K-001513",
+        "K-001515"
+      ],
+      "status": "draft",
+      "source": "volumes/N-134/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001613",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "素数次数巡回拡大",
+      "statement": "標数零の $F$ が $p$ 次の一の冪根を全て含み，$L/F$ が位数 $p$ の巡回Galois群を持つなら $L=F(a)$，$a^p\\in F$ となる $a$ がある．",
+      "assumptions": [],
+      "position": [
+        134,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001612",
+        "K-001552",
+        "K-001554",
+        "K-001191"
+      ],
+      "status": "draft",
+      "source": "volumes/N-134/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001614",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可解Galois群と冪根可解性",
+      "statement": "標数零の体 $K$ 上の多項式の分解体 $L$ のGalois群が可解なら多項式は冪根によって可解である．",
+      "assumptions": [],
+      "position": [
+        134,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001611",
+        "K-001613",
+        "K-000437",
+        "K-000439",
+        "K-000440",
+        "K-001554",
+        "K-001555",
+        "K-000315"
+      ],
+      "status": "draft",
+      "source": "volumes/N-134/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001615",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "冪根拡大の可解Galois拡大への埋込み",
+      "statement": "標数零の有限冪根拡大 $E/K$ は可解Galois群を持つ有限Galois拡大に含まれる．",
+      "assumptions": [],
+      "position": [
+        134,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001612",
+        "K-001512",
+        "K-001555",
+        "K-000438",
+        "K-000439",
+        "K-000317",
+        "K-000318"
+      ],
+      "status": "draft",
+      "source": "volumes/N-134/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001616",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Galois群による可解性の判定",
+      "statement": "標数零の体上の非零多項式が冪根によって可解であることと分解体のGalois群が可解であることは同値である．",
+      "assumptions": [],
+      "position": [
+        134,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001614",
+        "K-001615",
+        "K-001555",
+        "K-000439"
+      ],
+      "status": "draft",
+      "source": "volumes/N-134/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -49661,7 +50452,7 @@
       "number": 28,
       "title": "絶対値と付値",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         194,
         81
@@ -49670,7 +50461,8 @@
         "絶対値・付値・誘導位相"
       ],
       "treatise": "T-28",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 29,
@@ -49814,17 +50606,20 @@
       "number": 37,
       "title": "代数的整数と整数環",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         133,
         139,
-        99
+        99,
+        108,
+        75
       ],
       "goals": [
         "整数環・整基底・判別式"
       ],
       "treatise": "T-37",
-      "display_index": 1
+      "display_index": 1,
+      "web_only": true
     },
     {
       "number": 38,
@@ -50847,16 +51642,18 @@
       "number": 102,
       "title": "Jordan標準形",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         101,
-        108
+        108,
+        128
       ],
       "goals": [
         "分解する最小多項式・Jordan鎖"
       ],
       "treatise": "T-15",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 103,
@@ -51372,7 +52169,7 @@
       "number": 134,
       "title": "方程式と可解性",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         133,
         124
@@ -51381,7 +52178,8 @@
         "冪根拡大・方程式の可解性"
       ],
       "treatise": "T-20",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 135,

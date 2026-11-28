@@ -1,0 +1,122 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{絶対値と付値}
+実数値付値を対象とし，指数・対数を用いる対応は条件付きで述べる．一般の順序群値付値は後続で扱う．
+% genron:begin K-001591
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000644
+% genron:use K-000699
+\begin{defn}[絶対値]
+体 $K$ 上の絶対値とは写像 $|\cdot|:K\to\mathbb R_{\geq0}$ で，$|x|=0\Leftrightarrow x=0$，$|xy|=|x||y|$，$|x+y|\leq |x|+|y|$ を満たすものをいう．
+\end{defn}
+% genron:end K-001591
+% genron:begin K-001592
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001591
+\begin{prop}[絶対値の基本性質]
+$|1|=|-1|=1$，$|-x|=|x|$，$|x^{-1}|=|x|^{-1}$ ($x\ne0$)，$\big||x|-|y|\big|\leq |x-y|$ である．
+\end{prop}
+\begin{proof}
+乗法性を $1^2,(-1)^2,(-1)x,xx^{-1}$ に適用すれば最初の四式を得る．最後は $|x|\leq |x-y|+|y|$ と $x,y$ を交換した不等式から従う．
+\end{proof}
+% genron:end K-001592
+% genron:begin K-001593
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001591
+% genron:use K-001592
+% genron:use K-000209
+% genron:use K-001101
+\begin{prop}[絶対値による位相体]
+$d(x,y)=|x-y|$ は距離であり，球 $B(a,r)=\{x:|x-a|<r\}$ ($r>0$) は開基をなし，その位相で $K$ はHausdorff位相体となる．
+\end{prop}
+\begin{proof}
+距離の条件は絶対値の公理から従う．$b\in B(a,r)$ なら $B(b,r-|b-a|)\subseteq B(a,r)$ であるから球は開基をなす．異なる二点には距離の三分の一を半径とした互いに素な球を取れる．加減法の連続性は三角不等式から従う．$x=a+h,y=b+k$ とすれば $|xy-ab|\leq |a||k|+|b||h|+|h||k|$ であり，$|h|,|k|<\delta\leq1$ なら右辺は $(|a|+|b|+1)\delta$ 以下となる．$a\ne0$ かつ $|x-a|<|a|/2$ なら $|x|>|a|/2$ なので $|x^{-1}-a^{-1}|<2|x-a|/|a|^2$ となる．従って乗法と逆元写像も連続である．
+\end{proof}
+% genron:end K-001593
+% genron:begin K-001594
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001591
+\begin{defn}[非Archimedes絶対値と付値]
+$|x+y|\leq\max(|x|,|y|)$ を満たす絶対値を非Archimedes的という．写像 $v:K\to\mathbb R\cup\{+\infty\}$ が $v(x)=+\infty\Leftrightarrow x=0$，$v(xy)=v(x)+v(y)$，$v(x+y)\geq\min(v(x),v(y))$ を満たすとき実数値加法的付値という．
+\end{defn}
+% genron:end K-001594
+% genron:begin K-001595
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001594
+\begin{prop}[付値と絶対値の対応（指数・対数の法則を仮定）]
+実数の指数・対数函数の存在と通常の法則を仮定する．$c>1$ に対し $|x|=c^{-v(x)}$ ($x\ne0$)，$|0|=0$ は非Archimedes絶対値である．逆に $v(x)=-\log_c|x|$ ($x\ne0$)，$v(0)=+\infty$ は実数値付値である．
+\end{prop}
+\begin{proof}
+指数函数の積法則と単調性により付値の積の等式と和の不等式は絶対値の乗法性と強三角不等式に移る．対数による逆操作はこれらの関係を元に戻す．
+\end{proof}
+% genron:end K-001595
+% genron:begin K-001596
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001593
+% genron:use K-001594
+\begin{prop}[非Archimedes球の性質]
+非Archimedes絶対値について $|x|\ne|y|$ なら $|x+y|=\max(|x|,|y|)$ である．球内の任意の点を中心に取り直せる．二球が交われば一方が他方に含まれる．
+\end{prop}
+\begin{proof}
+$|x|>|y|$ のとき $|x|\leq\max(|x+y|,|y|)$ から $|x|\leq|x+y|$ となる．逆向きは強三角不等式による．$b\in B(a,r)$ なら同じ不等式で $B(b,r)\subseteq B(a,r)$ を得，$a,b$ を交換して逆包含も得る．二球の共通点を両方の中心にすれば半径の大小で包含が決まる．
+\end{proof}
+% genron:end K-001596
+% genron:begin K-001597
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001593
+% genron:use K-000706
+\begin{prop}[絶対値の同値性]
+二つの絶対値が同じ位相を誘導することは，任意の $x$ について $|x|_1<1\Leftrightarrow |x|_2<1$ が成立することと同値である．
+\end{prop}
+\begin{proof}
+$x^n\to0$ と $|x|<1$ は同値である．$0<t<1$ なら $(1/t)^n\geq1+n(1/t-1)$ とArchimedes性により $t^n\to0$ となるからである．同位相ならこの収束性は一致する．逆に単位球が等しいとする．一方が自明絶対値なら逆元の絶対値を考えて他方も自明と分かる．そうでなければ $0<|a|_1,|a|_2<1$ となる $a$ を選ぶ．$|x|_i<|a|_i^n$ は $|xa^{-n}|_i<1$ と同値なので両絶対値のこれらの球は一致する．各半径は零へ収束するから両者の近傍基は一致する．
+\end{proof}
+% genron:end K-001597

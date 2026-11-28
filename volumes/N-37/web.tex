@@ -1,0 +1,140 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{代数的整数と整数環}
+% genron:begin K-001598
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001190
+% genron:use K-001426
+\begin{defn}[代数的整数と整数環]
+数体とは $\mathbb Q=\operatorname{Frac}(\mathbb Z)$ の有限次拡大 $K$ である．$\mathbb Z$ 上整な $K$ の元を代数的整数といい，その全体 $\mathcal O_K$ を整数環という．
+\end{defn}
+% genron:end K-001598
+% genron:begin K-001599
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001598
+% genron:use K-001431
+% genron:use K-001432
+% genron:use K-001311
+% genron:use K-001122
+\begin{prop}[整数環の基本性質]
+$\mathcal O_K\cap\mathbb Q=\mathbb Z$ であり，$\mathcal O_K$ は整閉整域で分数体は $K$ である．
+\end{prop}
+\begin{proof}
+既約分数 $a/b$ の整方程式の分母を払えば $b\mid a^n$ となり，互いに素であることから $b$ は単元である．整元全体は部分環である．任意の $x\in K$ の有理係数モニック方程式の係数の共通分母 $d$ を取ると $dx$ は整数係数モニック方程式を満たす．従って $K$ は分数体である．$\mathcal O_K$ 上整な $K$ の元は整性の推移性により $\mathbb Z$ 上整である．
+\end{proof}
+% genron:end K-001599
+% genron:begin K-001600
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001414
+% genron:use K-001416
+\begin{defn}[トレースとノルム]
+数体 $K$ の次数を $n$ とし，代数閉包への $\mathbb Q$ 埋込み $\sigma_1,\ldots,\sigma_n$ に対し $\operatorname{Tr}(x)=\sum_i\sigma_i(x)$，$N(x)=\prod_i\sigma_i(x)$ と定める．
+\end{defn}
+% genron:end K-001600
+% genron:begin K-001601
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001599
+% genron:use K-001600
+% genron:use K-001513
+% genron:use K-001554
+% genron:use K-001431
+\begin{prop}[トレースとノルムの整性]
+トレースとノルムは有理数に値を持ち，代数的整数に対しては整数に値を持つ．トレースは $\mathbb Q$ 線形である．
+\end{prop}
+\begin{proof}
+$K$ の有限生成元の最小多項式の積の分解体 $L$ を取る．$L/\mathbb Q$ は有限Galoisであり，全埋込みの像を含む．Galois群は埋込みを合成により置換するから和と積は固定体 $\mathbb Q$ に属する．整元の像も整であり和と積も整であるから前命題により整数となる．線形性は各埋込みの線形性による．
+\end{proof}
+% genron:end K-001601
+% genron:begin K-001602
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001600
+% genron:use K-001601
+% genron:use K-001552
+% genron:use K-000689
+% genron:use K-000690
+% genron:use K-000691
+\begin{prop}[トレース形式の非退化性]
+任意の有理基底 $b_1,\ldots,b_n$ について $\det(\operatorname{Tr}(b_i b_j))\ne0$ である．
+\end{prop}
+\begin{proof}
+$B=(\sigma_i(b_j))$ の行に一次関係があれば全ての $x\in K$ に関する同じ関係を得て相異なる体準同型の一次独立性に反する．従って $\det B\ne0$ であり，トレース行列は $B^{\mathrm t}B$ なのでその行列式は $(\det B)^2\ne0$ である．
+\end{proof}
+% genron:end K-001602
+% genron:begin K-001603
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001599
+% genron:use K-001601
+% genron:use K-001602
+% genron:use K-001387
+% genron:use K-001121
+% genron:use K-000596
+% genron:use K-000688
+\begin{prop}[整基底の存在]
+$\mathcal O_K$ は階数 $n=[K:\mathbb Q]$ の自由 $\mathbb Z$ 加群である．その基底を整基底という．
+\end{prop}
+\begin{proof}
+有理基底の各元に整数を掛けて整な基底 $b_i$ を得る．$A=\sum_i\mathbb Z b_i$ とする．$x=\sum_j q_j b_j\in\mathcal O_K$ なら $\sum_j\operatorname{Tr}(b_i b_j)q_j=\operatorname{Tr}(b_ix)\in\mathbb Z$ である．係数行列の行列式 $D$ は非零であり，行列式の多重線形性（列を右辺で置換する）から $Dq_j\in\mathbb Z$ を得る．従って $A\subseteq\mathcal O_K\subseteq D^{-1}A$ である．$\mathbb Z$ は除法算法によりEuclid整域である．PID上の自由加群の部分加群の命題から $\mathcal O_K$ は階数 $n$ 以下の自由加群であり，有理一次独立な $n$ 元を含むので階数は $n$ である．
+\end{proof}
+% genron:end K-001603
+% genron:begin K-001604
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001601
+% genron:use K-001602
+% genron:use K-001603
+% genron:use K-000689
+% genron:use K-000690
+\begin{prop}[数体の判別式]
+整基底 $\omega_i$ に対し $\Delta_K=\det(\operatorname{Tr}(\omega_i\omega_j))$ は非零整数で整基底によらない．これを判別式という．
+\end{prop}
+\begin{proof}
+前述の整性と非退化性から非零整数である．整基底の変換行列 $P$ とその逆行列は整数成分を持つから $\det P=\pm1$ である．トレース行列は $P^{\mathrm t}BP$ となり行列式は不変である．
+\end{proof}
+% genron:end K-001604
