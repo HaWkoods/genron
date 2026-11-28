@@ -50585,6 +50585,610 @@
       "status": "draft",
       "source": "volumes/N-258/web.tex",
       "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001636",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "所属関係の整礎性",
+      "statement": "ZFの正則性公理の下で任意の集合 $A$ の空でない部分集合 $B$ は $b\\in B$ で $b\\cap B=\\varnothing$ となる元を持つ．従って集合 $A$ 上で所属関係に関する整礎帰納法が成立する．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001375",
+        "K-001376"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001637",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "推移閉包",
+      "statement": "任意の集合 $a$ を部分集合として含む最小の推移的集合 $\\operatorname{TC}(a)$ が存在する．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001538",
+        "K-001375",
+        "K-001376",
+        "K-000105"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001638",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "累積階層",
+      "statement": "順序数に沿って $V_0=\\varnothing$，$V_{\\alpha+1}=\\mathcal P(V_\\alpha)$，極限順序数 $\\lambda$ では $V_\\lambda=\\bigcup_{\\beta<\\lambda}V_\\beta$ と定める．この族を累積階層という．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001569",
+        "K-001570",
+        "K-001375"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001639",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "累積階層の推移性と単調性",
+      "statement": "各 $V_\\alpha$ は推移的集合であり，$\\alpha\\leq\\beta$ なら $V_\\alpha\\subseteq V_\\beta$ である．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001638",
+        "K-000123",
+        "K-001538"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001640",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "累積階層による全ての集合の被覆",
+      "statement": "ZFの下で任意の集合 $x$ はある $V_\\alpha$ の元である．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001636",
+        "K-001637",
+        "K-001639",
+        "K-001541",
+        "K-001376"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001641",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "集合の階数",
+      "statement": "集合 $x$ の階数 $\\operatorname{rank}(x)$ を $x\\subseteq V_\\alpha$ となる最小の順序数 $\\alpha$ とする．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001640"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001642",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "階数の再帰式",
+      "statement": "$\\operatorname{rank}(x)=\\bigcup_{y\\in x}(\\operatorname{rank}(y)+1)$ であり，$x\\in V_\\alpha$ と $\\operatorname{rank}(x)<\\alpha$ は同値である．",
+      "assumptions": [],
+      "position": [
+        336,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001639",
+        "K-001641",
+        "K-001541",
+        "K-001376"
+      ],
+      "status": "draft",
+      "source": "volumes/N-336/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001643",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "弛緩層と非輪状層",
+      "statement": "環の層 $\\mathcal R$ 上の加群の層 $F$ が弛緩的であるとは任意の開集合 $V\\subseteq U$ に対して $F(U)\\to F(V)$ が全射であることをいう．全ての $q>0$ について $H^q(X,F)=0$ なら大域切断函手に関して非輪状であるという．",
+      "assumptions": [],
+      "position": [
+        354,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001586"
+      ],
+      "status": "draft",
+      "source": "volumes/N-354/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001644",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "入射層の弛緩性",
+      "statement": "任意の入射層は弛緩的である．",
+      "assumptions": [],
+      "position": [
+        354,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001643",
+        "K-001544",
+        "K-001545",
+        "K-001549"
+      ],
+      "status": "draft",
+      "source": "volumes/N-354/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001645",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "弛緩層を核とする短完全列",
+      "statement": "短完全列 $0\\to F\\to G\\to H\\to0$ で $F$ が弛緩的なら任意の開集合 $U$ に対して $G(U)\\to H(U)$ は全射である．さらに $G$ が弛緩的なら $H$ も弛緩的である．",
+      "assumptions": [],
+      "position": [
+        354,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001643",
+        "K-000131",
+        "K-001383",
+        "K-001386",
+        "K-000527"
+      ],
+      "status": "draft",
+      "source": "volumes/N-354/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001646",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "弛緩層の非輪状性",
+      "statement": "任意の弛緩層は大域切断函手に関して非輪状である．",
+      "assumptions": [],
+      "position": [
+        354,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001644",
+        "K-001645",
+        "K-001549",
+        "K-001588",
+        "K-001589"
+      ],
+      "status": "draft",
+      "source": "volumes/N-354/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001647",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "非輪状分解による計算",
+      "statement": "完全列 $0\\to F\\to A^0\\to A^1\\to\\cdots$ の各 $A^i$ が大域切断函手に関して非輪状なら，$H^q(X,F)$ は大域切断複体 $\\Gamma(X,A^\\bullet)$ の第 $q$ コホモロジーと標準的に同型である．",
+      "assumptions": [],
+      "position": [
+        354,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001643",
+        "K-001585",
+        "K-001588"
+      ],
+      "status": "draft",
+      "source": "volumes/N-354/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001648",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "弛緩分解の存在",
+      "statement": "任意の加群の層 $F$ は弛緩層からなる分解を持つ．",
+      "assumptions": [],
+      "position": [
+        354,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001646",
+        "K-001647",
+        "K-001545",
+        "K-001546",
+        "K-001186",
+        "K-001385"
+      ],
+      "status": "draft",
+      "source": "volumes/N-354/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001649",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Čech余鎖群",
+      "statement": "開被覆 $\\mathcal U=(U_i)_{i\\in I}$ とAbel群の層 $F$ に対して\n\\[\n C^q(\\mathcal U,F)=\\prod_{(i_0,\\ldots,i_q)\\in I^{q+1}}F(U_{i_0}\\cap\\cdots\\cap U_{i_q})\n\\]\nと定める．全ての順序付き組を用い，添字の重複を許す．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001381",
+        "K-000527",
+        "K-000456"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001650",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Čech微分",
+      "statement": "$(\\delta s)_{i_0\\ldots i_{q+1}}=\\sum_{k=0}^{q+1}(-1)^k s_{i_0\\ldots\\widehat{i_k}\\ldots i_{q+1}}|_{\\cap U_{i_j}}$ と定めると $\\delta^2=0$ である．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001649",
+        "K-000417",
+        "K-000533"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001651",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "被覆のČechコホモロジー",
+      "statement": "$\\check H^q(\\mathcal U,F)=\\ker\\delta^q/\\operatorname{im}\\delta^{q-1}$ と定める．$q=0$ では分母を零とする．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001650",
+        "K-000538"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001652",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "零次Čechコホモロジー",
+      "statement": "$\\check H^0(\\mathcal U,F)\\simeq F(X)$ なる標準同型がある．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001651",
+        "K-000527"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001653",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "開被覆の細分",
+      "statement": "$\\mathcal V=(V_j)_{j\\in J}$ が $\\mathcal U$ の細分であるとは，各 $j$ で $V_j\\subseteq U_{r(j)}$ となる写像 $r:J\\to I$ が存在することをいう．このような写像を細分写像という．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001649"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001654",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "細分の誘導写像",
+      "statement": "細分写像 $r$ は余鎖写像 $r^*:C^\\bullet(\\mathcal U,F)\\to C^\\bullet(\\mathcal V,F)$ を誘導する．コホモロジー上の誘導写像は細分写像の選択によらない．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001650",
+        "K-001651",
+        "K-001653",
+        "K-000539"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001655",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開被覆全体のČechコホモロジー",
+      "statement": "全ての開被覆の細分による有向系の余極限 $\\check H^q(X,F)=\\varinjlim_{\\mathcal U}\\check H^q(\\mathcal U,F)$ が定まり，$\\check H^0(X,F)\\simeq F(X)$ である．",
+      "assumptions": [],
+      "position": [
+        355,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001652",
+        "K-001654",
+        "K-000518"
+      ],
+      "status": "draft",
+      "source": "volumes/N-355/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -56020,7 +56624,7 @@
       "number": 336,
       "title": "正則性と累積階層",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         334
       ],
@@ -56028,7 +56632,8 @@
         "階数・V階層・整礎性"
       ],
       "treatise": "T-49",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 337,
@@ -56309,7 +56914,7 @@
       "number": 354,
       "title": "弛緩層と非輪状分解",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         353
       ],
@@ -56317,13 +56922,14 @@
         "弛緩性・非輪状性・計算"
       ],
       "treatise": "T-52",
-      "display_index": 4
+      "display_index": 4,
+      "web_only": true
     },
     {
       "number": 355,
       "title": "Čechコホモロジー",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         353,
         30
@@ -56332,7 +56938,8 @@
         "開被覆・Čech複体・精密化"
       ],
       "treatise": "T-52",
-      "display_index": 5
+      "display_index": 5,
+      "web_only": true
     },
     {
       "number": 356,

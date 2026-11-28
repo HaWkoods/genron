@@ -1,0 +1,132 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{Čechコホモロジー}
+本ノートは開被覆に基づくČech複体と細分による余極限を扱う．右導来函手としての層係数コホモロジーとの比較定理は後続で条件を明示して扱う．
+% genron:begin K-001649
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001381
+% genron:use K-000527
+% genron:use K-000456
+\begin{defn}[Čech余鎖群]
+開被覆 $\mathcal U=(U_i)_{i\in I}$ とAbel群の層 $F$ に対して
+\[
+ C^q(\mathcal U,F)=\prod_{(i_0,\ldots,i_q)\in I^{q+1}}F(U_{i_0}\cap\cdots\cap U_{i_q})
+\]
+と定める．全ての順序付き組を用い，添字の重複を許す．
+\end{defn}
+% genron:end K-001649
+% genron:begin K-001650
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001649
+% genron:use K-000417
+% genron:use K-000533
+\begin{prop}[Čech微分]
+$(\delta s)_{i_0\ldots i_{q+1}}=\sum_{k=0}^{q+1}(-1)^k s_{i_0\ldots\widehat{i_k}\ldots i_{q+1}}|_{\cap U_{i_j}}$ と定めると $\delta^2=0$ である．
+\end{prop}
+\begin{proof}
+二重和の各項は二つの位置を取り除いた切断の同じ共通部分への制限である．位置 $a<b$ を除く二通りの順序の符号は $(-1)^{a+b-1}$ と $(-1)^{a+b}$ で反対である．制限の合成が一致するので二項ずつ相殺する．
+\end{proof}
+% genron:end K-001650
+% genron:begin K-001651
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001650
+% genron:use K-000538
+\begin{defn}[被覆のČechコホモロジー]
+$\check H^q(\mathcal U,F)=\ker\delta^q/\operatorname{im}\delta^{q-1}$ と定める．$q=0$ では分母を零とする．
+\end{defn}
+% genron:end K-001651
+% genron:begin K-001652
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001651
+% genron:use K-000527
+\begin{prop}[零次Čechコホモロジー]
+$\check H^0(\mathcal U,F)\simeq F(X)$ なる標準同型がある．
+\end{prop}
+\begin{proof}
+零次のサイクルは各 $U_i$ 上の切断の族で，二開集合の共通部分上で互いに一致するものに等しい．層の貼り合わせの公理により一意な大域切断を定め，逆操作は制限である．
+\end{proof}
+% genron:end K-001652
+% genron:begin K-001653
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001649
+\begin{defn}[開被覆の細分]
+$\mathcal V=(V_j)_{j\in J}$ が $\mathcal U$ の細分であるとは，各 $j$ で $V_j\subseteq U_{r(j)}$ となる写像 $r:J\to I$ が存在することをいう．このような写像を細分写像という．
+\end{defn}
+% genron:end K-001653
+% genron:begin K-001654
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001650
+% genron:use K-001651
+% genron:use K-001653
+% genron:use K-000539
+\begin{prop}[細分の誘導写像]
+細分写像 $r$ は余鎖写像 $r^*:C^\bullet(\mathcal U,F)\to C^\bullet(\mathcal V,F)$ を誘導する．コホモロジー上の誘導写像は細分写像の選択によらない．
+\end{prop}
+\begin{proof}
+$(r^*s)_{j_0\ldots j_q}=s_{r(j_0)\ldots r(j_q)}|_{\cap V_{j_k}}$ と置く．制限の合成と添字の削除が可換なので余鎖写像である．二細分写像 $r,t$ に対し $q\geq1$ で
+\[
+ (hs)_{j_0\ldots j_{q-1}}=\sum_{a=0}^{q-1}(-1)^a s_{r(j_0)\ldots r(j_a)t(j_a)\ldots t(j_{q-1})}|_{\cap V_{j_k}}
+\]
+と置き，次数零の $h$ は零とする．各 $V_j$ が両方の対応する開集合に含まれるため制限は定義できる．$\delta h+h\delta$ を展開すると，切替位置より前後の添字の削除は他方の和の対応する項と反対符号で相殺し，切替位置での二項は隣り合う切替位置の項と相殺する．端の項のみ残り $t^*-r^*$ となる．従ってサイクル上の二写像の差は境界であり，誘導写像は等しい．
+\end{proof}
+% genron:end K-001654
+% genron:begin K-001655
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001652
+% genron:use K-001654
+% genron:use K-000518
+\begin{prop}[開被覆全体のČechコホモロジー]
+全ての開被覆の細分による有向系の余極限 $\check H^q(X,F)=\varinjlim_{\mathcal U}\check H^q(\mathcal U,F)$ が定まり，$\check H^0(X,F)\simeq F(X)$ である．
+\end{prop}
+\begin{proof}
+開被覆は重複のない開集合の集合に制限できる．その全体は開集合系の冪集合の部分集合なので集合である．二被覆は両者の開集合の共通部分を全て取った被覆による共通細分を持つ．細分写像の選択独立性と合成の函手性により有向系が定まる．零次の各群は大域切断と標準的に同型であり，細分写像はこの同型の下で恒等写像となるので余極限も同じである．
+\end{proof}
+% genron:end K-001655

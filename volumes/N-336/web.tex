@@ -1,0 +1,130 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{正則性と累積階層}
+% genron:begin K-001636
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001375
+% genron:use K-001376
+\begin{prop}[所属関係の整礎性]
+ZFの正則性公理の下で任意の集合 $A$ の空でない部分集合 $B$ は $b\in B$ で $b\cap B=\varnothing$ となる元を持つ．従って集合 $A$ 上で所属関係に関する整礎帰納法が成立する．
+\end{prop}
+\begin{proof}
+第一の主張は正則性を $B$ に適用するだけである．各 $a\in A$ について全ての $b\in a\cap A$ が $P$ を満たせば $a$ も満たすと仮定する．反例全体は分出公理により集合であり，非空なら所属関係について極小な反例を持つ．その先行元は全て $P$ を満たすため仮定に反する．
+\end{proof}
+% genron:end K-001636
+% genron:begin K-001637
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001538
+% genron:use K-001375
+% genron:use K-001376
+% genron:use K-000105
+\begin{prop}[推移閉包]
+任意の集合 $a$ を部分集合として含む最小の推移的集合 $\operatorname{TC}(a)$ が存在する．
+\end{prop}
+\begin{proof}
+$a_0=a$，$a_{n+1}=\bigcup a_n$ と再帰的に定め $T=\bigcup_{n\in\mathbb N}a_n$ とする．置換公理によりこの族は集合である．$y\in x\in T$ ならある $n$ に対し $x\in a_n$ なので $y\in a_{n+1}\subseteq T$ となる．従って推移的である．$a$ を部分集合として含む推移的集合は帰納的に各 $a_n$ を含み，従って $T$ を含む．
+\end{proof}
+% genron:end K-001637
+% genron:begin K-001638
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001569
+% genron:use K-001570
+% genron:use K-001375
+\begin{defn}[累積階層]
+順序数に沿って $V_0=\varnothing$，$V_{\alpha+1}=\mathcal P(V_\alpha)$，極限順序数 $\lambda$ では $V_\lambda=\bigcup_{\beta<\lambda}V_\beta$ と定める．この族を累積階層という．
+\end{defn}
+% genron:end K-001638
+% genron:begin K-001639
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001638
+% genron:use K-000123
+% genron:use K-001538
+\begin{prop}[累積階層の推移性と単調性]
+各 $V_\alpha$ は推移的集合であり，$\alpha\leq\beta$ なら $V_\alpha\subseteq V_\beta$ である．
+\end{prop}
+\begin{proof}
+超限帰納法を用いる．推移的集合 $T$ について $x\in T$ なら $x\subseteq T$ なので $T\subseteq\mathcal P(T)$ である．$x\in\mathcal P(T)$ と $y\in x$ なら $y\in T\subseteq\mathcal P(T)$ なので $\mathcal P(T)$ は推移的である．後続段階ではこの性質によって推移性と単調性が保たれる．極限段階では推移的集合の合併は推移的であり前の全段階を含む．零の場合は明らかである．
+\end{proof}
+% genron:end K-001639
+% genron:begin K-001640
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001636
+% genron:use K-001637
+% genron:use K-001639
+% genron:use K-001541
+% genron:use K-001376
+\begin{prop}[累積階層による全ての集合の被覆]
+ZFの下で任意の集合 $x$ はある $V_\alpha$ の元である．
+\end{prop}
+\begin{proof}
+$T=\operatorname{TC}(\{x\})$ とし $T$ 上の整礎帰納法を用いる．$a\in T$ の全ての元 $b\in a$ がある段階に属すると仮定する．各 $b$ に対し $b\in V_\beta$ となる最小の順序数 $\beta_b$ が存在する（既知の一段階以下の順序数の集合で最小元を取る）．置換公理によりそれらを集め，合併を $\gamma$ とする．単調性から全ての $b\in a$ は $V_\gamma$ に属する．従って $a\subseteq V_\gamma$ であり $a\in V_{\gamma+1}$ である．帰納法により特に $x$ について成立する．
+\end{proof}
+% genron:end K-001640
+% genron:begin K-001641
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001640
+\begin{defn}[集合の階数]
+集合 $x$ の階数 $\operatorname{rank}(x)$ を $x\subseteq V_\alpha$ となる最小の順序数 $\alpha$ とする．
+\end{defn}
+% genron:end K-001641
+% genron:begin K-001642
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001639
+% genron:use K-001641
+% genron:use K-001541
+% genron:use K-001376
+\begin{prop}[階数の再帰式]
+$\operatorname{rank}(x)=\bigcup_{y\in x}(\operatorname{rank}(y)+1)$ であり，$x\in V_\alpha$ と $\operatorname{rank}(x)<\alpha$ は同値である．
+\end{prop}
+\begin{proof}
+$x\in V_\alpha$ となる最小段階は零でも極限でもないから $\beta+1$ の形である．$x\subseteq V_\beta$ となる最小の $\beta$ が階数であり，単調性により後半の同値を得る．従って $x\subseteq V_\alpha$ であることは全 $y\in x$ に対して $\operatorname{rank}(y)+1\leq\alpha$ であることと同値である．置換公理と順序数の上限の命題によって最小の $\alpha$ は右辺の合併である．
+\end{proof}
+% genron:end K-001642

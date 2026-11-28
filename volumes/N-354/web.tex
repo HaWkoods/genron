@@ -1,0 +1,119 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{弛緩層と非輪状分解}
+% genron:begin K-001643
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001586
+\begin{defn}[弛緩層と非輪状層]
+環の層 $\mathcal R$ 上の加群の層 $F$ が弛緩的であるとは任意の開集合 $V\subseteq U$ に対して $F(U)\to F(V)$ が全射であることをいう．全ての $q>0$ について $H^q(X,F)=0$ なら大域切断函手に関して非輪状であるという．
+\end{defn}
+% genron:end K-001643
+% genron:begin K-001644
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001643
+% genron:use K-001544
+% genron:use K-001545
+% genron:use K-001549
+\begin{prop}[入射層の弛緩性]
+任意の入射層は弛緩的である．
+\end{prop}
+\begin{proof}
+点に集中する層の制限は恒等写像又は零加群への写像なので全射である．その直積も選択公理の下で弛緩的である．入射層 $I$ を十分な入射層の構成で用いるこのような直積 $J$ に埋め込むと，$I$ の入射性によって恒等射は $J\to I$ に延長される．従って埋込みは分裂する．$I(V)$ の切断を $J(V)$ に移し，$J(U)$ に延長して退縮を適用すれば $I(U)$ への延長を得る．
+\end{proof}
+% genron:end K-001644
+% genron:begin K-001645
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001643
+% genron:use K-000131
+% genron:use K-001383
+% genron:use K-001386
+% genron:use K-000527
+\begin{prop}[弛緩層を核とする短完全列]
+短完全列 $0\to F\to G\to H\to0$ で $F$ が弛緩的なら任意の開集合 $U$ に対して $G(U)\to H(U)$ は全射である．さらに $G$ が弛緩的なら $H$ も弛緩的である．
+\end{prop}
+\begin{proof}
+$s\in H(U)$ を取る．茎での全射性により $s$ は局所的に持ち上がる．$U$ の開部分 $V$ と $s|_V$ の持上げ $t$ の対を延長関係で順序付ける．鎖の上界は開部分の合併と層の貼り合わせによって存在するのでZornの補題で極大対 $(V,t)$ を取る．$V\ne U$ なら $x\in U\setminus V$ の開近傍 $W$ で持上げ $u$ を取る．$V\cap W$ 上の $u-t$ は核の層 $F$ の切断であるから弛緩性で $W$ に延長できる．これを $u$ から引けば重なりで $t$ と一致し，貼り合わせによって $V\cup W$ 上の持上げを得て矛盾する．よって $V=U$ である．最後に $H(V)$ の切断を $G(V)$ に持ち上げ，$G(U)$ に延長して $H(U)$ へ移せば後半が従う．
+\end{proof}
+% genron:end K-001645
+% genron:begin K-001646
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001644
+% genron:use K-001645
+% genron:use K-001549
+% genron:use K-001588
+% genron:use K-001589
+\begin{prop}[弛緩層の非輪状性]
+任意の弛緩層は大域切断函手に関して非輪状である．
+\end{prop}
+\begin{proof}
+弛緩層 $F$ を入射層 $I$ に埋め込み余核を $Q$ とする．$I$ は弛緩的なので前命題から $Q$ も弛緩的であり $\Gamma(X,I)\to\Gamma(X,Q)$ は全射である．長完全列と入射層の高次コホモロジーの消滅から $H^1(X,F)=0$，$H^{q+1}(X,F)\simeq H^q(X,Q)$ ($q\geq1$) を得る．$Q$ に同じ議論を反復して次数を下げれば，全ての正次数について消滅する．
+\end{proof}
+% genron:end K-001646
+% genron:begin K-001647
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001643
+% genron:use K-001585
+% genron:use K-001588
+\begin{prop}[非輪状分解による計算]
+完全列 $0\to F\to A^0\to A^1\to\cdots$ の各 $A^i$ が大域切断函手に関して非輪状なら，$H^q(X,F)$ は大域切断複体 $\Gamma(X,A^\bullet)$ の第 $q$ コホモロジーと標準的に同型である．
+\end{prop}
+\begin{proof}
+$Z^0=F$，$Z^{i+1}=\operatorname{coker}(Z^i\to A^i)$ とすると $0\to Z^i\to A^i\to Z^{i+1}\to0$ は短完全列である．左完全性により次数 $q$ のサイクルは $\Gamma(X,Z^q)$ である．$q>0$ ならコホモロジーは $\Gamma(X,Z^q)/\operatorname{im}\Gamma(X,A^{q-1})$ であり，長完全列と非輪状性から $H^1(X,Z^{q-1})$ に同型である．さらに $H^r(X,Z^{i+1})\simeq H^{r+1}(X,Z^i)$ ($r\geq1$) を反復すれば $H^q(X,F)$ に同型となる．次数零は左完全性による．
+\end{proof}
+% genron:end K-001647
+% genron:begin K-001648
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001646
+% genron:use K-001647
+% genron:use K-001545
+% genron:use K-001546
+% genron:use K-001186
+% genron:use K-001385
+\begin{prop}[弛緩分解の存在]
+任意の加群の層 $F$ は弛緩層からなる分解を持つ．
+\end{prop}
+\begin{proof}
+$C(F)=\prod_{x\in X}i_{x*}F_x$ とする．各点で芽を取る写像は $F\to C(F)$ を与え，芽の一致判定から単射である．点に集中する層は弛緩的でありその積も弛緩的である．余核に対して同じ操作を反復すれば完全な弛緩分解が得られ，前二命題からその大域切断複体でコホモロジーを計算できる．
+\end{proof}
+% genron:end K-001648
