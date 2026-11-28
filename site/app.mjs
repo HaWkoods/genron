@@ -174,7 +174,8 @@ function knowledgeRouteUrl(id){
 function showKnowledgePath(){
  const params=new URL(location.href).searchParams;
  const normalize=s=>String(s??"").normalize("NFKC").toLowerCase().replace(/[\s・‐‑–—−-]/g,"");
- const all=[...entries.values()],reverse=new Map(all.map(e=>[e.id,[]]));
+ const all=[...entries.values()],reverse=new Map(all.map(e=>[e.id,[]])),byNote=new Map(),searchText=new Map();
+ for(const e of all){const no=e.position[0];if(!byNote.has(no))byNote.set(no,[]);byNote.get(no).push(e);searchText.set(e.id,normalize([e.title,e.id,entryNumber(e),headingLabel(e),e.statement].join(" ")));}
  for(const e of all)for(const d of e.depends_on??[])reverse.get(d)?.push(e.id);
  const walk=(id,forward,direct)=>{
   const seen=new Set([id]),q=[id];
@@ -205,7 +206,7 @@ function showKnowledgePath(){
  const displayLabel=node("label","path-field");displayLabel.append(node("span","","表示内容"),display);
  const sortLabel=node("label","path-field");sortLabel.append(node("span","","並び順"),sortOrder);
  tools.append(searchLabel,choiceLabel,dirLabel,scopeLabel,displayLabel,sortLabel);
- page.append(node("h1","","知識からたどるノート"),node("p","muted","定理・命題・定義などを選択すると，知識台帳の依存関係に沿って関係するノートだけを表示します．ノート本文を依存階層の小さい順または大きい順に続けて読み進められます．"),tools,resultCount,output);
+ page.append(node("h1","","知識からたどるノート"),node("p","muted","定理・命題・定義などを選択すると，知識台帳の依存関係に沿って関係するノートだけを表示します．ノートは依存階層順に一覧表示します．題名をクリックすると本文を展開できます．"),tools,resultCount,output);
  main.replaceChildren(page);
  const sorted=(a,b)=>(a.knowledge_depth??0)-(b.knowledge_depth??0)||a.id.localeCompare(b.id);
  function updateUrl(){
@@ -219,7 +220,7 @@ function showKnowledgePath(){
  function searchUpdate(keep=false){
   const terms=search.value.trim().split(/\s+/).map(normalize).filter(Boolean),q=normalize(search.value.trim());
   const eligible=all.filter(e=>!isExample(e));
-  const matched=eligible.filter(e=>terms.every(t=>normalize([e.title,e.id,entryNumber(e),headingLabel(e),e.statement].join(" ")).includes(t)));
+  const matched=eligible.filter(e=>terms.every(t=>searchText.get(e.id).includes(t)));
   matched.sort((a,b)=>Number(normalize(b.title)===q||normalize(b.id)===q||normalize(entryNumber(b))===q)-Number(normalize(a.title)===q||normalize(a.id)===q||normalize(entryNumber(a))===q)||Number(normalize(b.title).includes(q))-Number(normalize(a.title).includes(q))||sorted(a,b));
   if(keep&&selected&&!matched.some(e=>e.id===selected))matched.unshift(entries.get(selected));
   choice.replaceChildren(option("","知識項目を選択"));
@@ -255,26 +256,29 @@ function showKnowledgePath(){
   for(const [no,items] of ordered){
    const n=notes.get(no),rank=byPlan.get(no)?.depth??0,card=node("section","path-note web-chapter");card.dataset.note=String(no);card.dataset.depth=String(rank);card.id="N-"+no;
    const t=data.treatises.find(t=>t.id===n.treatise),p=data.parts.find(p=>p.id===t?.part);
-   const li=node("li");li.append(anchor(noteNumber(n)+"　"+n.title,"#"+card.id),node("span","meta","　依存層 "+rank));indexList.append(li);
+   const li=node("li"),indexLink=anchor(noteNumber(n)+"　"+n.title,"#"+card.id);indexLink.addEventListener("click",()=>{card.querySelector(".path-note-disclosure").open=true});li.append(indexLink,node("span","meta","　依存層 "+rank));indexList.append(li);
    card.append(node("p","web-running",[p?.title,t?.title,"依存層 "+rank].filter(Boolean).join("　｜　")));
-   const title=node("h3","web-note-title");title.append(anchor(noteNumber(n)+"　"+n.title,webUrl("note",no)));card.append(title);if(n.review_status==="draft")card.append(node("p","web-draft-status","草稿公開・査読未了"));
+   const disclosure=node("details","path-note-disclosure"),summary=node("summary","web-note-title",noteNumber(n)+"　"+n.title);disclosure.append(summary);card.append(disclosure);if(n.review_status==="draft")card.append(node("p","web-draft-status","草稿公開・査読未了"));
    const roles=[];if(items.some(e=>e.id===selected))roles.push("対象のノート");if(items.some(e=>e.id!==selected&&up.has(e.id)))roles.push("前提");if(items.some(e=>e.id!==selected&&down.has(e.id)))roles.push("後続");
-   const bodyItems=(display.value==="full"?all.filter(e=>e.position[0]===no):items.slice()).sort(compareEntryPosition);
+   const bodyItems=(display.value==="full"?(byNote.get(no)??[]).slice():items.slice()).sort(compareEntryPosition);
    card.append(node("p","meta path-note-meta",roles.join("・")+"　｜　関連知識 "+items.length+"項目　｜　本文 "+bodyItems.length+"項目"));
-   let lastSection="";
+   const body=node("div","path-note-body");disclosure.append(body);
+   let rendered=false;function renderBody(){if(rendered)return;rendered=true;body.append(anchor("個別ノートを開く",webUrl("note",no)));let lastSection="";
    for(const e of bodyItems){
     const sectionTitle=e.webProof?.sectionTitle;
-    if(sectionTitle&&sectionTitle!==lastSection){card.append(node("h4","web-section-title",sectionTitle));lastSection=sectionTitle}
+    if(sectionTitle&&sectionTitle!==lastSection){body.append(node("h4","web-section-title",sectionTitle));lastSection=sectionTitle}
     const section=node("section","web-entry");section.id=e.id;
     if(related.has(e.id)){section.classList.add("path-entry");section.dataset.knowledge=e.id}
     if(e.id===selected)section.classList.add("path-selected-entry");
     const heading=node("h4","web-statement-title",headingLabel(e)+" "+entryNumber(e)+"（"+e.title+"）");
     if(e.id===selected)heading.append(node("span","path-target-marker"," 対象の知識"));
-    section.append(heading);renderEntryContent(section,e);appendKnowledgeDependencies(section,e);card.append(section);
+    section.append(heading);renderEntryContent(section,e);appendKnowledgeDependencies(section,e);body.append(section);
    }
+   fitMath(body);}
+   disclosure.addEventListener("toggle",()=>{if(disclosure.open)renderBody()});
    list.append(card);
   }
-  output.append(list);fitMath(targetBox);fitMath(list);
+  output.append(list);fitMath(targetBox);
  }
  search.oninput=()=>{searchUpdate();refresh()};
  choice.onchange=()=>{selected=choice.value||null;refresh()};

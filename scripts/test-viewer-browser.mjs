@@ -87,6 +87,10 @@ try{
  async function checkPath(id,dir,direct){
   const ids=pathExpected(id,dir,direct),expectedNotes=[...new Set([...ids].map(x=>pathById.get(x).position[0]))].sort((a,b)=>a-b);
   assert.deepEqual(await page.locator(".path-note").evaluateAll(els=>els.map(e=>Number(e.dataset.note)).sort((a,b)=>a-b)),expectedNotes);
+  assert.equal(await page.locator(".path-note .web-entry").count(),0,"Bodies are not rendered initially");
+  assert.equal(await page.locator(".path-note-disclosure[open]").count(),0);
+  await page.locator(".path-note-disclosure").evaluateAll(els=>els.forEach(e=>e.open=true));
+  await page.waitForFunction(()=>document.querySelectorAll(".path-note-body .web-entry").length>0 && [...document.querySelectorAll(".path-note-body")].every(e=>e.querySelector(".web-entry")));
   assert.deepEqual(await page.locator(".path-entry").evaluateAll(els=>els.map(e=>e.dataset.knowledge).sort()),[...ids].sort());
   assert.equal(await page.locator(".path-note[data-note='"+pathById.get(id).position[0]+"']").count(),1);
   const planByNo=new Map(planData.plan.map(n=>[n.number,n]));
@@ -347,6 +351,7 @@ try{
  if(illustrated){
   await page.setViewportSize({width:390,height:844});
   await page.goto(origin+"?view=knowledge-path&target="+illustrated.id+"&scope=direct");
+  await page.locator(".path-note[data-note='"+illustrated.position[0]+"'] .path-note-disclosure > summary").click();
   const disclosure=page.locator("#"+illustrated.id+" .web-figure-toggle").first();
   await disclosure.waitFor();
   assert.equal(await disclosure.getAttribute("open"),null);
@@ -384,6 +389,7 @@ try{
  assert.equal(await figureTarget.getAttribute("open"),"","Direct figure URL opens target");
  await page.setViewportSize({width:390,height:844});
  await page.goto(origin+"?view=knowledge-path&target="+citedFigure.id+"&scope=direct");
+ await page.locator(".path-note[data-note='"+citedFigure.position[0]+"'] .path-note-disclosure > summary").click();
  await figLink.waitFor();
  // Enter keyboard navigation mode, then focus the actual prose reference.
  await page.keyboard.press("Tab");await figLink.focus();
