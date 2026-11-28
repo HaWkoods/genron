@@ -31,7 +31,9 @@ $("#settings-open").onclick=()=>{
  hidePreview();const sample=$("#settings-sample");sample.replaceChildren();const e=entries?.get("K-000060")??data?.entries[0];
  if(e){const box=node("div","sample");fillPreview(box,e,false);sample.append(box)}dialog.showModal();fitMath(sample.querySelector(".sample"))
 };
-function renderParts(target,parts,raw){
+function renderParts(target,parts,raw,metadata={}){
+ // Explicit TeX must never pass through the legacy ASCII/Unicode tokenizer.
+ if(typeof raw==="string"&&/(?:\$|\\\[|\\\(|\\begin\{|\\(?:GenronRef(?:Text)?|GenronFigureRef|ref|eqref)\{)/.test(raw)){renderProof(target,{tex:raw},metadata);return}
  if(!Array.isArray(parts)){target.textContent=raw;return}
  for(const p of parts){
   if(p.tex&&globalThis.katex){
@@ -47,7 +49,7 @@ function fitMath(box){
  if(!box||!box.isConnected||!box.clientWidth)return;
  for(const span of box.querySelectorAll(".math")){
   span.style.fontSize="";
-  const paragraph=span.closest("td,p")??box;
+  const paragraph=span.closest("td,p,.web-paragraph")??box;
   const style=getComputedStyle(paragraph);
   const available=paragraph.clientWidth-parseFloat(style.paddingLeft||0)-parseFloat(style.paddingRight||0);
   const natural=span.getBoundingClientRect().width;
@@ -72,8 +74,8 @@ function fillPreview(box,e,withClose=true){
  }
  box.append(node("div","meta",noteNumber(noteByNumber(e.position[0]))+" "+(notes.get(e.position[0])?.title??"")));
  box.append(node("h3","",headingLabel(e)+" "+entryNumber(e)+"（"+e.title+"）"));
- if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"));p.append(s);box.append(p)}
- const p=node(headingKind(e)==="worked_example"?"div":"p");if(headingKind(e)==="worked_example")renderBookText(p,e.problem_tex??e.statement,{...e.webProof,noteNumber:e.position[0]});else renderParts(p,e.preview?.statement,e.statement);box.append(p);
+ if(e.assumptions.length){const p=node("p");p.append("仮定：");const s=node("span");renderParts(s,e.preview?.assumptions,e.assumptions.join("；"),{...e.webProof,noteNumber:e.position[0],noNestedPreview:true});p.append(s);box.append(p)}
+ const p=node(headingKind(e)==="worked_example"?"div":"p");if(headingKind(e)==="worked_example")renderBookText(p,e.problem_tex??e.statement,{...e.webProof,noteNumber:e.position[0],noNestedPreview:true});else renderParts(p,e.preview?.statement,e.statement,{...e.webProof,noteNumber:e.position[0],noNestedPreview:true});box.append(p);
  const foot=node("div","foot");foot.append(anchor("参照元のノートを開く ↗",(isExample(e)||new URL(location.href).searchParams.get("view")==="web"||isNativeCatalogue(new URL(location.href).searchParams))?webUrl("id",e.id):url("id",e.id)));box.append(foot)
 }
 function positionPreview(el){
@@ -241,7 +243,7 @@ function showKnowledgePath(){
   targetBox.append(node("p","meta","対象の知識"));
   const targetLink=anchor(headingLabel(target)+"（"+target.title+"）",webUrl("id",selected));bindPreview(targetLink,target);
   const h=node("h2");h.append(targetLink);targetBox.append(h);
-  const statement=node("p");renderParts(statement,target.preview?.statement,target.statement);targetBox.append(statement);
+  const statement=node("p");renderParts(statement,target.preview?.statement,target.statement,{...target.webProof,noteNumber:target.position[0]});targetBox.append(statement);
   output.append(targetBox);
   const groups=new Map();
   for(const id of related){const e=entries.get(id),no=e.position[0];if(!notes.has(no))continue;if(!groups.has(no))groups.set(no,[]);groups.get(no).push(e)}
@@ -406,7 +408,7 @@ function appendWebCitationText(target,text,metadata={}){
  let last=0;
  for(const m of text.matchAll(/\uE000(\d+)\uE001/g)){
   target.append(document.createTextNode(text.slice(last,m.index)));
-  const e=refs[Number(m[1])],a=anchor(e.title,webUrl("id",e.id),"web-citation");bindPreview(a,e);target.append(a);
+  const e=refs[Number(m[1])],a=anchor(e.title,webUrl("id",e.id),"web-citation");if(!metadata.noNestedPreview)bindPreview(a,e);target.append(a);
   last=m.index+m[0].length;
  }
  target.append(document.createTextNode(text.slice(last)));
@@ -414,7 +416,7 @@ function appendWebCitationText(target,text,metadata={}){
 
 function renderProof(target,proof,metadata){
  const tex=proof.tex;
- const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\}|\\GenronFigureRef\{[a-z0-9-]+\})/g;
+ const pattern=/(\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])*?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\\begin\{(align\*?|gather\*?|equation\*?|multline\*?)\}[\s\S]*?\\end\{\2\}|(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref)\{[^}]+\}|\\GenronRefText\{K-\d+\}\{[^}]+\}|\\GenronRef\{K-\d+\}|\\GenronFigureRef\{[a-z0-9-]+\})/g;
  const macros=Object.fromEntries(Object.entries(metadata.macros??{}).map(([k,v])=>["\\"+k,v]));
  const plain=s=>{for(const line of s.split(/\n\s*\n/)){if(!line.length)continue;const p=node("span");p.textContent=jpPunctuation(line.replace(/\\(?:noindent|par)\b/g,"").replace(/\\item\b/g,"\n・").replace(/\\(?:begin|end)\{(?:enumerate|itemize)\}/g,"").replace(/\\(?:emph|textbf|textit)\{([^{}]*)\}/g,"$1").replace(/\n/g," "));appendWebCitationText(target,p.textContent,metadata);if(s.includes("\n\n"))target.append(node("br"))}};
  let last=0;
@@ -423,10 +425,11 @@ function renderProof(target,proof,metadata){
   const token=m[0];const figureRef=token.match(/^\\GenronFigureRef\{([a-z0-9-]+)\}$/);
   if(figureRef){const link=figureCitation(figureRef[1]);target.append(link??document.createTextNode(token));continue}
   const ref=token.match(/^(?:定義|命題|定理|規約|原理|公理|補題|系|構成)?\\(?:ref|eqref|GenronRef|GenronRefText)\{([^}]+)\}(?:\{([^}]+)\})?$/);
-  if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(e.title,webUrl("id",id),"web-citation");bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
+  if(ref){const id=metadata.labels?.[ref[1]]??ref[1],e=entries.get(id);if(e){const a=anchor(e.title,webUrl("id",id),"web-citation");if(!metadata.noNestedPreview)bindPreview(a,e);target.append(a)}else target.append(document.createTextNode(token));continue}
   const display=token.startsWith("\\[")||token.startsWith("$$")||token.startsWith("\\begin");
   let formula=token;
   if(token.startsWith("\\[" )||token.startsWith("$$"))formula=token.slice(2,-2);
+  else if(token.startsWith("\\("))formula=token.slice(2,-2);
   else if(token.startsWith("$"))formula=token.slice(1,-1);
   else if(m[2]){const env=m[2].replace("*","");const inner=token.slice(token.indexOf("}")+1,token.lastIndexOf("\\end"));formula=env==="align"?"\\begin{aligned}"+inner+"\\end{aligned}":env==="gather"||env==="multline"?"\\begin{gathered}"+inner+"\\end{gathered}":inner}
   const span=node(display?"div":"span",display?"proof-display":"math");
@@ -486,7 +489,7 @@ function renderEntryBody(section,e){
    const answerTex=metadata.content.replace(/\\begin\{proof\}(?:\[[^\]]*\])?/g,"\n\n").replace(/\\end\{proof\}/g,"\n\n");
    renderBookText(body,answerTex,metadata);
   }else{
-   const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement));body.append(p);
+   const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement),{...e.webProof,noteNumber:e.position[0]});body.append(p);
    for(const proof of metadata.proofs??[])renderBookText(body,proof.tex,metadata);
   }
   answer.append(body);section.append(answer);
@@ -495,8 +498,8 @@ function renderEntryBody(section,e){
  }
    if(e.webProof?.content)renderSourceEntry(section,e);
    else{
-    if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,jpPunctuation(e.assumptions.join("；")));section.append(p)}
-    const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement));section.append(p);
+    if(e.assumptions.length){const p=node("p");p.append("仮定：");renderParts(p,e.preview?.assumptions,jpPunctuation(e.assumptions.join("；")),{...e.webProof,noteNumber:e.position[0]});section.append(p)}
+    const p=node("p");renderParts(p,e.preview?.statement,jpPunctuation(e.statement),{...e.webProof,noteNumber:e.position[0]});section.append(p);
     for(const proof of e.webProof?.proofs??[])appendWebProof(section,proof,e.webProof);
    }
 }
@@ -576,8 +579,8 @@ function showWeb(info,restore){
 function isNativeCatalogue(p){
  return ["examples","statements","notation"].includes(p.get("note"));
 }
-function catalogueText(target,parts,raw){
- renderParts(target,parts?.map(p=>p.tex?p:{...p,text:jpPunctuation(p.text??p.raw??"")}),jpPunctuation(raw));
+function catalogueText(target,parts,raw,metadata={}){
+ renderParts(target,parts?.map(p=>p.tex?p:{...p,text:jpPunctuation(p.text??p.raw??"")}),jpPunctuation(raw),metadata);
 }
 function showCatalogue(info,restore){
  const isNotation=info.n==="notation",examplesOnly=info.n==="examples",title=isNotation?"記号・記法一覧":examplesOnly?"例・例題一覧":"定義・命題・公理一覧";
@@ -623,9 +626,9 @@ function showCatalogue(info,restore){
       const block=node("section","catalogue-entry");block.id="catalogue-"+e.id;
       const heading=node("h5","web-statement-title");heading.append(headingLabel(e)+" "+entryNumber(e)+"（");const link=anchor(e.title,webUrl("id",e.id),"catalogue-reference");bindPreview(link,e);heading.append(link,"）");block.append(heading);
       if(!examplesOnly)block.append(anchor("関連ノートをたどる",knowledgeRouteUrl(e.id),"knowledge-path-link"));
-      if(e.assumptions.length){const a=node("p");a.append("仮定：");catalogueText(a,e.preview?.assumptions,e.assumptions.join("；"));block.append(a)}
+      if(e.assumptions.length){const a=node("p");a.append("仮定：");catalogueText(a,e.preview?.assumptions,e.assumptions.join("；"),{...e.webProof,noteNumber:e.position[0]});block.append(a)}
       if(examplesOnly)renderEntryContent(block,e);
-      else{const statement=node("p","catalogue-statement");catalogueText(statement,e.preview?.statement,e.statement);block.append(statement)}
+      else{const statement=node("p","catalogue-statement");catalogueText(statement,e.preview?.statement,e.statement,{...e.webProof,noteNumber:e.position[0]});block.append(statement)}
       chapter.append(block);
       noteItems.push({el:block,text:[p.title,t.title,n.title,noteNumber(n),entryNumber(e),e.id,headingLabel(e),e.title,e.statement,e.problem_tex??"",...e.assumptions].join(" ")});
      }

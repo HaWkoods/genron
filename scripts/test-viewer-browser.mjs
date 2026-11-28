@@ -143,6 +143,28 @@ try{
  await page.setViewportSize({width:1440,height:1000});
  assert.deepEqual(errors,[],"Knowledge path errors");
 
+
+ // Regression: explicit TeX and GenronRef in ledger-based previews and catalogues.
+ await page.goto(origin+"?id=K-001604&view=web");
+ const integralBasisRef=page.locator("#K-001604 .web-citation[href*='id=K-001603']").first();
+ await integralBasisRef.hover();
+ const integralBasisPreview=page.locator("#preview:not([hidden])");
+ await integralBasisPreview.waitFor();
+ assert.ok(await integralBasisPreview.locator(".katex").count()>=3,"Integral basis preview renders all inline formulas");
+ assert.equal(await integralBasisPreview.locator(".web-citation[href*='id=K-001190']").innerText(),"拡大体と次数");
+ assert.doesNotMatch(await integralBasisPreview.innerText(),/\\GenronRef|\$|\\mathbb|\\mathcal/);
+ await integralBasisPreview.locator(".web-citation[href*='id=K-001190']").hover();
+ assert.match(await integralBasisPreview.innerText(),/整基底の存在/,"Hovering a reference inside a preview does not replace that preview");
+ await page.goto(origin+"?view=knowledge-path&target=K-001603");
+ await page.locator(".path-target").waitFor();
+ assert.ok(await page.locator(".path-target .katex").count()>=3);
+ assert.equal(await page.locator(".path-target .web-citation[href*='id=K-001190']").innerText(),"拡大体と次数");
+ await page.goto(origin+"?note=statements");
+ const ledgerSearch=page.locator(".catalogue-search");
+ await ledgerSearch.fill("整基底の存在");
+ const ledgerStatement=page.locator(".catalogue-statement").filter({has:page.locator("a[href*='id=K-001190']")}).first();
+ await ledgerStatement.waitFor();
+ assert.ok(await ledgerStatement.locator(".katex").count()>=3);
  // Separate example catalogue: no theorem entries, and worked solutions are closed.
  await page.goto(origin+"?note=examples");
  await page.locator(".web-catalogue").waitFor();
