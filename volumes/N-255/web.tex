@@ -1,0 +1,131 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{スキームの射}
+% genron:begin K-001617
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001564
+% genron:use K-001457
+\begin{defn}[基礎スキームと構造射]
+スキーム $S$ を固定する．射 $X\to S$ を備えたスキーム $X$ を $S$ スキームという．$S$ スキームの間の射は構造射と可換なスキームの射である．
+\end{defn}
+% genron:end K-001617
+% genron:begin K-001618
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001226
+% genron:use K-001227
+% genron:use K-000513
+\begin{prop}[テンソル積環の普遍性]
+可換 $A$ 代数 $B,C$ のテンソル積 $B\otimes_A C$ は $(b\otimes c)(b'\otimes c')=bb'\otimes cc'$ により可換 $A$ 代数となり，$A$ 代数の圏で余積をなす．
+\end{prop}
+\begin{proof}
+右辺は純テンソルの各成分について多重線形で平衡関係を保つので，テンソル積の普遍性を二度用いて積を定義できる．結合性と可換性，単位元 $1\otimes1$ の性質は純テンソル上で確かめれば双線形性から全体に従う．$A$ 代数準同型 $B\to D,C\to D$ に対して $b\otimes c\mapsto f(b)g(c)$ は一意な環準同型を与える．逆に環準同型は $b\otimes1,1\otimes c$ における値によって定まる．
+\end{proof}
+% genron:end K-001618
+% genron:begin K-001619
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001617
+% genron:use K-001618
+% genron:use K-000515
+% genron:use K-001527
+% genron:use K-001565
+% genron:use K-000527
+\begin{prop}[アフィンスキームのファイバー積]
+$S=\operatorname{Spec}A$，$X=\operatorname{Spec}B$，$Y=\operatorname{Spec}C$ とする．環準同型 $A\to B,A\to C$ が構造射を定めるなら $X\times_S Y=\operatorname{Spec}(B\otimes_A C)$ である．
+\end{prop}
+\begin{proof}
+テンソル積環の普遍性とアフィンスキームの反変対応から，アフィンな試験スキーム $T$ についてファイバー積の普遍性が従う．一般の $T$ をアフィン開集合で覆い，与えられた二射を制限して各片で一意な射を作る．重なりを更にアフィン開集合で覆えば一意性により一致する．連続写像と構造層の射を貼り合わせて所望の射を得る．一意性も局所的に確認できる．
+\end{proof}
+% genron:end K-001619
+% genron:begin K-001620
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001617
+% genron:use K-001562
+% genron:use K-000515
+\begin{prop}[開部分への基底変換]
+$X\to S$ をスキームの射，$U\subseteq S$ を開部分とする．$X\times_S U$ は $X$ の開部分 $f^{-1}(U)$ である．
+\end{prop}
+\begin{proof}
+$T\to X$ の $S$ への合成が $U$ を通じて因子化することは点の像が $f^{-1}(U)$ に含まれることと同値である．開部分の構造層は制限であるから射はその開部分を通じて一意に因子化する．これはファイバー積の普遍性そのものである．
+\end{proof}
+% genron:end K-001620
+% genron:begin K-001621
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001619
+% genron:use K-001620
+% genron:use K-001566
+% genron:use K-001567
+\begin{prop}[スキームのファイバー積の存在]
+任意の二つのスキームの射 $X\to S,Y\to S$ に対してファイバー積 $X\times_S Y$ が存在する．
+\end{prop}
+\begin{proof}
+$S$ のアフィン開被覆 $(S_i)$ を取り，その逆像をそれぞれアフィン開集合 $U_{ij},V_{ik}$ で覆う．アフィンの場合を用いて $P_{ijk}=U_{ij}\times_{S_i}V_{ik}$ を作る．二片の重なりは二つの射影による $U_{ij}\cap U_{i'j'}$ と $V_{ik}\cap V_{i'k'}$ の逆像の共通部分である．これらは開部分への因子化の普遍性から同一の二射の指定を表現するため，互いに一意な同型を持つ．三重共通部分でも一意性により貼り合わせ条件が成立する．スキームの貼り合わせにより $P$ を得る．任意の $T$ からの $S$ 上の二射は，それらの開片の逆像による被覆上で一意に $P_{ijk}$ への射を定める．重なりで一致するので貼り合わせて $T\to P$ を得る．一意性もこの開被覆上で成立する．
+\end{proof}
+% genron:end K-001621
+% genron:begin K-001622
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001621
+\begin{defn}[基底変換]
+$S$ スキーム $X$ と射 $S'\to S$ に対して $X_{S'}=X\times_S S'$ を $S'$ への基底変換という．
+\end{defn}
+% genron:end K-001622
+% genron:begin K-001623
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001620
+% genron:use K-001621
+% genron:use K-001622
+% genron:use K-000512
+\begin{prop}[基底変換の合成]
+射 $S''\to S'\to S$ に対して $(X_{S'})_{S''}\simeq X_{S''}$ なる標準同型が存在する．開埋込みの基底変換は開埋込みである．
+\end{prop}
+\begin{proof}
+両辺への射の指定は $T\to X$ と $T\to S''$ の $S$ への合成が一致することと同値なので，普遍性から標準同型を得る．開埋込みの場合は開部分への基底変換に関する命題を適用する．
+\end{proof}
+% genron:end K-001623

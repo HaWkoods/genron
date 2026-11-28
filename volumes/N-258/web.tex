@@ -1,0 +1,122 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{Dedekind整域}
+非零イデアルの素イデアル分解と可逆分数イデアルによる特徴づけは後続で扱う．
+% genron:begin K-001630
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000466
+% genron:use K-001432
+% genron:use K-001556
+\begin{defn}[Dedekind整域]
+体でないNoether整域 $A$ が整閉であり，零でない全ての素イデアルが極大であるときDedekind整域という．
+\end{defn}
+% genron:end K-001630
+% genron:begin K-001631
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001137
+% genron:use K-001138
+\begin{defn}[離散付値環]
+体でない局所整域 $R$ が非零非単元 $\pi$ を持ち，各非零元が $u\pi^n$ ($u$ は単元，$n\geq0$) と一意な指数 $n$ により表されるとき離散付値環という．
+\end{defn}
+% genron:end K-001631
+% genron:begin K-001632
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001630
+% genron:use K-001631
+% genron:use K-001141
+% genron:use K-000463
+% genron:use K-001428
+% genron:use K-001138
+\begin{prop}[局所Noether整閉一次元整域]
+体でないNoether局所整閉整域の全ての非零素イデアルが極大なら，その環は離散付値環である．
+\end{prop}
+\begin{proof}
+極大イデアルを $\mathfrak m$ とし $0\ne a\in\mathfrak m$ を取る．$(a)$ を含む素イデアルは $\mathfrak m$ のみなので $\sqrt{(a)}=\mathfrak m$ である．有限個の生成元のそれぞれの冪が $(a)$ に属するから，十分大きな $n$ に対し $\mathfrak m^n\subseteq(a)$ となる．最小のそのような $n$ を取り $b\in\mathfrak m^{n-1}\setminus(a)$ を選ぶ．$x=b/a$ は $R$ に属さず $x\mathfrak m\subseteq R$ を満たす．もし $x\mathfrak m\subseteq\mathfrak m$ なら有限生成加群 $\mathfrak m$ 上の乗法写像に行列式技巧を用いてモニック多項式 $f$ で $f(x)\mathfrak m=0$ となるものを得る．整域性と $\mathfrak m\ne0$ から $f(x)=0$ であり，整閉性に反する．従って $\pi\in\mathfrak m$ で $x\pi$ が単元となるものが存在する．$y\in\mathfrak m$ は $\pi(xy)/(x\pi)$ と書けるので $\mathfrak m=(\pi)$ である．
+非零元を非単元である限り $\pi$ で割り続ければ，停止しない場合は単項イデアルの厳密昇鎖を得てNoether性に反する．従って $y=u\pi^k$ となり，指数が異なれば簡約により単元が $\pi$ で割り切れることになって矛盾する．
+\end{proof}
+% genron:end K-001632
+% genron:begin K-001633
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001631
+% genron:use K-000574
+% genron:use K-001138
+% genron:use K-001432
+\begin{prop}[離散付値環のイデアル]
+離散付値環の非零イデアルは全て $(\pi^n)$ の形である．離散付値環はNoether整閉整域で唯一の非零素イデアルは $(\pi)$ である．
+\end{prop}
+\begin{proof}
+イデアル中の非零元の指数の最小値 $n$ を取るとその元は単元倍で $\pi^n$ となり，他の全元も $\pi^n$ で割り切れる．従ってイデアルは $(\pi^n)$ である．$n>1$ の場合は $\pi\pi^{n-1}$ がそのイデアルに属するが両因子は属さない．分数体の元 $x=u\pi^k$ ($k<0$) が整ならモニック方程式を最高次の $x$ の冪で割って $1\in(\pi)$ を得るため矛盾する．従って整閉である．
+\end{proof}
+% genron:end K-001633
+% genron:begin K-001634
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001630
+% genron:use K-001632
+% genron:use K-001633
+% genron:use K-001135
+% genron:use K-001136
+% genron:use K-001139
+% genron:use K-000448
+% genron:use K-000463
+\begin{prop}[Dedekind整域の局所的特徴づけ]
+体でないNoether整域 $A$ がDedekind整域であることと，全ての極大イデアル $\mathfrak m$ において $A_{\mathfrak m}$ が離散付値環であることは同値である．
+\end{prop}
+\begin{proof}
+局所化環のイデアルは縮小したイデアルの拡大であるからNoether性は保たれる．整閉性も保たれる．実際局所化環上のモニック方程式の係数の共通分母 $s$ を取ると $sx$ の元の環上の整方程式を得るので，整閉なら $sx\in A$，従って $x\in S^{-1}A$ である．Dedekind整域の極大イデアルでの局所化は素イデアル対応により一次元局所整域であり先の構造命題を適用できる．
+逆に零でない素イデアル $\mathfrak p\subseteq\mathfrak m$ は局所化で非零素イデアルとなり，離散付値環の唯一の非零素イデアルに等しいので $\mathfrak p=\mathfrak m$ である．また分数体内で $A=\bigcap_{\mathfrak m}A_{\mathfrak m}$ が成立する．$x\notin A$ なら $\{a\in A:ax\in A\}$ は真のイデアルであり，それを含む極大イデアルにおいて $x\notin A_{\mathfrak m}$ である．各局所化が整閉なので共通部分も整閉である．
+\end{proof}
+% genron:end K-001634
+% genron:begin K-001635
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001630
+% genron:use K-001119
+% genron:use K-001122
+% genron:use K-001561
+\begin{example}[単項イデアル整域の例]
+体でない単項イデアル整域はDedekind整域である．
+\end{example}
+\begin{proof}
+全イデアルが単項なのでNoetherであり，次元は一である．分数体の元 $a/b$ を互いに素な分子分母で表示し，整方程式の分母を払えば $b\mid a^n$ となる．Bezout等式により $b$ は単元なので整閉である．
+\end{proof}
+% genron:end K-001635

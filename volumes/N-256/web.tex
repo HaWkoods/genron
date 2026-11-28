@@ -1,0 +1,120 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{準連接層}
+アフィン上の全ての準連接層が大域切断加群に付随する層であることの証明は今後補う．
+% genron:begin K-001624
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001321
+% genron:use K-001381
+% genron:use K-001129
+\begin{defn}[加群に付随する層]
+$X=\operatorname{Spec}A$ と $A$ 加群 $M$ に対し，$\widetilde M(U)$ を族 $(s_{\mathfrak p})_{\mathfrak p\in U}$，$s_{\mathfrak p}\in M_{\mathfrak p}$ であって局所的に同じ分数 $m/a$ により表されるもの全体とする．これは $\mathcal O_X$ 加群の層となる．
+\end{defn}
+\begin{proof}
+成分ごとの加法と構造層の局所分数によるスカラー倍は共通近傍で局所分数となる．制限は族の制限である．両立する切断は各点の成分を一意に貼り合わせられ，局所分数である条件は局所的なので層の公理を満たす．
+\end{proof}
+% genron:end K-001624
+% genron:begin K-001625
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001624
+% genron:use K-001130
+% genron:use K-001136
+% genron:use K-001563
+% genron:use K-001202
+% genron:use K-000448
+\begin{prop}[茎と基本開集合の切断]
+$\widetilde M_{\mathfrak p}\simeq M_{\mathfrak p}$ であり，$\widetilde M(D(f))\simeq M_f$ である．
+\end{prop}
+\begin{proof}
+茎の評価は局所分数の存在により全射である．$m/a$ が $M_{\mathfrak p}$ で零ならある $b\notin\mathfrak p$ に対し $bm=0$ なので $D(ab)$ 上で零となる．従って単射である．
+任意の加群の元が全ての素イデアルで局所化して零となるなら，その零化イデアルが真であると仮定してそれを含む極大イデアルを選ぶと矛盾する．従って全茎への写像は単射である．基本開集合の場合は $A_f,M_f$ に置き換えることで全スペクトルの場合に帰着する．大域切断 $s$ を有限基本開被覆 $D(g_i)$ 上で $m_i/g_i^r$ と表す（指数は揃えておく）．重なり上での一致と先の単射性により，ある共通の $N$ に対して $(g_i g_j)^N(g_j^r m_i-g_i^r m_j)=0$ となる．$h_i=g_i^{r+N},n_i=g_i^Nm_i$ とすると $h_jn_i=h_in_j$ である．$D(h_i)$ は全体を覆うので $(h_i)=A$ であり $\sum_i a_ih_i=1$ と書ける．$m=\sum_i a_i n_i$ は $h_jm=n_j$ を満たし，各基本開集合上で $s$ を表す．従って全射性を得る．
+\end{proof}
+% genron:end K-001625
+% genron:begin K-001626
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001625
+% genron:use K-001131
+% genron:use K-001133
+% genron:use K-001386
+\begin{prop}[付随層函手の完全性]
+$M\mapsto\widetilde M$ は加法的な完全函手である．
+\end{prop}
+\begin{proof}
+加群準同型は局所分数の分子に作用し，恒等射，合成，加法を保つ．完全列は各点での局所化によって完全であるから，茎における完全性の判定を用いればよい．
+\end{proof}
+% genron:end K-001626
+% genron:begin K-001627
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001625
+% genron:use K-001626
+% genron:use K-001132
+% genron:use K-001186
+\begin{prop}[付随層函手の充満忠実性]
+$\operatorname{Hom}_A(M,N)\simeq\operatorname{Hom}_{\mathcal O_X}(\widetilde M,\widetilde N)$ なる自然な全単射がある．
+\end{prop}
+\begin{proof}
+層の射を大域切断に適用して $u:M\to N$ を得る．点 $\mathfrak p$ の芽 $m/a$ は大域切断 $m$ の芽に単元 $a^{-1}$ を掛けたものなので，茎写像は $u_{\mathfrak p}$ に一致する．芽による切断の一致判定によって元の射は $\widetilde u$ と等しい．逆の合成が恒等となることは大域切断の同一視から従う．
+\end{proof}
+% genron:end K-001627
+% genron:begin K-001628
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001624
+% genron:use K-001564
+\begin{defn}[準連接層]
+スキーム上の $\mathcal O_X$ 加群の層 $F$ が準連接であるとは，各点にアフィン開近傍 $U=\operatorname{Spec}A$ があり，ある $A$ 加群 $M$ に対して $F|_U\simeq\widetilde M$ となることをいう．
+\end{defn}
+% genron:end K-001628
+% genron:begin K-001629
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001625
+% genron:use K-001628
+% genron:use K-001563
+% genron:use K-001129
+\begin{prop}[基本開集合への制限]
+$\widetilde M$ の基本開集合 $D(f)$ への制限は $A_f$ 加群 $M_f$ に付随する層に同型である．
+\end{prop}
+\begin{proof}
+基本開集合を $\operatorname{Spec}A_f$ と同一視すると各点での局所化加群は標準的に一致し，局所分数で表される族という条件も一致する．従って開集合ごとの切断が標準的に同一視される．
+\end{proof}
+% genron:end K-001629
