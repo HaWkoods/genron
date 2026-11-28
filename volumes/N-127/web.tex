@@ -1,0 +1,88 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{指標と直交関係}
+% genron:begin K-001656
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001304
+% genron:use K-000716
+\begin{prop}[Schurの補題]
+複素数体上の有限次元既約表現 $V,W$ の間の非零表現準同型は同型である．また $\operatorname{End}_G(V)=\mathbb C\,1_V$ である．
+\end{prop}
+\begin{proof}
+準同型の核と像は不変部分空間であるから，非零なら核は零，像は全体である．自己準同型 $T$ は複素数体上で固有値 $\lambda$ を持つ．$T-\lambda 1$ は非自明な核を持つ表現準同型であるから零である．
+\end{proof}
+% genron:end K-001656
+% genron:begin K-001657
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001299
+\begin{defn}[複素指標]
+有限群 $G$ の有限次元複素表現 $\rho$ の指標を $\chi_\rho(g)=\operatorname{tr}\rho(g)$ と定める．
+\end{defn}
+% genron:end K-001657
+% genron:begin K-001658
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001657
+% genron:use K-000718
+\begin{prop}[指標の基本性質]
+指標は共役類上一定であり，直和の指標は指標の和である．また $\chi_\rho(g^{-1})=\overline{\chi_\rho(g)}$ である．
+\end{prop}
+\begin{proof}
+跡の恒等式 $\operatorname{tr}(AB)=\operatorname{tr}(BA)$ は成分の二重和から従う．従って共役によって跡は変わらない．直和では対角成分が連結される．任意の正定値Hermite内積を群上で平均すると不変な内積を得る．その正規直交基底では $\rho(g^{-1})=\rho(g)^*$ となるので最後の等式を得る．
+\end{proof}
+% genron:end K-001658
+% genron:begin K-001659
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001656
+% genron:use K-001658
+\begin{prop}[指標の直交関係]
+有限群 $G$ の複素既約表現 $V,W$ に対して $\frac1{|G|}\sum_{g\in G}\chi_W(g)\overline{\chi_V(g)}$ は同値なら $1$，非同値なら $0$ である．
+\end{prop}
+\begin{proof}
+$\operatorname{Hom}_{\mathbb C}(V,W)$ 上の作用を $gT=\rho_W(g)T\rho_V(g)^{-1}$ とする．平均作用素 $P=|G|^{-1}\sum_g g$ は不変部分空間への射影である．実際 $hP=P$ かつ不変元上で恒等となる．行列単位を基底とすれば $T\mapsto ATB$ の跡は $\sum_{i,j}A_{ii}B_{jj}=\operatorname{tr}A\operatorname{tr}B$ である．従って左辺は $\operatorname{tr}P=\dim\operatorname{Hom}_G(V,W)$ に等しい．Schurの補題により結論を得る．
+\end{proof}
+% genron:end K-001659
+% genron:begin K-001660
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001659
+% genron:use K-001404
+\begin{prop}[既約成分の重複度]
+有限次元複素表現 $V$ における既約表現 $W$ の重複度は $\frac1{|G|}\sum_g\chi_V(g)\overline{\chi_W(g)}$ である．従って同じ指標を持つ二表現は同値である．
+\end{prop}
+\begin{proof}
+Maschkeの定理によって有限個の既約表現の直和に分解する．指標の加法性と直交関係を適用すれば，各同値類の成分数を得る．二表現の指標が等しければ各成分数が一致するので，成分ごとの同型を直和して同型を得る．
+\end{proof}
+% genron:end K-001660

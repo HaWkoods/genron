@@ -1,0 +1,118 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{有限型と次元}
+% genron:begin K-001668
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-000590
+\begin{defn}[有限型代数と有限表示代数]
+可換環 $A$ 上の代数 $B$ が有限型であるとは $A[X_1,\ldots,X_n]$ の商であることをいう．その核を有限生成イデアルに取れるとき有限表示という．
+\end{defn}
+% genron:end K-001668
+% genron:begin K-001669
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001668
+% genron:use K-000588
+\begin{prop}[Noether環上の有限表示]
+$A$ がNoether環なら有限型 $A$ 代数は有限表示であり，それ自身Noether環である．
+\end{prop}
+\begin{proof}
+Hilbert基底定理により有限変数多項式環はNoether環である．従って商表示の核は有限生成であり，商環もNoether環である．
+\end{proof}
+% genron:end K-001669
+% genron:begin K-001670
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001668
+% genron:use K-001618
+\begin{prop}[有限型と有限表示の合成及び基底変換]
+有限型（それぞれ有限表示）の環準同型は合成と任意の基底変換で保存される．
+\end{prop}
+\begin{proof}
+$B=A[X]/I$，$C=B[Y]/J$ と書く．$C$ は $A[X,Y]$ の商であり，$I,J$ が有限生成なら $I$ の生成元と $J$ の生成元の持上げがその核を生成する．また $A\to A'$ に対し $B\otimes_A A'\simeq A'[X]/IA'[X]$ である．これは両辺の $A'$ 代数への準同型が同じ生成元と関係によって決まることから従う．
+\end{proof}
+% genron:end K-001670
+% genron:begin K-001671
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001668
+% genron:use K-001621
+\begin{defn}[局所有限型と有限型の射]
+射 $f:X\to Y$ が局所有限型であるとは，各アフィン開集合 $V=\operatorname{Spec}A\subseteq Y$ の逆像が有限型 $A$ 代数に対応するアフィン開集合で覆われることをいう．更に各逆像が準コンパクトなら有限型という．有限表示の射については局所有限表示に加えて準コンパクト性と準分離性を要求する．準分離性とは対角射が準コンパクトであることをいう．
+\end{defn}
+% genron:end K-001671
+% genron:begin K-001672
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001556
+% genron:use K-001201
+\begin{defn}[スキームの次元]
+スキーム $X$ の次元は空でない既約閉集合の真の包含鎖の長さの上限とする．空集合の次元は $-\infty$ と約束する．
+\end{defn}
+% genron:end K-001672
+% genron:begin K-001673
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001672
+% genron:use K-001140
+% genron:use K-001200
+\begin{prop}[アフィンスキームの次元]
+$\operatorname{Spec}A$ の次元は $A$ のKrull次元に等しい（零環については空集合の規約を用いる）．
+\end{prop}
+\begin{proof}
+既約閉集合 $V(I)$ に対応する根基 $\sqrt I$ は素イデアルである．実際 $ab\in\sqrt I$ なら $V(I)\subseteq V(a)\cup V(b)$ であり，既約性から一方に含まれるので $a$ 又は $b$ が根基に属する．逆に素イデアル $\mathfrak p$ に対し $V(\mathfrak p)$ は点 $\mathfrak p$ の閉包だから既約である．この対応は包含を逆転する全単射であり鎖の長さを保存する．
+\end{proof}
+% genron:end K-001673
+% genron:begin K-001674
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001672
+\begin{prop}[開被覆と次元]
+任意の開被覆 $(U_i)$ に対し $\dim X=\sup_i\dim U_i$ である．
+\end{prop}
+\begin{proof}
+開集合 $U$ 内の既約閉集合の閉包を $X$ で取れば既約閉集合となり，$U$ との共通部分は元の集合である．従って鎖の長さは保たれる．逆に $X$ の鎖 $Z_0\subsetneq\cdots\subsetneq Z_r$ に対し $Z_0$ と交わる $U_i$ を取る．全ての $Z_j$ において $U_i\cap Z_j$ は空でない開集合であり稠密である．従って交わりは既約閉集合であり，閉包が各 $Z_j$ に等しいため真の包含は維持される．
+\end{proof}
+% genron:end K-001674

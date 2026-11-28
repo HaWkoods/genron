@@ -51189,6 +51189,993 @@
       "status": "draft",
       "source": "volumes/N-355/web.tex",
       "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001656",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Schurの補題",
+      "statement": "複素数体上の有限次元既約表現 $V,W$ の間の非零表現準同型は同型である．また $\\operatorname{End}_G(V)=\\mathbb C\\,1_V$ である．",
+      "assumptions": [],
+      "position": [
+        127,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001304",
+        "K-000716"
+      ],
+      "status": "draft",
+      "source": "volumes/N-127/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001657",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "複素指標",
+      "statement": "有限群 $G$ の有限次元複素表現 $\\rho$ の指標を $\\chi_\\rho(g)=\\operatorname{tr}\\rho(g)$ と定める．",
+      "assumptions": [],
+      "position": [
+        127,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001299"
+      ],
+      "status": "draft",
+      "source": "volumes/N-127/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001658",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "指標の基本性質",
+      "statement": "指標は共役類上一定であり，直和の指標は指標の和である．また $\\chi_\\rho(g^{-1})=\\overline{\\chi_\\rho(g)}$ である．",
+      "assumptions": [],
+      "position": [
+        127,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001657",
+        "K-000718"
+      ],
+      "status": "draft",
+      "source": "volumes/N-127/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001659",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "指標の直交関係",
+      "statement": "有限群 $G$ の複素既約表現 $V,W$ に対して $\\frac1{|G|}\\sum_{g\\in G}\\chi_W(g)\\overline{\\chi_V(g)}$ は同値なら $1$，非同値なら $0$ である．",
+      "assumptions": [],
+      "position": [
+        127,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001656",
+        "K-001658"
+      ],
+      "status": "draft",
+      "source": "volumes/N-127/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001660",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "既約成分の重複度",
+      "statement": "有限次元複素表現 $V$ における既約表現 $W$ の重複度は $\\frac1{|G|}\\sum_g\\chi_V(g)\\overline{\\chi_W(g)}$ である．従って同じ指標を持つ二表現は同値である．",
+      "assumptions": [],
+      "position": [
+        127,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001659",
+        "K-001404"
+      ],
+      "status": "draft",
+      "source": "volumes/N-127/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001661",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "非Archimedes絶対値",
+      "statement": "体 $K$ の絶対値 $|\\cdot|$ が $|x+y|\\leq\\max(|x|,|y|)$ を満たすとき非Archimedes的という．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001591",
+        "K-001594"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001662",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整数倍による判定",
+      "statement": "絶対値が非Archimedes的であることと，全ての正整数 $n$ について $|n1_K|\\leq1$ であることは同値である．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001661"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001663",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "異なる絶対値を持つ元の和",
+      "statement": "$|x|<|y|$ なら $|x+y|=|y|$ である．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001661"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001664",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "付値環とその極大イデアル",
+      "statement": "非Archimedes絶対値付き体 $K$ に対し $\\mathcal O=\\{x:|x|\\leq1\\}$，$\\mathfrak m=\\{x:|x|<1\\}$ と置く．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001661"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001665",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "付値環の局所性",
+      "statement": "$\\mathcal O$ は局所整域であり，唯一の極大イデアルは $\\mathfrak m$ である．任意の $x\\in K^\\times$ に対し $x$ 又は $x^{-1}$ が $\\mathcal O$ に属する．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001664",
+        "K-000446"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001666",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "剰余体と値群",
+      "statement": "$\\mathcal O/\\mathfrak m$ を剰余体といい，乗法群 $|K^\\times|\\subseteq\\mathbb R_{>0}$ を値群という．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001665"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001667",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "付値環の主イデアルの比較",
+      "statement": "$a,b\\in\\mathcal O$ が非零なら $a\\mathcal O\\subseteq b\\mathcal O$ と $|a|\\leq |b|$ は同値である．従って任意の二イデアルは包含関係で比較可能である．",
+      "assumptions": [],
+      "position": [
+        196,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001665"
+      ],
+      "status": "draft",
+      "source": "volumes/N-196/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001668",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "有限型代数と有限表示代数",
+      "statement": "可換環 $A$ 上の代数 $B$ が有限型であるとは $A[X_1,\\ldots,X_n]$ の商であることをいう．その核を有限生成イデアルに取れるとき有限表示という．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-000590"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001669",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Noether環上の有限表示",
+      "statement": "$A$ がNoether環なら有限型 $A$ 代数は有限表示であり，それ自身Noether環である．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001668",
+        "K-000588"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001670",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有限型と有限表示の合成及び基底変換",
+      "statement": "有限型（それぞれ有限表示）の環準同型は合成と任意の基底変換で保存される．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001668",
+        "K-001618"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001671",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "局所有限型と有限型の射",
+      "statement": "射 $f:X\\to Y$ が局所有限型であるとは，各アフィン開集合 $V=\\operatorname{Spec}A\\subseteq Y$ の逆像が有限型 $A$ 代数に対応するアフィン開集合で覆われることをいう．更に各逆像が準コンパクトなら有限型という．有限表示の射については局所有限表示に加えて準コンパクト性と準分離性を要求する．準分離性とは対角射が準コンパクトであることをいう．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001668",
+        "K-001621"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001672",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "スキームの次元",
+      "statement": "スキーム $X$ の次元は空でない既約閉集合の真の包含鎖の長さの上限とする．空集合の次元は $-\\infty$ と約束する．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001556",
+        "K-001201"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001673",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "アフィンスキームの次元",
+      "statement": "$\\operatorname{Spec}A$ の次元は $A$ のKrull次元に等しい（零環については空集合の規約を用いる）．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        6
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001672",
+        "K-001140",
+        "K-001200"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001674",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "開被覆と次元",
+      "statement": "任意の開被覆 $(U_i)$ に対し $\\dim X=\\sup_i\\dim U_i$ である．",
+      "assumptions": [],
+      "position": [
+        257,
+        1,
+        1,
+        7
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001672"
+      ],
+      "status": "draft",
+      "source": "volumes/N-257/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001675",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "分数イデアル",
+      "statement": "整域 $A$ の分数体を $K$ とする．零でない $A$ 部分加群 $I\\subseteq K$ で，ある $d\\in A\\setminus\\{0\\}$ に対し $dI\\subseteq A$ となるものを分数イデアルという．積 $IJ$ は積 $xy$ の有限和全体とする．",
+      "assumptions": [],
+      "position": [
+        259,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001630",
+        "K-001129"
+      ],
+      "status": "draft",
+      "source": "volumes/N-259/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001676",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "局所化による包含判定",
+      "statement": "$A$ 加群 $M$ の部分加群 $I,J$ に対し，全極大イデアル $\\mathfrak p$ で $I_{\\mathfrak p}\\subseteq J_{\\mathfrak p}$ なら $I\\subseteq J$ である．",
+      "assumptions": [],
+      "position": [
+        259,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001130",
+        "K-001133",
+        "K-000448"
+      ],
+      "status": "draft",
+      "source": "volumes/N-259/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001677",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数イデアルの可逆性",
+      "statement": "Dedekind整域 $A$ の任意の分数イデアル $I$ は可逆であり，逆は $I^{-1}=\\{x\\in K:xI\\subseteq A\\}$ である．",
+      "assumptions": [],
+      "position": [
+        259,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001675",
+        "K-001676",
+        "K-001634",
+        "K-001633"
+      ],
+      "status": "draft",
+      "source": "volumes/N-259/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001678",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "整イデアルの素イデアル分解",
+      "statement": "Dedekind整域の零でない真の整イデアルは有限個の非零素イデアルの積に一意に分解される．",
+      "assumptions": [],
+      "position": [
+        259,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001677",
+        "K-001633"
+      ],
+      "status": "draft",
+      "source": "volumes/N-259/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001679",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "分数イデアルの一意分解",
+      "statement": "任意の分数イデアル $I$ は $I=\\prod_{\\mathfrak p}\\mathfrak p^{n_{\\mathfrak p}}$ と一意に表される．指数は整数で，有限個を除いて零である．",
+      "assumptions": [],
+      "position": [
+        259,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001678",
+        "K-001677"
+      ],
+      "status": "draft",
+      "source": "volumes/N-259/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001680",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "集合論の集合モデル",
+      "statement": "所属記号を持つ一階言語の理論 $T$ に対し，空でない集合 $M$ と二項関係 $E\\subseteq M\\times M$ が $T$ の全公理を充足するとき $(M,E)$ を $T$ の集合モデルという．",
+      "assumptions": [],
+      "position": [
+        337,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001258",
+        "K-001350"
+      ],
+      "status": "draft",
+      "source": "volumes/N-337/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001681",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "推移モデルと有界論理式",
+      "statement": "集合 $M$ が推移的であり，所属を実際の所属関係に制限した構造が $T$ を充足するとき推移モデルという．全量化が $\\forall x\\in y$ 又は $\\exists x\\in y$ の形である論理式を有界論理式という．",
+      "assumptions": [],
+      "position": [
+        337,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001680",
+        "K-001639"
+      ],
+      "status": "draft",
+      "source": "volumes/N-337/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001682",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "有界論理式の絶対性",
+      "statement": "空でない推移集合 $M$ と $M$ に属するパラメータに対して，有界論理式の真偽は $M$ 内部と外部で一致する．",
+      "assumptions": [],
+      "position": [
+        337,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001681"
+      ],
+      "status": "draft",
+      "source": "volumes/N-337/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001683",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "可算モデルの存在",
+      "statement": "所属言語の理論 $T$ が無矛盾なら可算な集合モデルを持つ．ただし可算は有限の場合も含む．",
+      "assumptions": [],
+      "position": [
+        337,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001680",
+        "K-001484",
+        "K-001530"
+      ],
+      "status": "draft",
+      "source": "volumes/N-337/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001684",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "モデルによる相対的無矛盾性",
+      "statement": "背景理論 $S$ の中で理論 $T$ の集合モデルの存在が証明でき，健全性の形式化が可能なら $S$ は $\\operatorname{Con}(T)$ を証明する．特に $S$ が無矛盾なら $T$ も無矛盾である（通常の外部の有限証明について）．",
+      "assumptions": [],
+      "position": [
+        337,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001680",
+        "K-001350",
+        "K-001537"
+      ],
+      "status": "draft",
+      "source": "volumes/N-337/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001685",
+      "kind": "definition",
+      "heading_kind": "definition",
+      "title": "Leray被覆",
+      "statement": "位相空間 $X$ 上のAbel群の層 $F$ に対し，開被覆 $\\mathcal U=(U_i)$ が $F$ に関するLeray被覆であるとは，全ての有限個の被覆片の共通部分 $W$ に対して $H^q(W,F|_W)=0$ が $q>0$ で成立することをいう．",
+      "assumptions": [],
+      "position": [
+        356,
+        1,
+        1,
+        1
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001586",
+        "K-001649"
+      ],
+      "status": "draft",
+      "source": "volumes/N-356/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001686",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "被覆片を全体に含むČech複体",
+      "statement": "被覆 $\\mathcal U$ が $U_{i_*}=X$ となる添字を持つなら，任意の層 $F$ の増大Čech複体は完全である．",
+      "assumptions": [],
+      "position": [
+        356,
+        1,
+        1,
+        2
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001649",
+        "K-001650"
+      ],
+      "status": "draft",
+      "source": "volumes/N-356/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001687",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "入射層のČech複体の完全性",
+      "statement": "入射層 $I$ の増大Čech複体 $0\\to I(X)\\to C^0(\\mathcal U,I)\\to C^1(\\mathcal U,I)\\to\\cdots$ は完全である．",
+      "assumptions": [],
+      "position": [
+        356,
+        1,
+        1,
+        3
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001544",
+        "K-001386",
+        "K-001649"
+      ],
+      "status": "draft",
+      "source": "volumes/N-356/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001688",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "Čech比較写像とLerayの定理",
+      "statement": "自然な比較写像 $\\check H^n(\\mathcal U,F)\\to H^n(X,F)$ が存在する．$\\mathcal U$ が $F$ に関するLeray被覆ならこれは同型である．",
+      "assumptions": [],
+      "position": [
+        356,
+        1,
+        1,
+        4
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001685",
+        "K-001687",
+        "K-001550",
+        "K-001586"
+      ],
+      "status": "draft",
+      "source": "volumes/N-356/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
+    },
+    {
+      "id": "K-001689",
+      "kind": "proposition",
+      "heading_kind": "proposition",
+      "title": "比較写像と細分",
+      "statement": "比較写像は開被覆の細分と可換である．従って $\\check H^n(X,F)\\to H^n(X,F)$ が定まる．Leray被覆が細分に関して共終なら同型である．",
+      "assumptions": [],
+      "position": [
+        356,
+        1,
+        1,
+        5
+      ],
+      "depends_on": [
+        "K-000001",
+        "K-000002",
+        "K-000003",
+        "K-000004",
+        "K-000005",
+        "K-000007",
+        "K-000017",
+        "K-000024",
+        "K-001688",
+        "K-001654",
+        "K-001655"
+      ],
+      "status": "draft",
+      "source": "volumes/N-356/web.tex",
+      "review": "2026-11-28 初稿．独立査読・文献該当箇所照合未了．"
     }
   ],
   "notes": [
@@ -53242,7 +54229,7 @@
       "number": 127,
       "title": "指標と直交関係",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         126,
         83
@@ -53251,7 +54238,8 @@
         "Schurの補題・複素指標・直交性"
       ],
       "treatise": "T-19",
-      "display_index": 7
+      "display_index": 7,
+      "web_only": true
     },
     {
       "number": 128,
@@ -54418,7 +55406,7 @@
       "number": 196,
       "title": "非Archimedes絶対値",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         28
       ],
@@ -54426,7 +55414,8 @@
         "強三角不等式・付値環・剰余体"
       ],
       "treatise": "T-28",
-      "display_index": 2
+      "display_index": 2,
+      "web_only": true
     },
     {
       "number": 197,
@@ -55381,7 +56370,7 @@
       "number": 257,
       "title": "有限型と次元",
       "area": "幾何",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         255,
         141,
@@ -55391,7 +56380,8 @@
         "有限型・有限表示・次元"
       ],
       "treatise": "T-36",
-      "display_index": 8
+      "display_index": 8,
+      "web_only": true
     },
     {
       "number": 258,
@@ -55414,7 +56404,7 @@
       "number": 259,
       "title": "分数イデアルと一意分解",
       "area": "代数",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         258,
         137
@@ -55423,7 +56413,8 @@
         "分数イデアル・素イデアル分解"
       ],
       "treatise": "T-37",
-      "display_index": 3
+      "display_index": 3,
+      "web_only": true
     },
     {
       "number": 260,
@@ -56639,7 +57630,7 @@
       "number": 337,
       "title": "集合論のモデル",
       "area": "数学の研究",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         336,
         330,
@@ -56649,7 +57640,8 @@
         "推移モデル・相対的無矛盾性"
       ],
       "treatise": "T-49",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 338,
@@ -56945,7 +57937,7 @@
       "number": 356,
       "title": "Čechと導来函手の比較",
       "area": "構造",
-      "status": "planned",
+      "status": "draft",
       "depends_on": [
         354,
         355
@@ -56954,7 +57946,8 @@
         "比較写像・Leray被覆と成立条件"
       ],
       "treatise": "T-52",
-      "display_index": 6
+      "display_index": 6,
+      "web_only": true
     },
     {
       "number": 357,

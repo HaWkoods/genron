@@ -1,0 +1,93 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{Čechと導来函手の比較}
+% genron:begin K-001685
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001586
+% genron:use K-001649
+\begin{defn}[Leray被覆]
+位相空間 $X$ 上のAbel群の層 $F$ に対し，開被覆 $\mathcal U=(U_i)$ が $F$ に関するLeray被覆であるとは，全ての有限個の被覆片の共通部分 $W$ に対して $H^q(W,F|_W)=0$ が $q>0$ で成立することをいう．
+\end{defn}
+% genron:end K-001685
+% genron:begin K-001686
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001649
+% genron:use K-001650
+\begin{prop}[被覆片を全体に含むČech複体]
+被覆 $\mathcal U$ が $U_{i_*}=X$ となる添字を持つなら，任意の層 $F$ の増大Čech複体は完全である．
+\end{prop}
+\begin{proof}
+$q\geq1$ で $(hs)_{i_0\ldots i_{q-1}}=s_{i_*i_0\ldots i_{q-1}}$ と置く．共通部分は $U_{i_*}$ を加えても変わらない．次数零では $hs=s_{i_*}\in F(X)$ とする．交代和を展開すると先頭添字を除く項が恒等を与え，他の項が相殺して $\delta h+h\delta=1$ となる．増大次数でも制限と $h$ の合成は恒等である．
+\end{proof}
+% genron:end K-001686
+% genron:begin K-001687
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001544
+% genron:use K-001386
+% genron:use K-001649
+\begin{prop}[入射層のČech複体の完全性]
+入射層 $I$ の増大Čech複体 $0\to I(X)\to C^0(\mathcal U,I)\to C^1(\mathcal U,I)\to\cdots$ は完全である．
+\end{prop}
+\begin{proof}
+開集合 $W$ の包含を $j_W$ とし，$P_W=j_{W!}\mathbb Z_W$ と置く．ここで $j_!$ は零による延長であり，開集合上の定数整数層からの射は切断と対応する．従って $\operatorname{Hom}(P_W,I)=I(W)$ である．$\bigoplus_{i_0,\ldots,i_p}P_{U_{i_0}\cap\cdots\cap U_{i_p}}$ を境界が添字削除の交代和となる鎖複体とし，$\mathbb Z_X$ に増大する．点 $x$ の茎ではこれは $x$ を含む添字集合の全順序付き組の自由Abel群の増大複体である．その集合から一つ $i$ を取り，先頭に $i$ を挿入する写像は境界との反交換和が恒等となる縮約を与える．従って茎で完全，ゆえに層として完全である．入射性により $\operatorname{Hom}(-,I)$ を適用して完全性を得る．零延長の具体的構成は，各点近傍上で $W$ 外の芽が零となる局所定数整数切断を貼り合わせることで与えられ，茎は $W$ 内で $\mathbb Z$，外で零である．
+\end{proof}
+% genron:end K-001687
+% genron:begin K-001688
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001685
+% genron:use K-001687
+% genron:use K-001550
+% genron:use K-001586
+\begin{prop}[Čech比較写像とLerayの定理]
+自然な比較写像 $\check H^n(\mathcal U,F)\to H^n(X,F)$ が存在する．$\mathcal U$ が $F$ に関するLeray被覆ならこれは同型である．
+\end{prop}
+\begin{proof}
+入射分解 $F\to I^\bullet$ を取り，第一象限二重複体 $D^{p,q}=C^p(\mathcal U,I^q)$ を考える．全微分を $\delta+(-1)^p d$ とする．各行は増大すると完全であるから，大域切断複体から全複体への増大写像は擬同型である．この主張は行方向の次数による有限消去で示せる：全サイクルの最大水平次数の成分を行の完全性により境界で除き，順次水平次数零まで下げる．境界に対しても同じ消去をその原像に行えば単射性が従う．一方 $F$ のČech複体は全複体の垂直次数零に写る．これら二写像から比較写像を定める．開集合への入射層の制限は入射的である：零延長 $j_!$ が制限の左随伴であり，茎で完全だからである．従って各列の垂直コホモロジーは共通部分の $H^q(W,F|_W)$ の積である（積の完全性には選択公理を用いる）．Leray条件下では正次数が零であり，今度は垂直次数に関する同じ有限消去によりČech複体から全複体への写像も擬同型となる．分解間の比較写像は鎖ホモトピーを除いて一意であり，誘導写像は分解の選択によらない．
+\end{proof}
+% genron:end K-001688
+% genron:begin K-001689
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001688
+% genron:use K-001654
+% genron:use K-001655
+\begin{prop}[比較写像と細分]
+比較写像は開被覆の細分と可換である．従って $\check H^n(X,F)\to H^n(X,F)$ が定まる．Leray被覆が細分に関して共終なら同型である．
+\end{prop}
+\begin{proof}
+細分写像は各 $I^q$ のČech複体に作用し，二重複体の両微分と可換である．大域切断からの増大写像とも可換なので比較写像の可換性が得られる．細分写像の選択によらないことはČechコホモロジー上の細分の独立性による．余極限の普遍性から全被覆の比較写像が得られる．Leray被覆が共終なら任意の被覆はそのような被覆で細分され，二つの代表元の等号もそのような細分で確認できる．各Leray被覆上で比較が同型なので全体でも同型である．
+\end{proof}
+% genron:end K-001689

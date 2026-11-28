@@ -1,0 +1,87 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{集合論のモデル}
+% genron:begin K-001680
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001258
+% genron:use K-001350
+\begin{defn}[集合論の集合モデル]
+所属記号を持つ一階言語の理論 $T$ に対し，空でない集合 $M$ と二項関係 $E\subseteq M\times M$ が $T$ の全公理を充足するとき $(M,E)$ を $T$ の集合モデルという．
+\end{defn}
+% genron:end K-001680
+% genron:begin K-001681
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001680
+% genron:use K-001639
+\begin{defn}[推移モデルと有界論理式]
+集合 $M$ が推移的であり，所属を実際の所属関係に制限した構造が $T$ を充足するとき推移モデルという．全量化が $\forall x\in y$ 又は $\exists x\in y$ の形である論理式を有界論理式という．
+\end{defn}
+% genron:end K-001681
+% genron:begin K-001682
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001681
+\begin{prop}[有界論理式の絶対性]
+空でない推移集合 $M$ と $M$ に属するパラメータに対して，有界論理式の真偽は $M$ 内部と外部で一致する．
+\end{prop}
+\begin{proof}
+論理式の構成に関する帰納法を用いる．原子式は所属と等号の解釈が同じなので一致する．論理結合子は帰納法で処理できる．有界存在量化 $\exists x\in y$ では $y\in M$ と推移性から $y$ の全要素が $M$ に属する．従って候補の範囲が内外で一致し，帰納法により真偽が一致する．有界全称量化も同様である．
+\end{proof}
+% genron:end K-001682
+% genron:begin K-001683
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001680
+% genron:use K-001484
+% genron:use K-001530
+\begin{prop}[可算モデルの存在]
+所属言語の理論 $T$ が無矛盾なら可算な集合モデルを持つ．ただし可算は有限の場合も含む．
+\end{prop}
+\begin{proof}
+Gödelの完全性定理からモデルを得る．無限モデルなら可算言語に対する下方Löwenheim–Skolemの定理を用い，可算な初等部分構造を取る．有限モデルなら既に可算である．初等部分構造は全ての文の真偽を保存するので $T$ を充足する．この主張から推移モデルの存在は従わない．
+\end{proof}
+% genron:end K-001683
+% genron:begin K-001684
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001680
+% genron:use K-001350
+% genron:use K-001537
+\begin{prop}[モデルによる相対的無矛盾性]
+背景理論 $S$ の中で理論 $T$ の集合モデルの存在が証明でき，健全性の形式化が可能なら $S$ は $\operatorname{Con}(T)$ を証明する．特に $S$ が無矛盾なら $T$ も無矛盾である（通常の外部の有限証明について）．
+\end{prop}
+\begin{proof}
+$T$ に矛盾の有限証明があると仮定する．その証明の各行について，公理の充足と推論規則の健全性を用いて帰納すれば矛盾式もモデルで真になる．これは不可能である．この有限証明の符号化に関する論証を $S$ 内で実行できれば $\operatorname{Con}(T)$ が得られる．第二不完全性定理の仮定を満たす無矛盾な $T$ が自身の集合モデルの存在をこの意味で証明できるとは限らず，実際そのような証明は第二不完全性定理に反する．
+\end{proof}
+% genron:end K-001684

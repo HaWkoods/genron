@@ -1,0 +1,92 @@
+% Web専用初稿．独立査読・文献該当箇所照合未了．
+\section{分数イデアルと一意分解}
+% genron:begin K-001675
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001630
+% genron:use K-001129
+\begin{defn}[分数イデアル]
+整域 $A$ の分数体を $K$ とする．零でない $A$ 部分加群 $I\subseteq K$ で，ある $d\in A\setminus\{0\}$ に対し $dI\subseteq A$ となるものを分数イデアルという．積 $IJ$ は積 $xy$ の有限和全体とする．
+\end{defn}
+% genron:end K-001675
+% genron:begin K-001676
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001130
+% genron:use K-001133
+% genron:use K-000448
+\begin{prop}[局所化による包含判定]
+$A$ 加群 $M$ の部分加群 $I,J$ に対し，全極大イデアル $\mathfrak p$ で $I_{\mathfrak p}\subseteq J_{\mathfrak p}$ なら $I\subseteq J$ である．
+\end{prop}
+\begin{proof}
+$x\in I\setminus J$ と仮定すると $x+J$ の零化イデアルは真である．これを含む極大イデアル $\mathfrak p$ を取ると，$x+J$ は局所化で零にならない．一方局所化の完全性から $x/1$ は $J_{\mathfrak p}$ に属さねばならず矛盾する．
+\end{proof}
+% genron:end K-001676
+% genron:begin K-001677
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001675
+% genron:use K-001676
+% genron:use K-001634
+% genron:use K-001633
+\begin{prop}[分数イデアルの可逆性]
+Dedekind整域 $A$ の任意の分数イデアル $I$ は可逆であり，逆は $I^{-1}=\{x\in K:xI\subseteq A\}$ である．
+\end{prop}
+\begin{proof}
+Noether性により $I$ は有限生成である．$0\ne a\in I$ を取ると $I^{-1}\subseteq a^{-1}A$ であり，共通分母は $I^{-1}$ の非零元を与える．有限個の生成元に対して分母を同時に払えば $(I^{-1})_{\mathfrak p}=(I_{\mathfrak p})^{-1}$ である．各非零極大イデアルで局所環は離散付値環だから $I_{\mathfrak p}$ は非零主分数イデアルであり，積は $A_{\mathfrak p}$ となる．$A$ が体なら主張は自明である．局所化による包含判定から $II^{-1}=A$ である．
+\end{proof}
+% genron:end K-001677
+% genron:begin K-001678
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001677
+% genron:use K-001633
+\begin{prop}[整イデアルの素イデアル分解]
+Dedekind整域の零でない真の整イデアルは有限個の非零素イデアルの積に一意に分解される．
+\end{prop}
+\begin{proof}
+分解できない整イデアルが存在すればNoether性により包含に関して極大なもの $I$ を取れる．$I$ を含む極大イデアル $\mathfrak p$ を取る．$J=I\mathfrak p^{-1}\subseteq A$ かつ $I\subseteq J$ である．等号なら $I^{-1}$ を掛けて $\mathfrak p^{-1}=A$，従って $\mathfrak p=A$ となり矛盾する．従って $J$ は真に大きく，$A$ なら空積，そうでなければ極大性により素イデアルの積である．$I=J\mathfrak p$ より矛盾する．一意性は各極大イデアルで局所化すれば，他の素イデアルは単位イデアルとなり，離散付値環での冪の指数が一致することから従う．
+\end{proof}
+% genron:end K-001678
+% genron:begin K-001679
+% genron:use K-000001
+% genron:use K-000002
+% genron:use K-000003
+% genron:use K-000004
+% genron:use K-000005
+% genron:use K-000007
+% genron:use K-000017
+% genron:use K-000024
+% genron:use K-001678
+% genron:use K-001677
+\begin{prop}[分数イデアルの一意分解]
+任意の分数イデアル $I$ は $I=\prod_{\mathfrak p}\mathfrak p^{n_{\mathfrak p}}$ と一意に表される．指数は整数で，有限個を除いて零である．
+\end{prop}
+\begin{proof}
+$dI\subseteq A$ となる非零 $d$ を取る．$I=(dI)(dA)^{-1}$ であり，二つの整イデアルの分解を用いて存在を得る．一意性は各極大イデアルでの局所化による指数の比較から従う．従って分数イデアルの乗法群は非零素イデアルを基底とする自由Abel群である．
+\end{proof}
+% genron:end K-001679
