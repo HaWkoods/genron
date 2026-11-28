@@ -11,8 +11,9 @@
 % genron:use K-000024
 % genron:use K-001306
 % genron:use K-001406
+% genron:use K-001190
 \begin{defn}[正規拡大]
-代数拡大 $L/K$ について，$L$ に根を持つ任意の $K[X]$ の既約多項式が $L[X]$ で一次式の積に分解するとき正規拡大という．
+代数拡大 $L/K$ について，$L$ に根を持つ任意の $K[X]$ の既約多項式が $L[X]$ で一次式の積に分解するとき正規拡大という．（参照：\GenronRef{K-001190}，\GenronRef{K-001306}．）
 \end{defn}
 % genron:end K-001511
 % genron:begin K-001512
@@ -28,8 +29,9 @@
 % genron:use K-001408
 % genron:use K-001412
 % genron:use K-001307
+% genron:use K-001410
 \begin{prop}[正規性と埋込み]
-$K\subseteq L\subseteq\Omega$ とし $\Omega$ は $K$ の代数閉包とする．$L/K$ が正規であることは，任意の $K$ 埋込み $\sigma:L\to\Omega$ が $\sigma(L)=L$ を満たすことと同値である．
+$K\subseteq L\subseteq\Omega$ とし $\Omega$ は $K$ の代数閉包とする．$L/K$ が正規であることは，任意の $K$ 埋込み $\sigma:L\to\Omega$ が $\sigma(L)=L$ を満たすことと同値である．（参照：\GenronRef{K-001410}，\GenronRef{K-001511}．）
 \end{prop}
 \begin{proof}
 正規なら各元の最小多項式の根はすべて $L$ に属するから $\sigma(L)\subseteq L$ である．各最小多項式の相異なる根の有限集合を $\sigma$ は単射的に自身へ移すので置換する．従って各元は原像を持つ．逆に $L$ に根 $x$ を持つ既約多項式の $\Omega$ 内の任意の根 $y$ に対し，$x\mapsto y$ による単拡大の埋込みを $L$ へ延長する．仮定によって $y\in L$ となるから多項式は分解する．
@@ -48,8 +50,9 @@ $K\subseteq L\subseteq\Omega$ とし $\Omega$ は $K$ の代数閉包とする�
 % genron:use K-001406
 % genron:use K-001190
 % genron:use K-001307
+% genron:use K-001511
 \begin{prop}[分解体による正規性の特徴づけ]
-有限次拡大 $L/K$ が正規であることとある非零多項式の分解体であることは同値である．
+有限次拡大 $L/K$ が正規であることとある非零多項式の分解体であることは同値である．（参照：\GenronRef{K-001190}，\GenronRef{K-001511}，\GenronRef{K-001406}．）
 \end{prop}
 \begin{proof}
 正規なら有限生成元の最小多項式の積を取ればその分解体は $L$ に一致する．逆に分解体の任意の埋込みは根の有限集合を置換し，その生成する体を自身に移す．前命題を適用する．
@@ -67,8 +70,10 @@ $K\subseteq L\subseteq\Omega$ とし $\Omega$ は $K$ の代数閉包とする�
 % genron:use K-001512
 % genron:use K-001193
 % genron:use K-001312
+% genron:use K-001511
+% genron:use K-001410
 \begin{prop}[合成体の正規性]
-同じ代数閉包内の正規拡大 $L_1,L_2$ の合成体は正規である．
+同じ代数閉包内の正規拡大 $L_1,L_2$ の合成体は正規である．（参照：\GenronRef{K-001511}，\GenronRef{K-001410}，\GenronRef{K-001193}．）
 \end{prop}
 \begin{proof}
 合成体は代数的である．任意の $K$ 埋込みを各 $L_i$ に制限するとそれらを自身に移す．合成体の像は両像によって生成されるので合成体に等しい．
@@ -85,8 +90,9 @@ $K\subseteq L\subseteq\Omega$ とし $\Omega$ は $K$ の代数閉包とする�
 % genron:use K-000024
 % genron:use K-001511
 % genron:use K-001415
+% genron:use K-001190
 \begin{defn}[有限Galois拡大]
-有限次拡大が正規かつ分離的であるとき有限Galois拡大という．$K$ を固定する体 $L$ の自己同型群を $\operatorname{Gal}(L/K)$ と書く．
+有限次拡大が正規かつ分離的であるとき有限Galois拡大という．$K$ を固定する体 $L$ の自己同型群を $\operatorname{Gal}(L/K)$ と書く．（参照：\GenronRef{K-001190}，\GenronRef{K-001511}，\GenronRef{K-001415}．）
 \end{defn}
 % genron:end K-001515
 % genron:begin K-001516
@@ -101,8 +107,9 @@ $K\subseteq L\subseteq\Omega$ とし $\Omega$ は $K$ の代数閉包とする�
 % genron:use K-001512
 % genron:use K-001515
 % genron:use K-001416
+% genron:use K-001190
 \begin{prop}[有限Galois拡大の自己同型数]
-有限次拡大 $L/K$ について $|\operatorname{Gal}(L/K)|\leq[L:K]$ であり，等号成立は正規かつ分離的であることと同値である．
+有限次拡大 $L/K$ について $|\operatorname{Gal}(L/K)|\leq[L:K]$ であり，等号成立は正規かつ分離的であることと同値である．（参照：\GenronRef{K-001190}，\GenronRef{K-001515}．）
 \end{prop}
 \begin{proof}
 代数閉包への埋込み数は拡大次数以下であり，等号は分離性と同値である．正規なら全埋込みは自己同型である．逆に自己同型数が次数に等しければ埋込み数も同じで，すべての埋込みが自己同型となる．正規性の判定と埋込み数の判定を適用する．

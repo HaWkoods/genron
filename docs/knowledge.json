@@ -37031,7 +37031,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "拡大次数の塔の公式",
-      "statement": "$K\\subseteq M\\subseteq L$ とする．$L/K$ が有限次であることは $M/K,L/M$ がともに有限次であることと同値であり，このとき\n\\[\n[L:K]=[L:M][M:K]\n\\]\nである．",
+      "statement": "$K\\subseteq M\\subseteq L$ とする．$L/K$ が有限次であることは $M/K,L/M$ がともに有限次であることと同値であり，このとき\n\\[\n[L:K]=[L:M][M:K]\n\\]\nである．（参照：\\GenronRef{K-001190}．）",
       "assumptions": [],
       "position": [
         20,
@@ -37062,7 +37062,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限次元部分代数の体性",
-      "statement": "拡大体 $L/K$ の中の $K$ を含む部分環 $A$ が $K$ 上有限次元なら $A$ は体である．",
+      "statement": "拡大体 $L/K$ の中の $K$ を含む部分環 $A$ が $K$ 上有限次元なら $A$ は体である．（参照：\\GenronRef{K-001190}．）",
       "assumptions": [],
       "position": [
         20,
@@ -37123,7 +37123,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限次拡大との合成体",
-      "statement": "$L_1,L_2$ が共通の体 $\\Omega$ の部分体で $K\\subseteq L_1\\cap L_2$，$[L_1:K]=r<\\infty$ とする．このとき $L_1L_2/L_2$ は有限次で，$[L_1L_2:L_2]\\leq r$ である．さらに $L_1$ の $K$ 基底 $(a_i)$ に対し\n\\[\nL_1L_2=\\sum_{i=1}^r L_2a_i\n\\]\nである．",
+      "statement": "$L_1,L_2$ が共通の体 $\\Omega$ の部分体で $K\\subseteq L_1\\cap L_2$，$[L_1:K]=r<\\infty$ とする．このとき $L_1L_2/L_2$ は有限次で，$[L_1L_2:L_2]\\leq r$ である．さらに $L_1$ の $K$ 基底 $(a_i)$ に対し\n\\[\nL_1L_2=\\sum_{i=1}^r L_2a_i\n\\]\nである．（参照：\\GenronRef{K-001190}．）",
       "assumptions": [],
       "position": [
         20,
@@ -37142,7 +37142,8 @@
         "K-000024",
         "K-001193",
         "K-001192",
-        "K-000601"
+        "K-000601",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-20/web.tex",
@@ -37153,7 +37154,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "生成される部分体",
-      "statement": "拡大 $L/K$ と部分集合 $S\\subseteq L$ に対し，$K$ と $S$ を含む最小の部分体を $K(S)$ と書く．一元集合の場合を $K(a)$ と書く．$K$ と $S$ を含む最小の部分環は $K[S]$ と書く．",
+      "statement": "拡大 $L/K$ と部分集合 $S\\subseteq L$ に対し，$K$ と $S$ を含む最小の部分体を $K(S)$ と書く．一元集合の場合を $K(a)$ と書く．$K$ と $S$ を含む最小の部分環は $K[S]$ と書く．（参照：\\GenronRef{K-001190}．）",
       "assumptions": [],
       "position": [
         20,
@@ -37172,7 +37173,8 @@
         "K-000024",
         "K-001193",
         "K-000045",
-        "K-000443"
+        "K-000443",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-20/web.tex",
@@ -37183,7 +37185,7 @@
       "kind": "example",
       "heading_kind": "example",
       "title": "有限生成部分体の有限性",
-      "statement": "$a_1,\\ldots,a_n\\in L$ の各 $K(a_i)/K$ が有限次なら $K(a_1,\\ldots,a_n)/K$ は有限次で，その次数は $\\prod_i[K(a_i):K]$ 以下である．",
+      "statement": "$a_1,\\ldots,a_n\\in L$ の各 $K(a_i)/K$ が有限次なら $K(a_1,\\ldots,a_n)/K$ は有限次で，その次数は $\\prod_i[K(a_i):K]$ 以下である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001195}．）",
       "assumptions": [],
       "position": [
         20,
@@ -37203,7 +37205,8 @@
         "K-001195",
         "K-001194",
         "K-001191",
-        "K-000100"
+        "K-000100",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-20/web.tex",
@@ -40525,7 +40528,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "代数元と超越元",
-      "statement": "体拡大 $L/K$ の元 $\\alpha$ に対し，ある零でない $f\\in K[X]$ が $f(\\alpha)=0$ を満たすなら $\\alpha$ は $K$ 上代数的という．そうでないとき超越的という．",
+      "statement": "体拡大 $L/K$（\\GenronRef{K-001190}） の元 $\\alpha$ に対し，ある零でない $f\\in K[X]$ が $f(\\alpha)=0$ を満たすなら $\\alpha$ は $K$ 上代数的という．そうでないとき超越的という． $L$ の全ての元が $K$ 上代数的であるとき，$L/K$ を代数拡大という．",
       "assumptions": [],
       "position": [
         129,
@@ -40554,7 +40557,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "最小多項式",
-      "statement": "代数元 $\\alpha$ に対し評価準同型 $K[X]\\to L$ の核は一意のモニック既約多項式 $m_\\alpha$ により生成される．",
+      "statement": "代数元 $\\alpha$ に対し評価準同型 $K[X]\\to L$ の核は一意のモニック既約多項式 $m_\\alpha$ により生成される．（参照：\\GenronRef{K-001306}．）",
       "assumptions": [],
       "position": [
         129,
@@ -40586,7 +40589,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "代数的単拡大の構造",
-      "statement": "代数元 $\\alpha$ に対し $K[\\alpha]=K(\\alpha)\\simeq K[X]/(m_\\alpha)$ であり，$[K(\\alpha):K]=\\deg m_\\alpha$ である．",
+      "statement": "代数元 $\\alpha$ に対し $K[\\alpha]=K(\\alpha)\\simeq K[X]/(m_\\alpha)$ であり，$[K(\\alpha):K]=\\deg m_\\alpha$ である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001307}，\\GenronRef{K-001195}．）",
       "assumptions": [],
       "position": [
         129,
@@ -40619,7 +40622,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "超越的単拡大の構造",
-      "statement": "超越元 $\\alpha$ について $K[\\alpha]\\simeq K[X]$，$K(\\alpha)\\simeq K(X)$（多項式環の分数体）である．",
+      "statement": "超越元 $\\alpha$ について $K[\\alpha]\\simeq K[X]$，$K(\\alpha)\\simeq K(X)$（多項式環の分数体）である．（参照：\\GenronRef{K-001306}，\\GenronRef{K-001195}．）",
       "assumptions": [],
       "position": [
         129,
@@ -40650,7 +40653,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "既約多項式の根を持つ拡大の構成",
-      "statement": "モニック既約多項式 $f\\in K[X]$ に対し，体 $E=K[X]/(f)$ は $K$ を標準的に含み，$\\bar X$ は最小多項式 $f$ を持つ．",
+      "statement": "モニック既約多項式 $f\\in K[X]$ に対し，体 $E=K[X]/(f)$ は $K$ を標準的に含み，$\\bar X$ は最小多項式 $f$ を持つ．（参照：\\GenronRef{K-001307}．）",
       "assumptions": [],
       "position": [
         129,
@@ -40680,7 +40683,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限次拡大と代数性",
-      "statement": "有限次拡大 $L/K$ のすべての元は代数的である．また有限個の代数元が生成する部分体は有限次拡大である．",
+      "statement": "有限次拡大 $L/K$ のすべての元は代数的である．また有限個の代数元が生成する部分体は有限次拡大である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}．）",
       "assumptions": [],
       "position": [
         129,
@@ -40701,7 +40704,8 @@
         "K-001308",
         "K-001194",
         "K-001196",
-        "K-000604"
+        "K-000604",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-129/web.tex",
@@ -40712,7 +40716,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "代数元全体の部分体性",
-      "statement": "拡大 $L/K$ における $K$ 上代数的な元全体は $L$ の部分体をなす．",
+      "statement": "拡大 $L/K$ における $K$ 上代数的な元全体は $L$ の部分体をなす．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}．）",
       "assumptions": [],
       "position": [
         129,
@@ -40730,7 +40734,8 @@
         "K-000017",
         "K-000024",
         "K-001311",
-        "K-001306"
+        "K-001306",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-129/web.tex",
@@ -43578,7 +43583,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "分解体",
-      "statement": "体 $K$ 上の非零多項式 $f$ が拡大体 $L$ で一次式の積に分解し，$L$ が $K$ と $f$ の根によって生成されるとき，$L$ を $f$ の $K$ 上の分解体という．",
+      "statement": "体 $K$ 上の非零多項式 $f$ が拡大体 $L$ で一次式の積に分解し，$L$ が $K$ と $f$ の根によって生成されるとき，$L$ を $f$ の $K$ 上の分解体という．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001195}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43608,7 +43613,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "分解体の存在",
-      "statement": "任意の非零多項式 $f\\in K[X]$ に対して有限次の分解体が存在する．",
+      "statement": "任意の非零多項式 $f\\in K[X]$ に対して有限次の分解体が存在する．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001406}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43629,7 +43634,8 @@
         "K-001237",
         "K-001238",
         "K-001310",
-        "K-001191"
+        "K-001191",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-130/web.tex",
@@ -43640,7 +43646,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "単拡大からの埋込みの延長",
-      "statement": "体の埋込み $\\sigma:K\\to E$ と $K$ 上代数的な元 $\\alpha$ に対し，$p$ をその最小多項式とする．$\\sigma$ を延長する埋込み $K(\\alpha)\\to E$ は，$\\sigma(p)$ の $E$ 内の相異なる根と一対一に対応する．",
+      "statement": "体の埋込み $\\sigma:K\\to E$ と $K$ 上代数的な元 $\\alpha$ に対し，$p$ をその最小多項式とする．$\\sigma$ を延長する埋込み $K(\\alpha)\\to E$ は，$\\sigma(p)$ の $E$ 内の相異なる根と一対一に対応する．（参照：\\GenronRef{K-001307}，\\GenronRef{K-001308}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43671,7 +43677,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "分解体の一意性",
-      "statement": "$f\\in K[X]$ の任意の二つの分解体は $K$ 上同型である．",
+      "statement": "$f\\in K[X]$ の任意の二つの分解体は $K$ 上同型である．（参照：\\GenronRef{K-001406}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43702,7 +43708,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "代数閉体と代数閉包",
-      "statement": "体 $E$ が代数閉体であるとは，$E[X]$ の正次数多項式がすべて $E$ 内に根を持つことをいう．$K$ の代数的拡大で代数閉体となるものを $K$ の代数閉包という．",
+      "statement": "体 $E$ が代数閉体であるとは，$E[X]$ の正次数多項式がすべて $E$ 内に根を持つことをいう．$K$ の代数的拡大で代数閉体となるものを $K$ の代数閉包という．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43732,7 +43738,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "代数閉包の存在",
-      "statement": "任意の体 $K$ は代数閉包を持つ．",
+      "statement": "任意の体 $K$ は代数閉包を持つ．（参照：\\GenronRef{K-001410}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43767,7 +43773,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "代数閉包への埋込みの延長",
-      "statement": "$L/K$ を代数拡大，$E$ を代数閉体，$\\sigma:K\\to E$ を埋込みとする．$\\sigma$ は $L\\to E$ に延長できる．特に代数閉包は $K$ 上同型を除いて一意である．",
+      "statement": "$L/K$ を代数拡大，$E$ を代数閉体，$\\sigma:K\\to E$ を埋込みとする．$\\sigma$ は $L\\to E$ に延長できる．特に代数閉包は $K$ 上同型を除いて一意である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}，\\GenronRef{K-001410}．）",
       "assumptions": [],
       "position": [
         130,
@@ -43788,7 +43794,8 @@
         "K-001410",
         "K-000131",
         "K-001306",
-        "K-001307"
+        "K-001307",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-130/web.tex",
@@ -43799,7 +43806,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "形式微分と分離多項式",
-      "statement": "$f=\\sum_{i=0}^n a_iX^i\\in K[X]$ に対し $f'=\\sum_{i=1}^n ia_i X^{i-1}$ とおく．正次数多項式が一次式に分解する拡大体において重根を持たないとき分離的という．$K$ 上の代数元が分離的であるとは最小多項式が分離的であることをいう．",
+      "statement": "$f=\\sum_{i=0}^n a_iX^i\\in K[X]$ に対し $f'=\\sum_{i=1}^n ia_i X^{i-1}$ とおく．正次数多項式が一次式に分解する拡大体において重根を持たないとき分離的という．$K$ 上の代数元が分離的であるとは最小多項式が分離的であることをいう．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001307}．）",
       "assumptions": [],
       "position": [
         131,
@@ -43819,7 +43826,8 @@
         "K-000350",
         "K-000354",
         "K-001307",
-        "K-001237"
+        "K-001237",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-131/web.tex",
@@ -43830,7 +43838,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "重根と形式微分",
-      "statement": "$f\\in K[X]$ が分離的であるための必要十分条件は $\\gcd(f,f')=1$ である．特に標数零の体上の既約多項式は分離的である．",
+      "statement": "$f\\in K[X]$ が分離的であるための必要十分条件は $\\gcd(f,f')=1$ である．特に標数零の体上の既約多項式は分離的である．（参照：\\GenronRef{K-001413}．）",
       "assumptions": [],
       "position": [
         131,
@@ -43863,7 +43871,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "分離拡大",
-      "statement": "代数拡大 $L/K$ の全ての元が $K$ 上分離的であるとき，$L/K$ を分離拡大という．",
+      "statement": "代数拡大 $L/K$ の全ての元が $K$ 上分離的であるとき，$L/K$ を分離拡大という．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}，\\GenronRef{K-001413}．）",
       "assumptions": [],
       "position": [
         131,
@@ -43881,7 +43889,8 @@
         "K-000017",
         "K-000024",
         "K-001413",
-        "K-001306"
+        "K-001306",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-131/web.tex",
@@ -43892,7 +43901,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限次拡大の埋込み数",
-      "statement": "$L/K$ を有限次拡大とし，$E$ を $K$ を含む代数閉体とする．$K$ を固定する埋込み $L\\to E$ の個数は $[L:K]$ 以下である．等号が成立することと $L/K$ が分離的であることは同値である．",
+      "statement": "$L/K$ を有限次拡大とし，$E$ を $K$ を含む代数閉体とする．$K$ を固定する埋込み $L\\to E$ の個数は $[L:K]$ 以下である．等号が成立することと $L/K$ が分離的であることは同値である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001410}，\\GenronRef{K-001415}．）",
       "assumptions": [],
       "position": [
         131,
@@ -43913,7 +43922,9 @@
         "K-001415",
         "K-001191",
         "K-001196",
-        "K-001308"
+        "K-001308",
+        "K-001190",
+        "K-001410"
       ],
       "status": "draft",
       "source": "volumes/N-131/web.tex",
@@ -43924,7 +43935,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "無限体上の原始元の存在",
-      "statement": "$K$ を無限体とし，$L/K$ を有限分離拡大とする．$K$ を含む代数閉体に $L$ が埋め込まれているならば，ある $\\theta\\in L$ が存在して $L=K(\\theta)$ となる．",
+      "statement": "$K$ を無限体とし，$L/K$ を有限分離拡大とする．$K$ を含む代数閉体に $L$ が埋め込まれているならば，ある $\\theta\\in L$ が存在して $L=K(\\theta)$ となる．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001415}，\\GenronRef{K-001195}，\\GenronRef{K-001410}．）",
       "assumptions": [],
       "position": [
         131,
@@ -43944,7 +43955,11 @@
         "K-001416",
         "K-001191",
         "K-001307",
-        "K-001308"
+        "K-001308",
+        "K-001190",
+        "K-001415",
+        "K-001195",
+        "K-001410"
       ],
       "status": "draft",
       "source": "volumes/N-131/web.tex",
@@ -43986,7 +44001,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "代数独立",
-      "statement": "体の拡大 $L/K$ において部分集合 $S\\subseteq L$ が $K$ 上代数独立であるとは，相異なる有限個の元 $s_1,\\ldots,s_n$ と任意の非零多項式 $P\\in K[X_1,\\ldots,X_n]$ に対し $P(s_1,\\ldots,s_n)\\ne0$ となることをいう．多変数多項式は一変数多項式環の反復として定める．",
+      "statement": "体の拡大 $L/K$ において部分集合 $S\\subseteq L$ が $K$ 上代数独立であるとは，相異なる有限個の元 $s_1,\\ldots,s_n$ と任意の非零多項式 $P\\in K[X_1,\\ldots,X_n]$ に対し $P(s_1,\\ldots,s_n)\\ne0$ となることをいう．多変数多項式は一変数多項式環の反復として定める．（参照：\\GenronRef{K-001190}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44006,7 +44021,8 @@
         "K-000350",
         "K-000351",
         "K-000353",
-        "K-001306"
+        "K-001306",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-135/web.tex",
@@ -44017,7 +44033,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "代数独立と超越元",
-      "statement": "$S$ が $K$ 上代数独立で $x\\notin S$ であるとする．$S\\cup\\{x\\}$ が代数独立であることと，$x$ が $K(S)$ 上超越的であることは同値である．",
+      "statement": "$S$ が $K$ 上代数独立で $x\\notin S$ であるとする．$S\\cup\\{x\\}$ が代数独立であることと，$x$ が $K(S)$ 上超越的であることは同値である．（参照：\\GenronRef{K-001419}，\\GenronRef{K-001195}，\\GenronRef{K-001306}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44048,7 +44064,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "超越基底",
-      "statement": "$S\\subseteq L$ が $K$ 上代数独立であり，$L/K(S)$ が代数拡大であるとき，$S$ を $L/K$ の超越基底という．",
+      "statement": "$S\\subseteq L$ が $K$ 上代数独立であり，$L/K(S)$ が代数拡大であるとき，$S$ を $L/K$ の超越基底という．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}，\\GenronRef{K-001419}，\\GenronRef{K-001195}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44067,7 +44083,9 @@
         "K-000024",
         "K-001419",
         "K-001195",
-        "K-001312"
+        "K-001312",
+        "K-001190",
+        "K-001306"
       ],
       "status": "draft",
       "source": "volumes/N-135/web.tex",
@@ -44078,7 +44096,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "超越基底の存在",
-      "statement": "任意の拡大体 $L/K$ は超越基底を持ち，任意の代数独立集合は超越基底に含まれる．",
+      "statement": "任意の拡大体 $L/K$ は超越基底を持ち，任意の代数独立集合は超越基底に含まれる．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001421}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44097,7 +44115,8 @@
         "K-000024",
         "K-001420",
         "K-001421",
-        "K-000131"
+        "K-000131",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-135/web.tex",
@@ -44108,7 +44127,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "超越元の交換",
-      "statement": "中間体 $F$ と元 $x,y\\in L$ に対し，$y$ が $F(x)$ 上代数的で $F$ 上超越的であるならば，$x$ は $F(y)$ 上代数的である．",
+      "statement": "中間体 $F$ と元 $x,y\\in L$ に対し，$y$ が $F(x)$ 上代数的で $F$ 上超越的であるならば，$x$ は $F(y)$ 上代数的である．（参照：\\GenronRef{K-001306}，\\GenronRef{K-001195}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44126,7 +44145,8 @@
         "K-000017",
         "K-000024",
         "K-001420",
-        "K-001306"
+        "K-001306",
+        "K-001195"
       ],
       "status": "draft",
       "source": "volumes/N-135/web.tex",
@@ -44137,7 +44157,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限超越基底の長さ",
-      "statement": "$L/K$ が $n$ 元からなる超越基底を持つならば，任意の代数独立集合の元の個数は $n$ 以下であり，任意の超越基底の元の個数は $n$ である．",
+      "statement": "$L/K$ が $n$ 元からなる超越基底を持つならば，任意の代数独立集合の元の個数は $n$ 以下であり，任意の超越基底の元の個数は $n$ である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001421}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44158,7 +44178,9 @@
         "K-001423",
         "K-001196",
         "K-001311",
-        "K-001312"
+        "K-001312",
+        "K-001190",
+        "K-001421"
       ],
       "status": "draft",
       "source": "volumes/N-135/web.tex",
@@ -44169,7 +44191,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "有限超越次数",
-      "statement": "有限超越基底を持つ拡大 $L/K$ について，超越基底の元の個数を超越次数 $\\operatorname{trdeg}_K L$ と定める．一般の無限基底の濃度の一意性は別途濃度論を用いて扱う．",
+      "statement": "有限超越基底を持つ拡大 $L/K$ について，超越基底の元の個数を超越次数 $\\operatorname{trdeg}_K L$ と定める．一般の無限基底の濃度の一意性は別途濃度論を用いて扱う．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001421}．）",
       "assumptions": [],
       "position": [
         135,
@@ -44186,7 +44208,9 @@
         "K-000007",
         "K-000017",
         "K-000024",
-        "K-001424"
+        "K-001424",
+        "K-001190",
+        "K-001421"
       ],
       "status": "draft",
       "source": "volumes/N-135/web.tex",
@@ -46767,7 +46791,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "正規拡大",
-      "statement": "代数拡大 $L/K$ について，$L$ に根を持つ任意の $K[X]$ の既約多項式が $L[X]$ で一次式の積に分解するとき正規拡大という．",
+      "statement": "代数拡大 $L/K$ について，$L$ に根を持つ任意の $K[X]$ の既約多項式が $L[X]$ で一次式の積に分解するとき正規拡大という．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001306}．）",
       "assumptions": [],
       "position": [
         132,
@@ -46785,7 +46809,8 @@
         "K-000017",
         "K-000024",
         "K-001306",
-        "K-001406"
+        "K-001406",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-132/web.tex",
@@ -46796,7 +46821,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "正規性と埋込み",
-      "statement": "$K\\subseteq L\\subseteq\\Omega$ とし $\\Omega$ は $K$ の代数閉包とする．$L/K$ が正規であることは，任意の $K$ 埋込み $\\sigma:L\\to\\Omega$ が $\\sigma(L)=L$ を満たすことと同値である．",
+      "statement": "$K\\subseteq L\\subseteq\\Omega$ とし $\\Omega$ は $K$ の代数閉包とする．$L/K$ が正規であることは，任意の $K$ 埋込み $\\sigma:L\\to\\Omega$ が $\\sigma(L)=L$ を満たすことと同値である．（参照：\\GenronRef{K-001410}，\\GenronRef{K-001511}．）",
       "assumptions": [],
       "position": [
         132,
@@ -46816,7 +46841,8 @@
         "K-001511",
         "K-001408",
         "K-001412",
-        "K-001307"
+        "K-001307",
+        "K-001410"
       ],
       "status": "draft",
       "source": "volumes/N-132/web.tex",
@@ -46827,7 +46853,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "分解体による正規性の特徴づけ",
-      "statement": "有限次拡大 $L/K$ が正規であることとある非零多項式の分解体であることは同値である．",
+      "statement": "有限次拡大 $L/K$ が正規であることとある非零多項式の分解体であることは同値である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001511}，\\GenronRef{K-001406}．）",
       "assumptions": [],
       "position": [
         132,
@@ -46847,7 +46873,8 @@
         "K-001512",
         "K-001406",
         "K-001190",
-        "K-001307"
+        "K-001307",
+        "K-001511"
       ],
       "status": "draft",
       "source": "volumes/N-132/web.tex",
@@ -46858,7 +46885,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "合成体の正規性",
-      "statement": "同じ代数閉包内の正規拡大 $L_1,L_2$ の合成体は正規である．",
+      "statement": "同じ代数閉包内の正規拡大 $L_1,L_2$ の合成体は正規である．（参照：\\GenronRef{K-001511}，\\GenronRef{K-001410}，\\GenronRef{K-001193}．）",
       "assumptions": [],
       "position": [
         132,
@@ -46877,7 +46904,9 @@
         "K-000024",
         "K-001512",
         "K-001193",
-        "K-001312"
+        "K-001312",
+        "K-001511",
+        "K-001410"
       ],
       "status": "draft",
       "source": "volumes/N-132/web.tex",
@@ -46888,7 +46917,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "有限Galois拡大",
-      "statement": "有限次拡大が正規かつ分離的であるとき有限Galois拡大という．$K$ を固定する体 $L$ の自己同型群を $\\operatorname{Gal}(L/K)$ と書く．",
+      "statement": "有限次拡大が正規かつ分離的であるとき有限Galois拡大という．$K$ を固定する体 $L$ の自己同型群を $\\operatorname{Gal}(L/K)$ と書く．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001511}，\\GenronRef{K-001415}．）",
       "assumptions": [],
       "position": [
         132,
@@ -46906,7 +46935,8 @@
         "K-000017",
         "K-000024",
         "K-001511",
-        "K-001415"
+        "K-001415",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-132/web.tex",
@@ -46917,7 +46947,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "有限Galois拡大の自己同型数",
-      "statement": "有限次拡大 $L/K$ について $|\\operatorname{Gal}(L/K)|\\leq[L:K]$ であり，等号成立は正規かつ分離的であることと同値である．",
+      "statement": "有限次拡大 $L/K$ について $|\\operatorname{Gal}(L/K)|\\leq[L:K]$ であり，等号成立は正規かつ分離的であることと同値である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001515}．）",
       "assumptions": [],
       "position": [
         132,
@@ -46936,7 +46966,8 @@
         "K-000024",
         "K-001512",
         "K-001515",
-        "K-001416"
+        "K-001416",
+        "K-001190"
       ],
       "status": "draft",
       "source": "volumes/N-132/web.tex",
@@ -47992,7 +48023,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "固定体",
-      "statement": "体 $L$ の自己同型群の部分群 $H$ に対し，$L^H=\\{x\\in L:\\sigma(x)=x\\ (\\forall\\sigma\\in H)\\}$ を固定体という．",
+      "statement": "体 $L$ の自己同型群の部分群 $H$ に対し，$L^H=\\{x\\in L:\\sigma(x)=x\\ (\\forall\\sigma\\in H)\\}$ を固定体という．（参照：\\GenronRef{K-001515}．）",
       "assumptions": [],
       "position": [
         133,
@@ -48050,7 +48081,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "Artinの固定体定理",
-      "statement": "体 $L$ の自己同型の有限部分群 $H$ に対し $[L:L^H]=|H|$ であり，$L/L^H$ は有限Galois拡大で $\\operatorname{Gal}(L/L^H)=H$ である．",
+      "statement": "体 $L$ の自己同型の有限部分群 $H$ に対し $[L:L^H]=|H|$ であり，$L/L^H$ は有限Galois拡大で $\\operatorname{Gal}(L/L^H)=H$ である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001515}，\\GenronRef{K-001551}．）",
       "assumptions": [],
       "position": [
         133,
@@ -48071,7 +48102,9 @@
         "K-000604",
         "K-000601",
         "K-001416",
-        "K-001516"
+        "K-001516",
+        "K-001190",
+        "K-001515"
       ],
       "status": "draft",
       "source": "volumes/N-133/web.tex",
@@ -48082,7 +48115,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "Galois対応の基本定理",
-      "statement": "有限Galois拡大 $L/K$ の中間体 $E$ と $G=\\operatorname{Gal}(L/K)$ の部分群 $H$ の間に\n\\[\n E\\longmapsto\\operatorname{Gal}(L/E),\\qquad H\\longmapsto L^H\n\\]\nという互いに逆な包含反転全単射がある．また $[L:E]=|\\operatorname{Gal}(L/E)|$，$[E:K]=[G:\\operatorname{Gal}(L/E)]$ である．",
+      "statement": "有限Galois拡大 $L/K$ の中間体 $E$ と $G=\\operatorname{Gal}(L/K)$ の部分群 $H$ の間に\n\\[\n E\\longmapsto\\operatorname{Gal}(L/E),\\qquad H\\longmapsto L^H\n\\]\nという互いに逆な包含反転全単射がある．また $[L:E]=|\\operatorname{Gal}(L/E)|$，$[E:K]=[G:\\operatorname{Gal}(L/E)]$ である．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001515}，\\GenronRef{K-001551}．）",
       "assumptions": [],
       "position": [
         133,
@@ -48105,7 +48138,10 @@
         "K-001512",
         "K-001516",
         "K-001191",
-        "K-000315"
+        "K-000315",
+        "K-001190",
+        "K-001515",
+        "K-001551"
       ],
       "status": "draft",
       "source": "volumes/N-133/web.tex",
@@ -48116,7 +48152,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "正規部分群と中間体のGalois性",
-      "statement": "上の対応において $E/K$ がGaloisであることは $H=\\operatorname{Gal}(L/E)$ が $G$ の正規部分群であることと同値である．その場合 $\\operatorname{Gal}(E/K)\\simeq G/H$ である．",
+      "statement": "上の対応において $E/K$ がGaloisであることは $H=\\operatorname{Gal}(L/E)$ が $G$ の正規部分群であることと同値である．その場合 $\\operatorname{Gal}(E/K)\\simeq G/H$ である．（参照：\\GenronRef{K-001554}．）",
       "assumptions": [],
       "position": [
         133,
@@ -49416,7 +49452,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "代数的整数と整数環",
-      "statement": "数体とは $\\mathbb Q=\\operatorname{Frac}(\\mathbb Z)$ の有限次拡大 $K$ である．$\\mathbb Z$ 上整な $K$ の元を代数的整数といい，その全体 $\\mathcal O_K$ を整数環という．",
+      "statement": "数体とは $\\mathbb Q=\\operatorname{Frac}(\\mathbb Z)$ の有限次拡大 $K$（\\GenronRef{K-001190}） である．$\\mathbb Z$ 上整な（\\GenronRef{K-001426}） $K$ の元を代数的整数といい，その全体 $\\mathcal O_K$ を整数環という．",
       "assumptions": [],
       "position": [
         37,
@@ -49445,7 +49481,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "整数環の基本性質",
-      "statement": "$\\mathcal O_K\\cap\\mathbb Q=\\mathbb Z$ であり，$\\mathcal O_K$ は整閉整域で分数体は $K$ である．",
+      "statement": "$\\mathcal O_K\\cap\\mathbb Q=\\mathbb Z$ であり，$\\mathcal O_K$ は整閉整域で分数体は $K$ である．（参照：\\GenronRef{K-001598}，\\GenronRef{K-001432}．）",
       "assumptions": [],
       "position": [
         37,
@@ -49477,7 +49513,7 @@
       "kind": "definition",
       "heading_kind": "definition",
       "title": "トレースとノルム",
-      "statement": "数体 $K$ の次数を $n$ とし，代数閉包への $\\mathbb Q$ 埋込み $\\sigma_1,\\ldots,\\sigma_n$ に対し $\\operatorname{Tr}(x)=\\sum_i\\sigma_i(x)$，$N(x)=\\prod_i\\sigma_i(x)$ と定める．",
+      "statement": "数体 $K$ の次数を $n$ とし，代数閉包への $\\mathbb Q$ 埋込み $\\sigma_1,\\ldots,\\sigma_n$ に対し $\\operatorname{Tr}(x)=\\sum_i\\sigma_i(x)$，$N(x)=\\prod_i\\sigma_i(x)$ と定める．（参照：\\GenronRef{K-001598}，\\GenronRef{K-001190}，\\GenronRef{K-001410}，\\GenronRef{K-001416}．）",
       "assumptions": [],
       "position": [
         37,
@@ -49495,7 +49531,10 @@
         "K-000017",
         "K-000024",
         "K-001414",
-        "K-001416"
+        "K-001416",
+        "K-001598",
+        "K-001190",
+        "K-001410"
       ],
       "status": "draft",
       "source": "volumes/N-37/web.tex",
@@ -49506,7 +49545,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "トレースとノルムの整性",
-      "statement": "トレースとノルムは有理数に値を持ち，代数的整数に対しては整数に値を持つ．トレースは $\\mathbb Q$ 線形である．",
+      "statement": "トレースとノルムは有理数に値を持ち，代数的整数に対しては整数に値を持つ．トレースは $\\mathbb Q$ 線形である．（参照：\\GenronRef{K-001598}，\\GenronRef{K-001600}．）",
       "assumptions": [],
       "position": [
         37,
@@ -49527,7 +49566,8 @@
         "K-001600",
         "K-001513",
         "K-001554",
-        "K-001431"
+        "K-001431",
+        "K-001598"
       ],
       "status": "draft",
       "source": "volumes/N-37/web.tex",
@@ -49538,7 +49578,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "トレース形式の非退化性",
-      "statement": "任意の有理基底 $b_1,\\ldots,b_n$ について $\\det(\\operatorname{Tr}(b_i b_j))\\ne0$ である．",
+      "statement": "任意の有理基底 $b_1,\\ldots,b_n$ について $\\det(\\operatorname{Tr}(b_i b_j))\\ne0$ である．（参照：\\GenronRef{K-001600}．）",
       "assumptions": [],
       "position": [
         37,
@@ -49571,7 +49611,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "整基底の存在",
-      "statement": "$\\mathcal O_K$ は階数 $n=[K:\\mathbb Q]$ の自由 $\\mathbb Z$ 加群である．その基底を整基底という．",
+      "statement": "$\\mathcal O_K$ は階数 $n=[K:\\mathbb Q]$ の自由 $\\mathbb Z$ 加群である．その基底を整基底という．（参照：\\GenronRef{K-001190}，\\GenronRef{K-001598}，\\GenronRef{K-001602}．）",
       "assumptions": [],
       "position": [
         37,
@@ -49594,7 +49634,9 @@
         "K-001387",
         "K-001121",
         "K-000596",
-        "K-000688"
+        "K-000688",
+        "K-001190",
+        "K-001598"
       ],
       "status": "draft",
       "source": "volumes/N-37/web.tex",
@@ -49605,7 +49647,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "数体の判別式",
-      "statement": "整基底 $\\omega_i$ に対し $\\Delta_K=\\det(\\operatorname{Tr}(\\omega_i\\omega_j))$ は非零整数で整基底によらない．これを判別式という．",
+      "statement": "整基底 $\\omega_i$ に対し $\\Delta_K=\\det(\\operatorname{Tr}(\\omega_i\\omega_j))$ は非零整数で整基底によらない．これを判別式という．（参照：\\GenronRef{K-001603}，\\GenronRef{K-001600}．）",
       "assumptions": [],
       "position": [
         37,
@@ -49626,7 +49668,8 @@
         "K-001602",
         "K-001603",
         "K-000689",
-        "K-000690"
+        "K-000690",
+        "K-001600"
       ],
       "status": "draft",
       "source": "volumes/N-37/web.tex",
@@ -49844,7 +49887,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "一の冪根を含む体上の冪根添加",
-      "statement": "$F$ が $X^m-1$ の全根を含み $a^m\\in F$ なら $F(a)/F$ は可換Galois群を持つ有限Galois拡大である（標数零）．",
+      "statement": "$F$ が $X^m-1$ の全根を含み $a^m\\in F$ なら $F(a)/F$ は可換Galois群を持つ有限Galois拡大である（標数零）．（参照：\\GenronRef{K-001515}．）",
       "assumptions": [],
       "position": [
         134,
@@ -49940,7 +49983,7 @@
       "kind": "proposition",
       "heading_kind": "proposition",
       "title": "冪根拡大の可解Galois拡大への埋込み",
-      "statement": "標数零の有限冪根拡大 $E/K$ は可解Galois群を持つ有限Galois拡大に含まれる．",
+      "statement": "標数零の有限冪根拡大 $E/K$ は可解Galois群を持つ有限Galois拡大に含まれる．（参照：\\GenronRef{K-001515}．）",
       "assumptions": [],
       "position": [
         134,
@@ -49963,7 +50006,8 @@
         "K-000438",
         "K-000439",
         "K-000317",
-        "K-000318"
+        "K-000318",
+        "K-001515"
       ],
       "status": "draft",
       "source": "volumes/N-134/web.tex",
@@ -54303,7 +54347,8 @@
       "area": "代数",
       "status": "draft",
       "depends_on": [
-        129
+        129,
+        130
       ],
       "goals": [
         "分離多項式・分離次数・原始元"
